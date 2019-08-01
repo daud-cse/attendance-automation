@@ -1,0 +1,177 @@
+﻿<div class="wrapper-md" ng-controller="ExamSubjectMarksCtrl">
+    <!-- toaster directive -->
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+    <form role="form" name="ExamMarksForm" class="form-validation" method="post">
+        <div class="panel panel-primary" ng-hide="isLoading">
+            <div class="panel-heading wrapper-xs">Search</div>
+            <div class="panel-body">
+                <div class="row">
+
+                    <!--<div class="col-sm-4 form-group">
+                        <div class="form-group">
+                            <label>Session</label>
+                            <select ng-model="VmExamSubjectMark.AcademicSessionId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmExamSubjectMark.AcademicSessionList"></select>
+                        </div>
+                    </div>-->
+
+
+                    <div class="col-sm-4 form-group">
+                        <label>Class</label>
+                        <select ng-model="VmExamSubjectMark.AcademicClassesId" required data-ng-change="getScetionClasswise()" ng-class="{'ng-dirty': ExamMarksForm.AcademicClassesId.$invalid}"
+                                class="form-control m-b" required ng-options="c.Key as c.Value for c in VmExamSubjectMark.AcademicClassList">
+                            <option value="">-- Select Class --</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label>Section</label>
+                        <select ng-model="VmExamSubjectMark.AcademicClassesSectionMapId" required data-ng-change="GetSubjectAcademicClassMapping()" class="form-control m-b" required ng-options="c.Key as c.Value for c in VmExamSubjectMark.AcademicSectionList">
+                            <option value="">-- Select Section --</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label>Exam Type</label>
+                        <select ng-model="VmExamSubjectMark.ExamTypeId" class="form-control m-b" ng-change="examtypechange()" required ng-options="c.Key as c.Value for c in VmExamSubjectMark.ExamTypeList">
+                            <option value="">-- Select Exam Type --</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 form-group">
+                        <label>Exam</label>
+                        <select ng-model="VmExamSubjectMark.ExamId" class="form-control m-b" ng-change="examchange()" required ng-options="c.Key as c.Value for c in VmExamSubjectMark.ExamList">
+                            <option value="">-- Select Exam --</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label>Subject</label>
+                        <select ng-model="VmExamSubjectMark.SubjectAcademicClassMappingsMapId" ng-change="subjectchange(VmExamSubjectMark)" class="form-control m-b" required ng-options="c.Key as c.Value for c in VmExamSubjectMark.SubjectList">
+                            <option value="">-- Select Subject --</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label>&nbsp;</label>
+                        <button type="submit" style="margin-top:25px;" class="btn btn-primary" ng-disabled="ExamMarksForm.$invalid" ng-click="GetFilterResult()"><i class="glyphicon glyphicon-floppy-saved"></i>&nbsp;Marks Entry</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form role="form" name="ExamMarksFormList" class="form-validation" method="post">
+        <div class="panel panel-default" ng-hide="isLoading">
+            <div class="row wrapper">
+
+                <div class="col-sm-3">
+                </div>
+                <div class="col-sm-6">
+
+                    <!--<div>Exam Type Name:  <b> {{ objExam.ExamType.Name }}</b></div>
+                    <div>Exam Name:<b> {{ objExam.Name }}</b></div>
+                    <div>Exam Time:<b> {{ objExam.ExamTime }}</b></div>
+                    <div>Total Marks:<b> {{ objExam.TotalMarks }}</b></div>
+                    <div>Pass Marks: <b> {{ objExam.PassMarks }}</b> </div>
+                    <div>Accept Marks:<b> {{ objExam.AcceptMarks }}</b></div>-->
+
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Teacher Name</td>
+                                <td><strong>{{ VmSubjectAcademicClassMapping.TeacherName }}</strong></td>
+
+                            </tr>
+                            <tr>
+                                <td>Subject Name</td>
+                                <td><strong>{{ VmSubjectAcademicClassMapping.SubjectName }}</strong></td>
+
+                            </tr>
+                           
+                            
+                            <tr>
+                                <td>Exam Type Name</td>
+                                <td><strong>{{ objExam.ExamType.Name }}</strong></td>
+
+                            </tr>
+                            <tr>
+                                <td>Exam Name</td>
+                                <td><strong>{{ objExam.Name }}</strong></td>
+
+                            </tr>
+                            <tr>
+                                <td>Exam Time</td>
+                                <td><strong>{{ objExam.ExamTime }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Total Marks</td>
+                                <td><strong>{{ objExam.TotalMarks }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Pass Marks</td>
+                                <td><strong>{{ objExam.PassMarks }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Accept Marks</td>
+                                <td><strong>{{ objExam.AcceptMarks }}</strong></td>
+                            </tr>
+                             <tr>
+                                <td>Total Student</td>
+                                <td><strong>{{ totalStudent }}</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-sm-3">
+                </div>
+            </div>
+
+
+
+            <table class="table table-striped b-t b-light">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Roll No</th> 
+                        <th>Subject Marks</th>                        
+                        <th>Marks Obtained</th>                        
+                        <th>Comment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="x in VmExamSubjectMarkList| orderBy:'-Id' | filter:query">
+                        <!--<td>{{x.Date | date:'dd-MMMM-yyyy'}}</td>-->
+                        <td ng-hide="true">{{ x.Id }}</td>
+                        <td ng-hide="true">{{ x.StudentId }}</td>
+                        <td ng-hide="true">{{ x.ExamId }}</td>
+                        <td ng-hide="true">{{ x.SubjectAcademicClassMappingsMapId }}</td>
+
+                        <td ng-hide="true">{{ x.AcceptMarksTotal }}</td>
+                        <td>{{ x.Student.UserInfo.Name }}</td>
+                        <td>{{ x.StudentRoleNo }}</td>
+
+                        
+                        <td>{{ x.SubjectMarks }}</td>
+
+                                
+                        <td><input type="text" data-ng-model="x.MarksObtained" ng-keyup="markValidation(x)" valid-number class="form-control" placeholder="Marks Obtained" /></td>
+                        <!--<td>{{ x.AcceptMarksTotal }} </td>-->
+                        <td> <input type="text" data-ng-model="x.Comment" class="form-control" placeholder="Comment" /></td>                      
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr></tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="m-t m-b">
+            <button type="button" class="btn btn-info" ng-click="StudentListReset()">Back</button>
+            <button type="submit" class="btn btn-success" ng-click="steps.percent=100; ExamSubjectMarksSubmit()">Submit</button>
+        </div>
+    </form>
+</div>

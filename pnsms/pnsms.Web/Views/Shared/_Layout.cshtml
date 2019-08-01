@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-ng-app="app">
+<head>
+    <base href="/">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta charset="utf-8" />
+    <title>BD Digital Consultancy</title>
+    <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="shortcut icon" href="~/favicon.ico" />
+    @Styles.Render("~/bundle/styles")
+
+</head>
+
+<body ng-controller="AppCtrl">    
+    <div class="app" id="app"
+         ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asideFixed, 'app-aside-folded':app.settings.asideFolded, 'app-aside-dock':app.settings.asideDock, 'container':app.settings.container}"
+         ui-view></div>
+    
+    @RenderBody()
+
+
+    @Scripts.Render("~/bundles/jsFixed1")
+    @Scripts.Render("~/bundles/jsChangeable")
+    @Scripts.Render("~/bundles/jsFixed2")
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    @RenderSection("Scripts", required: false)
+
+    <script type="text/javascript">
+        setInterval("keepSessionAlive()", 290000);//5000
+
+    function keepSessionAlive() {
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Content("~/Home/keepSessionAlive")',
+            success: function () {
+                $("#disconnected").html("");
+            },
+            error: function () {
+                //alert('You are disconnected');
+                $("#disconnected").html("You are disconnected");
+            }
+        });
+    }
+
+    </script>
+
+</body>
+</html>

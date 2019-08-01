@@ -1,0 +1,93 @@
+﻿<div class="wrapper-md" ng-controller="ExamProcessCtrl">
+    <!-- toaster directive -->
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+    <form role="form" name="ExamProcessForm" class="form-validation" method="post">
+        <div class="panel panel-primary" ng-hide="isLoading">
+            <div class="panel-heading wrapper-xs">Search</div>
+            <div class="panel-body">
+                <div class="row">
+
+
+                    <div class="col-sm-4 form-group">
+                        <label>Class</label>
+                        <select ng-model="ExamProcess.AcademicClassesId" ng-class="{'ng-dirty': ExamProcessForm.AcademicClassesId.$invalid}" class="form-control m-b" required ng-options="c.Key as c.Value for c in ExamProcess.AcademicClassList">
+                            <option value="">-- Select Class --</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label>Exam Type</label>
+                        <select ng-model="ExamProcess.ExamTypeId" class="form-control m-b" required ng-options="c.Key as c.Value for c in ExamProcess.ExamTypeList">
+                            <option value="">-- Select Exam Type --</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4 form-group">
+                        <label>&nbsp;</label>
+                        <button type="submit" style="margin-top:25px;" class="btn btn-primary" ng-disabled="ExamProcessForm.$invalid" ng-click="ExamProcessExecute()"><i class="glyphicon glyphicon-floppy-saved"></i>&nbsp;Exam Process Execute</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!--<div class="panel panel-default" ng-hide="isLoading">
+        <div class="row wrapper">
+            <div class="col-sm-3 m-b-xs">
+                <button class="btn btn-sm btn-success" ui-sref="app.studentAttendanceByTeacher.StudentAttendanceByTeacher">+ ADD NEW</button>
+            </div>
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <input type="text" class="input-sm form-control" ng-change="search()" ng-model="query" placeholder=" search">
+                    <span class="input-group-btn">
+                        <button class="btn btn-sm btn-default" type="button">Go!</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped b-t b-light">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Roll No</th>
+                    <th>Subjcet name</th>
+                    <th>Marks Obtained</th>
+
+                    <th>Comment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in VmExamSubjectMarkList| orderBy:'-Id' | filter:query">
+
+                    <td ng-hide="true">{{ x.Id }}</td>
+                    <td ng-hide="true">{{ x.StudentId }}</td>
+                    <td ng-hide="true">{{ x.ExamId }}</td>
+                    <td ng-hide="true">{{ x.InstituteSubjectClassId }}</td>
+                    <td ng-hide="true">{{ x.AcceptMarksTotal }}</td>
+                    <td>{{ x.Student.UserInfo.Name }}</td>
+                    <td>{{ x.StudentRoleNo }}</td>
+                    <td>{{ x.InstituteSubjectClass.InstituteSubject.Name }}</td>
+                    <td><input type="text" data-ng-model="x.MarksObtained" class="form-control" placeholder="Marks Obtained" /></td>
+
+                    <td> <input type="text" data-ng-model="x.Comment" class="form-control" placeholder="Comment" /></td>-->
+    <!--<td>
+        <a ui-sref="app.editStudentAttendanceByTeacher({attenanceId:x.Id})" tooltips title="Edit" class="text-primary text-md"><i class="fa fa-pencil "></i></a> &nbsp;&nbsp;
+        <a ui-sref="app.detailsStudentAttendanceByTeacher({attenanceId:x.Id})" tooltips title="Details" class="text-primary text-md"><i class="fa fa-file-archive-o "></i></a> &nbsp;&nbsp;
+        <a ui-sref="app.abscondingStudentAttendanceByTeacher({attenanceId:x.Id})" tooltips title="Absconding" class="text-primary text-md"><i class="fa fa-history"></i></a>
+    </td>-->
+    <!--</tr>
+            </tbody>
+            <tfoot>
+                <tr></tr>
+            </tfoot>
+        </table>
+    </div>
+    <div class="m-t m-b">
+        <button type="button" class="btn btn-default" ng-click="StudentListReset()">Back</button>
+        <button type="submit" class="btn btn-default" ng-click="steps.percent=100; ExamSubjectMarksSubmit()">Submit</button>
+    </div>-->
+
+</div>

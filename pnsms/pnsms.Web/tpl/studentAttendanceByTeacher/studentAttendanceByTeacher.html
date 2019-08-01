@@ -1,0 +1,348 @@
+﻿<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">Student Attendance By Teacher</h1>
+</div>
+<div class="wrapper-md" ng-controller="StudentAttendanceByTeacherCtrl">
+    <!-- toaster directive -->
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+    <!-- attendance directive -->
+    <!--<form role="form" name="step1" class="form-validation" method="post">
+       
+        <div class="panel panel-primary" ng-hide="isnewLoading">
+            <div class="panel-heading wrapper-xs">Take Attendance</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Branch</label>
+                            <select ng-model="VmStudentAttendanceSearch.StudentAttendance.AcademicBranchId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudentAttendanceSearch.StudentAttendance.AcademicBranchList"></select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Class</label>
+                            <select ng-model="VmStudentAttendanceSearch.StudentAttendance.AcademicClassId" class="form-control m-b" data-ng-change="getScetionClassWiseSubjectClassSectionwise()" ng-required="true" ng-options="c.Key as c.Value for c in VmStudentAttendanceSearch.StudentAttendance.AcademicClassList">
+                                <option value="">-- choose Class --</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Section</label>
+                            <select ng-model="VmStudentAttendanceSearch.StudentAttendance.AcademicSectionId" class="form-control m-b" ng-required="true" ng-options="c.Key as c.Value for c in VmStudentAttendanceSearch.StudentAttendance.AcademicSectionList">
+                                <option value="">-- choose Section --</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Date</label>
+                            <div ng-controller="DatepickerDemoCtrl">
+                                <div class="input-group ">
+                                    <input type="text" value="{{VmStudentAttendanceSearch.StudentAttendance.AttendanceDate | date:'dd-MMMM-yyyy'}}" class="form-control" datepicker-popup="{{format}}" ng-model="VmStudentAttendanceSearch.StudentAttendance.AttendanceDate" is-open="opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" ng-change="step1.date.$valid ? (steps.percent=30) : (steps.percent=20)" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Teacher</label>
+                            <div>
+                                <label>{{VmStudentAttendanceSearch.StudentAttendance.TeacherName}}</label>
+                                <input type="hidden" value="{{ VmStudentAttendanceSearch.StudentAttendance.TeacherId }}">
+                            </div>
+                          
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Period</label>
+                            <select ng-model="VmStudentAttendanceSearch.StudentAttendance.AcademicPeriodId" class="form-control m-b" ng-required="true" ng-options="c.Key as c.Value for c in VmStudentAttendanceSearch.StudentAttendance.AcademicPeriodList">
+                                <option value="">-- choose Period --</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-t m-b">
+                    <button type="submit" ng-disabled="step1.$invalid" class="btn btn-success" ng-click="Load()">Take Attendance</button>
+                </div>
+            </div>
+        </div>
+    </form>-->
+    
+        <div class="panel panel-default" ng-hide="">
+            <div class="row">
+                <div class="col-sm-3">
+                </div>
+                <div class="col-sm-6">
+
+
+                    <!--<input type="hidden" value="{{ VmStudentAttendance.StudentAttendance.Id }}">
+                    <input type="hidden" value="{{ VmStudentAttendance.StudentAttendance.AttendanceDate }}">
+                    <input type="hidden" value="{{ VmStudentAttendance.StudentAttendance.TeacherId }}">
+                    <input type="hidden" value="{{VmStudentAttendance.StudentAttendance.AcademicBranchId }}">
+                    <input type="hidden" value="{{ VmStudentAttendance.StudentAttendance.AcademicClassId }}">
+                    <input type="hidden" value="{{ VmStudentAttendance.StudentAttendance.AcademicSectionId  }}">
+                    <input type="hidden" value="{{  VmStudentAttendance.StudentAttendance.AcademicPeriodId  }}">-->
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--<tr>
+
+
+                                <td>Attendance Date</td>
+
+                                <td><strong> {{lstSubjectAcademicClassMapping.StudentAttendance.AttendanceDate| date:'dd-MMMM-yyyy'}}</strong></td>
+
+                            </tr>-->
+                            <!--<tr>
+                                <td>Teacher Name</td>
+                                <td><strong>{{ VmStudentAttendance.lstSubjectAcademicClassMapping.Teacher.UserInfo.Name }}</strong></td>
+                            </tr>
+
+                            <tr>
+                                <td>Branch Name</td>
+                                <td><strong>{{ VmStudentAttendance.lstSubjectAcademicClassMapping.AcademicSession.Name }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Class Name</td>
+                                <td><strong>{{ VmStudentAttendance.lstSubjectAcademicClassMapping.AcademicClass.Name }}</strong></td>
+
+                            </tr>
+                            <tr>
+                                <td>Section Name</td>
+                                <td><strong>{{ VmStudentAttendance.lstSubjectAcademicClassMapping.AcademicClassSectionMapping.AcademicSection.Name }}</strong></td>
+                            </tr>
+
+                            <tr>
+                                <td>Academic Period</td>
+                                <td><strong>{{ VmStudentAttendance.lstSubjectAcademicClassMapping.InstituteSubject.Name}}</strong></td>
+                            </tr>-->
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-sm-3">
+                </div>
+
+            </div>
+            <div class="table-responsive">
+                <table class="table table-striped b-t b-light" ng-table>
+                    <thead>
+                        <tr>
+                            <th>Is Att. Taken</th>
+                            <th>Branch Name</th>
+                            <th>Teacher Name</th>
+                            <th>Attendance Date</th>
+                            <th>Class Name</th>
+                            <th>Section Name</th>
+                            <th>Subject Name</th>
+
+                            <th> Action</th>
+                        </tr>
+                    </thead>
+                    <tbody ng-show="lstTakeAttendance.length">
+
+                        <tr ng-repeat="x in lstTakeAttendance | orderBy:'AcademicClassId'">
+                            <!--<td ng-hide="true"><input type="hidden" value="{{ x.Id }}"></td>
+        <td ng-hide="true">
+            <input type="hidden" value="{{ x.StudentAttendanceId }}">
+        </td>
+
+        <td>
+            <input type="hidden" value="{{ x.StudentId }}">
+            {{ x.StudentName }}
+        </td>
+        <td>{{ x.StudentRoll }}</td>-->
+                            <form role="form" name="" class="form-validation" method="post">
+                                
+                                <td>
+                                    <label class="i-checks m-b-none">
+
+                                        <input disabled type="checkbox" data-ng-model="x.IsTakenAttendance"> <i></i>
+                                    </label>
+                                </td>
+                                <td>
+                                    {{x.TeacherName}}
+                                </td>
+                                <td>
+                                    {{x.AcademicBranchName}}
+                                </td>
+                                <td ng-controller="DatepickerDemoCtrl">
+                                    <div ng-click="editDate($index)">
+                                        <strong ng-if="selectedIndex!=$index"> {{x.Attendancedate| date:'dd-MMMM-yyyy'}}</strong>
+                                        <strong ng-if="selectedIndex==$index">
+                                            <input required type="text" ng-value="{{x.AttendanceDate | date:'dd-MMMM-yyyy'}}" class="form-control" datepicker-popup="{{format}}" ng-model="x.AttendanceDate" is-open="opened" datepicker-options="dateOptions" close-text="Close" />
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                            </span>
+                                        </strong>
+                                    </div>
+                                  
+
+                                    <!--<input type="text" value="{{x.AttendanceDate | date:'dd-MMMM-yyyy'}}" class="form-control" datepicker-popup="{{format}}" ng-model="x.AttendanceDate" is-open="opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" ng-change="step1.date.$valid ? (steps.percent=30) : (steps.percent=20)" />
+    <span class="input-group-btn">
+        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+    </span>-->
+                                    <!--<input required type="text" ng-value="{{x.AttendanceDate | date:'dd-MMMM-yyyy'}}" class="form-control" datepicker-popup="{{format}}" ng-model="x.AttendanceDate" is-open="opened" datepicker-options="dateOptions" close-text="Close" />
+    <span class="input-group-btn">
+        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+    </span>-->
+
+
+                                </td>
+                                <td>
+                                    {{x.AcademicClassName}}
+                                </td>
+                                <td>
+                                    {{x.AcademicSectionName}}
+                                </td>
+                                <td>
+                                    {{x.SubjectName}}
+                                </td>
+
+                                <td class="m-t m-b">
+                                    <button type="submit" class="btn btn-success" ng-click="Load(x)">Take Attendance</button>
+                                </td>
+                                </form>
+                                <!--<td>
+            <div class=" btn-group" ng-repeat="xx in x.AttendanceTypes">
+                <label ng-class="{{xx.AttTypeId}}=={{x.AttendanceTypeId}} ? 'active {{xx.colorCode}}' : '{{xx.colorCode}}'" btn-ra btn-radio="'{{ xx.AttTypeId }}'" ng-model="x.AttendanceTypeId" class="btn btn-sm ng-untouched ng-valid ng-dirty"><i class="fa fa-check text-active"></i>{{ xx.Flag }}</label>
+            </div>
+        </td>
+        <td>
+            <input class="form-control" type="text" value="{{x.Comments}}" id="x.StudentId" name="x.StudentId+x.StudentName" placeholder="Comments" data-ng-model="x.Comments" />
+        </td>-->
+</tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--<div class="m-t m-b">
+                <button type="button" class="btn btn-default" ng-click="StudentListReset()">Back</button>
+                <button type="submit" ng-hide="Issubmit" class="btn btn-success" ng-click="steps.percent=100; AttendanceSubmit()">Submit</button>
+                <button type="submit" ng-hide="Isupdate" class="btn btn-success" ng-click="steps.percent=100; AttendanceEditSubmit()">Update</button>
+            </div>-->
+
+        </div>
+        <!--</tab>-->
+        <!--</tabset>-->
+    
+    <form role="form" name="step2" class="form-validation" method="post">
+        <div class="panel panel-default" ng-hide="isLoadinglist">
+            <div class="row">
+                <div class="col-sm-3">
+                </div>
+                <div class="col-sm-6">
+
+
+                    <input type="hidden" value="{{ VmStudentAttendance.StudentAttendance.Id }}">
+                    <input type="hidden" value="{{ VmStudentAttendance.StudentAttendance.AttendanceDate }}">
+                    <input type="hidden" value="{{ VmStudentAttendance.StudentAttendance.TeacherId }}">
+                    <input type="hidden" value="{{VmStudentAttendance.StudentAttendance.AcademicBranchId }}">
+                    <input type="hidden" value="{{ VmStudentAttendance.StudentAttendance.AcademicClassId }}">
+                    <input type="hidden" value="{{ VmStudentAttendance.StudentAttendance.AcademicSectionId  }}">
+                    <input type="hidden" value="{{  VmStudentAttendance.StudentAttendance.AcademicPeriodId  }}">
+                    <input type="hidden" value="{{  VmStudentAttendance.StudentAttendance.SubjectAcademicClassMappingsId  }}">
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Branch Name</td>
+                                <td><strong>{{ VmStudentAttendance.StudentAttendance.BranchName }}</strong></td>
+                            </tr>
+                            <tr>
+
+
+                                <td>Attendance Date</td>
+
+                                <td><strong> {{VmStudentAttendance.StudentAttendance.AttendanceDate| date:'dd-MMMM-yyyy'}}</strong></td>
+
+                            </tr>
+                            <tr>
+                                <td>Teacher Name</td>
+                                <td><strong>{{ VmStudentAttendance.StudentAttendance.TeacherName }}</strong></td>
+                            </tr>
+
+                            <!--<tr>
+                                <td>Branch Name</td>
+                                <td><strong>{{ VmStudentAttendance.StudentAttendance.BranchName }}</strong></td>
+                            </tr>-->
+                            <tr>
+                                <td>Class Name</td>
+                                <td><strong>{{ VmStudentAttendance.StudentAttendance.ClassName }}</strong></td>
+
+                            </tr>
+                            <tr>
+                                <td>Section Name</td>
+                                <td><strong>{{ VmStudentAttendance.StudentAttendance.SectionName }}</strong></td>
+                            </tr>
+
+                            <tr>
+                                <td>Subject Name</td>
+                                <td><strong>{{ VmStudentAttendance.StudentAttendance.SubjectName}}</strong></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-sm-3">
+                </div>
+
+            </div>
+            <div class="table-responsive">
+                <table class="table table-striped b-t b-light" ng-table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Roll No.</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody ng-show="VmStudentAttendance.AttendanceDetails.length">
+
+                        <tr ng-repeat="x in VmStudentAttendance.AttendanceDetails | orderBy:'StudentRoll'">
+                            <td ng-hide="true"><input type="hidden" value="{{ x.Id }}"></td>
+                            <td ng-hide="true"><input type="hidden" value="{{ x.StudentAttendanceId }}"></td>
+                            <td><input type="hidden" value="{{ x.StudentId }}">{{ x.StudentName }}</td>
+                            <td>{{ x.StudentRoll }}</td>
+                            <td>
+                                <div class=" btn-group" ng-repeat="xx in x.AttendanceTypes">
+                                    <label ng-class="{{xx.AttTypeId}}=={{x.AttendanceTypeId}} ? 'active {{xx.colorCode}}' : '{{xx.colorCode}}'" btn-ra btn-radio="'{{ xx.AttTypeId }}'" ng-model="x.AttendanceTypeId" class="btn btn-sm ng-untouched ng-valid ng-dirty"><i class="fa fa-check text-active"></i>{{ xx.Flag }}</label>
+                                </div>
+                            </td>
+                            <td>
+                                <input class="form-control" type="text" value="{{x.Comments}}" id="x.StudentId" name="x.StudentId+x.StudentName" placeholder="Comments" data-ng-model="x.Comments" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="m-t m-b">
+                <button type="button" class="btn btn-default" ng-click="StudentListReset()">Back</button>
+                <button type="submit" ng-hide="Issubmit" class="btn btn-success" ng-click="steps.percent=100; AttendanceSubmit()">Submit</button>
+                <button type="submit" ng-hide="Isupdate" class="btn btn-success" ng-click="steps.percent=100; AttendanceEditSubmit()">Update</button>
+            </div>
+
+        </div>
+        <!--</tab>-->
+        <!--</tabset>-->
+    </form>
+</div>   

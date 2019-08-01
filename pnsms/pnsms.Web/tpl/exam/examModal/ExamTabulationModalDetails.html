@@ -1,0 +1,117 @@
+﻿<div class="wrapper-md" ng-controller="ExamTabulationModalDetailsCtrl">
+    <!-- toaster directive -->
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+
+
+    <div class="panel panel-default" ng-hide="isLoading" id="printSectionId">
+        <div class="row wrapper">
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-6">
+
+                <!--<div>Exam Type Name:  <b> {{ VmExamTabulationSheet.objExamTypeWiseTabulationSheetMaster.ExamType.Name }}</b></div>
+                <div>Class Name:<b> {{ VmExamTabulationSheet.objExamTypeWiseTabulationSheetMaster.AcademicClassName }}</b></div>
+                <div>Section Name:<b> {{ VmExamTabulationSheet.objExamTypeWiseTabulationSheetMaster.AcademicSectionName }}</b></div>
+                <div>Student Name:<b> {{ VmExamTabulationSheet.objExamTypeWiseTabulationSheetMaster.StudentName }}</b></div>
+                <div>Total Marks: <b> {{ VmExamTabulationSheet.objExamTypeWiseTabulationSheetMaster.TotalMarks }}</b> </div>
+                <div>Total Subject:<b> {{ VmExamTabulationSheet.objExamTypeWiseTabulationSheetMaster.TotalSubject }}</b></div>
+                <div>Exam Grade Name:<b> {{ VmExamTabulationSheet.objExamTypeWiseTabulationSheetMaster.ExamGradeName }}</b></div>
+                <div>Exam Grade Point:<b> {{ VmExamTabulationSheet.objExamTypeWiseTabulationSheetMaster.ExamGradePoint }}</b></div>-->
+
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Exam Type Name</td>
+                            <td><strong>{{ VmExamTabulationSheet.objExamTypeWiseTabulationSheetMaster.ExamType.Name }}</strong></td>
+
+                        </tr>
+                        <tr>
+                            <td>Class Name</td>
+                            <td><strong>{{ VmExamTabulationSheet.objExamTypeWiseTabulationSheetMaster.AcademicClassName }}</strong></td>
+
+                        </tr>
+                        <tr>
+                            <td>Section Name</td>
+                            <td><strong>{{ VmExamTabulationSheet.objExamTypeWiseTabulationSheetMaster.AcademicSectionName }}</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Student Name</td>
+                            <td><strong>{{ VmExamTabulationSheet.objExamTypeWiseTabulationSheetMaster.StudentName }}</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Total Marks</td>
+                            <td><strong>{{ VmExamTabulationSheet.objExamTypeWiseTabulationSheetMaster.TotalMarks }}</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Total Subject</td>
+                            <td><strong>{{ VmExamTabulationSheet.objExamTypeWiseTabulationSheetMaster.TotalSubject }}</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Average Number</td>
+                            <td><strong>{{ VmExamTabulationSheet.objExamTypeWiseTabulationSheetMaster.AverageNumber }}</strong></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Exam Grade Name</td>
+                            <td><strong>{{ VmExamTabulationSheet.objExamTypeWiseTabulationSheetMaster.ExamGradeName }}</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Exam Grade Point</td>
+                            <td><strong>{{ VmExamTabulationSheet.objExamTypeWiseTabulationSheetMaster.ExamGradePoint }}</strong></td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-3">
+            </div>
+
+        </div>
+        <table class="table table-striped b-t b-light">
+            <thead>
+                <tr>
+                    <th>Subject Name</th>
+                    <th>Total Marks</th>
+                    <th>Marks Obtained</th>
+                    <th>Average Number</th>
+                    <th>Accept Total Marks</th>
+                    <th>Grade</th>
+                    <th>Grade Point</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in VmExamTabulationSheet.lstExamTypeWiseTabulationSheetDetails| orderBy:'-Id' | filter:query">
+
+                    <td>{{ x.InstituteSubjectName }}</td>
+                    <td>{{ x.SubjectMarks }}</td>
+                    <td>{{ x.TotalMarks }}</td>
+                    <td>{{ x.AverageMarks }}</td>
+                    <td>{{ x.AcceptTotalMarks }}</td>
+
+                    <td>{{ x.ExamGradeName }}</td>
+                    <td>{{ x.ExamGradePoint }}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr></tr>
+            </tfoot>
+        </table>
+
+
+    </div>
+
+    <button type="button" ng-click="redirect()" class="btn btn-info">Back</button>
+
+</div>
+

@@ -1,0 +1,267 @@
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Resources\refcode.jpg
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\sfa.Api.dll.config
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\sfa.Api.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\sfa.Api.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Antlr3.Runtime.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\EntityFramework.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\EntityFramework.SqlServer.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.Owin.Cors.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.Owin.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.Owin.Security.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.Practices.ServiceLocation.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.Configuration.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.Mvc.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.WebApi.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.Web.Infrastructure.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Newtonsoft.Json.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Owin.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\pnsms.Entities.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\pnsms.Service.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\pnsms.utility.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Repository.Pattern.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Repository.Pattern.Ef6.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Service.Pattern.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\System.Net.Http.Formatting.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\System.Web.Cors.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\System.Web.Helpers.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\System.Web.Http.Cors.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\System.Web.Http.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\System.Web.Http.Owin.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\System.Web.Http.WebHost.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\System.Web.Mvc.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\System.Web.Optimization.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\System.Web.Razor.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\System.Web.WebPages.Deployment.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\System.Web.WebPages.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\System.Web.WebPages.Razor.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Unity.Abstractions.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Unity.Container.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\WebActivatorEx.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\WebGrease.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\LinqKit.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Dapper.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Repository.Pattern.Ef6.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Repository.Pattern.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Service.Pattern.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\pnsms.Entities.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\pnsms.Service.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\pnsms.utility.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\EntityFramework.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\EntityFramework.SqlServer.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.Owin.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.Owin.Cors.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.Owin.Security.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.Practices.ServiceLocation.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.Practices.ServiceLocation.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.Configuration.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.Mvc.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.WebApi.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Newtonsoft.Json.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\System.Net.Http.Formatting.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\System.Web.Helpers.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\System.Web.Http.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\System.Web.Http.Cors.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\System.Web.Http.Owin.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\System.Web.Http.WebHost.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\System.Web.Mvc.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\System.Web.Razor.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\System.Web.WebPages.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\System.Web.WebPages.Deployment.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\System.Web.WebPages.Razor.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\System.Web.Optimization.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\bin\Antlr3.Runtime.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\obj\Release\sfa.Api.csprojResolveAssemblyReference.cache
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\obj\Release\sfa.Api.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.Api\obj\Release\sfa.Api.pdb
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Resources\refcode.jpg
+E:\pos\POS NEW\pnsms\sfa.Api\bin\sfa.Api.dll.config
+E:\pos\POS NEW\pnsms\sfa.Api\bin\sfa.Api.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\sfa.Api.pdb
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Antlr3.Runtime.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\EntityFramework.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\EntityFramework.SqlServer.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.AspNet.Identity.Core.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.Owin.Cors.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.Owin.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.Owin.Security.Cookies.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.Owin.Security.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.Owin.Security.OAuth.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.Practices.ServiceLocation.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.Configuration.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.Mvc.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.WebApi.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.Web.Infrastructure.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Newtonsoft.Json.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Owin.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\pnsms.Entities.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\pnsms.Service.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\pnsms.utility.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Repository.Pattern.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Repository.Pattern.Ef6.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Service.Pattern.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\System.Net.Http.Formatting.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\System.Web.Cors.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\System.Web.Helpers.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\System.Web.Http.Cors.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\System.Web.Http.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\System.Web.Http.Owin.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\System.Web.Http.WebHost.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\System.Web.Mvc.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\System.Web.Optimization.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\System.Web.Razor.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\System.Web.WebPages.Deployment.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\System.Web.WebPages.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\System.Web.WebPages.Razor.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Unity.Abstractions.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Unity.Container.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\WebActivatorEx.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\WebGrease.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\LinqKit.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Dapper.dll
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Repository.Pattern.Ef6.pdb
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Repository.Pattern.pdb
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Service.Pattern.pdb
+E:\pos\POS NEW\pnsms\sfa.Api\bin\pnsms.Entities.pdb
+E:\pos\POS NEW\pnsms\sfa.Api\bin\pnsms.Service.pdb
+E:\pos\POS NEW\pnsms\sfa.Api\bin\pnsms.utility.pdb
+E:\pos\POS NEW\pnsms\sfa.Api\bin\EntityFramework.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\EntityFramework.SqlServer.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.AspNet.Identity.Core.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.Owin.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.Owin.Cors.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.Owin.Security.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.Owin.Security.Cookies.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.Owin.Security.OAuth.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.Practices.ServiceLocation.pdb
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.Practices.ServiceLocation.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.Configuration.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.Mvc.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.WebApi.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Newtonsoft.Json.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\System.Net.Http.Formatting.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\System.Web.Helpers.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\System.Web.Http.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\System.Web.Http.Cors.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\System.Web.Http.Owin.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\System.Web.Http.WebHost.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\System.Web.Mvc.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\System.Web.Razor.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\System.Web.WebPages.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\System.Web.WebPages.Deployment.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\System.Web.WebPages.Razor.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\System.Web.Optimization.xml
+E:\pos\POS NEW\pnsms\sfa.Api\bin\Antlr3.Runtime.pdb
+E:\pos\POS NEW\pnsms\sfa.Api\obj\Release\sfa.Api.csprojResolveAssemblyReference.cache
+E:\pos\POS NEW\pnsms\sfa.Api\obj\Release\sfa.Api.dll
+E:\pos\POS NEW\pnsms\sfa.Api\obj\Release\sfa.Api.pdb
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Resources\refcode.jpg
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\sfa.Api.dll.config
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\sfa.Api.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\sfa.Api.pdb
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Antlr3.Runtime.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\EntityFramework.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\EntityFramework.SqlServer.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.AspNet.Identity.Core.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.Owin.Cors.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.Owin.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.Owin.Security.Cookies.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.Owin.Security.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.Owin.Security.OAuth.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.Practices.ServiceLocation.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.Configuration.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.Mvc.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.WebApi.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.Web.Infrastructure.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Newtonsoft.Json.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Owin.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\pnsms.Entities.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\pnsms.Service.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\pnsms.utility.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Repository.Pattern.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Repository.Pattern.Ef6.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Service.Pattern.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\System.Net.Http.Formatting.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\System.Web.Cors.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\System.Web.Helpers.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\System.Web.Http.Cors.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\System.Web.Http.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\System.Web.Http.Owin.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\System.Web.Http.WebHost.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\System.Web.Mvc.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\System.Web.Optimization.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\System.Web.Razor.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\System.Web.WebPages.Deployment.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\System.Web.WebPages.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\System.Web.WebPages.Razor.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Unity.Abstractions.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Unity.Container.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\WebActivatorEx.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\WebGrease.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\LinqKit.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Dapper.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Repository.Pattern.Ef6.pdb
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Repository.Pattern.pdb
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Service.Pattern.pdb
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\pnsms.Entities.pdb
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\pnsms.Service.pdb
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\pnsms.utility.pdb
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\EntityFramework.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\EntityFramework.SqlServer.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.AspNet.Identity.Core.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.Owin.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.Owin.Cors.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.Owin.Security.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.Owin.Security.Cookies.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.Owin.Security.OAuth.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.Practices.ServiceLocation.pdb
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.Practices.ServiceLocation.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.Configuration.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.Mvc.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Microsoft.Practices.Unity.WebApi.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Newtonsoft.Json.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\System.Net.Http.Formatting.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\System.Web.Helpers.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\System.Web.Http.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\System.Web.Http.Cors.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\System.Web.Http.Owin.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\System.Web.Http.WebHost.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\System.Web.Mvc.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\System.Web.Razor.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\System.Web.WebPages.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\System.Web.WebPages.Deployment.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\System.Web.WebPages.Razor.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\System.Web.Optimization.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\bin\Antlr3.Runtime.pdb
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\obj\Release\sfa.Api.csprojResolveAssemblyReference.cache
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\obj\Release\sfa.Api.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.Api\obj\Release\sfa.Api.pdb

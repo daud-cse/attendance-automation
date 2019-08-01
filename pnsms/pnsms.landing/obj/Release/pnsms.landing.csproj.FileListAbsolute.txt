@@ -1,0 +1,303 @@
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Resources\refcode.jpg
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\pnsms.landing.dll.config
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\pnsms.landing.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\pnsms.landing.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Antlr3.Runtime.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\BundleTransformer.Core.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\BundleTransformer.Less.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\EntityFramework.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\EntityFramework.SqlServer.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\JavaScriptEngineSwitcher.Core.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\JavaScriptEngineSwitcher.Msie.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Owin.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.Google.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Practices.ServiceLocation.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.Configuration.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.Mvc.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.WebApi.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Web.Infrastructure.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\MsieJavaScriptEngine.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\MvcPaging.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Newtonsoft.Json.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Owin.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\pnsms.Entities.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\pnsms.Service.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\pnsms.utility.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Repository.Pattern.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Repository.Pattern.Ef6.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Service.Pattern.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\System.Net.Http.Formatting.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\System.Web.Helpers.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\System.Web.Http.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\System.Web.Http.WebHost.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\System.Web.Mvc.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\System.Web.Optimization.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\System.Web.Razor.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\System.Web.WebPages.Deployment.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\System.Web.WebPages.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\System.Web.WebPages.Razor.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\WebActivatorEx.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\WebGrease.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\LinqKit.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Dapper.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Repository.Pattern.Ef6.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Repository.Pattern.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Service.Pattern.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\pnsms.Entities.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\pnsms.Service.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\pnsms.utility.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Antlr3.Runtime.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\EntityFramework.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\EntityFramework.SqlServer.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Owin.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.Google.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Practices.ServiceLocation.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Practices.ServiceLocation.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.Configuration.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.Mvc.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.WebApi.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\MvcPaging.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\Newtonsoft.Json.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\System.Net.Http.Formatting.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\System.Web.Helpers.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\System.Web.Http.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\System.Web.Http.WebHost.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\System.Web.Mvc.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\System.Web.Optimization.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\System.Web.Razor.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\System.Web.WebPages.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\System.Web.WebPages.Deployment.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\System.Web.WebPages.Razor.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\ru-ru\BundleTransformer.Core.resources.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\ru-ru\BundleTransformer.Less.resources.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\ru-ru\JavaScriptEngineSwitcher.Core.resources.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\bin\ru-ru\MsieJavaScriptEngine.resources.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\obj\Release\pnsms.landing.csprojResolveAssemblyReference.cache
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\obj\Release\pnsms.landing.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.landing\obj\Release\pnsms.landing.pdb
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Resources\refcode.jpg
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\pnsms.landing.dll.config
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\pnsms.landing.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\pnsms.landing.pdb
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Antlr3.Runtime.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\BundleTransformer.Core.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\BundleTransformer.Less.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\EntityFramework.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\EntityFramework.SqlServer.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\JavaScriptEngineSwitcher.Core.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\JavaScriptEngineSwitcher.Msie.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.AspNet.Identity.Core.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Owin.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.Cookies.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.Facebook.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.Google.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.OAuth.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.Twitter.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Practices.ServiceLocation.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.Configuration.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.Mvc.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.WebApi.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Web.Infrastructure.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\MsieJavaScriptEngine.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\MvcPaging.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Newtonsoft.Json.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Owin.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\pnsms.Entities.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\pnsms.Service.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\pnsms.utility.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Repository.Pattern.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Repository.Pattern.Ef6.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Service.Pattern.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\System.Net.Http.Formatting.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\System.Web.Helpers.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\System.Web.Http.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\System.Web.Http.WebHost.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\System.Web.Mvc.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\System.Web.Optimization.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\System.Web.Razor.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\System.Web.WebPages.Deployment.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\System.Web.WebPages.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\System.Web.WebPages.Razor.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\WebActivatorEx.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\WebGrease.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\LinqKit.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Dapper.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Repository.Pattern.Ef6.pdb
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Repository.Pattern.pdb
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Service.Pattern.pdb
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\pnsms.Entities.pdb
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\pnsms.Service.pdb
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\pnsms.utility.pdb
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Antlr3.Runtime.pdb
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\EntityFramework.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\EntityFramework.SqlServer.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.AspNet.Identity.Core.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Owin.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.Cookies.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.Facebook.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.Google.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.OAuth.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.Twitter.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Practices.ServiceLocation.pdb
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Practices.ServiceLocation.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.Configuration.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.Mvc.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.WebApi.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\MvcPaging.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\Newtonsoft.Json.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\System.Net.Http.Formatting.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\System.Web.Helpers.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\System.Web.Http.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\System.Web.Http.WebHost.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\System.Web.Mvc.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\System.Web.Optimization.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\System.Web.Razor.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\System.Web.WebPages.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\System.Web.WebPages.Deployment.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\System.Web.WebPages.Razor.xml
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\ru-ru\BundleTransformer.Core.resources.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\ru-ru\BundleTransformer.Less.resources.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\ru-ru\JavaScriptEngineSwitcher.Core.resources.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\bin\ru-ru\MsieJavaScriptEngine.resources.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\obj\Release\pnsms.landing.csprojResolveAssemblyReference.cache
+E:\pos\POS NEW\pnsms\pnsms.landing\obj\Release\pnsms.landing.dll
+E:\pos\POS NEW\pnsms\pnsms.landing\obj\Release\pnsms.landing.pdb
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Resources\refcode.jpg
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\pnsms.landing.dll.config
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\pnsms.landing.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\pnsms.landing.pdb
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Antlr3.Runtime.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\BundleTransformer.Core.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\BundleTransformer.Less.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\EntityFramework.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\EntityFramework.SqlServer.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\JavaScriptEngineSwitcher.Core.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\JavaScriptEngineSwitcher.Msie.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.AspNet.Identity.Core.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Owin.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.Cookies.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.Facebook.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.Google.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.OAuth.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.Twitter.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Practices.ServiceLocation.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.Configuration.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.Mvc.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.WebApi.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Web.Infrastructure.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\MsieJavaScriptEngine.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\MvcPaging.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Newtonsoft.Json.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Owin.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\pnsms.Entities.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\pnsms.Service.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\pnsms.utility.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Repository.Pattern.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Repository.Pattern.Ef6.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Service.Pattern.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\System.Net.Http.Formatting.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\System.Web.Helpers.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\System.Web.Http.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\System.Web.Http.WebHost.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\System.Web.Mvc.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\System.Web.Optimization.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\System.Web.Razor.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\System.Web.WebPages.Deployment.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\System.Web.WebPages.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\System.Web.WebPages.Razor.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\WebActivatorEx.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\WebGrease.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\LinqKit.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Dapper.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Repository.Pattern.Ef6.pdb
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Repository.Pattern.pdb
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Service.Pattern.pdb
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\pnsms.Entities.pdb
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\pnsms.Service.pdb
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\pnsms.utility.pdb
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Antlr3.Runtime.pdb
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\EntityFramework.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\EntityFramework.SqlServer.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.AspNet.Identity.Core.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Owin.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.Cookies.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.Facebook.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.Google.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.OAuth.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Owin.Security.Twitter.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Practices.ServiceLocation.pdb
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Practices.ServiceLocation.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.Configuration.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.Mvc.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Microsoft.Practices.Unity.WebApi.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\MvcPaging.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\Newtonsoft.Json.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\System.Net.Http.Formatting.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\System.Web.Helpers.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\System.Web.Http.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\System.Web.Http.WebHost.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\System.Web.Mvc.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\System.Web.Optimization.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\System.Web.Razor.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\System.Web.WebPages.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\System.Web.WebPages.Deployment.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\System.Web.WebPages.Razor.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\ru-ru\BundleTransformer.Core.resources.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\ru-ru\BundleTransformer.Less.resources.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\ru-ru\JavaScriptEngineSwitcher.Core.resources.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\bin\ru-ru\MsieJavaScriptEngine.resources.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\obj\Release\pnsms.landing.csprojResolveAssemblyReference.cache
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\obj\Release\pnsms.landing.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.landing\obj\Release\pnsms.landing.pdb

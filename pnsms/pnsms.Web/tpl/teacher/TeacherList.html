@@ -1,0 +1,122 @@
+﻿<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">Employees</h1>
+</div>
+
+<div class="wrapper-md" ng-controller="TeacherListCtrl">
+     
+    <div class=" panel panel-primary" ng-hide="isSearchLoading">
+        <div class="panel-heading bg-primary wrapper-xs">
+            <i class="glyphicon glyphicon-search"></i> Search
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-3" ng-show="VmTeacher.AcademicBranchList.length>1">
+                    <div class="form-group">
+
+                        <select ng-model="VmTeacher.CurrentAcademicBranchId" required class="form-control m-b" ng-options="c.Key as c.Value for c in VmTeacher.AcademicBranchList"></select>
+                    </div>
+                </div>
+                <div ng-class="{'col-sm-10': VmTeacher.AcademicBranchList.length==1,'col-sm-7': VmTeacher.AcademicBranchList.length>1}">
+                    <div class="form-group">
+
+                        <input class="form-control" required data-ng-model="VmTeacher.UserInfo.Name" placeholder="Search text" type="text">
+                    </div>
+                </div>
+
+
+                <div class="col-sm-2 text-right text-center-xs">
+                    <div class="form-group">
+                        <label>&nbsp;</label>
+                        <button type="submit" ng-click="SearchTeacher()" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-search"></i>&nbsp;Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+    <div class="panel panel-default" ng-hide="isLoading">
+
+        <div class="row wrapper">
+            <div class="col-sm-3 m-b-xs">
+               
+                <a href="" class="btn btn-sm btn-info btn-addon" ui-sref="app.teacher"><i class="fa fa-plus fa-fw m-r-xs"></i> ADD NEW</a>
+            </div>
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <input type="text" class="input-sm form-control" ng-change="search()" ng-model="query" placeholder=" search">
+                    <span class="input-group-btn">
+                        <button class="btn btn-sm btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped b-t b-light">
+            <thead>
+                <tr>
+                    <th style="width:55px;">
+                        <span class="TeacherId"> &nbsp;  </span>
+                    </th>
+                    <th><span class="Name">Name&nbsp;<a ng-click="sort_by('Name')"><i class="fa fa-sort"></i></a> </span></th>
+                    <th><span class="TeacherId">Device Id&nbsp;<a ng-click="sort_by('TeacherId')"><i class="fa fa-sort"></i></a> </span></th>
+                    <!--<th><span class="AcademicBranch">Branch&nbsp; <a ng-click="sort_by('AcademicBranch')"><i class="fa fa-sort"></i></a> </span></th>-->
+                    <th><span class="Designation">Designation &nbsp;<a ng-click="sort_by('Designation')"><i class="fa fa-sort"></i></a></span></th>
+                    <th> IsActive</th>
+                    <th style="width:100px;">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr ng-repeat="item in pagedItems[currentPage]" ng-include='getTemplate(item)'></tr>
+
+            </tbody>
+        </table>
+        <footer class="panel-footer">
+            <div class="row">
+                <div class="col-sm-4 hidden-xs">
+                    <small class="text-muted inline m-t-sm m-b-sm">showing {{currentPage*itemsPerPage+1}}-{{(currentPage*(itemsPerPage)+itemsPerPage)>items.length?items.length:(currentPage*(itemsPerPage)+itemsPerPage)}} of {{items.length}} items</small>
+                </div>
+
+                <div class="col-sm-8 text-right text-center-xs">
+                    <ul class="pagination pagination-sm m-t-none m-b-none ng-isolate-scope ng-valid">
+                        <li ng-class="{disabled: currentPage == 0}">
+                            <a href ng-click="prevPage()"><i class="fa fa-chevron-left"></i></a>
+                        </li>
+                        <li ng-repeat="n in range(pagedItems.length)"
+                            ng-class="{active: n == currentPage}"
+                            ng-click="setPage()">
+                            <a href ng-bind="n + 1">1</a>
+                        </li>
+                        <li ng-class="{disabled: currentPage == pagedItems.length - 1}">
+                            <a href ng-click="nextPage()"><i class="fa fa-chevron-right"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <script type="text/ng-template" id="display">
+
+        <td><span><img width="35px" onerror="$(this).attr('src', 'img/404_error_image.png');" ng-src="{{ apiUrlPrefix+'api/image/refcode?id='+ item.TeacherId +'&refcode=Userinfo_Photo_Small'}}" /></span></td>
+        <td><span><a ui-sref="app.teacherdetails({teacherId:item.TeacherId})" class="text-primary text-md">{{item.Name}}</a>  </span></td>
+        <!--<td><span data-ng-hide="editMode">{{item.AcademicBranch}}</span></td>-->
+        <td><span data-ng-hide="editMode">{{item.TeacherId}}</span></td>
+        <td><span data-ng-hide="editMode">{{item.Designation}}</span></td>
+        <td><span data-ng-hide="editMode">{{item.IsActive}}</span></td>
+        <td>
+
+            <a ui-sref="app.teacheredit({teacherId:item.TeacherId})" class="text-primary text-md"><i class="fa fa-pencil "></i></a> &nbsp;&nbsp;
+            <a ui-sref="app.teacherdetails({teacherId:item.TeacherId})" class="text-primary text-md"><i class="fa fa-file-archive-o "></i></a>
+        </td>
+
+
+    </script>
+
+
+
+</div>
+

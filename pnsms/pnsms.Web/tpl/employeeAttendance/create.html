@@ -1,0 +1,82 @@
+﻿<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">New Employee Attendance</h1>
+</div>
+<div class="wrapper-md">
+    <!-- toaster directive -->
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <!-- attendance directive -->
+    <div class="panel panel-default">
+        <form role="form" name="step1" ng-submit="AddEmployeeAttendance()" ng-controller="EmployeeAttendanceCreateCtrl" method="post">
+            <div class="form-validation">
+                <div class="row wrapper">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Branch</label>
+                            <select ng-model="VmUserAttendance.UserAttendance.AcademicBranchId" ng-required="true" data-ng-change="getTeachersBranchWise()" class="form-control m-b" ng-options="c.Key as c.Value for c in VmUserAttendance.UserAttendance.AcademicBranchList"></select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Date</label>
+                            <div ng-controller="DatepickerDemoCtrl">
+                                <div class="input-group ">
+                                    <input type="text" value="{{VmUserAttendance.UserAttendance.AttendanceDate | date:'dd-MMMM-yyyy'}}" class="form-control" datepicker-popup="{{format}}" ng-model="VmUserAttendance.UserAttendance.AttendanceDate" is-open="opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+            <div class="row wrapper">
+                <div class="col-sm-12">
+                    <div class="table-responsive">
+                        <table class="table table-striped b-t b-light" ng-table>
+                            <thead>
+                                <tr>
+                                    <th>PIN</th>
+                                    <th>Designation</th>
+                                    <th>Name</th>
+                                    <th>In Time</th>
+                                    <th>Out Time</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody ng-show="VmUserAttendance.AttendanceDetails.length">
+                                <tr ng-repeat="x in VmUserAttendance.AttendanceDetails">
+                                    <td>{{ x.UserPin }}</td>
+                                    <td>{{ x.UserDesignation }}</td>
+                                    <td><input type="hidden" value="{{ x.UserInfoId }}">{{ x.UserName }}</td>
+                                    <td>
+                                        <div ng-controller="TimepickerSimpleDemoCtrl" class="m-b-lg">
+                                            <timepickersimple ng-model="x.InTime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"> </timepickersimple>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div ng-controller="TimepickerSimpleDemoCtrl" class="m-b-lg">
+                                            <timepickersimple ng-model="x.OutTime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"> </timepickersimple>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class=" btn-group" ng-repeat="xx in x.AttendanceTypes">
+                                            <label ng-class="{{xx.AttTypeId}}=={{x.AttendanceTypeId}} ? 'active {{xx.colorCode}}' : '{{xx.colorCode}}'" btn btn-radio="'{{ xx.AttTypeId }}'" ng-model="x.AttendanceTypeId" class="btn btn-sm ng-untouched ng-valid ng-dirty"><i class="fa fa-check text-active"></i>{{ xx.Flag }}</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-sm-6 pull-left">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">Save</button>
+                            <button class="btn" ui-sref="app.employeeAttendance.list">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

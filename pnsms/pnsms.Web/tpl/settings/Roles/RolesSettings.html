@@ -1,0 +1,29 @@
+﻿<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="SettingsCtrl">
+    <div class="col w bg-light dk b-r bg-auto">
+        <!--<div class="bg-light lter b-b wrapper-md ng-scope">-->
+            <div class="bg-danger lter b-b wrapper-md ng-scope">
+                <button class="btn btn-sm btn-default pull-right visible-sm visible-xs" ui-toggle-class="show" target="#email-menu"><i class="fa fa-bars"></i></button>
+                <h3 class="m-n font-thin text-dark-dker h3"><i class="fa fa-check-square-o "></i> Roles-Rights</h3>
+            </div>
+        <div class="wrapper hidden-sm hidden-xs" id="email-menu">
+            <ul class="nav nav-pills nav-stacked nav-sm">
+                
+
+                <li ui-sref-active="active">
+                    <a ui-sref="app.rolessettings.Roles">
+                        <span>Roles</span>
+                    </a>
+                </li>
+                <!--<li ui-sref-active="active">
+                    <a ui-sref="app.rolessettings.rights">
+                        <span>Rights</span>
+                    </a>
+                </li>-->
+             
+            </ul>
+        </div>
+    </div>
+    <div class="col">
+        <div class="fade-in-up" ui-view></div>
+    </div>
+</div>

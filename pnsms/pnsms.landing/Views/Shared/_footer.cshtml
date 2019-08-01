@@ -1,0 +1,201 @@
+﻿<!-- Footer Area Start -->
+<footer>
+    <div class="newsletter-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <a href="~/home/Index" class="footer-logo">
+                        <img src="/image/GetImageById?id=@Sessions.InstituteLogoId&refCode=11" style="width:150px; height:72px" alt="logo">
+                    </a>
+                </div>
+                <div id="process_newsletter_1" class="col-md-9">
+                    <span class="newsletter-title">Subscribe School Update</span>
+                    <form class="newsletter-from">
+                        <i class="icon-envelope4"></i>
+                        <input type="text" placeholder="Enter Valid Email Address">
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer-widget">
+        <div class="container">
+            <div class="row">
+                <div class="widget col-md-3 col-sm-6 widget_text">
+                    <div class="widget-section-title">
+                        <h4>Contact Info</h4>
+                    </div>
+                    <ul class="address">
+                        <li>
+                          
+                            @MvcHtmlString.Create(@Sessions.InstituteContactText)
+                        </li>
+                       
+                    </ul>
+                </div>
+                @*<div class="widget col-md-3 col-sm-6 widget_gallery">
+                    <div class="widget-section-title">
+                        <h4>Gallery</h4>
+                    </div>
+                 
+                    @{Html.RenderAction("GetPartialGallery", "Gallery");}
+                </div>*@
+                <div class="widget col-md-4 col-sm-6 widget_categories">
+                    <div class="widget-section-title">
+                        <h4>Usefull Links</h4>
+                    </div>
+                    <ul>
+                       
+                        @MvcHtmlString.Create(@Sessions.InstituteUsefulLinkText)
+                    </ul>
+                </div>
+                <div class="widget col-md-5 col-sm-6 widget_twitter">
+                    <div class="section-fullwidth contact-detail">
+
+
+                        <div class="col-md-12">
+                            <div class="cs-plain-form cs_form_styling col-md-12">
+                                <div class="form-style">
+                                    <h4>Quick Inquiry</h4><form name="frm239303238" id="frm239303238" action="javascript:cs_contact_frm_submit(239303238)" class="comment-form">
+                                        <label>
+                                            <i class="icon-book8"></i>
+                                            <input type="text" width="93%" name="contact_name" placeholder="Enter Name" required="">
+
+                                        </label>
+                                        <label>
+                                            <i class="icon-mortar-board"></i>
+                                            <input type="text" name="contact_email" placeholder="Email Address" required="">
+                                        </label>
+                                        <label>
+                                            <i class="icon-globe4"></i>
+                                            <input type="text" name="subject" placeholder="Subject" required="">
+                                        </label>
+                                        <label class="textaera-sec">
+                                            <textarea placeholder="Enter Message" id="comment_mes" name="contact_msg" rows="4" cols="39"></textarea>
+                                        </label>
+                                        <label class="form-submit">
+                                            <input type="submit" name="submit" value="Submit">
+                                        </label>
+                                    </form><div id="loading_div239303238"></div><div id="message239303238" style="display:none;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="copyright">
+                        <p>&copy; @DateTime.Now.Year SHIKKHAFOR ALL RIGHTS RESERVED <a class='cscolor' href='http://www.shikkhaforall.com/' target="_blank">SHIKKHAFOR</a></p>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <span id="backtop"><i class="icon-arrow-up9"></i></span>
+                    <div class="social-media">
+                        <h6>Follow us</h6>
+                        <ul>
+                            <li>
+                                <a class="icon-facebook2 " data-original-title="Facebook" href="https://www.facebook.com/shikkhaforall/?ref=bookmarks/" target="_blank"></a>
+                            </li>
+                            <li>
+                                <a class="icon-dribbble7 " data-original-title="Dribbble" href="https://dribbble.com/" target="_blank"></a>
+                            </li>
+                            <li>
+                                <a class="icon-twitter2 " data-original-title="Twitter" href="https://www.twitter.com/" target="_blank"></a>
+                            </li>
+                            <li>
+                                <a class="icon-behance2 " data-original-title="Behance" href="https://www.behance.net/" target="_blank"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer Area End -->
+
+
+@*<footer class="site-footer">
+    <div class="top-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-4 col-xs-12 contact-info footer-widget">
+                    <h4 class="footer-widget-title">Contact Info</h4>
+                    
+                    @MvcHtmlString.Create(@Sessions.InstituteContactText)
+                </div> 
+                <div class="col-md-5 col-sm-8 col-xs-12 footer-widget">
+                    <h4 class="footer-widget-title">Stay in touch with us</h4>
+                    <ul class="footer-social">
+                        <li><a class="fa fa-facebook" title="" data-toggle="tooltip" href="#" data-original-title="Facebook"></a></li>
+                        <li><a class="fa fa-twitter" title="" data-toggle="tooltip" href="#" data-original-title="Twitter"></a></li>
+                        <li><a class="fa fa-linkedin" title="" data-toggle="tooltip" href="#" data-original-title="Linkedin"></a></li>
+                        <li><a class="fa fa-flickr" title="" data-toggle="tooltip" href="#" data-original-title="Flickr"></a></li>
+                        <li><a class="fa fa-youtube" title="" data-toggle="tooltip" href="#" data-original-title="Youtube"></a></li>
+                        <li><a class="fa fa-rss" title="" data-toggle="tooltip" href="#" data-original-title="RSS"></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-sm-12 col-xs-12 footer-widget">
+                    
+                </div> 
+            </div> 
+        </div>
+    </div> 
+    <div class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 footer-widget">
+                    <h4 class="footer-widget-title">Usefull Links</h4>
+                    @MvcHtmlString.Create(@Sessions.InstituteUsefulLinkText)
+                </div> <!-- /.col-md-3 -->
+                <div class="col-md-3 col-sm-6 footer-widget">
+                    <h4 class="footer-widget-title">Contact Info</h4>
+
+                    @MvcHtmlString.Create(@Sessions.InstituteContactText)
+                </div> <!-- /.col-md-3 -->
+                <div class="col-md-2 col-sm-6 footer-widget">
+                    <h4 class="footer-widget-title">Quick Links</h4>
+                    <ul>
+                        <li>@Html.ActionLink("Home", "Index", "Home", new { }, null) </li>
+                        <li>@Html.ActionLink("Notices", "GetAllWithGrid", "Notice", new { }, null)</li>
+                        <li>@Html.ActionLink("News & Events", "GetAllWithGrid", "Event", new { }, null)</li>
+                        <li>@Html.ActionLink("Gallery", "GetAllGallery", "Gallery", new { }, null)</li>
+                        <li>@Html.ActionLink("Contact", "Create", "ContactUS", new { IsSuccess = false }, null)</li>
+                    </ul>
+                </div> <!-- /.col-md-2 -->
+                <div class="col-md-4 col-sm-6 footer-widget">
+                   
+                </div> <!-- /.col-md-4 -->
+            </div> <!-- /.row -->
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <a href="http://projuktinext.com" target="_blank">
+                            projuktinext
+                        </a>
+                        © 2015
+                    |
+                        <i class="fa fa-globe"></i><a href="http://projuktinext.com" target="_blank">
+                            www.projuktinext.com
+                        </a>
+                    </div> <!-- /.col-md-6 -->
+                    <div class="col-md-6 col-sm-6">
+                        <div class="credits">
+                            <i class="fa fa-envelope"></i>&nbsp;info@projuktinext.com
+                            |
+                            <i class="fa fa-facebook-square"></i>&nbsp;<a href="http://facebook.com/projuktinext" target="_blank">/projuktinext</a>
+                        </div>
+                    </div> <!-- /.col-md-6 -->
+                    
+                    </div> <!-- /.row -->
+            </div> <!-- /.copyright -->
+        </div> <!-- /.container -->
+    </div> <!-- /.main-footer -->
+</footer>
+<a class="fa fa-angle-up" id="top-link" href="#top" style="display: inline;"></a>*@

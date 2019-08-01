@@ -1,0 +1,85 @@
+﻿<div class="bg-details b-b wrapper-sm text-primary-dker">
+    <h1 class="m-n font-thin h3"><i class="icon-credit-card "></i> &nbsp; Update Mobile Payment</h1>
+</div>
+ <div class="wrapper-md">
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+
+    <div class="panel wrapper" ng-hide="isLoading">
+        <div class="m-b">     
+            <form role="form" name="step1" ng-controller="MobilePaymentEditCtrl" ng-submit="UpdateMobilePayment()" class="form-validation" method="post">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Student PIN:</label>
+                            <div class="col-sm-10">
+                                <input data-ng-model="mPaymentModel.studentPin" value="{{mPaymentModel.studentPin}}" type="text" class="form-control m-b">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Payment Type: </label>
+                            <div class="col-sm-10">
+                                <select ng-model="mPaymentModel.PaymentTypeId" class="form-control m-b" ng-required="true" ng-options="c.Key as c.Value for c in mPaymentModel.PaymentTypeList">
+                                    <option value="">-- Select Payment Type --</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Mobile No:</label>
+                            <div class="col-sm-10">
+                                <input data-ng-model="mPaymentModel.MobileNo" value="{{mPaymentModel.MobileNo}}" ng-required="true" type="text" class="form-control m-b">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Transaction Id:</label>
+                            <div class="col-sm-10">
+                                <input data-ng-model="mPaymentModel.TransactionId" value="{{mPaymentModel.TransactionId}}" ng-required="true" type="text" class="form-control m-b">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">Transaction Date:</label>
+                            <div class="col-sm-10">
+                                <div ng-controller="DatepickerDemoCtrl">
+                                    <div class="input-group ">
+                                        <input type="text" value="{{mPaymentModel.TransactionDate | date:'dd-MMMM-yyyy'}}" class="form-control m-b" datepicker-popup="{{format}}" ng-model="mPaymentModel.TransactionDate" is-open="opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">Payment Amount:</label>
+                            <div class="col-sm-10">
+                                <input data-ng-model="mPaymentModel.Payment" value="{{mPaymentModel.Payment}}" ng-required="true" type="text" class="form-control m-b">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom:10px;">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">Update</button>
+                            <button type="submit" ui-sref="app.mobilepayment.list" class="btn btn-warning">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

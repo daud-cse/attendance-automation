@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eshkul </title>
+    <link href="~/Content/image/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    @Styles.Render("~/bundles/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body class="horizontal-nav " style="padding-top:0px;margin-top:5px;">
+    @Html.Partial("_header")
+
+
+    <div class="containerMain">
+        @RenderBody()
+    </div>
+    @Html.Partial("_footer")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+        $("#document").ready(function () {
+            $("#threads,#comments,#users").niceScroll({ horizrailenabled: false, railoffset: { left: 0 } });
+        });
+    </script>
+</body>
+</html>

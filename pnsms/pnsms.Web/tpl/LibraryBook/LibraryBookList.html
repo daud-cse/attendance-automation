@@ -1,0 +1,215 @@
+﻿<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">Library Book</h1>
+</div>
+
+<div class="wrapper-md" ng-controller="LibraryBookCtrl">
+    <!-- toaster directive -->
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <!-- / toaster directive -->
+    <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+    <div class="panel panel-default" ng-show="isNew">
+        <div class="panel-heading">
+            <span class="h4" ng-show="!LibraryBook.Id">New Book</span>
+            <span class="h4" ng-hide="!LibraryBook.Id">Book: {{LibraryBook.Name}}</span>
+        </div>
+        <form name="newform" class="form-validation" ng-submit="Add(LibraryBook)">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-4 form-group">
+                        <label>Name </label>
+                        <input class="form-control" data-ng-model="LibraryBook.Name" required placeholder="Name" type="text">
+                    </div>
+                    <div class="col-lg-4 form-group">
+                        <label>Quantity </label>
+                        <input class="form-control" data-ng-model="LibraryBook.Quantity" placeholder="Quantity" type="text">
+                    </div>
+                    <div class="col-lg-4 form-group">
+                        <label>ISBN </label>
+                        <input class="form-control" data-ng-model="LibraryBook.ISBN" placeholder="Quantity" type="text">
+                    </div>
+                </div>
+                 
+                 
+
+                <div class="form-group">
+                    <label>Authors </label>
+                    <progressbar ng-show="authorLoading" class="progress-striped active progress-xs m-b-sm" value="100" type="warning"> </progressbar>
+                    <div ng-hide="authorLoading" class="form-control-static input-group">
+
+                        <ui-select multiple ng-model="multipleDemo.selectedPeopleWithGroupBy" theme="bootstrap" ng-disabled="disabled">
+                            <ui-select-match placeholder="Select authors...">{{$item.Name}} </ui-select-match>
+                            <ui-select-choices group-by="someGroupFn" repeat="person in LibraryBookAuthores | propsFilter: {Id: $select.search,Name: $select.search}">
+                                <div ng-bind-html="person.Name | highlight: $select.search"></div>
+                                <!--<small>
+                    Name: {{person.Name}}
+                    Description: <span ng-bind-html="''+person.Name | highlight: $select.search"></span>
+                </small>-->
+                            </ui-select-choices>
+                        </ui-select>
+                        <!--<a href="" class="btn btn-sm btn-info " data-ng-click="AddNewAuthor()"><i class="fa fa-plus fa-fw m-r-xs"></i></a>-->
+                        <span class="input-group-btn">
+                            <button type="button" ng-click="AddNewAuthor()" class="btn btn-success"><i class="fa fa-plus fa-fw m-r-xs"></i></button>
+                        </span>
+                    </div>
+                    
+                </div>
+                <div class="form-group">
+
+                    <label class="i-checks m-b-none">
+                        <input type="checkbox" data-ng-model="LibraryBook.IsActive"> <i></i>
+                    </label>
+                    <label>Active </label>
+                </div>
+
+
+            </div>
+            <footer class="panel-footer   bg-light lter">
+                <div class="row">
+                    <div class="col-sm-2 ">
+                        <a data-ng-click="isNew=false;" class="btn btn-default pull-left"><i class="icon-action-undo"></i> &nbsp;Back to List</a>
+
+                    </div>
+                    <div class="col-sm-2 pull-right">
+                        <button type="submit" class="btn btn-primary pull-right" ng-disabled="newform.$invalid" ng-hide="LibraryBook.Id>0"><i class="glyphicon glyphicon-floppy-saved"></i>&nbsp;Save</button>
+                        <button type="submit" class="btn btn-primary pull-right" ng-disabled="newform.$invalid" ng-show="LibraryBook.Id>0"><i class="glyphicon glyphicon-floppy-saved"></i>&nbsp;Update</button>
+
+                    </div>
+                </div>
+
+
+
+            </footer>
+        </form>
+    </div>
+
+    <div class="panel panel-default" ng-hide="isNew || isLoading">
+
+        <div class="row wrapper">
+            <div class="col-sm-3 m-b-xs">
+
+                <a href="" class="btn btn-sm btn-info btn-addon" data-ng-click="AddNew()"><i class="fa fa-plus fa-fw m-r-xs"></i> ADD NEW</a>
+            </div>
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <input type="text" class="input-sm form-control" ng-change="search()" ng-model="query" placeholder=" search">
+                    <span class="input-group-btn">
+                        <button class="btn btn-sm btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped b-t b-light">
+            <thead>
+                <tr>
+                    <th style="width:10px;">
+
+                    </th>
+                    <th><span class="Name">Name&nbsp;<a ng-click="sort_by('Name')"><i class="fa fa-sort"></i></a> </span></th>
+
+                    <th><span class="Quantity">Quantity&nbsp; <a ng-click="sort_by('Quantity')"><i class="fa fa-sort"></i></a> </span></th>
+
+                    <th><span class="ISBN">ISBN &nbsp;<a ng-click="sort_by('ISBN')"><i class="fa fa-sort"></i></a></span></th>
+                    <th><span class="IsActive">Status &nbsp;<a ng-click="sort_by('IsActive')"><i class="fa fa-sort"></i></a></span></th>
+                     
+                    <th></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                
+
+                <tr ng-repeat="item in pagedItems[currentPage] | orderBy:sortingOrder:reverse" ng-include="'display'"></tr>
+
+            </tbody>
+        </table>
+        <footer class="panel-footer">
+            <div class="row">
+                <div class="col-sm-4 hidden-xs">
+                    <small class="text-muted inline m-t-sm m-b-sm">showing {{currentPage*itemsPerPage+1}}-{{(currentPage*(itemsPerPage)+itemsPerPage)>items.length?items.length:(currentPage*(itemsPerPage)+itemsPerPage)}} of {{items.length}} items</small>
+                </div>
+
+                <div class="col-sm-8 text-right text-center-xs">
+                    <ul class="pagination pagination-sm m-t-none m-b-none ng-isolate-scope ng-valid">
+                        <li ng-class="{disabled: currentPage == 0}">
+                            <a href ng-click="prevPage()"><i class="fa fa-chevron-left"></i></a>
+                        </li>
+                        <li ng-repeat="n in range(pagedItems.length)"
+                            ng-class="{active: n == currentPage}"
+                            ng-click="setPage()">
+                            <a href ng-bind="n + 1">1</a>
+                        </li>
+                        <li ng-class="{disabled: currentPage == pagedItems.length - 1}">
+                            <a href ng-click="nextPage()"><i class="fa fa-chevron-right"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <script type="text/ng-template" id="display">
+        <td></td>
+        <td><a class="text-primary" data-ng-click=" Edit(item)" tooltip="Edit"> <span>{{item.Name}}</span></a></td>
+        <td><span data-ng-hide="editMode">{{item.Quantity}}</span></td>
+
+        <td><span data-ng-hide="editMode">{{item.ISBN}}</span></td>
+        <td>
+            <i ng-hide="item.IsActive==true" class="fa fa-times text-danger text" tooltip="InActive" title="InActive"></i>
+            <i ng-if="item.IsActive==true" class="fa fa-check text-success" tooltip="Active" title="Active"></i>
+        </td>
+        <td>
+            <a type="submit" data-ng-click=" Edit(item)" tooltip="Edit" class="text-primary pull-right"><i class="fa fa-pencil "></i></a>
+        </td>
+
+    </script>
+    
+</div>
+
+<!--Modal-->
+<script type="text/ng-template" id="myModalContent.html">
+    <div ng-controller="ModalDemoCtrl" class="panel-default b-a no-border">
+        <div class="modal-header dialog-header-info">
+            <button ng-click="cancel()" class="close" type="button">×</button>
+            <h4 class="modal-title ng-binding">
+                <span class="glyphicon glyphicon-check"></span> Author
+            </h4>
+        </div>
+        <div class="modal-body">
+
+            <div class="row">
+                
+                <div class="col-lg-12">
+                    <form role="form" class="form-validation" ng-submit="ok()">
+                       
+                        <div class="row">
+
+
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <h4> Author Name</h4>
+
+                                    <input class="form-control" data-ng-model="selectedAuthor.Name" required placeholder="Name" type="text">
+                                </div>
+                            </div> 
+                        </div>
+                         
+
+                        <div class="row">
+                            <div class="col-sm-12 ">
+                              <button type="submit" class="btn btn-primary pull-right  pull-right">Save</button>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</script>

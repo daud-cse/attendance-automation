@@ -1,0 +1,66 @@
+﻿@model pnsms.landing.Models.LoginViewModel
+
+<div class="page-header">
+    <div class="row">
+        <div class="col-md-6 col-sm-6">
+            <h2 class="page-title">Sign In</h2>
+        </div> <!-- /.col-md-6 -->
+        <div class="col-md-6 col-sm-6 hidden-xs back-home">
+            @Html.ActionLink("← Go back Home", "Index", "Home", new { }, null)
+        </div> <!-- /.col-md-6 -->
+    </div> <!-- /.row -->
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="box-content">
+            <div class="col-md-4">
+                <div id="mc_signup" style="text-align:left;">
+                    @using (Html.BeginForm("Login", "Account", new { returnUrl = "~/Home/Index" }))
+                    {
+                        <div class="full-row">
+                            <label for="yourname">User Name:</label>
+                            <input type="text" name="UserName" id="UserName" required="required">
+                        </div> <!-- /.full-row -->
+
+                        <div class="full-row">
+                            <label for="Password">Password:</label>
+                            <input type="password" name="Password" id="Password" required="required">
+                        </div> <!-- /.full-row -->
+
+                        <div class="full-row">
+                            <label for="Password">&nbsp;</label>
+                            <input type="submit" value="Sign in" name="" class="mc_signup_submit">
+                        </div> <!-- /.full-row -->
+                        <div class="updated">
+                            <label>&nbsp;</label>
+                            @Html.ValidationSummary()
+                        </div><!-- /mc_message -->
+                        <div class="full-row">
+                            <a href="~/Account/ForgotPass" title="click here if you forgot your password">Forgot password?</a>
+                        </div>
+                        <div class="full-row">
+                            <p class="small-text pull-left">you can sign in by your gmail, facebook, twitter, hotmail or outlook account</p>
+                            <p>
+                                <a href="#" title="sign in by Gmail"><img src="~/images/gmail.png"></a>
+                                <a href="#" title="sign in by Facebook"><img src="~/images/fb.png"></a>
+                                <a href="#" title="sign in by Twitter"><img src="~/images/tw.png"></a>
+                                <a href="#" title="sign in by Outlook, Hotmail"><img src="~/images/outlook.png"></a>
+                            </p>
+                            <p></p>
+                        </div> <!-- /.full-row -->
+                        <div class="full-row">
+                            <p class="small-text pull-left"><a href="~/Account/RegisterMobileNo" title="click here to register">Register Here</a> if you don't have account.</p>
+                        </div>
+                    } <!-- /.request-info -->
+
+                </div>
+
+            </div>
+
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+}

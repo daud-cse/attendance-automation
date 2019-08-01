@@ -1,0 +1,55 @@
+﻿<header class="navbar navbar-inverse navbar-fixed-top" role="banner">
+    <a id="leftmenu-trigger" class="tooltips" data-toggle="tooltip" data-placement="right" title="" data-original-title="Toggle Sidebar"></a>
+    @*<a id="rightmenu-trigger" class="tooltips" data-toggle="tooltip" data-placement="left" title="" data-original-title="Toggle Infobar"></a>*@
+
+    <div class="navbar-header pull-left">
+        <span class="label label-danger" id="disconnected"></span>
+
+    </div>
+
+    <ul class="nav navbar-nav pull-right toolbar">
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle username" data-toggle="dropdown">
+                <span class="hidden-xs">@Sessions.UserName.ToString() <i class="fa fa-caret-down"></i></span>
+                <img src="~/Image/GetImage?id=@Sessions.UserId.ToString() &refCode=20 & isThumbnail=true" draggable="false" class="pull-left imageprofile" style="height:15px">
+            </a>
+            <ul class="dropdown-menu userinfo arrow">
+                <li class="username">
+                    <a href="#">
+                        @if (Sessions.UserInfoTypeId.ToString() != "15")
+                        {
+                            <div class="pull-left">
+                                <img src="~/Image/GetImage?id=@Sessions.UserId.ToString()&refCode=20&isThumbnail=true" draggable="false" class="pull-left imageprofile">
+                            </div>
+                        }
+                        <div class="pull-right"><h5>Welcome, @Sessions.UserName.ToString()!</h5></div>
+                    </a>
+                </li>
+                <li class="userlinks">
+
+                    <ul class="dropdown-menu">
+                        @if (Sessions.UserInfoTypeId.ToString() == "11")
+                        {
+                            <li><a href="~/Student/index?studentId=@Sessions.UserId.ToString()">User Profile <i class="pull-right fa fa-pencil"></i></a></li>
+                        }
+                        else if (Sessions.UserInfoTypeId.ToString() == "12")
+                        {
+                            <li><a href="~/Guardian/index?guardianId=@Sessions.UserId.ToString()">User Profile <i class="pull-right fa fa-pencil"></i></a></li>
+                        }
+                        @if (Sessions.UserInfoTypeId.ToString() == "15")
+                        {
+                            <li><a href="~/GlobalUsers/GetGlobaluser?id=@Sessions.UserId.ToString()">User Profile <i class="pull-right fa fa-pencil"></i></a></li>
+                        }
+                        <li><a href="~/UserInfoSecurities/ChangePassword">Change Password <i class="pull-right fa fa-cog"></i></a></li>
+                        <li><a href="#">Help <i class="pull-right fa fa-question-circle"></i></a></li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="/Account/Logout" class="text-right">Sign Out</a>
+                            @*@Html.ActionLink("Logout","Logout","Account")*@
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</header>

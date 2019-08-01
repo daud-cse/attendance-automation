@@ -1,0 +1,124 @@
+﻿<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="SettingsCtrl">
+    <div class="col w bg-light dk b-r bg-auto">
+        <!--<div class="bg-light lter b-b wrapper-md ng-scope">-->
+            <div class="bg-warning lter b-b wrapper-md ng-scope">
+                <button class="btn btn-sm btn-default pull-right visible-sm visible-xs" ui-toggle-class="show" target="#email-menu"><i class="fa fa-bars"></i></button>
+                <h3 class="m-n text-dark-dker font-thin h3"><i class="fa fa-university"></i> Basic Setup</h3>
+            </div>
+        <div class="wrapper hidden-sm hidden-xs" id="email-menu">
+            <ul class="nav nav-pills nav-stacked nav-sm">
+                
+                <li ui-sref-active="active">
+                    <a ui-sref="app.institutesettings.InstituteCurrent">
+                        <span>Basic Setup  </span>
+                    </a>
+                </li>
+                <!--<li ui-sref-active="active">
+                    <a ui-sref="app.institutesettings.AcademicVersion">
+                        <span>Academic Version</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.institutesettings.AcademicShift">
+                        <span>Academic Shift</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.institutesettings.academicSession">
+                        <span>Academic Session</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.institutesettings.AcademicBranch">
+                        <span>Academic Branch</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.institutesettings.academicGroup">
+                        <span>Academic Group</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.institutesettings.academicClass">
+                        <span>Academic Class</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.institutesettings.academicPeriod">
+                        <span>Academic Period</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.institutesettings.academicSection">
+                        <span>Academic Section</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.institutesettings.AcademicClassSectionMapping">
+                        <span> Academic Class SectionMapping</span>
+                    </a>
+                </li>-->
+                <!--<li ui-sref-active="active">
+                    <a ui-sref="app.institutesettings.Colours">
+                        <span>Colours  </span>
+                    </a>
+                </li>-->
+                <li ui-sref-active="active">
+                    <a ui-sref="app.institutesettings.AttendanceType">
+                        <span>Attendance Type  </span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.institutesettings.GuardianType">
+                        <span>Guardian Type </span>
+                    </a>
+                </li>
+               
+                <li ui-sref-active="active">
+                    <a ui-sref="app.institutesettings.EducationalQualification">
+                        <span>Edu-Qualification</span>
+                    </a>
+                </li>
+                <!--<li ui-sref-active="active">
+                    <a ui-sref="app.institutesettings.Testimonial">
+                        <span>Testimonial</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.institutesettings.CoCurricularActivity">
+                        <span>CoCurricularActivity</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.institutesettings.Scholarship">
+                        <span>Scholarships</span>
+                    </a>
+                </li>-->
+                <!--<li ui-sref-active="active">
+                    <a ui-sref="app.institutesettings.Certificate">
+                        <span>Certificate</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.institutesettings.CertificatePrintType">
+                        <span>Certificate Print Type</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.institutesettings.IncomeHead">
+                        <span>Income Head</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.institutesettings.ExpenseHead">
+                        <span>Expense Head</span>
+                    </a>
+                </li>-->
+
+            </ul>
+        </div>
+    </div>
+    <div class="col">
+        <div class="fade-in-up"  ui-view></div>
+    </div>
+</div>

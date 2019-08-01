@@ -1,0 +1,27 @@
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Service.Pattern\bin\Release\Service.Pattern.dll.config
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Service.Pattern\bin\Release\Service.Pattern.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Service.Pattern\bin\Release\Service.Pattern.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Service.Pattern\bin\Release\Repository.Pattern.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Service.Pattern\bin\Release\System.Net.Http.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Service.Pattern\bin\Release\Repository.Pattern.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Service.Pattern\obj\Release\Service.Pattern.csprojResolveAssemblyReference.cache
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Service.Pattern\obj\Release\Service.Pattern.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Service.Pattern\obj\Release\Service.Pattern.pdb
+E:\pos\POS NEW\Source\Service.Pattern\bin\Release\Service.Pattern.dll.config
+E:\pos\POS NEW\Source\Service.Pattern\bin\Release\Service.Pattern.dll
+E:\pos\POS NEW\Source\Service.Pattern\bin\Release\Service.Pattern.pdb
+E:\pos\POS NEW\Source\Service.Pattern\bin\Release\Repository.Pattern.dll
+E:\pos\POS NEW\Source\Service.Pattern\bin\Release\System.Net.Http.dll
+E:\pos\POS NEW\Source\Service.Pattern\bin\Release\Repository.Pattern.pdb
+E:\pos\POS NEW\Source\Service.Pattern\obj\Release\Service.Pattern.csprojResolveAssemblyReference.cache
+E:\pos\POS NEW\Source\Service.Pattern\obj\Release\Service.Pattern.dll
+E:\pos\POS NEW\Source\Service.Pattern\obj\Release\Service.Pattern.pdb
+E:\DeepPresent Attendance\deeppresent\Source\Service.Pattern\bin\Release\Service.Pattern.dll.config
+E:\DeepPresent Attendance\deeppresent\Source\Service.Pattern\bin\Release\Service.Pattern.dll
+E:\DeepPresent Attendance\deeppresent\Source\Service.Pattern\bin\Release\Service.Pattern.pdb
+E:\DeepPresent Attendance\deeppresent\Source\Service.Pattern\bin\Release\Repository.Pattern.dll
+E:\DeepPresent Attendance\deeppresent\Source\Service.Pattern\bin\Release\System.Net.Http.dll
+E:\DeepPresent Attendance\deeppresent\Source\Service.Pattern\bin\Release\Repository.Pattern.pdb
+E:\DeepPresent Attendance\deeppresent\Source\Service.Pattern\obj\Release\Service.Pattern.csprojResolveAssemblyReference.cache
+E:\DeepPresent Attendance\deeppresent\Source\Service.Pattern\obj\Release\Service.Pattern.dll
+E:\DeepPresent Attendance\deeppresent\Source\Service.Pattern\obj\Release\Service.Pattern.pdb

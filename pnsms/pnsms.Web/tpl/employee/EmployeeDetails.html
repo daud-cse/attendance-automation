@@ -1,0 +1,233 @@
+﻿<div ng-controller="EmployeeDetailsCtrl">
+    <div class="bg-light lter b-b wrapper-md">
+        <h1 class="m-n font-thin h3">Employee: {{VmEmployee.UserInfo.Name}}<button class="btn btn-sm btn-warning pull-right " type="button" ng-click="Print()"><span class="text-dark"><i class="fa fa-print"></i> Print</span> </button></h1>
+    </div>
+
+    <div class="wrapper-md" >
+
+        <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+        <!--User info-->
+        <form role="form" class="form-validation" ng-hide="isLoading">
+            <div class="panel panel-default" id="myDiv">
+
+                <div class="panel-body">
+
+                    <div class="row">
+
+                        <div class="col-sm-3">
+                            <div class="inline bg-white wrapper-sm b-a  pull-right">
+                                <div class="bg-light">
+                                    <img onerror="$(this).attr('src', 'img/404_error_image.png');" style="border: solid 1px gray" ng-src="{{ProfileImage}}" width="100px" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="m-l-md">
+                                <div class="clearfix m-b-md">
+
+                                    <div class="clear">
+                                        <h3 class="m-t-none text-black">{{VmEmployee.UserInfo.Name}}</h3>
+
+                                        <span>Designation: {{(VmEmployee.UserInfo.Employee.DesignationList| filter:{Key:VmEmployee.UserInfo.Employee.DesignationId})[0].Value }},</span>
+                                        <span>Department: {{(VmEmployee.UserInfo.Employee.DepartmentList| filter:{Key:VmEmployee.UserInfo.Employee.DepartmentId})[0].Value }}</span>
+                                        <br />
+                                        <span>Branch: </span><span ng-repeat="bid in VmEmployee.UserInfo.Employee.AcademicBranches">{{(VmEmployee.UserInfo.Employee.AcademicBranchList| filter:{Key:bid})[0].Value }}{{ $last ? '' : ','}} &nbsp;</span>
+                                        <span ng-hide="!VmEmployee.UserInfo.Employee.MaritalStatusId">Marital Status: {{(VmEmployee.UserInfo.Employee.MaritalStatusList| filter:{Key:VmEmployee.UserInfo.Employee.MaritalStatusId})[0].Value }}</span>
+                                        <br />
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="line-dashed b-b"></div>
+                    <div class="row">
+
+                        <div class="form-horizontal">
+                            <div class="form-group m-b-sm" style="margin: 0px">
+                                <label class="col-sm-2 control-label">Father Name</label>
+                                <div class="col-sm-4">
+                                    <p class="form-control-static">{{VmEmployee.UserInfo.Employee.FatherName}}</p>
+                                </div>
+                                <label class="col-sm-2 control-label">Mother Name</label>
+                                <div class="col-sm-4">
+                                    <p class="form-control-static">{{VmEmployee.UserInfo.Employee.MotherName}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="line-dashed b-b"></div>
+                    <div class="row">
+
+                        <div class="form-horizontal">
+                            <div class="form-group m-b-sm" style="margin: 0px">
+                                <label class="col-sm-2 control-label">Gender</label>
+                                <div class="col-sm-4">
+                                    <p ng-hide="!VmEmployee.UserInfo.GenderId" class="form-control-static">{{(VmEmployee.UserInfo.GenderList| filter:{Key:VmEmployee.UserInfo.GenderId})[0].Value }}</p>
+                                </div>
+                                <label class="col-sm-2 control-label">Date of Birth</label>
+                                <div class="col-sm-4">
+                                    <p class="form-control-static">{{VmEmployee.UserInfo.DOB | date:"MM-dd-yyyy" }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="line-dashed b-b"></div>
+                    <div class="row">
+
+                        <div class="form-horizontal">
+                            <div class="form-group m-b-sm" style="margin: 0px">
+                                <label class="col-sm-2 control-label">SSN</label>
+                                <div class="col-sm-4">
+                                    <p class="form-control-static">{{VmEmployee.UserInfo.SSN}}</p>
+                                </div>
+                                <label class="col-sm-2 control-label">PassportNo</label>
+                                <div class="col-sm-4">
+                                    <p class="form-control-static">{{VmEmployee.UserInfo.PassportNo}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="line-dashed b-b"></div>
+                    <div class="row">
+                        <div class="form-horizontal">
+                            <div class="form-group m-b-sm" style="margin: 0px">
+                                <label class="col-sm-2 control-label">Religion</label>
+                                <div class="col-sm-4">
+                                    <p ng-hide="!VmEmployee.UserInfo.ReligionId" class="form-control-static">{{(VmEmployee.UserInfo.ReligionList| filter:{Key:VmEmployee.UserInfo.ReligionId})[0].Value }}</p>
+                                </div>
+                                <label class="col-sm-2 control-label">Nationality</label>
+                                <div class="col-sm-4">
+                                    <p ng-hide="!VmEmployee.UserInfo.NationalityId" class="form-control-static">{{(VmEmployee.UserInfo.NationalityList| filter:{Key:VmEmployee.UserInfo.NationalityId})[0].Value }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line-dashed b-b"></div>
+                    <div class="row">
+                        <div class="form-horizontal">
+                            <div class="form-group m-b-sm" style="margin: 0px">
+                                <label class="col-sm-2 control-label">Blood Group</label>
+                                <div class="col-sm-4">
+                                    <p ng-hide="!VmEmployee.UserInfo.BloodGroupId" class="form-control-static">{{(VmEmployee.UserInfo.BloodGroupList| filter:{Key:VmEmployee.UserInfo.BloodGroupId})[0].Value }}</p>
+                                </div>
+                                <label class="col-sm-2 control-label">Email Address</label>
+                                <div class="col-sm-4">
+                                    <p class="form-control-static">{{VmEmployee.UserInfo.EmailAddress }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line-dashed b-b"></div>
+                    <div class="row">
+                        <div class="form-horizontal">
+                            <div class="form-group m-b-sm" style="margin: 0px">
+                                <label class="col-sm-2 control-label">Primary Contact Number</label>
+                                <div class="col-sm-4">
+                                    <p class="form-control-static">{{(VmEmployee.UserInfo.ContactNumber1) }}</p>
+                                </div>
+                                <label class="col-sm-2 control-label">Secondary Contact Number</label>
+                                <div class="col-sm-4">
+                                    <p class="form-control-static">{{(VmEmployee.UserInfo.ContactNumber2) }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line-dashed b-b"></div>
+                    <div class="row">
+                        <div class="form-horizontal">
+                            <div class="form-group m-b-sm" style="margin: 0px">
+                                <label class="col-sm-2 control-label">Google</label>
+                                <div class="col-sm-4">
+                                    <p class="form-control-static">{{(VmEmployee.UserInfo.GoogleId) }}</p>
+                                </div>
+                                <label class="col-sm-2 control-label">Facebook</label>
+                                <div class="col-sm-4">
+                                    <p class="form-control-static">{{(VmEmployee.UserInfo.FacebookId) }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line-dashed b-b"></div>
+                    <div class="row">
+                        <div class="form-horizontal">
+                            <div class="form-group m-b-sm" style="margin: 0px">
+                                <label class="col-sm-2 control-label">Microsoft</label>
+                                <div class="col-sm-4">
+                                    <p class="form-control-static">{{(VmEmployee.UserInfo.MicrosoftId) }}</p>
+                                </div>
+                                <label class="col-sm-2 control-label">Twitter</label>
+                                <div class="col-sm-4">
+                                    <p class="form-control-static">{{(VmEmployee.UserInfo.TwitterId) }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line-dashed b-b"></div>
+                    <div class="row">
+                        <div class="form-horizontal">
+                            <div class="form-group m-b-sm" style="margin: 0px">
+                                <label class="col-sm-2 control-label">Roles:</label>
+                                <div class="col-sm-8">
+                                    <p class="form-control-static">
+                                        <span ng-repeat="bid in VmEmployee.UserInfo.UserRoles">{{(VmEmployee.UserInfo.RoleList| filter:{Key:bid})[0].Value }} {{ $last ? '' : ','}} &nbsp;</span>
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Address info-->
+                    <div ng-repeat="address in VmEmployee.Addresses">
+
+                        <div class="line-dashed b-b"></div>
+                        <div class="row">
+                            <div class="form-horizontal">
+                                <div class="form-group m-b-sm" style="margin: 0px">
+                                    <label class="col-sm-2 control-label"> {{(VmEmployee.SingleAddresses.AddressTypeList| filter:{Key:address.AddressTypeId})[0].Value }} Address</label>
+                                    <div class="col-sm-8">
+                                        <p class="form-control-static">
+                                            {{address.AddressBody}},
+                                            <span ng-hide="!address.ZipCode">Zip Code: {{address.ZipCode }},</span>
+                                            <span ng-hide="!address.DistrictOrStateId"> District/State: {{(VmEmployee.DistrictOrStateList| filter:{Id:address.DistrictOrStateId})[0].Name }},</span>
+                                            <span ng-hide="!address.DistrictOrStateId"> Country: {{(VmEmployee.CountryList| filter:{Key:(VmEmployee.DistrictOrStateList | filter:{Id: address.DistrictOrStateId})[0].CountryId })[0].Value   }}</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="col-sm-2 ">
+                            <a ui-sref="app.employeelist" class="btn btn-default pull-left"><i class="icon-action-undo"></i> &nbsp;Back to List</a>
+
+                        </div>
+                        <div class="col-sm-2   pull-right">
+                            <a ui-sref="app.employeeedit({employeeId:VmEmployee.UserInfo.Id})" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-floppy-saved"></i>&nbsp;Edit</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+</div>

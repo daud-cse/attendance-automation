@@ -1,0 +1,175 @@
+﻿
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">Partner Registration</h1>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading font-bold">
+        Basic Information
+    </div>
+
+
+    <div class="wrapper-md" ng-controller="SettingsPartnerCtrl" uploader="uploader">
+        <div class="panel-body">
+            <form class="form-horizontal" ng-submit="saveSubmit()" method="post">
+                <input type="text" ng-show="false" data-ng-model="user.Id" value="{{user.Id}}" />
+                <input type="text" ng-show="false" data-ng-model="user.IsActive" value="{{user.IsActive}}" />
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" ng-model="user.Name" placeholder="Enter Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Business Package</label>
+                    <div class="col-sm-4">
+                        <select data-ng-model="user.PackageId" class="form-control m-b">
+                            <option data-ng-repeat="package in user.PackageList" value="{{package.Key}}">{{package.Value}}</option>
+                        </select>
+                    </div>
+                    <label class="col-sm-1 control-label">Currency</label>
+                    <div class="col-sm-5">
+                        <select data-ng-model="user.CurrencyId" class="form-control m-b">
+                            <option data-ng-repeat="currency in user.CurrencyList" value="{{currency.Key}}">{{currency.Value}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Country</label>
+                    <div class="col-sm-4">
+                        <select data-ng-model="user.CountryId" class="form-control m-b" data-ng-change="getCityOrState()">
+                            <option data-ng-repeat="Country in user.CountryList" value="{{Country.Key}}">{{Country.Value}}</option>
+                        </select>
+                    </div>
+                    <label class="col-sm-1 control-label">City/State</label>
+                    <div class="col-sm-5">
+                        <select data-ng-model="user.CityOrStateId" class="form-control m-b">
+                            <option data-ng-repeat="City in user.CityOrStateList" value="{{City.Key}}">{{City.Value}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Logo input</label>
+                    <div class="col-sm-10">
+                        <!--<input tabindex="-1" style="position: absolute; clip: rect(0px, 0px, 0px, 0px);"
+                               id="filestyle-0"
+                               ui-jq="filestyle"
+                               data-icon="false"
+                               data-classbutton="btn btn-default"
+                               data-classinput="form-control inline v-middle input-s"
+                               data-ng-model="user.LogoUrl"
+                               nv-file-select="" uploader="uploader" multiple
+                               type="file">-->
+
+                        <input type="file" nv-file-select="" uploader="uploader" multiple />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+
+                    <div class="wrapper-md">
+                        <table class="table bg-white-only b-a">
+                            <thead>
+                                <tr>
+                                    <th width="50%">Name</th>
+                                    <th>Image</th>
+                                    <th ng-show="uploader.isHTML5">Size</th>
+                                    <th ng-show="uploader.isHTML5">Progress</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in uploader.queue">
+                                    <td><strong>{{ item.file.name }}</strong></td>
+                                    <td><div ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 100 }"></div></td>
+                                    <td ng-show="uploader.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td>
+                                    <td ng-show="uploader.isHTML5">
+                                        <div class="progress progress-sm m-b-none m-t-xs">
+                                            <div class="progress-bar bg-info" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <span ng-show="item.isSuccess" class="text-success"><i class="glyphicon glyphicon-ok"></i></span>
+                                        <span ng-show="item.isCancel" class="text-warning"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                                        <span ng-show="item.isError" class="text-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                                    </td>
+                                    <td nowrap>
+                                        <button type="button" class="btn btn-default btn-xs" ng-click="item.remove()">
+                                            Remove
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <a ng-model="showDetails" ng-click="showDetails = ! showDetails" class="col-sm-2 control-label" style="color: #31708f;">Add More Information</a>
+                </div>
+                <div ng-show="showDetails">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">About Partner</label>
+                        <div class="col-sm-10">
+                            <textarea data-ng-model="user.AboutPartner" class="col-lg-6 form-control" placeholder="Enter Partner Details"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Web Address</label>
+                        <div class="col-sm-10">
+                            <input type="text" data-ng-model="user.WebAddress" class="form-control" placeholder="Enter Web Address">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Sub-Domain Address</label>
+                        <div class="col-sm-10">
+                            <input type="text" data-ng-model="user.SubDomain" class="form-control" placeholder="Enter Sub-Domain Address">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Address</label>
+                        <div class="col-sm-10">
+                            <textarea data-ng-model="user.Address" class="form-control" placeholder="Enter Address"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Zip Code</label>
+                        <div class="col-sm-10">
+                            <input type="text" data-ng-model="user.ZipCode" class="form-control" placeholder="Enter Zip Code">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Contact Numbers</label>
+                        <div class="col-sm-10">
+                            <textarea data-ng-model="user.ContactNumbers" class="form-control" placeholder="Enter Contact Numbers"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" data-ng-model="user.EmailAddress" class="form-control" placeholder="Enter Email Address">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+                    <div class="col-sm-10">
+                        <button class="btn btn-sm btn-primary" id="saveSubmit" type="submit">Submit</button>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        Queue progress:
+                        <div class="progress" style="">
+                            <div class="progress-bar" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"></div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+

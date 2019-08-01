@@ -1,0 +1,270 @@
+﻿
+@model pnsms.Entities.ViewModels.VmSearchAttendance
+@{
+    ViewBag.Title = "Teacher Attendance";
+}
+
+<h2>TeacherAttendance</h2>
+@*@using MvcPaging
+    @model MvcPaging.IPagedList<MMS.Entities.Models.Applicant>*@
+
+@*@using MvcPaging
+    @model MMS.Entities.ViewModels.SearchApplicantVM*@
+@*@model MvcPaging.IPagedList<MMS.Entities.Models.Applicant>*@
+@{
+    ViewBag.Title = "Search Attendance";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/dist/css/bootstrap-select.css">
+<script type="text/javascript">
+
+
+
+
+    $(document).ready(function () {
+
+
+
+    });
+
+
+
+</script>
+
+<script src="~/dist/js/bootstrap-select.js"></script>
+@*@section breadcrumb
+    {
+        <li><a href="~/Dashboard/index">Dashboard</a></li>
+        <li>Administration</li>
+        <li class="active">Agent and Applicant Map</li>
+    }*@
+@*@section title
+    {
+        @ViewBag.Title
+    }*@
+
+<style type="text/css">
+    input, select, textarea {
+        max-width: 100%;
+    }
+
+    .backTolist {
+        font-size: 1em;
+        font-weight: normal;
+    }
+
+        .backTolist:hover {
+            text-decoration: none;
+        }
+
+    .fileSets {
+        border: 1px dotted #ddd;
+        margin: 0px 10px 20px 0;
+        padding: 20px 10px 0px 10px;
+    }
+
+    .required:after {
+        content: " *";
+        color: #f00;
+    }
+
+    legend.scheduler-border {
+        width: inherit; /* Or auto */
+        padding: 0 10px; /* To give a bit of padding on the left and right */
+        border-bottom: none;
+    }
+
+    .progress {
+        height: 20px;
+    }
+</style>
+
+@using (Html.BeginForm("TeacherAttendance", "Attendance", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">@ViewBag.Title </h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="form-group">
+
+                    <div class="col-sm-3">
+                        @Html.Label("Institute Name")
+                    </div>
+                    <div class="col-sm-3">
+                        @Html.DropDownListFor(model => model.InstituteId, new SelectList(Model.InstituteList, "Key", "Value", Model.InstituteId), "Select Institute", new { })
+                        @Html.ValidationMessageFor(model => model.InstituteId)
+                    </div>
+                    @*@Html.LabelFor(model => model.ApplicantId, new { @class = "col-sm-1 control-label" })
+                        <div class="col-sm-1">
+                            @Html.TextBoxFor(model => model.ApplicantId, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.ApplicantId)
+                        </div>
+                        @Html.LabelFor(model => model.PassportNo, new { @class = "col-sm-1 control-label" })
+                        <div class="col-sm-2">
+                            @Html.TextBoxFor(model => model.PassportNo, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.PassportNo)
+                        </div>*@
+
+                </div>
+
+                @*<div class="form-group">
+                        @Html.LabelFor(model => model.PreRefApplicantId, new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-1">
+                            @Html.TextBoxFor(model => model.PreRefApplicantId, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.PreRefApplicantId)
+                        </div>
+                        @Html.LabelFor(model => model.LocationId, new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-3">
+                            @Html.DropDownListFor(model => model.LocationId, new SelectList(Model.kvpLocation, "Key", "Value", Model.LocationId), "Select Activity Name", new { @class = "selectpicker show-tick form-control" })
+                            @Html.ValidationMessageFor(model => model.LocationId)
+                        </div>
+                        @Html.LabelFor(model => model.CountryId, new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-2">
+                            @Html.DropDownListFor(model => model.CountryId, new SelectList(Model.kvpCountry, "Key", "Value", Model.CountryId), "Select Country Name", new { @class = "selectpicker show-tick form-control" })
+                            @Html.ValidationMessageFor(model => model.CountryId)
+                        </div>
+
+
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AutoApplicantId, new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-1">
+                            @Html.TextBoxFor(model => model.AutoApplicantId, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.AutoApplicantId)
+                        </div>
+                        @Html.LabelFor(model => model.DivisionId, new { @class = "col-sm-1 control-label" })
+                        <div class="col-sm-2">
+                            @Html.DropDownListFor(model => model.DivisionId, new SelectList(Model.kvpDivision, "Key", "Value", Model.DivisionId), "Select Division", new { id = "ddlDistrict" })
+                            @Html.ValidationMessageFor(model => model.DivisionId)
+                        </div>
+                        @Html.LabelFor(model => model.DistrictId, new { @class = "col-sm-1 control-label" })
+                        <div class="col-sm-2">
+                            @Html.DropDownListFor(model => model.DistrictId, new SelectList(Model.kvpDistrict, "Key", "Value", Model.DistrictId), "Select District", new { id = "ddlDistrict" })
+                            @Html.ValidationMessageFor(model => model.DistrictId)
+                        </div>
+                        @Html.LabelFor(model => model.UpazilaId, new { @class = "col-sm-1 control-label" })
+                        <div class="col-sm-2">
+                            @Html.DropDownListFor(model => model.UpazilaId, new SelectList(Model.kvpUpazila, "Key", "Value", Model.UpazilaId), "Select Upazil", new { @class = "" })
+                            @Html.ValidationMessageFor(model => model.UpazilaId)
+                        </div>
+                    </div>*@
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="btn-toolbar">
+                        <input type="submit" value="Search" class="btn-primary btn" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+}
+
+
+
+
+
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                Date(DD:MM:YY)
+            </th>
+
+            <th>
+                Total Teachers
+            </th>
+            <th>
+                Presents
+            </th>
+            <th>
+
+                Absents
+            </th>
+            <th>
+
+                Others Att.
+            </th>
+            <th>
+                Action
+            </th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in @Model.SearchTeacherAttendanceData.ToList())
+        {
+            <tr>
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.AttendanceDate.Date, "{0:dd/MM/yyyy}")
+                </td>
+                <td>
+                    @(item.PresentCount + @item.AbsentCount)  @*@Html.DisplayFor(modelItem => item.PresentCount+ @item.AbsentCount)*@
+                </td>
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.PresentCount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AbsentCount)
+                </td>
+                <td>
+                    @{
+                        var otherAtt = item.TotalCount - (item.PresentCount + item.AbsentCount);
+
+                        @Html.Display(@otherAtt.ToString())
+                    }
+                </td>
+                <td>
+
+                    @Html.ActionLink("Attendance Deatils", "GetTeacherAttendance", "Attendance", new { id = item.Id }, new { @class = "btn btn-success" }) @*<text>|</text>*@
+
+                    @*@Html.ActionLink("Reports", "GetApplicantDetailsSinglePage", "MPMSReports", new { ApplicantID = item.Id }, new { target = "_blank" })*@
+
+
+                </td>
+            </tr>
+
+                        }
+    <tbody>
+</table>
+@*<div class="pager">
+        @Html.Raw(Html.Pager(
+                new Options
+                {
+                    PageSize = Model.PageSize,
+                    TotalItemCount = Model.TotalItemCount,
+                    CurrentPage = Model.PageNumber,
+                    ItemTexts = new ItemTexts() { Next = "Next", Previous = "Previous" },
+                    ItemIcon = new ItemIcon() { First = "icon-backward", Previous = "icon-chevron-left", Next = "icon-chevron-right", Last = "icon-forward" },
+                    TooltipTitles = new TooltipTitles() { Next = "Next page {0}", Previous = "Previous page {0}", Page = "Go to page {0}" },
+                    Size = Size.normal,
+                    Alignment = Alignment.centered,
+                    IsShowControls = true,
+                    IsShowFirstLast = true,
+                    IsShowPages = true
+                }, new { }))
+        <div class="well">
+            Showing <span class="badge badge-success">@Model.ItemStart</span> to <span class="badge badge-success">@Model.ItemEnd</span>
+            of <span class="badge badge-info">@Model.TotalItemCount</span> entries
+        </div>
+    </div>*@
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/Mask")
+    @Scripts.Render("~/bundles/jqueryval")
+
+
+}

@@ -1,0 +1,71 @@
+﻿<div class="wrapper-md" ng-controller="ResultPublishListCtrl">
+    <!-- toaster directive -->
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <div class="panel panel-primary">
+        <div class="panel-heading wrapper-xs">Search</div>
+        <div class="panel-body">
+            <div class="row">
+                <form role="form" name="step1" class="form-validation" method="post">
+                    <div class="col-sm-4">
+                            <div class="form-group">
+                                <label>Session</label>
+                                <select ng-model="resultPublishWithListModel.DropDownId1" class="form-control m-b" ng-options="c.Key as c.Value for c in resultPublishWithListModel.DropDownList1"></select>
+                            </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary pull-right" ng-click="GetFilterResult()"><i class="glyphicon  glyphicon-search"></i>&nbsp;Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+    <div class="panel panel-default" ng-hide="isLoading">
+        <div class="row wrapper">
+            <div class="col-sm-3 m-b-xs">
+                <button class="btn btn-sm btn-success" ui-sref="app.resultPublish.create">+ ADD NEW</button>
+            </div>
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <input type="text" class="input-sm form-control" ng-change="search()" ng-model="query" placeholder="search">
+                    <span class="input-group-btn">
+                        <button class="btn btn-sm btn-default" type="button">Go!</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped b-t b-light">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in resultPublishWithListModel.SearchData| orderBy:'-Id' | filter:query">
+                    <td>{{ x.Title }}</td>
+                    <td>
+                        <i ng-hide="x.IsActive==true" class="fa fa-times text-danger text" tooltips title="InActive"></i>
+                        <i ng-if="x.IsActive==true" class="fa fa-check text-success" tooltips title="Active"></i>
+                    </td>
+                    <td>
+                        <a ui-sref="app.resultPublish.edit({resultPublishId:x.Id})" class="text-primary text-md" tooltips title="Edit"><i class="fa fa-pencil "></i></a> &nbsp;&nbsp;
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr></tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

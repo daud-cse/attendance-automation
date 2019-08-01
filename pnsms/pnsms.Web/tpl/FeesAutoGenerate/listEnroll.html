@@ -1,0 +1,48 @@
+﻿<div class="bg-info-lter b-b wrapper-sm text-dark-dk">
+    <h3 class="m-n font-thin"><i class="icon-briefcase"></i>&nbsp;Enrollment Fees Generate Config List</h3>
+</div>
+<div class="wrapper-md" ng-controller="FeesEnrollAutoGenerateListCtrl">
+    <!-- toaster directive -->
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+    <div class="panel panel-default" ng-hide="isLoading">
+        <div class="row wrapper">
+            <div class="col-sm-3 m-b-xs">
+                <button class="btn btn-sm btn-success" ui-sref="app.feesAutoGenerate.newEnroll">+ Add New Configuration</button>
+            </div>
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <input type="text" class="input-sm form-control" ng-change="search()" ng-model="query" placeholder="search">
+                    <span class="input-group-btn">
+                        <button class="btn btn-sm btn-default" type="button">Go!</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped b-t b-light">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Remarks</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in listModel.SearchListData| orderBy:'-Id' | filter:query">
+                    <td>{{x.ColumnField1}}</td>
+                    <td>{{x.ColumnField2}}</td>
+                    <td>{{x.ColumnField3}}</td>
+                    <td>
+                        <a ui-sref="app.feesAutoGenerate.editEnroll({feesAutoGenerateId:x.Id})" class="text-primary text-md" tooltips title="Edit"><i class="fa fa-pencil "></i></a>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr></tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

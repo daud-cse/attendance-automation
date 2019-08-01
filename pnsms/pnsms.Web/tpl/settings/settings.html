@@ -1,0 +1,139 @@
+﻿<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="SettingsCtrl">
+    <div class="col w bg-light dk b-r bg-auto">
+        <div class="wrapper b-b bg">
+            <button class="btn btn-sm btn-default pull-right visible-sm visible-xs" ui-toggle-class="show" target="#email-menu"><i class="fa fa-bars"></i></button>
+        </div>
+        <div class="wrapper hidden-sm hidden-xs" id="email-menu">
+            <ul class="nav nav-pills nav-stacked nav-sm">
+               
+                <li ui-sref-active="active">
+                    <a ui-sref="app.settings.PackageList">
+                        <span>Package</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.settings.academicClass">
+                        <span>Academic Class</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.settings.academicGroup">
+                        <span>Academic Group</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.settings.academicSection">
+                        <span>Academic Section</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.settings.academicSession">
+                        <span>Academic Session</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.settings.department">
+                        <span>Department</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.settings.maritalStatus">
+                        <span>Marital Status</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.settings.AcademicBranch">
+                        <span>Academic Branch</span>
+                    </a>
+                </li>
+
+                <li ui-sref-active="active">
+                    <a ui-sref="app.settings.AcademicShift">
+                        <span>Academic Shift</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.settings.AcademicVersion">
+                        <span>Academic Version</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.settings.AddressType">
+                        <span>Address Type</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.settings.BloodGroup">
+                        <span>Blood Group</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.settings.Country">
+                        <span>Country</span>
+                    </a>
+                </li>
+
+                <li ui-sref-active="active">
+                    <a ui-sref="app.settings.Designation">
+                        <span>Designation</span>
+                    </a>
+                </li>
+
+                <li ui-sref-active="active">
+                    <a ui-sref="app.settings.DistrictOrState">
+                        <span>District Or State</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.settings.EducationalQualification">
+                        <span>Educational Qualification</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.settings.GuardianType">
+                        <span>Guardian Type </span>
+                    </a>
+                </li>
+                
+                
+                <li ui-sref-active="active">
+                    <a ui-sref="app.settings.Institute">
+                        <span>Institute  </span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.settings.Nationality">
+                        <span>Nationality  </span>
+                    </a>
+                </li>
+
+                <li ui-sref-active="active">
+                    <a ui-sref="app.settings.Profession">
+                        <span>Profession  </span>
+                    </a>
+                </li>
+
+                <li ui-sref-active="active">
+                    <a ui-sref="app.settings.Religion">
+                        <span>Religion  </span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.settings.Colours">
+                        <span>Colours  </span>
+                    </a>
+                </li>
+                
+                <li ui-sref-active="active">
+                    <a ui-sref="app.settings.AttendanceType">
+                        <span>Attendance Type  </span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+    <div class="col">
+        <div ui-view></div>
+    </div>
+</div>

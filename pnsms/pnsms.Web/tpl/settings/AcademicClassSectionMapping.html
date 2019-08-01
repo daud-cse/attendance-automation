@@ -1,0 +1,129 @@
+﻿
+
+<div class="wrapper-md" ng-controller="AcademicClassSectionMappingCtrl">
+    <!-- toaster directive -->
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <!-- / toaster directive -->
+  
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <span class="h4">Academic Class Section Mapping</span>
+
+        </div>
+        <form name="newform" class="form-validation" ng-submit="SearchMappiing()">
+            <div class="panel-body">
+
+                <div class="row">
+
+                    <div class="col-sm-2" ng-show="RefAcademicClassSectionMapping.AcademicBranchList.length>1">
+                        <div class="form-group">
+                            <label>Branch</label>
+                            <select ng-model="RefAcademicClassSectionMapping.AcademicBranchId" required="" class="form-control m-b" ng-options="c.Key as c.Value for c in RefAcademicClassSectionMapping.AcademicBranchList"></select>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-2" ng-show="RefAcademicClassSectionMapping.AcademicShiftList.length>0">
+                        <div class="form-group">
+                            <label>Shift</label>
+
+
+                            <select ng-model="RefAcademicClassSectionMapping.AcademicShiftId" class="form-control m-b" ng-options="c.Key as c.Value for c in RefAcademicClassSectionMapping.AcademicShiftList">
+                                <option value="">-- Choose Shift--</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label>Class</label>
+
+
+                            <select ng-model="RefAcademicClassSectionMapping.AcademicClassId" required="" class="form-control m-b" ng-options="c.Key as c.Value for c in RefAcademicClassSectionMapping.AcademicClassList">
+                                <option value="">-- Choose Class--</option>
+                            </select>
+                        </div>
+                    </div>
+                   
+
+                    <div class="col-sm-2 ">
+
+
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary pull-left"><i class="glyphicon glyphicon-search"></i>&nbsp;Search</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+    <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+    <div class="panel panel-default" ng-hide="isLoading" ng-if="items.length>0">
+
+
+        <table class="table table-striped b-t b-light" style="width: 80%;margin: auto">
+            <thead>
+                <tr>
+                    <th style="width:20px;">
+
+                    </th>
+                    <th><span class="Period">Default Name&nbsp;<a ng-click="sort_by('Period')"></a> </span></th>
+                    <th><span class="SectionName">Section Name</span></th>
+                    <!--<th><span class="SectionName">Group Name</span></th>-->
+
+                </tr>
+            </thead>
+            <tbody>
+
+
+                <tr ng-repeat="item in items" ng-include="getTemplate(item)"></tr>
+
+            </tbody>
+        </table>
+        <footer class="panel-footer">
+            <div class="row">
+
+                <div class="col-sm-3 m-b-xs pull-right">
+
+                    <button data-ng-click="Add()" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-floppy-saved"></i>&nbsp;Save</button>
+                    <!--<a href="" class="btn btn-sm btn-info btn-addon" data-ng-click="AddNew()"><i class="fa fa-plus fa-fw m-r-xs"></i> ADD NEW</a>-->
+                </div>
+
+
+            </div>
+        </footer>
+    </div>
+
+
+
+</div>
+
+
+<script type="text/ng-template" id="display">
+
+    <td>
+        <label class="i-checks m-b-none">
+
+            <input type="checkbox" data-ng-model="item.IsActive"> <i></i>
+        </label>
+    </td>
+    <td><span>{{item.Name}}</span></td>
+    <td><input class="form-control" data-ng-model="item.SectionName" placeholder="Section Name" type="text"> </td>
+    <td>
+
+        
+        <!--<select ng-model="item.AcademicGroupId" required="" class="form-control m-b" ng-options="c.Key as c.Value for c in RefAcademicClassSectionMapping.AcademicGroupList">
+            <option value="">-- Choose Groups--</option>
+        </select>-->
+           
+    </td>
+  
+
+
+
+</script>

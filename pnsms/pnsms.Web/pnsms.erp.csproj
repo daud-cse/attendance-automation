@@ -1,0 +1,1435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{078C3483-F943-4E53-B757-344A740EAD21}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>pnsms.erp</RootNamespace>
+    <AssemblyName>pnsms.erp</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress>
+    </Use64BitIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <IntermediateOutputPath>C:\Users\Morshed\AppData\Local\Temp\vs38C2.tmp\Debug\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <IntermediateOutputPath>C:\Users\Morshed\AppData\Local\Temp\vs38C2.tmp\Release\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="AttributeRouting.Web.Mvc">
+      <HintPath>..\packages\AttributeRouting.3.5.6\lib\net40\AttributeRouting.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Data.Edm.5.6.1\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Data.OData.5.6.1\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.OData.Core">
+      <HintPath>..\packages\Microsoft.OData.Core.6.9.0\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.OData.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.OData.Edm">
+      <HintPath>..\packages\Microsoft.OData.Edm.6.9.0\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.OData.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Owin.Cors">
+      <HintPath>..\packages\Microsoft.Owin.Cors.3.0.1\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.Mvc.4.0.1\lib\net45\Microsoft.Practices.Unity.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.WebApi, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.AspNet.WebApi.4.0.0\lib\net45\Microsoft.Practices.Unity.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Spatial, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\System.Spatial.5.6.1\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.OData">
+      <HintPath>..\packages\Microsoft.AspNet.OData.5.4.0\lib\net45\System.Web.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.0.0.0\lib\WebActivator.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\packages\WebActivatorEx.2.0.6\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Owin.2.0.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.3.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.Facebook.3.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.Cookies.3.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.OAuth.3.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.Google.3.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.Twitter.3.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\AcademicBranchController.cs" />
+    <Compile Include="Api\AcademicClassController.cs" />
+    <Compile Include="Api\AcademicGroupController.cs" />
+    <Compile Include="Api\AcademicSectionController.cs" />
+    <Compile Include="Api\AcademicSessionController.cs" />
+    <Compile Include="Api\AcademicShiftController.cs" />
+    <Compile Include="Api\Accounts\BankAccountInfoController.cs" />
+    <Compile Include="Api\Accounts\GLAccountController.cs" />
+    <Compile Include="Api\Accounts\GLSubsidyTypeMapController.cs" />
+    <Compile Include="Api\Accounts\RelatedAccountController.cs" />
+    <Compile Include="Api\Attendance\AttendanceDataUploadController.cs" />
+    <Compile Include="Api\Attendance\AttendanceReportsController.cs" />
+    <Compile Include="Api\ContactFeedbackController.cs" />
+    <Compile Include="Api\Exams\ExamController.cs" />
+    <Compile Include="Api\Exams\ExamGradeController.cs" />
+    <Compile Include="Api\Exams\ExamProcessController.cs" />
+    <Compile Include="Api\Exams\ExamSubjectMarkController.cs" />
+    <Compile Include="Api\Exams\ExamTabulationSheetController.cs" />
+    <Compile Include="Api\Exams\ExamTypeController.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Api\Fees\FeesAcademicClassController.cs" />
+    <Compile Include="Api\Fees\FeesAutoGenerateConfigController.cs" />
+    <Compile Include="Api\Fees\FeesTypeController.cs" />
+    <Compile Include="Api\Fees\FeesHeadController.cs" />
+    <Compile Include="Api\GlobalUsers\GlobalUsersController.cs" />
+    <Compile Include="Api\Setting\AcademicClassSectionMappingController.cs" />
+    <Compile Include="Api\Setting\AcademicPeriodController.cs" />
+    <Compile Include="Api\Subjects\InstituteSubjectClassController.cs" />
+    <Compile Include="Api\Subjects\InstituteSubjectController.cs" />
+    <Compile Include="Api\Subjects\SubjectAcademicClassMappingController.cs" />
+    <Compile Include="Api\Subjects\SubjectController.cs" />
+    <Compile Include="Api\Subjects\SubjectGroupController.cs" />
+    <Compile Include="Api\Subjects\SubjectStudentMappingController.cs" />
+    <Compile Include="Api\Subjects\SubjectTypeController.cs" />
+    <Compile Include="Api\Teachers\TeacherSubjectAcademicMappingController.cs" />
+    <Compile Include="Api\UserInfoController.cs" />
+    <Compile Include="Api\Accounts\Vendor\VendorInfoController.cs" />
+    <Compile Include="Api\VoucherEntryController.cs" />
+    <Compile Include="Api\ExpenseHeadController.cs" />
+    <Compile Include="Api\IncomeHeadController.cs" />
+    <Compile Include="Api\ContactUsFeedbackController.cs" />
+    <Compile Include="Api\DashBoard\DashBoardController.cs" />
+    <Compile Include="Api\Fees\FeesCollectionController.cs" />
+    <Compile Include="Api\Library\LibraryBookController.cs" />
+    <Compile Include="Api\ResultPublicationController.cs" />
+    <Compile Include="Api\OnlineAdmissionController.cs" />
+    <Compile Include="Api\CertificatePrintTypeController.cs" />
+    <Compile Include="Api\AcademicVersionController.cs" />
+    <Compile Include="Api\AddressTypeController.cs" />
+    <Compile Include="Api\AttendanceTypeController.cs" />
+    <Compile Include="Api\BloodGroupController.cs" />
+    <Compile Include="Api\CertificatePrintController.cs" />
+    <Compile Include="Api\GlobalInstituteTypeController.cs" />
+    <Compile Include="Api\GlobalDivisionController.cs" />
+    <Compile Include="Api\GlobalDistrictController.cs" />
+    <Compile Include="Api\GlobalCountryController.cs" />
+    <Compile Include="Api\Library\LibraryBookAuthoreController.cs" />
+    <Compile Include="Api\ScholarshipController.cs" />
+    <Compile Include="Api\CoCurricularActivityController.cs" />
+    <Compile Include="Api\ColoursController.cs" />
+    <Compile Include="Api\EventController.cs" />
+    <Compile Include="Api\ImageController.cs" />
+    <Compile Include="Api\CountryController.cs" />
+    <Compile Include="Api\DepartmentController.cs" />
+    <Compile Include="Api\DesignationController.cs" />
+    <Compile Include="Api\DistrictOrStateController.cs" />
+    <Compile Include="Api\EducationalQualificationController.cs" />
+    <Compile Include="Api\EmployeeController.cs" />
+    <Compile Include="Api\GenderController.cs" />
+    <Compile Include="Api\GuardianTypeController.cs" />
+    <Compile Include="Api\InstituteController.cs" />
+    <Compile Include="Api\MaritalStatusesController.cs" />
+    <Compile Include="Api\MobilePaymentController.cs" />
+    <Compile Include="Api\NationalityController.cs" />
+    <Compile Include="Api\NoticeController.cs" />
+    <Compile Include="Api\PackageController.cs" />
+    <Compile Include="Api\ProfessionController.cs" />
+    <Compile Include="Api\RightsController.cs" />
+    <Compile Include="Api\RoleController.cs" />
+    <Compile Include="Api\sms\ShortMessageController.cs" />
+    <Compile Include="Api\sms\SmsTemplateController.cs" />
+    <Compile Include="Api\StudentAttendanceController.cs" />
+    <Compile Include="Api\GalleryController.cs" />
+    <Compile Include="Api\EmployeeAttendanceController.cs" />
+    <Compile Include="Api\TeacherAttendanceController.cs" />
+    <Compile Include="Api\TeacherController.cs" />
+    <Compile Include="Api\Students\StudentController.cs" />
+    <Compile Include="Api\ReligionController.cs" />
+    <Compile Include="Api\TestimonialController.cs" />
+    <Compile Include="Api\UserInfoSecurityController.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\SessionableControllerHandler.cs" />
+    <Compile Include="App_Start\SessionStateRouteHandler.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="App_Start\UnityWebApiActivator.cs" />
+    <Compile Include="App_Start\UploadMultipartMediaTypeFormatter.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Attributes\JsonContent.cs" />
+    <Compile Include="Attributes\PredicateBuilder.cs" />
+    <Compile Include="Attributes\Validate.cs" />
+    <Compile Include="Controllers\AttendanceReportController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StudentReportsController.cs" />
+    <Compile Include="DataSetReports\AttendanceReports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AttendanceReports.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetReports\StudentsDetails.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentsDetails.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetReports\UserAttendanceReports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserAttendanceReports.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSetService.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LandingViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="tpl\AttendanceReports\AttendanceReports.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AttendanceReports.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="tpl\AttendanceReports\UserAttendanceReports.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserAttendanceReports.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\test.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\StudentReports\StudentsReports.cs">
+      <DependentUpon>StudentsReports.rpt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\arrows-000000.png" />
+    <Content Include="Content\blank.gif" />
+    <Content Include="Content\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\bootstrap\js\npm.js" />
+    <Content Include="Content\fancybox_loading.gif" />
+    <Content Include="Content\fancybox_overlay.png" />
+    <Content Include="Content\fancybox_sprite.png" />
+    <Content Include="Content\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont862f.svg" />
+    <Content Include="Content\img\404_error_image.png" />
+    <Content Include="Content\img\alter-menu.png" />
+    <Content Include="Content\img\avatar-1.jpg" />
+    <Content Include="Content\img\avatar-2.jpg" />
+    <Content Include="Content\img\avatar-3.jpg" />
+    <Content Include="Content\img\fb.png" />
+    <Content Include="Content\img\flickr-1.jpg" />
+    <Content Include="Content\img\flickr-2.jpg" />
+    <Content Include="Content\img\flickr-3.jpg" />
+    <Content Include="Content\img\flickr-4.jpg" />
+    <Content Include="Content\img\flickr-5.jpg" />
+    <Content Include="Content\img\flickr-6.jpg" />
+    <Content Include="Content\img\flickr-7.jpg" />
+    <Content Include="Content\img\flickr-8.jpg" />
+    <Content Include="Content\img\footer-bg.png" />
+    <Content Include="Content\img\full-width.jpg" />
+    <Content Include="Content\img\gmail.png" />
+    <Content Include="Content\img\leadership-1.jpg" />
+    <Content Include="Content\img\leadership-2.jpg" />
+    <Content Include="Content\img\leadership-3.jpg" />
+    <Content Include="Content\img\leadership-4.jpg" />
+    <Content Include="Content\img\news-1.jpg" />
+    <Content Include="Content\img\news-2.jpg" />
+    <Content Include="Content\img\news-3.jpg" />
+    <Content Include="Content\img\news-4.jpg" />
+    <Content Include="Content\img\news-5.jpg" />
+    <Content Include="Content\img\news-6.jpg" />
+    <Content Include="Content\img\news-7.jpg" />
+    <Content Include="Content\img\news-8.jpg" />
+    <Content Include="Content\img\outlook.png" />
+    <Content Include="Content\img\recent-news-thumb-1.jpg" />
+    <Content Include="Content\img\recent-news-thumb-2.jpg" />
+    <Content Include="Content\img\recent-news-thumb-3.jpg" />
+    <Content Include="Content\img\site-logo.jpg" />
+    <Content Include="Content\img\site-logo.png" />
+    <Content Include="Content\img\slide-1.jpg" />
+    <Content Include="Content\img\slide-2.jpg" />
+    <Content Include="Content\img\slide-3.jpg" />
+    <Content Include="Content\img\slide-4.jpg" />
+    <Content Include="Content\img\slide-5.jpg" />
+    <Content Include="Content\img\tw.png" />
+    <Content Include="Content\img\zigzag.png" />
+    <Content Include="Content\style.css" />
+    <Content Include="css\angular-tooltips.css" />
+    <Content Include="css\animate.css" />
+    <Content Include="css\app.css" />
+    <Content Include="css\autoComplete\angucomplete-alt.css" />
+    <Content Include="css\autoComplete\bariol.css" />
+    <Content Include="css\autoComplete\bariol_bold-demo.html" />
+    <Content Include="css\autoComplete\bariol_bold-webfont.svg" />
+    <Content Include="css\autoComplete\bariol_regular-webfont.svg" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\font.css" />
+    <Content Include="css\simple-line-icons.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\Simple-Line-Icons.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="img\404_error_image.png" />
+    <Content Include="img\a0.jpg" />
+    <Content Include="img\a1.jpg" />
+    <Content Include="img\a10.jpg" />
+    <Content Include="img\a2.jpg" />
+    <Content Include="img\a3.jpg" />
+    <Content Include="img\a4.jpg" />
+    <Content Include="img\a5.jpg" />
+    <Content Include="img\a6.jpg" />
+    <Content Include="img\a7.jpg" />
+    <Content Include="img\a8.jpg" />
+    <Content Include="img\a9.jpg" />
+    <Content Include="img\alter-menu.png" />
+    <Content Include="img\avatar-1.jpg" />
+    <Content Include="img\avatar-2.jpg" />
+    <Content Include="img\avatar-3.jpg" />
+    <Content Include="img\b0.jpg" />
+    <Content Include="img\b1.jpg" />
+    <Content Include="img\b10.jpg" />
+    <Content Include="img\b11.jpg" />
+    <Content Include="img\b12.jpg" />
+    <Content Include="img\b13.jpg" />
+    <Content Include="img\b14.jpg" />
+    <Content Include="img\b15.jpg" />
+    <Content Include="img\b16.jpg" />
+    <Content Include="img\b17.jpg" />
+    <Content Include="img\b18.jpg" />
+    <Content Include="img\b19.jpg" />
+    <Content Include="img\b2.jpg" />
+    <Content Include="img\b20.jpg" />
+    <Content Include="img\b3.jpg" />
+    <Content Include="img\b4.jpg" />
+    <Content Include="img\b5.jpg" />
+    <Content Include="img\b6.jpg" />
+    <Content Include="img\b7.jpg" />
+    <Content Include="img\b8.jpg" />
+    <Content Include="img\b9.jpg" />
+    <Content Include="img\bg.jpg" />
+    <Content Include="img\c0.jpg" />
+    <Content Include="img\c1.jpg" />
+    <Content Include="img\c2.jpg" />
+    <Content Include="img\c3.jpg" />
+    <Content Include="img\c4.jpg" />
+    <Content Include="img\c5.jpg" />
+    <Content Include="img\c6.jpg" />
+    <Content Include="img\c7.jpg" />
+    <Content Include="img\c8.jpg" />
+    <Content Include="img\c9.jpg" />
+    <Content Include="img\certificate.jpg" />
+    <Content Include="img\flickr-1.jpg" />
+    <Content Include="img\flickr-2.jpg" />
+    <Content Include="img\flickr-3.jpg" />
+    <Content Include="img\flickr-4.jpg" />
+    <Content Include="img\flickr-5.jpg" />
+    <Content Include="img\flickr-6.jpg" />
+    <Content Include="img\flickr-7.jpg" />
+    <Content Include="img\flickr-8.jpg" />
+    <Content Include="img\footer-bg.png" />
+    <Content Include="img\full-width.jpg" />
+    <Content Include="img\leadership-1.jpg" />
+    <Content Include="img\leadership-2.jpg" />
+    <Content Include="img\leadership-3.jpg" />
+    <Content Include="img\leadership-4.jpg" />
+    <Content Include="img\logo.jpg" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\news-1.jpg" />
+    <Content Include="img\news-2.jpg" />
+    <Content Include="img\news-3.jpg" />
+    <Content Include="img\news-4.jpg" />
+    <Content Include="img\news-5.jpg" />
+    <Content Include="img\news-6.jpg" />
+    <Content Include="img\news-7.jpg" />
+    <Content Include="img\news-8.jpg" />
+    <Content Include="img\p0.jpg" />
+    <Content Include="img\recent-news-thumb-1.jpg" />
+    <Content Include="img\recent-news-thumb-2.jpg" />
+    <Content Include="img\recent-news-thumb-3.jpg" />
+    <Content Include="img\site-logo.jpg" />
+    <Content Include="img\site-logo.png" />
+    <Content Include="img\slide-1.jpg" />
+    <Content Include="img\slide-2.jpg" />
+    <Content Include="img\slide-3.jpg" />
+    <Content Include="img\slide-4.jpg" />
+    <Content Include="img\slide-5.jpg" />
+    <Content Include="img\zigzag.png" />
+    <Content Include="js\app.js" />
+    <Content Include="js\app\calendar\calendar.js" />
+    <Content Include="js\app\contact\contact.js" />
+    <Content Include="js\app\mail\mail-service.js" />
+    <Content Include="js\app\mail\mail.js" />
+    <Content Include="js\app\map\load-google-maps.js" />
+    <Content Include="js\app\map\map.js" />
+    <Content Include="js\app\map\ui-map.js" />
+    <Content Include="js\app\music\ctrl.js" />
+    <Content Include="js\app\music\theme.css" />
+    <Content Include="js\app\music\videogular.css" />
+    <Content Include="js\app\note\note.js" />
+    <Content Include="js\app\settings\settings.js" />
+    <Content Include="js\app\weather\angular-skycons.js" />
+    <Content Include="js\app\weather\ctrl.js" />
+    <Content Include="js\app\weather\skycons.js" />
+    <Content Include="js\config.js" />
+    <Content Include="js\config.lazyload.js" />
+    <Content Include="js\config.router.js" />
+    <Content Include="js\config.router.settings.js" />
+    <Content Include="js\controllers\Accounts\BankAccount.js" />
+    <Content Include="js\controllers\Accounts\RelatedAccount.js" />
+    <Content Include="js\controllers\Accounts\VendorAccount.js" />
+    <Content Include="js\controllers\AttendanceReports\AttendanceReports.js" />
+    <Content Include="js\controllers\bootstrap.js" />
+    <Content Include="js\controllers\certificatePrint\Create.js" />
+    <Content Include="js\controllers\certificatePrint\Edit.js" />
+    <Content Include="js\controllers\certificatePrint\List.js" />
+    <Content Include="js\controllers\ChangePassword.js" />
+    <Content Include="js\controllers\contactFeedback\details.js" />
+    <Content Include="js\controllers\contactFeedback\list.js" />
+    <Content Include="js\controllers\Dashboard.js" />
+    <Content Include="js\controllers\eDiary\List.js" />
+    <Content Include="js\controllers\editor.js" />
+    <Content Include="js\controllers\employee\employee.js" />
+    <Content Include="js\controllers\employee\employeeDetails.js" />
+    <Content Include="js\controllers\employee\employeeEdit.js" />
+    <Content Include="js\controllers\employee\employeeList.js" />
+    <Content Include="js\controllers\event\EventCreate.js" />
+    <Content Include="js\controllers\event\EventEdit.js" />
+    <Content Include="js\controllers\event\EventList.js" />
+    <Content Include="js\controllers\exam\Exam.js" />
+    <Content Include="js\controllers\exam\ExamGrade.js" />
+    <Content Include="js\controllers\exam\ExamProcess.js" />
+    <Content Include="js\controllers\exam\ExamSubjectMarks.js" />
+    <Content Include="js\controllers\exam\ExamTabulationModalDetails.js" />
+    <Content Include="js\controllers\exam\ExamTabulationSheet.js" />
+    <Content Include="js\controllers\exam\ExamType.js" />
+    <Content Include="js\controllers\FeesAutoGenerate\edit.js" />
+    <Content Include="js\controllers\FeesAutoGenerate\editEnroll.js" />
+    <Content Include="js\controllers\FeesAutoGenerate\listEnroll.js" />
+    <Content Include="js\controllers\FeesAutoGenerate\new.js" />
+    <Content Include="js\controllers\FeesAutoGenerate\newEnroll.js" />
+    <Content Include="js\controllers\feesCollection\feesAcademicClass.js" />
+    <Content Include="js\controllers\feesCollection\feesHeads.js" />
+    <Content Include="js\controllers\feesCollection\feesCollection.js" />
+    <Content Include="js\controllers\feesCollection\feesGenerateNew.js" />
+    <Content Include="js\controllers\feesCollection\ExamCtrl.js" />
+    <Content Include="js\controllers\feesCollection\ledger.js" />
+    <Content Include="js\controllers\feesGenerateConfig\panel.js" />
+    <Content Include="js\controllers\file-upload.js" />
+    <Content Include="js\controllers\FingerPrint\fingerprint.js" />
+    <Content Include="js\controllers\form.js" />
+    <Content Include="js\controllers\gallery\galleryFileUpload.js" />
+    <Content Include="js\controllers\Accounts\GLAccount.js" />
+    <Content Include="js\controllers\globalUser\globalUser.js" />
+    <Content Include="js\controllers\Accounts\GLSubsidyType.js" />
+    <Content Include="js\controllers\grid.js" />
+    <Content Include="js\controllers\imgcrop.js" />
+    <Content Include="js\controllers\LibraryBook\LibraryBookList.js" />
+    <Content Include="js\controllers\LibraryBook\Rights.js" />
+    <Content Include="js\controllers\mobilePayment\MobilePaymentNew.js" />
+    <Content Include="js\controllers\mobilePayment\MobilePaymentEdit.js" />
+    <Content Include="js\controllers\mobilePayment\MobilePaymentList.js" />
+    <Content Include="js\controllers\notice\NoticeCreate.js" />
+    <Content Include="js\controllers\notice\NoticeEdit.js" />
+    <Content Include="js\controllers\notice\NoticeList.js" />
+    <Content Include="js\controllers\onlineAdmission\edit.js" />
+    <Content Include="js\controllers\onlineAdmission\list.js" />
+    <Content Include="js\controllers\onlineAdmission\details.js" />
+    <Content Include="js\controllers\resultPublish\Create.js" />
+    <Content Include="js\controllers\resultPublish\Edit.js" />
+    <Content Include="js\controllers\resultPublish\List.js" />
+    <Content Include="js\controllers\select.js" />
+    <Content Include="js\controllers\settings\AcademicBranch.js" />
+    <Content Include="js\controllers\settings\AcademicClassSectionMapping.js" />
+    <Content Include="js\controllers\settings\AcademicPeriod.js" />
+    <Content Include="js\controllers\settings\ExpenseHead.js" />
+    <Content Include="js\controllers\settings\IncomeHead.js" />
+    <Content Include="js\controllers\settings\CertificatePrintType.js" />
+    <Content Include="js\controllers\settings\Certificate\Certificate.js" />
+    <Content Include="js\controllers\settings\Scholarship.js" />
+    <Content Include="js\controllers\settings\CoCurricularActivity.js" />
+    <Content Include="js\controllers\settings\Rights\Rights.js" />
+    <Content Include="js\controllers\settings\Roles\Roles.js" />
+    <Content Include="js\controllers\settings\Testimonial.js" />
+    <Content Include="js\controllers\settings\AcademicSection.js" />
+    <Content Include="js\controllers\settings\AcademicGroup.js" />
+    <Content Include="js\controllers\settings\AcademicClass.js" />
+    <Content Include="js\controllers\settings\AcademicSession.js" />
+    <Content Include="js\controllers\settings\AcademicShift.js" />
+    <Content Include="js\controllers\settings\AcademicVersion.js" />
+    <Content Include="js\controllers\settings\Address.js" />
+    <Content Include="js\controllers\settings\AddressType.js" />
+    <Content Include="js\controllers\settings\AttendanceType.js" />
+    <Content Include="js\controllers\settings\BloodGroup.js" />
+    <Content Include="js\controllers\settings\Colours.js" />
+    <Content Include="js\controllers\settings\Country.js" />
+    <Content Include="js\controllers\settings\Department.js" />
+    <Content Include="js\controllers\settings\Designation.js" />
+    <Content Include="js\controllers\settings\DistrictOrState.js" />
+    <Content Include="js\controllers\settings\EducationalQualification.js" />
+    <Content Include="js\controllers\settings\Gender.js" />
+    <Content Include="js\controllers\settings\Guardian.js" />
+    <Content Include="js\controllers\settings\GuardiansOfStudent.js" />
+    <Content Include="js\controllers\settings\GuardianType.js" />
+    <Content Include="js\controllers\settings\Institute.js" />
+    <Content Include="js\controllers\settings\Institute\InstituteCreate.js" />
+    <Content Include="js\controllers\settings\Institute\InstituteCurrent.js" />
+    <Content Include="js\controllers\settings\Institute\InstituteEdit.js" />
+    <Content Include="js\controllers\settings\MaritalStatus.js" />
+    <Content Include="js\controllers\settings\Nationality.js" />
+    <Content Include="js\controllers\settings\package.js" />
+    <Content Include="js\controllers\settings\Profession.js" />
+    <Content Include="js\controllers\settings\Religion.js" />
+    <Content Include="js\controllers\settings\Webmanager\Webmanager.js" />
+    <Content Include="js\controllers\signin.js" />
+    <Content Include="js\controllers\signup.js" />
+    <Content Include="js\controllers\slider.js" />
+    <Content Include="js\controllers\sms\sendSms\create.js" />
+    <Content Include="js\controllers\sms\sendSms\details.js" />
+    <Content Include="js\controllers\sms\sendSms\edit.js" />
+    <Content Include="js\controllers\sms\sendSms\list.js" />
+    <Content Include="js\controllers\sms\template\create.js" />
+    <Content Include="js\controllers\sms\template\details.js" />
+    <Content Include="js\controllers\sms\template\edit.js" />
+    <Content Include="js\controllers\sms\template\list.js" />
+    <Content Include="js\controllers\studentAttendanceByManagement\StudentAttendanceAbscondingByManagement.js" />
+    <Content Include="js\controllers\studentAttendanceByManagement\StudentAttendanceByManagement.js" />
+    <Content Include="js\controllers\studentAttendanceByManagement\StudentAttendanceDetailsByManagement.js" />
+    <Content Include="js\controllers\studentAttendanceByManagement\StudentAttendanceEditByManagement.js" />
+    <Content Include="js\controllers\studentAttendanceByTeacher\StudentAttendanceByTeacher.js" />
+    <Content Include="js\controllers\studentAttendanceByTeacher\StudentAttendanceDetailsByTeacher.js" />
+    <Content Include="js\controllers\studentAttendanceByTeacher\StudentAttendanceEditByTeacher.js" />
+    <Content Include="js\controllers\studentAttendanceByTeacher\StudentAttendanceAbscondingByTeacher.js" />
+    <Content Include="js\controllers\studentAttendance\AttendanceSheetPrint.js" />
+    <Content Include="js\controllers\students\studentDetails.js" />
+    <Content Include="js\controllers\students\studentEdit.js" />
+    <Content Include="js\controllers\students\studentList.js" />
+    <Content Include="js\controllers\students\student.js" />
+    <Content Include="js\controllers\subjects\InstituteSubject.js" />
+    <Content Include="js\controllers\subjects\Subject.js" />
+    <Content Include="js\controllers\subjects\SubjectAcademicClassMapping.js" />
+    <Content Include="js\controllers\subjects\SubjectType.js" />
+    <Content Include="js\controllers\tab.js" />
+    <Content Include="js\controllers\gallery\gallery.js" />
+    <Content Include="js\controllers\gallery\galleryDetails.js" />
+    <Content Include="js\controllers\gallery\galleryEdit.js" />
+    <Content Include="js\controllers\gallery\galleryList.js" />
+    <Content Include="js\controllers\teacher\teacher.js" />
+    <Content Include="js\controllers\teacher\teacherDetails.js" />
+    <Content Include="js\controllers\teacher\teacherEdit.js" />
+    <Content Include="js\controllers\teacher\teacherList.js" />
+    <Content Include="js\controllers\employeeAttendance\create.js" />
+    <Content Include="js\controllers\employeeAttendance\details.js" />
+    <Content Include="js\controllers\employeeAttendance\edit.js" />
+    <Content Include="js\controllers\employeeAttendance\list.js" />
+    <Content Include="js\controllers\techerAttendance\create.js" />
+    <Content Include="js\controllers\techerAttendance\details.js" />
+    <Content Include="js\controllers\techerAttendance\edit.js" />
+    <Content Include="js\controllers\techerAttendance\list.js" />
+    <Content Include="js\controllers\toaster.js" />
+    <Content Include="js\controllers\tree.js" />
+    <Content Include="js\controllers\vectormap.js" />
+    <Content Include="js\controllers\voucherEntry\create.js" />
+    <Content Include="js\controllers\voucherEntry\details.js" />
+    <Content Include="js\controllers\voucherEntry\edit.js" />
+    <Content Include="js\controllers\voucherEntry\list.js" />
+    <Content Include="js\directives\file-Upload.js" />
+    <Content Include="js\directives\setnganimate.js" />
+    <Content Include="js\directives\ui-butterbar.js" />
+    <Content Include="js\directives\ui-focus.js" />
+    <Content Include="js\directives\ui-fullscreen.js" />
+    <Content Include="js\directives\ui-jq.js" />
+    <Content Include="js\directives\ui-module.js" />
+    <Content Include="js\directives\ui-nav.js" />
+    <Content Include="js\directives\ui-scroll.js" />
+    <Content Include="js\directives\ui-shift.js" />
+    <Content Include="js\directives\ui-toggleclass.js" />
+    <Content Include="js\directives\ui-validate.js" />
+    <Content Include="js\filters\fromNow.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\app\router\notice\noticeRoute.js" />
+    <Content Include="js\services\Account\BankAccountService.js" />
+    <Content Include="js\services\Account\RelatedAccountService.js" />
+    <Content Include="js\services\Account\VendorAccountService.js" />
+    <Content Include="js\services\AttendanceFileUpload\AttendanceFileUploadService.js" />
+    <Content Include="js\services\AttendanceReports\AttendanceReportsService.js" />
+    <Content Include="js\services\certificatePrint\certificatePrintService.js" />
+    <Content Include="js\services\ChangePasswordService.js" />
+    <Content Include="js\services\contactFeedback\contactFeedbackService.js" />
+    <Content Include="js\services\DashboardService.js" />
+    <Content Include="js\services\eDiary\eDiaryService.js" />
+    <Content Include="js\services\employeeAttendance\employeeAttendanceService.js" />
+    <Content Include="js\services\employee\employeeService.js" />
+    <Content Include="js\services\exam\ExamGradeService.js" />
+    <Content Include="js\services\exam\ExamProcessService.js" />
+    <Content Include="js\services\exam\ExamService.js" />
+    <Content Include="js\services\exam\ExamSubjectMarksService.js" />
+    <Content Include="js\services\exam\ExamTabulationModalDetailsService.js" />
+    <Content Include="js\services\exam\ExamTabulationSheetService.js" />
+    <Content Include="js\services\exam\ExamTypeService.js" />
+    <Content Include="js\services\FeesAutoGenerate\feesAutoGenerateService.js" />
+    <Content Include="js\services\feesCollection\feesAcademicClassService.js" />
+    <Content Include="js\services\feesCollection\feesCollectionService.js" />
+    <Content Include="js\services\feesCollection\feesAcademicClassService.js" />
+    <Content Include="js\services\feesCollection\feesTypeService.js" />
+    <Content Include="js\services\feesCollection\feesHeadsService.js" />
+    <Content Include="js\services\feesCollection\FeesHeadsService_bak.js" />
+    <Content Include="js\services\feesGenerateConfig\feesGenerateConfigService.js" />
+    <Content Include="js\services\FingerPrint\fingerprintService.js" />
+    <Content Include="js\services\Account\GLAccountService.js" />
+    <Content Include="js\services\globalUser\globalUserService.js" />
+    <Content Include="js\services\Account\GLSubsidyTypeService.js" />
+    <Content Include="js\services\LibraryBook\LibraryBookAuthoreService.js" />
+    <Content Include="js\services\mobilePayment\MobilePaymentService.js" />
+    <Content Include="js\services\event\EventService.js" />
+    <Content Include="js\services\modalService.js" />
+    <Content Include="js\services\notice\NoticeService.js" />
+    <Content Include="js\services\onlineAdmission\onlineAdmissionService.js" />
+    <Content Include="js\services\resultPublish\ResultPublishService.js" />
+    <Content Include="js\services\LibraryBook\LibraryBookService.js" />
+    <Content Include="js\services\settings\AcademicBranchService.js" />
+    <Content Include="js\services\settings\AcademicClassSectionMappingService.js" />
+    <Content Include="js\services\settings\AcademicPeriodService.js" />
+    <Content Include="js\services\settings\academicSectionService.js" />
+    <Content Include="js\services\settings\academicGroupService.js" />
+    <Content Include="js\services\settings\AcademicClassService.js" />
+    <Content Include="js\services\settings\AcademicSessionService.js" />
+    <Content Include="js\services\settings\AcademicShiftService.js" />
+    <Content Include="js\services\settings\ExpenseHeadService.js" />
+    <Content Include="js\services\settings\IncomeHeadService.js" />
+    <Content Include="js\services\settings\CertificatePrintTypeService.js" />
+    <Content Include="js\services\settings\AcademicVersionService.js" />
+    <Content Include="js\services\settings\AddressService.js" />
+    <Content Include="js\services\settings\AddressTypeService.js" />
+    <Content Include="js\services\settings\AttendanceTypeService.js" />
+    <Content Include="js\services\settings\BloodGroupService.js" />
+    <Content Include="js\services\settings\Certificate\CertificateService.js" />
+    <Content Include="js\services\settings\ScholarshipService.js" />
+    <Content Include="js\services\settings\ColoursService.js" />
+    <Content Include="js\services\settings\CoCurricularActivityService.js" />
+    <Content Include="js\services\settings\CountryService.js" />
+    <Content Include="js\services\settings\DepartmentService.js" />
+    <Content Include="js\services\settings\DesignationService.js" />
+    <Content Include="js\services\settings\DistrictOrStateService.js" />
+    <Content Include="js\services\settings\EducationalQualificationService.js" />
+    <Content Include="js\services\settings\GenderService.js" />
+    <Content Include="js\services\settings\GuardianService.js" />
+    <Content Include="js\services\settings\GuardiansOfStudentService.js" />
+    <Content Include="js\services\settings\GuardianTypeService.js" />
+    <Content Include="js\services\settings\Rights\RightsService.js" />
+    <Content Include="js\services\settings\Roles\RoleService.js" />
+    <Content Include="js\services\settings\TestimonialService.js" />
+    <Content Include="js\services\settings\InstituteService.js" />
+    <Content Include="js\services\settings\MaritalStatusService.js" />
+    <Content Include="js\services\settings\NationalityService.js" />
+    <Content Include="js\services\settings\PackageService.js" />
+    <Content Include="js\services\settings\ProfessionService.js" />
+    <Content Include="js\services\settings\ReligionService.js" />
+    <Content Include="js\services\sms\smsService.js" />
+    <Content Include="js\services\sms\smsTemplateService.js" />
+    <Content Include="js\services\studentAttendance\StudentAttendanceService.js" />
+    <Content Include="js\services\students\studentService.js" />
+    <Content Include="js\services\gallery\galleryService.js" />
+    <Content Include="js\services\subjects\InstituteSubjectService.js" />
+    <Content Include="js\services\subjects\SubjectAcademicClassMappingService.js" />
+    <Content Include="js\services\subjects\SubjectService.js" />
+    <Content Include="js\services\subjects\SubjectTypeService.js" />
+    <Content Include="js\services\teacher\teacherService.js" />
+    <Content Include="js\services\techerAttendance\techerAttendanceService.js" />
+    <Content Include="js\services\ui-load.js" />
+    <Content Include="js\services\UserInfo\UserInfoService.js" />
+    <Content Include="js\services\voucherEntry\voucherEntryService.js" />
+    <Content Include="js\state\AccountState.js" />
+    <Content Include="js\state\eDiaryState.js" />
+    <Content Include="js\state\examState.js" />
+    <Content Include="js\state\feesGenerateConfigState.js" />
+    <Content Include="js\state\voucherState.js" />
+    <Content Include="js\state\resultPublishState.js" />
+    <Content Include="js\state\contactFeedbackState.js" />
+    <Content Include="js\state\ContentsState.js" />
+    <Content Include="js\state\feesCollectionState.js" />
+    <Content Include="js\state\onlineAdmissionState.js" />
+    <Content Include="js\state\certificatePrintState.js" />
+    <Content Include="js\state\employeeAttendanceState.js" />
+    <Content Include="js\state\libraryBookState.js" />
+    <Content Include="js\state\WebmanagerState.js" />
+    <Content Include="js\state\smsTemplateState.js" />
+    <Content Include="js\state\techerAttendanceState.js" />
+    <Content Include="l10n\de_DE.js" />
+    <Content Include="l10n\en.js" />
+    <Content Include="l10n\it_IT.js" />
+    <Content Include="psd\ui.png" />
+    <Content Include="psd\ui.zip" />
+    <Content Include="Content\font-awesome\Desktop.lnk" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.eot%40" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="img\Descr.WD3" />
+    <Content Include="Scripts\audioplayer\audioplayer.css" />
+    <Content Include="Scripts\audioplayer\audioplayer.js" />
+    <Content Include="Scripts\dropdown-menu\arrows-000000.png" />
+    <Content Include="Scripts\dropdown-menu\dropdown-menu.css" />
+    <Content Include="Scripts\dropdown-menu\dropdown-menu.js" />
+    <Content Include="Scripts\fancybox\blank.gif" />
+    <Content Include="Scripts\fancybox\fancybox_loading.gif" />
+    <Content Include="Scripts\fancybox\fancybox_overlay.png" />
+    <Content Include="Scripts\fancybox\fancybox_sprite.png" />
+    <Content Include="Scripts\fancybox\jquery.fancybox-media.js" />
+    <Content Include="Scripts\fancybox\jquery.fancybox.css" />
+    <Content Include="Scripts\fancybox\jquery.fancybox.pack.js" />
+    <Content Include="Scripts\jquery-2.1.3.js" />
+    <Content Include="Scripts\jquery-migrate-1.2.1.js" />
+    <Content Include="Scripts\jquery.easy-pie-chart.js" />
+    <Content Include="Scripts\jquery.fitvids.js" />
+    <Content Include="Scripts\theme.js" />
+    <Content Include="tpl\Account\BankAccount.html" />
+    <Content Include="tpl\Account\RelatedAccount.html" />
+    <Content Include="tpl\app_dashboard_v1.html" />
+    <Content Include="tpl\AttendanceReports\AttendanceReports.html" />
+    <Content Include="tpl\AttendanceReports\UserAttendanceReports.html" />
+    <Content Include="tpl\certificatePrint\Create.html" />
+    <Content Include="tpl\certificatePrint\Edit.html" />
+    <Content Include="tpl\certificatePrint\List.html" />
+    <Content Include="tpl\ChangePassword.html" />
+    <Content Include="tpl\contactFeedback\details.html" />
+    <Content Include="tpl\contactFeedback\list.html" />
+    <Content Include="tpl\eDiary\List.html" />
+    <Content Include="tpl\employee\Employee.html" />
+    <Content Include="tpl\employee\EmployeeDetails.html" />
+    <Content Include="tpl\employee\EmployeeEdit.html" />
+    <Content Include="tpl\employee\EmployeeList.html" />
+    <Content Include="tpl\event\EventCreate.html" />
+    <Content Include="tpl\event\EventEdit.html" />
+    <Content Include="tpl\event\EventList.html" />
+    <Content Include="tpl\exam\examGrade\ExamGrade.html" />
+    <Content Include="tpl\exam\examModal\ExamTabulationModalDetails.html" />
+    <Content Include="tpl\exam\examProcess\ExamProcess.html" />
+    <Content Include="tpl\exam\ExamSubjectMarks\ExamSubjectMarks.html" />
+    <Content Include="tpl\exam\ExamTabulationSheet\ExamTabulationSheet.html" />
+    <Content Include="tpl\exam\examType\ExamType.html" />
+    <Content Include="tpl\exam\exam\Exam.html" />
+    <Content Include="tpl\exam\StudentResultSheet\StudentResultSheet.html" />
+    <Content Include="tpl\FeesAutoGenerate\edit.html" />
+    <Content Include="tpl\FeesAutoGenerate\editEnroll.html" />
+    <Content Include="tpl\FeesAutoGenerate\listEnroll.html" />
+    <Content Include="tpl\FeesAutoGenerate\new.html" />
+    <Content Include="tpl\FeesAutoGenerate\newEnroll.html" />
+    <Content Include="tpl\feesCollection\feesCollection.html" />
+    <Content Include="tpl\feesCollection\feesCollectionNew.html" />
+    <Content Include="tpl\feesCollection\feesGenerateNew.html" />
+    <Content Include="tpl\feesCollection\feesAcademicClass.html" />
+    <Content Include="tpl\feesCollection\feesHeads.html" />
+    <Content Include="tpl\feesCollection\FeesType.html" />
+    <Content Include="tpl\feesCollection\ledger.html" />
+    <Content Include="tpl\feesGenerateConfig\panel.html" />
+    <Content Include="tpl\FingerPrint\fingerprintcollection.html" />
+    <Content Include="tpl\form_fileupload.html" />
+    <Content Include="tpl\gallery\GalleryFileUpload.html" />
+    <Content Include="tpl\Account\GLAccount\GLAccountTree.html" />
+    <Content Include="tpl\globalUser\globalUser.html" />
+    <Content Include="tpl\Account\GLSubsidyTypeMap\GLSubsidy.html" />
+    <Content Include="tpl\LibraryBook\LibraryBookList.html" />
+    <Content Include="tpl\mobilePayment\MobilePaymentNew.html" />
+    <Content Include="tpl\mobilePayment\MobilePaymentEdit.html" />
+    <Content Include="tpl\mobilePayment\MobilePaymentList.html" />
+    <Content Include="tpl\resultPublish\create.html" />
+    <Content Include="tpl\resultPublish\edit.html" />
+    <Content Include="tpl\resultPublish\list.html" />
+    <Content Include="tpl\notice\NoticeCreate.html" />
+    <Content Include="tpl\notice\NoticeEdit.html" />
+    <Content Include="tpl\notice\NoticeList.html" />
+    <Content Include="tpl\onlineAdmission\edit.html" />
+    <Content Include="tpl\onlineAdmission\list.html" />
+    <Content Include="tpl\onlineAdmission\details.html" />
+    <Content Include="tpl\page_lockme.html" />
+    <Content Include="tpl\page_profile.html" />
+    <Content Include="tpl\page_signin.html" />
+    <Content Include="tpl\page_signup.html" />
+    <Content Include="tpl\partner.html" />
+    <Content Include="tpl\settings\AcademicBranch.html" />
+    <Content Include="tpl\settings\AcademicClassSectionMapping.html" />
+    <Content Include="tpl\settings\AcademicPeriod.html" />
+    <Content Include="tpl\settings\ExpenseHead.html" />
+    <Content Include="tpl\settings\IncomeHead.html" />
+    <Content Include="tpl\settings\CertificatePrintType.html" />
+    <Content Include="tpl\settings\Certificate\Certificate.html" />
+    <Content Include="tpl\settings\Scholarship.html" />
+    <Content Include="tpl\settings\CoCurricularActivity.html" />
+    <Content Include="tpl\settings\Rights\Rights.html" />
+    <Content Include="tpl\settings\Roles\Role.html" />
+    <Content Include="tpl\settings\Testimonial.html" />
+    <Content Include="tpl\settings\AcademicSection.html" />
+    <Content Include="tpl\settings\AcademicGroup.html" />
+    <Content Include="tpl\settings\AcademicClass.html" />
+    <Content Include="tpl\settings\AcademicSession.html" />
+    <Content Include="tpl\settings\AcademicShift.html" />
+    <Content Include="tpl\settings\AcademicVersion.html" />
+    <Content Include="tpl\settings\Address.html" />
+    <Content Include="tpl\settings\AddressType.html" />
+    <Content Include="tpl\settings\Application\Application.html" />
+    <Content Include="tpl\settings\AttendanceType.html" />
+    <Content Include="tpl\settings\BloodGroup.html" />
+    <Content Include="tpl\settings\Colours.html" />
+    <Content Include="tpl\settings\Country.html" />
+    <Content Include="tpl\settings\Department.html" />
+    <Content Include="tpl\settings\Designation.html" />
+    <Content Include="tpl\settings\DistrictOrState.html" />
+    <Content Include="tpl\settings\EducationalQualification.html" />
+    <Content Include="tpl\settings\Gender.html" />
+    <Content Include="tpl\settings\Guardian.html" />
+    <Content Include="tpl\settings\GuardiansOfStudent.html" />
+    <Content Include="tpl\settings\GuardianType.html" />
+    <Content Include="tpl\settings\Institute.html" />
+    <Content Include="tpl\settings\Institute\Institute.html" />
+    <Content Include="tpl\settings\Institute\InstituteCreate.html" />
+    <Content Include="tpl\settings\Institute\InstituteCurrent.html" />
+    <Content Include="tpl\settings\Institute\InstituteEdit.html" />
+    <Content Include="tpl\settings\MaritalStatus.html" />
+    <Content Include="tpl\settings\Nationality.html" />
+    <Content Include="tpl\settings\Package.html" />
+    <Content Include="tpl\settings\partner.html" />
+    <Content Include="tpl\settings\Profession.html" />
+    <Content Include="tpl\settings\Religion.html" />
+    <Content Include="tpl\settings\settings.html" />
+    <Content Include="tpl\settings\Roles\RolesSettings.html" />
+    <Content Include="tpl\settings\User\User.html" />
+    <Content Include="tpl\settings\Webmanager\Asset.html" />
+    <Content Include="tpl\settings\Webmanager\IncExp.html" />
+    <Content Include="tpl\settings\Webmanager\LibraryInfo.html" />
+    <Content Include="tpl\settings\Webmanager\Multimedia.html" />
+    <Content Include="tpl\settings\Webmanager\Sanitation.html" />
+    <Content Include="tpl\settings\Webmanager\Webmanager.html" />
+    <Content Include="tpl\settings\Webmanager\SeoText.html" />
+    <Content Include="tpl\settings\Webmanager\ContactText.html" />
+    <Content Include="tpl\settings\Webmanager\MasterPlanText.html" />
+    <Content Include="tpl\settings\Webmanager\HistoryText.html" />
+    <Content Include="tpl\settings\Webmanager\InfractructureText.html" />
+    <Content Include="tpl\settings\Webmanager\UsefulLinkText.html" />
+    <Content Include="tpl\settings\Webmanager\welcometext.html" />
+    <Content Include="tpl\sms\sendSms\create.html" />
+    <Content Include="tpl\sms\sendSms\details.html" />
+    <Content Include="tpl\sms\sendSms\edit.html" />
+    <Content Include="tpl\sms\sendSms\list.html" />
+    <Content Include="tpl\sms\template\create.html" />
+    <Content Include="tpl\sms\template\details.html" />
+    <Content Include="tpl\sms\template\edit.html" />
+    <Content Include="tpl\sms\template\list.html" />
+    <Content Include="tpl\studentAttendanceByManagement\studentAttendanceAbscondingByManagement.html" />
+    <Content Include="tpl\studentAttendanceByManagement\studentAttendanceByManagement.html" />
+    <Content Include="tpl\studentAttendanceByManagement\studentAttendanceDetailsByManagement.html" />
+    <Content Include="tpl\studentAttendanceByManagement\studentAttendanceEditByManagement.html" />
+    <Content Include="tpl\studentAttendanceByManagement\studentAttendanceListByManagement.html" />
+    <Content Include="tpl\studentAttendanceByTeacher\studentAttendanceByTeacher.html" />
+    <Content Include="tpl\studentAttendanceByTeacher\studentAttendanceDetailsByTeacher.html" />
+    <Content Include="tpl\studentAttendanceByTeacher\studentAttendanceAbscondingByTeacher.html" />
+    <Content Include="tpl\studentAttendanceByTeacher\studentAttendanceEditByTeacher.html" />
+    <Content Include="tpl\studentAttendanceByTeacher\studentAttendanceListByTeacher.html" />
+    <Content Include="tpl\studentAttendance\AttendanceSheetPrint.html" />
+    <Content Include="tpl\students\StudentDetails.bak.html" />
+    <Content Include="tpl\students\StudentDetails.html" />
+    <Content Include="tpl\students\StudentEdit.bak.html" />
+    <Content Include="tpl\students\StudentEdit.html" />
+    <Content Include="tpl\students\StudentList.html" />
+    <Content Include="tpl\students\Student.html" />
+    <Content Include="tpl\gallery\Gallery.html" />
+    <Content Include="tpl\gallery\GalleryDetails.html" />
+    <Content Include="tpl\gallery\GalleryEdit.html" />
+    <Content Include="tpl\gallery\GalleryList.html" />
+    <Content Include="tpl\subjects\InstituteSubject.html" />
+    <Content Include="tpl\subjects\SubjectAcademicClassMapping.html" />
+    <Content Include="tpl\subjects\Subjects.html" />
+    <Content Include="tpl\subjects\SubjectType.html" />
+    <Content Include="tpl\teacher\Teacher.html" />
+    <Content Include="tpl\teacher\TeacherDetails.html" />
+    <Content Include="tpl\teacher\TeacherEdit.html" />
+    <Content Include="tpl\teacher\TeacherList.html" />
+    <Content Include="tpl\employeeAttendance\create.html" />
+    <Content Include="tpl\employeeAttendance\details.html" />
+    <Content Include="tpl\employeeAttendance\edit.html" />
+    <Content Include="tpl\employeeAttendance\list.html" />
+    <Content Include="tpl\techerAttendance\create.html" />
+    <Content Include="tpl\techerAttendance\details.html" />
+    <Content Include="tpl\techerAttendance\edit.html" />
+    <Content Include="tpl\techerAttendance\list.html" />
+    <Content Include="tpl\Account\Vendor\Vendor.html" />
+    <Content Include="tpl\voucherEntry\create.html" />
+    <Content Include="tpl\voucherEntry\details.html" />
+    <Content Include="tpl\voucherEntry\edit.html" />
+    <Content Include="tpl\voucherEntry\list.html" />
+    <Content Include="vendor\angular\angucomplete-alt.js" />
+    <Content Include="vendor\angular\angular-animate\angular-animate.js" />
+    <Content Include="vendor\angular\angular-bootstrap\ui-bootstrap-tpls.js" />
+    <Content Include="vendor\angular\angular-chart\angular-chart.js" />
+    <Content Include="vendor\angular\angular-chart\angular-chart.min.js" />
+    <Content Include="vendor\angular\angular-chart\chart.js" />
+    <Content Include="vendor\angular\angular-cookies\angular-cookies.js" />
+    <Content Include="vendor\angular\angular-touch.min.js" />
+    <Content Include="vendor\libs\fabric.min.js" />
+    <Content Include="vendor\angular\angular-resource\angular-resource.js" />
+    <Content Include="vendor\angular\angular-sanitize\angular-sanitize.js" />
+    <Content Include="vendor\angular\angular-tooltips.js" />
+    <Content Include="vendor\angular\angular-touch\angular-touch.js" />
+    <Content Include="vendor\angular\angular-translate\angular-translate.js" />
+    <Content Include="vendor\angular\angular-translate\loader-static-files.js" />
+    <Content Include="vendor\angular\angular-translate\storage-cookie.js" />
+    <Content Include="vendor\angular\angular-translate\storage-local.js" />
+    <Content Include="vendor\angular\angular-ui-router\angular-ui-router.js" />
+    <Content Include="vendor\angular\angular-ui-utils\ui-utils.js" />
+    <Content Include="vendor\angular\angular.js" />
+    <Content Include="vendor\angular\ngstorage\ngStorage.js" />
+    <Content Include="vendor\angular\oclazyload\ocLazyLoad.js" />
+    <Content Include="vendor\jquery\bootstrap.js" />
+    <Content Include="vendor\jquery\charts\easypiechart\jquery.easy-pie-chart.js" />
+    <Content Include="vendor\jquery\charts\flot\jquery.flot.min.js" />
+    <Content Include="vendor\jquery\charts\flot\jquery.flot.orderBars.js" />
+    <Content Include="vendor\jquery\charts\flot\jquery.flot.pie.min.js" />
+    <Content Include="vendor\jquery\charts\flot\jquery.flot.resize.js" />
+    <Content Include="vendor\jquery\charts\flot\jquery.flot.spline.js" />
+    <Content Include="vendor\jquery\charts\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="vendor\jquery\charts\sparkline\jquery.sparkline.min.js" />
+    <Content Include="vendor\jquery\chosen\chosen-sprite%402x.png" />
+    <Content Include="vendor\jquery\chosen\chosen-sprite.png" />
+    <Content Include="vendor\jquery\chosen\chosen.css" />
+    <Content Include="vendor\jquery\chosen\chosen.jquery.min.js" />
+    <Content Include="vendor\jquery\datatables\dataTables.bootstrap.css" />
+    <Content Include="vendor\jquery\datatables\dataTables.bootstrap.js" />
+    <Content Include="vendor\jquery\datatables\jquery.dataTables.min.js" />
+    <Content Include="vendor\jquery\file\bootstrap-filestyle.min.js" />
+    <Content Include="vendor\jquery\footable\fonts\footable.svg" />
+    <Content Include="vendor\jquery\footable\footable.all.min.js" />
+    <Content Include="vendor\jquery\footable\footable.core.css" />
+    <Content Include="vendor\jquery\fullcalendar\fullcalendar.css" />
+    <Content Include="vendor\jquery\fullcalendar\fullcalendar.min.js" />
+    <Content Include="vendor\jquery\fullcalendar\theme.css" />
+    <Content Include="vendor\jquery\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="vendor\jquery\jquery.jqprint.0.3.js" />
+    <Content Include="vendor\jquery\jquery.min.js" />
+    <Content Include="vendor\jquery\jquery.ui.touch-punch.min.js" />
+    <Content Include="vendor\jquery\jvectormap\jquery-jvectormap-us-aea-en.js" />
+    <Content Include="vendor\jquery\jvectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="vendor\jquery\jvectormap\jquery-jvectormap.css" />
+    <Content Include="vendor\jquery\jvectormap\jquery-jvectormap.min.js" />
+    <Content Include="vendor\jquery\nestable\jquery.nestable.js" />
+    <Content Include="vendor\jquery\nestable\nestable.css" />
+    <Content Include="vendor\jquery\select2\select2-bootstrap.css" />
+    <Content Include="vendor\jquery\select2\select2-spinner.gif" />
+    <Content Include="vendor\jquery\select2\select2.css" />
+    <Content Include="vendor\jquery\select2\select2.min.js" />
+    <Content Include="vendor\jquery\select2\select2.png" />
+    <Content Include="vendor\jquery\select2\select2x2.png" />
+    <Content Include="vendor\jquery\slider\bootstrap-slider.js" />
+    <Content Include="vendor\jquery\slider\slider.css" />
+    <Content Include="vendor\jquery\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="vendor\jquery\sortable\jquery.sortable.js" />
+    <Content Include="vendor\jquery\spinner\jquery.bootstrap-touchspin.css" />
+    <Content Include="vendor\jquery\spinner\jquery.bootstrap-touchspin.min.js" />
+    <Content Include="vendor\jquery\wysiwyg\bootstrap-wysiwyg.js" />
+    <Content Include="vendor\jquery\wysiwyg\jquery.hotkeys.js" />
+    <Content Include="vendor\libs\moment.min.js" />
+    <Content Include="vendor\libs\screenfull.min.js" />
+    <Content Include="vendor\modules\angular-bootstrap-nav-tree\abn_tree.css" />
+    <Content Include="vendor\modules\angular-bootstrap-nav-tree\abn_tree_directive.js" />
+    <Content Include="vendor\modules\angular-file-upload\angular-file-upload.js" />
+    <Content Include="vendor\modules\angular-file-upload\angular-file-upload.min.js" />
+    <Content Include="vendor\modules\angular-slider\angular-slider.css" />
+    <Content Include="vendor\modules\angular-slider\angular-slider.min.js" />
+    <Content Include="vendor\modules\angular-ui-calendar\calendar.js" />
+    <Content Include="vendor\modules\angular-ui-select\select.min.css" />
+    <Content Include="vendor\modules\angular-ui-select\select.min.js" />
+    <Content Include="vendor\modules\angularjs-toaster\toaster.css" />
+    <Content Include="vendor\modules\angularjs-toaster\toaster.js" />
+    <Content Include="vendor\modules\ng-grid\ng-grid.min.css" />
+    <Content Include="vendor\modules\ng-grid\ng-grid.min.js" />
+    <Content Include="vendor\modules\ng-grid\theme.css" />
+    <Content Include="vendor\modules\ngImgCrop\ng-img-crop.css" />
+    <Content Include="vendor\modules\ngImgCrop\ng-img-crop.js" />
+    <Content Include="vendor\modules\pdf\jspdf.debug.js" />
+    <Content Include="vendor\modules\textAngular\textAngular-sanitize.min.js" />
+    <Content Include="vendor\modules\textAngular\textAngular.min.js" />
+    <Content Include="vendor\modules\videogular\plugins\buffering.min.js" />
+    <Content Include="vendor\modules\videogular\plugins\controls.min.js" />
+    <Content Include="vendor\modules\videogular\plugins\ima-ads.min.js" />
+    <Content Include="vendor\modules\videogular\plugins\overlay-play.min.js" />
+    <Content Include="vendor\modules\videogular\plugins\poster.min.js" />
+    <Content Include="vendor\modules\videogular\videogular.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="vendor\jquery\datatables\datatable.json" />
+    <Content Include="vendor\jquery\footable\fonts\footable.eot" />
+    <Content Include="vendor\jquery\footable\fonts\footable.ttf" />
+    <Content Include="vendor\jquery\footable\fonts\footable.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Api\academic\" />
+    <Folder Include="Api\Class\" />
+    <Folder Include="Api\Exam\" />
+    <Folder Include="App_Data\folder\" />
+    <Folder Include="Content\img\student\" />
+    <Folder Include="Content\Student\" />
+    <Folder Include="js\controllers\GLAccount\" />
+    <Folder Include="js\controllers\GLSubsidyTypeMap\" />
+    <Folder Include="js\controllers\uploads\" />
+    <Folder Include="js\services\GLSubsidyTypeMap\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="js\packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="css\less\app.arrow.less" />
+    <Content Include="css\less\app.butterbar.less" />
+    <Content Include="css\less\app.buttons.less" />
+    <Content Include="css\less\app.colors.less" />
+    <Content Include="css\less\app.components.less" />
+    <Content Include="css\less\app.item.less" />
+    <Content Include="css\less\app.layout.boxed.less" />
+    <Content Include="css\less\app.layout.less" />
+    <Content Include="css\less\app.less" />
+    <Content Include="css\less\app.mixins.less" />
+    <Content Include="css\less\app.nav.dock.less" />
+    <Content Include="css\less\app.nav.less" />
+    <Content Include="css\less\app.nav.offscreen.less" />
+    <Content Include="css\less\app.ng.less" />
+    <Content Include="css\less\app.plugin.less" />
+    <Content Include="css\less\app.reset.less" />
+    <Content Include="css\less\app.utilities.less" />
+    <Content Include="css\less\app.variables.less" />
+    <Content Include="css\less\app.widgets.less" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\Simple-Line-Icons.eot" />
+    <Content Include="fonts\Simple-Line-Icons.ttf" />
+    <Content Include="fonts\Simple-Line-Icons.woff" />
+    <Content Include="fonts\sourcesanspro\sourcesanspro-bold.woff" />
+    <Content Include="fonts\sourcesanspro\sourcesanspro-light.woff" />
+    <Content Include="fonts\sourcesanspro\sourcesanspro.woff" />
+    <Content Include="js\app\contact\contacts.json" />
+    <Content Include="js\app\mail\mails.json" />
+    <Content Include="js\app\note\notes.json" />
+    <Content Include="js\controllers\largeLoad.json" />
+    <Content Include="Content\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\img\Descr.WD3" />
+    <Content Include="Document\packages.rar" />
+    <Content Include="packages.config" />
+    <Content Include="DataSetReports\StudentsDetails.xsc">
+      <DependentUpon>StudentsDetails.xsd</DependentUpon>
+    </Content>
+    <Content Include="css\autoComplete\bariol_bold-webfont.eot" />
+    <Content Include="css\autoComplete\bariol_bold-webfont.ttf" />
+    <Content Include="css\autoComplete\bariol_bold-webfont.woff" />
+    <Content Include="css\autoComplete\bariol_regular-webfont.eot" />
+    <Content Include="css\autoComplete\bariol_regular-webfont.ttf" />
+    <Content Include="css\autoComplete\bariol_regular-webfont.woff" />
+    <Content Include="DataSetReports\AttendanceReports.xsc">
+      <DependentUpon>AttendanceReports.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSetReports\AttendanceReports.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AttendanceReports.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DataSetReports\AttendanceReports.xss">
+      <DependentUpon>AttendanceReports.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSetReports\StudentsDetails.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentsDetails.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DataSetReports\StudentsDetails.xss">
+      <DependentUpon>StudentsDetails.xsd</DependentUpon>
+    </Content>
+    <Content Include="DataSetReports\UserAttendanceReports.xsc">
+      <DependentUpon>UserAttendanceReports.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSetReports\UserAttendanceReports.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UserAttendanceReports.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DataSetReports\UserAttendanceReports.xss">
+      <DependentUpon>UserAttendanceReports.xsd</DependentUpon>
+    </Content>
+    <None Include="Project_Readme.html" />
+    <None Include="Properties\PublishProfiles\ERP.pubxml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="tpl\modal.html" />
+    <Content Include="tpl\students\Student.html.bak" />
+    <Content Include="Views\Home\Dashboard.cshtml" />
+    <Content Include="Views\Home\Navigation.cshtml" />
+    <Content Include="Views\Home\Header.cshtml" />
+    <Content Include="Views\Home\UnAuthenticated.cshtml" />
+    <Content Include="Views\Shared\_LayoutUnAuthenticated.cshtml" />
+    <Content Include="vendor\angular\angular-chart\angular-chart.min.js.map" />
+    <Content Include="Views\Home\SessionsOut.cshtml" />
+    <Content Include="Views\Reports\test.rpt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Source\Repository.Pattern.Ef6\Repository.Pattern.Ef6.csproj">
+      <Project>{f68a1d19-93fb-47c1-a22b-42bea3e4fd8c}</Project>
+      <Name>Repository.Pattern.Ef6</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Repository.Pattern\Repository.Pattern.csproj">
+      <Project>{6e682a14-c872-4813-b620-76e108dea683}</Project>
+      <Name>Repository.Pattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Service.Pattern\Service.Pattern.csproj">
+      <Project>{86f86650-ee3c-4372-8fec-40c2fe015022}</Project>
+      <Name>Service.Pattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\pnsms.Entities\pnsms.Entities.csproj">
+      <Project>{952c92de-5526-460b-ad08-08c785286900}</Project>
+      <Name>pnsms.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\pnsms.Service\pnsms.Service.csproj">
+      <Project>{7295de19-bb4a-4dbe-9d12-4297bd9b2a5c}</Project>
+      <Name>pnsms.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\pnsms.Repository\pnsms.Repository.csproj">
+      <Project>{863a3a33-4042-4385-b591-2bc2e41b245a}</Project>
+      <Name>pnsms.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\pnsms.utility\pnsms.utility.csproj">
+      <Project>{f648b7d9-8a4f-4de6-91e7-3fe9ac7e13a8}</Project>
+      <Name>pnsms.utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="tpl\AttendanceReports\AttendanceReports.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AttendanceReports.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tpl\AttendanceReports\UserAttendanceReports.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UserAttendanceReports.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\StudentReports\StudentsReports.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StudentsReports.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="js\controllers\AttendanceFileUpload\AttendanceFileUploads.js" />
+    <Content Include="tpl\AttendanceFileUpload\AttendanceFileUpload.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="js\controllers\feesCollection\FeesType.js" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>45820</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:45871/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

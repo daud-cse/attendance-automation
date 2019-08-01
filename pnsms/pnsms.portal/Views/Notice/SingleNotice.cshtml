@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Notice Details";
+}
+
+<div class="container">
+   
+   
+      
+       
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-body">
+
+                        @if (@Model.NoticeTitle.Length > 150)
+                        {
+                           
+                            @Model.NoticeTitle.Substring(1, 150) <text>.....</text>
+                            //</h2>
+                        }
+                        else
+                        {
+                           
+                            @Model.NoticeTitle
+                          
+                        }
+
+                        @MvcHtmlString.Create(@Model.NoticeBody)
+                        <div class="google-map-canvas" id="map-canvas" style="height: 210px;">
+                         
+                        </div> 
+                    </div>
+                </div>
+            </div> 
+       
+    
+</div> <!-- /.container -->

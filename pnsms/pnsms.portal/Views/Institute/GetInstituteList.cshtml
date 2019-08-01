@@ -1,0 +1,149 @@
+﻿@using MvcPaging
+@model MvcPaging.IPagedList<pnsms.Entities.StoredProcedures.Models.VmInstitute>
+@{
+    ViewBag.Title = "Institute List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#page-leftbar li").removeClass("active");
+        $("#liProject").addClass("active");
+    });
+</script>
+
+@section breadcrumb
+{
+    <li><a href="~/Home/index">Dashboard</a></li>
+
+    <li class="active">Institute List</li>
+}
+@section title
+{
+    @ViewBag.Title
+}
+<style type="text/css">
+    .form-inline .form-control {
+        width: 100%;
+    }
+
+    .form-inline input {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .form-inline .form-group {
+        width: 80%;
+    }
+
+    /*.margin {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }*/
+</style>
+@using (Html.BeginForm("GetInstituteList", "Institute", FormMethod.Get))
+{
+    <div class="row margin">
+        <div class="col-md-5">
+
+            @*<p>
+                <p> @Html.ActionLink("Create New Applicant", "Create", "ApplicantVM", null, new { @class = "btn btn-success btn-xs" })</p>
+
+                </p>*@
+
+        </div>
+        <div class="form-inline col-md-6" style="margin-bottom: 20px">
+
+            <div class="form-group">
+                <input type="text" class="form-control " id="searchItem" name="searchItem" placeholder="Search item" value="@ViewData["searchItem"]">
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </div>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+
+                <th>
+                    @*@Html.DisplayNameFor(model => model.FirstOrDefault().InstituteName)*@
+                    Institute Name
+
+                </th>
+                <th>
+                    Domain Name
+                </th>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.FirstOrDefault().GlobalDistrictName)*@
+                    Division Name
+                </th>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.FirstOrDefault().GlobalDistrictName)*@
+                    District Name
+                </th>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.FirstOrDefault().GlobalSubDistrictName*@
+                    Upazila Name
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.InstituteName)
+                    </td>
+                    <td>
+                        <a href="http://@item.DomainName" target="_blank">
+                            @item.DomainName
+                        </a>
+
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GlobalDivisionName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GlobalDistrictName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GlobalSubDistrictName)
+                    </td>
+
+                    <td>
+
+                        @*@Html.ActionLink("Go To Details", "Edit", "ApplicantVM", new { id = item.InstituteId }, null)*@
+                    </td>
+                </tr>
+            }
+        <tbody>
+    </table>
+
+    <hr />
+    <div class="pager">
+        @Html.Raw(Html.Pager(
+                 new Options
+                 {
+                     PageSize = Model.PageSize,
+                     TotalItemCount = Model.TotalItemCount,
+                     CurrentPage = Model.PageNumber,
+                     ItemTexts = new ItemTexts() { Next = "Next", Previous = "Previous" },
+                     ItemIcon = new ItemIcon() { First = "icon-backward", Previous = "icon-chevron-left", Next = "icon-chevron-right", Last = "icon-forward" },
+                     TooltipTitles = new TooltipTitles() { Next = "Next page {0}", Previous = "Previous page {0}", Page = "Go to page {0}" },
+                     Size = Size.normal,
+                     Alignment = Alignment.centered,
+                     IsShowControls = true,
+                     IsShowFirstLast = true,
+                     IsShowPages = true
+                 }, new { searchItem = ViewData["searchItem"] }))
+        <div class="well">
+            Showing <span class="badge badge-success">@Model.ItemStart</span> to <span class="badge badge-success">@Model.ItemEnd</span>
+            of <span class="badge badge-info">@Model.TotalItemCount</span> entries
+        </div>
+    </div>
+}
+
+
+
+

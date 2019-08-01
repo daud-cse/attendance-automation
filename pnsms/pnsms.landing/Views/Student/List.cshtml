@@ -1,0 +1,61 @@
+﻿@model IEnumerable<pnsms.Entities.Models.Student>
+@{
+    ViewBag.Title = "Student List";
+}
+<div class="page-header">
+    <div class="row">
+        <div class="col-md-6 col-sm-6">
+            <h2 class="page-title">Students</h2>
+        </div> <!-- /.col-md-6 -->
+        <div class="col-md-6 col-sm-6 hidden-xs back-home">
+            @Html.ActionLink("← Go back Home", "Index", "Home", new { }, null)
+        </div> <!-- /.col-md-6 -->
+    </div> <!-- /.row -->
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="box-content">
+            <h4 class="widget-title"><span>Notice</span></h4>
+            @{Html.RenderAction("GetAll", "Notice");}
+            @Html.ActionLink("More Notice", "GetAllWithGrid", "Notice", new { }, new { @class = "btn btn-default-alt btn-sm pull-right" })
+        </div> <!-- /.box-content -->
+    </div> <!-- /.col-md-4 -->
+    <div class="col-md-8">
+        <div class="box-content">
+            <h4 class="widget-title">
+                @using (Html.BeginForm("List", "Student"))
+                {
+                    <span>
+                        Class : @Html.DropDownList("classId")
+                        <input type="submit" value="Go">
+                        &nbsp;&nbsp;&nbsp; Total Students : @ViewBag.Count
+                    </span>
+                }
+                
+            </h4>
+            
+            <div class="events-sidebar">
+                <ul>
+                    @foreach (var item in Model)
+                    {
+                        <li class="event-item">
+                            <div class="event-thumb">
+                                <img src="/image/GetImage?id=@item.StudentId &refCode=14&isThumbnail=false" class="attachment-member-thumb">
+                            </div>
+                            <div class="event-content member-content">
+                                <ul class="social pull-right">
+                                    <li><a class="fa fa-twitter" href="#"></a></li>
+                                    <li><a class="fa fa-facebook" href="#"></a></li>
+                                    <li><a class="fa fa-google-plus" href="#"></a></li>
+                                </ul>
+                                <h5 class="event-title">@item.UserInfo.Name</h5>
+                                <p class="event-meta">about about</p>
+
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div> <!-- /.box-content -->
+</div>

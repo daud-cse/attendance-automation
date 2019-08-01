@@ -1,0 +1,31 @@
+﻿@model pnsms.Entities.Models.Content
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Content</h4>
+    <hr />
+    <table>
+        @foreach (var item in Model.Images)
+        {
+            <tr>
+                <td>
+                    <label style="width: 100%;text-align: right">
+                        <a href="/content/ContentDownload?id=@item.Id" target="_blank">
+                            <i class="glyphicon glyphicon-download-alt"></i>
+
+                        </a>
+
+                    </label>
+                    <p>
+                        @item.ImageCaption
+                    </p>
+        </td>
+    </tr>
+        }
+    </table>
+</div>

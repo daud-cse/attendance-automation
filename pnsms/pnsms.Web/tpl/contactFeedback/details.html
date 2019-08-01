@@ -1,0 +1,106 @@
+﻿<div ng-controller="ContactFeedbackDetailsCtrl">
+    <div class="bg-light lter b-b wrapper-md">
+        <h1 class="m-n font-thin h3">Contact & Feedback Details</h1>
+    </div>
+    <div class="wrapper-md">
+        <!-- toaster directive -->
+        <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+        <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+        <!-- attendance directive -->
+        <div class="panel panel-default" id="myDiv">
+            <div class="panel-body">
+                <div class="row">
+
+                    <div class="form-horizontal">
+                        <div class="form-group m-b-sm" style="margin: 0px">
+                            <label class="col-sm-2 control-label">Contact Person:</label>
+                            <div class="col-sm-4">
+                                <p class="form-control-static">{{VmUserDetails.FirstName}} {{VmUserDetails.LastName}}</p>
+                            </div>
+                            <label class="col-sm-2 control-label">Address:</label>
+                            <div class="col-sm-4">
+                                <p class="form-control-static">{{VmUserDetails.Address}}, {{VmUserDetails.Country}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="line-dashed b-b"></div>
+                <div class="row">
+
+                    <div class="form-horizontal">
+                        <div class="form-group m-b-sm" style="margin: 0px">
+                            <label class="col-sm-2 control-label">Contact No:</label>
+                            <div class="col-sm-4">
+                                <p class="form-control-static">{{VmUserDetails.ContactNumber}}</p>
+                            </div>
+                            <label class="col-sm-2 control-label">Email:</label>
+                            <div class="col-sm-4">
+                                <p class="form-control-static">{{VmUserDetails.Email}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="line-dashed b-b"></div>
+                <div class="row">
+
+                    <div class="form-horizontal">
+                        <div class="form-group m-b-sm" style="margin: 0px">
+                            <label class="col-sm-2 control-label">Status:</label>
+                            <div class="col-sm-4">
+                                <div ng-if="VmUserDetails.IsActive == true">
+                                    <p class="form-control-static">Active</p>
+                                </div>
+                                <div ng-if="VmUserDetails.IsActive == false">
+                                    <p class="form-control-static">InActive</p>
+                                </div>
+                            </div>
+                            <label class="col-sm-2 control-label">Date:</label>
+                            <div class="col-sm-4">
+                                <p class="form-control-static">{{VmUserDetails.LastUpdateTime | date:'dd-MMMM-yyyy'}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="line-dashed b-b"></div>
+                <div class="row">
+
+                    <div class="form-horizontal">
+                        <div class="form-group m-b-sm" style="margin: 0px">
+                            <label class="col-sm-2 control-label">Subject:</label>
+                            <div class="col-sm-8">
+                                <p class="form-control-static">{{VmUserDetails.Subject}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="line-dashed b-b"></div>
+                <div class="row">
+
+                    <div class="form-horizontal">
+                        <div class="form-group m-b-sm" style="margin: 0px">
+                            <label class="col-sm-2 control-label">Message:</label>
+                            <div class="col-sm-8">
+                                <p class="form-control-static">{{VmUserDetails.Message}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="col-sm-12 ">
+                            <a ui-sref="app.contactFeedback.list" class="btn btn-default"><i class="icon-action-undo"></i> &nbsp;Back to List</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>

@@ -1,0 +1,78 @@
+﻿<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">St Att</h1>
+</div>
+<div class="wrapper-md">
+    <!-- toaster directive -->
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+    <!-- attendance directive -->
+    <form role="form" name="step1" ng-controller="StudentAttendanceEditByTeacherCtrl" method="post">
+        <tabset class="tab-container" ng-init="steps={percent:20, step1:false, step2:true}">
+            <tab heading="Step 1" active="steps.step1" select="steps.percent=10">
+                <p class="m-b"></p>
+                <progressbar value="steps.percent" class="progress-xs" type="success"></progressbar>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Date</label>
+                            <input type="text" value="{{VmStudentAttendance.StudentAttendance.AttendanceDate | date:'dd-MMMM-yyyy'}}" class="form-control m-b" disabled="disabled" />
+                        </div>
+                        <div class="form-group">
+                            <label>Class</label>
+                            <select ng-model="VmStudentAttendance.StudentAttendance.AcademicClassId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudentAttendance.StudentAttendance.AcademicClassList" disabled="disabled">
+                                <option value="">-- choose Class --</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Branch</label>
+                            <select ng-model="VmStudentAttendance.StudentAttendance.AcademicBranchId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudentAttendance.StudentAttendance.AcademicBranchList" disabled="disabled">
+                                <option value="">-- choose Branch --</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Section</label>
+                            <select ng-model="VmStudentAttendance.StudentAttendance.AcademicSectionId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudentAttendance.StudentAttendance.AcademicSectionList" disabled="disabled">
+                                <option value="">-- choose Section --</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-t m-b">
+                    <button type="submit" ng-disabled="step1.$invalid" class="btn btn-default" ng-click="steps.step2 = true;">Next</button>
+                </div>
+            </tab>
+            <tab heading="Step 2" disabled="step1.$invalid" active="steps.step2" select="steps.percent=60">
+                <p class="m-b"></p>
+                <progressbar value="steps.percent" class="progress-xs" type="success"></progressbar>
+                <div class="table-responsive">
+                    <table class="table table-striped b-t b-light" ng-table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Roll No.</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody ng-show="VmStudentAttendance.AttendanceDetails.length">
+                            <tr ng-repeat="x in VmStudentAttendance.AttendanceDetails | orderBy:'StudentRoll'">
+                                <td><input type="hidden" value="{{ x.StudentId }}">{{ x.StudentName }}</td>
+                                <td>{{ x.StudentRoll }}</td>
+                                <td>
+                                        <div class="btn-group" ng-repeat="xx in x.AttendanceTypes">
+                                            <label ng-class="{{xx.AttTypeId}}=={{x.AttendanceTypeId}} ? 'active {{xx.colorCode}}' : '{{xx.colorCode}}'" btn-ra btn-radio="'{{ xx.AttTypeId }}'" ng-model="x.AttendanceTypeId" class="btn btn-sm ng-untouched ng-valid ng-dirty"><i class="fa fa-check text-active"></i>{{ xx.Flag }}</label>
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="m-t m-b">
+                    <button type="button" class="btn btn-default" ng-click="steps.step1 = true;">Back</button>
+                    <button type="submit" class="btn btn-default" ng-click="steps.percent=100; AttendanceEditSubmit()">Submit</button>
+                </div>
+            </tab>
+        </tabset>
+    </form>
+</div>   

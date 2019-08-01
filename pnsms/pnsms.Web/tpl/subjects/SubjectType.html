@@ -1,0 +1,129 @@
+﻿<div class="bg-info-lter b-b wrapper-sm text-dark-dk">
+    <h3 class="m-n font-thin"><i class="icon-note text-info"></i> &nbsp;Subject Type</h3>
+</div>
+<div class="wrapper-md" ng-controller="SubjectTypeCtrl">
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+    <div class="panel wrapper" ng-hide="isLoading">
+        <form name="userform" class="form-validation" ng-hide="showTable">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label>Name </label>
+                        <input class="form-control" data-ng-model="SubjectType.Name" placeholder="Name" type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="i-checks m-b-none">
+                            <input type="checkbox" data-ng-model="SubjectType.IsDefault"> <i></i>
+                        </label>
+                        <label>Is Default  </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="i-checks m-b-none">
+                            <input type="checkbox" data-ng-model="SubjectType.IsMandatory"> <i></i>
+                        </label>
+                        <label>Is Mandatory  </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="i-checks m-b-none">
+                            <input type="checkbox" data-ng-model="SubjectType.IsActive"> <i></i>
+                        </label>
+                        <label>Is Active  </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="i-checks m-b-none">
+                            <input type="checkbox" data-ng-model="SubjectType.IsFailApplicable"> <i></i>
+                        </label>
+                        <label>Is Fail Applicable  </label>
+                    </div>
+                    <div class="form-group">
+                        <label>Grade Point </label>
+                        <input class="form-control" data-ng-model="SubjectType.HandicapGradePoint" placeholder="Name" type="number" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Marks </label>
+                        <input class="form-control" data-ng-model="SubjectType.HandicapMarks" placeholder="Name" type="number" required>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in ng-scope" style="margin-left:15px;"></div>
+                <footer>
+                    <div class="row" style="margin-bottom: 20px;">
+                        <div class="form-group">
+                            <div class="col-sm-2 " style="margin-left: 15px;">
+                                <a class="btn btn-default pull-left" ng-click="Back()"><i class="icon-action-undo"></i> &nbsp;Back to List</a>
+                            </div>
+                            <div class="col-sm-1 pull-right" style="margin-right: 45px;">
+                                <button type="submit" ng-show="SubjectType.Id==undefined" ng-click="Save()" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-floppy-saved"></i>&nbsp;Save</button>
+                                <button type="submit" ng-hide="SubjectType.Id==undefined" ng-click="Update()" class="btn btn-success pull-right"><i class="glyphicon glyphicon-floppy-saved"></i>&nbsp;Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </form>
+        <div class="panel panel-default" ng-show="showTable">
+            <div class="row wrapper">
+                <div class="col-sm-6 m-b-xs">
+                    <button class="btn btn-sm btn-success pull-left" ng-click="showForm()">+ Add New Subject Type</button>
+                </div>
+            </div>
+
+            <table class="table table-striped b-t b-light">
+                <thead>
+                    <tr>
+                        <th style="width:20px;">
+                        </th>
+                        <th><span class="Name">Name&nbsp; </span></th>
+                        <th><span class="GradePoint">Grade Point&nbsp; </span></th>
+                        <th><span class="Marks">Marks&nbsp; </span></th>
+                        <th><span class="IsMandatory">Is Mandatory &nbsp; </span></th>
+                        <th><span class="IsActive">Is Active&nbsp; </span></th>
+                        <th style="width:100px;"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in pagedItems[currentPage] | orderBy:sortingOrder:reverse">
+                        <td></td>
+                        <td>{{item.Name}}</td>
+                        <td>{{item.HandicapGradePoint}}</td>
+                        <td>{{item.HandicapMarks}}</td>
+                        <td>
+                            <i ng-hide="item.IsMandatory==true" class="fa fa-times text-danger text" tooltip="InActive" title="InActive"></i>
+                            <i ng-if="item.IsMandatory==true" class="fa fa-check text-success" tooltip="Active" title="Active"></i>
+                        </td>
+                        <td>
+                            <i ng-hide="item.IsActive==true" class="fa fa-times text-danger text" tooltip="InActive" title="InActive"></i>
+                            <i ng-if="item.IsActive==true" class="fa fa-check text-success" tooltip="Active" title="Active"></i>
+                        </td>
+                        <td>
+                            <a type="submit" data-ng-click=" GetById(item.Id);" tooltip="Edit" class="text-primary pull-right"><i class="fa fa-pencil "></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <footer class="panel-footer">
+                <div class="row">
+                    <div class="col-sm-4 hidden-xs">
+                        <small class="text-muted inline m-t-sm m-b-sm">showing {{currentPage*itemsPerPage+1}}-{{(currentPage*(itemsPerPage)+itemsPerPage)>items.length?items.length:(currentPage*(itemsPerPage)+itemsPerPage)}} of {{items.length}} items</small>
+                    </div>
+
+                    <div class="col-sm-8 text-right text-center-xs">
+                        <ul class="pagination pagination-sm m-t-none m-b-none ng-isolate-scope ng-valid">
+                            <li ng-class="{disabled: currentPage == 0}">
+                                <a href ng-click="prevPage()"><i class="fa fa-chevron-left"></i></a>
+                            </li>
+                            <li ng-repeat="n in range(pagedItems.length)"
+                                ng-class="{active: n == currentPage}"
+                                ng-click="setPage()">
+                                <a href ng-bind="n + 1">1</a>
+                            </li>
+                            <li ng-class="{disabled: currentPage == pagedItems.length - 1}">
+                                <a href ng-click="nextPage()"><i class="fa fa-chevron-right"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</div>

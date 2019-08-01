@@ -1,0 +1,527 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Mail or SMS </h2>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var MessageMailMasters = {
+
+            listMessageMailVM: "<tr> <td>[Id]</td><td>[Name]</td><td>[MobileNo]</td><td>[EmailId]</td><td><input type='checkbox'  class='check-box' value='true' checked='checked' id=IsSentId name=[IsSent].IsSent onclick='SetIsActiveValue(this)'></td><td><button type='button' class='remove btn btn-danger btn-sm'><span class='glyphicon glyphicon-remove-sign'></span>Delete</button></td></tr>",
+            MessageMailMaster: {
+            },
+            MessageMailVM: [],
+            Initialize: function () {
+
+                $("#page-leftbar li").removeClass("active");
+                $("#liAdmin").addClass("active");
+                $("#liMessageMailSent").addClass("active");
+
+                $("#divMessageBody").hide();
+                $("#divMailBody").hide();
+
+                $("#ddlMessageAreaTypeId").change(function () {
+                    var MessageAreaTypeName = $("#ddlMessageAreaTypeId option:selected").text();
+                    var MessageAreaTypeId = $("#ddlMessageAreaTypeId option:selected").val();
+                    @*$("#tblistMessageMailVM").empty();
+                    var url = '@Url.Content("~/MessageMailMaster/GetTypeWiseList")';
+                    $.ajax({
+                        type: "POST",
+                        url: url,
+                        data: "MessageAreaTypeId=" + MessageAreaTypeId,
+                        dataType: "json",
+                        success: function (data) {
+                            //if (data.length > 0) {
+                            //    $("#attendees").show();
+                            //} else {
+                            //    $("#attendees").hide();
+                            //}
+                            for (var i = 0; i < data.length; i++) {
+                                var value = MessageMailMasters.listMessageMailVM.replace("[Id]", data[i].Id).replace("[Name]", data[i].Name).replace("[MobileNo]", data[i].MobileNo).replace("[EmailId]", data[i].EmailId).replace("[IsSent]", data[i].IsSent);
+                                $("#tblistMessageMailVM").prepend(value);
+                            }
+                        },
+                        error: function (error) {
+                            alert(error);
+                        }
+                    });*@
+
+                });
+                $("#ddlSendingAreaTypeID").change(function () {
+                    var sendingAreaTypeID=$("#ddlSendingAreaTypeID option:selected").val();
+                    if (sendingAreaTypeID==1) {
+                        $("#divMessageBody").show();
+                        $("#divMailBody").hide();
+                    }
+                    else if (sendingAreaTypeID==2) {
+                        $("#divMessageBody").hide();
+                        $("#divMailBody").show();
+                    }
+                    else if (sendingAreaTypeID==3) {
+                        $("#divMessageBody").show();
+                        $("#divMailBody").show();
+                    }
+                    else {
+                        $("#divMessageBody").hide();
+                        $("#divMailBody").hide();
+                    }
+
+                });
+            },
+            @*MessageMailMastersSubmit: function () {
+
+                var url = '@Url.Content("~/MessageMailMaster/VmMessageMail")';
+                var param = JSON.stringify({ 'objMessageMailMaster': MessageMailMasters.MessageMailMaster, 'lstMessageMailVM': MessageMailMasters.MessageMailVM });
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: param,
+                    success: function (Data) {
+                        var sendingAreaTypeID = $("#ddlSendingAreaTypeID option:selected").val();
+                        if (Data==true) {
+                            @*window.location = '@Url.Content("~/Meeting/index")';
+
+                            if (sendingAreaTypeID == 1) {
+                                alert("Message Sent Successfully.");
+                            }
+                            else if (sendingAreaTypeID == 2) {
+                                alert("Mail Sent Successfully.");
+                            }
+                            else if (sendingAreaTypeID == 3) {
+                                alert("Message and Mail Sent Successfully.");
+                            }
+                        }
+                        else {
+                            alert("Exception occured.");
+                        }
+
+                    },
+                    contentType: 'application/json; charset=utf-8',
+                });
+            },
+            GetAgent: function (id) {
+                var url = '@Url.Content("~/Agent/GetAgent")';
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: { id: id },
+                    dataType: "json",
+                    success: function (data) {
+
+                        for (var i = 0; i < data.StockOutList.length; i++) {
+                            var value = materialforrequsition.listTemplate.replace("[materialid]", data.StockOutList[i].Material.Id).replace("[material]", data.StockOutList[i].Material.Name).replace("[RequiredQuantity]", data.StockOutList[i].Quantity).replace("[AvgPrice]", data.StockOutList[i].replace("[UnitofmeasurementName]", data.StockOutList[i].Material.Unitofmeasurement.Name));
+                            $("#tbmaterials").prepend(value);
+                        }
+                    },
+                    error: function (error) {
+                        alert(error);
+                    }
+                });
+            },*@
+
+        }
+        MessageMailMasters.Initialize();
+        $(document).on('click', 'button.remove', function () {
+            $(this).parent("td").parent("tr").remove();
+        });
+
+        //$("#btnSubmit").click(function () {
+
+
+
+        //    var messageAreaTypeId = $("#ddlMessageAreaTypeId option:selected").val();
+        //    var sendingAreaTypeID = $("#ddlSendingAreaTypeID option:selected").val();
+
+
+        //    if (messageAreaTypeId == 0 || messageAreaTypeId == '') {
+        //        alert("Area Name is manadatory field");
+        //        $("#MessageAreaTypeId").focus();
+        //        return false;
+        //    }
+        //    if (sendingAreaTypeID == 0 || sendingAreaTypeID == '') {
+        //        alert("Area Type is manadatory field");
+        //        $("#sendingAreaTypeID").focus();
+        //        return false;
+        //    }
+        //    var MessageBody = '';
+        //    var MailBody = '';
+        //    if (sendingAreaTypeID==1) {
+        //        MessageBody = $("#MessageBody").val();
+
+        //        if (MessageBody=='') {
+        //            alert("Message Body is not empty.");
+        //            $("#MessageBody").focus();
+        //            return false;
+        //        }
+        //    }
+        //    else if (sendingAreaTypeID==2) {
+        //        MailBody = $("#MailBody").val();
+        //        if (MailBody == '') {
+        //            alert("Mail Body is not empty.");
+        //            $("#MailBody").focus();
+        //            return false;
+        //        }
+
+        //    }
+        //    else if (sendingAreaTypeID==3) {
+        //        MailBody = $("#MailBody").val();
+        //        MessageBody = $("#MessageBody").val();
+
+        //        if (MailBody == '' && MessageBody=='') {
+        //            alert("Message and Mail Body is not empty.");
+        //            $("#MessageBody").focus();
+        //            return false;
+        //        }
+        //        if (MessageBody == '') {
+        //            alert("Message Body is not empty.");
+        //            $("#MessageBody").focus();
+        //            return false;
+        //        }
+        //        if (MailBody == '') {
+        //            alert("Mail Body is not empty.");
+        //            $("#MailBody").focus();
+        //            return false;
+        //        }
+
+        //    }
+        //    if (MessageBody.length > 159) {
+        //        alert("Message can not greater than 159 character.");
+        //        $("#MessageBody").focus();
+        //        return false;
+        //    }
+
+
+        //    MessageMailMasters.MessageMailMaster = {};
+        //    MessageMailMasters.MessageMailMaster = {
+
+        //        MessageAreaTypeId: messageAreaTypeId,
+        //        MessageBody: MessageBody,
+        //        MailBody: MailBody,
+        //        SendingAreaTypeId: sendingAreaTypeID
+        //    };
+        //    MessageMailMasters.MessageMailVM = new Array;
+        //    $("#tblistMessageMailVM tr").each(function (index) {
+        //        var MessageMailVMArr = {
+        //            Id: '',
+        //            Name: '',
+        //            MobileNo: '',
+        //            MessageBody:'',
+        //            EmailId: '',
+        //            MailBody:'',
+        //            IsSent: ''
+        //        }
+        //        $("td", this).each(function (index) {
+        //            if (index == 0) {
+
+        //                MessageMailVMArr.Id = $(this).html();
+        //            }
+        //            if (index == 1) {
+        //                // alert($(this).val());
+        //                MessageMailVMArr.Name = $(this).html();
+        //            }
+
+        //            if (index == 2) {
+        //                MessageMailVMArr.MobileNo = $(this).html();
+        //            }
+
+        //            if (index == 3) {
+        //                MessageMailVMArr.EmailId = $(this).html();
+        //            }
+        //            if (index == 4) {
+        //                // alert($(this).val());
+        //                MessageMailVMArr.IsSent = $(this).find(":input").val();
+        //            }
+
+        //        });
+        //        MessageMailVMArr.MessageBody = MessageBody;
+        //        MessageMailVMArr.MailBody = MailBody;
+        //        MessageMailMasters.MessageMailVM.push(MessageMailVMArr);
+        //    });
+
+        //    if (MessageMailMasters.MessageMailVM.length > 0) {
+        //        MessageMailMasters.MessageMailMastersSubmit();
+        //    }
+        //    else {
+        //        alert("Please Add Message and Mail Info.");
+        //    }
+
+
+        //});
+    });
+
+    //function SetIsActiveValue(obj) {
+    //    if (document.getElementById(obj.id).checked) {
+    //        document.getElementById(obj.id).checked = true;
+    //        $('#' + obj.id).val(true);
+    //    }
+    //    else {
+    //        document.getElementById(obj.id).checked = false;
+    //        $('#' + obj.id).val(false);
+    //    }
+    //}
+
+</script>
+
+
+@*<script type="text/javascript">
+    $(document).ready(function () {
+
+      
+        $("#ddlMessageAreaTypeId").change(function () {
+            var sendingAreaTypeID = $("#ddlMessageAreaTypeId option:selected").val();
+            if (sendingAreaTypeID == 1) {
+                        $("#divMessageBody").show();
+                        $("#divMailBody").hide();
+                    }
+            else if (sendingAreaTypeID == 2) {
+                        $("#divMessageBody").hide();
+                        $("#divMailBody").show();
+                    }
+            else if (sendingAreaTypeID == 3) {
+                        $("#divMessageBody").show();
+                        $("#divMailBody").show();
+                    }
+                    else {
+                        $("#divMessageBody").hide();
+                        $("#divMailBody").hide();
+                    }
+
+                });
+            })
+       
+        
+
+</script>*@
+
+
+
+
+@*<style type="text/css">
+    input, select, textarea {
+        max-width: 100%;
+    }
+
+
+
+   
+</style>*@
+
+
+
+
+@*<div class=" col-md-12">
+
+    <div class="panel panel-indigo">
+        <div class="panel-heading">
+            <h4>Add Your Message or Mail Here</h4>
+
+            
+        </div>
+        <div class="panel-body collapse in" id="attendeesCollapse">
+
+            <div class=" col-md-12">
+                <div class="col-sm-3">
+                    <label>Enter mail or mobile no</label>
+                   <input type="text" class="form-control" />
+                   
+                </div>
+
+                <div class="col-sm-5">
+                    <div style="width: 43%" class="pull-left">
+                        <label>Choose Message Body</label>
+                        <select class="form-control m-b " id="ddlMessageAreaTypeId">
+                            <option  class="">Select</option>
+                            <option value="2">Mail</option>
+                            <option value="1">SMS</option>
+                            <option value="3">Both mail and sms</option>
+                           
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                </div>
+            </div>
+            <br />
+            <br />
+     
+            <br />
+            <br />
+            <div class="col-md-12" id="divMessageBody" style="display:none">
+                <div class="col-sm-3">
+                    <label>MessageBody</label>
+                    
+                </div>
+                <div class="col-sm-6">
+
+                    <textarea rows="5" cols="62">
+                        
+                    </textarea>
+                  
+                </div>
+                <div class="col-sm-3">
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="col-md-12" id="divMailBody" style="display:none">
+                <div class="col-sm-3">
+                    <label>Mail Body</label>
+                  
+                </div>
+                <div class="col-sm-6">
+                    <textarea rows="5" cols="62"></textarea>
+                </div>
+                <div class="col-sm-3">
+                </div>
+            </div>
+
+          
+        </div>*@
+
+
+
+   
+
+        <div class="col-md-12">
+
+            <div class="panel panel-indigo">
+                <div class="panel-heading">
+                    <h4>Add Your Message or Mail Here</h4>
+
+                    <div class="options">
+
+                        <a class="panel-collapse" data-toggle="collapse" href="#attendeesCollapse" aria-expanded="true"><i class=" fa fa-chevron-down"></i></a>
+                        <a href="javascript:;">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="panel-body collapse in" id="attendeesCollapse">
+
+                    <div class=" col-md-12">
+                        <div class="col-sm-3">
+                            <label for="Area_Name">Area Name</label>
+                        </div>
+
+                        <div class="col-sm-5">
+                            <select data-val="true" data-val-number="The field MessageAreaTypeId must be a number." data-val-required="The MessageAreaTypeId field is required." id="ddlMessageAreaTypeId" name="MessageAreaTypeId" class="form-control">
+                                <option value="">Select Area</option>
+                                <option value="1">HeadMaster</option>
+                              
+                            </select>
+                            <span class="field-validation-valid" data-valmsg-for="MessageAreaTypeId" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col-sm-3">
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class=" col-md-12">
+                        <div class="col-sm-3">
+                            <label for="Area_Type_Name">Area Type Name</label>
+                        </div>
+                        <div class="col-sm-5">
+                            <select class="form-control" data-val="true" data-val-number="The field SendingAreaTypeId must be a number." data-val-required="The SendingAreaTypeId field is required." id="ddlSendingAreaTypeID" name="SendingAreaTypeId">
+                                <option value="">Select Area</option>
+                                <option value="1">Message</option>
+                                <option value="2">Mail</option>
+                                <option value="3">Both</option>
+                            </select>
+                            <span class="field-validation-valid" data-valmsg-for="SendingAreaTypeId" data-valmsg-replace="true"></span>
+                        </div>
+
+                        <div class="col-sm-3">
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class=" col-md-12" id="divMessageBody" style="display: block;">
+                        <div class="col-sm-3">
+                            <label for="MessageBody">MessageBody</label>
+                        </div>
+                        <div class="col-sm-6">
+                            <textarea cols="62" id="MessageBody" name="MessageBody" rows="5"></textarea>
+                            <span class="field-validation-valid" data-valmsg-for="MessageBody" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col-sm-3">
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class=" col-md-12" id="divMailBody" style="display: none;">
+                        <div class="col-sm-3">
+                            <label for="Mail_Body">Mail Body</label>
+                        </div>
+                        <div class="col-sm-6">
+                            <textarea cols="62" id="MailBody" name="MailBody" rows="5"></textarea>
+                            <span class="field-validation-valid" data-valmsg-for="MailBody" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col-sm-3">
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+
+
+            </div>
+
+        </div>
+
+
+        <div id="MessageMail" class="form-group">
+            <hr><hr><table id="tblllistMessageMailVM" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Mobile No</th>
+                        <th>Email</th>
+                        <th>IsSent</th>
+                        <th></th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="tblistMessageMailVM" class="connectedSortable">
+            
+            <tr> <td>AG584</td><td>DAUDUL ISLAM2</td><td>01816514610</td><td></td><td><input class="check-box" value="true" checked="checked" id="IsSentId" name="true.IsSent" onclick="SetIsActiveValue(this)" type="checkbox"></td><td><button type="button" class="remove btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove-sign"></span>Delete</button></td></tr>
+            <tr> <td>AG583</td><td>DAUDUL ISLAM</td><td>01816514610</td><td></td><td><input class="check-box" value="true" checked="checked" id="IsSentId" name="true.IsSent" onclick="SetIsActiveValue(this)" type="checkbox"></td><td><button type="button" class="remove btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove-sign"></span>Delete</button></td></tr>
+                    <tr> <td>AG584</td><td>DAUDUL ISLAM2</td><td>01816514610</td><td></td><td><input class="check-box" value="true" checked="checked" id="IsSentId" name="true.IsSent" onclick="SetIsActiveValue(this)" type="checkbox"></td><td><button type="button" class="remove btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove-sign"></span>Delete</button></td></tr>
+                    <tr> <td>AG583</td><td>DAUDUL ISLAM</td><td>01816514610</td><td></td><td><input class="check-box" value="true" checked="checked" id="IsSentId" name="true.IsSent" onclick="SetIsActiveValue(this)" type="checkbox"></td><td><button type="button" class="remove btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove-sign"></span>Delete</button></td></tr>
+                    <tr> <td>AG584</td><td>DAUDUL ISLAM2</td><td>01816514610</td><td></td><td><input class="check-box" value="true" checked="checked" id="IsSentId" name="true.IsSent" onclick="SetIsActiveValue(this)" type="checkbox"></td><td><button type="button" class="remove btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove-sign"></span>Delete</button></td></tr>
+                    <tr> <td>AG583</td><td>DAUDUL ISLAM</td><td>01816514610</td><td></td><td><input class="check-box" value="true" checked="checked" id="IsSentId" name="true.IsSent" onclick="SetIsActiveValue(this)" type="checkbox"></td><td><button type="button" class="remove btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove-sign"></span>Delete</button></td></tr>
+                    <tr> <td>AG584</td><td>DAUDUL ISLAM2</td><td>01816514610</td><td></td><td><input class="check-box" value="true" checked="checked" id="IsSentId" name="true.IsSent" onclick="SetIsActiveValue(this)" type="checkbox"></td><td><button type="button" class="remove btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove-sign"></span>Delete</button></td></tr>
+                    <tr> <td>AG583</td><td>DAUDUL ISLAM</td><td>01816514610</td><td></td><td><input class="check-box" value="true" checked="checked" id="IsSentId" name="true.IsSent" onclick="SetIsActiveValue(this)" type="checkbox"></td><td><button type="button" class="remove btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove-sign"></span>Delete</button></td></tr>
+
+                <tfoot>
+                    <tr id="">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        
+        
+        
+
+        <hr />
+        <div class="">
+            <div class="form-group">
+                <div>
+                    <input id="btnSubmit" type="button" value="Submit" class="btn btn-primary pull-left" />
+                </div>
+            </div>
+        </div>
+
+    

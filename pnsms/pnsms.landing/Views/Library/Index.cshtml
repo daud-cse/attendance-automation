@@ -1,0 +1,51 @@
+﻿@model IEnumerable<pnsms.Entities.Models.LibraryBook>
+@{
+    ViewBag.Title = "Library";
+}
+<div class="page-header">
+    <div class="row">
+        <div class="col-md-6 col-sm-6">
+            <h2 class="page-title">Library</h2>
+        </div> <!-- /.col-md-6 -->
+        <div class="col-md-6 col-sm-6 hidden-xs back-home">
+            @Html.ActionLink("← Go back Home", "Index", "Home", new { }, null)
+        </div> <!-- /.col-md-6 -->
+    </div> <!-- /.row -->
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="box-content">
+            <h4 class="widget-title"><span>Notice</span></h4>
+            @{Html.RenderAction("GetAll", "Notice");}
+            @Html.ActionLink("More Notice", "GetAllWithGrid", "Notice", new { }, new { @class = "btn btn-default-alt btn-sm pull-right" })
+        </div> <!-- /.box-content -->
+        <div class="box-content">
+            <h4 class="widget-title"><span>Gallery</span></h4>
+            @{Html.RenderAction("GetPartialGallery", "Gallery");}
+        </div> <!-- /.box-content -->
+    </div>
+    <div class="col-md-8">
+        <div class="box-content">
+            <div class="events-sidebar">
+                <h4 class="widget-title">
+                    <span>Books : @ViewBag.Count | Total Quantity : @ViewBag.AllCount</span>
+                </h4>
+                <ul>
+                    @foreach (var item in Model)
+                    {
+                        <li class="event-item col-md-6">
+                            <div class="event-thumb">
+                                <img src="~/images/book.png" class="attachment-member-thumb" style="width:100%;">
+                            </div>
+                            <div class="event-content member-content">
+                                <h5 class="event-title">@item.Name</h5>
+                                <h5 class="event-title">Quantity: @item.Quantity</h5>
+                                <p class="event-meta">ISBN: @item.ISBN</p>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div> <!-- /.box-content -->
+    </div>
+</div>

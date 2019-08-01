@@ -1,0 +1,15 @@
+﻿@model IEnumerable<pnsms.Entities.Models.Teacher>
+@foreach (var item in Model)
+{
+    <div class="item">
+        <figure>
+            <a href="~/Teacher/TeacherDetails?teacherId=@item.TeacherId">
+                <img src="/image/GetImage?id=@item.TeacherId &refCode=14 &isThumbnail=true" alt="@item.UserInfo.Name">
+            </a>
+        </figure>
+        <div class="cs-author">
+            <h6>@item.UserInfo.Name   </h6>
+            <span><b>@item.Designation.Name</b></span>
+        </div>
+    </div>
+}

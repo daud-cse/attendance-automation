@@ -1,0 +1,234 @@
+﻿
+
+<div class="wrapper-md" ng-controller="SubjectAcademicClassMappingCtrl">
+    <!-- toaster directive -->
+    <!--<toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>-->
+    <!-- / toaster directive -->
+    <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+    <div class="panel panel-default" ng-hide="isLoading">
+        <div class="panel-heading">
+            <span class="h4">Classwise Subjects</span>
+
+        </div>
+
+        <div class="panel-body">
+            <form name="newform" class="form-validation" ng-submit="SearchMappiing()">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <select ng-model="RefSubjectAcademicClassMapping.AcademicBranchId" required="" class="form-control m-b" ng-options="c.Key as c.Value for c in RefSubjectAcademicClassMapping.AcademicBranchList">
+                                <option value="">-- Choose Session--</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--<div class="col-sm-3">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <select ng-model="RefSubjectAcademicClassMapping.AcademicSessionId" required="" class="form-control m-b" ng-options="c.Key as c.Value for c in RefSubjectAcademicClassMapping.AcademicSessionList">
+                                <option value="">-- Choose Session--</option>
+                            </select>
+                        </div>
+                    </div>-->
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <select ng-model="RefSubjectAcademicClassMapping.AcademicClassId" required="" class="form-control m-b" ng-options="c.Key as c.Value for c in  RefSubjectAcademicClassMapping.AcademicClassList">
+                                <option value="">-- Choose Class--</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--<div class="col-sm-3" ng-if="RefSubjectAcademicClassMapping.AcademicGroupList.length>0 && RefSubjectAcademicClassMapping.AcademicClass.IsEnableAcademicGroup==true">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <select ng-model="RefSubjectAcademicClassMapping.AcademicGroupId" class="form-control m-b" ng-options="c.Key as c.Value for c in RefSubjectAcademicClassMapping.AcademicGroupList">
+                                <option value="">-- Common for All Group--</option>
+                            </select>
+                        </div>
+                    </div>-->
+                    <div class="col-sm-2 ">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary pull-left"><i class="glyphicon glyphicon-search"></i>&nbsp;Map</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in ng-scope"></div>
+            </form>
+            <progressbar class="progress-striped active" value="100" type="info" ng-show="isDataLoading">Loading...  </progressbar>
+            <form role="form" name="formlst" class="form-validation" method="post">
+                <div ng-if="SubjectAcademicClassMappings.length>0 && isDataLoading==false">
+                    <!--<div class="row" style="margin-bottom: 15px;" ng-hide="showCopyForm">
+                        <div class="col-sm-2 ">
+                            <div class="form-group">
+                                <label>&nbsp;</label>
+                                <div class="form-group">
+                                    <button type="submit" ng-click="showCopyForm=true;" class="btn btn-success pull-left"><i class="glyphicon glyphicon-save"></i>&nbsp;Copy</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                    <!--<form ng-show="showCopyForm" ng-submit="copyInfo()">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label>To Session&nbsp;</label>
+                                    <select ng-model="RefSubjectAcademicClassMapping.ToAcademicSessionId" required="" class="form-control m-b" ng-options="c.Key as c.Value for c in RefSubjectAcademicClassMapping.AcademicSessionList">
+                                        <option value="">-- Choose Session--</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label>To Class&nbsp;</label>
+                                    <select ng-model="RefSubjectAcademicClassMapping.ToAcademicClassId" required="" class="form-control m-b" ng-options="c.Id as c.Name for c in RefSubjectAcademicClassMapping.AcademicClassList">
+                                        <option value="">-- Choose Class--</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-2 ">
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary pull-left"> <i class="glyphicon glyphicon-copy"></i>&nbsp;Copy </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>-->
+
+                    <table class="table table-striped b-t b-light" ng-hide="showCopyForm">
+                        <thead>
+                            <tr>
+
+                                <th><span class="SubjectName">&nbsp; Select Subject<a ng-click="sort_by('Period')"></a> </span></th>
+                                <th><span>Section Name </span></th>
+                                <th><span>Subject Name </span></th>
+                                <th> <span>Exam Marks</span></th>
+                                <th width="100px"><span>Ordering </span></th>
+                                <th><span>Subject Group </span></th>
+                                <th><span>Subject Type </span></th>
+                                <th><span>Teacher Name </span></th>
+                                <!--<th><span>Exam Mark Entry By </span></th>-->
+                                <!--<th><span>Groups </span></th>-->
+                            </tr>
+                        </thead>
+                        <tbody>
+
+
+                            <!--<tr ng-repeat="item in SubjectAcademicClassMappings" ng-include="getTemplate(item)"></tr>-->
+
+                            <tr ng-repeat="item in SubjectAcademicClassMappings| orderBy:'SectionName' | filter:query">
+
+                                <td ng-hide="true">
+                                    {{ item.Id }}
+                                </td>
+                                <td ng-hide="true">
+                                    {{ item.AcademicClassSectionMapId }}
+                                </td>
+                                <td ng-hide="true">
+                                    {{ item.AcademicBranchId }}
+                                </td>
+
+                                <td ng-hide="true">{{ item.SubjectId }}</td>
+                                <!--<td ng-hide="true"> <input ng-hide="true" ng-model="item.SubjectId" class="form-control m-b"></td>-->
+                                <td ng-hide="true">{{ item.AcademicClassId }}</td>
+                                <td>
+
+                                    <!--<input value="{{item.IsActive}}" ng-model="item.IsActive" type="checkbox">-->
+                                    <label class="i-checks m-b-none" ng-init="item.Id?item.IsActive=true:item.IsActive=false;">
+
+                                        <input value="{{item.IsActive}}" ng-model="item.IsActive" type="checkbox"><i>
+                                        </i>
+                                        <!--<input name="cboScholarship" value="{{item.SubjectId}}" ng-init="item.SubjectName=(RefSubjectAcademicClassMapping.SubjectList | filter: {Id:item.SubjectId}: true)[0].Name" ng-model="item.IsActive" type="checkbox"> <i>
+                                        </i>-->
+
+                                    </label>
+                                </td>
+                                <td>{{ item.SectionName }}</td>
+                                <td>{{ item.SubjectName }}</td>
+                                <td>
+                                    <input ng-model="item.SubjectMarks" class="form-control m-b" required type="number">
+                                </td>
+                                <td>
+                                    <input ng-model="item.OrderBy" class="form-control m-b" type="number">
+                                </td>
+                                <td>
+                                    <select ng-model="item.SubjectGroupId" class="form-control m-b" required ng-options="c.Key as c.Value for c in item.SubjectGroups">
+                                        <option value="">-- Select Group Name--</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select ng-model="item.SubjectTypeId" class="form-control m-b" required ng-options="c.Key as c.Value for c in item.SubjectTypes">
+                                        <option value="">-- Select Subject Type--</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select ng-model="item.TeacherId" class="form-control m-b" required ng-options="c.Key as c.Value for c in item.TeacherList">
+                                        <option value="">-- Select Teacher --</option>
+                                    </select>
+                                </td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                    <footer class="panel-footer" ng-hide="showCopyForm">
+                        <div class="row">
+
+                            <div class="col-sm-3 m-b-xs pull-right">
+
+                                <button data-ng-click="Add()" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-floppy-saved"></i>&nbsp;Save</button>
+                                <!--<a href="" class="btn btn-sm btn-info btn-addon" data-ng-click="AddNew()"><i class="fa fa-plus fa-fw m-r-xs"></i> ADD NEW</a>-->
+                            </div>
+
+
+                        </div>
+                    </footer>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+<!--<script type="text/ng-template" id="display">
+
+
+    <td>
+        <label class="i-checks m-b-none" ng-init="item.Id?item.IsActive=true:item.IsActive=false;">
+            <input name="cboScholarship" value="{{item.SubjectId}}" ng-init="item.SubjectName=(RefSubjectAcademicClassMapping.SubjectList | filter: {Id:item.SubjectId}: true)[0].Name" ng-model="item.IsActive" type="checkbox"> <i></i>{{(RefSubjectAcademicClassMapping.SubjectList | filter: {Id:item.SubjectId}: true)[0].Name }}
+        </label>
+    </td>
+    <td>
+        <select ng-model="item.ParentSubjectId" ng-show="item.IsActive && item.MarksEntryTypeKey==101" class="form-control m-b" ng-options="c.Id as c.Name for c in RefSubjectAcademicClassMapping.SubjectList">
+            <option value="">-- Select Summery--</option>
+        </select>
+    </td>
+    <td>
+        <input ng-model="item.OrderBy" ng-show="item.IsActive" class="form-control m-b" type="number">
+    </td>
+    <td>
+
+        <select ng-show="item.IsActive" ng-model="item.MarksEntryTypeKey" class="form-control m-b" ng-change="item.ParentSubjectId=(item.MarksEntryTypeKey==101?item.ParentSubjectId:item.ParentSubjectId=null)" ng-options="c.Key as c.Value for c in RefSubjectAcademicClassMapping.MarkEntryTypeList">
+            <option value="">-- Mark Entry Type--</option>
+        </select>
+
+    </td>
+    <td>
+        <div class="form-group" ng-show="item.IsActive && RefSubjectAcademicClassMapping.SubjectTypeList.length>0  && item.MarksEntryTypeKey==101" ng-init="item.tempSubjectTypes=item.SubjectTypes">
+            <multiselect ng-model="item.SubjectTypes" ng-change="selectSubjectType(item.SubjectTypes, item.tempSubjectTypes); item.tempSubjectTypes= item.SubjectTypes" options="c.Key as c.Value for c in RefSubjectAcademicClassMapping.SubjectTypeList" data-multiple="true"></multiselect>
+        </div>
+    </td>
+
+    <td>
+        <div class="form-group" ng-show="IsEnableSubjectGroup &&   item.MarksEntryTypeKey!=104  ">
+
+            <multiselect ng-model="item.SubjectGroups" options="c.Key as c.Value for c in RefSubjectAcademicClassMapping.AcademicGroupList" data-multiple="true"></multiselect>
+
+        </div>
+    </td>
+</script>-->

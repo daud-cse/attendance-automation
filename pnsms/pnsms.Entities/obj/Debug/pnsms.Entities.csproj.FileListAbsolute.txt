@@ -1,0 +1,94 @@
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\pnsms.Entities.dll.config
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\pnsms.Entities.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\pnsms.Entities.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\Dapper.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\Dapper.SimpleCRUD.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\EntityFramework.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\EntityFramework.SqlServer.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\Microsoft.VisualStudio.TextTemplating.Modeling.14.0.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\Newtonsoft.Json.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\Repository.Pattern.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\Repository.Pattern.Ef6.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\System.Web.Mvc.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\LinqKit.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\Microsoft.VisualStudio.Modeling.Sdk.Integration.14.0.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\Microsoft.VisualStudio.Modeling.Sdk.Integration.Shell.14.0.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\Microsoft.VisualStudio.ComponentModelHost.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\Microsoft.VisualStudio.VSHelp.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\EnvDTE.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\VsWebSite.Interop.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\VSLangProj.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\VsWebSite.Interop90.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\EnvDTE80.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\Microsoft.Build.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\Microsoft.Build.Framework.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\Microsoft.Build.Conversion.Core.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\Microsoft.Build.Tasks.Core.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\Microsoft.Build.Utilities.Core.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\EnvDTE90.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\stdole.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\Microsoft.VisualStudio.GraphModel.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\Microsoft.MSXML.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\Microsoft.Build.Engine.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\Repository.Pattern.Ef6.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\Repository.Pattern.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\EntityFramework.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\EntityFramework.SqlServer.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\Newtonsoft.Json.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\System.Web.Mvc.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\Microsoft.Web.Infrastructure.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\bin\Debug\en\Microsoft.VisualStudio.Modeling.Sdk.Integration.Shell.14.0.resources.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\obj\Debug\pnsms.Entities.csprojResolveAssemblyReference.cache
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\obj\Debug\pnsms.Entities.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Entities\obj\Debug\pnsms.Entities.pdb
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\pnsms.Entities.dll.config
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\pnsms.Entities.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\pnsms.Entities.pdb
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\Dapper.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\Dapper.SimpleCRUD.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\EntityFramework.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\EntityFramework.SqlServer.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\Microsoft.VisualStudio.TextTemplating.Modeling.14.0.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\Newtonsoft.Json.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\Repository.Pattern.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\Repository.Pattern.Ef6.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\System.Web.Mvc.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\LinqKit.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\Microsoft.VisualStudio.Modeling.Sdk.Integration.14.0.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\Microsoft.VisualStudio.Modeling.Sdk.Integration.Shell.14.0.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\Microsoft.VisualStudio.ComponentModelHost.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\Microsoft.VisualStudio.VSHelp.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\EnvDTE.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\VsWebSite.Interop.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\VSLangProj.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\VsWebSite.Interop90.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\EnvDTE80.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\Microsoft.Build.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\Microsoft.Build.Framework.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\Microsoft.Build.Conversion.Core.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\Microsoft.Build.Tasks.Core.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\Microsoft.Build.Utilities.Core.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\EnvDTE90.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\stdole.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\Microsoft.VisualStudio.GraphModel.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\Microsoft.MSXML.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\Microsoft.Build.Engine.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\Repository.Pattern.Ef6.pdb
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\Repository.Pattern.pdb
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\EntityFramework.xml
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\EntityFramework.SqlServer.xml
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\Newtonsoft.Json.xml
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\System.Web.Mvc.xml
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\Microsoft.Web.Infrastructure.xml
+E:\pos\POS NEW\pnsms\pnsms.Entities\bin\Debug\en\Microsoft.VisualStudio.Modeling.Sdk.Integration.Shell.14.0.resources.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\obj\Debug\pnsms.Entities.csprojResolveAssemblyReference.cache
+E:\pos\POS NEW\pnsms\pnsms.Entities\obj\Debug\pnsms.Entities.dll
+E:\pos\POS NEW\pnsms\pnsms.Entities\obj\Debug\pnsms.Entities.pdb

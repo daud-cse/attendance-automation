@@ -1,0 +1,145 @@
+﻿<div class="wrapper-md" ng-controller="ExamTabulationSheetCtrl">
+    <!-- toaster directive -->
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+    <form ng-show="isTrabulation" role="form" name="ExamMarksForm" class="form-validation" method="post">
+        <div class="panel panel-primary" ng-hide="isLoading">
+            <div class="panel-heading wrapper-xs">Search</div>
+            <div class="panel-body">
+                <!--<div class="row">
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label>Class</label>
+                            <select ng-model="VmExamTabulationSheet.AcademicClassesId" ng-class="{'ng-dirty': ExamMarksForm.AcademicClassesId.$invalid}" class="form-control m-b" required ng-options="c.Key as c.Value for c in VmExamTabulationSheet.AcademicClassList">
+                                <option value="">-- choose Class --</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label>Section</label>
+                            <select ng-model="VmExamTabulationSheet.AcademicSectionId" class="form-control m-b" required ng-options="c.Key as c.Value for c in VmExamTabulationSheet.AcademicSectionList">
+                                <option value="">-- choose Section --</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <button type="submit" style="margin-top:25px;" class="btn btn-primary" ng-click="GetFilterResult()"><i class="glyphicon glyphicon-floppy-saved"></i>&nbsp;Search</button>
+                        </div>
+                    </div>
+                </div>-->
+
+                <div class="row">
+                    <div class="col-sm-4 form-group">
+                        <label>Class</label>
+                        <select ng-model="VmExamTabulationSheet.AcademicClassesId" required data-ng-change="getScetionClasswise()" ng-class="{'ng-dirty': ExamMarksForm.AcademicClassesId.$invalid}" class="form-control m-b" required ng-options="c.Key as c.Value for c in VmExamTabulationSheet.AcademicClassList">
+                            <option value="">-- Select Class --</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label>Section</label>
+                        <select ng-model="VmExamTabulationSheet.AcademicClassesSectionMapId" class="form-control m-b" required ng-options="c.Key as c.Value for c in VmExamTabulationSheet.AcademicSectionList">
+                            <option value="">-- Select Section --</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4 form-group">
+                        <label>&nbsp;</label>
+                        <button type="submit" style="margin-top:25px;" class="btn btn-primary" ng-click="GetFilterResult()"><i class="glyphicon glyphicon-floppy-saved"></i>&nbsp;Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form ng-show="isTrabulation" role="form" name="ExamMarksFormList" class="form-validation" method="post">
+        <div class="panel panel-default" ng-hide="isLoading">
+            <div class="row wrapper">
+                <!--<div class="col-sm-3 m-b-xs">
+                    <button class="btn btn-sm btn-success" ui-sref="app.studentAttendanceByTeacher.StudentAttendanceByTeacher">+ ADD NEW</button>
+                </div>-->
+                <!--<div class="col-sm-3">
+                </div>
+                <div class="col-sm-6">
+                    <div class="input-group">
+                        <input type="text" class="input-sm form-control" ng-change="search()" ng-model="query" placeholder=" search">
+                        <span class="input-group-btn">
+                            <button class="btn btn-sm btn-default" type="button">Go!</button>
+                        </span>
+                    </div>
+                </div>-->
+            </div>
+            <table class="table table-striped b-t b-light">
+                <thead>
+                    <tr>
+                        <th>Exam Type Name</th>
+                        <th>Name</th>
+                        <th>Roll No</th>
+                        <th>Total Subject</th>
+                        <th>Total Marks</th>
+                        <th>Average Number</th>
+                        <th>Grade</th>
+                        <th>Grade Point</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="x in VmExamTabulationSheetList| orderBy:'-Id' | filter:query">
+                        <!--<td>{{x.Date | date:'dd-MMMM-yyyy'}}</td>-->
+                        
+                        <td ng-hide="true">{{ x.Id }}</td>
+                        <td ng-hide="true">{{ x.StudentId }}</td>
+                        <td ng-hide="true">{{ x.ExamTypeId }}</td>
+                        <td>{{ x.ExamType.Name }}</td>
+                        <td>{{ x.StudentName }}</td>
+                        <td>{{ x.StudentRoleNo }}</td>
+                        <td>{{ x.TotalSubject }}</td>
+                        <td>{{ x.TotalMarks }}</td>
+                        <td>{{ x.AverageNumber }}</td>
+                        <td>{{ x.ExamGradeName }}</td>
+                        <td>{{ x.ExamGradePoint }}</td>
+                        <td>
+                          
+                            <a class="btn btn-success" ui-sref="app.StudentResultSheet({ExamTypeId:x.ExamTypeId,StudentId:x.StudentId})">Result Sheet Details</a>
+                           
+                        </td>
+                        <td>
+                            <!--<button ng-click="GetExamTabulationSheetCriteria({ExamTypeId:x.Id,StudentId:x.StudentId})" tooltips title="Tabulation Sheet Details"  class="btn btn-info"> </button>-->
+                            <a class="btn btn-success" ui-sref="app.GetExamTabulationSheetCriteria({ExamTypeId:x.ExamTypeId,StudentId:x.StudentId})">Tabulation Sheet Details</a>
+                            <!--a ui-sref="app.detailsStudentAttendanceByTeacher({attenanceId:x.Id})" tooltips title="Details" class="text-primary text-md"><i class="fa fa-file-archive-o "></i></a> &nbsp;&nbsp;
+        <a ui-sref="app.abscondingStudentAttendanceByTeacher({attenanceId:x.Id})" tooltips title="Absconding" class="text-primary text-md"><i class="fa fa-history"></i></a>-->
+                        </td>
+
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr></tr>
+                </tfoot>
+            </table>
+        </div>
+        <!--<div class="m-t m-b">
+            <button type="button" class="btn btn-default" ng-click="StudentListReset()">Back</button>
+            <button type="submit" class="btn btn-default" ng-click="steps.percent=100; ExamSubjectMarksSubmit()">Submit</button>
+        </div>-->
+    </form>
+    <!--<div class="modal" ng-model="as" ng-show="showModalExamTabulationSheet" close="cancel()">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Delete confirmation</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancel()">No</button>
+                    <button type="button" class="btn btn-primary" ng-click="ok()">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+</div>
+

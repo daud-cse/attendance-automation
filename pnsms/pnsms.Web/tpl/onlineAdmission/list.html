@@ -1,0 +1,93 @@
+﻿<div class="wrapper-md" ng-controller="OnlineAdmissionListCtrl">
+    <!-- toaster directive -->
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+    <form role="form" name="step1" class="form-validation" method="post">
+        <div class="panel panel-primary" ng-hide="isLoading">
+            <div class="panel-heading wrapper-xs">Search</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label>Branch:</label>
+                            <select ng-model="VmSearch.DropDownId1" class="form-control m-b" ng-options="c.Key as c.Value for c in VmSearch.DropDownList1"></select>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label>Class:</label>
+                            <select ng-model="VmSearch.DropDownId2" class="form-control m-b" ng-options="c.Key as c.Value for c in VmSearch.DropDownList2">
+                                <option value="">-- choose Session --</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label>Section:</label>
+                            <select ng-model="VmSearch.DropDownId3" class="form-control m-b" ng-options="c.Key as c.Value for c in VmSearch.DropDownList3">
+                                <option value="">-- choose Class --</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label>Status: &nbsp;</label>
+                            <div class="form-group pull-right">
+                                <label><input type="radio" ng-model="VmSearch.selectedStatus" value="0">&nbsp;New&nbsp;&nbsp;</label>
+                                <label><input type="radio" ng-model="VmSearch.selectedStatus" value="1">&nbsp;Selected </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <button type="submit" style="margin-top:25px;" class="btn btn-primary" ng-click="GetFilterResult()"><i class="glyphicon glyphicon-floppy-saved"></i>&nbsp;Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="panel panel-default" ng-hide="isLoading">
+        <div class="row wrapper">
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <input type="text" class="input-sm form-control" ng-change="search()" ng-model="query" placeholder=" search">
+                    <span class="input-group-btn">
+                        <button class="btn btn-sm btn-default" type="button">Go!</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped b-t b-light">
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Contact No.</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in VmSearch.SearchData| orderBy:'-Id' | filter:query">
+                    <td>{{x.Code}}</td>
+                    <td>{{ x.Name }}</td>
+                    <td>{{ x.ContactNumber }}</td>
+                    <td> 
+                        <div ng-if="x.IsActive == true && x.IsSelected == 0">
+                            <a ui-sref="app.onlineAdmission.edit({onlineAdmissionId:x.Id})" tooltips title="View & Select" class="text-primary text-md"><i class="fa fa-comment "></i></a> &nbsp;&nbsp;
+                        </div>
+                        <div ng-if="x.IsActive == true && x.IsSelected == 1">
+                            <a ui-sref="app.onlineAdmission.details({onlineAdmissionId:x.Id})" tooltips title="Details" class="text-primary text-md"><i class="fa fa-file-archive-o "></i></a> &nbsp;&nbsp;
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr></tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+

@@ -1,0 +1,6 @@
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern\bin\x86\Debug\Repository.Pattern.dll.config
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern\bin\x86\Debug\Repository.Pattern.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern\bin\x86\Debug\Repository.Pattern.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern\obj\x86\Debug\Repository.Pattern.csprojResolveAssemblyReference.cache
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern\obj\x86\Debug\Repository.Pattern.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern\obj\x86\Debug\Repository.Pattern.pdb

@@ -1,0 +1,89 @@
+﻿@model IEnumerable<pnsms.Entities.Models.Event>
+@{
+    ViewBag.Title = "EventList";
+}
+
+<div class="container">
+    <div class="row">
+        <!-- Here begin Main Content -->
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-12">
+                    
+                    @{Html.RenderPartial("GetPartialEventWithDetails", Model);}
+                </div> <!-- /.col-md-12 -->
+            </div> <!-- /.row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="load-more-btn">
+                        <a href="#">Click here to load more events</a>
+                    </div>
+                </div> <!-- /.col-md-12 -->
+            </div> <!-- /.row -->
+        </div> <!-- /.col-md-8 -->
+        <!-- Here begin Sidebar -->
+        <div class="col-md-4">
+            <div class="widget-main">
+                <div class="widget-main-title">
+                    <h4 class="widget-title btn-link"> @Html.ActionLink("Events Lidt", "GetAllWithGrid", "Event", new { }, null)</h4>
+                </div> <!-- /.widget-main-title -->
+                <div class="widget-inner">
+                    @{Html.RenderPartial("GetPartialEvent",Model);}
+
+                  
+                </div> <!-- /.widget-inner -->
+            </div> <!-- /.widget-main -->
+            <div class="widget-main">
+                <div class="widget-main-title">
+                    <h4 class="widget-title">Our Gallery</h4>
+                </div>
+                <div class="widget-inner">
+                    <div class="gallery-small-thumbs clearfix">
+                        <div class="thumb-small-gallery">
+                            <a class="fancybox" rel="gallery1" href="~/images/gallery/gallery1.jpg" title="Gallery Tittle One">
+                                <img src="~/images/gallery/gallery-small-thumb1.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="thumb-small-gallery">
+                            <a class="fancybox" rel="gallery1" href="./images/gallery/gallery2.jpg" title="Gallery Tittle One">
+                                <img src="~/images/gallery/gallery-small-thumb2.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="thumb-small-gallery">
+                            <a class="fancybox" rel="gallery1" href="./images/gallery/gallery3.jpg" title="Gallery Tittle One">
+                                <img src="./images/gallery/gallery-small-thumb3.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="thumb-small-gallery">
+                            <a class="fancybox" rel="gallery1" href="~/images/gallery/gallery4.jpg" title="Gallery Tittle One">
+                                <img src="~/images/gallery/gallery-small-thumb4.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="thumb-small-gallery">
+                            <a class="fancybox" rel="gallery1" href="~/images/gallery/gallery5.jpg" title="Gallery Tittle One">
+                                <img src="~/images/gallery/gallery-small-thumb5.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="thumb-small-gallery">
+                            <a class="fancybox" rel="gallery1" href="~/images/gallery/gallery6.jpg" title="Gallery Tittle One">
+                                <img src="~/images/gallery/gallery-small-thumb6.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="thumb-small-gallery">
+                            <a class="fancybox" rel="gallery1" href="~/images/gallery/gallery7.jpg" title="Gallery Tittle One">
+                                <img src="~/images/gallery/gallery-small-thumb7.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="thumb-small-gallery">
+                            <a class="fancybox" rel="gallery1" href="~/images/gallery/gallery8.jpg" title="Gallery Tittle One">
+                                <img src="~/images/gallery/gallery-small-thumb8.jpg" alt="" />
+                            </a>
+                        </div>
+                    </div> <!-- /.galler-small-thumbs -->
+                </div> <!-- /.widget-inner -->
+            </div> <!-- /.widget-main -->
+        </div> <!-- /.col-md-4 -->
+
+    </div> <!-- /.row -->
+</div> <!-- /.container -->
+

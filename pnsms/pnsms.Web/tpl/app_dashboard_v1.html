@@ -1,0 +1,135 @@
+
+
+
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-init="app.settings.asideFolded = false;app.settings.asideDock = false;">
+    <div ng-controller="DashBoardCtrl">
+        <!-- main -->
+        <div class="col">
+            <!-- main header -->
+            <div class="bg-light lter b-b wrapper-md">
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12">
+                        <h1 class="m-n font-thin h3 text-black">Dashboard</h1>
+                    </div>
+                    <div class="col-sm-6 text-right hidden-xs">
+                        <div class="inline m-r text-left">
+                            <div class="m-b-xs"></div>
+                        </div>
+                        <div class="inline text-left">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- / main header -->
+            <div class="wrapper-md">
+                <!-- stats -->
+                <div class="row">
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-10">
+                        <div class="row row-sm text-center">
+                            <div class="col-xs-6">
+                                <div class="panel padder-v item">
+                                    <div class="h1 text-info font-thin h1">{{List.objInstituteTotalInfo.TotalTeachersCount}}</div>
+                                    <span class="text-muted text-xs">Total Employee</span>
+                                    <div class="top text-right w-full">
+                                        <i class="fa fa-caret-down text-warning m-r-sm"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <a href class="block panel padder-v bg-primary item">
+                                    <!--<span class="text-white font-thin h1 block">{{List.objInstituteTotalInfo.TotalTeachersCount}}</span>-->
+                                    <span class="text-white font-thin h1 block">0</span>
+                                    <span class="text-muted text-xs">Total Present Employee</span>
+                                    <span class="bottom text-right w-full">
+                                        <i class="fa fa-cloud-upload text-muted m-r-sm"></i>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="col-xs-6">
+                                <a href class="block panel padder-v bg-info item">
+                                    <!--<span class="text-white font-thin h1 block">{{List.objInstituteTotalInfo.TotalEmployeesCount}}</span>-->
+                                    <span class="text-white font-thin h1 block">0</span>
+                                    <span class="text-muted text-xs">Total Absent Employees</span>
+                                    <span class="top text-left">
+                                        <i class="fa fa-caret-up text-warning m-l-sm"></i>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="panel padder-v item">
+                                    <div class="font-thin h1">{{List.objInstituteTotalInfo.TotalTeachersRequired}}</div>
+                                    <span class="text-muted text-xs">Leave Employee</span>
+                                    <div class="bottom text-left">
+                                        <i class="fa fa-caret-up text-warning m-l-sm"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 m-b-md">
+                                <div class="r bg-light dker item hbox no-border">
+                                    <div class="col w-xs v-middle hidden-md">
+                                        <div ng-init="data1=[60,40]" ui-jq="sparkline" ui-options="{{data1}}, {type:'pie', height:40, sliceColors:['{{app.color.warning}}','#fff']}" class="sparkline inline"></div>
+                                    </div>
+                                    <div class="col dk padder-v r-r">
+                                        <div class="text-primary-dk font-thin h1"><span>{{List.objInstituteTotalInfo.TotalAvailableSMS}}</span></div>
+                                        <span class="text-muted text-xs">SMS Available</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                    <!--<div class="col-md-6">
+                                <div class="panel wrapper">
+                                    <label class="i-switch bg-warning pull-right" ng-init="showSpline=true">
+                                        <input type="checkbox" ng-model="showSpline">
+                                        <i></i>
+                                    </label>
+                                    <h4 class="font-thin m-t-none m-b text-muted">Attendance Summary</h4>
+                                    <div ui-jq="plot" ui-refresh="showSpline" ui-options="
+                      [
+                        { data: {{d0_1}}, label:'TV', points: { show: true, radius: 1}, splines: { show: showSpline, tension: 0.4, lineWidth: 1, fill: 0.8 } },
+                        { data: {{d0_2}}, label:'Mag', points: { show: true, radius: 1}, splines: { show: showSpline, tension: 0.4, lineWidth: 1, fill: 0.8 } }
+                      ],
+                      {
+                        colors: ['{{app.color.info}}', '{{app.color.primary}}'],
+                        series: { shadowSize: 3 },
+                        xaxis:{ font: { color: '#a1a7ac' } },
+                        yaxis:{ font: { color: '#a1a7ac' }, max:20 },
+                        grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#dce5ec' },
+                        tooltip: true,
+                        tooltipOpts: { content: 'Visits of %x.1 is %y.4',  defaultTheme: false, shifts: { x: 10, y: -25 } }
+                      }
+                    " style="height:246px">
+                                    </div>
+                                </div>
+                            </div>-->
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="containerBar"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="containerPie"></div>
+                    </div>
+
+
+                </div>
+                <!-- / stats -->
+                <!-- service -->
+                <!-- / service -->
+                <!-- tasks -->
+                <!-- / tasks -->
+                <!-- tasks -->
+                <!-- / tasks -->
+            </div>
+        </div>
+        <!-- / main -->
+        <!-- right col -->
+        <!-- / right col -->
+    </div>
+</div>

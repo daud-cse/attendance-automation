@@ -1,0 +1,227 @@
+﻿@model pnsms.Entities.Models.Notice
+@{
+    ViewBag.Title = "Notice Details";
+}
+<main id="main-content">
+    <!-- Main Section -->
+    <div class="main-section">
+        <div class="container">
+            <div class="row">
+                <div class="page-content">
+                    <section class="page-section">
+                        <div class="section-fullwidth">
+                            <div class="cs-course-detail">
+                                <div class="cs-heading-sec">
+                                    <div class="inner-sec">
+                                        <h1>
+                                           @Model.NoticeTitle
+                                        </h1>
+                                    </div>
+                                </div>
+                                @*<div class="cs-detail-area">
+                                    <figure> <img alt="How become effective teacher" src="http://uoce.chimpgroup.com/wp-content/uploads/UOCE-Courses-Posts-14.jpg"> </figure>
+                                    <div class="detail-block">
+                                        <ul class="course-tags">
+                                            <li><a href="http://uoce.chimpgroup.com/course-category/arts/">Arts</a></li>
+                                            <li><a href="http://uoce.chimpgroup.com/course-category/libuary/">Libuary</a></li>
+                                            <li><a href="http://uoce.chimpgroup.com/course-category/science/">SCIENCE</a></li>
+                                            <li style="background:#dd9933!important;" class="red">Advance</li>
+                                        </ul>
+                                        <span class="start-date"><i class="icon-calendar10"></i> Starts from:Wed, November 9, 2016</span>
+
+                                        <span class="timing">
+                                            <i class="icon-clock6"></i>
+                                            1:30PM
+                                            - 2:00PM
+                                        </span>
+                                        <div class="address-box">
+                                            <div class="price-box"> <span class="price">$25/pw</span> <a href="http://uoce.chimpgroup.com/contact-us/">Apply Now</a> </div>
+                                            <address>
+
+                                                <span class="title">Campus Location</span>
+                                                <p>274 Seven Sisters Road, London, N4 2HY,London,United Kingdom</p>                            <a class="map-btn" href="#">Map it</a>
+                                            </address>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                             
+
+                                <div class="cs-features">
+                                    <h5>Course Feature</h5>
+                                    <ul>
+                                        <li>
+                                            <i class="icon-barcode3"></i>
+                                            <div class="feat-detail">
+                                                <span class="title">Course Code</span>
+                                                <span class="value">A1234-X</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <i class="icon-barcode3"></i>
+                                            <div class="feat-detail">
+                                                <span class="title">Duration</span>
+                                                <span class="value">2 years</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <i class="icon-barcode3"></i>
+                                            <div class="feat-detail">
+                                                <span class="title">Course Type</span>
+                                                <span class="value">Short Courses</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <i class="icon-barcode3"></i>
+                                            <div class="feat-detail">
+                                                <span class="title">Classes Days</span>
+                                                <span class="value">Saturday, Monday, Tuesday</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <i class="icon-barcode3"></i>
+                                            <div class="feat-detail">
+                                                <span class="title">Campus</span>
+                                                <span class="value">New York Campus</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <i class="icon-barcode3"></i>
+                                            <div class="feat-detail">
+                                                <span class="title">Min Qualification</span>
+                                                <span class="value">MA (Postgraduate)</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>*@
+                                <div class="cs-detail-text">
+                                    <h5>Notice Details</h5>
+                                    @MvcHtmlString.Create(@Model.NoticeBody)
+
+                                   
+                                </div>
+                                
+
+                             
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="page-sidebar">
+                    <div class="widget cs_ads_banner"><div class="cs_banner_section"><a target="_blank" href="" id="cs_banner_clicks276833028" onclick="cs_banner_click_count_plus('http://uoce.chimpgroup.com/wp-admin/admin-ajax.php', '276833028')"><img alt="Sidebar" src="http://uoce.chimpgroup.com/wp-content/uploads/add-img.jpg"></a></div></div>
+
+
+                    <div class="widget widget_tabs">
+
+                        <div class="widget element-size-100 widget_tabs">
+
+                            @*<div class="widget-section-title">
+                        <h6>
+                            News & Events
+                        </h6>
+                    </div>*@
+                            <ul class="tab-nav">
+                                <li class="active"><a href="#tab1" data-toggle="tab"><i class="icon-user9"> News & Events</i></a></li>
+                                <li class=""><a href="#tab2" data-toggle="tab"><i class="icon-tag7"></i>Notice</a></li>
+
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade in active tabs news" id="tab1">
+
+
+                                    @{Html.RenderAction("GetAll", "Event");}
+
+                                    <a href="Event/GetAllWithGrid" class="viewall-btn csbg-hovercolor"><i class="icon-angle-double-right"></i> More News</a>
+                                </div>
+                                <div class="tab-pane fade  tabs news" id="tab2">
+                                    <ul>
+
+                                        @{Html.RenderAction("GetAll", "Notice");}
+                                    </ul>
+                                    <a href="Notice/GetAllWithGrid" class="viewall-btn csbg-hovercolor"><i class="icon-angle-double-right"></i> More Notice</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="widget widget_gallery">
+                        <div class="widget-section-title">
+                            <h4>Photo Gallery</h4>
+                        </div>
+
+                        @{Html.RenderAction("GetPartialGallery", "Gallery");}
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+
+    </div>
+</main>
+@*<script type="text/javascript">
+    jQuery(window).load(function () {
+        setTimeout(function () {
+            jQuery('.cs-map-view').hide();
+            jQuery('.map-btn').on('click', function (e) {
+                e.preventDefault();
+                jQuery('.cs-course-detail').find('.cs-map-view').slideToggle();
+            });
+        }, 2000);
+
+    });
+
+</script>*@
+<script>
+        jQuery(window).load(function () {
+            jQuery('.cs-team-slider').flexslider({
+                slideshowSpeed: 4000,
+                animationDuration: 1100,
+                animation: 'slide',
+                directionNav: true,
+                controlNav: false,
+                prevText: "&lt;i class='icon-arrow-left10'&gt;&lt;/i&gt;",
+                nextText: "&lt;i class='icon-arrow-right10'&gt;&lt;/i&gt;",
+            });
+        });
+    </script>
+
+
+@*<div class="page-header">
+    <div class="row">
+        <div class="col-md-6 col-sm-6">
+            <h2 class="page-title">Notice Details</h2>
+        </div> <!-- /.col-md-6 -->
+        <div class="col-md-6 col-sm-6 hidden-xs back-home">
+            @Html.ActionLink("← Go back Home", "Index", "Home", new { }, null)
+        </div> <!-- /.col-md-6 -->
+    </div> <!-- /.row -->
+</div>
+<div class="row">
+    <!-- /.col-md-4 -->
+    <div class="col-md-8">
+        <div class="box-content">
+            <div class="event-container clearfix">
+                <h2 class="event-title">@Model.NoticeTitle</h2>
+                @MvcHtmlString.Create(@Model.NoticeBody)
+            </div> <!-- /.event-container -->
+           <div class="event-time">
+                <span><i class="fa fa-calendar"></i>&nbsp; @Model.StartDate.ToString("dd MMM,yy")</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+
+        <div class="box-content">
+            <h4 class="widget-title"><span>Notice</span></h4>
+            @{Html.RenderAction("GetAll", "Notice");}
+            @Html.ActionLink("More Notice", "GetAllWithGrid", "Notice", new { }, new { @class = "btn btn-default-alt btn-sm pull-right" })
+        </div> <!-- /.box-content -->
+        <div class="box-content">
+            <h4 class="widget-title"><span>Gallery</span></h4>
+            @{Html.RenderAction("GetPartialGallery", "Gallery");}
+        </div> <!-- /.box-content -->
+
+    </div>
+</div>*@

@@ -1,0 +1,90 @@
+﻿@model IEnumerable<pnsms.Entities.Models.Event>
+@using System.Text.RegularExpressions
+@{
+    ViewBag.Title = "GetPartialNoticWithGridDetails";
+}
+
+@foreach (var item in Model)
+{
+
+    <div class="event-list">
+
+        <div class="event-thumb">
+            @if (@item.Image != null)
+            {
+                @*<img src=data:image/jpg;base64,@Convert.ToBase64String(Model.Images.FirstOrDefault().ImageBinaryData) height="100" width="100">*@
+                <img src="/image/GetImage?id=@item.Id&refCode=16&isThumbnail=true">
+            }
+        </div> <!-- /.event-thumb -->
+
+        <div class="event-content">
+            <h4 class="event-title">@Html.ActionLink(@item.EventTitle, "Details", "Event", new { id = item.Id }, null)</h4>
+            <p>
+                @if (@item.EventBody != null)
+                {
+                    if (@item.EventBody.Length > 300)
+                    {
+                        @MvcHtmlString.Create(@Regex.Replace(@item.EventBody.Substring(0, 300), @"<[^>]+>|<", "").Trim())
+                    }
+                    else
+                    {
+                        @MvcHtmlString.Create(@Regex.Replace(@item.EventBody, @"<[^>]+>|<", "").Trim())
+                    }
+                    @Html.ActionLink("Read More", "Details", "Notice", new { id = item.Id }, null)
+                }
+            </p>
+            <div class="event-location">
+                <span><i class="fa fa-map-marker"></i>@item.EventLocation</span>
+            </div>
+            <div class="event-time">
+                <span><i class="fa fa-calendar"></i>@item.EventStartAt.Value.ToString("dd MMM, yyyy")</span>
+            </div>
+            <div class="clearfix"></div>
+        </div> <!-- /.event-content -->
+    </div>
+    @*<div class="col-md-6">
+            <div class="grid-event-item">
+                <div class="grid-event-header">
+                    <span class="event-place small-text"><i class="fa fa-globe"></i>@item.EventLocation</span>
+                    <span class="event-date small-text"><i class="fa fa-calendar-o"></i><em>@item.EventStartAt.Value.ToString("MMM")</em> @item.EventStartAt.Value.Day, @item.EventStartAt.Value.Year</span>
+                </div>
+                <div class="box-content-inner" style="height:150px">
+
+                    @if (@item.EventTitle.Length > 30)
+                    {
+
+                        <h5 class="event-title">
+                            @Html.ActionLink(@item.EventTitle.Substring(1, 30), "Details", "Event", new { id = item.Id }, null).....
+                        </h5>
+                    }
+                    else
+                    {
+                        <h5 class="event-title">
+                            @Html.ActionLink(@item.EventTitle, "Details", "Event", new { id = item.Id }, null)
+                        </h5>
+                    }
+
+
+                    @if (@item.EventBody.Length > 120)
+                    {    <p>
+                            @MvcHtmlString.Create(@Regex.Replace(@item.EventBody.Substring(0, 120), @"<[^>]+>|<", "").Trim()) ....
+
+                        @Html.ActionLink("View Details", "Details", "Event", new { id = item.Id }, null)&rarr;
+                    </p>
+
+                    }
+                    else
+                    {
+                        <p>
+                            @MvcHtmlString.Create(@Regex.Replace(@item.EventBody, @"<[^>]+>|<", "").Trim())
+                            @Html.ActionLink("View Details", "Details", "Event", new { id = item.Id }, null)&rarr;
+                        </p>
+
+                    }
+
+
+                </div>
+            </div>
+        </div>*@
+}
+

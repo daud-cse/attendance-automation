@@ -1,0 +1,68 @@
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Release\sfa.attendance.exe.config
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Release\sfa.attendance.exe.manifest
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Release\sfa.attendance.application
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Release\sfa.attendance.exe
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Release\sfa.attendance.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Release\Newtonsoft.Json.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Release\pnsms.Entities.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Release\Repository.Pattern.Ef6.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Release\EntityFramework.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Release\System.Web.Mvc.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Release\Dapper.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Release\Repository.Pattern.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Release\LinqKit.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Release\Microsoft.Practices.ServiceLocation.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Release\pnsms.Entities.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Release\Newtonsoft.Json.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Release\Repository.Pattern.Ef6.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Release\EntityFramework.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Release\System.Web.Mvc.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Release\Repository.Pattern.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Release\Microsoft.Practices.ServiceLocation.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Release\Microsoft.Practices.ServiceLocation.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\obj\Release\sfa.attendance.csprojResolveAssemblyReference.cache
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\obj\Release\Interop.zkemkeeper.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\obj\Release\sfa.attendance.csproj.ResolveComReference.cache
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\obj\Release\sfa.attendance.DataEmpty.resources
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\obj\Release\sfa.attendance.Master.resources
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\obj\Release\sfa.attendance.Properties.Resources.resources
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\obj\Release\sfa.attendance.csproj.GenerateResource.Cache
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\obj\Release\sfa.attendance.exe.manifest
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\obj\Release\sfa.attendance.application
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\obj\Release\sfa.attendance.exe
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\obj\Release\sfa.attendance.pdb
+E:\pos\POS NEW\pnsms\sfa.attendance\obj\Release\sfa.attendance.csprojResolveAssemblyReference.cache
+E:\pos\POS NEW\pnsms\sfa.attendance\obj\Release\sfa.attendance.DataEmpty.resources
+E:\pos\POS NEW\pnsms\sfa.attendance\obj\Release\sfa.attendance.Master.resources
+E:\pos\POS NEW\pnsms\sfa.attendance\obj\Release\sfa.attendance.Properties.Resources.resources
+E:\pos\POS NEW\pnsms\sfa.attendance\obj\Release\sfa.attendance.csproj.GenerateResource.Cache
+E:\pos\POS NEW\pnsms\sfa.attendance\obj\Release\sfa.attendance.exe
+E:\pos\POS NEW\pnsms\sfa.attendance\obj\Release\sfa.attendance.pdb
+E:\pos\POS NEW\pnsms\sfa.attendance\bin\Release\sfa.attendance.exe.config
+E:\pos\POS NEW\pnsms\sfa.attendance\bin\Release\sfa.attendance.exe.manifest
+E:\pos\POS NEW\pnsms\sfa.attendance\bin\Release\sfa.attendance.application
+E:\pos\POS NEW\pnsms\sfa.attendance\bin\Release\sfa.attendance.exe
+E:\pos\POS NEW\pnsms\sfa.attendance\bin\Release\sfa.attendance.pdb
+E:\pos\POS NEW\pnsms\sfa.attendance\bin\Release\Newtonsoft.Json.dll
+E:\pos\POS NEW\pnsms\sfa.attendance\bin\Release\pnsms.Entities.dll
+E:\pos\POS NEW\pnsms\sfa.attendance\bin\Release\System.Web.Mvc.dll
+E:\pos\POS NEW\pnsms\sfa.attendance\bin\Release\Repository.Pattern.Ef6.dll
+E:\pos\POS NEW\pnsms\sfa.attendance\bin\Release\EntityFramework.dll
+E:\pos\POS NEW\pnsms\sfa.attendance\bin\Release\Dapper.dll
+E:\pos\POS NEW\pnsms\sfa.attendance\bin\Release\Microsoft.Web.Infrastructure.dll
+E:\pos\POS NEW\pnsms\sfa.attendance\bin\Release\Repository.Pattern.dll
+E:\pos\POS NEW\pnsms\sfa.attendance\bin\Release\LinqKit.dll
+E:\pos\POS NEW\pnsms\sfa.attendance\bin\Release\Microsoft.Practices.ServiceLocation.dll
+E:\pos\POS NEW\pnsms\sfa.attendance\bin\Release\pnsms.Entities.pdb
+E:\pos\POS NEW\pnsms\sfa.attendance\bin\Release\Newtonsoft.Json.xml
+E:\pos\POS NEW\pnsms\sfa.attendance\bin\Release\System.Web.Mvc.xml
+E:\pos\POS NEW\pnsms\sfa.attendance\bin\Release\Repository.Pattern.Ef6.pdb
+E:\pos\POS NEW\pnsms\sfa.attendance\bin\Release\EntityFramework.xml
+E:\pos\POS NEW\pnsms\sfa.attendance\bin\Release\Microsoft.Web.Infrastructure.xml
+E:\pos\POS NEW\pnsms\sfa.attendance\bin\Release\Repository.Pattern.pdb
+E:\pos\POS NEW\pnsms\sfa.attendance\bin\Release\Microsoft.Practices.ServiceLocation.pdb
+E:\pos\POS NEW\pnsms\sfa.attendance\bin\Release\Microsoft.Practices.ServiceLocation.xml
+E:\pos\POS NEW\pnsms\sfa.attendance\obj\Release\Interop.zkemkeeper.dll
+E:\pos\POS NEW\pnsms\sfa.attendance\obj\Release\sfa.attendance.csproj.ResolveComReference.cache
+E:\pos\POS NEW\pnsms\sfa.attendance\obj\Release\sfa.attendance.exe.manifest
+E:\pos\POS NEW\pnsms\sfa.attendance\obj\Release\sfa.attendance.application

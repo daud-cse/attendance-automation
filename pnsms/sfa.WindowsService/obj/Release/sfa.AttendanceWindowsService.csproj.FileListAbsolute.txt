@@ -1,0 +1,65 @@
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.WindowsService\obj\Release\sfa.AttendanceWindowsService.csprojResolveAssemblyReference.cache
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.WindowsService\bin\Release\Resources\refcode.jpg
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.WindowsService\bin\Release\sfa.WindowsService.exe.config
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.WindowsService\bin\Release\sfa.WindowsService.exe
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.WindowsService\bin\Release\sfa.WindowsService.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.WindowsService\bin\Release\Newtonsoft.Json.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.WindowsService\bin\Release\pnsms.Entities.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.WindowsService\bin\Release\pnsms.utility.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.WindowsService\bin\Release\Repository.Pattern.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.WindowsService\bin\Release\Repository.Pattern.Ef6.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.WindowsService\bin\Release\Service.Pattern.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.WindowsService\bin\Release\EntityFramework.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.WindowsService\bin\Release\LinqKit.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.WindowsService\bin\Release\Microsoft.Practices.ServiceLocation.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.WindowsService\bin\Release\System.Web.Mvc.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.WindowsService\bin\Release\Dapper.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.WindowsService\bin\Release\Repository.Pattern.Ef6.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.WindowsService\bin\Release\Repository.Pattern.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.WindowsService\bin\Release\Service.Pattern.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.WindowsService\bin\Release\pnsms.Entities.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.WindowsService\bin\Release\pnsms.utility.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.WindowsService\bin\Release\Newtonsoft.Json.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.WindowsService\bin\Release\EntityFramework.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.WindowsService\bin\Release\Microsoft.Practices.ServiceLocation.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.WindowsService\bin\Release\Microsoft.Practices.ServiceLocation.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.WindowsService\bin\Release\System.Web.Mvc.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.WindowsService\obj\Release\sfa.WindowsService.exe
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.WindowsService\obj\Release\sfa.WindowsService.pdb
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\Resources\refcode.jpg
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\sfa.WindowsService.exe.config
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\sfa.WindowsService.exe
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\sfa.WindowsService.pdb
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\Newtonsoft.Json.dll
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\pnsms.Entities.dll
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\pnsms.utility.dll
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\Repository.Pattern.dll
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\Repository.Pattern.Ef6.dll
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\Service.Pattern.dll
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\EntityFramework.dll
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\LinqKit.dll
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\Microsoft.Practices.ServiceLocation.dll
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\System.Web.Mvc.dll
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\Dapper.dll
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\Microsoft.Web.Infrastructure.dll
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\Repository.Pattern.Ef6.pdb
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\Repository.Pattern.pdb
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\Service.Pattern.pdb
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\pnsms.Entities.pdb
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\pnsms.utility.pdb
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\Newtonsoft.Json.xml
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\EntityFramework.xml
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\Microsoft.Practices.ServiceLocation.pdb
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\Microsoft.Practices.ServiceLocation.xml
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\System.Web.Mvc.xml
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\Microsoft.Web.Infrastructure.xml
+E:\pos\POS NEW\pnsms\sfa.WindowsService\obj\Release\sfa.AttendanceWindowsService.csprojResolveAssemblyReference.cache
+E:\pos\POS NEW\pnsms\sfa.WindowsService\obj\Release\sfa.WindowsService.exe
+E:\pos\POS NEW\pnsms\sfa.WindowsService\obj\Release\sfa.WindowsService.pdb
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\sfa.WindowsService.exe.manifest
+E:\pos\POS NEW\pnsms\sfa.WindowsService\bin\Release\sfa.WindowsService.application
+E:\pos\POS NEW\pnsms\sfa.WindowsService\obj\Release\sfa.WindowsService.exe.manifest
+E:\pos\POS NEW\pnsms\sfa.WindowsService\obj\Release\sfa.WindowsService.application
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.WindowsService\obj\Release\sfa.AttendanceWindowsService.csprojResolveAssemblyReference.cache
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.WindowsService\obj\Release\sfa.WindowsService.exe
+E:\DeepPresent Attendance\deeppresent\pnsms\sfa.WindowsService\obj\Release\sfa.WindowsService.pdb

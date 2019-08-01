@@ -1,0 +1,86 @@
+﻿<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">Student Attendance Absconding</h1>
+</div>
+<div class="wrapper-md">
+    <!-- toaster directive -->
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+    <!-- attendance directive -->
+    <form role="form" name="step1" ng-controller="studentAttendanceAbscondingByTeacherCtrl" method="post">
+        <div class="panel panel-info">
+            <div class="panel-heading font-bold">Student Attendance Info: {{VmStudentAttendance.StudentAttendance.AttendanceDate | date:'dd-MMMM-yyyy'}}</div>
+            
+            <div class="panel-body">
+                <div class="row">
+                    <div class="form-horizontal">
+                        <div class="form-group m-b-sm col-sm-12">
+                            <label class="col-sm-2 control-label"><b>Branch:</b></label>
+                            <div class="col-sm-2">
+                                <p class="form-control-static">{{VmStudentAttendance.StudentAttendance.BranchName}}</p>
+                            </div>
+                            <label class="col-sm-2 control-label"><b>Class:</b></label>
+                            <div class="col-sm-2">
+                                <p class="form-control-static">{{VmStudentAttendance.StudentAttendance.ClassName}}</p>
+                            </div>
+                            <label class="col-sm-2 control-label"><b>Section:</b></label>
+                            <div class="col-sm-2">
+                                <p class="form-control-static">{{VmStudentAttendance.StudentAttendance.SectionName}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" line-dashed b-b"></div>
+                <div class="row">
+                    <div class="form-horizontal">
+                        <div class="form-group m-b-sm col-sm-12">
+                            <label class="col-sm-2 control-label"><b>Sessoin:</b></label>
+                            <div class="col-sm-2">
+                                <p class="form-control-static">{{VmStudentAttendance.StudentAttendance.SessionName}}</p>
+                            </div>
+                            <label class="col-sm-2 control-label"><b>Teacher:</b></label>
+                            <div class="col-sm-2">
+                                <p class="form-control-static">{{VmStudentAttendance.StudentAttendance.TeacherName}}</p>
+                            </div>
+                            <label class="col-sm-2 control-label"><b>Last Update:</b></label>
+                            <div class="col-sm-2">
+                                <p class="form-control-static">{{VmStudentAttendance.StudentAttendance.LastUpdateTime | date:'dd-MMMM-yyyy' }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading font-bold">Student List</div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-striped b-t b-light" ng-table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Roll No.</th>
+                                <th>At. Status</th>
+                                <th>Is Absconding</th>
+                            </tr>
+                        </thead>
+                        <tbody ng-show="VmStudentAttendance.AttendanceDetails.length">
+                            <tr ng-repeat="x in VmStudentAttendance.AttendanceDetails | orderBy:'StudentRoll'">
+                                <td><label><input type="hidden" value="{{ x.StudentId }}">{{ x.StudentName }}</label></td>
+                                <td><label>{{ x.StudentRoll }}</label></td>
+                                <td><button class="btn btn-sm btn-icon {{x.StatusColor}}">{{ x.Status }}</button></td>
+                                <td ng-show="x.Status=='P'">
+                                    <label class="i-checks m-b-none">
+                                        <input type="checkbox"  data-ng-model="x.IsAbsconding"> <i></i>
+                                    </label>
+                                    </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="m-t m-b">
+            <button type="submit" class="btn btn-default" ng-click="AttendanceAbscondingSubmit()">Submit</button>
+        </div>
+    </form>
+</div>   

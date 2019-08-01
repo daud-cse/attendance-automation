@@ -1,0 +1,139 @@
+﻿@model IEnumerable<pnsms.Entities.Models.ScholarshipOfStudent>
+@{
+    ViewBag.Title = "Scholar Student";
+}
+<main id="main-content">
+    <!-- Main Section -->
+    <div class="main-section">
+        <!-- Page Section -->
+        <div style="margin-top: 0px;margin-bottom: 0px;border-top: 0px #e0e0e0 solid;border-bottom: 0px #e0e0e0 solid;" class="page-section ">
+            <!-- Container Start -->
+            <div class="container">
+                <div class="row">
+                    <div class="section-fullwidth">
+                        <div class="element-size-100"><div class="cs-heading-sec col-md-12"><div style="border-bottom:1px solid #ebebe9 !important;" class="inner-sec"><h1 style="color: !important; font-size: 30px !important; text-align:left;;">@ViewBag.Title</h1><div style="color: !important; text-align: left;;">													</div></div></div></div><div class="element-size-100">
+
+                            <div class="cs-team team-grid">
+                                @foreach (var item in Model)
+                                {
+
+                                    <article class="col-sm-6 col-md-3">
+                                        <div class="thumbnail custom-fig">
+                                            <div class="overlayslide-team">
+                                                <figure>
+                                                    <a href="http://uoce.chimpgroup.com/teams/tailor-jim/">
+                                                      
+                                                        <img src="/image/GetImage?id=@item.StudentId &refCode=14&isThumbnail=false" class="attachment-widget-thumb" alt="@item.Student.UserInfo.Name">
+                                                    </a>
+                                                    <figcaption>
+                                                        <a title="" rel="" href="http://uoce.chimpgroup.com/wp-content/uploads/UOCE-Team-Members-12.jpg"><i class="icon-plus8"></i></a>
+                                                    </figcaption>
+                                                </figure>
+                                            </div>
+                                            <div class="caption">
+                                                <h4><a style="color: !important" href="http://uoce.chimpgroup.com/teams/tailor-jim/">@item.Student.UserInfo.Name</a></h4>
+
+                                                <h3 style="color: !important">@item.Student.AcademicClass.Name</h3>
+                                                <div class="thumbcontactdiv">
+                                                    <ul>
+                                                        <li><span><i class="icon-phone6"></i></span>@item.Student.UserInfo.ContactNumber1</li>
+                                                        <li>
+                                                            <a class="emaildiv" href="@item.Student.UserInfo.EmailAddress"><span><i class="icon-envelope4"></i></span>@item.Student.UserInfo.EmailAddress</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-12 marginleft">
+                                                    <div class="social-media-blog">
+                                                        <ul>
+                                                            <ul>
+
+                                                                <li><a class="icon-facebook2" data-original-title="Facebook" href="@item.Student.UserInfo.FacebookId" target="_blank"></a></li>
+
+                                                                <li><a class="icon-twitter6" data-original-title="Twitter" href="@item.Student.UserInfo.TwitterId" target="_blank"></a></li>
+
+                                                                <li><a class="icon-googleplus7" data-original-title="GooglePlus" href="@item.Student.UserInfo.GoogleId" target="_blank"></a></li>
+
+                                                                <li><a class="icon-instagram4" data-original-title="Instagram" href="http://linkedin.com" target="_blank"></a></li>
+
+                                                                <li><a class="icon-envelope4" data-original-title="Email" href="@item.Student.UserInfo.EmailAddress" target="_blank"> <span>Email</span></a></li>
+                                                                @*<li><a class="icon-facebook2" data-original-title="Facebook" href="http://facebook.com"></a></li>
+
+                                                                <li><a class="icon-twitter6" data-original-title="Twitter" href="http://twitter.com"></a></li>
+
+                                                                <li><a class="icon-googleplus7" data-original-title="GooglePlus" href="http://google.com"></a></li>
+
+                                                                <li><a class="icon-instagram4" data-original-title="Instagram" href="http://linkedin.com"></a></li>
+
+                                                                <li><a class="icon-envelope4" data-original-title="Email" href="mailto:info@example.com"> <span>Email</span></a></li>*@
+                                                            </ul>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
+
+                                }
+
+
+
+                            </div><div class="col-md-12"><nav class="pagination"><div class="spreater"></div><ul><li class="pgprev cs-inactive"><a class="icon"><i class="icon-caret-left"></i></a></li><li><a class="active">1</a></li><li><a href="?page_id_all=2">2</a></li><li class="pgnext"><a href="?page_id_all=2" class="icon"> <i class="icon-caret-right"></i></a></li></ul><div class="spreater"></div></nav></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+@*<div class="page-header">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <h2 class="page-title">Scholar Students</h2>
+            </div> <!-- /.col-md-6 -->
+            <div class="col-md-6 col-sm-6 hidden-xs back-home">
+                @Html.ActionLink("← Go back Home", "Index", "Home", new { }, null)
+            </div> <!-- /.col-md-6 -->
+        </div> <!-- /.row -->
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="box-content">
+                <h4 class="widget-title"><span>Notice</span></h4>
+                @{Html.RenderAction("GetAll", "Notice");}
+                @Html.ActionLink("More Notice", "GetAllWithGrid", "Notice", new { }, new { @class = "btn btn-default-alt btn-sm pull-right" })
+            </div> <!-- /.box-content -->
+            <div class="box-content">
+                <h4 class="widget-title"><span>Gallery</span></h4>
+                @{Html.RenderAction("GetPartialGallery", "Gallery");}
+            </div> <!-- /.box-content -->
+        </div> <!-- /.col-md-4 -->
+        <div class="col-md-8">
+            <div class="box-content">
+                <div class="events-sidebar">
+                    <ul>
+                        @foreach (var item in Model)
+                        {
+                            <li class="event-item">
+                                <div class="event-thumb">
+                                    <img src="/image/GetImage?id=@item.StudentId &refCode=14&isThumbnail=false" class="attachment-widget-thumb">
+                                </div>
+                                <div class="event-content member-content">
+                                    <ul class="social pull-right">
+                                        <li><a class="fa fa-twitter" href="#"></a></li>
+                                        <li><a class="fa fa-facebook" href="#"></a></li>
+                                        <li><a class="fa fa-google-plus" href="#"></a></li>
+                                    </ul>
+                                    <h5 class="event-title">@item.Student.UserInfo.Name</h5>
+                                    <h5 class="event-title">@item.Scholarship.Name [ @item.AcademicSession.Name ]</h5>
+                                    <p class="event-meta">about about</p>
+
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div> <!-- /.box-content -->
+    </div>*@

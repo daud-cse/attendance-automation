@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Unity.Abstractions</id>
+    <version>2.0.2</version>
+    <title>Unity.Abstractions</title>
+    <authors>Microsoft.Practices.Unity</authors>
+    <owners>Microsoft.Practices.Unity</owners>
+    <licenseUrl>https://github.com/unitycontainer/abstractions/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/unitycontainer</projectUrl>
+    <iconUrl>https://avatars1.githubusercontent.com/u/12849707</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Unity Container Public Abstractions</description>
+    <summary />
+    <releaseNotes>This package is distributed as .NET Standard 1.0, .NET 4.0, 4.5, 4.7 package.</releaseNotes>
+    <copyright>Copyright © Microsoft.Practices.Unity 2017</copyright>
+    <dependencies>
+      <group targetFramework=".NETFramework4.0" />
+      <group targetFramework=".NETFramework4.5" />
+      <group targetFramework=".NETFramework4.7" />
+      <group targetFramework="Unsupported0.0">
+        <dependency id="NETStandard.Library" version="1.6.1" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

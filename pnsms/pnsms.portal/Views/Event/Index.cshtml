@@ -1,0 +1,160 @@
+﻿@using pnsms.utility
+@model IEnumerable<pnsms.Entities.Models.Event>
+
+@{
+    ViewBag.Title = "Events";
+}
+<style type="text/css">
+    .info-tiles span {
+        font-size: 1em;
+        /*height: 250px;*/
+    }
+
+    #marginremove {
+        margin: 0;
+    }
+
+    .tiles-body-alt h5 {
+    }
+
+    .iconwidth {
+        border: 1px solid #DDDDDD;
+        float: left;
+        font-size: 1em;
+        height: 35px;
+        padding: 5px;
+        text-align: center;
+        width: 35px;
+        margin-right: 5px;
+    }
+
+    .tiles-body-alt {
+        /*padding: 0 !important;*/
+    }
+
+        .tiles-body-alt h5 {
+            color: #FFFFFF;
+            margin: 0;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 0;
+        }
+</style>
+<ol class="breadcrumb">
+    <li><a href="~/Home/index">Dashboard</a></li>
+    <li>Events</li>
+</ol>
+<hr />
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            @*<h4 class="timeline-month"><span>November</span> <span>2013</span></h4>*@
+
+            @foreach (var item in Model)
+            { <ul class="timeline">
+                <li class="timeline-orange">
+                    @*<div class="timeline-icon"><i class="fa fa-camera"></i></div>*@
+                    <div class="timeline-body" id="marginremove">
+                        <div class="timeline-header">
+                            @*<span class="author">Posted by <a href="#">David Tennant</a></span>
+                                <span class="date">Monday, November 11, 2013</span>*@
+                            @*Lorem Ipsum Dolor Sit Amet</h3>*@
+
+                            @if (@item.EventTitle.Length > 31)
+                            {
+                                @item.EventTitle.Substring(0, 30) <text>..</text>
+                            }
+
+                            else
+                            {
+                                @item.EventTitle
+                            }
+                        </div>
+                        <div class="timeline-content">
+                            @if (@item.EventBody != null)
+                            {
+
+
+                                if (@item.EventBody.Length > 100)
+                                {
+
+                                    @MvcHtmlString.Create(@item.EventBody.Substring(0, 99)) <text>..</text>
+
+                                }
+                                else
+                                {
+                                    @MvcHtmlString.Create(@item.EventBody) <text>..</text>
+                                }
+                            }
+                            @*<p><img src="assets/demo/images/thmb_nature_rider.jpg" alt="" class="pull-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, officiis, molestiae, deserunt asperiores architecto ut vel repudiandae dolore inventore nesciunt necessitatibus doloribus ratione facere consectetur suscipit! Quasi, officia, veniam mollitia recusandae iure aperiam totam culpa aut nobis eveniet porro laborum quisquam non.</p>*@
+                        </div>
+                        <div class="timeline-footer">
+                            <a href="~/Event/Details?id=@item.Id" class="btn btn-default btn-sm pull-left">View Details</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            }
+
+        </div>
+    </div>
+
+    @*<div class="row">
+            <div class="col-md-12">
+                <div class="panel">
+
+                    <div class="panel-body">
+
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="dominfotiles">
+                                <div class="row">
+                                    @foreach (var item in Model)
+                                    {
+                                        <div class="col-md-4 col-xs-12 col-sm-6">
+                                            <a class="info-tiles tiles-@PortalUtility.PortalColorTiles(item.Id)" href="~/Event/Details?id=@item.Id">
+
+                                                <div class="tiles-heading">
+                                                    @if (@item.EventTitle.Length > 31)
+                                                    {
+                                                        <div class="pull-left"><h5>@item.EventTitle.Substring(0, 30)..</h5></div>
+                                                    }
+
+                                                    else
+                                                    {
+                                                        <div class="pull-left"><h5>@item.EventTitle</h5></div>
+                                                    }
+                                                </div>
+                                                <div class="tiles-body" style="height:100px">
+                                                    <h5>
+
+                                                        @if (@item.EventBody.Length > 100)
+                                                        {
+
+                                                            @MvcHtmlString.Create(@item.EventBody.Substring(0, 99)) <text>..</text>
+
+                                                        }
+                                                        else
+                                                        {
+                                                            @MvcHtmlString.Create(@item.EventBody) <text>..</text>
+                                                        }
+                                                    </h5>
+
+
+                                                </div>
+                                                <div class="tiles-footer">more info</div>
+                                            </a>
+                                        </div>
+                                    }
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+</div> <!-- container -->

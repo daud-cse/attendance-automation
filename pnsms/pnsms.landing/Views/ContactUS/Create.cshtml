@@ -1,0 +1,81 @@
+﻿@model pnsms.Entities.Models.ContactU
+
+@{
+    ViewBag.Title = "Contact Us";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen|Source+Sans+Pro:400,600">
+<link rel="stylesheet" href="assets/css/iconmoon.css">
+<!-- Testimonials JS -->
+<script type='text/javascript'>
+    jQuery(window).load(function () {
+        jQuery('.cs-testimonial-slider').flexslider({
+            slideshowSpeed: 4000,
+            animationDuration: 1100,
+            animation: 'slide',
+            directionNav: true,
+            controlNav: false,
+            prevText: "<i class='icon-arrow-left10'></i>",
+            nextText: "<i class='icon-arrow-right10'></i>",
+        });
+    });
+</script>
+<main id="main-content">
+    <div class="page-section">
+        <div class="container">
+            <div class="row">
+                <div class="page-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="section-fullwidth">
+                                <div class="element-size-100">
+                                    <div class="cs-heading-sec col-md-12">
+                                        <div class="inner-sec" style="border-bottom:1px solid #ebebe9 !important;">
+                                            <h1 style="color: !important; font-size: 30px !important; text-align:left;;">Contact Us</h1>
+                                            <div style="color: !important; text-align: left;">
+                                             
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="element-size-100">
+                                    <div class="col-md-12">
+                                       
+
+
+                                        <iframe style="border:0" allowfullscreen="" width="100%" height="380" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCvyVzXXKJ-dBKdDMMGo5W6jlQSkfMmI8M&q=@Model.Institute.GoogleMapAddress" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                                <div class="element-size-100">
+                                    <div class="cs-holder lightbox col-md-12">
+                                       
+                                    </div>
+                                </div>
+                                <div class="element-size-100">
+                                    <div class="col-md-12">
+                                        <div class="cs-section-title">
+                                            <h4>Contact ADDRESS</h4>
+                                        </div>
+                                        <div class="cs-contact-info col-md-12 ">
+                                            <div class="liststyle">
+                                                <ul>
+                                                    <li>@MvcHtmlString.Create(@Sessions.InstituteContactText)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                              
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

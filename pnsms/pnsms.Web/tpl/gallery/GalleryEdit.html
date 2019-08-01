@@ -1,0 +1,304 @@
+﻿<div ng-controller="GalleryEditCtrl">
+    <div class="bg-light lter b-b wrapper-md">
+        <h1 class="m-n font-thin h3">  Gallery: {{VmGallery.GalleryTitle}}</h1>
+    </div>
+
+    <div class="wrapper-md">
+
+        <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+
+        <div class="panel wrapper" ng-hide="isLoading">
+            <div class="row">
+                <div class="col-md-4 b-r b-light no-border-xs">
+
+                    <div class="m-b">
+                        <form role="form" class="form-validation" ng-submit="AddGallery()">
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>
+                                            Title
+                                        </label>
+                                        <input class="form-control" data-ng-model="VmGallery.GalleryTitle" placeholder="Gallery Title" type="text" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>
+                                            Sub Title
+                                        </label>
+                                        <input class="form-control" data-ng-model="VmGallery.GallerySubtitle" placeholder="Gallery Subtitle" type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Event Type</label>
+                                        <select ng-model="VmGallery.EventId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmGallery.EventList">
+                                            <option value="">-- Choose Event --</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Start Date</label>
+
+                                        <div ng-controller="DatepickerDemoCtrl">
+                                            <div class="input-group ">
+                                                <input type="text" value="{{VmGallery.StartDate | date:'dd-MMMM-yyyy'}}" clas class="form-control" datepicker-popup="{{format}}" ng-model="VmGallery.StartDate" is-open="opened" datepicker-options="dateOptions" close-text="Close" />
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>End Date</label>
+                                        <div ng-controller="DatepickerDemoCtrl">
+                                            <div class="input-group ">
+                                                <input type="text" value="{{VmGallery.EndDate | date:'dd-MMMM-yyyy'}}" c class="form-control" datepicker-popup="{{format}}" ng-model="VmGallery.EndDate" is-open="opened" datepicker-options="dateOptions" close-text="Close" />
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Active  &nbsp;</label>
+                                        <label class="i-checks m-b-none">
+
+                                            <input type="checkbox" data-ng-model="VmGallery.IsActive"> <i></i>
+                                        </label>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr />
+                            <div class="row">
+                                <div class="col-sm-6 ">
+                                    <a ui-sref="app.gallery.list" class="btn btn-default pull-left"><i class="icon-action-undo"></i> &nbsp;Back to List</a>
+                                </div>
+                                <div class="col-sm-6   pull-right">
+
+                                    <button type="submit" class="btn btn-addon btn-primary pull-right">
+                                        <i class="glyphicon glyphicon-floppy-saved"></i>SAVE
+                                    </button>
+
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-8" ng-hide="isLoading">
+                    <a ng-hide="showUploadPanel" ng-click="showUploadPanel=!showUploadPanel" class="text-muted pull-right text-lg" href="">Upload <i class="fa fa-upload"></i></a>
+                    <a ng-show="showUploadPanel" ng-click="showUploadPanel=!showUploadPanel" class="text-muted pull-right text-lg" href=""><i class="icon-arrow-left"></i> Back</a>
+                    <h4 ng-hide="showUploadPanel" class="font-thin m-t-none m-b-md text-muted">Images List<!--<b class="badge bg-info">{{ uploader.queue.length }}</b>--></h4>
+                    <h4 ng-show="showUploadPanel" class="font-thin m-t-none m-b-md text-muted">Upload<!--<b class="badge bg-info">{{ uploader.queue.length }}</b>--></h4>
+                    <div ng-show="showUploadPanel" class="row fade-in-up">
+                        <div class="hbox hbox-auto-xs hbox-auto-sm" nv-file-drop="" uploader="uploader" filters="queueLimit, customFilter">
+
+                            <div class="col">
+
+                                <div class="wrapper-md">
+
+
+                                    <input tabindex="-1" style="clip: rect(0px, 0px, 0px, 0px); "
+                                           id="fileInput" multiple nv-file-select=""
+                                           ui-jq="filestyle"
+                                           data-icon="false" uploader="uploader"
+                                           data-classbutton="btn btn-default"
+                                           data-classinput="form-control inline v-middle "
+                                           change-on-fly="true" type="file" />
+                                    <div ng-show="uploader.isHTML5" class="m-b-md">
+                                        <!-- 3. nv-file-over uploader="link" over-class="className" -->
+                                        <div class="b-a b-2x b-dashed wrapper-lg bg-white text-center m-b" nv-file-over="" over-class="b-info" uploader="uploader">
+                                            Base drop zone
+                                        </div>
+
+
+                                    </div>
+                                    <table class="table bg-white-only b-a">
+                                        <thead>
+                                            <tr>
+                                                <th width="50%">Name</th>
+                                                <th ng-show="uploader.isHTML5">Size</th>
+                                                <th ng-show="uploader.isHTML5">Progress</th>
+                                                <th>Status</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="item in uploader.queue">
+                                                <td>
+                                                    <strong>{{ item.file.name }}</strong>
+                                                    <div ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 50 }"></div>
+                                                </td>
+                                                <td ng-show="uploader.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td>
+                                                <td ng-show="uploader.isHTML5">
+                                                    <div class="progress progress-sm m-b-none m-t-xs">
+                                                        <div class="progress-bar bg-info" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span ng-show="item.isSuccess" class="text-success"><i class="glyphicon glyphicon-ok"></i></span>
+                                                    <span ng-show="item.isCancel" class="text-warning"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                                                    <span ng-show="item.isError" class="text-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                                                </td>
+                                                <td nowrap>
+                                                    <!--<button type="button" class="btn btn-default btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                                                        Upload
+                                                    </button>
+                                                    <button type="button" class="btn btn-default btn-xs" ng-click="item.cancel()" ng-disabled="!item.isUploading">
+                                                        Cancel
+                                                    </button>-->
+                                                    <button type="button" class="btn btn-default btn-xs" ng-click="item.remove()">
+                                                        Remove
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div>
+                                        <div>
+                                            <p>Queue progress:</p>
+                                            <div class="progress bg-light dker" style="">
+                                                <div class="progress-bar progress-bar-striped bg-info" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"></div>
+                                            </div>
+                                        </div>
+                                        <!--<button type="button" class="btn btn-addon btn-success" ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length">
+                                                <i class="fa fa-arrow-circle-o-up"></i> Upload all
+                                            </button>-->
+                                        <!--<button type="button" class="btn btn-addon btn-warning" ng-click="uploader.cancelAll()" ng-disabled="!uploader.isUploading">
+                                                <i class="fa fa-ban"></i> Cancel all
+                                            </button>-->
+                                        <button type="button" class="btn btn-addon btn-danger pull-right" ng-click="uploader.clearQueue()" ng-disabled="!uploader.queue.length">
+                                            <i class="fa fa-trash-o"></i> Remove all
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-hide="showUploadPanel" class="row fadeIn">
+                        <div class="inline  wrapper-sm b-a ng-scope bg-primary" style="text-align: center;margin-right: -3px;">
+                            <label>
+                                <span>Cover Image</span>
+                            </label>
+                            
+                                <div class="bg-light">
+                                    <!--<img tooltip="{{img.ImageCaption}}" onerror="$(this).attr('src', 'img/404_error_image.png');" width="160px" ng-src="{{ 'erp/api/image/thumb?id='+ img.Id +'&refcode=Gallery'  }}" />-->
+                                    <img onerror="$(this).attr('src', 'img/404_error_image.png');" width="160px" ng-src="{{defaultImage}}" />
+                               
+                                </div>
+                             
+                            <p>-- o --</p>
+                        </div>
+                       
+                        <div class="inline bg-white wrapper-sm b-a" style="text-align: center" ng-repeat="img in VmGallery.Images">
+                            <label class="i-checks" style="width: 100%;text-align: right">
+                                <span style="padding-right: 30px"> Set as Cover Image </span><input ng-click="checkBoxChange(img)" type="radio" tooltip="Set as default image for this gallery." value="img.Id" name="a">
+                                <i></i>
+                            </label>
+                            <a ng-click="open(img)">
+                                <div class="bg-light">
+                                    <img tooltip="{{img.ImageCaption}}" onerror="$(this).attr('src', 'img/404_error_image.png');" width="160px" ng-src="{{apiUrlPrefix+'api/image/thumb?id='+ img.Id +'&refcode=Gallery'}}" />
+
+                                </div>
+                            </a>
+
+                            <p> {{ img.ImageCaption? img.ImageCaption : 'Untitled' }}</p>
+                        </div>
+                        
+                       
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+<!--Modal-->
+<script type="text/ng-template" id="myModalContent.html">
+    <div ng-controller="ModalDemoCtrl" class="panel-default b-a no-border">
+
+        <div class="modal-body">
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <img onerror="$(this).attr('src', 'img/404_error_image.png');" width="550px" ng-src="{{ apiUrlPrefix+'api/image?id='+ selectedImage.Id +'&refcode=Gallery'  }}" />
+
+                </div>
+                <div class="col-lg-4">
+                    <form role="form" class="form-validation">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <button ng-click="cancel()" class="close" type="button">×</button>
+                            </div>
+                        </div>
+                        <div class="row">
+
+
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <h4> Caption</h4>
+                                    <p ng-show="!item.editing" ng-dblclick="item.editing=true" class="b wrapper-md pos-rlt bg-light text-lt r r-2x">
+                                        <span class="arrow top pull-left arrow-light"></span>
+                                        {{ selectedImage.ImageCaption? selectedImage.ImageCaption : 'Add Caption' }}
+                                    </p>
+
+
+                                </div>
+                            </div>
+                            <div class="col-sm-12" ng-show="item.editing">
+                                <div class="form-group">
+                                    <textarea placeholder="Caption" rows="2" class="form-control" data-ng-model="selectedImage.ImageCaption" ui-focus="item.editing"></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="row">
+                            <div class="col-sm-12 ">
+                                <button type="button" class="btn btn-addon btn-danger" ng-click="remove()">
+                                    <i class="fa fa-trash-o"></i>REMOVE IMAGE
+                                </button>
+                                <button ng-show="item.editing" class="btn btn-primary pull-right  pull-right" ng-click="item.editing=false">Update</button>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</script>

@@ -1,0 +1,278 @@
+﻿<div ng-controller="StudentDetailsCtrl">
+    <div class="bg-info-lter b-b wrapper-sm text-dark-dk">
+        <h1 class="m-n font-thin h3"><i class="fa fa-mortar-board"></i>Student: {{VmStudent.UserInfo.Name}}<button class="btn btn-sm btn-warning pull-right " type="button" ng-click="Print()"><span class="text-dark"><i class="fa fa-print"></i> Print</span> </button></h1>
+    </div>
+    <!--<button class="btn btn-sm btn-default" type="button" ng-click="printDiv('myDiv')">Go!</button>-->
+    <div class="wrapper-md">
+        <!-- toaster directive -->
+        <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+        <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+        <!--User info-->
+
+        <form role="form" class="form-validation" ng-hide="isLoading">
+            <div class="panel panel-default" id="myDiv">
+
+                <div class="panel-body">
+                    <div class="row">
+
+                        <div class="col-sm-3">
+                            <div class="inline bg-white wrapper-sm b-a  pull-right">
+                                <div class="bg-light">
+                                    <img onerror="$(this).attr('src', 'img/404_error_image.png');" style="border: solid 1px gray" ng-src="{{ProfileImage}}" width="100px" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="m-l-md">
+                                <div class="clearfix m-b-md">
+
+                                    <div class="clear">
+                                        <h3 class="m-t-none text-black">{{VmStudent.UserInfo.Name}}</h3>
+
+                                        <span>Session: {{(VmStudent.Student.AcademicSessionList| filter:{Key:VmStudent.Student.CurrentAcademicSessionId})[0].Value }}</span>
+                                        <span>, Branch: {{(VmStudent.Student.AcademicBranchList| filter:{Key:VmStudent.Student.CurrentAcademicBranchId})[0].Value }}</span>
+                                        <br />
+                                        <span>Class: {{(VmStudent.Student.AcademicClassList| filter:{Key:VmStudent.Student.CurrentAcademicClassId})[0].Value }}</span>
+                                        <span>, Section: {{(VmStudent.Student.AcademicSectionList| filter:{Key:VmStudent.Student.CurrentAcademicSectionId})[0].Value }}</span>
+
+                                        <br />
+                                        <span>Roll: {{VmStudent.Student.CurrentRollNo}}</span>
+                                        <span ng-hide="!VmStudent.Student.CurrentAcademicGroupId">, Group: {{(VmStudent.Student.AcademicGroupList| filter:{Key:VmStudent.Student.CurrentAcademicGroupId})[0].Value }}</span>
+                                        <span ng-hide="!VmStudent.Student.CurrentAcademicVerssionId">, Verssion: {{(VmStudent.Student.AcademicVerssionList| filter:{Key:VmStudent.Student.CurrentAcademicVerssionId})[0].Value }}</span>
+                                        <span ng-hide="!VmStudent.Student.CurrentAcademicShiftId">, Shift: {{(VmStudent.Student.AcademicShiftList| filter:{Key:VmStudent.Student.CurrentAcademicShiftId})[0].Value }}</span>
+                                        <br />
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class=" line-dashed b-b"></div>
+
+                    <div class="row">
+
+                        <div class="form-horizontal">
+                            <div class="form-group m-b-sm" style="margin: 0px">
+                                <label class="col-sm-2 control-label">Gender</label>
+                                <div class="col-sm-4">
+                                    <p ng-hide="!VmStudent.UserInfo.GenderId" class="form-control-static">{{(VmStudent.UserInfo.GenderList| filter:{Key:VmStudent.UserInfo.GenderId})[0].Value }}</p>
+                                </div>
+                                <label class="col-sm-2 control-label">Date of Birth</label>
+                                <div class="col-sm-4">
+                                    <p class="form-control-static">{{VmStudent.UserInfo.DOB | date:"MM-dd-yyyy"}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="line-dashed b-b"></div>
+                    <div class="row">
+
+                        <div class="form-horizontal">
+                            <div class="form-group m-b-sm" style="margin: 0px">
+                                <label class="col-sm-2 control-label">SSN</label>
+                                <div class="col-sm-4">
+                                    <p class="form-control-static">{{VmStudent.UserInfo.SSN}}</p>
+                                </div>
+                                <label class="col-sm-2 control-label">PassportNo</label>
+                                <div class="col-sm-4">
+                                    <p class="form-control-static">{{VmStudent.UserInfo.PassportNo}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="line-dashed b-b"></div>
+                    <div class="row">
+                        <div class="form-horizontal">
+                            <div class="form-group m-b-sm" style="margin: 0px">
+                                <label class="col-sm-2 control-label">Religion</label>
+                                <div class="col-sm-4">
+                                    <p ng-hide="!VmStudent.UserInfo.ReligionId" class="form-control-static">{{(VmStudent.UserInfo.ReligionList| filter:{Key:VmStudent.UserInfo.ReligionId})[0].Value }}</p>
+                                </div>
+                                <label class="col-sm-2 control-label">Nationality</label>
+                                <div class="col-sm-4">
+                                    <p ng-hide="!VmStudent.UserInfo.NationalityId" class="form-control-static">{{(VmStudent.UserInfo.NationalityList| filter:{Key:VmStudent.UserInfo.NationalityId})[0].Value }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line-dashed b-b"></div>
+                    <div class="row">
+                        <div class="form-horizontal">
+                            <div class="form-group m-b-sm" style="margin: 0px">
+                                <label class="col-sm-2 control-label">Blood Group</label>
+                                <div class="col-sm-4">
+                                    <p ng-hide="!VmStudent.UserInfo.BloodGroupId" class="form-control-static">{{(VmStudent.UserInfo.BloodGroupList| filter:{Key:VmStudent.UserInfo.BloodGroupId})[0].Value }}</p>
+                                </div>
+                                <label class="col-sm-2 control-label">Email Address</label>
+                                <div class="col-sm-4">
+                                    <p class="form-control-static">{{VmStudent.UserInfo.EmailAddress }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line-dashed b-b"></div>
+                    <div class="row">
+                        <div class="form-horizontal">
+                            <div class="form-group m-b-sm" style="margin: 0px">
+                                <label class="col-sm-2 control-label">Contact 1</label>
+                                <div class="col-sm-4">
+                                    <p class="form-control-static">{{(VmStudent.UserInfo.ContactNumber1) }}</p>
+                                </div>
+                                <label class="col-sm-2 control-label">Contact 2</label>
+                                <div class="col-sm-4">
+                                    <p class="form-control-static">{{(VmStudent.UserInfo.ContactNumber2) }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line-dashed b-b"></div>
+                    <div class="row">
+                        <div class="form-horizontal">
+                            <div class="form-group m-b-sm" style="margin: 0px">
+                                <label class="col-sm-2 control-label">Google</label>
+                                <div class="col-sm-4">
+                                    <p class="form-control-static">{{(VmStudent.UserInfo.GoogleId) }}</p>
+                                </div>
+                                <label class="col-sm-2 control-label">Facebook</label>
+                                <div class="col-sm-4">
+                                    <p class="form-control-static">{{(VmStudent.UserInfo.FacebookId) }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line-dashed b-b"></div>
+                    <div class="row">
+                        <div class="form-horizontal">
+                            <div class="form-group m-b-sm" style="margin: 0px">
+                                <label class="col-sm-2 control-label">Microsoft</label>
+                                <div class="col-sm-4">
+                                    <p class="form-control-static">{{(VmStudent.UserInfo.MicrosoftId) }}</p>
+                                </div>
+                                <label class="col-sm-2 control-label">Twitter</label>
+                                <div class="col-sm-4">
+                                    <p class="form-control-static">{{(VmStudent.UserInfo.TwitterId) }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line-dashed b-b"></div>
+                    <div class="row">
+                        <div class="form-horizontal">
+                            <div class="form-group m-b-sm" style="margin: 0px">
+                                <label class="col-sm-2 control-label">Co Curricular Activities:</label>
+                                <div class="col-sm-8">
+                                    <p class="form-control-static">
+                                        <span ng-repeat="bid in VmStudent.Student.CoCurricularActivities">{{(VmStudent.Student.CoCurricularActivityList| filter:{Key:bid})[0].Value }} {{ $last ? '' : ','}} &nbsp;</span>
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line-dashed b-b"></div>
+                    <div class="row">
+                        <div class="form-horizontal">
+                            <div class="form-group m-b-sm" style="margin: 0px">
+                                <label class="col-sm-2 control-label">Scholarship:</label>
+                                <div class="col-sm-8">
+                                    <p class="form-control-static">
+                                        <span ng-repeat="bid in VmStudent.Student.Scholarships">{{(VmStudent.Student.ScholarshipList| filter:{Key:bid})[0].Value }} {{ $last ? '' : ','}} &nbsp;</span>
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--Guardian info-->
+                    <div ng-repeat="guardian in  VmStudent.Guardians">
+
+                        <div class="line-dashed b-b"></div>
+                        <div class="row">
+                            <div class="form-horizontal">
+                                <div class="form-group m-b-sm" style="margin: 0px">
+                                    <label class="col-sm-2 control-label">{{(VmStudent.SingleGuardian.GuardianTypesList| filter:{Key:guardian.GuardianTypeId})[0].Value }}</label>
+                                    <div class="col-sm-4">
+                                        <p class="form-control-static"> {{guardian.UserInfo.Name}}</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="line-dashed b-b"></div>
+                        <div class="row">
+                            <div class="form-horizontal">
+                                <div class="form-group m-b-sm" style="margin: 0px">
+                                    <label class="col-sm-2 control-label"></label>
+                                    <div class="col-sm-8">
+                                        <p class="form-control-static">
+                                            <span ng-hide="!guardian.EducationalQualificationId">
+                                                Educational: {{(VmStudent.SingleGuardian.EducationalQualificationList| filter:{Key:guardian.EducationalQualificationId})[0].Value }},
+                                            </span>
+                                            <span ng-hide="!guardian.ProfessionId">Profession: {{(VmStudent.SingleGuardian.ProfessionList| filter:{Key:guardian.ProfessionId})[0].Value }}</span>
+                                            <span ng-hide="!guardian.ContactNumber1">,Primary Contact Number: {{guardian.UserInfo.ContactNumber1}}</span>
+                                            <span ng-hide="!guardian.ContactNumber2">,Secondary Contact Number: {{guardian.UserInfo.ContactNumber2}}</span>
+                                            <span ng-hide="!guardian.MonthlyIncome">,Monthly Income: {{guardian.MonthlyIncome}}</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <!--Address info-->
+                    <div ng-repeat="address in VmStudent.Addresses">
+
+
+
+                        <div class="line-dashed b-b"></div>
+                        <div class="row">
+                            <div class="form-horizontal">
+                                <div class="form-group m-b-sm" style="margin: 0px">
+                                    <label class="col-sm-2 control-label"> {{(VmStudent.SingleAddresses.AddressTypeList| filter:{Key:address.AddressTypeId})[0].Value }} Address</label>
+                                    <div class="col-sm-8">
+                                        <p class="form-control-static">
+                                            {{address.AddressBody}},
+                                            <span ng-hide="!address.ZipCode">Zip Code: {{address.ZipCode }}</span>
+                                            <span ng-hide="!address.DistrictOrStateId">,District/State: {{(VmStudent.DistrictOrStateList| filter:{Id:address.DistrictOrStateId})[0].Name }}</span>
+                                            <span ng-hide="!address.DistrictOrStateId">,Country: {{(VmStudent.CountryList| filter:{Key:(VmStudent.DistrictOrStateList | filter:{Id: address.DistrictOrStateId})[0].CountryId })[0].Value   }}</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="col-sm-2 ">
+                            <a ui-sref="app.studentlist" class="btn btn-default pull-left"><i class="icon-action-undo"></i> &nbsp;Back to List</a>
+
+                        </div>
+                        <div class="col-sm-2   pull-right">
+                            <a ui-sref="app.studentsedit({studentId:VmStudent.UserInfo.Id})" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-floppy-saved"></i>&nbsp;Edit</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+</div>

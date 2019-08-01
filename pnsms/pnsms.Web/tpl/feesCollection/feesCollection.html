@@ -1,0 +1,350 @@
+﻿<div class="bg-info-lter b-b wrapper-sm text-dark-dk">
+    <h1 class="m-n font-thin h3"><i class="fa fa-mortar-board"></i>Fees Collection</h1>
+</div>
+<div class="wrapper-md" ng-init="init()" ng-controller="feesCollection">
+   
+    <!-- toaster directive -->
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading wrapper-xs">Search</div>
+        <div class="panel-body">
+            <div class="row">
+                <!--<div class="col-sm-3">
+                    <div class="form-group">
+                        <label>Month</label>
+                        <select ng-model="selectedOption" class="form-control" data-ng-options="o.Value for o in Monthes track by o.Key"></select>
+
+                    </div>
+                </div>-->
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>Collection Date</label>
+                        <div ng-controller="DatepickerDemoCtrl">
+                            <div class="input-group ">
+                                <input type="text" value="{{Input.collectionDate | date:'dd-MMMM-yyyy'}}" ng-change="dateChange(Input.collectionDate)" clas class="form-control" datepicker-popup="{{format}}" ng-model="Input.collectionDate" is-open="opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>Month</label>
+                        <select ng-model="Input.month" class="form-control" data-ng-options="o.Value for o in Monthes track by o.Key"></select>
+
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Student Pin</label>
+                        <!--<input class="form-control" data-ng-model="Input.studentId" placeholder="ST-100036" type="text">-->
+                        <angucomplete-alt id="ex8"
+                                          placeholder="ST-100036"
+                                          pause="100"
+                                          selected-object="selectedStudent"
+                                          remote-api-handler="globalSearch"
+                                          search-fields="UserName"
+                                          title-field="UserName"
+                                          minlength="3"
+                                          input-class="form-control form-control-small"
+                                          match-class="highlight"
+                                          ng-model="Input.studentId"  />
+                    </div>
+                </div>
+               
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label>&nbsp;</label>
+                        <button type="button" style="margin-top:25px;" class="btn btn-primary" ng-click="GetFilterResult(Input)"><i class="glyphicon glyphicon-floppy-saved"></i>&nbsp;Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+    <div class="panel panel-default" ng-show="!isShowFees" ng-hide="isLoading || isInit">
+        <div class="row wrapper">
+            <div class="row">
+               
+                  
+                <div class="col-sm-3">
+                    <div class="row">
+                        <!--<div class="col-sm-2">
+                            <div class="inline bg-white wrapper-sm b-a  pull-right">
+                                <div class="bg-light">
+                                    <img onerror="$(this).attr('src', 'img/404_error_image.png');" style="border: solid 1px gray" width="100px" />
+                                </div>
+                            </div>
+                        </div>-->
+                        <div class="col-sm-12">
+                            <div class="m-l-md">
+                                <div class="clearfix m-b-md">
+                                    <div class="clear">
+                                        <h3 class="m-t-none text-black"> {{studentFees.StudentName}}  </h3>
+
+                                        <span>Session: {{studentFees.Session}}</span>
+                                        <span>, Branch: {{studentFees.Branch}}</span>
+                                        <br />
+                                        <span>Class: {{studentFees.ClassName}}</span>
+                                        <span>, Section: {{studentFees.SectionName}}</span>
+
+                                        <br />
+                                        <span>Roll: {{studentFees.Roll}}</span>
+                                        <br />
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    </div>
+                <div class="col-sm-9">
+                    <div class="panel-heading panel-success font-bold"><b>Fees Head Wise Collection <!--Total Received Amount--></b></div>
+                    <div></div>
+                    <div class="row" style="margin-top: 10px;">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Collection Date</label>
+                                <div ng-controller="DatepickerDemoCtrl">
+                                    <div class="input-group ">
+                                        <input type="text" disabled value="{{Input.collectionDate.toDateString()}}" clas class="form-control" datepicker-popup="{{format}}" ng-model="Input.collectionDate" is-open="opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+
+                                        <!--<span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Mode</label>
+
+
+                                <select ng-model="Input.modeId" ng-change="getCheque(Input.modeId)" required class="form-control m-b" ng-options="c.modeId as c.name for c in Input.Modes">
+                                    <option value="">-- Choose Mode --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Cheque</label>
+
+
+                                <input disabled="disabled" data-ng-model="Input.chequeNo" class="form-control m-b" type="text"  placeholder="cheque">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Bank</label>
+
+
+                                <select ng-model="Input.bankId" required class="form-control m-b" ng-options="c.bankId as c.name for c in Input.banks">
+                                    <option value="">-- Choose Bank --</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <form>
+
+                            <table class="table table-striped b-t b-light" ng-hide="isShowTable">
+                                <thead>
+                                    <tr>
+                                        <th>Month</th>
+                                        <th>Head</th>
+                                        <th>Fees Amount</th>
+                                        <th>Paid</th>
+                                        <th>Remaining</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="fees in studentFees.StudentFeesList">
+                                        <td><a ui-sref="app.dasboard" class="text-primary text-md">{{fees.MonthName}}</a></td>
+                                        <td>{{fees.FeesHeadName}}</td>
+                                        <td>{{fees.FeesAmount}}</td>
+
+                                        <td>{{fees.PaidAmount}}</td>
+                                        <td><input data-ng-model="fees.RemainingAmount" type="number" required placeholder="{{fees.RemainingAmount}}"></td>
+                                    </tr>
+
+                                </tbody>
+                                <tfoot>
+                                    
+                                    <tr>
+                                        
+                                        <td></td>
+                                        <td><b>Total</b></td>
+                                        <td><b> {{studentFees.feesTotal}}</b> </td>
+                                        <td><b> {{studentFees.feesPaidTotal}} </b></td>
+                                        <td><b>{{studentFees.feesRemainingTotal}}</b></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            <div class="col-sm-10" style="margin-bottom:10px;">
+                                <div class="row pull-right">
+                                    <button type="submit" ng-click="makePayment(studentFees)" class="btn btn-success">Get Payment</button>
+                                    <button type="submit" ng-click="printDocument()" class="btn btn-success">PDF</button>
+                                </div>
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+               
+             
+            </div>
+            <!--<div class="line-dashed b-b"></div>-->
+        </div>
+        <!--<div class="panel panel-success">-->
+           
+            <div ng-show="!isShowFees" id="pdf" class="receipt-box-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="receipt-box">
+                                <div class="receipt-box-head">
+                                    <!--<img src="img/logo.png" alt="" />-->
+                                    <h1>Demo School and College</h1>
+                                    <p>471,Palton, Dhaka</p>
+                                    <!--<p>Rashtriya Shala Road, Rajkot</p>-->
+                                    <p>Phone : 00258945</p>
+                                </div>
+                                <div class="receipt-box-info">
+                                    <h1>Fees Receipt</h1>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <p><span class="n">Session</span><span class="te"> ({{studentFees.Session}} )</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <p><span class="n">Receipt No</span><span class="te">9</span></p>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <p><span class="n">Date</span><span class="te">{{Input.collectionDate | date:'dd-MMMM-yyyy'}}</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <p><span class="n">Name</span><span class="te">{{studentFees.StudentName}}</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <p><span class="n">Class</span><span class="te">{{studentFees.ClassName}}</span></p>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <p><span class="n">GR No.</span><span class="te">103</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="receipt-box-table">
+                                    <table>
+                                        <tr>
+                                            <th>Fees Name</th>
+                                            <th>Fees</th>
+                                            <th>Paid Amount</th>
+                                            <th>Discount</th>
+                                            <th>Net</th>
+                                        </tr>
+                                        <tr ng-repeat="fees in studentFees.StudentFeesList">
+                                            <!--<td><a ui-sref="app.dasboard" class="text-primary text-md">{{fees.MonthName}}</a></td>-->
+                                            <td>{{fees.FeesHeadName}}</td>
+                                            <td>{{fees.FeesAmount}}</td>
+                                            
+                                            <td>{{fees.PaidAmount}}</td>
+                                            <td>{{0}}</td>
+                                            <td>{{fees.RemainingAmount}}</td>
+                                        </tr>
+                                       <tr>
+                                           <td>Total</td>
+                                          
+                                           <td>{{studentFees.feesTotal}}</td>
+                                           <td>{{studentFees.feesPaidTotal}}</td>
+                                           <td></td>
+                                           <td>{{studentFees.feesRemainingTotal}}</td>
+                                        </tr>
+                                       <!--  <tr>
+                                            <td>Activity Fees</td>
+                                            <td>1,000</td>
+                                            <td>100</td>
+                                            <td>900</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Others Fees</td>
+                                            <td>120</td>
+                                            <td>12</td>
+                                            <td>108</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Hostel Fee Pri</td>
+                                            <td>80,000</td>
+                                            <td></td>
+                                            <td>80,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Net Total</td>
+                                            <td>82,120</td>
+                                            <td>212</td>
+                                            <td>81,908</td>
+                                        </tr>-->
+                                    </table>
+                                </div>
+                                <div class="receipt-box-info">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <p><span class="n">In Words</span><span class="te"><!--Eighty One Thousad Nine Hundred and Eight Only--></span></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <p><span class="n">Mode</span><span class="te">Cgeque/DD</span></p>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <p><span class="n">Chqe No</span><span class="te">000567</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <p><span class="n">Bank</span><span class="te">SBI Bank</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="receipt-box-footer">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="receipt-box-f">
+                                                <h3>Student's Sign</h3>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="receipt-box-f">
+                                                <p>Demo School and College</p>
+                                                <h3>Cashir</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!--</div>-->
+
+    </div>
+
+
+</div>
+

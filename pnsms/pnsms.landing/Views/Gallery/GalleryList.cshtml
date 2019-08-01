@@ -1,0 +1,24 @@
+﻿@model pnsms.Entities.Models.Gallery
+@{
+    ViewBag.Title = "Gallery List";
+}
+<ul class="gallery-list">
+
+
+    @foreach (var item in Model.Images)
+    {
+
+        if (item != null)
+        {
+            <li>
+                <img src="/image/GetImage?id=@item.RefPrimaryKey&refCode=19&isThumbnail=true">
+            </li>
+        }
+    }
+
+    @*<li><a target="_blank" title="Halloween 2014 at Envato in Melbourne" href="https://www.flickr.com/photos/52617155@N08/15647274066/"><img alt="Halloween 2014 at Envato in Melbourne" src="https://farm4.staticflickr.com/3940/15647274066_2ee48c3fe9_s.jpg"></a></li> *@
+
+
+
+
+</ul>

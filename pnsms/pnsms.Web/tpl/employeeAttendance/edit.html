@@ -1,0 +1,94 @@
+﻿<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">Edit Employee Attendance</h1>
+</div>
+<div class="wrapper-md">
+    <!-- toaster directive -->
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+    <!-- attendance directive -->
+    <form role="form" ng-controller="EmployeeAttendanceEditCtrl" name="step1" ng-submit="EditEmployeeAttendance()" method="post">
+        <div class="panel panel-info">
+            <div class="panel-heading font-bold">Attendance Info</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="form-horizontal">
+                        <div class="form-group m-b-sm col-sm-12">
+                            <label class="col-sm-1 control-label"><b>Branch:</b></label>
+                            <div class="col-sm-2">
+                                <p class="form-control-static">{{VmUserAttendance.UserAttendance.BranchName}}</p>
+                            </div>
+                            <label class="col-sm-1 control-label"><b>Date:</b></label>
+                            <div class="col-sm-2">
+                                <p class="form-control-static">{{VmUserAttendance.UserAttendance.AttendanceDate | date:'dd-MMMM-yyyy'}}</p>
+                            </div>
+                            <label class="col-sm-1 control-label"><b>Total:</b></label>
+                            <div class="col-sm-1">
+                                <p class="form-control-static">{{VmUserAttendance.UserAttendance.TotalCount}}</p>
+                            </div>
+                            <label class="col-sm-1 control-label"><b>Present:</b></label>
+                            <div class="col-sm-1">
+                                <p class="form-control-static">{{VmUserAttendance.UserAttendance.PresentCount}} ({{VmUserAttendance.UserAttendance.PresentPercentage}}%)</p>
+                            </div>
+                            <label class="col-sm-1 control-label"><b>Abscent:</b></label>
+                            <div class="col-sm-1">
+                                <p class="form-control-static">{{VmUserAttendance.UserAttendance.AbsentCount}}({{VmUserAttendance.UserAttendance.AbsentPercentage}}%)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading font-bold">Employee List</div>
+            <div class="panel-body">
+                <div class="row wrapper">
+                    <div class="col-sm-12">
+                        <div class="table-responsive">
+                            <table class="table table-striped b-t b-light" ng-table>
+                                <thead>
+                                    <tr>
+                                        <th>PIN</th>
+                                        <th>Designation</th>
+                                        <th>Name</th>
+                                        <th>In Time</th>
+                                        <th>Out Time</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody ng-show="VmUserAttendance.AttendanceDetails.length">
+                                    <tr ng-repeat="x in VmUserAttendance.AttendanceDetails">
+                                        <td>{{ x.UserPin }}</td>
+                                        <td><input type="hidden" value="{{ x.Id }}"> {{ x.UserDesignation }}</td>
+                                        <td>
+                                        <input type="hidden" value="{{ x.UserInfoId }}">{{ x.UserName }}</td>
+                                        <td>
+                                            <div ng-controller="TimepickerSimpleDemoCtrl" class="m-b-lg">
+                                                <timepickersimple ng-model="x.InTime" value="{{ x.InTime }}" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"> </timepickersimple>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div ng-controller="TimepickerSimpleDemoCtrl" class="m-b-lg">
+                                                <timepickersimple ng-model="x.OutTime" value="{{ x.OutTime }}" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"> </timepickersimple>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class=" btn-group" ng-repeat="xx in x.AttendanceTypes">
+                                                <label ng-class="{{xx.AttTypeId}}=={{x.AttendanceTypeId}} ? 'active {{xx.colorCode}}' : '{{xx.colorCode}}'" btn btn-radio="'{{ xx.AttTypeId }}'" ng-model="x.AttendanceTypeId" class="btn btn-sm ng-untouched ng-valid ng-dirty"><i class="fa fa-check text-active"></i>{{ xx.Flag }}</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-sm-6 pull-left">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success">Update</button>
+                                <button class="btn" ui-sref="app.employeeAttendance.list">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>

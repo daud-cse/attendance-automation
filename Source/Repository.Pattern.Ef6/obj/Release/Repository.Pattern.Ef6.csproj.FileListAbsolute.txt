@@ -1,0 +1,69 @@
+E:\MPMS NEW\Manpower Management System(MMS)\Source\Repository.Pattern.Ef6\bin\Release\Repository.Pattern.Ef6.dll.config
+E:\MPMS NEW\Manpower Management System(MMS)\Source\Repository.Pattern.Ef6\bin\Release\Repository.Pattern.Ef6.dll
+E:\MPMS NEW\Manpower Management System(MMS)\Source\Repository.Pattern.Ef6\bin\Release\Repository.Pattern.Ef6.pdb
+E:\MPMS NEW\Manpower Management System(MMS)\Source\Repository.Pattern.Ef6\bin\Release\EntityFramework.dll
+E:\MPMS NEW\Manpower Management System(MMS)\Source\Repository.Pattern.Ef6\bin\Release\EntityFramework.SqlServer.dll
+E:\MPMS NEW\Manpower Management System(MMS)\Source\Repository.Pattern.Ef6\bin\Release\LinqKit.EntityFramework.dll
+E:\MPMS NEW\Manpower Management System(MMS)\Source\Repository.Pattern.Ef6\bin\Release\Microsoft.Practices.ServiceLocation.dll
+E:\MPMS NEW\Manpower Management System(MMS)\Source\Repository.Pattern.Ef6\bin\Release\Repository.Pattern.dll
+E:\MPMS NEW\Manpower Management System(MMS)\Source\Repository.Pattern.Ef6\bin\Release\System.Net.Http.dll
+E:\MPMS NEW\Manpower Management System(MMS)\Source\Repository.Pattern.Ef6\bin\Release\Repository.Pattern.pdb
+E:\MPMS NEW\Manpower Management System(MMS)\Source\Repository.Pattern.Ef6\bin\Release\EntityFramework.xml
+E:\MPMS NEW\Manpower Management System(MMS)\Source\Repository.Pattern.Ef6\bin\Release\EntityFramework.SqlServer.xml
+E:\MPMS NEW\Manpower Management System(MMS)\Source\Repository.Pattern.Ef6\bin\Release\LinqKit.EntityFramework.xml
+E:\MPMS NEW\Manpower Management System(MMS)\Source\Repository.Pattern.Ef6\bin\Release\Microsoft.Practices.ServiceLocation.pdb
+E:\MPMS NEW\Manpower Management System(MMS)\Source\Repository.Pattern.Ef6\bin\Release\Microsoft.Practices.ServiceLocation.xml
+E:\MPMS NEW\Manpower Management System(MMS)\Source\Repository.Pattern.Ef6\obj\Release\Repository.Pattern.Ef6.csprojResolveAssemblyReference.cache
+E:\MPMS NEW\Manpower Management System(MMS)\Source\Repository.Pattern.Ef6\obj\Release\Repository.Pattern.Ef6.dll
+E:\MPMS NEW\Manpower Management System(MMS)\Source\Repository.Pattern.Ef6\obj\Release\Repository.Pattern.Ef6.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern.Ef6\bin\Release\Repository.Pattern.Ef6.dll.config
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern.Ef6\bin\Release\Repository.Pattern.Ef6.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern.Ef6\bin\Release\Repository.Pattern.Ef6.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern.Ef6\bin\Release\EntityFramework.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern.Ef6\bin\Release\EntityFramework.SqlServer.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern.Ef6\bin\Release\LinqKit.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern.Ef6\bin\Release\Microsoft.Practices.ServiceLocation.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern.Ef6\bin\Release\Repository.Pattern.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern.Ef6\bin\Release\System.Net.Http.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern.Ef6\bin\Release\Repository.Pattern.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern.Ef6\bin\Release\EntityFramework.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern.Ef6\bin\Release\EntityFramework.SqlServer.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern.Ef6\bin\Release\Microsoft.Practices.ServiceLocation.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern.Ef6\bin\Release\Microsoft.Practices.ServiceLocation.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern.Ef6\obj\Release\Repository.Pattern.Ef6.csprojResolveAssemblyReference.cache
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern.Ef6\obj\Release\Repository.Pattern.Ef6.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern.Ef6\obj\Release\Repository.Pattern.Ef6.pdb
+E:\pos\POS NEW\Source\Repository.Pattern.Ef6\bin\Release\Repository.Pattern.Ef6.dll.config
+E:\pos\POS NEW\Source\Repository.Pattern.Ef6\bin\Release\Repository.Pattern.Ef6.dll
+E:\pos\POS NEW\Source\Repository.Pattern.Ef6\bin\Release\Repository.Pattern.Ef6.pdb
+E:\pos\POS NEW\Source\Repository.Pattern.Ef6\bin\Release\EntityFramework.dll
+E:\pos\POS NEW\Source\Repository.Pattern.Ef6\bin\Release\EntityFramework.SqlServer.dll
+E:\pos\POS NEW\Source\Repository.Pattern.Ef6\bin\Release\LinqKit.dll
+E:\pos\POS NEW\Source\Repository.Pattern.Ef6\bin\Release\Microsoft.Practices.ServiceLocation.dll
+E:\pos\POS NEW\Source\Repository.Pattern.Ef6\bin\Release\Repository.Pattern.dll
+E:\pos\POS NEW\Source\Repository.Pattern.Ef6\bin\Release\System.Net.Http.dll
+E:\pos\POS NEW\Source\Repository.Pattern.Ef6\bin\Release\Repository.Pattern.pdb
+E:\pos\POS NEW\Source\Repository.Pattern.Ef6\bin\Release\EntityFramework.xml
+E:\pos\POS NEW\Source\Repository.Pattern.Ef6\bin\Release\EntityFramework.SqlServer.xml
+E:\pos\POS NEW\Source\Repository.Pattern.Ef6\bin\Release\Microsoft.Practices.ServiceLocation.pdb
+E:\pos\POS NEW\Source\Repository.Pattern.Ef6\bin\Release\Microsoft.Practices.ServiceLocation.xml
+E:\pos\POS NEW\Source\Repository.Pattern.Ef6\obj\Release\Repository.Pattern.Ef6.csprojResolveAssemblyReference.cache
+E:\pos\POS NEW\Source\Repository.Pattern.Ef6\obj\Release\Repository.Pattern.Ef6.dll
+E:\pos\POS NEW\Source\Repository.Pattern.Ef6\obj\Release\Repository.Pattern.Ef6.pdb
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\bin\Release\Repository.Pattern.Ef6.dll.config
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\bin\Release\Repository.Pattern.Ef6.dll
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\bin\Release\Repository.Pattern.Ef6.pdb
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\bin\Release\EntityFramework.dll
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\bin\Release\EntityFramework.SqlServer.dll
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\bin\Release\LinqKit.dll
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\bin\Release\Microsoft.Practices.ServiceLocation.dll
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\bin\Release\Repository.Pattern.dll
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\bin\Release\System.Net.Http.dll
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\bin\Release\Repository.Pattern.pdb
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\bin\Release\EntityFramework.xml
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\bin\Release\EntityFramework.SqlServer.xml
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\bin\Release\Microsoft.Practices.ServiceLocation.pdb
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\bin\Release\Microsoft.Practices.ServiceLocation.xml
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\obj\Release\Repository.Pattern.Ef6.csprojResolveAssemblyReference.cache
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\obj\Release\Repository.Pattern.Ef6.dll
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\obj\Release\Repository.Pattern.Ef6.pdb

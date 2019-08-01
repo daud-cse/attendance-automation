@@ -1,0 +1,65 @@
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.utility\bin\Release\Resources\refcode.jpg
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.utility\bin\Release\pnsms.utility.dll.config
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.utility\bin\Release\pnsms.utility.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.utility\bin\Release\pnsms.utility.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.utility\bin\Release\EntityFramework.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.utility\bin\Release\EntityFramework.SqlServer.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.utility\bin\Release\EntityFramework.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.utility\bin\Release\EntityFramework.SqlServer.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.utility\obj\Release\pnsms.utility.Resource.Errors.resources
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.utility\obj\Release\pnsms.utility.Resource.Labels.resources
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.utility\obj\Release\pnsms.utility.csproj.GenerateResource.Cache
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.utility\obj\Release\pnsms.utility.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.utility\obj\Release\pnsms.utility.pdb
+E:\pos\POS NEW\pnsms\pnsms.utility\bin\Release\Resources\refcode.jpg
+E:\pos\POS NEW\pnsms\pnsms.utility\bin\Release\pnsms.utility.dll.config
+E:\pos\POS NEW\pnsms\pnsms.utility\bin\Release\pnsms.utility.dll
+E:\pos\POS NEW\pnsms\pnsms.utility\bin\Release\pnsms.utility.pdb
+E:\pos\POS NEW\pnsms\pnsms.utility\bin\Release\EntityFramework.dll
+E:\pos\POS NEW\pnsms\pnsms.utility\bin\Release\EntityFramework.SqlServer.dll
+E:\pos\POS NEW\pnsms\pnsms.utility\bin\Release\System.Web.Mvc.dll
+E:\pos\POS NEW\pnsms\pnsms.utility\bin\Release\System.Web.Razor.dll
+E:\pos\POS NEW\pnsms\pnsms.utility\bin\Release\System.Web.WebPages.Razor.dll
+E:\pos\POS NEW\pnsms\pnsms.utility\bin\Release\System.Web.WebPages.dll
+E:\pos\POS NEW\pnsms\pnsms.utility\bin\Release\Microsoft.Web.Infrastructure.dll
+E:\pos\POS NEW\pnsms\pnsms.utility\bin\Release\System.Web.WebPages.Deployment.dll
+E:\pos\POS NEW\pnsms\pnsms.utility\bin\Release\EntityFramework.xml
+E:\pos\POS NEW\pnsms\pnsms.utility\bin\Release\EntityFramework.SqlServer.xml
+E:\pos\POS NEW\pnsms\pnsms.utility\bin\Release\System.Web.Mvc.xml
+E:\pos\POS NEW\pnsms\pnsms.utility\bin\Release\System.Web.Razor.xml
+E:\pos\POS NEW\pnsms\pnsms.utility\bin\Release\System.Web.WebPages.Razor.xml
+E:\pos\POS NEW\pnsms\pnsms.utility\bin\Release\System.Web.WebPages.xml
+E:\pos\POS NEW\pnsms\pnsms.utility\bin\Release\Microsoft.Web.Infrastructure.xml
+E:\pos\POS NEW\pnsms\pnsms.utility\bin\Release\System.Web.WebPages.Deployment.xml
+E:\pos\POS NEW\pnsms\pnsms.utility\obj\Release\pnsms.utility.Resource.Errors.resources
+E:\pos\POS NEW\pnsms\pnsms.utility\obj\Release\pnsms.utility.Resource.Labels.resources
+E:\pos\POS NEW\pnsms\pnsms.utility\obj\Release\pnsms.utility.csproj.GenerateResource.Cache
+E:\pos\POS NEW\pnsms\pnsms.utility\obj\Release\pnsms.utility.dll
+E:\pos\POS NEW\pnsms\pnsms.utility\obj\Release\pnsms.utility.pdb
+E:\pos\POS NEW\pnsms\pnsms.utility\obj\Release\pnsms.utility.csprojResolveAssemblyReference.cache
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.utility\bin\Release\Resources\refcode.jpg
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.utility\bin\Release\pnsms.utility.dll.config
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.utility\bin\Release\pnsms.utility.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.utility\bin\Release\pnsms.utility.pdb
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.utility\bin\Release\EntityFramework.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.utility\bin\Release\EntityFramework.SqlServer.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.utility\bin\Release\System.Web.Mvc.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.utility\bin\Release\System.Web.Razor.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.utility\bin\Release\System.Web.WebPages.Razor.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.utility\bin\Release\System.Web.WebPages.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.utility\bin\Release\Microsoft.Web.Infrastructure.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.utility\bin\Release\System.Web.WebPages.Deployment.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.utility\bin\Release\EntityFramework.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.utility\bin\Release\EntityFramework.SqlServer.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.utility\bin\Release\System.Web.Mvc.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.utility\bin\Release\System.Web.Razor.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.utility\bin\Release\System.Web.WebPages.Razor.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.utility\bin\Release\System.Web.WebPages.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.utility\bin\Release\Microsoft.Web.Infrastructure.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.utility\bin\Release\System.Web.WebPages.Deployment.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.utility\obj\Release\pnsms.utility.csprojResolveAssemblyReference.cache
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.utility\obj\Release\pnsms.utility.Resource.Errors.resources
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.utility\obj\Release\pnsms.utility.Resource.Labels.resources
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.utility\obj\Release\pnsms.utility.csproj.GenerateResource.Cache
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.utility\obj\Release\pnsms.utility.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.utility\obj\Release\pnsms.utility.pdb

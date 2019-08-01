@@ -1,0 +1,18 @@
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Service.Pattern\bin\Debug\Service.Pattern.dll.config
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Service.Pattern\bin\Debug\Service.Pattern.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Service.Pattern\bin\Debug\Service.Pattern.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Service.Pattern\bin\Debug\Repository.Pattern.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Service.Pattern\bin\Debug\System.Net.Http.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Service.Pattern\bin\Debug\Repository.Pattern.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Service.Pattern\obj\Debug\Service.Pattern.csprojResolveAssemblyReference.cache
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Service.Pattern\obj\Debug\Service.Pattern.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Service.Pattern\obj\Debug\Service.Pattern.pdb
+E:\pos\POS NEW\Source\Service.Pattern\bin\Debug\Service.Pattern.dll.config
+E:\pos\POS NEW\Source\Service.Pattern\bin\Debug\Service.Pattern.dll
+E:\pos\POS NEW\Source\Service.Pattern\bin\Debug\Service.Pattern.pdb
+E:\pos\POS NEW\Source\Service.Pattern\bin\Debug\Repository.Pattern.dll
+E:\pos\POS NEW\Source\Service.Pattern\bin\Debug\System.Net.Http.dll
+E:\pos\POS NEW\Source\Service.Pattern\bin\Debug\Repository.Pattern.pdb
+E:\pos\POS NEW\Source\Service.Pattern\obj\Debug\Service.Pattern.csprojResolveAssemblyReference.cache
+E:\pos\POS NEW\Source\Service.Pattern\obj\Debug\Service.Pattern.dll
+E:\pos\POS NEW\Source\Service.Pattern\obj\Debug\Service.Pattern.pdb

@@ -1,0 +1,293 @@
+﻿<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">Roles</h1>
+</div>
+
+<div class="wrapper-md" ng-controller="RolesCtrl">
+    <!-- toaster directive -->
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <!-- / toaster directive -->
+    <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+    <div class="panel panel-default" ng-show="isNew">
+        <div class="panel-heading">
+            <span class="h4" ng-show="!Role.Id">New Role</span>
+            <span class="h4" ng-hide="!Role.Id">Role: {{Role.Name}}</span>
+        </div>
+        <form name="newform" class="form-validation" ng-submit="Add(Role)">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-4 form-group">
+                        <label>Name </label>
+                        <input class="form-control" data-ng-model="Role.Name" required placeholder="Name" type="text">
+                    </div>
+                    <div class="col-lg-8 form-group">
+                        <label>Description </label>
+                        <input class="form-control" data-ng-model="Role.Description" placeholder="Description" type="text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 form-group">
+
+                        <label class="i-checks m-b-none">
+                            <input type="checkbox" data-ng-model="Role.IsForEmployee"> <i></i>
+                        </label>
+                        <label>For Employee? </label>
+
+                    </div>
+                    <div class="col-lg-6 form-group">
+
+                        <label class="i-checks m-b-none">
+                            <input type="checkbox" data-ng-model="Role.IsForTeacher"> <i></i>
+                        </label>
+                        <label>For Others? </label>
+
+                    </div>
+                    
+                </div>
+                <!--<div class="row">
+                   
+                    <div class="col-lg-6 form-group">
+
+                        <label class="i-checks m-b-none">
+                            <input type="checkbox" data-ng-model="Role.IsForStudent"> <i></i>
+                        </label>
+                        <label>For Student? </label>
+                    </div>
+
+                    <div class="col-lg-6 form-group">
+
+                        <label class="i-checks m-b-none">
+                            <input type="checkbox" data-ng-model="Role.IsForGuardian"> <i></i>
+                        </label>
+                        <label>For Guardian? </label>
+                    </div>
+                </div>-->
+                   
+                    <div class="form-group">
+                        <label>Rights </label>
+                   
+                        <div class="form-control-static">
+                          
+                            <ui-select multiple ng-model="multipleDemo.selectedPeopleWithGroupBy" theme="bootstrap" ng-disabled="disabled">
+                                <ui-select-match placeholder="Select rights...">{{$item.Name}} &lt;{{$item.Code}}&gt;</ui-select-match>
+                                <ui-select-choices group-by="someGroupFn" repeat="person in Rights | propsFilter: {Id: $select.search,Name: $select.search, Code: $select.search}">
+                                    <div ng-bind-html="person.Name | highlight: $select.search"></div>
+                                    <small>
+                                        Code: {{person.Code}}
+                                        Description: <span ng-bind-html="''+person.Description | highlight: $select.search"></span>
+                                    </small>
+                                </ui-select-choices>
+                            </ui-select>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <label class="i-checks m-b-none">
+                            <input type="checkbox" data-ng-model="Role.IsActive"> <i></i>
+                        </label>
+                        <label>Active </label>
+                    </div>
+
+
+                </div>
+            <footer class="panel-footer   bg-light lter">
+                <div class="row">
+                    <div class="col-sm-2 ">
+                        <a data-ng-click="isNew=false;" class="btn btn-default pull-left"><i class="icon-action-undo"></i> &nbsp;Back to List</a>
+
+                    </div>
+                    <div class="col-sm-2 pull-right">
+                        <button type="submit" class="btn btn-primary pull-right" ng-disabled="newform.$invalid" ng-hide="Role.Id>0"><i class="glyphicon glyphicon-floppy-saved"></i>&nbsp;Save</button>
+                        <button type="submit" class="btn btn-primary pull-right" ng-disabled="newform.$invalid" ng-show="Role.Id>0"><i class="glyphicon glyphicon-floppy-saved"></i>&nbsp;Update</button>
+
+                    </div>
+                </div>
+
+
+
+            </footer>
+        </form>
+    </div>
+    
+    <div class="panel panel-default" ng-hide="isNew || isLoading">
+
+        <div class="row wrapper">
+            <div class="col-sm-3 m-b-xs">
+
+                <a href="" class="btn btn-sm btn-info btn-addon" data-ng-click="AddNew()"><i class="fa fa-plus fa-fw m-r-xs"></i> ADD NEW</a>
+            </div>
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <input type="text" class="input-sm form-control" ng-change="search()" ng-model="query" placeholder=" search">
+                    <span class="input-group-btn">
+                        <button class="btn btn-sm btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped b-t b-light">
+            <thead>
+                <tr>
+                    <th style="width:20px;">
+
+                    </th>
+                    <th><span class="Name">Name&nbsp;<a ng-click="sort_by('Name')"><i class="fa fa-sort"></i></a> </span></th>
+
+                    <th><span class="Description">Description&nbsp; <a ng-click="sort_by('Description')"><i class="fa fa-sort"></i></a> </span></th>
+
+                    <th><span class="IsForEmployee">Employee &nbsp;<a ng-click="sort_by('IsForEmployee')"><i class="fa fa-sort"></i></a></span></th>
+                    <th><span class="IsForTeacher">Other User &nbsp;<a ng-click="sort_by('IsForTeacher')"><i class="fa fa-sort"></i></a></span></th>
+                    <!--<th><span class="IsForStudent">Student &nbsp;<a ng-click="sort_by('IsForStudent')"><i class="fa fa-sort"></i></a></span></th>
+                    <th><span class="IsForGuardian">Guardian &nbsp;<a ng-click="sort_by('IsForGuardian')"><i class="fa fa-sort"></i></a></span></th>-->
+                    <th  >Status</th>
+                    <th  ></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-show="isNew">
+                    <td></td>
+                    <td><form name="form" class="form-validation"> <input class="form-control" data-ng-model="Role.Name" required placeholder="Name" type="text"></form> </td>
+                    <td><input class="form-control" type="text" data-ng-model="Role.Description" placeholder="Description" /></td>
+                    <td>
+                        <label class="i-checks m-b-none">
+                            <input type="checkbox" data-ng-model="Role.IsForEmployee"> <i></i>
+                        </label>
+                    </td>
+                    <td>
+                        <label class="i-checks m-b-none">
+                            <input type="checkbox" data-ng-model="Role.IsForTeacher"> <i></i>
+                        </label>
+                    </td>
+                    <!--<td>
+                        <label class="i-checks m-b-none">
+                            <input type="checkbox" data-ng-model="Role.IsForStudent"> <i></i>
+                        </label>
+                    </td>
+                    <td>
+                        <label class="i-checks m-b-none">
+                            <input type="checkbox" data-ng-model="Role.IsForGuardian"> <i></i>
+                        </label>
+                    </td>-->
+                    <td>
+                        <label class="i-checks m-b-none">
+                            <input type="checkbox" data-ng-model="Role.IsActive"> <i></i>
+                        </label>
+                    </td>
+                    <td>
+                        <div class="pull-right">
+                            <button type="submit" class="btn-link text-primary" ng-disabled="form.$invalid" ng-click="Add(Role)"><i class="glyphicon glyphicon-floppy-saved"></i></button>
+                            &nbsp;&nbsp;
+                            <a type="button" data-ng-click="editMode = false;isNew = false; cancel()" class=" text-info "><i class="fa fa-mail-reply"></i></a>
+                        </div>
+                    </td>
+
+                </tr>
+
+                <tr ng-repeat="item in pagedItems[currentPage] | orderBy:sortingOrder:reverse" ng-include="'display'"></tr>
+
+            </tbody>
+        </table>
+        <footer class="panel-footer">
+            <div class="row">
+                <div class="col-sm-4 hidden-xs">
+                    <small class="text-muted inline m-t-sm m-b-sm">showing {{currentPage*itemsPerPage+1}}-{{(currentPage*(itemsPerPage)+itemsPerPage)>items.length?items.length:(currentPage*(itemsPerPage)+itemsPerPage)}} of {{items.length}} items</small>
+                </div>
+
+                <div class="col-sm-8 text-right text-center-xs">
+                    <ul class="pagination pagination-sm m-t-none m-b-none ng-isolate-scope ng-valid">
+                        <li ng-class="{disabled: currentPage == 0}">
+                            <a href ng-click="prevPage()"><i class="fa fa-chevron-left"></i></a>
+                        </li>
+                        <li ng-repeat="n in range(pagedItems.length)"
+                            ng-class="{active: n == currentPage}"
+                            ng-click="setPage()">
+                            <a href ng-bind="n + 1">1</a>
+                        </li>
+                        <li ng-class="{disabled: currentPage == pagedItems.length - 1}">
+                            <a href ng-click="nextPage()"><i class="fa fa-chevron-right"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <script type="text/ng-template" id="display">
+        <td></td>
+        <td><a class="text-primary"  data-ng-click=" Edit(item)" tooltip="Edit"> <span>{{item.Name}}</span></a></td>
+        <td><span data-ng-hide="editMode">{{item.Description}}</span></td>
+
+        <td>
+            <i ng-hide="item.IsForEmployee==true" class="fa fa-times text-danger text" tooltip="InActive" title="InActive"></i>
+            <i ng-if="item.IsForEmployee==true" class="fa fa-check text-success" tooltip="Active" title="Active"></i>
+        </td>
+        <td>
+            <i ng-hide="item.IsForTeacher==true" class="fa fa-times text-danger text" tooltip="InActive" title="InActive"></i>
+            <i ng-if="item.IsForTeacher==true" class="fa fa-check text-success" tooltip="Active" title="Active"></i>
+        </td>
+        <td>
+            <i ng-hide="item.IsForStudent==true" class="fa fa-times text-danger text" tooltip="InActive" title="InActive"></i>
+            <i ng-if="item.IsForStudent==true" class="fa fa-check text-success" tooltip="Active" title="Active"></i>
+        </td>
+        <td>
+            <i ng-hide="item.IsForGuardian==true" class="fa fa-times text-danger text" tooltip="InActive" title="InActive"></i>
+            <i ng-if="item.IsForGuardian==true" class="fa fa-check text-success" tooltip="Active" title="Active"></i>
+        </td>
+        <td>
+            <i ng-hide="item.IsActive==true" class="fa fa-times text-danger text" tooltip="InActive" title="InActive"></i>
+            <i ng-if="item.IsActive==true" class="fa fa-check text-success" tooltip="Active" title="Active"></i>
+        </td>
+        <td>
+            <a type="submit" data-ng-click=" Edit(item)" tooltip="Edit" class="text-primary pull-right"><i class="fa fa-pencil "></i></a>
+        </td>
+
+    </script>
+    <script type="text/ng-template" id="edit">
+
+        <td></td>
+        <td class="form-validation" ng-class="{'ng-invalid-required': item.Name==null || item.Name==''}">
+
+            <input class="form-control" type="text" data-ng-model="item.Name" placeholder="Name" required />
+
+        </td>
+        <td><input class="form-control" type="text" data-ng-model="item.Description" placeholder="Description" required /></td>
+        <td>
+            <label class="i-checks m-b-none">
+                <input type="checkbox" data-ng-model="item.IsForEmployee"> <i></i>
+            </label>
+        </td>
+        <td>
+            <label class="i-checks m-b-none">
+                <input type="checkbox" data-ng-model="item.IsForTeacher"> <i></i>
+            </label>
+        </td>
+        <td>
+            <label class="i-checks m-b-none">
+                <input type="checkbox" data-ng-model="item.IsForStudent"> <i></i>
+            </label>
+        </td>
+        <td>
+            <label class="i-checks m-b-none">
+                <input type="checkbox" data-ng-model="item.IsForGuardian"> <i></i>
+            </label>
+        </td>
+        <td>
+            <label class="i-checks m-b-none">
+                <input type="checkbox" data-ng-model="item.IsActive"> <i></i>
+            </label>
+        </td>
+        <td>
+
+            <div class="pull-right">
+                <button ng-disabled='item.Name==null  || item.Name==""' tooltip="Save" class="btn btn-link" data-ng-click="Update(item)"><i class="glyphicon glyphicon-floppy-saved"></i></button>
+                &nbsp;&nbsp;
+                <a data-ng-click=" reset()" class="text-info   " tooltip="Back"><i class="fa fa-mail-reply"></i></a>
+            </div>
+        </td>
+    </script>
+</div>
+

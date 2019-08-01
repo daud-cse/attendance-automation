@@ -1,0 +1,171 @@
+﻿ 
+<div class="bg-info-lter b-b wrapper-sm text-dark-dk">
+    <h1 class="m-n font-thin h3"><i class="fa fa-mortar-board"></i>Students</h1>
+</div>
+
+<div class="wrapper-md" ng-controller="StudentListCtrl">
+     
+    
+    <div class=" panel panel-primary" ng-hide="isSearchLoading">
+        <div class="panel-heading wrapper-xs">
+            <i class="glyphicon glyphicon-search"></i>  Search
+            <a class="pull-right" ng-init="isCollapsedUser = false" ng-click="isCollapsedUser = !isCollapsedUser ">
+                <span tooltip="Show/Hide" style="" class="glyphicon glyphicon-chevron-up" ng-class="{'glyphicon-chevron-down': isCollapsedUser== true,'glyphicon-chevron-up': isCollapsedUser== false}"></span>
+            </a>
+        </div>
+
+        <div class="panel-body" collapse="isCollapsedUser">
+            
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <label>Search Text</label>
+                        <input class="form-control" required data-ng-model="VmStudent.UserInfo.Name" placeholder="Search text" type="text">
+                    </div>
+                </div>
+                <div class="col-sm-2" ng-show="VmStudent.Student.AcademicBranchList.length>1">
+                    <div class="form-group">
+                        <label>Branch</label>
+
+                        <select ng-model="VmStudent.CurrentAcademicBranchId" required class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.AcademicBranchList"></select>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label>Class</label>
+
+                        <select ng-model="VmStudent.CurrentAcademicClassId" required data-ng-change="getScetionClasswise()"  class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.AcademicClassList">
+                            <option value="">-- All --</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label>Section</label>
+
+
+                        <select ng-model="VmStudent.CurrentAcademicSectionId" required class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.AcademicSectionList">
+                            <option value="">-- All --</option>
+                        </select>
+                    </div>
+                </div>
+                <!--<div class="col-sm-2">
+                    <div class="form-group">
+                        <label>Session</label>
+
+                        <select ng-model="VmStudent.CurrentAcademicSessionId" required class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.AcademicSessionList">
+                            <option value="">-- Choose Session --</option>
+                        </select>
+                    </div>
+                </div>-->
+                <div class="col-sm-1 text-right text-center-xs">
+                   
+                   
+                    <div class="form-group">
+                        <label>&nbsp;</label>
+                        <div class="form-group">
+                            <button type="submit" ng-click="SearchStudent()" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-search"></i>&nbsp;Search</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-1 text-right text-center-xs">
+
+
+                    <div class="form-group">
+                        <label>&nbsp;</label>
+                        <div class="form-group" >
+                            <a href="StudentReports/GetStudentsDetails?classId={{VmStudent.CurrentAcademicClassId}}&SectionId={{VmStudent.CurrentAcademicSectionId}} " target="_blank" class="btn-link">Reprts</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+       
+    </div>
+    <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+    <div class="panel panel-default" ng-hide="isLoading">
+
+        <div class="row wrapper">
+            <div class="col-sm-3 m-b-xs">
+               
+                <a href="" class="btn btn-sm btn-info btn-addon" ui-sref="app.students"><i class="fa fa-plus fa-fw m-r-xs"></i> ADD NEW</a>
+            </div>
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <input type="text" class="input-sm form-control" ng-change="search()" ng-model="query" placeholder=" search">
+                    <span class="input-group-btn">
+                        <button class="btn btn-sm btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped b-t b-light">
+            <thead>
+                <tr>
+                    <th style="width:55px;">
+                        <span class="StudentId">&nbsp; </span>
+                    </th>
+                    <th><span class="Name">Name&nbsp;<a ng-click="sort_by('Name')"><i class="fa fa-sort"></i></a> </span></th>
+                    <th><span class="CurrentRollNo">Roll No&nbsp; <a ng-click="sort_by('CurrentRollNo')"><i class="fa fa-sort"></i></a> </span></th>
+                    <th><span class="SectionName">Section &nbsp;<a ng-click="sort_by('SectionName')"><i class="fa fa-sort"></i></a></span></th>
+                    <th><span class="ClassName">Class &nbsp;<a ng-click="sort_by('ClassName')"><i class="fa fa-sort"></i></a></span></th>
+                    <th style="width:100px;"></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr ng-repeat="item in pagedItems[currentPage] | orderBy:sortingOrder:reverse" ng-include='getTemplate(item)'></tr>
+
+            </tbody>
+        </table>
+        <footer class="panel-footer">
+            <div class="row">
+                <div class="col-sm-4 hidden-xs">
+                    <small class="text-muted inline m-t-sm m-b-sm">showing {{currentPage*itemsPerPage+1}}-{{(currentPage*(itemsPerPage)+itemsPerPage)>items.length?items.length:(currentPage*(itemsPerPage)+itemsPerPage)}} of {{items.length}} items</small>
+                </div>
+
+                <div class="col-sm-8 text-right text-center-xs">
+                    <ul class="pagination pagination-sm m-t-none m-b-none ng-isolate-scope ng-valid">
+                        <li ng-class="{disabled: currentPage == 0}">
+                            <a href ng-click="prevPage()"><i class="fa fa-chevron-left"></i></a>
+                        </li>
+                        <li ng-repeat="n in range(pagedItems.length)"
+                            ng-class="{active: n == currentPage}"
+                            ng-click="setPage()">
+                            <a href ng-bind="n + 1">1</a>
+                        </li>
+                        <li ng-class="{disabled: currentPage == pagedItems.length - 1}">
+                            <a href ng-click="nextPage()"><i class="fa fa-chevron-right"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <script type="text/ng-template" id="display">
+
+        <td><span><img onerror="$(this).attr('src', 'img/404_error_image.png');" width="35px" ng-src="{{ apiUrlPrefix +'api/image/refcode?id='+ item.StudentId +'&refcode=Userinfo_Photo_Small' || 'img/no-image.png'}}" /></span></td>
+        <td><span><a ui-sref="app.studentsdetails({studentId:item.StudentId})" class="text-primary text-md">{{item.Name}}</a>  </span>
+            
+        </td>
+        <td><span data-ng-hide="editMode">{{item.CurrentRollNo}}</span></td>
+        <td><span data-ng-hide="editMode">{{item.SectionName}}</span></td>
+        <td><span data-ng-hide="editMode">{{item.ClassName}}</span></td>
+        <td>
+
+            <a ui-sref="app.studentsedit({studentId:item.StudentId})" tooltip="Edit" class="text-primary text-md"><i class="fa fa-pencil "></i></a> &nbsp;&nbsp;
+            <a ui-sref="app.studentsdetails({studentId:item.StudentId})" tooltip="Details"  class="text-primary text-md"><i class="fa fa-file-archive-o "></i></a>
+        </td>
+
+
+    </script>
+
+
+
+</div>
+

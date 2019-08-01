@@ -1,0 +1,299 @@
+﻿
+@{
+    ViewBag.Title = "StudentAttendance";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $("#yearup").click(function (e) {
+            e.preventDefault();
+
+           //alert('hello');
+
+
+            var input = $("#inputyear");
+
+            var currentVal = parseInt(input.val());
+
+            if (!isNaN(currentVal)) {
+
+
+                    if (currentVal < input.attr('data-max')) {
+                        input.val(currentVal + 1).change();
+                    }
+                    if (parseInt(input.val()) == input.attr('data-max')) {
+                        $(this).attr('disabled', true);
+                    }
+
+
+            }
+
+            })
+
+        $("#yeardown").click(function (e) {
+            e.preventDefault();
+
+            //alert('hello');
+
+
+            var input = $("#inputyear");
+
+            var currentVal = parseInt(input.val());
+
+            if (!isNaN(currentVal)) {
+
+
+                if (currentVal >input.attr('data-min')) {
+                    input.val(currentVal - 1).change();
+                }
+                if (parseInt(input.val()) == input.attr('data-min')) {
+                    $(this).attr('disabled', true);
+                }
+
+
+            }
+
+        })
+
+        $("#dayUp").click(function (e) {
+            e.preventDefault();
+
+            //alert('hello');
+
+
+            var input = $("#inputday");
+
+            var currentVal = parseInt(input.val());
+
+            if (!isNaN(currentVal)) {
+
+
+                if (currentVal < input.attr('data-max')) {
+                    input.val(currentVal +1).change();
+                }
+                if (parseInt(input.val()) == input.attr('data-max')) {
+                    $(this).attr('disabled', true);
+                }
+
+
+            }
+
+        })
+        $("#daydown").click(function (e) {
+            e.preventDefault();
+
+            //alert('hello');
+
+
+            var input = $("#inputday");
+
+            var currentVal = parseInt(input.val());
+
+
+            if (!isNaN(currentVal)) {
+
+
+                if (currentVal > input.attr('data-min')) {
+                    input.val(currentVal - 1).change();
+                }
+                if (parseInt(input.val()) == input.attr('data-min')) {
+                    $(this).attr('disabled', true);
+                }
+
+
+            }
+
+        })
+
+        $('#ddlsearch').click(function (event) {
+
+            var AcademicSessionId = 0;
+            $("#table").show();
+
+            var url = '@Url.Content("~/StudentAttendence/GetStudentattendance")';
+            //  var param = JSON.stringify({ 'sessionId': $('#ddlSessionId').val(), ExamTypeId: +$('#ddlExamTypeId').val() });
+
+            $.ajax({
+                cache: false,
+                url: url,// "~/StudentResult/StudentResultSheet?sessionId=" +  $('#ddlSessionId').val() + "&ExamTypeId=" + $('#ddlExamTypeId').val(),
+                type: "GET",
+                data: "month=" + $('#inputmonth').val() + "&day=" + $('#inputday').val() + "&year=" + $('#inputyear').val() + "&AcademicSessionId=" + AcademicSessionId,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+
+                success: function (data) {
+
+
+
+                    var table = $("#table tbody");
+                    table.empty();
+                    $.each(data, function (idx, elem) {
+                        table.append("<tr><td>" + elem.AttendanceDate + "</td><td>" + elem.StudentName + "</td><td>" + elem.InTime + "</td>   <td>" + elem.OutTime + "</td> <td> <button class=" + elem.ColorCode + " type='button'>" + elem.Attendancetypename + "</td>  </tr>");
+                    });
+
+                },
+                //error: function (error) {
+                //    alert("no data to show here")
+                //}
+            });
+
+        })
+
+
+    });
+</script>
+
+<h2>Student Attendance</h2>
+
+
+
+<div class="panel-body">
+    <div class="row">
+
+        
+
+        
+       
+        <div class="col-sm-12">
+            <div class="col-sm-3">
+            </div>
+           
+            <div class="col-sm-3">
+            </div>
+        </div>
+     
+        <div class="col-sm-12">
+            <div class="col-sm-2">
+                <div >
+
+                   
+                    @*<select class="form-control">
+                        <option value="" class="">-- Select session --</option>
+                    </select>*@
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div style="width: 43%" class="pull-left">
+                    <select  class="form-control m-b " id="inputmonth">
+                    <option value="0" class="">Month</option>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                    </select>
+                </div>
+                <div style="width: 27%" class="pull-left">
+
+                    <div class="input-group bootstrap-touchspin">
+                        <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;">
+                        </span>
+                        <input ui-jq="TouchSpin" id="inputday" type="text" placeholder="DD" class="form-control " value="0" data-min="1" data-max="31" data-verticalbuttons="true" style="display: block;">
+                        <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
+                        <span class="input-group-btn-vertical">
+                            <button class="btn btn-default bootstrap-touchspin-up" id="dayUp" type="button"><i class="glyphicon glyphicon-chevron-up"></i></button>
+                            <button class="btn btn-default bootstrap-touchspin-down" id="daydown" type="button"><i class="glyphicon glyphicon-chevron-down"></i></button>
+                        </span>
+                    </div>
+                    </div>
+
+                <div style="width: 30%" class="pull-left">
+
+                    <div class="input-group bootstrap-touchspin">
+                        <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;">
+                        </span>
+                        <input ui-jq="TouchSpin" type="text" placeholder="YYYY" class="form-control " data-min="1990" data-max="2050" value="2018" data-verticalbuttons="true" style="display: block;" id="inputyear">
+                        <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
+                        <span class="input-group-btn-vertical">
+                            <button class="btn btn-default bootstrap-touchspin-up"  id="yearup" type="button"><i class="glyphicon glyphicon-chevron-up"></i></button>
+                            <button class="btn btn-default bootstrap-touchspin-down" id="yeardown" type="button"><i class="glyphicon glyphicon-chevron-down"></i></button>
+                        </span>
+                    </div>
+
+                </div>
+                </div>
+
+              
+            <div class="col-sm-2 form-group">
+                <button type="submit" id="ddlsearch"  class="btn btn-primary"><i class="glyphicon glyphicon-floppy-saved"></i>Search</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@*<div class="btn-toolbar " role="toolbar" aria-label="Toolbar with button groups">
+    <div class="btn-group "  role="group" aria-label="First group">
+        <button type="button" style="background-color:lightgreen" class="btn btbtn-secondary active">P</button>
+        <button type="button"style="background-color:red" class="btn btn-secondary">A</button>
+        <button type="button" style="background-color:yellow" class="btn btn-secondary">L</button>
+        <button type="button" style="background-color:cornflowerblue" class="btn btn-secondary">OD</button>
+        <button type="button" style="background-color:mediumslateblue" class="btn btn-secondary">CL</button>
+    </div>
+</div>
+
+
+<div>
+
+    <div class="btn-group ">
+        <label  class="btn btn-sm  btn-success active"><i class="fa fa-check text-active"></i>P</label>
+    </div>
+    <div class="btn-group " >
+        <label  class="btn btn-sm  btn-danger"><i class="fa fa-check text-active"></i>A</label>
+    </div>
+    <div class="btn-group " >
+        <label  class="btn btn-sm  btn-warning"><i class="fa fa-check text-active"></i>L</label>
+    </div>
+    <div class="btn-group ">
+        <label  class="btn btn-sm  btn-info"><i class="fa fa-check text-active"></i>OD</label>
+    </div>
+    <div class="btn-group " >
+        <label class="btn btn-sm  btn-primary"><i class="fa fa-check text-active"></i>CL</label>
+    </div>
+
+
+</div>*@
+
+<table class="table table-bordered table-hover" id="table" style="display:none">
+    <thead>
+        <tr>
+            <th>
+                Attendance Date
+            </th>
+            <th>
+                Period Name
+            </th>
+            
+
+            <th>
+                In Time
+            </th>
+            <th>
+                Out Time
+            </th>
+           
+            <th>
+
+                Attendance Type
+            </th>
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+    </table>
+

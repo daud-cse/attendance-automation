@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" style="margin-top:40px;">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="verticalcenter">                
+                <div class="panel panel-primary">
+                    <div class="panel-body">
+                        <h4 style="margin-bottom: 25px;" class="text-center">Log in to get started or <a href="extras-signupform.htm">Sign Up</a></h4>
+                        <form style="margin-bottom: 0px !important;" class="form-horizontal" action="#">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                        <input type="text" placeholder="Username" id="username" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                        <input type="password" placeholder="Password" id="password" class="form-control">
+                                    </div>
+                                </div>
+                            </div>                            
+                        </form>
+                    </div>
+                    <div class="panel-footer">
+                        <a style="padding-left:0" class="pull-left btn btn-link" href="extras-forgotpassword.htm">Forgot password?</a>
+
+                        <div class="pull-right">
+                            <a class="btn btn-default" href="#">Reset</a>
+                            <a class="btn btn-primary" href="index.htm">Log In</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>

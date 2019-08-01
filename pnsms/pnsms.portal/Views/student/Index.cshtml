@@ -1,0 +1,133 @@
+﻿@model pnsms.Entities.Models.Student
+@{
+    ViewBag.Title = "profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="page-heading">
+    <ol class="breadcrumb">
+        <li><a href="~/Home/index">Dashboard</a></li>
+        <li>profile</li>
+    </ol>
+    <h1>Student Profile</h1>
+    <div class="options">
+        <div class="btn-toolbar">
+            <div class="btn-group hidden-xs">
+                <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cloud-download"></i><span class="hidden-sm"> Export as  </span><span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Text File (*.txt)</a></li>
+                    <li><a href="#">Excel File (*.xlsx)</a></li>
+                    <li><a href="#">PDF File (*.pdf)</a></li>
+                </ul>
+            </div>
+            <a href="#" class="btn btn-default"><i class="fa fa-cog"></i></a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-midnightblue">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        @*<img src="assets/demo/avatar/johansson.png" alt="" class="pull-left" style="margin: 0 20px 20px 0">*@
+                        <img src="~/image/GetImage?id=@Model.StudentId&refCode=20&isThumbnail=true" draggable="false" class="pull-left imageprofile" style="margin: 0 20px 20px 0">
+                        <div class="table-responsive">
+                            @*<h3><strong>John Doe</strong></h3>*@
+                            <table class="table table-condensed">
+                                <tbody>
+                                    <tr>
+                                        <td>@Html.DisplayNameFor(model => model.UserInfo.Name)</td>
+                                        <td><a href="#">@Html.DisplayFor(model => model.UserInfo.Name)</a></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>@Html.DisplayNameFor(model => model.UserInfo.EmailAddress)</td>
+                                        <td><a href="">@Html.DisplayFor(model => model.UserInfo.EmailAddress)</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.DisplayNameFor(model => model.UserInfo.ContactNumber1)</td>
+                                        <td>@Html.DisplayFor(model => model.UserInfo.ContactNumber1)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.DisplayNameFor(model => model.CurrentAcademicClassId)</td>
+                                        <td>@Html.DisplayFor(model => model.AcademicClass.Name)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.DisplayNameFor(model => model.CurrentRollNo)</td>
+                                        <td>@Html.DisplayFor(model => model.CurrentRollNo)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Social</td>
+                                        <td>
+                                            <a href="#" class="btn btn-xs"><i class="fa fa-skype"></i></a>
+                                            <a href="#" class="btn btn-xs"><i class="fa fa-facebook"></i></a>
+                                            <a href="#" class="btn btn-xs"><i class="fa fa-twitter"></i></a>
+                                            <a href="#" class="btn btn-xs"><i class="fa fa-dribbble"></i></a>
+                                            <a href="#" class="btn btn-xs"><i class="fa fa-tumblr"></i></a>
+                                            <a href="#" class="btn btn-xs"><i class="fa fa-linkedin"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    @*<div class="col-md-6">
+                            <h3>About</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores in eveniet sapiente error fuga tenetur ex ea dignissimos voluptas ab molestiae eos totam quo dolorem maxime illo neque quia itaque. Asperiores in eveniet sapiente error fuga tenetur ex ea dignissimos voluptas ab molestiae eos totam quo dolorem maxime illo neque quia itaque.
+                            </p>
+                            <p>
+                                Dsperiores in eveniet sapiente error fuga tenetur ex ea dignissimos voluptas ab molestiae eos totam quo dolorem maxime illo neque quia itaque.
+                            </p>
+                        </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- container -->
+@*<div>
+        <h4>User</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.StudentId)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.StudentId)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.UserInfo.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.UserInfo.Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CurrentRollNo)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CurrentRollNo)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CurrentAcademicClassId)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CurrentAcademicClassId)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CurrentAcademicSectionId)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CurrentAcademicSectionId)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.UserInfo.Gender.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.UserInfo.Gender.Name)
+            </dd>
+        </dl>
+    </div>*@
