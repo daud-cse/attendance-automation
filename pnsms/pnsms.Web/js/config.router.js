@@ -2088,6 +2088,30 @@ angular.module('app').run(
                   }
 
               })
+                 .state('app.UserAttendanceSummaryReports', {
+                     url: '/UserAttendanceSummaryReports',
+                     templateUrl: urlPrefix + 'tpl/AttendanceReports/UserAttendanceSummaryReports.html',
+                     // use resolve to load other dependences
+
+                     resolve: {
+                         deps: [
+                             '$ocLazyLoad',
+                             function ($ocLazyLoad) {
+                                 return $ocLazyLoad.load('toaster').then(
+                                     function () {
+                                         return $ocLazyLoad.load([
+                                          urlPrefix + 'js/controllers/AttendanceReports/AttendanceReports.js',
+                                          urlPrefix + 'js/services/AttendanceReports/AttendanceReportsService.js',
+                                          urlPrefix + 'js/services/UserInfo/UserInfoService.js'
+                                         ]);
+                                     }
+                                 );
+
+                             }
+                         ]
+                     }
+
+                 })
              //Attendacne File Upload
             .state('app.AttendanceFileUpload', {
                 url: '/AttendanceFileUpload',

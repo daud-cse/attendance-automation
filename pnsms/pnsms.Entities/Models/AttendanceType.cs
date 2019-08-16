@@ -27,6 +27,7 @@ namespace pnsms.Entities.Models
         public int ColourId { get; set; }
         public Nullable<bool> IsDefault { get; set; }
         public Nullable<bool> IsPresent { get; set; }
+        public Nullable<bool> IsAbsent { get; set; }
         public Nullable<bool> ShowAtAttendanceEntry { get; set; }
         public Nullable<bool> ShowAtLeaveEntry { get; set; }
         public virtual Colour Colour { get; set; }

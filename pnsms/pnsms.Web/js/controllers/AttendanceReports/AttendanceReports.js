@@ -108,7 +108,15 @@ app.controller('AttendanceReportsCtrl', ['$scope', '$http', '$window', 'Attendan
         //For Development
        // $window.open("/AttendanceReport/GetUserAttendanceReportsDataSet?AcademicBranchId=" + $scope.NewAttendanceReports.AcademicBranchId + "&UserInfoId=" + $scope.NewAttendanceReports.UserInfoId + "&Month=" + $scope.NewAttendanceReports.Month + "&Day=" + $scope.NewAttendanceReports.Day + "&Year=" + $scope.NewAttendanceReports.Year + "&AcademicDepartmentId=" + $scope.NewAttendanceReports.AcademicDepartmentId + "&startDate=" + $scope.NewAttendanceReports.startDate + "&endDate=" + $scope.NewAttendanceReports.endDate + "", "_blank");
     };
+    $scope.GetUserAttendanceSummaryReports = function (AttendanceReports) {
 
+        // alert($scope.NewAttendanceReports.UserInfoId);
+
+        //for Live        
+       // $window.open("/erp/AttendanceReport/GetUserAttendanceSummaryReportsDataSet?AcademicBranchId=" + $scope.NewAttendanceReports.AcademicBranchId + "&AcademicSessionId=" + $scope.NewAttendanceReports.AcademicSessionId + "&UserInfoId=" + $scope.NewAttendanceReports.UserInfoId + "&Month=" + $scope.NewAttendanceReports.Month + "&Day=" + $scope.NewAttendanceReports.Day + "&Year=" + $scope.NewAttendanceReports.Year + "", "_blank");
+        //For Development
+         $window.open("AttendanceReport/GetUserAttendanceSummaryReportsDataSet?AcademicBranchId=" + $scope.NewAttendanceReports.AcademicBranchId + "&AcademicSessionId=" + $scope.NewAttendanceReports.AcademicSessionId + "&UserInfoId=" + $scope.NewAttendanceReports.UserInfoId + "&Month=" + $scope.NewAttendanceReports.Month + "&Day=" + $scope.NewAttendanceReports.Day + "&Year=" + $scope.NewAttendanceReports.Year + "&AcademicDepartmentId=" + $scope.NewAttendanceReports.AcademicDepartmentId + "", "_blank");
+    };
     $scope.getScetionClasswise = function () {
 
         if ($scope.NewAttendanceReports.AcademicClassesId != null) {

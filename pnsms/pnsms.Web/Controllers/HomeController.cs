@@ -37,7 +37,7 @@ namespace pnsms.erp.Controllers
             // user = "29";
             //user = "2025";
             //temp end
-            user = "42";//seip
+          //  user = "42";//seip
 
             try
             {

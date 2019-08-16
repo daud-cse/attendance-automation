@@ -11,7 +11,7 @@ app.controller('SettingsAttendanceTypeCtrl', ['$scope', '$http', 'AttendanceType
     $scope.reverse = true;
     $scope.filteredItems = [];
     $scope.groupedItems = [];
-    $scope.itemsPerPage = 5;
+    $scope.itemsPerPage = 50;
     $scope.pagedItems = [];
     $scope.currentPage = 0;
     $scope.items = [];

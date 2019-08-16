@@ -415,6 +415,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UserAttendanceReports.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetReports\UserAttendanceSummaryReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserAttendanceSummaryReport.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet\DataSetService.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -432,6 +437,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UserAttendanceReports.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="tpl\AttendanceReports\UserAttendanceSummaryReports.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Views\Reports\test.cs">
@@ -938,6 +946,7 @@
     <Content Include="tpl\app_dashboard_v1.html" />
     <Content Include="tpl\AttendanceReports\AttendanceReports.html" />
     <Content Include="tpl\AttendanceReports\UserAttendanceReports.html" />
+    <Content Include="tpl\AttendanceReports\UserAttendanceSummaryReports.html" />
     <Content Include="tpl\certificatePrint\Create.html" />
     <Content Include="tpl\certificatePrint\Edit.html" />
     <Content Include="tpl\certificatePrint\List.html" />
@@ -1321,6 +1330,17 @@
     <Content Include="DataSetReports\UserAttendanceReports.xss">
       <DependentUpon>UserAttendanceReports.xsd</DependentUpon>
     </Content>
+    <Content Include="DataSetReports\UserAttendanceSummaryReport.xsc">
+      <DependentUpon>UserAttendanceSummaryReport.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSetReports\UserAttendanceSummaryReport.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UserAttendanceSummaryReport.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="DataSetReports\UserAttendanceSummaryReport.xss">
+      <DependentUpon>UserAttendanceSummaryReport.xsd</DependentUpon>
+    </Content>
     <None Include="Project_Readme.html" />
     <None Include="Properties\PublishProfiles\ERP.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -1335,6 +1355,7 @@
     <Content Include="vendor\angular\angular-chart\angular-chart.min.js.map" />
     <Content Include="Views\Home\SessionsOut.cshtml" />
     <Content Include="Views\Reports\test.rpt" />
+    <Content Include="tpl\AttendanceReports\UserAttendanceSummaryReports.rpt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Source\Repository.Pattern.Ef6\Repository.Pattern.Ef6.csproj">

@@ -226,5 +226,49 @@ namespace pnsms.erp.Controllers
             }
         }
 
+        public void GetUserAttendanceSummaryReportsDataSet(int AcademicBranchId = 0, int AcademicSessionId = 0, int UserInfoId = 0, int Month = 0, int Day = 0, int Year = 0, int AcademicDepartmentId = 0)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["PNSMSContext"].ConnectionString;
+            SqlConnectionStringBuilder SConn = new SqlConnectionStringBuilder(connectionString);
+
+            try
+            {
+                bool isValid = true;
+                ReportClass rptDoc;
+                string strReportName = "UserAttendanceSummaryReports.rpt";
+
+                string CommandText = "[dbo].[sp_att_TeacherAttendance_summaryReports] "
+                                    + Sessions.InstituteId + "," + 13 + ","
+                                    + "'" + AcademicSessionId + "'"
+                                    + "," + "'" + AcademicBranchId + "'" + "," + "'"
+                                    + Year + "'" + "," + "'" + Month + "'" + "," + "'" + Day + "'"
+                                    + "," + "'" + UserInfoId + "'";
+
+
+                var ds = objDataSetService.GetDataSetObject(CommandText);
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    rptDoc = new ReportClass();
+                    rptDoc.FileName = Server.MapPath("~/") + "tpl//AttendanceReports//" + strReportName;
+                    rptDoc.Load();
+                    rptDoc.Refresh();
+                    rptDoc.SetDataSource(ds);
+                    rptDoc.ExportToHttpResponse(ExportFormatType.PortableDocFormat, System.Web.HttpContext.Current.Response, false, "Teacher/Employee Monthly Attendance Summary");
+                    rptDoc.DataSourceConnections.Clear();
+                    rptDoc.Refresh();
+                    rptDoc.Dispose();
+                    rptDoc.Clone();
+                    rptDoc.Close();
+                    GC.Collect();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
     }
 }
