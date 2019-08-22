@@ -1,0 +1,75 @@
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Repository\bin\Debug\pnsms.Repository.dll.config
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Repository\bin\Debug\pnsms.Repository.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Repository\bin\Debug\pnsms.Repository.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Repository\bin\Debug\EntityFramework.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Repository\bin\Debug\EntityFramework.SqlServer.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Repository\bin\Debug\LinqKit.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Repository\bin\Debug\pnsms.Entities.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Repository\bin\Debug\Repository.Pattern.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Repository\bin\Debug\System.Web.Mvc.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Repository\bin\Debug\Repository.Pattern.Ef6.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Repository\bin\Debug\Dapper.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Repository\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Repository\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Repository\bin\Debug\pnsms.Entities.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Repository\bin\Debug\Repository.Pattern.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Repository\bin\Debug\EntityFramework.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Repository\bin\Debug\EntityFramework.SqlServer.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Repository\bin\Debug\System.Web.Mvc.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Repository\bin\Debug\Repository.Pattern.Ef6.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Repository\bin\Debug\Microsoft.Web.Infrastructure.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Repository\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Repository\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Repository\obj\Debug\pnsms.Repository.csprojResolveAssemblyReference.cache
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Repository\obj\Debug\pnsms.Repository.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\pnsms.Repository\obj\Debug\pnsms.Repository.pdb
+E:\pos\POS NEW\pnsms\pnsms.Repository\bin\Debug\pnsms.Repository.dll.config
+E:\pos\POS NEW\pnsms\pnsms.Repository\bin\Debug\pnsms.Repository.dll
+E:\pos\POS NEW\pnsms\pnsms.Repository\bin\Debug\pnsms.Repository.pdb
+E:\pos\POS NEW\pnsms\pnsms.Repository\bin\Debug\EntityFramework.dll
+E:\pos\POS NEW\pnsms\pnsms.Repository\bin\Debug\EntityFramework.SqlServer.dll
+E:\pos\POS NEW\pnsms\pnsms.Repository\bin\Debug\LinqKit.dll
+E:\pos\POS NEW\pnsms\pnsms.Repository\bin\Debug\pnsms.Entities.dll
+E:\pos\POS NEW\pnsms\pnsms.Repository\bin\Debug\Repository.Pattern.dll
+E:\pos\POS NEW\pnsms\pnsms.Repository\bin\Debug\System.Web.Mvc.dll
+E:\pos\POS NEW\pnsms\pnsms.Repository\bin\Debug\Repository.Pattern.Ef6.dll
+E:\pos\POS NEW\pnsms\pnsms.Repository\bin\Debug\Dapper.dll
+E:\pos\POS NEW\pnsms\pnsms.Repository\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\pos\POS NEW\pnsms\pnsms.Repository\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\pos\POS NEW\pnsms\pnsms.Repository\bin\Debug\pnsms.Entities.pdb
+E:\pos\POS NEW\pnsms\pnsms.Repository\bin\Debug\Repository.Pattern.pdb
+E:\pos\POS NEW\pnsms\pnsms.Repository\bin\Debug\EntityFramework.xml
+E:\pos\POS NEW\pnsms\pnsms.Repository\bin\Debug\EntityFramework.SqlServer.xml
+E:\pos\POS NEW\pnsms\pnsms.Repository\bin\Debug\System.Web.Mvc.xml
+E:\pos\POS NEW\pnsms\pnsms.Repository\bin\Debug\Repository.Pattern.Ef6.pdb
+E:\pos\POS NEW\pnsms\pnsms.Repository\bin\Debug\Microsoft.Web.Infrastructure.xml
+E:\pos\POS NEW\pnsms\pnsms.Repository\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+E:\pos\POS NEW\pnsms\pnsms.Repository\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+E:\pos\POS NEW\pnsms\pnsms.Repository\obj\Debug\pnsms.Repository.csprojResolveAssemblyReference.cache
+E:\pos\POS NEW\pnsms\pnsms.Repository\obj\Debug\pnsms.Repository.dll
+E:\pos\POS NEW\pnsms\pnsms.Repository\obj\Debug\pnsms.Repository.pdb
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.Repository\bin\Debug\pnsms.Repository.dll.config
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.Repository\bin\Debug\pnsms.Repository.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.Repository\bin\Debug\pnsms.Repository.pdb
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.Repository\bin\Debug\EntityFramework.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.Repository\bin\Debug\EntityFramework.SqlServer.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.Repository\bin\Debug\LinqKit.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.Repository\bin\Debug\pnsms.Entities.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.Repository\bin\Debug\Repository.Pattern.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.Repository\bin\Debug\System.Web.Mvc.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.Repository\bin\Debug\Repository.Pattern.Ef6.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.Repository\bin\Debug\Dapper.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.Repository\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.Repository\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.Repository\bin\Debug\pnsms.Entities.pdb
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.Repository\bin\Debug\Repository.Pattern.pdb
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.Repository\bin\Debug\EntityFramework.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.Repository\bin\Debug\EntityFramework.SqlServer.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.Repository\bin\Debug\System.Web.Mvc.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.Repository\bin\Debug\Repository.Pattern.Ef6.pdb
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.Repository\bin\Debug\Microsoft.Web.Infrastructure.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.Repository\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.Repository\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.Repository\obj\Debug\pnsms.Repository.csprojResolveAssemblyReference.cache
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.Repository\obj\Debug\pnsms.Repository.dll
+E:\DeepPresent Attendance\deeppresent\pnsms\pnsms.Repository\obj\Debug\pnsms.Repository.pdb
