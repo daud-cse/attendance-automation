@@ -88,7 +88,7 @@ namespace deepp.landing.Controllers
                 result.Content = new StreamContent(stream);
                 result.Content.Headers.ContentType =
                     new MediaTypeHeaderValue(img.FileExt);
-                result.Content.Headers.ContentDisdeeppition = new ContentDisdeeppitionHeaderValue("attachment")
+                result.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
                 {
                     FileName = img.ImageCaption
                 };

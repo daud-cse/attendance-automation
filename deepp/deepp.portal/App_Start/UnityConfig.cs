@@ -335,26 +335,7 @@ namespace deepp.portal.App_Start
 
             #endregion
 
-            #region FeesCollection
-
-                .RegisterType<IRepositoryAsync<FeesGenerate>, Repository<FeesGenerate>>()
-                .RegisterType<IFeesGenerateAcademicService, FeesGenerateAcademicService>()
-                .RegisterType<IRepositoryAsync<FeesGenerateAcademic>, Repository<FeesGenerateAcademic>>()
-                .RegisterType<IVmFeesCollectionService, VmFeesCollectionService>()
-                .RegisterType<IFeesGenerateService, FeesGenerateService>()
-                .RegisterType<IRepositoryAsync<FeesGenerate>, Repository<FeesGenerate>>()
-                .RegisterType<IRepositoryAsync<FeesHead>, Repository<FeesHead>>()
-                .RegisterType<IFeesHeadService, FeesHeadService>()
-                .RegisterType<IRepositoryAsync<FeesAcademicClass>, Repository<FeesAcademicClass>>()
-                .RegisterType<IFeesAcademicClassService, FeesAcademicClassService>()
-                .RegisterType<IRepositoryAsync<FeesCollection>, Repository<FeesCollection>>()
-                .RegisterType<IFeesCollectionService, FeesCollectionService>()
-
-
-                //.RegisterType<IRepositoryAsync<VmFeesGenerate>, Repository<VmFeesGenerate>>()
-
-
-            #endregion
+         
 
             #region Result Publish
 
@@ -375,57 +356,9 @@ namespace deepp.portal.App_Start
 
             #endregion
 
-            #region Library
-
-                .RegisterType<IRepositoryAsync<LibraryBook>, Repository<LibraryBook>>()
-                .RegisterType<ILibraryBookService, LibraryBookService>()
-                .RegisterType<IRepositoryAsync<LibraryBookAuthore>, Repository<LibraryBookAuthore>>()
-                .RegisterType<ILibraryBookAuthoreService, LibraryBookAuthoreService>()
-                .RegisterType<IRepositoryAsync<LibraryBookAuthorOfBook>, Repository<LibraryBookAuthorOfBook>>()
-                .RegisterType<ILibraryBookAuthorOfBookService, LibraryBookAuthorOfBookService>()
-
-            #endregion
-            #region Exams
-
-               .RegisterType<IRepositoryAsync<ExamType>, Repository<ExamType>>()
-               .RegisterType<IExamTypeService, ExamTypeService>()
-
-
-               .RegisterType<IRepositoryAsync<Exam>, Repository<Exam>>()
-               .RegisterType<IExamService, ExamService>()
-
-               .RegisterType<IRepositoryAsync<ExamGrade>, Repository<ExamGrade>>()
-               .RegisterType<IExamGradeService, ExamGradeService>()
-
-                 .RegisterType<IRepositoryAsync<ExamSubjectMark>, Repository<ExamSubjectMark>>()
-               .RegisterType<IExamSubjectMarkService, ExamSubjectMarkService>()
-
-                 .RegisterType<IRepositoryAsync<ExamProcess>, Repository<ExamProcess>>()
-               .RegisterType<IExamProcessService, ExamProcessService>()
-
-                 .RegisterType<IRepositoryAsync<ExamTypeWiseTabulationSheetDetail>, Repository<ExamTypeWiseTabulationSheetDetail>>()
-               .RegisterType<IExamTypeWiseTabulationSheetDetailService, ExamTypeWiseTabulationSheetDetailService>()
-
-                 .RegisterType<IRepositoryAsync<ExamTypeWiseTabulationSheetMaster>, Repository<ExamTypeWiseTabulationSheetMaster>>()
-               .RegisterType<IExamTypeWiseTabulationSheetMasterService, ExamTypeWiseTabulationSheetMasterService>()
-
-                .RegisterType<IVmExamTabulationSheetService, VmExamTabulationSheetService>()
-            #endregion
-
-            #region Subjects
-
-.RegisterType<IRepositoryAsync<InstituteSubjectClass>, Repository<InstituteSubjectClass>>()
-               .RegisterType<IInstituteSubjectClassService, InstituteSubjectClassService>()
-
-               .RegisterType<IRepositoryAsync<Subject>, Repository<Subject>>()
-               .RegisterType<ISubjectService, SubjectService>()
-
-               .RegisterType<IRepositoryAsync<SubjectType>, Repository<SubjectType>>()
-               .RegisterType<ISubjectTypeService, SubjectTypeService>()
-
-                 .RegisterType<IRepositoryAsync<SubjectAcademicClassMapping>, Repository<SubjectAcademicClassMapping>>()
-               .RegisterType<ISubjectAcademicClassMappingService, SubjectAcademicClassMappingService>()
-            #endregion
+          
+         
+         
             
                 .RegisterType<IDashboardService, DashboardService>()
                 .RegisterType<IVMportalService, VMportalService>()

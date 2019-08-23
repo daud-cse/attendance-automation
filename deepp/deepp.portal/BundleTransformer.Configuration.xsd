@@ -103,7 +103,7 @@
 	<xs:complexType name="AssetSettings_SchemaType">
 		<xs:all>
 			<xs:element name="translators" type="TranslatorRegistrationCollection_SchemaType" minOccurs="0" maxOccurs="1" />
-			<xs:element name="deepptProcessors" type="PostProcessorRegistrationCollection_SchemaType" minOccurs="0" maxOccurs="1" />
+			<xs:element name="postProcessors" type="PostProcessorRegistrationCollection_SchemaType" minOccurs="0" maxOccurs="1" />
 			<xs:element name="minifiers" type="MinifierRegistrationCollection_SchemaType" minOccurs="0" maxOccurs="1" />
 			<xs:element name="fileExtensions" type="FileExtensionRegistrationCollection_SchemaType" minOccurs="0" maxOccurs="1" />
 		</xs:all>

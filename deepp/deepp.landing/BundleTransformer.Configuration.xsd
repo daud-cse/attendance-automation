@@ -81,7 +81,7 @@
 			<xs:extension base="AssetSettings_SchemaType">
 				<xs:attribute name="defaultPostProcessors" type="xs:string" use="optional" default="UrlRewritingCssPostProcessor">
 					<xs:annotation>
-						<xs:documentation>Ordered comma-separated list of names of default deepptprocessors</xs:documentation>
+						<xs:documentation>Ordered comma-separated list of names of default postprocessors</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>				
 			</xs:extension>
@@ -93,7 +93,7 @@
 			<xs:extension base="AssetSettings_SchemaType">
 				<xs:attribute name="defaultPostProcessors" type="xs:string" use="optional" default="">
 					<xs:annotation>
-						<xs:documentation>Ordered comma-separated list of names of default deepptprocessors</xs:documentation>
+						<xs:documentation>Ordered comma-separated list of names of default postprocessors</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
 			</xs:extension>
@@ -103,7 +103,7 @@
 	<xs:complexType name="AssetSettings_SchemaType">
 		<xs:all>
 			<xs:element name="translators" type="TranslatorRegistrationCollection_SchemaType" minOccurs="0" maxOccurs="1" />
-			<xs:element name="deepptProcessors" type="PostProcessorRegistrationCollection_SchemaType" minOccurs="0" maxOccurs="1" />
+			<xs:element name="postProcessors" type="PostProcessorRegistrationCollection_SchemaType" minOccurs="0" maxOccurs="1" />
 			<xs:element name="minifiers" type="MinifierRegistrationCollection_SchemaType" minOccurs="0" maxOccurs="1" />
 			<xs:element name="fileExtensions" type="FileExtensionRegistrationCollection_SchemaType" minOccurs="0" maxOccurs="1" />
 		</xs:all>
@@ -170,7 +170,7 @@
 
 	<xs:complexType name="PostProcessorRegistrationCollection_SchemaType">
 		<xs:annotation>
-			<xs:documentation>Collection of registered deepptprocessors</xs:documentation>
+			<xs:documentation>Collection of registered postprocessors</xs:documentation>
 		</xs:annotation>
 		<xs:choice minOccurs="0" maxOccurs="unbounded">
 			<xs:element name="add" type="AddPostProcessorRegistration_SchemaType" />
