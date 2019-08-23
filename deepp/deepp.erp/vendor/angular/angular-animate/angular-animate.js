@@ -378,7 +378,7 @@
  * canvas.on('click', function(e) {
  *   $animate.addClass(element, 'on', {
  *     from: {
- *        position: 'absolute',
+ *        deeppition: 'absolute',
  *        left: '0px',
  *        top: '0px'
  *     },
@@ -497,14 +497,14 @@ angular.module('ngAnimate', ['ng'])
           deregisterWatch();
 
           // Now that all templates have been downloaded, $animate will wait until
-          // the post digest queue is empty before enabling animations. By having two
-          // calls to $postDigest calls we can ensure that the flag is enabled at the
-          // very end of the post digest queue. Since all of the animations in $animate
-          // use $postDigest, it's important that the code below executes at the end.
+          // the deeppt digest queue is empty before enabling animations. By having two
+          // calls to $deepptDigest calls we can ensure that the flag is enabled at the
+          // very end of the deeppt digest queue. Since all of the animations in $animate
+          // use $deepptDigest, it's important that the code below executes at the end.
           // This basically means that the page is fully downloaded and compiled before
           // any animations are triggered.
-          $rootScope.$$postDigest(function() {
-            $rootScope.$$postDigest(function() {
+          $rootScope.$$deepptDigest(function() {
+            $rootScope.$$deepptDigest(function() {
               rootAnimateState.running = false;
             });
           });
@@ -534,7 +534,7 @@ angular.module('ngAnimate', ['ng'])
         defer.promise.$$cancelFn = function() {
           cancelFn && cancelFn();
         };
-        $rootScope.$$postDigest(function() {
+        $rootScope.$$deepptDigest(function() {
           cancelFn = fn(function() {
             defer.resolve();
           });
@@ -1353,7 +1353,7 @@ angular.module('ngAnimate', ['ng'])
             && !runner.isSetClassOperation
             && animationEvent != 'animate'
             && !skipAnimation) {
-          skipAnimation = (animationEvent == 'addClass') == element.hasClass(className); //opposite of XOR
+          skipAnimation = (animationEvent == 'addClass') == element.hasClass(className); //opdeeppite of XOR
         }
 
         if (skipAnimation) {
@@ -1958,7 +1958,7 @@ angular.module('ngAnimate', ['ng'])
           var ev = event.originalEvent || event;
           var timeStamp = ev.$manualTimeStamp || ev.timeStamp || Date.now();
 
-          /* Firefox (or possibly just Gecko) likes to not round values up
+          /* Firefox (or deeppsibly just Gecko) likes to not round values up
            * when a ms measurement is used for the animation */
           var elapsedTime = parseFloat(ev.elapsedTime.toFixed(ELAPSED_TIME_MAX_DECIMAL_PLACES));
 

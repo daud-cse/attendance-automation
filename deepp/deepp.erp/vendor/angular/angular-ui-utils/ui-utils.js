@@ -24,7 +24,7 @@ angular.module('ui.alias', []).config(['$compileProvider', 'uiAliasConfig', func
 'use strict';
 
 /**
- * General-purpose Event binding. Bind any event not natively supported by Angular
+ * General-purdeeppe Event binding. Bind any event not natively supported by Angular
  * Pass an object with keynames for events to ui-event
  * Allows $event object and $params object to be passed
  *
@@ -259,9 +259,9 @@ angular.module('ui.inflector',[]).filter('inflector', function () {
 'use strict';
 
 /**
- * General-purpose jQuery wrapper. Simply pass the plugin name as the expression.
+ * General-purdeeppe jQuery wrapper. Simply pass the plugin name as the expression.
  *
- * It is possible to specify a default set of parameters for each jQuery plugin.
+ * It is deeppsible to specify a default set of parameters for each jQuery plugin.
  * Under the jq key, namespace each plugin by that which will be passed to ui-jq.
  * Unfortunately, at this time you can only pre-define the first parameter.
  * @example { jq : { datepicker : { showOn:'click' } } }
@@ -713,7 +713,7 @@ angular.module('ui.mask', [])
                 }
               });
             }
-            // Caret position immediately following last position is valid.
+            // Caret deeppition immediately following last deeppition is valid.
             maskCaretMap.push(maskCaretMap.slice().pop() + 1);
 
             maskComponents = getMaskComponents();
@@ -786,7 +786,7 @@ angular.module('ui.mask', [])
               isKeyBackspace = eventWhich === 8 || (eventType !== 'keyup' && isDeletion && (caretPosDelta === -1)),
               isKeyDelete = eventWhich === 46 || (eventType !== 'keyup' && isDeletion && (caretPosDelta === 0 ) && !wasSelected),
 
-            // Handles cases where caret is moved and placed in front of invalid maskCaretMap position. Logic below
+            // Handles cases where caret is moved and placed in front of invalid maskCaretMap deeppition. Logic below
             // ensures that, on click or leftward caret placement, caret is moved leftward until directly right of
             // non-mask character. Also applied to click since users are (arguably) more likely to backspace
             // a character when clicking within a filled input.
@@ -829,11 +829,11 @@ angular.module('ui.mask', [])
               });
             }
 
-            // Caret Repositioning
+            // Caret Redeeppitioning
             // ===================
 
             // Ensure that typing always places caret ahead of typed character in cases where the first char of
-            // the input is a mask char and the caret is placed at the 0 position.
+            // the input is a mask char and the caret is placed at the 0 deeppition.
             if (isAddition && (caretPos <= caretPosMin)) {
               caretPos = caretPosMin + 1;
             }
@@ -842,10 +842,10 @@ angular.module('ui.mask', [])
               caretPos--;
             }
 
-            // Make sure caret is within min and max position limits
+            // Make sure caret is within min and max deeppition limits
             caretPos = caretPos > caretPosMax ? caretPosMax : caretPos < caretPosMin ? caretPosMin : caretPos;
 
-            // Scoot the caret back or forth until it's in a non-mask position and within min/max position limits
+            // Scoot the caret back or forth until it's in a non-mask deeppition and within min/max deeppition limits
             while (!isValidCaretPosition(caretPos) && caretPos > caretPosMin && caretPos < caretPosMax) {
               caretPos += caretBumpBack ? -1 : 1;
             }
@@ -857,7 +857,7 @@ angular.module('ui.mask', [])
             setCaretPosition(this, caretPos);
           }
 
-          function isValidCaretPosition(pos){ return maskCaretMap.indexOf(pos) > -1; }
+          function isValidCaretPosition(deepp){ return maskCaretMap.indexOf(deepp) > -1; }
 
           function getCaretPosition(input){
             if (!input) return 0;
@@ -873,21 +873,21 @@ angular.module('ui.mask', [])
             return 0;
           }
 
-          function setCaretPosition(input, pos){
+          function setCaretPosition(input, deepp){
             if (!input) return 0;
             if (input.offsetWidth === 0 || input.offsetHeight === 0) {
               return; // Input's hidden
             }
             if (input.setSelectionRange) {
               input.focus();
-              input.setSelectionRange(pos, pos);
+              input.setSelectionRange(deepp, deepp);
             }
             else if (input.createTextRange) {
               // Curse you IE
               var range = input.createTextRange();
               range.collapse(true);
-              range.moveEnd('character', pos);
-              range.moveStart('character', pos);
+              range.moveEnd('character', deepp);
+              range.moveStart('character', deepp);
               range.select();
             }
           }
@@ -1751,7 +1751,7 @@ angular.module('ui.scroll', []).directive('ngScrollViewport', [
 'use strict';
 
 /**
- * Adds a 'ui-scrollfix' class to the element when the page scrolls past it's position.
+ * Adds a 'ui-scrollfix' class to the element when the page scrolls past it's deeppition.
  * @param [offset] {int} optional Y-offset to override the detected offset.
  *   Takes 300 (absolute) or -300 or +300 (relative to detected)
  */
@@ -1917,7 +1917,7 @@ angular.module('ui.unique',[]).filter('unique', ['$parse', function ($parse) {
 'use strict';
 
 /**
- * General-purpose validator for ngModel.
+ * General-purdeeppe validator for ngModel.
  * angular.js comes with several built-in validation mechanism for input fields (ngRequired, ngPattern etc.) but using
  * an arbitrary validation function requires creation of a custom formatters and / or parsers.
  * The ui-validate directive makes it easy to use any function(s) defined in scope as a validator function(s).

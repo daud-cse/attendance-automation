@@ -1,7 +1,7 @@
 ﻿using deepp.erp;
-using pnsms.Entities.ViewModels;
-using pnsms.Service;
-using pnsms.Service.ViewModels;
+using deepp.Entities.ViewModels;
+using deepp.Service;
+using deepp.Service.ViewModels;
 using Repository.Pattern.UnitOfWork;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace pnsms.erp.Api
+namespace deepp.erp.Api
 {
     public class EmployeeAttendanceController : ApiController
     {

@@ -1,8 +1,8 @@
 ﻿using deepp.erp;
 using Microsoft.Practices.Unity;
-using pnsms.Entities.Models;
+using deepp.Entities.Models;
 
-using pnsms.Service.Teachers;
+using deepp.Service.Teachers;
 using Repository.Pattern.UnitOfWork;
 using System;
 using System.Collections.Generic;
@@ -12,12 +12,12 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Filters;
 
-namespace pnsms.erp.Api.Teachers
+namespace deepp.erp.Api.Teachers
 {
     /// <summary>
     /// Teacher Department 
     /// </summary>
-    /// <seealso cref="pnsms.api.Api.BaseApiController" />
+    /// <seealso cref="deepp.api.Api.BaseApiController" />
     //  [Module("TEC")]
     public class TeacherSubjectAcademicMappingController : ApiController
     {
@@ -112,14 +112,14 @@ namespace pnsms.erp.Api.Teachers
         /// <summary>
         /// Releases the unmanaged resources that are used by the object and, optionally, releases the managed resources.
         /// </summary>
-        /// <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
-        protected override void Dispose(bool disposing)
+        /// <param name="disdeepping">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+        protected override void Dispose(bool disdeepping)
         {
-            if (disposing)
+            if (disdeepping)
             {
                 UnitOfWorkAsync.Dispose();
             }
-            base.Dispose(disposing);
+            base.Dispose(disdeepping);
         }
 
 

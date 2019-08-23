@@ -52,7 +52,7 @@ angular.module('toaster', ['ngAnimate'])
     'body-output-type': '', // Options: '', 'trustedHtml', 'template'
     'body-template': 'toasterBodyTmpl.html',
     'icon-class': 'toast-info',
-    'position-class': 'toast-top-right',
+    'deeppition-class': 'toast-top-right',
     'title-class': 'toast-title',
     'message-class': 'toast-message'
 })
@@ -70,7 +70,7 @@ function ($compile, $timeout, $sce, toasterConfig, toaster) {
             mergedConfig = angular.extend({}, toasterConfig, scope.$eval(attrs.toasterOptions));
 
             scope.config = {
-                position: mergedConfig['position-class'],
+                deeppition: mergedConfig['deeppition-class'],
                 title: mergedConfig['title-class'],
                 message: mergedConfig['message-class'],
                 tap: mergedConfig['tap-to-dismiss'],
@@ -170,7 +170,7 @@ function ($compile, $timeout, $sce, toasterConfig, toaster) {
             };
         }],
         template:
-        '<div  id="toast-container" ng-class="config.position">' +
+        '<div  id="toast-container" ng-class="config.deeppition">' +
             '<div ng-repeat="toaster in toasters" class="toast" ng-class="toaster.type" ng-click="click(toaster)" ng-mouseover="stopTimer(toaster)"  ng-mouseout="restartTimer(toaster)">' +
               '<button class="toast-close-button" ng-show="config.closeButton">&times;</button>' +
               '<div ng-class="config.title">{{toaster.title}}</div>' +

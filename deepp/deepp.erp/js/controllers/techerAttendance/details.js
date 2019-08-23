@@ -80,7 +80,7 @@ app.controller('TeacherAttendanceDetailsCtrl', ['$scope', '$state', '$http', '$s
             //        'width': margins.width 
             //        , 'elementHandlers': specialElementHandlers
             //    },
-            //    function (dispose) {
+            //    function (disdeeppe) {
             //        pdf.save('Attendance Reports' + '.pdf');
             //    },
             //    margins

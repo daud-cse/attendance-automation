@@ -73,7 +73,7 @@ small {
 }
 sub,
 sup {
-  position: relative;
+  deeppition: relative;
   font-size: 75%;
   line-height: 0;
   vertical-align: baseline;
@@ -271,7 +271,7 @@ th {
   src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
-  position: relative;
+  deeppition: relative;
   top: 1px;
   display: inline-block;
   font-family: 'Glyphicons Halflings';
@@ -969,7 +969,7 @@ hr {
   border-top: 1px solid #eee;
 }
 .sr-only {
-  position: absolute;
+  deeppition: absolute;
   width: 1px;
   height: 1px;
   padding: 0;
@@ -980,7 +980,7 @@ hr {
 }
 .sr-only-focusable:active,
 .sr-only-focusable:focus {
-  position: static;
+  deeppition: static;
   width: auto;
   height: auto;
   margin: 0;
@@ -1419,7 +1419,7 @@ pre code {
   margin-left: -15px;
 }
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
-  position: relative;
+  deeppition: relative;
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
@@ -2130,13 +2130,13 @@ th {
   background-color: #f5f5f5;
 }
 table col[class*="col-"] {
-  position: static;
+  deeppition: static;
   display: table-column;
   float: none;
 }
 table td[class*="col-"],
 table th[class*="col-"] {
-  position: static;
+  deeppition: static;
   display: table-cell;
   float: none;
 }
@@ -2456,7 +2456,7 @@ _:-ms-fullscreen.input-lg,
 }
 .radio,
 .checkbox {
-  position: relative;
+  deeppition: relative;
   display: block;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -2473,7 +2473,7 @@ _:-ms-fullscreen.input-lg,
 .radio-inline input[type="radio"],
 .checkbox input[type="checkbox"],
 .checkbox-inline input[type="checkbox"] {
-  position: absolute;
+  deeppition: absolute;
   margin-top: 4px \9;
   margin-left: -20px;
 }
@@ -2564,13 +2564,13 @@ select[multiple].form-group-lg .form-control {
   height: auto;
 }
 .has-feedback {
-  position: relative;
+  deeppition: relative;
 }
 .has-feedback .form-control {
   padding-right: 42.5px;
 }
 .form-control-feedback {
-  position: absolute;
+  deeppition: absolute;
   top: 0;
   right: 0;
   z-index: 2;
@@ -2736,7 +2736,7 @@ select[multiple].form-group-lg .form-control {
   }
   .form-inline .radio input[type="radio"],
   .form-inline .checkbox input[type="checkbox"] {
-    position: relative;
+    deeppition: relative;
     margin-left: 0;
   }
   .form-inline .has-feedback .form-control-feedback {
@@ -3193,7 +3193,7 @@ tbody.collapse.in {
   display: table-row-group;
 }
 .collapsing {
-  position: relative;
+  deeppition: relative;
   height: 0;
   overflow: hidden;
   -webkit-transition-timing-function: ease;
@@ -3217,13 +3217,13 @@ tbody.collapse.in {
   border-left: 4px solid transparent;
 }
 .dropdown {
-  position: relative;
+  deeppition: relative;
 }
 .dropdown-toggle:focus {
   outline: 0;
 }
 .dropdown-menu {
-  position: absolute;
+  deeppition: absolute;
   top: 100%;
   left: 0;
   z-index: 1000;
@@ -3313,7 +3313,7 @@ tbody.collapse.in {
   white-space: nowrap;
 }
 .dropdown-backdrop {
-  position: fixed;
+  deeppition: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -3348,13 +3348,13 @@ tbody.collapse.in {
 }
 .btn-group,
 .btn-group-vertical {
-  position: relative;
+  deeppition: relative;
   display: inline-block;
   vertical-align: middle;
 }
 .btn-group > .btn,
 .btn-group-vertical > .btn {
-  position: relative;
+  deeppition: relative;
   float: left;
 }
 .btn-group > .btn:hover,
@@ -3514,12 +3514,12 @@ tbody.collapse.in {
 [data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
 [data-toggle="buttons"] > .btn input[type="checkbox"],
 [data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"] {
-  position: absolute;
+  deeppition: absolute;
   clip: rect(0, 0, 0, 0);
   pointer-events: none;
 }
 .input-group {
-  position: relative;
+  deeppition: relative;
   display: table;
   border-collapse: separate;
 }
@@ -3529,7 +3529,7 @@ tbody.collapse.in {
   padding-left: 0;
 }
 .input-group .form-control {
-  position: relative;
+  deeppition: relative;
   z-index: 2;
   float: left;
   width: 100%;
@@ -3649,12 +3649,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-left: 0;
 }
 .input-group-btn {
-  position: relative;
+  deeppition: relative;
   font-size: 0;
   white-space: nowrap;
 }
 .input-group-btn > .btn {
-  position: relative;
+  deeppition: relative;
 }
 .input-group-btn > .btn + .btn {
   margin-left: -1px;
@@ -3678,11 +3678,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   list-style: none;
 }
 .nav > li {
-  position: relative;
+  deeppition: relative;
   display: block;
 }
 .nav > li > a {
-  position: relative;
+  deeppition: relative;
   display: block;
   padding: 10px 15px;
 }
@@ -3867,7 +3867,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-top-right-radius: 0;
 }
 .navbar {
-  position: relative;
+  deeppition: relative;
   min-height: 50px;
   margin-bottom: 20px;
   border: 1px solid transparent;
@@ -3955,7 +3955,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-fixed-top,
 .navbar-fixed-bottom {
-  position: fixed;
+  deeppition: fixed;
   right: 0;
   left: 0;
   z-index: 1030;
@@ -3996,7 +3996,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-toggle {
-  position: relative;
+  deeppition: relative;
   float: right;
   padding: 9px 10px;
   margin-top: 8px;
@@ -4034,7 +4034,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 @media (max-width: 767px) {
   .navbar-nav .open .dropdown-menu {
-    position: static;
+    deeppition: static;
     float: none;
     width: auto;
     margin-top: 0;
@@ -4122,7 +4122,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
   .navbar-form .radio input[type="radio"],
   .navbar-form .checkbox input[type="checkbox"] {
-    position: relative;
+    deeppition: relative;
     margin-left: 0;
   }
   .navbar-form .has-feedback .form-control-feedback {
@@ -4420,7 +4420,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 }
 .pagination > li > a,
 .pagination > li > span {
-  position: relative;
+  deeppition: relative;
   float: left;
   padding: 6px 12px;
   margin-left: -1px;
@@ -4562,7 +4562,7 @@ a.label:focus {
   display: none;
 }
 .btn .label {
-  position: relative;
+  deeppition: relative;
   top: -1px;
 }
 .label-default {
@@ -4625,7 +4625,7 @@ a.label:focus {
   display: none;
 }
 .btn .badge {
-  position: relative;
+  deeppition: relative;
   top: -1px;
 }
 .btn-xs .badge {
@@ -4736,7 +4736,7 @@ a.thumbnail.active {
 }
 .alert-dismissable .close,
 .alert-dismissible .close {
-  position: relative;
+  deeppition: relative;
   top: -2px;
   right: -21px;
   color: inherit;
@@ -4787,26 +4787,26 @@ a.thumbnail.active {
 }
 @-webkit-keyframes progress-bar-stripes {
   from {
-    background-position: 40px 0;
+    background-deeppition: 40px 0;
   }
   to {
-    background-position: 0 0;
+    background-deeppition: 0 0;
   }
 }
 @-o-keyframes progress-bar-stripes {
   from {
-    background-position: 40px 0;
+    background-deeppition: 40px 0;
   }
   to {
-    background-position: 0 0;
+    background-deeppition: 0 0;
   }
 }
 @keyframes progress-bar-stripes {
   from {
-    background-position: 40px 0;
+    background-deeppition: 40px 0;
   }
   to {
-    background-position: 0 0;
+    background-deeppition: 0 0;
   }
 }
 .progress {
@@ -4918,7 +4918,7 @@ a.thumbnail.active {
   margin-bottom: 20px;
 }
 .list-group-item {
-  position: relative;
+  deeppition: relative;
   display: block;
   padding: 10px 15px;
   margin-bottom: -1px;
@@ -5425,7 +5425,7 @@ a.list-group-item-danger.active:focus {
   border-bottom-color: #ebccd1;
 }
 .embed-responsive {
-  position: relative;
+  deeppition: relative;
   display: block;
   height: 0;
   padding: 0;
@@ -5436,7 +5436,7 @@ a.list-group-item-danger.active:focus {
 .embed-responsive embed,
 .embed-responsive object,
 .embed-responsive video {
-  position: absolute;
+  deeppition: absolute;
   top: 0;
   bottom: 0;
   left: 0;
@@ -5501,7 +5501,7 @@ button.close {
   overflow: hidden;
 }
 .modal {
-  position: fixed;
+  deeppition: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -5532,12 +5532,12 @@ button.close {
   overflow-y: auto;
 }
 .modal-dialog {
-  position: relative;
+  deeppition: relative;
   width: auto;
   margin: 10px;
 }
 .modal-content {
-  position: relative;
+  deeppition: relative;
   background-color: #fff;
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
@@ -5549,7 +5549,7 @@ button.close {
           box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
 }
 .modal-backdrop {
-  position: fixed;
+  deeppition: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -5577,7 +5577,7 @@ button.close {
   line-height: 1.42857143;
 }
 .modal-body {
-  position: relative;
+  deeppition: relative;
   padding: 15px;
 }
 .modal-footer {
@@ -5596,7 +5596,7 @@ button.close {
   margin-left: 0;
 }
 .modal-scrollbar-measure {
-  position: absolute;
+  deeppition: absolute;
   top: -9999px;
   width: 50px;
   height: 50px;
@@ -5621,7 +5621,7 @@ button.close {
   }
 }
 .tooltip {
-  position: absolute;
+  deeppition: absolute;
   z-index: 1070;
   display: block;
   font-size: 12px;
@@ -5660,7 +5660,7 @@ button.close {
   border-radius: 4px;
 }
 .tooltip-arrow {
-  position: absolute;
+  deeppition: absolute;
   width: 0;
   height: 0;
   border-color: transparent;
@@ -5719,7 +5719,7 @@ button.close {
   border-bottom-color: #000;
 }
 .popover {
-  position: absolute;
+  deeppition: absolute;
   top: 0;
   left: 0;
   z-index: 1060;
@@ -5765,7 +5765,7 @@ button.close {
 }
 .popover > .arrow,
 .popover > .arrow:after {
-  position: absolute;
+  deeppition: absolute;
   display: block;
   width: 0;
   height: 0;
@@ -5840,15 +5840,15 @@ button.close {
   border-left-color: #fff;
 }
 .carousel {
-  position: relative;
+  deeppition: relative;
 }
 .carousel-inner {
-  position: relative;
+  deeppition: relative;
   width: 100%;
   overflow: hidden;
 }
 .carousel-inner > .item {
-  position: relative;
+  deeppition: relative;
   display: none;
   -webkit-transition: .6s ease-in-out left;
        -o-transition: .6s ease-in-out left;
@@ -5899,7 +5899,7 @@ button.close {
 }
 .carousel-inner > .next,
 .carousel-inner > .prev {
-  position: absolute;
+  deeppition: absolute;
   top: 0;
   width: 100%;
 }
@@ -5920,7 +5920,7 @@ button.close {
   left: 100%;
 }
 .carousel-control {
-  position: absolute;
+  deeppition: absolute;
   top: 0;
   bottom: 0;
   left: 0;
@@ -5962,7 +5962,7 @@ button.close {
 .carousel-control .icon-next,
 .carousel-control .glyphicon-chevron-left,
 .carousel-control .glyphicon-chevron-right {
-  position: absolute;
+  deeppition: absolute;
   top: 50%;
   z-index: 5;
   display: inline-block;
@@ -5991,7 +5991,7 @@ button.close {
   content: '\203a';
 }
 .carousel-indicators {
-  position: absolute;
+  deeppition: absolute;
   bottom: 10px;
   left: 50%;
   z-index: 15;
@@ -6020,7 +6020,7 @@ button.close {
   background-color: #fff;
 }
 .carousel-caption {
-  position: absolute;
+  deeppition: absolute;
   right: 15%;
   bottom: 20px;
   left: 15%;
@@ -6143,7 +6143,7 @@ button.close {
   visibility: hidden !important;
 }
 .affix {
-  position: fixed;
+  deeppition: fixed;
 }
 @-ms-viewport {
   width: device-width;

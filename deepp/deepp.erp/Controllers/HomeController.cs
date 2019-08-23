@@ -1,6 +1,6 @@
 ﻿using deepp.erp.Models;
 using deepp.erp;
-using pnsms.Service;
+using deepp.Service;
 using Repository.Pattern.UnitOfWork;
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using System.Web.Caching;
 using System.Web.Mvc;
 using System.Web.Security;
 
-namespace pnsms.erp.Controllers
+namespace deepp.erp.Controllers
 {
     public class HomeController : Controller
     {

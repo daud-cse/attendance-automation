@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Web;
 using Newtonsoft.Json;
 
-namespace pnsms.erp.Attributes
+namespace deepp.erp.Attributes
 {
     public class JsonContent : HttpContent
     {

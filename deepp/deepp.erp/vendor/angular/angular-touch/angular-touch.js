@@ -126,9 +126,9 @@ ngTouch.factory('$swipe', [function() {
     bind: function(element, eventHandlers, pointerTypes) {
       // Absolute total movement, used to control swipe vs. scroll.
       var totalX, totalY;
-      // Coordinates of the start position.
+      // Coordinates of the start deeppition.
       var startCoords;
-      // Last event's position.
+      // Last event's deeppition.
       var lastPos;
       // Whether a swipe is active.
       var active = false;
@@ -288,7 +288,7 @@ ngTouch.directive('ngClick', ['$parse', '$timeout', '$rootElement',
   //
   // Why not just put click handlers on the element?
   // We do that too, just to be sure. If the tap event caused the DOM to change,
-  // it is possible another element is now in that position. To take account for these possibly
+  // it is deeppsible another element is now in that deeppition. To take account for these deeppsibly
   // distinct elements, the handlers are global and care only about coordinates.
 
   // Checks if the coordinates are close enough to be within the region.
@@ -573,11 +573,11 @@ function makeSwipeDirective(directiveName, direction, eventName) {
         // Check that it's within the coordinates.
         // Absolute vertical distance must be within tolerances.
         // Horizontal distance, we take the current X - the starting X.
-        // This is negative for leftward swipes and positive for rightward swipes.
+        // This is negative for leftward swipes and deeppitive for rightward swipes.
         // After multiplying by the direction (-1 for left, +1 for right), legal swipes
-        // (ie. same direction as the directive wants) will have a positive delta and
+        // (ie. same direction as the directive wants) will have a deeppitive delta and
         // illegal ones a negative delta.
-        // Therefore this delta must be positive, and larger than the minimum.
+        // Therefore this delta must be deeppitive, and larger than the minimum.
         if (!startCoords) return false;
         var deltaY = Math.abs(coords.y - startCoords.y);
         var deltaX = (coords.x - startCoords.x) * direction;
@@ -613,7 +613,7 @@ function makeSwipeDirective(directiveName, direction, eventName) {
   }]);
 }
 
-// Left is negative X-coordinate, right is positive.
+// Left is negative X-coordinate, right is deeppitive.
 makeSwipeDirective('ngSwipeLeft', -1, 'swipeleft');
 makeSwipeDirective('ngSwipeRight', 1, 'swiperight');
 

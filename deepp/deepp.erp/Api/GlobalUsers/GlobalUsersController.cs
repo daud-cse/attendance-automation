@@ -1,10 +1,10 @@
 ﻿using deepp.erp;
 using Microsoft.Practices.Unity;
-using pnsms.Entities.Models;
-using pnsms.Entities.ViewModels.GlobalUsers;
-using pnsms.erp.Attributes;
-using pnsms.Service.GlobalUsers;
-using pnsms.Service.ViewModels;
+using deepp.Entities.Models;
+using deepp.Entities.ViewModels.GlobalUsers;
+using deepp.erp.Attributes;
+using deepp.Service.GlobalUsers;
+using deepp.Service.ViewModels;
 using Repository.Pattern.UnitOfWork;
 using System;
 using System.Collections.Generic;
@@ -13,7 +13,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace pnsms.erp.Api.GlobalUsers
+namespace deepp.erp.Api.GlobalUsers
 {
     public class GlobalUsersController : ApiController
     {
@@ -123,13 +123,13 @@ namespace pnsms.erp.Api.GlobalUsers
         #endregion
 
         #region "  -  [  Others  ]  -  "
-        protected override void Dispose(bool disposing)
+        protected override void Dispose(bool disdeepping)
         {
-            if (disposing)
+            if (disdeepping)
             {
                 UnitOfWorkAsync.Dispose();
             }
-            base.Dispose(disposing);
+            base.Dispose(disdeepping);
         }
         #endregion
     }

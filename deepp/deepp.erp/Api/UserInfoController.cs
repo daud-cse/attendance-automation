@@ -1,6 +1,6 @@
 ﻿using deepp.erp;
-using pnsms.Entities.StoredProcedures.Models;
-using pnsms.Service;
+using deepp.Entities.StoredProcedures.Models;
+using deepp.Service;
 using Repository.Pattern.UnitOfWork;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace pnsms.erp.Api
+namespace deepp.erp.Api
 {
     public class UserInfoController : ApiController
     {

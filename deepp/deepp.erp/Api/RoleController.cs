@@ -4,12 +4,12 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using pnsms.Entities.Models;
-using pnsms.Service;
+using deepp.Entities.Models;
+using deepp.Service;
 using Repository.Pattern.UnitOfWork;
 using deepp.erp;
 
-namespace pnsms.erp.Api
+namespace deepp.erp.Api
 {
     public class RoleController : ApiController
     {
@@ -57,13 +57,13 @@ namespace pnsms.erp.Api
         {
         }
 
-        protected override void Dispose(bool disposing)
+        protected override void Dispose(bool disdeepping)
         {
-            if (disposing)
+            if (disdeepping)
             {
                 _unitOfWorkAsync.Dispose();
             }
-            base.Dispose(disposing);
+            base.Dispose(disdeepping);
         }
     }
 }

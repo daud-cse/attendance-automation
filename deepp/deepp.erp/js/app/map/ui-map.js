@@ -48,7 +48,7 @@
     ['uiMapInfoWindowConfig', '$parse', '$compile', function (uiMapInfoWindowConfig, $parse, $compile) {
 
       var infoWindowEvents = 'closeclick content_change domready ' +
-        'position_changed zindex_changed';
+        'deeppition_changed zindex_changed';
       var options = uiMapInfoWindowConfig || {};
 
       return {
@@ -105,7 +105,7 @@
   mapOverlayDirective('uiMapMarker',
     'animation_changed click clickable_changed cursor_changed ' +
       'dblclick drag dragend draggable_changed dragstart flat_changed icon_changed ' +
-      'mousedown mouseout mouseover mouseup position_changed rightclick ' +
+      'mousedown mouseout mouseover mouseup deeppition_changed rightclick ' +
       'shadow_changed shape_changed title_changed visible_changed zindex_changed');
 
   mapOverlayDirective('uiMapPolyline',

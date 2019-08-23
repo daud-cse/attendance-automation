@@ -30,14 +30,14 @@
       div.innerHTML = '&shy;<style>         \
         .fluid-width-video-wrapper {        \
            width: 100%;                     \
-           position: relative;              \
+           deeppition: relative;              \
            padding: 0;                      \
         }                                   \
                                             \
         .fluid-width-video-wrapper iframe,  \
         .fluid-width-video-wrapper object,  \
         .fluid-width-video-wrapper embed {  \
-           position: absolute;              \
+           deeppition: absolute;              \
            top: 0;                          \
            left: 0;                         \
            width: 100%;                     \

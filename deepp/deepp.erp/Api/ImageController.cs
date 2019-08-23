@@ -4,10 +4,10 @@ using System.IO;
 using System.Net.Http.Headers;
 using System.Runtime.InteropServices;
 using System.Web;
-using pnsms.Entities.Models;
-using pnsms.Service;
-using pnsms.utility;
-using pnsms.utility.Resource;
+using deepp.Entities.Models;
+using deepp.Service;
+using deepp.utility;
+using deepp.utility.Resource;
 using Repository.Pattern.UnitOfWork;
 using System;
 using System.Collections.Generic;
@@ -19,7 +19,7 @@ using System.Web.Http;
 using System.Web.Http.Filters;
 using deepp.erp;
 
-namespace pnsms.erp.Api
+namespace deepp.erp.Api
 {
     public class ImageController : ApiController
     {
@@ -244,13 +244,13 @@ namespace pnsms.erp.Api
 
             return result;
         }
-        protected override void Dispose(bool disposing)
+        protected override void Dispose(bool disdeepping)
         {
-            if (disposing)
+            if (disdeepping)
             {
                 _unitOfWorkAsync.Dispose();
             }
-            base.Dispose(disposing);
+            base.Dispose(disdeepping);
         }
         /// <summary>
         /// Reads the fully.

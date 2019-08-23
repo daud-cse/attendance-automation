@@ -1,6 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using Repository.Pattern.Infrastructure;
+using System;
 
 namespace Repository.Pattern.Repositories
 {
@@ -10,5 +11,6 @@ namespace Repository.Pattern.Repositories
         Task<TEntity> FindAsync(CancellationToken cancellationToken, params object[] keyValues);
         Task<bool> DeleteAsync(params object[] keyValues);
         Task<bool> DeleteAsync(CancellationToken cancellationToken, params object[] keyValues);
+        object RawQuery(String sql);
     }
 }

@@ -1,7 +1,7 @@
 ﻿using deepp.erp;
-using pnsms.Entities.Models;
-using pnsms.Service;
-using pnsms.utility;
+using deepp.Entities.Models;
+using deepp.Service;
+using deepp.utility;
 using Repository.Pattern.UnitOfWork;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace pnsms.erp.Api
+namespace deepp.erp.Api
 {
     public class UserInfoSecurityController : ApiController
     {
@@ -56,13 +56,13 @@ namespace pnsms.erp.Api
             
         }
 
-        protected override void Dispose(bool disposing)
+        protected override void Dispose(bool disdeepping)
         {
-            if (disposing)
+            if (disdeepping)
             {
                 _unitOfWorkAsync.Dispose();
             }
-            base.Dispose(disposing);
+            base.Dispose(disdeepping);
         }
     }
 }

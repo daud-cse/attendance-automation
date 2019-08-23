@@ -1,7 +1,7 @@
 .slider {
   display: inline-block;
   vertical-align: middle;
-  position: relative;
+  deeppition: relative;
 }
 .slider.slider-horizontal {
   width: 210px;
@@ -68,21 +68,21 @@
   white-space: nowrap;
 }
 .slider-track {
-  position: absolute;
+  deeppition: absolute;
   cursor: pointer;
   background-color: #fff;
   border: 1px solid #eee;
   border-radius: 5px;
 }
 .slider-selection {
-  position: absolute;
+  deeppition: absolute;
   background-color: #4cc0c1;
   border: 1px solid #4cc0c1;
   border-radius: 5px;
 }
 .slider-handle {
   outline: none;
-  position: absolute;
+  deeppition: absolute;
   width: 20px;
   height: 20px;
   background-color: #fff;

@@ -4,14 +4,9 @@ E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern\bin\Release\R
 E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern\obj\Release\Repository.Pattern.dll
 E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern\obj\Release\Repository.Pattern.pdb
 E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern\obj\Release\Repository.Pattern.csprojResolveAssemblyReference.cache
-E:\pos\POS NEW\Source\Repository.Pattern\bin\Release\Repository.Pattern.dll.config
-E:\pos\POS NEW\Source\Repository.Pattern\bin\Release\Repository.Pattern.dll
-E:\pos\POS NEW\Source\Repository.Pattern\bin\Release\Repository.Pattern.pdb
-E:\pos\POS NEW\Source\Repository.Pattern\obj\Release\Repository.Pattern.dll
-E:\pos\POS NEW\Source\Repository.Pattern\obj\Release\Repository.Pattern.pdb
-E:\pos\POS NEW\Source\Repository.Pattern\obj\Release\Repository.Pattern.csprojResolveAssemblyReference.cache
-E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern\bin\Release\Repository.Pattern.dll.config
-E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern\bin\Release\Repository.Pattern.dll
-E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern\bin\Release\Repository.Pattern.pdb
-E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern\obj\Release\Repository.Pattern.dll
-E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern\obj\Release\Repository.Pattern.pdb
+E:\shikkhaforall-git\sfa\Source\Repository.Pattern\bin\Release\Repository.Pattern.dll.config
+E:\shikkhaforall-git\sfa\Source\Repository.Pattern\bin\Release\Repository.Pattern.dll
+E:\shikkhaforall-git\sfa\Source\Repository.Pattern\bin\Release\Repository.Pattern.pdb
+E:\shikkhaforall-git\sfa\Source\Repository.Pattern\obj\Release\Repository.Pattern.csprojResolveAssemblyReference.cache
+E:\shikkhaforall-git\sfa\Source\Repository.Pattern\obj\Release\Repository.Pattern.dll
+E:\shikkhaforall-git\sfa\Source\Repository.Pattern\obj\Release\Repository.Pattern.pdb

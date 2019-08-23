@@ -4,12 +4,12 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using pnsms.Entities.Models;
-using pnsms.Service;
-using pnsms.Service.Institutes;
+using deepp.Entities.Models;
+using deepp.Service;
+using deepp.Service.Institutes;
 using Repository.Pattern.UnitOfWork;
 
-namespace pnsms.erp.Api
+namespace deepp.erp.Api
 {
     public class GlobalInstituteTypeController : ApiController
     {

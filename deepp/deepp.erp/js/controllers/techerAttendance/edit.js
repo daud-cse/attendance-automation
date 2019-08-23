@@ -99,7 +99,7 @@ app.controller('TeacherAttendanceEditCtrl', ['$scope', '$state', '$stateParams',
             //        'width': margins.width
             //        , 'elementHandlers': specialElementHandlers
             //    },
-            //    function (dispose) {
+            //    function (disdeeppe) {
             //        pdf.save('test' + '.pdf');
             //    },
             //    margins

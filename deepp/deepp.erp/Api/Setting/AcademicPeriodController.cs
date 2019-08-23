@@ -1,7 +1,7 @@
 ﻿using deepp.erp;
 using Microsoft.Practices.Unity;
-using pnsms.Entities.Models;
-using pnsms.Service.Settings;
+using deepp.Entities.Models;
+using deepp.Service.Settings;
 using Repository.Pattern.UnitOfWork;
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Filters;
 
-namespace pnsms.erp.Api.Setting
+namespace deepp.erp.Api.Setting
 {
     public class AcademicPeriodController : ApiController
     {
@@ -53,13 +53,13 @@ namespace pnsms.erp.Api.Setting
         {
         }
 
-        protected override void Dispose(bool disposing)
+        protected override void Dispose(bool disdeepping)
         {
-            if (disposing)
+            if (disdeepping)
             {
                 UnitOfWorkAsync.Dispose();
             }
-            base.Dispose(disposing);
+            base.Dispose(disdeepping);
         }
     }
 }

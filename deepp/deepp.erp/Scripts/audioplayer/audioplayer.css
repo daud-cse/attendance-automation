@@ -4,7 +4,7 @@
 	color: #fff;
 	text-shadow: 1px 1px 0 #000;
 	border: 1px solid #222;
-	position: relative;
+	deeppition: relative;
 	z-index: 1;
 	background: #333;
 	background: -webkit-gradient( linear, left top, left bottom, from( #444 ), to( #222 ) );
@@ -27,7 +27,7 @@
 	}
 	.audioplayer > div
 	{
-		position: absolute;
+		deeppition: absolute;
 	}
 	.audioplayer-playpause
 	{
@@ -66,7 +66,7 @@
 			border-right: none;
 			border-left-color: #fff;
 			content: '';
-			position: absolute;
+			deeppition: absolute;
 			top: 50%;
 			left: 50%;
 			margin: -0.5em 0 0 -0.25em; /* 8 4 */
@@ -75,7 +75,7 @@
 		{
 			width: 0.75em; /* 12 */
 			height: 0.75em; /* 12 */
-			position: absolute;
+			deeppition: absolute;
 			top: 50%;
 			left: 50%;
 			margin: -0.375em 0 0 -0.375em; /* 6 */
@@ -87,7 +87,7 @@
 				height: 100%;
 				background-color: #fff;
 				content: '';
-				position: absolute;
+				deeppition: absolute;
 				top: 0;
 			}
 			.audioplayer-playing .audioplayer-playpause a:before
@@ -143,7 +143,7 @@
 		{
 			width: 0;
 			height: 100%;
-			position: absolute;
+			deeppition: absolute;
 			left: 0;
 			top: 0;
 		}
@@ -192,7 +192,7 @@
 				height: 0.375em; /* 6 */
 				background-color: #fff;
 				display: block;
-				position: relative;
+				deeppition: relative;
 				z-index: 1;
 				top: 40%;
 				left: 35%;
@@ -201,7 +201,7 @@
 				.audioplayer-volume-button a:after
 				{
 					content: '';
-					position: absolute;
+					deeppition: absolute;
 				}
 				.audioplayer-volume-button a:before
 				{
@@ -237,7 +237,7 @@
 		{
 			height: 6.25em; /* 100 */
 			cursor: default;
-			position: absolute;
+			deeppition: absolute;
 			left: 0;
 			right: -1px;
 			top: -9999px;
@@ -270,7 +270,7 @@
 				height: 80%;
 				background-color: #222;
 				cursor: pointer;
-				position: relative;
+				deeppition: relative;
 				z-index: 1;
 				margin: 30% auto 0;
 			}
@@ -278,7 +278,7 @@
 				{
 					width: 100%;
 					height: 100%;
-					position: absolute;
+					deeppition: absolute;
 					bottom: 0;
 					left: 0;
 					background: #007fd1;

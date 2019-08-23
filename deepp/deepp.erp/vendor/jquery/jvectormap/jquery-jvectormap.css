@@ -1,5 +1,5 @@
 .jvectormap-label {
-    position: absolute;
+    deeppition: absolute;
     display: none;
     border: solid 1px #000;
     -webkit-border-radius: 3px;
@@ -13,7 +13,7 @@
 }
 
 .jvectormap-zoomin, .jvectormap-zoomout {
-    position: absolute;
+    deeppition: absolute;
     left: 15px;
     background: #fff;
     border:1px solid #f0f0f0;

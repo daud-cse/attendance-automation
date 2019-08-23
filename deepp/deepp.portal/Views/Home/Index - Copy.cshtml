@@ -1,0 +1,834 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+    var MaleFemaleRatiotpl = [['Gender', 'Male', 'Female', { role: 'annotation' }]];
+    $(document).ready(function () {
+
+        var dashboard = {
+            tiles: "<div class='col-md-3 col-xs-12 col-sm-6'> <a href='#' class='info-tiles tiles-toyo'><div class='tiles-heading'>[name]</div><div class='tiles-body-alt'><div class='text-center'><span class='text-top'></span>[count]</div></div><div class='tiles-footer'>[details]</div></a></div>",
+            getDashboard: function () {
+                var url = '@Url.Content("~/Home/GetDashBoard")';
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    dataType: "json",
+                    success: function (data) {
+                        for (var i = 0; i < data.data.MaleFemaleRation.length; i++) {
+                            MaleFemaleRatiotpl.push([data.data.MaleFemaleRation[i].Name, data.data.MaleFemaleRation[i].Propertices[0].Value, data.data.MaleFemaleRation[i].Propertices[1].Value, '']);
+                        }
+                        if (data.data.MaleFemaleRation.length > 0) {
+                            drawChart(MaleFemaleRatiotpl);
+                        }
+                        if (data.data.DashboardHeader.length > 0) {
+
+                            dashboard.populateTiles(data.data.DashboardHeader);
+                        }
+                    },
+                    error: function (error) {
+                        alert(error);
+                    }
+                });
+            },
+            populateTiles: function (data) {
+
+                $(".dashboardtiles").empty();
+                var tiles = "";
+
+                $.each(data, function (index, item) {
+                    tiles += dashboard.tiles.replace("[name]", item.Name).replace("[count]", item.Count).replace("[details]", item.Details);
+                });
+
+                $(".dashboardtiles").append(tiles);
+            },
+            initialize: function () {
+                dashboard.getDashboard();
+                //$(".container").ajaxStart()
+                //{
+                //    $("#abc").html('ajax start');
+                //};
+                //$(".container").ajaxComplete()
+                //{
+                //    $("#abc").html('ajax complete');
+                //};
+
+            }
+        }
+
+        dashboard.initialize();
+
+
+    });
+    google.load("visualization", "1", { packages: ["corechart"] });
+    google.setOnLoadCallback(drawChart);
+    function drawChart(MaleFemaleRatio) {
+        var data = google.visualization.arrayToDataTable(MaleFemaleRatio
+        //    [
+		//['Gender', 'Male', 'Female'
+        // , { role: 'annotation' }],
+        //['2011', 98, 53,''],
+        //['2012', 151, 34,''],
+        //]
+        );
+        var options = {
+            width: 400,
+            height: 350,
+            legend: { deeppition: 'top', maxLines: 3, textStyle: { color: 'black', fontSize: 16 } },
+            isStacked: true,
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_div'));
+        chart.draw(data, options);
+    }
+</script>
+
+
+<div class="container">
+    <div id="abc">
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row dashboardtiles">
+                @*<div class="col-md-3 col-xs-12 col-sm-6">
+                        <a class="info-tiles tiles-toyo" href="#">
+                            <div class="tiles-heading">Profit</div>
+                            <div class="tiles-body-alt">
+                                <!--i class="fa fa-bar-chart-o"></i-->
+                                <div class="text-center"><span class="text-top">$</span>854</div>
+                                <small>+8.7% from last period</small>
+                            </div>
+                            <div class="tiles-footer">more info</div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-xs-12 col-sm-6">
+                        <a class="info-tiles tiles-success" href="#">
+                            <div class="tiles-heading">Revenue</div>
+                            <div class="tiles-body-alt">
+                                <!--i class="fa fa-money"></i-->
+                                <div class="text-center"><span class="text-top">$</span>22.7<span class="text-smallcaps">k</span></div>
+                                <small>-13.5% from last week</small>
+                            </div>
+                            <div class="tiles-footer">go to accounts</div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-xs-12 col-sm-6">
+                        <a class="info-tiles tiles-orange" href="#">
+                            <div class="tiles-heading">Members</div>
+                            <div class="tiles-body-alt">
+                                <i class="fa fa-group"></i>
+                                <div class="text-center">109</div>
+                                <small>new users registered</small>
+                            </div>
+                            <div class="tiles-footer">manage members</div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-xs-12 col-sm-6">
+                        <a class="info-tiles tiles-alizarin" href="#">
+                            <div class="tiles-heading">Orders</div>
+                            <div class="tiles-body-alt">
+                                <i class="fa fa-shopping-cart"></i>
+                                <div class="text-center">57</div>
+                                <small>new orders received</small>
+                            </div>
+                            <div class="tiles-footer">manage orders</div>
+                        </a>
+                    </div>*@
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-info">
+                <div class="panel-body">
+                    <div class="row">
+                        <div id="chart_div" style="width: 470px; height: 300px;"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-grape">
+                <div class="panel-body">
+                    <div class="row">
+
+                        <div id="piechart_div" style="width: 470px; height: 300px;"></div>
+                        @*<div class="col-md-12 clearfix">
+                                <h4 class="pull-left" style="margin: 0 0 20px;">Annual Sales <small>(by quarter)</small></h4>
+                                <div class="btn-group pull-right">
+                                    <a href="javascript:;" class="btn btn-default btn-sm active">2012</a>
+                                    <a href="javascript:;" class="btn btn-default btn-sm ">2011</a>
+                                    <a href="javascript:;" class="btn btn-default btn-sm ">2010</a>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div id="budget-variance" style="height: 250px; padding: 0px; deeppition: relative;"><canvas class="flot-base" width="488" height="250" style="direction: ltr; deeppition: absolute; left: 0px; top: 0px; width: 488px; height: 250px;"></canvas><div class="flot-text" style="deeppition: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="deeppition: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div style="deeppition: absolute; max-width: 122px; top: 238px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 12px; line-height: 12.65px; font-family: 'Source Sans Pro', 'Segoe UI', 'Droid Sans', Tahoma, Arial, sans-serif; color: rgb(140, 140, 140); left: 81px; text-align: center;">Q1</div><div style="deeppition: absolute; max-width: 122px; top: 238px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 12px; line-height: 12.65px; font-family: 'Source Sans Pro', 'Segoe UI', 'Droid Sans', Tahoma, Arial, sans-serif; color: rgb(140, 140, 140); left: 196px; text-align: center;">Q2</div><div style="deeppition: absolute; max-width: 122px; top: 238px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 12px; line-height: 12.65px; font-family: 'Source Sans Pro', 'Segoe UI', 'Droid Sans', Tahoma, Arial, sans-serif; color: rgb(140, 140, 140); left: 311px; text-align: center;">Q3</div><div style="deeppition: absolute; max-width: 122px; top: 238px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 12px; line-height: 12.65px; font-family: 'Source Sans Pro', 'Segoe UI', 'Droid Sans', Tahoma, Arial, sans-serif; color: rgb(140, 140, 140); left: 426px; text-align: center;">Q4</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="deeppition: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div style="deeppition: absolute; top: 222px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 12px; line-height: 12.65px; font-family: 'Source Sans Pro', 'Segoe UI', 'Droid Sans', Tahoma, Arial, sans-serif; color: rgb(140, 140, 140); left: 13px; text-align: right;">$0K</div><div style="deeppition: absolute; top: 167px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 12px; line-height: 12.65px; font-family: 'Source Sans Pro', 'Segoe UI', 'Droid Sans', Tahoma, Arial, sans-serif; color: rgb(140, 140, 140); left: 7px; text-align: right;">$25K</div><div style="deeppition: absolute; top: 112px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 12px; line-height: 12.65px; font-family: 'Source Sans Pro', 'Segoe UI', 'Droid Sans', Tahoma, Arial, sans-serif; color: rgb(140, 140, 140); left: 7px; text-align: right;">$50K</div><div style="deeppition: absolute; top: 57px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 12px; line-height: 12.65px; font-family: 'Source Sans Pro', 'Segoe UI', 'Droid Sans', Tahoma, Arial, sans-serif; color: rgb(140, 140, 140); left: 7px; text-align: right;">$75K</div><div style="deeppition: absolute; top: 2px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 12px; line-height: 12.65px; font-family: 'Source Sans Pro', 'Segoe UI', 'Droid Sans', Tahoma, Arial, sans-serif; color: rgb(140, 140, 140); left: 0px; text-align: right;">$100K</div></div></div><canvas class="flot-overlay" width="488" height="250" style="direction: ltr; deeppition: absolute; left: 0px; top: 0px; width: 488px; height: 250px;"></canvas><div class="legend"><div style="deeppition: absolute; width: 56px; height: 34px; top: 13px; right: 13px; opacity: 0.85; background-color: rgb(255, 255, 255);"> </div><table style="deeppition:absolute;top:13px;right:13px;;font-size:smaller;color:#545454"><tbody><tr><td class="legendColorBox"><div style="border:1px solid transparent;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(141,150,175);overflow:hidden"></div></div></td><td class="legendLabel">Budget</td></tr><tr><td class="legendColorBox"><div style="border:1px solid transparent;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(85,107,141);overflow:hidden"></div></div></td><td class="legendLabel">Actual</td></tr></tbody></table></div></div>
+                            </div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*<div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-grape">
+                <div class="panel-body">
+                    <div class="row">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+   <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-primary">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12 clearfix">
+                                <h4 class="pull-left" style="margin:0 0 10px">Site Reports <small>(overview)</small></h4>
+                                <div class="pull-right">
+                                    <a href="javascript:;" class="btn btn-default-alt btn-sm"><i class="fa fa-refresh"></i></a>
+                                    <a href="javascript:;" class="btn btn-default-alt btn-sm"><i class="fa fa-wrench"></i></a>
+                                    <a href="javascript:;" class="btn btn-default-alt btn-sm"><i class="fa fa-cog"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-2">
+                                <div id="indexvisits" style="width: 90px; margin: 0 auto; padding: 10px 0 6px;"><canvas width="90" height="45" style="display: inline-block; width: 90px; height: 45px; vertical-align: top;"></canvas></div>
+                                <h3 style="text-align: center; margin: 0; color: #808080;">7,451</h3>
+                                <p style="text-align: center; margin: 0;">Visits</p>
+                                <hr class="hidden-md hidden-lg">
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-2">
+                                <div id="indexpageviews" style="width: 90px; margin: 0 auto; padding: 10px 0 6px;"><canvas width="90" height="45" style="display: inline-block; width: 90px; height: 45px; vertical-align: top;"></canvas></div>
+                                <h3 style="text-align: center; margin: 0; color: #808080;">35,711</h3>
+                                <p style="text-align: center; margin: 0;">Page Views</p>
+                                <hr class="hidden-md hidden-lg">
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-2">
+                                <div id="indexpagesvisit" style="width: 90px; margin: 0 auto; padding: 10px 0 6px;"><canvas width="90" height="45" style="display: inline-block; width: 90px; height: 45px; vertical-align: top;"></canvas></div>
+                                <h3 style="text-align: center; margin: 0; color: #808080;">6.92</h3>
+                                <p style="text-align: center; margin: 0;">Pages / Visit</p>
+                                <hr class="hidden-md hidden-lg">
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-2">
+                                <div id="indexavgvisit" style="width: 90px; margin: 0 auto; padding: 10px 0 6px;"><canvas width="90" height="45" style="display: inline-block; width: 90px; height: 45px; vertical-align: top;"></canvas></div>
+                                <h3 style="text-align: center; margin: 0; color: #808080;">00:04:17</h3>
+                                <p style="text-align: center; margin: 0;">Average Visit Time</p>
+                                <hr class="hidden-md hidden-lg">
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-2">
+                                <div id="indexnewvisits" style="width: 90px; margin: 0 auto; padding: 10px 0 6px;"><canvas width="90" height="45" style="display: inline-block; width: 90px; height: 45px; vertical-align: top;"></canvas></div>
+                                <h3 style="text-align: center; margin: 0; color: #808080;">71.27%</h3>
+                                <p style="text-align: center; margin: 0;">New Visits</p>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-2">
+                                <div id="indexbouncerate" style="width: 90px; margin: 0 auto; padding: 10px 0 6px;"><canvas width="90" height="45" style="display: inline-block; width: 90px; height: 45px; vertical-align: top;"></canvas></div>
+                                <h3 style="text-align: center; margin: 0; color: #808080;">31.08%</h3>
+                                <p style="text-align: center; margin: 0;">Bounce Rate</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    @*<div class="row">
+            <div class="col-xs-12 col-md-3 col-sm-6 col-lg-3">
+                <a class="info-tiles tiles-alizarin" href="#">
+                    <div class="tiles-heading">
+                        <div class="pull-left">Comments</div>
+                        <div class="pull-right">+15.6%</div>
+                    </div>
+                    <div class="tiles-body">
+                        <div class="pull-left"><i class="fa fa-comments-o"></i></div>
+                        <div class="pull-right"><div id="indexinfocomments" style="margin-top: 10px; margin-bottom: -10px;"><canvas width="79" height="45" style="display: inline-block; width: 79px; height: 45px; vertical-align: top;"></canvas></div></div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-12 col-md-3 col-sm-6 col-lg-3">
+                <a class="info-tiles tiles-orange" href="#">
+                    <div class="tiles-heading">
+                        <div class="pull-left">Likes</div>
+                        <div class="pull-right">-5.5%</div>
+                    </div>
+                    <div class="tiles-body">
+                        <div class="pull-left"><i class="fa fa-thumbs-o-up"></i></div>
+                        <div class="pull-right"><div id="indexinfolikes" style="margin-top: 10px; margin-bottom: -10px;"><canvas width="79" height="45" style="display: inline-block; width: 79px; height: 45px; vertical-align: top;"></canvas></div></div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-12 col-md-3 col-sm-6 col-lg-3">
+                <a class="info-tiles tiles-success" href="#">
+                    <div class="tiles-heading">
+                        <div class="pull-left">Bugs Fixed</div>
+                        <div class="pull-right">+14.9%</div>
+                    </div>
+                    <div class="tiles-body">
+                        <div class="pull-left"><i class="fa fa-check"></i></div>
+                        <div class="pull-right">37</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-12 col-md-3 col-sm-6 col-lg-3">
+                <a class="info-tiles tiles-toyo" href="#">
+                    <div class="tiles-heading">
+                        <div class="pull-left">Downloads</div>
+                        <div class="pull-right">-9.8%</div>
+                    </div>
+                    <div class="tiles-body">
+                        <div class="pull-left"><i class="fa fa-download"></i></div>
+                        <div class="pull-right">3.67<span class="text-smallcaps">k</span></div>
+                    </div>
+                </a>
+            </div>
+
+
+        </div>*@
+
+    @*<div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-grape">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12 clearfix">
+                                <h4 class="pull-left" style="margin:0 0 10px">Visitor Statistics <small>(overview)</small></h4>
+                                <div class="btn-group pull-right">
+                                    <a href="javascript:;" id="updatePieCharts" class="btn btn-default-alt btn-sm">Refresh</a>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-4" style="padding-top:10px;padding-bottom:10px;">
+                                <div class="easypiechart" id="returningvisits" data-percent="65">
+                                    <span class="percent">65</span>
+                                    <canvas height="90" width="90"></canvas>
+                                </div>
+                                <label for="newvisits">Returning Visits</label>
+                                <hr class="hidden-md hidden-lg">
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-4" style="padding-top:10px;padding-bottom:10px;">
+                                <span class="easypiechart" id="newvisitor" data-percent="81">
+                                    <span class="percent">81</span>
+                                    <canvas height="90" width="90"></canvas>
+                                </span>
+                                <label for="bouncerate">New Visitor</label>
+                                <hr class="hidden-md hidden-lg">
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-4" style="padding-top:10px;padding-bottom:10px;">
+                                <span class="easypiechart" id="clickrate" data-percent="42">
+                                    <span class="percent">42</span>
+                                    <canvas height="90" width="90"></canvas>
+                                </span>
+                                <label for="clickrate">Click Rate</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-orange">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12 clearfix">
+                                <h4 class="pull-left" style="margin: 0 0 20px;">Server Load</h4>
+                                <div class="btn-group pull-right">
+                                    <a href="javascript:;" class="btn btn-default btn-sm active">Server #1</a>
+                                    <a href="javascript:;" class="btn btn-default btn-sm ">Server #2</a>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div id="server-load" style="height: 125px; padding: 0px; deeppition: relative;"><canvas class="flot-base" width="488" height="125" style="direction: ltr; deeppition: absolute; left: 0px; top: 0px; width: 488px; height: 125px;"></canvas><div class="flot-text" style="deeppition: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="deeppition: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div style="deeppition: absolute; top: 109px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 12px; line-height: 12.65px; font-family: 'Source Sans Pro', 'Segoe UI', 'Droid Sans', Tahoma, Arial, sans-serif; color: rgb(140, 140, 140); left: 13px; text-align: right;">0%</div><div style="deeppition: absolute; top: 56px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 12px; line-height: 12.65px; font-family: 'Source Sans Pro', 'Segoe UI', 'Droid Sans', Tahoma, Arial, sans-serif; color: rgb(140, 140, 140); left: 6px; text-align: right;">50%</div><div style="deeppition: absolute; top: 2px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 12px; line-height: 12.65px; font-family: 'Source Sans Pro', 'Segoe UI', 'Droid Sans', Tahoma, Arial, sans-serif; color: rgb(140, 140, 140); left: 0px; text-align: right;">100%</div></div></div><canvas class="flot-overlay" width="488" height="125" style="direction: ltr; deeppition: absolute; left: 0px; top: 0px; width: 488px; height: 125px;"></canvas></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+
+
+    @*<div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-indigo">
+                <div class="panel-heading">
+                    <h4>User Accounts</h4>
+                    <div class="options">
+                        <a href="javascript:;"><i class="fa fa-cog"></i></a>
+                        <a href="javascript:;"><i class="fa fa-wrench"></i></a>
+                        <a href="javascript:;" class="panel-collapse"><i class="fa fa-chevron-down"></i></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table" style="margin-bottom: 0px;">
+                            <thead>
+                                <tr>
+                                    <th class="col-xs-1 col-sm-1"><input type="checkbox" id="select-all"></th>
+                                    <th class="col-xs-9 col-sm-3">User ID</th>
+                                    <th class="col-sm-6 hidden-xs">Email Address</th>
+                                    <th class="col-xs-2 col-sm-2">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody class="selects">
+                                <tr>
+                                    <td><input type="checkbox" class=""></td>
+                                    <td>cranston</td>
+                                    <td class="hidden-xs">cranstonb@gnail.com</td>
+                                    <td><span class="label label-success">Approved</span></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class=""></td>
+                                    <td>aaron</td>
+                                    <td class="hidden-xs">ppaul@lime.com</td>
+                                    <td><span class="label label-grape">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class=""></td>
+                                    <td>norris</td>
+                                    <td class="hidden-xs">j.norris@gnail.com</td>
+                                    <td><span class="label label-warning">Suspended</span></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class=""></td>
+                                    <td>gunner</td>
+                                    <td class="hidden-xs">gunner@outluk.com</td>
+                                    <td><span class="label label-danger">Blocked</span></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class=""></td>
+                                    <td>mrford</td>
+                                    <td class="hidden-xs">fordm@gnail.com</td>
+                                    <td><span class="label label-grape">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class=""></td>
+                                    <td>stewrtt</td>
+                                    <td class="hidden-xs">swttrs@outluk.com</td>
+                                    <td><span class="label label-danger">Blocked</span></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr class="active">
+                                    <td colspan="4" class="text-left">
+                                        <label for="action" style="margin-bottom:0">Action </label>
+                                        <select name="action">
+                                            <option value="Edit">Edit</option>
+                                            <option value="Aprove">Aprove</option>
+                                            <option value="Move">Move</option>
+                                            <option value="Delete">Delete</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+    @*<div class="col-md-6">
+                <div class="panel panel-grape">
+                    <div class="panel-heading">
+                        <h4><i class="icon-highlight fa fa-check"></i> To-do List</h4>
+                         <div class="options">
+                          <a href="javascript:;"><i class="fa fa-cog"></i></a>
+                          <a href="javascript:;"><i class="fa fa-wrench"></i></a>
+                          <a href="javascript:;" class="panel-collapse"><i class="fa fa-chevron-down"></i></a>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="panel-tasks ui-sortable">
+                            <li class="item-danger">
+                                <label>
+                                    <i class="fa fa-ellipsis-v icon-dragtask"></i>
+                                    <input type="checkbox">
+                                    <span class="task-description">Write documentation for theme</span>
+                                    <span class="label label-info">6 Days</span>
+                                </label>
+                                <div class="options todooptions">
+                                    <div class="btn-group">
+                                        <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
+                                        <button class="btn btn-default btn-xs"><i class="fa fa-cog"></i></button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item-primary">
+                                <label>
+                                    <i class="fa fa-ellipsis-v icon-dragtask"></i>
+                                    <input type="checkbox">
+                                    <span class="task-description">Compile code</span>
+                                    <span class="label label-primary">3 Days</span>
+                                </label>
+                                <div class="options todooptions">
+                                    <div class="btn-group">
+                                        <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
+                                        <button class="btn btn-default btn-xs"><i class="fa fa-cog"></i></button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item-info">
+                                <label>
+                                    <i class="fa fa-ellipsis-v icon-dragtask"></i>
+                                    <input type="checkbox">
+                                    <span class="task-description">Upload files to server</span>
+                                    <span class="label label-orange">Tomorrow</span>
+                                </label>
+                                <div class="options todooptions">
+                                    <div class="btn-group">
+                                        <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
+                                        <button class="btn btn-default btn-xs"><i class="fa fa-cog"></i></button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item-success">
+                                <label>
+                                    <i class="fa fa-ellipsis-v icon-dragtask"></i>
+                                    <input type="checkbox">
+                                    <span class="task-description">Call client</span>
+                                    <span class="label label-danger">Today</span>
+                                </label>
+                                <div class="options todooptions">
+                                    <div class="btn-group">
+                                        <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
+                                        <button class="btn btn-default btn-xs"><i class="fa fa-cog"></i></button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <label>
+                                    <i class="fa fa-ellipsis-v icon-dragtask"></i>
+                                    <input type="checkbox">
+                                    <span class="task-description">Buy some milk</span>
+                                    <span class="label label-danger">Today</span>
+                                </label>
+                                <div class="options todooptions">
+                                    <div class="btn-group">
+                                        <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
+                                        <button class="btn btn-default btn-xs"><i class="fa fa-cog"></i></button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <label>
+                                    <i class="fa fa-ellipsis-v icon-dragtask"></i>
+                                    <input type="checkbox">
+                                    <span class="task-description">Setup meeting with client</span>
+                                    <span class="label label-sky">2 Weeks</span>
+                                </label>
+                                <div class="options todooptions">
+                                    <div class="btn-group">
+                                        <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
+                                        <button class="btn btn-default btn-xs"><i class="fa fa-cog"></i></button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <label>
+                                    <i class="fa fa-ellipsis-v icon-dragtask"></i>
+                                    <input type="checkbox">
+                                    <span class="task-description">Pay office rent and bills</span>
+                                    <span class="label label-sky">3 Weeks</span>
+                                </label>
+                                <div class="options todooptions">
+                                    <div class="btn-group">
+                                        <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
+                                        <button class="btn btn-default btn-xs"><i class="fa fa-cog"></i></button>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                        <a href="#" class="btn btn-success btn-sm pull-left">Add Tasks</a>
+                        <a href="#" class="btn btn-default-alt btn-sm pull-right">See All Tasks</a>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+    <div class="row">
+        @*<div class="col-md-6">
+                <div class="panel panel-inverse">
+                    <div class="panel-heading">
+                        <h4><i class="icon-highlight fa fa-calendar"></i> Calendar</h4>
+                        <div class="options">
+                            <a href="javascript:;"><i class="fa fa-cog"></i></a>
+                            <a href="javascript:;"><i class="fa fa-wrench"></i></a>
+                            <a href="javascript:;" class="panel-collapse"><i class="fa fa-chevron-down"></i></a>
+                        </div>
+                    </div>
+                    <div class="panel-body" id="calendardemo">
+                        <div id="calendar-drag" class="fc fc-ltr"><table class="fc-header" style="width:100%"><tbody><tr><td class="fc-header-left"><span class="fc-button fc-button-prev fc-state-default fc-corner-left" unselectable="on"><i class="fa fa-angle-left"></i></span><span class="fc-button fc-button-next fc-state-default fc-corner-right" unselectable="on"><i class="fa fa-angle-right"></i></span></td><td class="fc-header-center"><span class="fc-header-title"><h2>June 2015</h2></span></td><td class="fc-header-right"><span class="fc-button fc-button-month fc-state-default fc-corner-left fc-state-active" unselectable="on">Month</span><span class="fc-button fc-button-basicWeek fc-state-default" unselectable="on">Week</span><span class="fc-button fc-button-basicDay fc-state-default fc-corner-right" unselectable="on">Day</span></td></tr></tbody></table><div class="fc-content" style="deeppition: relative;"><div class="fc-view fc-view-month fc-grid" style="deeppition:relative" unselectable="on"><div class="fc-event-container" style="deeppition:absolute;z-index:8;top:0;left:0"><div class="fc-event fc-event-hori fc-event-draggable fc-event-start fc-event-end" style="deeppition: absolute; left: 70px; width: 62px; top: 100px; background-color: rgb(239, 161, 49);"><div class="fc-event-inner"><span class="fc-event-title">All Day Event</span></div><div class="ui-resizable-handle ui-resizable-e">&nbsp;&nbsp;&nbsp;</div></div><div class="fc-event fc-event-hori fc-event-draggable fc-event-start fc-event-end" style="deeppition: absolute; left: 204px; width: 280px; top: 100px; background-color: rgb(122, 134, 156);"><div class="fc-event-inner"><span class="fc-event-title">Long Event</span></div><div class="ui-resizable-handle ui-resizable-e">&nbsp;&nbsp;&nbsp;</div></div><div class="fc-event fc-event-hori fc-event-draggable fc-event-start fc-event-end" style="deeppition: absolute; left: 338px; width: 62px; top: 118px; background-color: rgb(231, 76, 60);"><div class="fc-event-inner"><span class="fc-event-time">4p</span><span class="fc-event-title">Repeating Event</span></div><div class="ui-resizable-handle ui-resizable-e">&nbsp;&nbsp;&nbsp;</div></div><div class="fc-event fc-event-hori fc-event-draggable fc-event-start fc-event-end" style="deeppition: absolute; left: 338px; width: 62px; top: 177px; background-color: rgb(231, 76, 60);"><div class="fc-event-inner"><span class="fc-event-time">4p</span><span class="fc-event-title">Repeating Event</span></div><div class="ui-resizable-handle ui-resizable-e">&nbsp;&nbsp;&nbsp;</div></div><div class="fc-event fc-event-hori fc-event-draggable fc-event-start fc-event-end" style="deeppition: absolute; left: 70px; width: 62px; top: 177px; background-color: rgb(118, 196, 237);"><div class="fc-event-inner"><span class="fc-event-time">10:30a</span><span class="fc-event-title">Meeting</span></div><div class="ui-resizable-handle ui-resizable-e">&nbsp;&nbsp;&nbsp;</div></div><div class="fc-event fc-event-hori fc-event-draggable fc-event-start fc-event-end" style="deeppition: absolute; left: 70px; width: 62px; top: 195px; background-color: rgb(52, 73, 94);"><div class="fc-event-inner"><span class="fc-event-time">12p</span><span class="fc-event-title">Lunch</span></div><div class="ui-resizable-handle ui-resizable-e">&nbsp;&nbsp;&nbsp;</div></div><div class="fc-event fc-event-hori fc-event-draggable fc-event-start fc-event-end" style="deeppition: absolute; left: 137px; width: 62px; top: 177px; background-color: rgb(43, 188, 224);"><div class="fc-event-inner"><span class="fc-event-time">7p</span><span class="fc-event-title">Birthday Party</span></div><div class="ui-resizable-handle ui-resizable-e">&nbsp;&nbsp;&nbsp;</div></div><a href="http://google.com/" class="fc-event fc-event-hori fc-event-draggable fc-event-start fc-event-end" style="deeppition: absolute; left: 3px; width: 129px; top: 292px; background-color: rgb(241, 196, 15);"><div class="fc-event-inner"><span class="fc-event-title">Click for Google</span></div><div class="ui-resizable-handle ui-resizable-e">&nbsp;&nbsp;&nbsp;</div></a></div><table class="fc-border-separate" style="width:100%" cellspacing="0"><thead><tr class="fc-first fc-last"><th class="fc-day-header fc-sun fc-widget-header fc-first" style="width: 67px;">Sun</th><th class="fc-day-header fc-mon fc-widget-header" style="width: 67px;">Mon</th><th class="fc-day-header fc-tue fc-widget-header" style="width: 67px;">Tue</th><th class="fc-day-header fc-wed fc-widget-header" style="width: 67px;">Wed</th><th class="fc-day-header fc-thu fc-widget-header" style="width: 67px;">Thu</th><th class="fc-day-header fc-fri fc-widget-header" style="width: 67px;">Fri</th><th class="fc-day-header fc-sat fc-widget-header fc-last">Sat</th></tr></thead><tbody><tr class="fc-week fc-first"><td class="fc-day fc-sun fc-widget-content fc-other-month fc-past fc-first" data-date="2015-05-31"><div style="min-height: 54px;"><div class="fc-day-number">31</div><div class="fc-day-content"><div style="deeppition: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-mon fc-widget-content fc-past" data-date="2015-06-01"><div><div class="fc-day-number">1</div><div class="fc-day-content"><div style="deeppition: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-tue fc-widget-content fc-past" data-date="2015-06-02"><div><div class="fc-day-number">2</div><div class="fc-day-content"><div style="deeppition: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-wed fc-widget-content fc-past" data-date="2015-06-03"><div><div class="fc-day-number">3</div><div class="fc-day-content"><div style="deeppition: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-thu fc-widget-content fc-past" data-date="2015-06-04"><div><div class="fc-day-number">4</div><div class="fc-day-content"><div style="deeppition: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-fri fc-widget-content fc-past" data-date="2015-06-05"><div><div class="fc-day-number">5</div><div class="fc-day-content"><div style="deeppition: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-sat fc-widget-content fc-past fc-last" data-date="2015-06-06"><div><div class="fc-day-number">6</div><div class="fc-day-content"><div style="deeppition: relative; height: 0px;">&nbsp;</div></div></div></td></tr><tr class="fc-week"><td class="fc-day fc-sun fc-widget-content fc-past fc-first" data-date="2015-06-07"><div style="min-height: 54px;"><div class="fc-day-number">7</div><div class="fc-day-content"><div style="deeppition: relative; height: 53px;">&nbsp;</div></div></div></td><td class="fc-day fc-mon fc-widget-content fc-past" data-date="2015-06-08"><div><div class="fc-day-number">8</div><div class="fc-day-content"><div style="deeppition: relative; height: 53px;">&nbsp;</div></div></div></td><td class="fc-day fc-tue fc-widget-content fc-past" data-date="2015-06-09"><div><div class="fc-day-number">9</div><div class="fc-day-content"><div style="deeppition: relative; height: 53px;">&nbsp;</div></div></div></td><td class="fc-day fc-wed fc-widget-content fc-past" data-date="2015-06-10"><div><div class="fc-day-number">10</div><div class="fc-day-content"><div style="deeppition: relative; height: 53px;">&nbsp;</div></div></div></td><td class="fc-day fc-thu fc-widget-content fc-past" data-date="2015-06-11"><div><div class="fc-day-number">11</div><div class="fc-day-content"><div style="deeppition: relative; height: 53px;">&nbsp;</div></div></div></td><td class="fc-day fc-fri fc-widget-content fc-past" data-date="2015-06-12"><div><div class="fc-day-number">12</div><div class="fc-day-content"><div style="deeppition: relative; height: 53px;">&nbsp;</div></div></div></td><td class="fc-day fc-sat fc-widget-content fc-past fc-last" data-date="2015-06-13"><div><div class="fc-day-number">13</div><div class="fc-day-content"><div style="deeppition: relative; height: 53px;">&nbsp;</div></div></div></td></tr><tr class="fc-week"><td class="fc-day fc-sun fc-widget-content fc-past fc-first" data-date="2015-06-14"><div style="min-height: 54px;"><div class="fc-day-number">14</div><div class="fc-day-content"><div style="deeppition: relative; height: 36px;">&nbsp;</div></div></div></td><td class="fc-day fc-mon fc-widget-content fc-today fc-state-highlight" data-date="2015-06-15"><div><div class="fc-day-number">15</div><div class="fc-day-content"><div style="deeppition: relative; height: 36px;">&nbsp;</div></div></div></td><td class="fc-day fc-tue fc-widget-content fc-future" data-date="2015-06-16"><div><div class="fc-day-number">16</div><div class="fc-day-content"><div style="deeppition: relative; height: 36px;">&nbsp;</div></div></div></td><td class="fc-day fc-wed fc-widget-content fc-future" data-date="2015-06-17"><div><div class="fc-day-number">17</div><div class="fc-day-content"><div style="deeppition: relative; height: 36px;">&nbsp;</div></div></div></td><td class="fc-day fc-thu fc-widget-content fc-future" data-date="2015-06-18"><div><div class="fc-day-number">18</div><div class="fc-day-content"><div style="deeppition: relative; height: 36px;">&nbsp;</div></div></div></td><td class="fc-day fc-fri fc-widget-content fc-future" data-date="2015-06-19"><div><div class="fc-day-number">19</div><div class="fc-day-content"><div style="deeppition: relative; height: 36px;">&nbsp;</div></div></div></td><td class="fc-day fc-sat fc-widget-content fc-future fc-last" data-date="2015-06-20"><div><div class="fc-day-number">20</div><div class="fc-day-content"><div style="deeppition: relative; height: 36px;">&nbsp;</div></div></div></td></tr><tr class="fc-week"><td class="fc-day fc-sun fc-widget-content fc-future fc-first" data-date="2015-06-21"><div style="min-height: 54px;"><div class="fc-day-number">21</div><div class="fc-day-content"><div style="deeppition: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-mon fc-widget-content fc-future" data-date="2015-06-22"><div><div class="fc-day-number">22</div><div class="fc-day-content"><div style="deeppition: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-tue fc-widget-content fc-future" data-date="2015-06-23"><div><div class="fc-day-number">23</div><div class="fc-day-content"><div style="deeppition: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-wed fc-widget-content fc-future" data-date="2015-06-24"><div><div class="fc-day-number">24</div><div class="fc-day-content"><div style="deeppition: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-thu fc-widget-content fc-future" data-date="2015-06-25"><div><div class="fc-day-number">25</div><div class="fc-day-content"><div style="deeppition: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-fri fc-widget-content fc-future" data-date="2015-06-26"><div><div class="fc-day-number">26</div><div class="fc-day-content"><div style="deeppition: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-sat fc-widget-content fc-future fc-last" data-date="2015-06-27"><div><div class="fc-day-number">27</div><div class="fc-day-content"><div style="deeppition: relative; height: 0px;">&nbsp;</div></div></div></td></tr><tr class="fc-week"><td class="fc-day fc-sun fc-widget-content fc-future fc-first" data-date="2015-06-28"><div style="min-height: 54px;"><div class="fc-day-number">28</div><div class="fc-day-content"><div style="deeppition: relative; height: 18px;">&nbsp;</div></div></div></td><td class="fc-day fc-mon fc-widget-content fc-future" data-date="2015-06-29"><div><div class="fc-day-number">29</div><div class="fc-day-content"><div style="deeppition: relative; height: 18px;">&nbsp;</div></div></div></td><td class="fc-day fc-tue fc-widget-content fc-future" data-date="2015-06-30"><div><div class="fc-day-number">30</div><div class="fc-day-content"><div style="deeppition: relative; height: 18px;">&nbsp;</div></div></div></td><td class="fc-day fc-wed fc-widget-content fc-other-month fc-future" data-date="2015-07-01"><div><div class="fc-day-number">1</div><div class="fc-day-content"><div style="deeppition: relative; height: 18px;">&nbsp;</div></div></div></td><td class="fc-day fc-thu fc-widget-content fc-other-month fc-future" data-date="2015-07-02"><div><div class="fc-day-number">2</div><div class="fc-day-content"><div style="deeppition: relative; height: 18px;">&nbsp;</div></div></div></td><td class="fc-day fc-fri fc-widget-content fc-other-month fc-future" data-date="2015-07-03"><div><div class="fc-day-number">3</div><div class="fc-day-content"><div style="deeppition: relative; height: 18px;">&nbsp;</div></div></div></td><td class="fc-day fc-sat fc-widget-content fc-other-month fc-future fc-last" data-date="2015-07-04"><div><div class="fc-day-number">4</div><div class="fc-day-content"><div style="deeppition: relative; height: 18px;">&nbsp;</div></div></div></td></tr><tr class="fc-week fc-last"><td class="fc-day fc-sun fc-widget-content fc-other-month fc-future fc-first" data-date="2015-07-05"><div style="min-height: 57px;"><div class="fc-day-number">5</div><div class="fc-day-content"><div style="deeppition: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-mon fc-widget-content fc-other-month fc-future" data-date="2015-07-06"><div><div class="fc-day-number">6</div><div class="fc-day-content"><div style="deeppition: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-tue fc-widget-content fc-other-month fc-future" data-date="2015-07-07"><div><div class="fc-day-number">7</div><div class="fc-day-content"><div style="deeppition: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-wed fc-widget-content fc-other-month fc-future" data-date="2015-07-08"><div><div class="fc-day-number">8</div><div class="fc-day-content"><div style="deeppition: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-thu fc-widget-content fc-other-month fc-future" data-date="2015-07-09"><div><div class="fc-day-number">9</div><div class="fc-day-content"><div style="deeppition: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-fri fc-widget-content fc-other-month fc-future" data-date="2015-07-10"><div><div class="fc-day-number">10</div><div class="fc-day-content"><div style="deeppition: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-sat fc-widget-content fc-other-month fc-future fc-last" data-date="2015-07-11"><div><div class="fc-day-number">11</div><div class="fc-day-content"><div style="deeppition: relative; height: 0px;">&nbsp;</div></div></div></td></tr></tbody></table></div></div></div>
+                    </div>
+                </div>
+            </div>*@
+        @*<div class="col-md-6">
+                <div class="panel panel-midnightblue">
+                    <div class="panel-heading">
+                        <h4>
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#threads" data-toggle="tab"><i class="fa fa-list visible-xs icon-scale"></i><span class="hidden-xs">Threads</span></a></li>
+                                <li><a href="#comments" data-toggle="tab"><i class="fa fa-comments visible-xs icon-scale"></i><span class="hidden-xs">Comments</span></a></li>
+                                <li><a href="#users" data-toggle="tab"><i class="fa fa-group visible-xs icon-scale"></i><span class="hidden-xs">Users</span></a></li>
+                            </ul>
+                        </h4>
+
+                    </div>
+                    <div class="panel-body">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="threads" tabindex="5000" style="overflow-y: hidden; outline: none;">
+                                <ul class="panel-threads">
+                                    <li>
+                                        <img src="assets/demo/avatar/aniss.png" alt="Aniss">
+                                        <div class="content">
+                                            <span class="time">20 mins</span>
+                                            <a href="#" class="title">Envato’s Most Wanted – $5,000 Reward for Music &amp; Band Themes and Templates</a>
+                                            <span class="thread">asked by <a href="#">Jim Gordon</a> in <a href="#">Section #3</a></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="assets/demo/avatar/corbett.png" alt="Corbett">
+                                        <div class="content">
+                                            <span class="time">2 hrs</span>
+                                            <a href="#" class="title">How to create a corporate wordpress theme?</a>
+                                            <span class="thread">asked by <a href="#">Simon Corbett</a> in <a href="#">Section #15</a></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="assets/demo/avatar/dangerfield.png" alt="Dangerfield">
+                                        <div class="content">
+                                            <span class="time">4 hrs</span>
+                                            <a href="#" class="title">Which cart is growing in popularity - WOOCOMMERCE or OPENCART? And which one would you choose?</a>
+                                            <span class="thread">asked by <a href="#">Jeff Dangerfield</a> in <a href="#">Section #9</a></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="assets/demo/avatar/doyle.png" alt="Doyle">
+                                        <div class="content">
+                                            <span class="time">13 hrs</span>
+                                            <a href="#" class="title">Pros and Cons of Using Grids in Responsive Web Design</a>
+                                            <span class="thread">asked by <a href="#">Alan Doyle</a> in <a href="#">Section #11</a></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="assets/demo/avatar/jackson.png" alt="Jackson">
+                                        <div class="content">
+                                            <span class="time">19 hrs</span>
+                                            <a href="#" class="title">Best Web &amp; Graphic Design Prodeeppal Software</a>
+                                            <span class="thread">asked by <a href="#">Eric Jackson</a> in <a href="#">Section #18</a></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="assets/demo/avatar/aniss.png" alt="Aniss">
+                                        <div class="content">
+                                            <span class="time">20 mins</span>
+                                            <a href="#" class="title">Envato’s Most Wanted – $5,000 Reward for Music &amp; Band Themes and Templates</a>
+                                            <span class="thread">asked by <a href="#">Jim Gordon</a> in <a href="#">Section #3</a></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="assets/demo/avatar/corbett.png" alt="Corbett">
+                                        <div class="content">
+                                            <span class="time">2 hrs</span>
+                                            <a href="#" class="title">How to create a corporate wordpress theme?</a>
+                                            <span class="thread">asked by <a href="#">Simon Corbett</a> in <a href="#">Section #15</a></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="assets/demo/avatar/dangerfield.png" alt="Dangerfield">
+                                        <div class="content">
+                                            <span class="time">4 hrs</span>
+                                            <a href="#" class="title">Which cart is growing in popularity - WOOCOMMERCE or OPENCART? And which one would you choose?</a>
+                                            <span class="thread">asked by <a href="#">Jeff Dangerfield</a> in <a href="#">Section #9</a></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="assets/demo/avatar/doyle.png" alt="Doyle">
+                                        <div class="content">
+                                            <span class="time">13 hrs</span>
+                                            <a href="#" class="title">Pros and Cons of Using Grids in Responsive Web Design</a>
+                                            <span class="thread">asked by <a href="#">Alan Doyle</a> in <a href="#">Section #11</a></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="assets/demo/avatar/jackson.png" alt="Jackson">
+                                        <div class="content">
+                                            <span class="time">19 hrs</span>
+                                            <a href="#" class="title">Best Web &amp; Graphic Design Prodeeppal Software</a>
+                                            <span class="thread">asked by <a href="#">Eric Jackson</a> in <a href="#">Section #18</a></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <a href="#" class="btn btn-default-alt btn-sm pull-right">Load More</a>
+                            </div>
+                            <div class="tab-pane" id="comments" tabindex="5001" style="overflow-y: hidden; outline: none;">
+                                <ul class="panel-comments">
+                                    <li>
+                                        <img src="assets/demo/avatar/aniss.png" alt="Aniss">
+                                        <div class="content">
+                                            <span class="actions"><div class="options"><div class="btn-group"><button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></div></div></span>
+                                            <span class="commented"><a href="#">Jim Gordon</a> commented on <a href="#">Article #121</a></span>
+                                            Just wondering - can random users see our comments? If so, allow them to comment!
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="assets/demo/avatar/corbett.png" alt="Corbett">
+                                        <div class="content">
+                                            <span class="actions"><div class="options"><div class="btn-group"><button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></div></div></span>
+                                            <span class="commented"><a href="#">Simon Corbett</a> commented on <a href="#">Article #55</a></span>
+                                            Not sure what changed but for the last few weeks a few of my regulars are having their comments held for moderation.
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="assets/demo/avatar/paton.png" alt="Corbett">
+                                        <div class="content">
+                                            <span class="actions"><div class="options"><div class="btn-group"><button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></div></div></span>
+                                            <span class="commented"><a href="#">Polly Paton</a> commented on <a href="#">Article #12</a></span>
+                                            I’m sure there is a tool for that.
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="assets/demo/avatar/watson.png" alt="Watson">
+                                        <div class="content">
+                                            <span class="actions"><div class="options"><div class="btn-group"><button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></div></div></span>
+                                            <span class="commented"><a href="#">Annie Watson</a> commented on <a href="#">Article #223</a></span>
+                                            We have enough problems with Spammers already without letting non members leave comments.
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="assets/demo/avatar/aniss.png" alt="Aniss">
+                                        <div class="content">
+                                            <span class="actions"><div class="options"><div class="btn-group"><button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></div></div></span>
+                                            <span class="commented"><a href="#">Jim Gordon</a> commented on <a href="#">Article #121</a></span>
+                                            Just wondering - can random users see our comments? If so, allow them to comment!
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="assets/demo/avatar/corbett.png" alt="Corbett">
+                                        <div class="content">
+                                            <span class="actions"><div class="options"><div class="btn-group"><button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></div></div></span>
+                                            <span class="commented"><a href="#">Simon Corbett</a> commented on <a href="#">Article #55</a></span>
+                                            Not sure what changed but for the last few weeks a few of my regulars are having their comments held for moderation.
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="assets/demo/avatar/paton.png" alt="Corbett">
+                                        <div class="content">
+                                            <span class="actions"><div class="options"><div class="btn-group"><button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></div></div></span>
+                                            <span class="commented"><a href="#">Polly Paton</a> commented on <a href="#">Article #12</a></span>
+                                            I’m sure there is a tool for that.
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="assets/demo/avatar/watson.png" alt="Watson">
+                                        <div class="content">
+                                            <span class="actions"><div class="options"><div class="btn-group"><button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></div></div></span>
+                                            <span class="commented"><a href="#">Annie Watson</a> commented on <a href="#">Article #223</a></span>
+                                            We have enough problems with Spammers already without letting non members leave comments.
+                                        </div>
+                                    </li>
+                                </ul>
+                                <a href="#" class="btn btn-default-alt btn-sm pull-right">Load More</a>
+                            </div>
+                            <div class="tab-pane" id="users" tabindex="5002" style="overflow-y: hidden; outline: none;">
+                                <ul class="panel-users">
+                                    <li>
+                                        <img src="assets/demo/avatar/paton.png" alt="Paton">
+                                        <div class="content">
+                                            <span class="time">11 mins</span>
+                                            <span class="desc"><a href="#">Polly Paton</a> followed <a href="#">John White</a></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="assets/demo/avatar/tennant.png" alt="Tennant">
+                                        <div class="content">
+                                            <span class="time">48 mins</span>
+                                            <span class="desc"><a href="#">David Tennant</a> unfollowed <a href="#">Tony Doubleday</a></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="assets/demo/avatar/jobs.png" alt="Jobs">
+                                        <div class="content">
+                                            <span class="time">5 hrs</span>
+                                            <span class="desc"><a href="#">Howard Jobs</a> commented on <a href="#">Selling PSD Template Rights!</a></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="assets/demo/avatar/dangerfield.png" alt="Dangerfield">
+                                        <div class="content">
+                                            <span class="time">6 hrs</span>
+                                            <span class="desc"><a href="#">Jeff Dangerfield</a> deeppted on <a href="#">Please help with Theme Design</a></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="assets/demo/avatar/aniss.png" alt="Aniss">
+                                        <div class="content">
+                                            <span class="time">22 hrs</span>
+                                            <span class="desc"><a href="#">Jim Gordon</a> followed <a href="#">Polly Paton</a></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="assets/demo/avatar/corbett.png" alt="Corbett">
+                                        <div class="content">
+                                            <span class="time">3 days</span>
+                                            <span class="desc"><a href="#">Simon Corbett</a> followed <a href="#">Anna Johansson</a></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="assets/demo/avatar/paton.png" alt="Paton">
+                                        <div class="content">
+                                            <span class="time">11 mins</span>
+                                            <span class="desc"><a href="#">Polly Paton</a> followed <a href="#">John White</a></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="assets/demo/avatar/tennant.png" alt="Tennant">
+                                        <div class="content">
+                                            <span class="time">48 mins</span>
+                                            <span class="desc"><a href="#">David Tennant</a> unfollowed <a href="#">Tony Doubleday</a></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="assets/demo/avatar/jobs.png" alt="Jobs">
+                                        <div class="content">
+                                            <span class="time">5 hrs</span>
+                                            <span class="desc"><a href="#">Howard Jobs</a> commented on <a href="#">Selling PSD Template Rights!</a></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="assets/demo/avatar/dangerfield.png" alt="Dangerfield">
+                                        <div class="content">
+                                            <span class="time">6 hrs</span>
+                                            <span class="desc"><a href="#">Jeff Dangerfield</a> deeppted on <a href="#">Please help with Theme Design</a></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="assets/demo/avatar/aniss.png" alt="Aniss">
+                                        <div class="content">
+                                            <span class="time">22 hrs</span>
+                                            <span class="desc"><a href="#">Jim Gordon</a> followed <a href="#">Polly Paton</a></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="assets/demo/avatar/corbett.png" alt="Corbett">
+                                        <div class="content">
+                                            <span class="time">3 days</span>
+                                            <span class="desc"><a href="#">Simon Corbett</a> followed <a href="#">Anna Johansson</a></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <a href="#" class="btn btn-default-alt btn-sm pull-right">Load More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+    </div>
+
+</div>

@@ -2,13 +2,13 @@
 using System.Linq;
 using System.Web;
 using Microsoft.Practices.Unity;
-using pnsms.Entities.Models;
-using pnsms.Entities.ViewModels;
-using pnsms.Entities.ViewModels.Employee;
-using pnsms.Entities.ViewModels.Student;
-using pnsms.Service;
-using pnsms.Service.ViewModels;
-using pnsms.erp.Attributes;
+using deepp.Entities.Models;
+using deepp.Entities.ViewModels;
+using deepp.Entities.ViewModels.Employee;
+using deepp.Entities.ViewModels.Student;
+using deepp.Service;
+using deepp.Service.ViewModels;
+using deepp.erp.Attributes;
 using Repository.Pattern.UnitOfWork;
 using System;
 using System.Collections.Generic;
@@ -17,7 +17,7 @@ using System.Net.Http;
 using System.Web.Http;
 using deepp.erp;
 
-namespace pnsms.erp.Api
+namespace deepp.erp.Api
 {
     /// <summary>
     /// 
@@ -136,13 +136,13 @@ namespace pnsms.erp.Api
         #endregion
 
         #region "  -  [  Others  ]  -  "
-        protected override void Dispose(bool disposing)
+        protected override void Dispose(bool disdeepping)
         {
-            if (disposing)
+            if (disdeepping)
             {
                 UnitOfWorkAsync.Dispose();
             }
-            base.Dispose(disposing);
+            base.Dispose(disdeepping);
         }
         #endregion
          

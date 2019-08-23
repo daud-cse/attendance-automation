@@ -130,7 +130,7 @@ body .fc { /* extra precedence to overcome jqui */
 /* icons in buttons */
 
 .fc button .fc-icon { /* non-theme */
-	position: relative;
+	deeppition: relative;
 	top: .05em; /* seems to be a good adjustment across browsers */
 	margin: 0 .1em;
 }
@@ -166,11 +166,11 @@ body .fc { /* extra precedence to overcome jqui */
 .fc-state-hover {
 	color: #333333;
 	text-decoration: none;
-	background-position: 0 -15px;
-	-webkit-transition: background-position 0.1s linear;
-	   -moz-transition: background-position 0.1s linear;
-	     -o-transition: background-position 0.1s linear;
-	        transition: background-position 0.1s linear;
+	background-deeppition: 0 -15px;
+	-webkit-transition: background-deeppition 0.1s linear;
+	   -moz-transition: background-deeppition 0.1s linear;
+	     -o-transition: background-deeppition 0.1s linear;
+	        transition: background-deeppition 0.1s linear;
 }
 
 .fc-state-down,
@@ -215,7 +215,7 @@ previous button's border...
 --------------------------------------------------------------------------------------------------*/
 
 .fc-popover {
-	position: absolute;
+	deeppition: absolute;
 	box-shadow: 0 2px 6px rgba(0,0,0,.15);
 }
 
@@ -279,7 +279,7 @@ previous button's border...
 .fc-highlight-skeleton,
 .fc-helper-skeleton {
 	/* these element should always cling to top-left/right corners */
-	position: absolute;
+	deeppition: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -350,7 +350,7 @@ previous button's border...
 --------------------------------------------------------------------------------------------------*/
 
 .fc-row {
-	position: relative;
+	deeppition: relative;
 }
 
 .fc-row .fc-bg {
@@ -378,7 +378,7 @@ temporary rendered events).
 */
 
 .fc-row .fc-content-skeleton {
-	position: relative;
+	deeppition: relative;
 	z-index: 3;
 	padding-bottom: 2px; /* matches the space above the events */
 }
@@ -413,9 +413,9 @@ temporary rendered events).
 }
 
 .fc-scroller > * { /* we expect an immediate inner element */
-	position: relative; /* re-scope all positions */
+	deeppition: relative; /* re-scope all deeppitions */
 	width: 100%; /* hack to force re-sizing this inner element when scrollbars appear/disappear */
-	overflow: hidden; /* don't let negative margins or absolute positioning create further scroll */
+	overflow: hidden; /* don't let negative margins or absolute deeppitioning create further scroll */
 }
 
 
@@ -423,7 +423,7 @@ temporary rendered events).
 --------------------------------------------------------------------------------------------------*/
 
 .fc-event {
-	position: relative; /* for resize handle and other inner positioning */
+	deeppition: relative; /* for resize handle and other inner deeppitioning */
 	display: block; /* make the <a> tag block */
 	font-size: .85em;
 	background-color: #fff;
@@ -486,7 +486,7 @@ be a descendant of the grid when it is being dragged.
 /* resize handle (outside of fc-content, so can go outside of bounds) */
 
 .fc-day-grid-event .fc-resizer {
-	position: absolute;
+	deeppition: absolute;
 	top: 0;
 	bottom: 0;
 	width: 7px;
@@ -578,7 +578,7 @@ a.fc-more:hover {
 /* button layering (for border precedence) */
 
 .fc-toolbar button {
-	position: relative;
+	deeppition: relative;
 }
 
 .fc-toolbar .fc-state-hover,
@@ -603,7 +603,7 @@ a.fc-more:hover {
 /* View Structure
 --------------------------------------------------------------------------------------------------*/
 
-/* undo twitter bootstrap's box-sizing rules. normalizes positioning techniques */
+/* undo twitter bootstrap's box-sizing rules. normalizes deeppitioning techniques */
 /* don't do this for the toolbar because we'll want bootstrap to style those buttons as some pt */
 .fc-view-container *,
 .fc-view-container *:before,
@@ -613,9 +613,9 @@ a.fc-more:hover {
 	        box-sizing: content-box;
 }
 
-.fc-view, /* scope positioning and z-index's for everything within the view */
+.fc-view, /* scope deeppitioning and z-index's for everything within the view */
 .fc-view > table { /* so dragged elements can be above the view's main element */
-	position: relative;
+	deeppition: relative;
 	z-index: 1;
 }
 
@@ -642,7 +642,7 @@ a.fc-more:hover {
 }
 
 .fc-row.fc-rigid .fc-content-skeleton {
-	position: absolute;
+	deeppition: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -691,7 +691,7 @@ a.fc-more:hover {
 --------------------------------------------------------------------------------------------------*/
 
 .fc-agenda-view .fc-day-grid {
-	position: relative;
+	deeppition: relative;
 	z-index: 2; /* so the "more.." popover will be over the time grid */
 }
 
@@ -731,8 +731,8 @@ a.fc-more:hover {
 --------------------------------------------------------------------------------------------------*/
 
 .fc-time-grid-container, /* so scroll container's z-index is below all-day */
-.fc-time-grid { /* so slats/bg/content/etc positions get scoped within here */
-	position: relative;
+.fc-time-grid { /* so slats/bg/content/etc deeppitions get scoped within here */
+	deeppition: relative;
 	z-index: 1;
 }
 
@@ -750,7 +750,7 @@ a.fc-more:hover {
 
 .fc-time-grid .fc-slats,
 .fc-time-grid > hr { /* the <hr> AgendaView injects when grid is shorter than scroller */
-	position: relative;
+	deeppition: relative;
 	z-index: 2;
 }
 
@@ -759,7 +759,7 @@ a.fc-more:hover {
 }
 
 .fc-time-grid .fc-content-skeleton {
-	position: absolute;
+	deeppition: absolute;
 	z-index: 4;
 	top: 0;
 	left: 0;
@@ -792,11 +792,11 @@ a.fc-more:hover {
 --------------------------------------------------------------------------------------------------*/
 
 .fc-time-grid .fc-highlight-container { /* a div within a cell within the fc-highlight-skeleton */
-	position: relative; /* scopes the left/right of the fc-highlight to be in the column */
+	deeppition: relative; /* scopes the left/right of the fc-highlight to be in the column */
 }
 
 .fc-time-grid .fc-highlight {
-	position: absolute;
+	deeppition: absolute;
 	left: 0;
 	right: 0;
 	/* top and bottom will be in by JS */
@@ -807,7 +807,7 @@ a.fc-more:hover {
 --------------------------------------------------------------------------------------------------*/
 
 .fc-time-grid .fc-event-container { /* a div within a cell within the fc-content-skeleton */
-	position: relative;
+	deeppition: relative;
 }
 
 .fc-ltr .fc-time-grid .fc-event-container { /* space on the sides of events for LTR (default) */
@@ -819,7 +819,7 @@ a.fc-more:hover {
 }
 
 .fc-time-grid .fc-event {
-	position: absolute;
+	deeppition: absolute;
 	z-index: 1; /* scope inner z-index's */
 }
 
@@ -855,7 +855,7 @@ be a descendant of the grid when it is being dragged.
 }
 
 .fc-time-grid-event > .fc-content { /* contains the time and title, but no bg and resizer */
-	position: relative;
+	deeppition: relative;
 	z-index: 2; /* above the bg */
 }
 
@@ -910,7 +910,7 @@ be a descendant of the grid when it is being dragged.
 /* resizer */
 
 .fc-time-grid-event .fc-resizer {
-	position: absolute;
+	deeppition: absolute;
 	z-index: 3; /* above content */
 	left: 0;
 	right: 0;

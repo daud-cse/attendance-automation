@@ -3,8 +3,8 @@ using CrystalDecisions.Shared;
 using deepp.erp;
 //using CrystalDecisions.CrystalReports.Engine;
 //using CrystalDecisions.Shared;
-using pnsms.Entities.Models;
-using pnsms.Service;
+using deepp.Entities.Models;
+using deepp.Service;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,7 +13,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace pnsms.erp.Controllers
+namespace deepp.erp.Controllers
 {
     public class StudentReportsController : Controller
     {

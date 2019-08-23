@@ -48,7 +48,7 @@ var $sanitizeMinErr = angular.$$minErr('$sanitize');
  *   The input is sanitized by parsing the HTML into tokens. All safe tokens (from a whitelist) are
  *   then serialized back to properly escaped html string. This means that no unsafe input can make
  *   it into the returned string, however, since our parser is more strict than a typical browser
- *   parser, it's possible that some obscure input, which would be recognized as valid HTML by a
+ *   parser, it's deeppsible that some obscure input, which would be recognized as valid HTML by a
  *   browser, won't make it through the sanitizer. The input may also contain SVG markup.
  *   The whitelist is configured using the functions `aHrefSanitizationWhitelist` and
  *   `imgSrcSanitizationWhitelist` of {@link ng.$compileProvider `$compileProvider`}.
@@ -232,13 +232,13 @@ var svgAttrs = makeMap('accent-height,accumulate,additive,alphabetic,arabic-form
     'font-size,font-stretch,font-style,font-variant,font-weight,from,fx,fy,g1,g2,glyph-name,'+
     'gradientUnits,hanging,height,horiz-adv-x,horiz-origin-x,ideographic,k,keyPoints,'+
     'keySplines,keyTimes,lang,marker-end,marker-mid,marker-start,markerHeight,markerUnits,'+
-    'markerWidth,mathematical,max,min,offset,opacity,orient,origin,overline-position,'+
+    'markerWidth,mathematical,max,min,offset,opacity,orient,origin,overline-deeppition,'+
     'overline-thickness,panose-1,path,pathLength,points,preserveAspectRatio,r,refX,refY,'+
     'repeatCount,repeatDur,requiredExtensions,requiredFeatures,restart,rotate,rx,ry,slope,stemh,'+
-    'stemv,stop-color,stop-opacity,strikethrough-position,strikethrough-thickness,stroke,'+
+    'stemv,stop-color,stop-opacity,strikethrough-deeppition,strikethrough-thickness,stroke,'+
     'stroke-dasharray,stroke-dashoffset,stroke-linecap,stroke-linejoin,stroke-miterlimit,'+
     'stroke-opacity,stroke-width,systemLanguage,target,text-anchor,to,transform,type,u1,u2,'+
-    'underline-position,underline-thickness,unicode,unicode-range,units-per-em,values,version,'+
+    'underline-deeppition,underline-thickness,unicode,unicode-range,units-per-em,values,version,'+
     'viewBox,visibility,width,widths,x,x-height,x1,x2,xlink:actuate,xlink:arcrole,xlink:role,'+
     'xlink:show,xlink:title,xlink:type,xml:base,xml:lang,xml:space,xmlns,xmlns:xlink,y,y1,y2,'+
     'zoomAndPan');
@@ -395,21 +395,21 @@ function htmlParser(html, handler) {
   }
 
   function parseEndTag(tag, tagName) {
-    var pos = 0, i;
+    var deepp = 0, i;
     tagName = angular.lowercase(tagName);
     if (tagName)
       // Find the closest opened tag of the same type
-      for (pos = stack.length - 1; pos >= 0; pos--)
-        if (stack[ pos ] == tagName)
+      for (deepp = stack.length - 1; deepp >= 0; deepp--)
+        if (stack[ deepp ] == tagName)
           break;
 
-    if (pos >= 0) {
+    if (deepp >= 0) {
       // Close all the open elements, up the stack
-      for (i = stack.length - 1; i >= pos; i--)
+      for (i = stack.length - 1; i >= deepp; i--)
         if (handler.end) handler.end(stack[ i ]);
 
       // Remove the open elements from the stack
-      stack.length = pos;
+      stack.length = deepp;
     }
   }
 }

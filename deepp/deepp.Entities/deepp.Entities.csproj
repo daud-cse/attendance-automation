@@ -1,0 +1,627 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{952C92DE-5526-460B-AD08-08C785286900}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>deepp.Entities</RootNamespace>
+    <AssemblyName>deepp.Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper">
+      <HintPath>..\pnsms.utility\ExternalDlls\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.SimpleCRUD">
+      <HintPath>..\pnsms.utility\ExternalDlls\Dapper.SimpleCRUD.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TextTemplating.Modeling.14.0, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AttendanceMachineModel\AttendanceExcel.cs" />
+    <Compile Include="AttendanceMachineModel\MachineInfo.cs" />
+    <Compile Include="AttendanceMachineModel\vmAttendanceExcel.cs" />
+    <Compile Include="AttendanceMachineModel\vmMachineInfo.cs" />
+    <Compile Include="ModelsExt\AcademicBranchesOfUserInfoMetadata.cs" />
+    <Compile Include="ModelsExt\AcademicBranchesOfUserInfo.cs" />
+    <Compile Include="ModelsExt\AcademicClassSectionMapping.cs" />
+    <Compile Include="ModelsExt\AcademicPeriod.cs" />
+    <Compile Include="ModelsExt\BankAccountInfo.cs" />
+    <Compile Include="ModelsExt\GlobalUser.cs" />
+    <Compile Include="ModelsExt\GlobalUserMetadata.cs" />
+    <Compile Include="ModelsExt\SubjectAcademicClassMapping.cs" />
+    <Compile Include="ModelsExt\VendorInfo.cs" />
+    <Compile Include="ModelsExt\Voucher.cs" />
+    <Compile Include="ModelsExt\VoucherDetail.cs" />
+    <Compile Include="ModelsExt\VoucherMetadata.cs" />
+    <Compile Include="ModelsExt\VoucherDetailMetadata.cs" />
+    <Compile Include="ModelsExt\AdmissionFormAddress.cs" />
+    <Compile Include="ModelsExt\AdmissionFormAddressMetadata.cs" />
+    <Compile Include="ModelsExt\AdmissionFormGuardian.cs" />
+    <Compile Include="ModelsExt\AdmissionFormGuardianMeatadata.cs" />
+    <Compile Include="ModelsExt\CertificatePrintType.cs" />
+    <Compile Include="ModelsExt\Address.cs" />
+    <Compile Include="ModelsExt\CertificatePrintTypeMetadata.cs" />
+    <Compile Include="ModelsExt\AddressMetadata.cs" />
+    <Compile Include="ModelsExt\AdmissionForm.cs" />
+    <Compile Include="ModelsExt\AdmissionFormMetadata.cs" />
+    <Compile Include="ModelsExt\AttendanceType.cs" />
+    <Compile Include="ModelsExt\AttendanceTypeMetadata.cs" />
+    <Compile Include="ModelsExt\CoCurricularActivitiesOfStudent.cs" />
+    <Compile Include="ModelsExt\CoCurricularActivitiesOfStudentMetadata.cs" />
+    <Compile Include="ModelsExt\Colour.cs" />
+    <Compile Include="ModelsExt\ColourMetadata.cs" />
+    <Compile Include="ModelsExt\ContactU.cs" />
+    <Compile Include="ModelsExt\ContactUMetadata.cs" />
+    <Compile Include="ModelsExt\CertificatePrint.cs" />
+    <Compile Include="ModelsExt\CertificatePrintMetadata.cs" />
+    <Compile Include="ModelsExt\Event.cs" />
+    <Compile Include="ModelsExt\Gallery.cs" />
+    <Compile Include="ModelsExt\GuardianOfStudentMetadata.cs" />
+    <Compile Include="ModelsExt\GuardianOfStudent.cs" />
+    <Compile Include="ModelsExt\Guardian.cs" />
+    <Compile Include="ModelsExt\GuardianMetadata.cs" />
+    <Compile Include="ModelsExt\Image.cs" />
+    <Compile Include="ModelsExt\MobilePayment.cs" />
+    <Compile Include="ModelsExt\MobilePaymentMetadata.cs" />
+    <Compile Include="ModelsExt\Notice.cs" />
+    <Compile Include="ModelsExt\ResultPublication.cs" />
+    <Compile Include="ModelsExt\NoticeType.cs" />
+    <Compile Include="ModelsExt\ResultPublicationMetadata.cs" />
+    <Compile Include="ModelsExt\NoticeTypeMetadata.cs" />
+    <Compile Include="ModelsExt\NotificationTag.cs" />
+    <Compile Include="ModelsExt\Role.cs" />
+    <Compile Include="ModelsExt\ScholarshipOfStudent.cs" />
+    <Compile Include="ModelsExt\ShortMessageDetail.cs" />
+    <Compile Include="ModelsExt\ShortMessageTemplate.cs" />
+    <Compile Include="ModelsExt\StudentAttendance.cs" />
+    <Compile Include="ModelsExt\StudentAttendanceDetail.cs" />
+    <Compile Include="ModelsExt\StudentAttendanceDetailMetadata.cs" />
+    <Compile Include="ModelsExt\StudentAttendanceMetadata.cs" />
+    <Compile Include="ModelsExt\StudentMetadata.cs" />
+    <Compile Include="ModelsExt\Student.cs" />
+    <Compile Include="ModelsExt\AcademicBranchUserMetadata.cs" />
+    <Compile Include="ModelsExt\AcademicBranch.cs" />
+    <Compile Include="ModelsExt\AcademicClassMetadata.cs" />
+    <Compile Include="ModelsExt\AcademicClass.cs" />
+    <Compile Include="ModelsExt\AcademicGroupMetadata.cs" />
+    <Compile Include="ModelsExt\AcademicGroup.cs" />
+    <Compile Include="ModelsExt\AcademicSectionMetadata.cs" />
+    <Compile Include="ModelsExt\AcademicSection.cs" />
+    <Compile Include="ModelsExt\AcademicSessionMetadata.cs" />
+    <Compile Include="ModelsExt\AcademicSession.cs" />
+    <Compile Include="ModelsExt\AcademicShiftMetadata.cs" />
+    <Compile Include="ModelsExt\AcademicShift.cs" />
+    <Compile Include="ModelsExt\AcademicVersionMetadata.cs" />
+    <Compile Include="ModelsExt\AcademicVersion.cs" />
+    <Compile Include="ModelsExt\AddressTypeMetadata.cs" />
+    <Compile Include="ModelsExt\AddressType.cs" />
+    <Compile Include="ModelsExt\BloodGroupMetadata.cs" />
+    <Compile Include="ModelsExt\BloodGroup.cs" />
+    <Compile Include="ModelsExt\CountryMetadata.cs" />
+    <Compile Include="ModelsExt\Country.cs" />
+    <Compile Include="ModelsExt\DepartmentMetadata.cs" />
+    <Compile Include="ModelsExt\Department.cs" />
+    <Compile Include="ModelsExt\DesignationMetadata.cs" />
+    <Compile Include="ModelsExt\Designation.cs" />
+    <Compile Include="ModelsExt\DistrictOrStateMetadata.cs" />
+    <Compile Include="ModelsExt\DistrictOrState.cs" />
+    <Compile Include="ModelsExt\EducationalQualificationMetadata.cs" />
+    <Compile Include="ModelsExt\EducationalQualification.cs" />
+    <Compile Include="ModelsExt\GenderMetadata.cs" />
+    <Compile Include="ModelsExt\Gender.cs" />
+    <Compile Include="ModelsExt\GuardianTypeMetadata.cs" />
+    <Compile Include="ModelsExt\GuardianType.cs" />
+    <Compile Include="ModelsExt\InstituteMetadata.cs" />
+    <Compile Include="ModelsExt\Institute.cs" />
+    <Compile Include="ModelsExt\MaritalStatusMetadata.cs" />
+    <Compile Include="ModelsExt\MaritalStatus.cs" />
+    <Compile Include="ModelsExt\NationalityMetadata.cs" />
+    <Compile Include="ModelsExt\Nationality.cs" />
+    <Compile Include="ModelsExt\PackageMetadata.cs" />
+    <Compile Include="ModelsExt\Package.cs" />
+    <Compile Include="ModelsExt\ProfessionMetadata.cs" />
+    <Compile Include="ModelsExt\Profession.cs" />
+    <Compile Include="ModelsExt\ReligionMetadata.cs" />
+    <Compile Include="ModelsExt\Religion.cs" />
+    <Compile Include="ModelsExt\Teacher.cs" />
+    <Compile Include="ModelsExt\TeacherMetadata.cs" />
+    <Compile Include="ModelsExt\Testimonial.cs" />
+    <Compile Include="ModelsExt\UserAttendance.cs" />
+    <Compile Include="ModelsExt\UserAttendanceDetail.cs" />
+    <Compile Include="ModelsExt\UserAttendanceDetailMetadata.cs" />
+    <Compile Include="ModelsExt\UserAttendanceMetadata.cs" />
+    <Compile Include="ModelsExt\UserInfo.cs" />
+    <Compile Include="ModelsExt\UserInfoMetadata.cs" />
+    <Compile Include="ModelsExt\Employee.cs" />
+    <Compile Include="ModelsExt\EmployeeMetadata.cs" />
+    <Compile Include="ModelsExt\UserInfoSecurity.cs" />
+    <Compile Include="ModelsExt\UserInfoSecurityMetadata.cs" />
+    <Compile Include="Models\AcademicBranch.cs" />
+    <Compile Include="Models\AcademicBranchesOfUserInfo.cs" />
+    <Compile Include="Models\AcademicCalendar.cs" />
+    <Compile Include="Models\AcademicClass.cs" />
+    <Compile Include="Models\AcademicClassSectionMapping.cs" />
+    <Compile Include="Models\AcademicGroup.cs" />
+    <Compile Include="Models\AcademicPeriod.cs" />
+    <Compile Include="Models\AcademicSection.cs" />
+    <Compile Include="Models\AcademicSession.cs" />
+    <Compile Include="Models\AcademicShift.cs" />
+    <Compile Include="Models\AcademicVersion.cs" />
+    <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\AddressType.cs" />
+    <Compile Include="Models\AdmissionForm.cs" />
+    <Compile Include="Models\AdmissionFormAddress.cs" />
+    <Compile Include="Models\AdmissionFormGuardian.cs" />
+    <Compile Include="Models\AttendanceConfiguration.cs" />
+    <Compile Include="Models\AttendanceType.cs" />
+    <Compile Include="Models\BankAccountInfo.cs" />
+    <Compile Include="Models\BankAccountType.cs" />
+    <Compile Include="Models\BloodGroup.cs" />
+    <Compile Include="Models\Building.cs" />
+    <Compile Include="Models\BuildingRoom.cs" />
+    <Compile Include="Models\CertificatePrint.cs" />
+    <Compile Include="Models\CertificatePrintType.cs" />
+    <Compile Include="Models\ChartOfAccount.cs" />
+    <Compile Include="Models\ClassSectionsTeacher.cs" />
+    <Compile Include="Models\CoCurricularActivitiesOfStudent.cs" />
+    <Compile Include="Models\CoCurricularActivity.cs" />
+    <Compile Include="Models\Colour.cs" />
+    <Compile Include="Models\ContactU.cs" />
+    <Compile Include="Models\Content.cs" />
+    <Compile Include="Models\ContentDetail.cs" />
+    <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\C_Migration.cs" />
+    <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\Designation.cs" />
+    <Compile Include="Models\Diary.cs" />
+    <Compile Include="Models\DistrictOrState.cs" />
+    <Compile Include="Models\Document.cs" />
+    <Compile Include="Models\DocumentType.cs" />
+    <Compile Include="Models\DynamicPage.cs" />
+    <Compile Include="Models\DynamicPageBody.cs" />
+    <Compile Include="Models\EducationalQualification.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\Exam.cs" />
+    <Compile Include="Models\ExamGrade.cs" />
+    <Compile Include="Models\ExamProcess.cs" />
+    <Compile Include="Models\ExamSubject.cs" />
+    <Compile Include="Models\ExamSubjectMark.cs" />
+    <Compile Include="Models\ExamType.cs" />
+    <Compile Include="Models\ExamTypeWiseTabulationSheetDetail.cs" />
+    <Compile Include="Models\ExamTypeWiseTabulationSheetMaster.cs" />
+    <Compile Include="Models\FeesAcademicClass.cs" />
+    <Compile Include="Models\FeesAutoGenerateConfig.cs" />
+    <Compile Include="Models\FeesAutoGenerateConfigDetail.cs" />
+    <Compile Include="Models\FeesAutoGenerateConfigType.cs" />
+    <Compile Include="Models\FeesBooth.cs" />
+    <Compile Include="Models\FeesCollection.cs" />
+    <Compile Include="Models\FeesCollectionAdvance.cs" />
+    <Compile Include="Models\FeesCollectionDetail.cs" />
+    <Compile Include="Models\FeesCollectionType.cs" />
+    <Compile Include="Models\FeesGenerate.cs" />
+    <Compile Include="Models\FeesGenerateAcademic.cs" />
+    <Compile Include="Models\FeesGenerateHead.cs" />
+    <Compile Include="Models\FeesGenerateStudent.cs" />
+    <Compile Include="Models\FeesGenerateStudentDetail.cs" />
+    <Compile Include="Models\FeesHead.cs" />
+    <Compile Include="Models\FeesType.cs" />
+    <Compile Include="Models\FMS_AccountingReportType.cs" />
+    <Compile Include="Models\FMS_GLAccount.cs" />
+    <Compile Include="Models\FMS_GLAccountMasterType.cs" />
+    <Compile Include="Models\FMS_GLAccountTemplate.cs" />
+    <Compile Include="Models\FMS_GLAccountType.cs" />
+    <Compile Include="Models\FMS_GLSubsidyTypeMap.cs" />
+    <Compile Include="Models\FMS_GLWiseOpponentsGL.cs" />
+    <Compile Include="Models\FMS_MonthlyLedgerSummary.cs" />
+    <Compile Include="Models\FMS_PaymentReceivedType.cs" />
+    <Compile Include="Models\FMS_RelatedAccount.cs" />
+    <Compile Include="Models\FMS_SubsidyAccount.cs" />
+    <Compile Include="Models\FMS_SubsidyType.cs" />
+    <Compile Include="Models\FMS_TransactionType.cs" />
+    <Compile Include="Models\Gallery.cs" />
+    <Compile Include="Models\Gender.cs" />
+    <Compile Include="Models\GlobalBloodGroup.cs" />
+    <Compile Include="Models\GlobalCoCurricularActivity.cs" />
+    <Compile Include="Models\GlobalCountry.cs" />
+    <Compile Include="Models\GlobalDistrict.cs" />
+    <Compile Include="Models\GlobalDivision.cs" />
+    <Compile Include="Models\GlobalEducationalQualification.cs" />
+    <Compile Include="Models\GlobalGender.cs" />
+    <Compile Include="Models\GlobalInstituteType.cs" />
+    <Compile Include="Models\GlobalProfession.cs" />
+    <Compile Include="Models\GlobalScholarship.cs" />
+    <Compile Include="Models\GlobalSubDistrict.cs" />
+    <Compile Include="Models\GlobalSubDistrictType.cs" />
+    <Compile Include="Models\GlobalUser.cs" />
+    <Compile Include="Models\GlobalUserType.cs" />
+    <Compile Include="Models\Governingbody.cs" />
+    <Compile Include="Models\Guardian.cs" />
+    <Compile Include="Models\GuardiansOfStudent.cs" />
+    <Compile Include="Models\GuardianType.cs" />
+    <Compile Include="Models\Image.cs" />
+    <Compile Include="Models\ImageType.cs" />
+    <Compile Include="Models\Institute.cs" />
+    <Compile Include="Models\InstituteSubject.cs" />
+    <Compile Include="Models\InstituteSubjectClass.cs" />
+    <Compile Include="Models\LeaveApplication.cs" />
+    <Compile Include="Models\LibraryBook.cs" />
+    <Compile Include="Models\LibraryBookAuthore.cs" />
+    <Compile Include="Models\LibraryBookAuthorOfBook.cs" />
+    <Compile Include="Models\Mapping\AcademicBranchesOfUserInfoMap.cs" />
+    <Compile Include="Models\Mapping\AcademicBranchMap.cs" />
+    <Compile Include="Models\Mapping\AcademicCalendarMap.cs" />
+    <Compile Include="Models\Mapping\AcademicClassMap.cs" />
+    <Compile Include="Models\Mapping\AcademicClassSectionMappingMap.cs" />
+    <Compile Include="Models\Mapping\AcademicGroupMap.cs" />
+    <Compile Include="Models\Mapping\AcademicPeriodMap.cs" />
+    <Compile Include="Models\Mapping\AcademicSectionMap.cs" />
+    <Compile Include="Models\Mapping\AcademicSessionMap.cs" />
+    <Compile Include="Models\Mapping\AcademicShiftMap.cs" />
+    <Compile Include="Models\Mapping\AcademicVersionMap.cs" />
+    <Compile Include="Models\Mapping\AddressMap.cs" />
+    <Compile Include="Models\Mapping\AddressTypeMap.cs" />
+    <Compile Include="Models\Mapping\AdmissionFormAddressMap.cs" />
+    <Compile Include="Models\Mapping\AdmissionFormGuardianMap.cs" />
+    <Compile Include="Models\Mapping\AdmissionFormMap.cs" />
+    <Compile Include="Models\Mapping\AttendanceConfigurationMap.cs" />
+    <Compile Include="Models\Mapping\AttendanceTypeMap.cs" />
+    <Compile Include="Models\Mapping\BankAccountInfoMap.cs" />
+    <Compile Include="Models\Mapping\BankAccountTypeMap.cs" />
+    <Compile Include="Models\Mapping\BloodGroupMap.cs" />
+    <Compile Include="Models\Mapping\BuildingMap.cs" />
+    <Compile Include="Models\Mapping\BuildingRoomMap.cs" />
+    <Compile Include="Models\Mapping\CertificatePrintMap.cs" />
+    <Compile Include="Models\Mapping\CertificatePrintTypeMap.cs" />
+    <Compile Include="Models\Mapping\ChartOfAccountMap.cs" />
+    <Compile Include="Models\Mapping\ClassSectionsTeacherMap.cs" />
+    <Compile Include="Models\Mapping\CoCurricularActivitiesOfStudentMap.cs" />
+    <Compile Include="Models\Mapping\CoCurricularActivityMap.cs" />
+    <Compile Include="Models\Mapping\ColourMap.cs" />
+    <Compile Include="Models\Mapping\ContactUMap.cs" />
+    <Compile Include="Models\Mapping\ContentDetailMap.cs" />
+    <Compile Include="Models\Mapping\ContentMap.cs" />
+    <Compile Include="Models\Mapping\CountryMap.cs" />
+    <Compile Include="Models\Mapping\C_MigrationMap.cs" />
+    <Compile Include="Models\Mapping\DepartmentMap.cs" />
+    <Compile Include="Models\Mapping\DesignationMap.cs" />
+    <Compile Include="Models\Mapping\DiaryMap.cs" />
+    <Compile Include="Models\Mapping\DistrictOrStateMap.cs" />
+    <Compile Include="Models\Mapping\DocumentMap.cs" />
+    <Compile Include="Models\Mapping\DocumentTypeMap.cs" />
+    <Compile Include="Models\Mapping\DynamicPageBodyMap.cs" />
+    <Compile Include="Models\Mapping\DynamicPageMap.cs" />
+    <Compile Include="Models\Mapping\EducationalQualificationMap.cs" />
+    <Compile Include="Models\Mapping\EmployeeMap.cs" />
+    <Compile Include="Models\Mapping\EventMap.cs" />
+    <Compile Include="Models\Mapping\ExamGradeMap.cs" />
+    <Compile Include="Models\Mapping\ExamMap.cs" />
+    <Compile Include="Models\Mapping\ExamProcessMap.cs" />
+    <Compile Include="Models\Mapping\ExamSubjectMap.cs" />
+    <Compile Include="Models\Mapping\ExamSubjectMarkMap.cs" />
+    <Compile Include="Models\Mapping\ExamTypeMap.cs" />
+    <Compile Include="Models\Mapping\ExamTypeWiseTabulationSheetDetailMap.cs" />
+    <Compile Include="Models\Mapping\ExamTypeWiseTabulationSheetMasterMap.cs" />
+    <Compile Include="Models\Mapping\FeesAcademicClassMap.cs" />
+    <Compile Include="Models\Mapping\FeesAutoGenerateConfigDetailMap.cs" />
+    <Compile Include="Models\Mapping\FeesAutoGenerateConfigMap.cs" />
+    <Compile Include="Models\Mapping\FeesAutoGenerateConfigTypeMap.cs" />
+    <Compile Include="Models\Mapping\FeesBoothMap.cs" />
+    <Compile Include="Models\Mapping\FeesCollectionAdvanceMap.cs" />
+    <Compile Include="Models\Mapping\FeesCollectionDetailMap.cs" />
+    <Compile Include="Models\Mapping\FeesCollectionMap.cs" />
+    <Compile Include="Models\Mapping\FeesCollectionTypeMap.cs" />
+    <Compile Include="Models\Mapping\FeesGenerateAcademicMap.cs" />
+    <Compile Include="Models\Mapping\FeesGenerateHeadMap.cs" />
+    <Compile Include="Models\Mapping\FeesGenerateMap.cs" />
+    <Compile Include="Models\Mapping\FeesGenerateStudentDetailMap.cs" />
+    <Compile Include="Models\Mapping\FeesGenerateStudentMap.cs" />
+    <Compile Include="Models\Mapping\FeesHeadMap.cs" />
+    <Compile Include="Models\Mapping\FeesTypeMap.cs" />
+    <Compile Include="Models\Mapping\FMS_AccountingReportTypeMap.cs" />
+    <Compile Include="Models\Mapping\FMS_GLAccountMap.cs" />
+    <Compile Include="Models\Mapping\FMS_GLAccountMasterTypeMap.cs" />
+    <Compile Include="Models\Mapping\FMS_GLAccountTemplateMap.cs" />
+    <Compile Include="Models\Mapping\FMS_GLAccountTypeMap.cs" />
+    <Compile Include="Models\Mapping\FMS_GLSubsidyTypeMapMap.cs" />
+    <Compile Include="Models\Mapping\FMS_GLWiseOpponentsGLMap.cs" />
+    <Compile Include="Models\Mapping\FMS_MonthlyLedgerSummaryMap.cs" />
+    <Compile Include="Models\Mapping\FMS_PaymentReceivedTypeMap.cs" />
+    <Compile Include="Models\Mapping\FMS_RelatedAccountMap.cs" />
+    <Compile Include="Models\Mapping\FMS_SubsidyAccountMap.cs" />
+    <Compile Include="Models\Mapping\FMS_SubsidyTypeMap.cs" />
+    <Compile Include="Models\Mapping\FMS_TransactionTypeMap.cs" />
+    <Compile Include="Models\Mapping\GalleryMap.cs" />
+    <Compile Include="Models\Mapping\GenderMap.cs" />
+    <Compile Include="Models\Mapping\GlobalBloodGroupMap.cs" />
+    <Compile Include="Models\Mapping\GlobalCoCurricularActivityMap.cs" />
+    <Compile Include="Models\Mapping\GlobalCountryMap.cs" />
+    <Compile Include="Models\Mapping\GlobalDistrictMap.cs" />
+    <Compile Include="Models\Mapping\GlobalDivisionMap.cs" />
+    <Compile Include="Models\Mapping\GlobalEducationalQualificationMap.cs" />
+    <Compile Include="Models\Mapping\GlobalGenderMap.cs" />
+    <Compile Include="Models\Mapping\GlobalInstituteTypeMap.cs" />
+    <Compile Include="Models\Mapping\GlobalProfessionMap.cs" />
+    <Compile Include="Models\Mapping\GlobalScholarshipMap.cs" />
+    <Compile Include="Models\Mapping\GlobalSubDistrictMap.cs" />
+    <Compile Include="Models\Mapping\GlobalSubDistrictTypeMap.cs" />
+    <Compile Include="Models\Mapping\GlobalUserMap.cs" />
+    <Compile Include="Models\Mapping\GlobalUserTypeMap.cs" />
+    <Compile Include="Models\Mapping\GoverningbodyMap.cs" />
+    <Compile Include="Models\Mapping\GuardianMap.cs" />
+    <Compile Include="Models\Mapping\GuardiansOfStudentMap.cs" />
+    <Compile Include="Models\Mapping\GuardianTypeMap.cs" />
+    <Compile Include="Models\Mapping\ImageMap.cs" />
+    <Compile Include="Models\Mapping\ImageTypeMap.cs" />
+    <Compile Include="Models\Mapping\InstituteMap.cs" />
+    <Compile Include="Models\Mapping\InstituteSubjectClassMap.cs" />
+    <Compile Include="Models\Mapping\InstituteSubjectMap.cs" />
+    <Compile Include="Models\Mapping\LeaveApplicationMap.cs" />
+    <Compile Include="Models\Mapping\LibraryBookAuthoreMap.cs" />
+    <Compile Include="Models\Mapping\LibraryBookAuthorOfBookMap.cs" />
+    <Compile Include="Models\Mapping\LibraryBookMap.cs" />
+    <Compile Include="Models\Mapping\MaritalStatusMap.cs" />
+    <Compile Include="Models\Mapping\MessageTagGroupMap.cs" />
+    <Compile Include="Models\Mapping\MessageTagMap.cs" />
+    <Compile Include="Models\Mapping\MobilePaymentMap.cs" />
+    <Compile Include="Models\Mapping\NationalityMap.cs" />
+    <Compile Include="Models\Mapping\NoticeMap.cs" />
+    <Compile Include="Models\Mapping\NoticeTypeMap.cs" />
+    <Compile Include="Models\Mapping\NotificationTagGroupMap.cs" />
+    <Compile Include="Models\Mapping\NotificationTagMap.cs" />
+    <Compile Include="Models\Mapping\PackageMap.cs" />
+    <Compile Include="Models\Mapping\PaymentTypeMap.cs" />
+    <Compile Include="Models\Mapping\ProfessionMap.cs" />
+    <Compile Include="Models\Mapping\QryRightsOfUserInfoMap.cs" />
+    <Compile Include="Models\Mapping\QryStudentAttendanceDetailMap.cs" />
+    <Compile Include="Models\Mapping\ReligionMap.cs" />
+    <Compile Include="Models\Mapping\ResultPublicationMap.cs" />
+    <Compile Include="Models\Mapping\RightMap.cs" />
+    <Compile Include="Models\Mapping\RightsOfPackageMap.cs" />
+    <Compile Include="Models\Mapping\RightsOfRoleMap.cs" />
+    <Compile Include="Models\Mapping\RoleMap.cs" />
+    <Compile Include="Models\Mapping\RolesOfUserInfoMap.cs" />
+    <Compile Include="Models\Mapping\RoutineDetailMap.cs" />
+    <Compile Include="Models\Mapping\RoutineMap.cs" />
+    <Compile Include="Models\Mapping\RoutineNoteMap.cs" />
+    <Compile Include="Models\Mapping\RoutinePeriodMap.cs" />
+    <Compile Include="Models\Mapping\RoutinePeriodTypeMap.cs" />
+    <Compile Include="Models\Mapping\ScholarshipMap.cs" />
+    <Compile Include="Models\Mapping\ScholarshipOfStudentMap.cs" />
+    <Compile Include="Models\Mapping\ShortMessageDetailMap.cs" />
+    <Compile Include="Models\Mapping\ShortMessageMap.cs" />
+    <Compile Include="Models\Mapping\ShortMessageStatusMap.cs" />
+    <Compile Include="Models\Mapping\ShortMessageTemplateMap.cs" />
+    <Compile Include="Models\Mapping\SiblingMap.cs" />
+    <Compile Include="Models\Mapping\SSOMap.cs" />
+    <Compile Include="Models\Mapping\StudentAttendanceDetailMap.cs" />
+    <Compile Include="Models\Mapping\StudentAttendanceMap.cs" />
+    <Compile Include="Models\Mapping\StudentMap.cs" />
+    <Compile Include="Models\Mapping\SubjectAcademicClassMappingMap.cs" />
+    <Compile Include="Models\Mapping\SubjectAcademicClassMappingSubjectTypeMap.cs" />
+    <Compile Include="Models\Mapping\SubjectGroupMap.cs" />
+    <Compile Include="Models\Mapping\SubjectMap.cs" />
+    <Compile Include="Models\Mapping\SubjectStudentMappingMap.cs" />
+    <Compile Include="Models\Mapping\SubjectTypeMap.cs" />
+    <Compile Include="Models\Mapping\sysdiagramMap.cs" />
+    <Compile Include="Models\Mapping\TagMap.cs" />
+    <Compile Include="Models\Mapping\TeacherMap.cs" />
+    <Compile Include="Models\Mapping\TeacherSubjectAcademicMappingMap.cs" />
+    <Compile Include="Models\Mapping\TestimonialMap.cs" />
+    <Compile Include="Models\Mapping\UserAttendanceDetailMap.cs" />
+    <Compile Include="Models\Mapping\UserAttendanceMap.cs" />
+    <Compile Include="Models\Mapping\UserInfoMap.cs" />
+    <Compile Include="Models\Mapping\UserInfoSecurityMap.cs" />
+    <Compile Include="Models\Mapping\UserInfoTypeMap.cs" />
+    <Compile Include="Models\Mapping\VendorInfoMap.cs" />
+    <Compile Include="Models\Mapping\VendorTypeMap.cs" />
+    <Compile Include="Models\Mapping\VisitorCountMap.cs" />
+    <Compile Include="Models\Mapping\VoucherDetailMap.cs" />
+    <Compile Include="Models\Mapping\VoucherMap.cs" />
+    <Compile Include="Models\Mapping\WeekDayMap.cs" />
+    <Compile Include="Models\MaritalStatus.cs" />
+    <Compile Include="Models\MessageTag.cs" />
+    <Compile Include="Models\MessageTagGroup.cs" />
+    <Compile Include="Models\MobilePayment.cs" />
+    <Compile Include="Models\Nationality.cs" />
+    <Compile Include="Models\Notice.cs" />
+    <Compile Include="Models\NoticeType.cs" />
+    <Compile Include="Models\NotificationTag.cs" />
+    <Compile Include="Models\NotificationTagGroup.cs" />
+    <Compile Include="Models\Package.cs" />
+    <Compile Include="Models\PaymentType.cs" />
+    <Compile Include="Models\PNSMSContext.cs" />
+    <Compile Include="Models\Profession.cs" />
+    <Compile Include="Models\QryRightsOfUserInfo.cs" />
+    <Compile Include="Models\QryStudentAttendanceDetail.cs" />
+    <Compile Include="Models\Religion.cs" />
+    <Compile Include="Models\ResultPublication.cs" />
+    <Compile Include="Models\Right.cs" />
+    <Compile Include="Models\RightsOfPackage.cs" />
+    <Compile Include="Models\RightsOfRole.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\RolesOfUserInfo.cs" />
+    <Compile Include="Models\Routine.cs" />
+    <Compile Include="Models\RoutineDetail.cs" />
+    <Compile Include="Models\RoutineNote.cs" />
+    <Compile Include="Models\RoutinePeriod.cs" />
+    <Compile Include="Models\RoutinePeriodType.cs" />
+    <Compile Include="Models\Scholarship.cs" />
+    <Compile Include="Models\ScholarshipOfStudent.cs" />
+    <Compile Include="Models\ShortMessage.cs" />
+    <Compile Include="Models\ShortMessageDetail.cs" />
+    <Compile Include="Models\ShortMessageStatus.cs" />
+    <Compile Include="Models\ShortMessageTemplate.cs" />
+    <Compile Include="Models\Sibling.cs" />
+    <Compile Include="Models\SSO.cs" />
+    <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\StudentAttendance.cs" />
+    <Compile Include="Models\StudentAttendanceDetail.cs" />
+    <Compile Include="Models\Subject.cs" />
+    <Compile Include="Models\SubjectAcademicClassMapping.cs" />
+    <Compile Include="Models\SubjectAcademicClassMappingSubjectType.cs" />
+    <Compile Include="Models\SubjectGroup.cs" />
+    <Compile Include="Models\SubjectStudentMapping.cs" />
+    <Compile Include="Models\SubjectType.cs" />
+    <Compile Include="Models\sysdiagram.cs" />
+    <Compile Include="Models\Tag.cs" />
+    <Compile Include="Models\Teacher.cs" />
+    <Compile Include="Models\TeacherSubjectAcademicMapping.cs" />
+    <Compile Include="Models\Testimonial.cs" />
+    <Compile Include="Models\UserAttendance.cs" />
+    <Compile Include="Models\UserAttendanceDetail.cs" />
+    <Compile Include="Models\UserInfo.cs" />
+    <Compile Include="Models\UserInfoSecurity.cs" />
+    <Compile Include="Models\UserInfoType.cs" />
+    <Compile Include="Models\VendorInfo.cs" />
+    <Compile Include="Models\VendorType.cs" />
+    <Compile Include="Models\VisitorCount.cs" />
+    <Compile Include="Models\Voucher.cs" />
+    <Compile Include="Models\VoucherDetail.cs" />
+    <Compile Include="Models\WeekDay.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResponseModel\SynStudentAttendanceReponseModel.cs" />
+    <Compile Include="StoredProcedures\Models\AttendanceDataSynInfo.cs" />
+    <Compile Include="StoredProcedures\Models\AttendanceSummary.cs" />
+    <Compile Include="StoredProcedures\Models\ClassWiseStudent.cs" />
+    <Compile Include="StoredProcedures\Models\GlobalHeadmasterList.cs" />
+    <Compile Include="StoredProcedures\Models\InstituteTotalInfo.cs" />
+    <Compile Include="StoredProcedures\Models\MaleFemaleRatio.cs" />
+    <Compile Include="StoredProcedures\Models\MaleFemaleRatioGlobal.cs" />
+    <Compile Include="StoredProcedures\Models\MaleFemaleRatioInstituteWise.cs" />
+    <Compile Include="StoredProcedures\Models\ResultRatio.cs" />
+    <Compile Include="StoredProcedures\Models\RightsDetails.cs" />
+    <Compile Include="StoredProcedures\Models\SprGetRights_Result.cs" />
+    <Compile Include="StoredProcedures\Models\Test.cs" />
+    <Compile Include="StoredProcedures\Models\UserInfoDetails.cs" />
+    <Compile Include="StoredProcedures\Models\VmAttendanceDataSynInfo.cs" />
+    <Compile Include="StoredProcedures\Models\VmInstitute.cs" />
+    <Compile Include="StoredProcedures\Models\VmUserInfo.cs" />
+    <Compile Include="StoredProcedures\Models\VmUserInfoDetails.cs" />
+    <Compile Include="StoredProcedures\PNSMSContext.cs" />
+    <Compile Include="StoredProcedures\IStoredProcedures.cs" />
+    <Compile Include="StoredProcedures\Models\SprPartners_Result.cs" />
+    <Compile Include="StoredProcedures\Models\TTProduct.cs" />
+    <Compile Include="StoredProcedures\spStudentAttendance.cs" />
+    <Compile Include="ViewModels\Attendance\TakeAttendance.cs" />
+    <Compile Include="ViewModels\Attendance\vmStudentAttendance.cs" />
+    <Compile Include="ViewModels\DashBoard\VMInstituteDashBoard.cs" />
+    <Compile Include="ViewModels\GlobalUsers\VmGlobalUsers.cs" />
+    <Compile Include="ViewModels\GlobalUsers\VmGlobalUsersDetails.cs" />
+    <Compile Include="ViewModels\Institutes\VmAcademicClass.cs" />
+    <Compile Include="ViewModels\Student\StudentInfo.cs" />
+    <Compile Include="ViewModels\VmAutoComplete.cs" />
+    <Compile Include="ViewModels\VmCommonSearch.cs" />
+    <Compile Include="ViewModels\VmDashboard.cs" />
+    <Compile Include="ViewModels\DashBoard\Dashboard.cs" />
+    <Compile Include="ViewModels\DashBoard\DashboardHeader.cs" />
+    <Compile Include="ViewModels\DashBoard\MaleFemaleRatio.cs" />
+    <Compile Include="ViewModels\Employee\VmEmployeeDetails.cs" />
+    <Compile Include="ViewModels\Portal\VMportal.cs" />
+    <Compile Include="ViewModels\Teacher\VmTeacherDetails.cs" />
+    <Compile Include="ViewModels\Employee\VmEmployee.cs" />
+    <Compile Include="ViewModels\VmVoucher.cs" />
+    <Compile Include="ViewModels\VmFeesGenerate.cs" />
+    <Compile Include="ViewModels\VmLanding.cs" />
+    <Compile Include="ViewModels\VmSearch.cs" />
+    <Compile Include="ViewModels\VmSearchAttendance.cs" />
+    <Compile Include="ViewModels\Student\VmStudent.cs" />
+    <Compile Include="ViewModels\VmOnlineAdmission.cs" />
+    <Compile Include="ViewModels\VmUserAttendance.cs" />
+    <Compile Include="ViewModels\VmStudentAttendance.cs" />
+    <Compile Include="ViewModels\Student\VmStudentDetails.cs" />
+    <Compile Include="ViewModels\Teacher\VmTeacher.cs" />
+    <Compile Include="ViewModels\VmUserInfoSecurity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Source\Repository.Pattern.Ef6\Repository.Pattern.Ef6.csproj">
+      <Project>{f68a1d19-93fb-47c1-a22b-42bea3e4fd8c}</Project>
+      <Name>Repository.Pattern.Ef6</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Repository.Pattern\Repository.Pattern.csproj">
+      <Project>{6e682a14-c872-4813-b620-76e108dea683}</Project>
+      <Name>Repository.Pattern</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="CodeTemplates\ReverseEngineerCodeFirst\Context.tt" />
+    <Content Include="CodeTemplates\ReverseEngineerCodeFirst\Entity.tt" />
+    <Content Include="CodeTemplates\ReverseEngineerCodeFirst\Mapping.tt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

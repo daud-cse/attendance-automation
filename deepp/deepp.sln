@@ -7,11 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "deepp.erp", "deepp.erp\deep
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frameworks", "Frameworks", "{9F6DF314-275E-47B7-9204-2B0E779B2660}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pnsms.Entities", "pnsms.Entities\pnsms.Entities.csproj", "{952C92DE-5526-460B-AD08-08C785286900}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "deepp.Entities", "deepp.Entities\deepp.Entities.csproj", "{952C92DE-5526-460B-AD08-08C785286900}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pnsms.Repository", "pnsms.Repository\pnsms.Repository.csproj", "{863A3A33-4042-4385-B591-2BC2E41B245A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "deepp.Repository", "deepp.Repository\deepp.Repository.csproj", "{863A3A33-4042-4385-B591-2BC2E41B245A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pnsms.Service", "pnsms.Service\pnsms.Service.csproj", "{7295DE19-BB4A-4DBE-9D12-4297BD9B2A5C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "deepp.Service", "deepp.Service\deepp.Service.csproj", "{7295DE19-BB4A-4DBE-9D12-4297BD9B2A5C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{ACEFE83C-BCF9-4286-A49E-9ED9A6311B7B}"
 	ProjectSection(SolutionItems) = preProject
@@ -24,23 +24,23 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Pattern", "..\So
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Pattern", "..\Source\Service.Pattern\Service.Pattern.csproj", "{86F86650-EE3C-4372-8FEC-40C2FE015022}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pnsms.landing", "pnsms.landing\pnsms.landing.csproj", "{4EDEF497-BB12-40C9-9DAC-5ED9902E4C45}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "deepp.landing", "deepp.landing\deepp.landing.csproj", "{4EDEF497-BB12-40C9-9DAC-5ED9902E4C45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pnsms.utility", "pnsms.utility\pnsms.utility.csproj", "{F648B7D9-8A4F-4DE6-91E7-3FE9AC7E13A8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "deepp.utility", "deepp.utility\deepp.utility.csproj", "{F648B7D9-8A4F-4DE6-91E7-3FE9AC7E13A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pnsms.portal", "pnsms.portal\pnsms.portal.csproj", "{221DD804-6E60-4D06-B36F-BBC537B7B442}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "deepp.portal", "deepp.portal\deepp.portal.csproj", "{221DD804-6E60-4D06-B36F-BBC537B7B442}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pnsms.SmsEmailService", "pnsms.SmsEmailService\pnsms.SmsEmailService.csproj", "{55E4944B-07E8-4B56-8F25-E0D304A2B4E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "deepp.SmsEmailService", "deepp.SmsEmailService\deepp.SmsEmailService.csproj", "{55E4944B-07E8-4B56-8F25-E0D304A2B4E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sfa.Api", "sfa.Api\sfa.Api.csproj", "{BC0DF215-0540-439B-9CCC-270C6E56E1F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "deepp.Api", "deepp.Api\deepp.Api.csproj", "{BC0DF215-0540-439B-9CCC-270C6E56E1F7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Pattern.Ef6", "..\Source\Repository.Pattern.Ef6\Repository.Pattern.Ef6.csproj", "{F68A1D19-93FB-47C1-A22B-42BEA3E4FD8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sfa.website", "sfa.website\sfa.website.csproj", "{8D374D96-BDF8-4A73-9EC2-498564C0442D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "deepp.website", "deepp.website\deepp.website.csproj", "{8D374D96-BDF8-4A73-9EC2-498564C0442D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sfa.AttendanceWindowsService", "sfa.WindowsService\sfa.AttendanceWindowsService.csproj", "{258F3464-7A09-475E-9BE6-5E771198B7F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "deepp.AttendanceWindowsService", "deepp.WindowsService\deepp.AttendanceWindowsService.csproj", "{258F3464-7A09-475E-9BE6-5E771198B7F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pos.attendance", "sfa.attendance\pos.attendance.csproj", "{8289D5D0-D505-4B81-B6B9-D57D05771F71}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "deepp.attendance", "deepp.attendance\deepp.attendance.csproj", "{8289D5D0-D505-4B81-B6B9-D57D05771F71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -37,7 +37,7 @@
 .fc-row:hover,
 .fc-row:focus,
 .fc-row:active{
-	position: relative;
+	deeppition: relative;
 	z-index: 1000;
 }
 
@@ -67,7 +67,7 @@
 }
 
 .fc-event-inner{
-	position: relative;
+	deeppition: relative;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
@@ -78,7 +78,7 @@
 
 .fc-overlay{
 	display: none;
-	position: absolute;
+	deeppition: absolute;
 	min-width: 300px;
 	padding: 17px 0;
 	top: auto;

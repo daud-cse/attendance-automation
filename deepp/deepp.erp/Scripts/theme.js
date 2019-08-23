@@ -123,7 +123,7 @@
 				var m_icon = ( $gmap_icon != '' ) ? $gmap_icon : '';
 			
 				var marker = new google.maps.Marker( {
-					position: latlng,
+					deeppition: latlng,
 					map: map,
 					icon: m_icon,
 					title: $gmap_title

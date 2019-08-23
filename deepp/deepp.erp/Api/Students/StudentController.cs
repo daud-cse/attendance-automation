@@ -3,12 +3,12 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Linq;
 using System.Runtime.InteropServices;
-using pnsms.Entities.Models;
-using pnsms.Entities.ViewModels.Student;
-using pnsms.Service;
-using pnsms.Service.ViewModels;
-using pnsms.erp.Attributes;
-using pnsms.utility.Resource;
+using deepp.Entities.Models;
+using deepp.Entities.ViewModels.Student;
+using deepp.Service;
+using deepp.Service.ViewModels;
+using deepp.erp.Attributes;
+using deepp.utility.Resource;
 using Repository.Pattern.UnitOfWork;
 using System;
 using System.Collections.Generic;
@@ -17,7 +17,7 @@ using System.Net.Http;
 using System.Web.Http;
 using deepp.erp;
 
-namespace pnsms.erp.Api.Students
+namespace deepp.erp.Api.Students
 {
     /// <summary>
     /// Student Controller
@@ -191,13 +191,13 @@ namespace pnsms.erp.Api.Students
             var student = _studentService.NewStudent(Sessions.InstituteId, Sessions.UserId,0);
             return student;
         }
-        protected override void Dispose(bool disposing)
+        protected override void Dispose(bool disdeepping)
         {
-            if (disposing)
+            if (disdeepping)
             {
                 _unitOfWorkAsync.Dispose();
             }
-            base.Dispose(disposing);
+            base.Dispose(disdeepping);
         }
      
         #endregion

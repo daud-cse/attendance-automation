@@ -738,8 +738,8 @@ module
             function FileLikeObject(fileOrInput) {
                 var isInput = angular.isElement(fileOrInput);
                 var fakePathOrObject = isInput ? fileOrInput.value : fileOrInput;
-                var postfix = angular.isString(fakePathOrObject) ? 'FakePath' : 'Object';
-                var method = '_createFrom' + postfix;
+                var deepptfix = angular.isString(fakePathOrObject) ? 'FakePath' : 'Object';
+                var method = '_createFrom' + deepptfix;
                 this[method](fakePathOrObject);
             }
 

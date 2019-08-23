@@ -1,7 +1,7 @@
-﻿using pnsms.Entities.AttendanceMachineModel;
-using pnsms.Entities.Models;
-using pnsms.Entities.ViewModels;
-using pnsms.Service.ViewModels;
+﻿using deepp.Entities.AttendanceMachineModel;
+using deepp.Entities.Models;
+using deepp.Entities.ViewModels;
+using deepp.Service.ViewModels;
 using Repository.Pattern.UnitOfWork;
 using System;
 using System.Collections.Generic;
@@ -11,12 +11,12 @@ using System.Net.Http;
 using System.Web;
 using System.Web.Http;
 using System.IO;
-using DocumentStaticData = pnsms.utility.StaticData.Document;
+using DocumentStaticData = deepp.utility.StaticData.Document;
 using System.Reflection;
 using System.Configuration;
 using deepp.erp;
 
-namespace pnsms.erp.Api.Attendance
+namespace deepp.erp.Api.Attendance
 {
     public class AttendanceDataUploadController : ApiController
     {

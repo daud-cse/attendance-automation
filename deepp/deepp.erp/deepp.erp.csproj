@@ -1204,21 +1204,21 @@
       <Project>{86f86650-ee3c-4372-8fec-40c2fe015022}</Project>
       <Name>Service.Pattern</Name>
     </ProjectReference>
-    <ProjectReference Include="..\pnsms.Entities\pnsms.Entities.csproj">
+    <ProjectReference Include="..\deepp.Entities\deepp.Entities.csproj">
       <Project>{952c92de-5526-460b-ad08-08c785286900}</Project>
-      <Name>pnsms.Entities</Name>
+      <Name>deepp.Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\pnsms.Service\pnsms.Service.csproj">
+    <ProjectReference Include="..\deepp.Service\deepp.Service.csproj">
       <Project>{7295de19-bb4a-4dbe-9d12-4297bd9b2a5c}</Project>
-      <Name>pnsms.Service</Name>
+      <Name>deepp.Service</Name>
     </ProjectReference>
-    <ProjectReference Include="..\pnsms.Repository\pnsms.Repository.csproj">
+    <ProjectReference Include="..\deepp.Repository\deepp.Repository.csproj">
       <Project>{863a3a33-4042-4385-b591-2bc2e41b245a}</Project>
-      <Name>pnsms.Repository</Name>
+      <Name>deepp.Repository</Name>
     </ProjectReference>
-    <ProjectReference Include="..\pnsms.utility\pnsms.utility.csproj">
+    <ProjectReference Include="..\deepp.utility\deepp.utility.csproj">
       <Project>{f648b7d9-8a4f-4de6-91e7-3fe9ac7e13a8}</Project>
-      <Name>pnsms.utility</Name>
+      <Name>deepp.utility</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -1,24 +1,17 @@
 using System;
 using Microsoft.Practices.Unity;
-using pnsms.Entities.Models;
-using pnsms.Service;
-using pnsms.Service.ViewModels;
+using deepp.Entities.Models;
+using deepp.Service;
+using deepp.Service.ViewModels;
 using Repository.Pattern.DataContext;
 using Repository.Pattern.Ef6;
 using Repository.Pattern.Repositories;
 using Repository.Pattern.UnitOfWork;
-using pnsms.Service.Institutes;
-using pnsms.Service.ShortMessages;
-using pnsms.Service.Library;
-using pnsms.Service.Exams;
-
-using pnsms.Service.Settings;
-using pnsms.Service.Subjects;
-using pnsms.Entities.ViewModels;
-using pnsms.Service.InstituteSubjects;
-using pnsms.Service.GlobalUsers;
-using pnsms.Service.DashBoard;
-using pnsms.Service.Accounts;
+using deepp.Service.Institutes;
+using deepp.Service.ShortMessages;
+using deepp.Service.Settings;
+using deepp.Service.GlobalUsers;
+using deepp.Service.DashBoard;
 
 namespace deepp.erp
 {
@@ -131,12 +124,7 @@ namespace deepp.erp
                 .RegisterType<IColourService, ColourService>()
                 .RegisterType<IRepositoryAsync<AttendanceType>, Repository<AttendanceType>>()
                 .RegisterType<IAttendanceTypeService, AttendanceTypeService>()
-
-                   .RegisterType<IRepositoryAsync<InstituteSubject>, Repository<InstituteSubject>>()
-                .RegisterType<IInstituteSubjectService, InstituteSubjectService>()
-
-
-
+                        
                 .RegisterType<IRepositoryAsync<UserInfo>, Repository<UserInfo>>()
                 .RegisterType<IUserInfoService, UserInfoService>()
 
@@ -335,136 +323,11 @@ namespace deepp.erp
                 .RegisterType<IUserInfoSecurityService, UserInfoSecurityService>()
 
             #endregion
-
-            #region FeesCollection
-
-                .RegisterType<IRepositoryAsync<FeesGenerate>, Repository<FeesGenerate>>()
-                .RegisterType<IFeesGenerateAcademicService, FeesGenerateAcademicService>()
-                .RegisterType<IRepositoryAsync<FeesGenerateAcademic>, Repository<FeesGenerateAcademic>>()
-                .RegisterType<IVmFeesCollectionService, VmFeesCollectionService>()
-                .RegisterType<IFeesGenerateService, FeesGenerateService>()
-                .RegisterType<IRepositoryAsync<FeesGenerate>, Repository<FeesGenerate>>()
-                .RegisterType<IRepositoryAsync<FeesHead>, Repository<FeesHead>>()
-                .RegisterType<IFeesHeadService, FeesHeadService>()
-                .RegisterType<IRepositoryAsync<FeesAcademicClass>, Repository<FeesAcademicClass>>()
-                .RegisterType<IFeesAcademicClassService, FeesAcademicClassService>()
-                .RegisterType<IRepositoryAsync<FeesCollection>, Repository<FeesCollection>>()
-                .RegisterType<IFeesCollectionService, FeesCollectionService>()
-
-                .RegisterType<IRepositoryAsync<FeesType>, Repository<FeesType>>()
-                .RegisterType<IFeesTypeService, FeesTypeService>()
-
-
-            #endregion
-
-            #region Result Publish
-
-                .RegisterType<IRepositoryAsync<ResultPublication>, Repository<ResultPublication>>()
-                .RegisterType<IResultPublicationService, ResultPublicationService>()
-
-            #endregion
-
-            #region Voucher Entry
-
-                .RegisterType<IVmVoucherService, VmVoucherService>()
-                .RegisterType<IRepositoryAsync<Voucher>, Repository<Voucher>>()
-                .RegisterType<IVoucherService, VoucherService>()
-                .RegisterType<IRepositoryAsync<VoucherDetail>, Repository<VoucherDetail>>()
-                .RegisterType<IVoucherDetailService, VoucherDetailService>()
-                .RegisterType<IRepositoryAsync<ChartOfAccount>, Repository<ChartOfAccount>>()
-                .RegisterType<IChartOfAccountService, ChartOfAccountService>()
-
-            #endregion
-
-            #region Library
-
-                .RegisterType<IRepositoryAsync<LibraryBook>, Repository<LibraryBook>>()
-                .RegisterType<ILibraryBookService, LibraryBookService>()
-                .RegisterType<IRepositoryAsync<LibraryBookAuthore>, Repository<LibraryBookAuthore>>()
-                .RegisterType<ILibraryBookAuthoreService, LibraryBookAuthoreService>()
-                .RegisterType<IRepositoryAsync<LibraryBookAuthorOfBook>, Repository<LibraryBookAuthorOfBook>>()
-                .RegisterType<ILibraryBookAuthorOfBookService, LibraryBookAuthorOfBookService>()
-
-            #endregion
-            #region Exams
-
-               .RegisterType<IRepositoryAsync<ExamType>, Repository<ExamType>>()
-               .RegisterType<IExamTypeService, ExamTypeService>()
-
-
-               .RegisterType<IRepositoryAsync<Exam>, Repository<Exam>>()
-               .RegisterType<IExamService, ExamService>()
-
-               .RegisterType<IRepositoryAsync<ExamGrade>, Repository<ExamGrade>>()
-               .RegisterType<IExamGradeService, ExamGradeService>()
-
-                 .RegisterType<IRepositoryAsync<ExamSubjectMark>, Repository<ExamSubjectMark>>()
-               .RegisterType<IExamSubjectMarkService, ExamSubjectMarkService>()
-
-                 .RegisterType<IRepositoryAsync<ExamProcess>, Repository<ExamProcess>>()
-               .RegisterType<IExamProcessService, ExamProcessService>()
-
-                 .RegisterType<IRepositoryAsync<ExamTypeWiseTabulationSheetDetail>, Repository<ExamTypeWiseTabulationSheetDetail>>()
-               .RegisterType<IExamTypeWiseTabulationSheetDetailService, ExamTypeWiseTabulationSheetDetailService>()
-
-                 .RegisterType<IRepositoryAsync<ExamTypeWiseTabulationSheetMaster>, Repository<ExamTypeWiseTabulationSheetMaster>>()
-               .RegisterType<IExamTypeWiseTabulationSheetMasterService, ExamTypeWiseTabulationSheetMasterService>()
-
-                .RegisterType<IVmExamTabulationSheetService, VmExamTabulationSheetService>()
-            #endregion
-
-                   .RegisterType<IDashboardService, DashboardService>()
+                                           
+           
+                 .RegisterType<IDashboardService, DashboardService>()
                 .RegisterType<IVMportalService, VMportalService>()
-            #region Subjects
-
-.RegisterType<IRepositoryAsync<InstituteSubjectClass>, Repository<InstituteSubjectClass>>()
-               .RegisterType<IInstituteSubjectClassService, InstituteSubjectClassService>()
-
-               .RegisterType<IRepositoryAsync<Subject>, Repository<Subject>>()
-               .RegisterType<ISubjectService, SubjectService>()
-
-               .RegisterType<IRepositoryAsync<SubjectType>, Repository<SubjectType>>()
-               .RegisterType<ISubjectTypeService, SubjectTypeService>()
-
-                 .RegisterType<IRepositoryAsync<SubjectAcademicClassMapping>, Repository<SubjectAcademicClassMapping>>()
-               .RegisterType<ISubjectAcademicClassMappingService, SubjectAcademicClassMappingService>()
-
-               .RegisterType<IRepositoryAsync<SubjectGroup>, Repository<SubjectGroup>>()
-               .RegisterType<ISubjectGroupService, SubjectGroupService>()
-
-               
-            #endregion
-
-            #region Accounts
-               .RegisterType<IRepositoryAsync<VendorInfo>, Repository<VendorInfo>>()
-               .RegisterType<IVendorInfoService, VendorInfoService>()
-
-                .RegisterType<IRepositoryAsync<VendorType>, Repository<VendorType>>()
-               .RegisterType<IVendorTypeService, VendorTypeService>()
-
-                  .RegisterType<IRepositoryAsync<BankAccountInfo>, Repository<BankAccountInfo>>()
-               .RegisterType<IBankAccountInfoService, BankAccountInfoService>()
-
-                  .RegisterType<IRepositoryAsync<BankAccountType>, Repository<BankAccountType>>()
-                .RegisterType<IBankAccountTypeService, BankAccountTypeService>()
-               
-                  .RegisterType<IRepositoryAsync<FMS_GLAccount>, Repository<FMS_GLAccount>>()
-                  .RegisterType<IFMS_GLAccountService, FMS_GLAccountService>()
-
-                    .RegisterType<IRepositoryAsync<FMS_SubsidyType>, Repository<FMS_SubsidyType>>()
-                  .RegisterType<IFMS_SubsidyTypeService, FMS_SubsidyTypeService>()
-
-                  
-
-                   .RegisterType<IRepositoryAsync<FMS_GLSubsidyTypeMap>, Repository<FMS_GLSubsidyTypeMap>>()
-                  .RegisterType<IFMS_GLSubsidyTypeMapService, FMS_GLSubsidyTypeMapService>()
-
-                   .RegisterType<IRepositoryAsync<FMS_TransactionType>, Repository<FMS_TransactionType>>()
-                  .RegisterType<IFMS_TransactionTypeService, FMS_TransactionTypeService>()
-                    .RegisterType<IRepositoryAsync<FMS_RelatedAccount>, Repository<FMS_RelatedAccount>>()
-                  .RegisterType<IFMS_RelatedAccountService, FMS_RelatedAccountService>()
-
-            #endregion
+           
 ;
         }
     }

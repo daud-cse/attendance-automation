@@ -168,7 +168,7 @@ if ( DataTable.TableTools ) {
 }; // /factory
 
 
-// Define as an AMD module if possible
+// Define as an AMD module if deeppsible
 if ( typeof define === 'function' && define.amd ) {
   define( ['jquery', 'datatables'], factory );
 }

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<deepp.Entities.Models.Testimonial>
+
+@foreach (var item in Model)
+{
+    <li class="clone" aria-hidden="true" style="width: 703px; float: left; display: block;">
+        <div class="question-mark">
+            <figure>
+                @*<img alt="image" src="http://uoce.chimpgroup.com/wp-content/uploads/user-2.jpg" draggable="false">*@
+                @*<img src="/image/GetImageById?id=@Sessions.InstituteLogoId&refCode=11" style="width:128px; height:128px" alt="logo" draggable="false">*@
+            </figure>
+            <p> @item.TestimonialBody  </p>
+            <div class="cs-author">
+                <h6>@item.TestimonialBy   </h6>
+                @*<span>Google In</span>*@
+            </div>
+        </div>
+    </li>
+}
+@*<div id="slider-testimonials" style="overflow: hidden;">
+         @foreach (var item in Model)
+         {
+            <ul style="width: 960px;">
+
+                      <p>@item.TestimonialBody
+                        <strong class="dark-text"></strong>
+                     </p>
+            </ul>
+          }
+            <a href="./index.html" class="prev fa fa-angle-left"></a>
+            <a href="./index.html" class="next fa fa-angle-right"></a>
+    </div>*@
+

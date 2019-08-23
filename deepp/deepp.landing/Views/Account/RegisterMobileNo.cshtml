@@ -1,0 +1,53 @@
+﻿@model deepp.landing.Models.RegisterMobileNoViewModel
+@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+<div class="container">
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <h2 class="page-title">User Registration</h2>
+            </div> <!-- /.col-md-6 -->
+            @*<div class="col-md-6 col-sm-6 hidden-xs back-home">
+                @Html.ActionLink("← Go back Home", "Index", "Home", new { }, null)
+            </div>*@ <!-- /.col-md-6 -->
+        </div> <!-- /.row -->
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box-content">
+                <div class="col-md-6">
+                    <h3 class="widget-title">Step - 1 of 3</h3>
+
+                    @using (Html.BeginForm("RegisterMobileNo", "Account", FormMethod.Post))
+                {
+                    <div id="mc_subheader">
+                        <p>First enter your mobile number which was given at office registration form. An authentication code will be provided at this number</p>
+                    </div><!-- /mc_subheader -->
+
+                    <div class="contactForm">
+                        <div class="mc_merge_var">
+                            @Html.LabelFor(model => model.MobileNo)
+                            <p>@Html.TextBoxFor(m => m.MobileNo, new { @class = "mc_input" , @required = "required" })</p>
+                        </div><!-- /mc_merge_var -->
+                        <div class="mc_signup_submit">
+                            <label>&nbsp;</label>
+                            <input type="submit" class="button" value="Get Code" id="mc_signup_submit" name="mc_signup_submit">
+                        </div><!-- /mc_signup_submit -->
+                        <div id="mc_message" class="updated">
+                            <label>&nbsp;</label>
+                            @Html.ValidationSummary()
+                        </div><!-- /mc_message -->
+                    </div><!-- /mc_form_inside -->
+                }<!-- /mc_signup_form -->
+
+                </div>
+            </div> <!-- /.col-md-7 -->
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+}

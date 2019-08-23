@@ -84,7 +84,7 @@
 
           // Store the promise early so the file load can be detected by other parallel lazy loads
           // (ie: multiple routes on one page) a 'true' value isn't sufficient
-          // as it causes false positive load results.
+          // as it causes false deeppitive load results.
           if(angular.isUndefined(filesCache.get(path))) {
             filesCache.put(path, deferred.promise);
           }

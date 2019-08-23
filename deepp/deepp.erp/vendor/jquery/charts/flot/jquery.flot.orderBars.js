@@ -9,7 +9,7 @@
  *
  *  $.plot($("#placeholder"), [{ data: [ ... ], bars :{ order = null or integer }])
  *
- * If 2 series have the same order param, they are ordered by the position in the array;
+ * If 2 series have the same order param, they are ordered by the deeppition in the array;
  *
  * The plugin adjust the point by adding a value depanding of the barwidth
  * Exemple for 3 series (barwidth : 0.1) :
@@ -42,15 +42,15 @@
                 calculBorderAndBarWidth(serie);
                 
                 if(nbOfBarsToOrder >= 2){  
-                    var position = findPosition(serie);
+                    var deeppition = findPosition(serie);
                     var decallage = 0;
                     
                     var centerBarShift = calculCenterBarShift();
 
-                    if (isBarAtLeftOfCenter(position)){
-                        decallage = -1*(sumWidth(orderedBarSeries,position-1,Math.floor(nbOfBarsToOrder / 2)-1)) - centerBarShift;
+                    if (isBarAtLeftOfCenter(deeppition)){
+                        decallage = -1*(sumWidth(orderedBarSeries,deeppition-1,Math.floor(nbOfBarsToOrder / 2)-1)) - centerBarShift;
                     }else{
-                        decallage = sumWidth(orderedBarSeries,Math.ceil(nbOfBarsToOrder / 2),position-2) + centerBarShift + borderWidthInXabsWidth*2;
+                        decallage = sumWidth(orderedBarSeries,Math.ceil(nbOfBarsToOrder / 2),deeppition-2) + centerBarShift + borderWidthInXabsWidth*2;
                     }
 
                     shiftedPoints = shiftPoints(datapoints,serie,decallage);
@@ -117,15 +117,15 @@
         }
 
         function findPosition(serie){
-            var pos = 0
+            var deepp = 0
             for (var i = 0; i < orderedBarSeries.length; ++i) {
                 if (serie == orderedBarSeries[i]){
-                    pos = i;
+                    deepp = i;
                     break;
                 }
             }
 
-            return pos+1;
+            return deepp+1;
         }
 
         function calculCenterBarShift(){
@@ -137,8 +137,8 @@
             return width;
         }
 
-        function isBarAtLeftOfCenter(position){
-            return position <= Math.ceil(nbOfBarsToOrder / 2);
+        function isBarAtLeftOfCenter(deeppition){
+            return deeppition <= Math.ceil(nbOfBarsToOrder / 2);
         }
 
         function sumWidth(series,start,end){

@@ -1,0 +1,155 @@
+﻿@model deepp.Entities.Models.ContactU
+
+@{
+    ViewBag.Title = "Feedback";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+<div class="page-header">
+    <div class="row">
+        <div class="col-md-6 col-sm-6">
+            <h2 class="page-title">Contact Us</h2>
+        </div> <!-- /.col-md-6 -->
+        <div class="col-md-6 col-sm-6 hidden-xs back-home">
+            @Html.ActionLink("← Go back Home", "Index", "Home", new { }, null)
+        </div> <!-- /.col-md-6 -->
+    </div> <!-- /.row -->
+</div>
+<div class="row">
+
+    <div class="col-md-4">
+        <div class="box-content">
+            <h4 class="widget-title"><span>Contact Info</span></h4>
+            @MvcHtmlString.Create(@Model.Institute.ContactText)
+        </div>
+    </div>
+    <div class="col-md-8 contact-page">
+        <div id="contact" class="contactForm clearfix">
+            <h4 class="widget-title"><span>Send Us Message</span></h4>
+            <div class="wpcf7" id="wpcf7-f6-p27-o1">
+                @using (Html.BeginForm("Save", "ContactUS"))
+                {
+                    @*<div style="display: none;">
+                            <input type="hidden" name="_wpcf7" value="6">
+                            <input type="hidden" name="_wpcf7_version" value="3.7.2">
+                            <input type="hidden" name="_wpcf7_locale" value="en_US">
+                            <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f6-p27-o1">
+                            <input type="hidden" name="_wpnonce" value="11f64d34f5">
+                        </div>*@
+                    <div>
+                        @ViewBag.result
+                    </div>
+                    <p class="clearfix">
+                        <label>First Name:<span>Put your name here</span></label><br>
+                        <span class="wpcf7-form-control-wrap first-name">
+                            @Html.TextBoxFor(model => model.FirstName, new { @class = "mc_input", value = Model.FirstName })
+                            @Html.ValidationMessageFor(model => model.FirstName)
+                        </span>
+                    </p>
+                    <p class="clearfix">
+                        <label>Last Name:<span>Put your surname here</span></label><br>
+                        <span class="wpcf7-form-control-wrap last-name">
+                            @Html.TextBoxFor(model => model.LastName, new { @class = "mc_input", value = Model.LastName })
+                            @Html.ValidationMessageFor(model => model.LastName)
+                        </span>
+                    </p>
+
+                    @*<p class="clearfix">
+                            <label>Address:<span>Type  address</span></label><br>
+                            <span class="wpcf7-form-control-wrap your-message">
+                                @Html.TextAreaFor(model => model.Address, new { @class = "mc_input", value = Model.Address })
+                                @Html.ValidationMessageFor(model => model.Address)
+                            </span>
+                        </p>*@
+                    @*<p class="clearfix">
+                            <label>Contact Number:<span>Put Contact Number here</span></label><br>
+                            <span class="wpcf7-form-control-wrap first-name">
+                                @Html.TextBoxFor(model => model.ContactNumber, new { @class = "mc_input", value = Model.ContactNumber })
+                                @Html.ValidationMessageFor(model => model.ContactNumber)
+                            </span>
+                        </p>*@
+                    <p class="clearfix">
+                        <label>Email :<span>Put your Email here</span></label><br>
+                        <span class="wpcf7-form-control-wrap last-name">
+                            @Html.TextBoxFor(model => model.Email, new { @type = "email", @class = "mc_input", value = Model.Email })
+                            @Html.ValidationMessageFor(model => model.Email)
+                        </span>
+                    </p>
+                    @*<p class="clearfix">
+                            <label>Subject:<span>Put Subject here</span></label><br>
+                            <span class="wpcf7-form-control-wrap first-name">
+                                @Html.TextBoxFor(model => model.Subject, new { @class = "mc_input", value = Model.Subject })
+                                @Html.ValidationMessageFor(model => model.Subject)
+                            </span>
+                        </p>*@
+                    <p class="clearfix">
+                        <label>Message:<span>Type  Message</span></label><br>
+                        <span class="wpcf7-form-control-wrap your-message">
+                            @Html.TextAreaFor(model => model.Message, new { @class = "mc_input", value = Model.Address })
+                            @Html.ValidationMessageFor(model => model.Message)
+                        </span>
+                    </p>
+                    <p>
+                        <input type="submit" value="Send Message" class="wpcf7-form-control wpcf7-submit">
+                        @*<img class="ajax-loader" src="http://themes.esmeth.com/icare/wp-content/plugins/contact-form-7/images/ajax-loader.gif" alt="Sending ..." style="visibility: visible;">*@
+                    </p>
+                    <div class="wpcf7-response-output wpcf7-display-none" style="display: none;"></div>
+                }
+                @*<div class="ajax-error"></div><div class="ajax-error"></div>*@
+            </div>
+
+        </div>
+    </div>
+    @*<div class="col-md-8">
+            <div class="box-content">
+                <div class="contactForm ">
+                    <h4 class="widget-title"><span>Send Us Message</span></h4>
+                    @using (Html.BeginForm("Save", "ContactUS"))
+                    {
+                        <p class="clearfix">
+                            @Html.LabelFor(model => model.FirstName)
+                            @Html.TextBoxFor(model => model.FirstName, new { @class = "mc_input", value = Model.FirstName })
+                            @Html.ValidationMessageFor(model => model.FirstName)
+                        </p>
+                        <p class="clearfix">
+                            @Html.LabelFor(model => model.LastName)
+                            @Html.TextBoxFor(model => model.LastName, new { @class = "mc_input", value = Model.LastName })
+                            @Html.ValidationMessageFor(model => model.LastName)
+                        </p>
+                        <p class="clearfix">
+                            @Html.LabelFor(model => model.Address)
+                            @Html.TextAreaFor(model => model.Address, new { @class = "mc_input", value = Model.Address })
+                            @Html.ValidationMessageFor(model => model.Address)
+                        </p>
+                        <p class="clearfix">
+                            @Html.LabelFor(model => model.ContactNumber)
+                            @Html.TextBoxFor(model => model.ContactNumber, new { @class = "mc_input", value = Model.ContactNumber })
+                            @Html.ValidationMessageFor(model => model.ContactNumber)
+                        </p>
+                        <p class="clearfix">
+                            @Html.LabelFor(model => model.Email)
+                            @Html.TextBoxFor(model => model.Email, new { @class = "mc_input", value = Model.Email })
+                            @Html.ValidationMessageFor(model => model.Email)
+                        </p>
+                        <p class="clearfix">
+                            @Html.LabelFor(model => model.Subject)
+                            @Html.TextBoxFor(model => model.Subject, new { @class = "mc_input", value = Model.Subject })
+                            @Html.ValidationMessageFor(model => model.Subject)
+                        </p>
+                        <p class="clearfix">
+                            @Html.LabelFor(model => model.Message)
+                            @Html.TextAreaFor(model => model.Message, new { @class = "mc_input", value = Model.Message })
+                            @Html.ValidationMessageFor(model => model.Message)
+                        </p>
+                        <p class="clearfix">
+                            <label></label>
+                            <input class="mainBtn" type="submit" name="" value="Send Message" />
+                        </p>
+                    }
+                </div>
+            </div>
+
+        </div>*@ <!-- /.box-content -->
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

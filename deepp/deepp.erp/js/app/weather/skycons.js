@@ -188,9 +188,9 @@
     ctx.fillStyle = color;
     puffs(ctx, t, cx, cy, a, b, c, d);
 
-    ctx.globalCompositeOperation = 'destination-out';
+    ctx.globalComdeeppiteOperation = 'destination-out';
     puffs(ctx, t, cx, cy, a, b, c - s, d - s);
-    ctx.globalCompositeOperation = 'source-over';
+    ctx.globalComdeeppiteOperation = 'source-over';
   }
 
   function sun(ctx, t, cx, cy, cw, s, color) {
@@ -325,9 +325,9 @@
     ctx.fillStyle = color;
     puffs(ctx, t, cx, cy, a, b, c, d);
 
-    ctx.globalCompositeOperation = 'destination-out';
+    ctx.globalComdeeppiteOperation = 'destination-out';
     puffs(ctx, t, cx, cy, a, b, c - s, d - s);
-    ctx.globalCompositeOperation = 'source-over';
+    ctx.globalComdeeppiteOperation = 'source-over';
   }
 
   /*
@@ -424,9 +424,9 @@
     ctx.arc(x        , y        , a, d          , d + Math.PI, false);
     ctx.arc(x - b * e, y - b * f, c, d + Math.PI, d          , false);
     ctx.arc(x + c * e, y + c * f, b, d + Math.PI, d          , true );
-    ctx.globalCompositeOperation = 'destination-out';
+    ctx.globalComdeeppiteOperation = 'destination-out';
     ctx.fill();
-    ctx.globalCompositeOperation = 'source-over';
+    ctx.globalComdeeppiteOperation = 'source-over';
     ctx.stroke();
   }
 

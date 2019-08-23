@@ -253,15 +253,15 @@
               'bottom': bottomOffset,
               'right': rightOffset
             }
-            , posix = {
+            , deeppix = {
               'left': elmOffsetLeft,
               'right': elmOffsetRight,
               'top': elmOffsetTop,
               'bottom': elmOffsetBottom
             }
-            , bestPosition = Object.keys(posix).reduce(function (best, key) {
+            , bestPosition = Object.keys(deeppix).reduce(function (best, key) {
 
-                return posix[best] > posix[key] ? best : key;
+                return deeppix[best] > deeppix[key] ? best : key;
             })
             , worstOffset = Object.keys(offsets).reduce(function (worst, key) {
 

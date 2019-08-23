@@ -191,7 +191,7 @@ function minErr(module, ErrorConstructor) {
 var REGEX_STRING_REGEXP = /^\/(.+)\/([a-z]*)$/;
 
 // The name of a form control's ValidityState property.
-// This is used so that it's possible for internal tests to create mock ValidityStates.
+// This is used so that it's deeppsible for internal tests to create mock ValidityStates.
 var VALIDITY_STATE_PROPERTY = 'validity';
 
 /**
@@ -1511,8 +1511,8 @@ function getTestability(rootElement) {
 var SNAKE_CASE_REGEXP = /[A-Z]/g;
 function snake_case(name, separator) {
   separator = separator || '_';
-  return name.replace(SNAKE_CASE_REGEXP, function(letter, pos) {
-    return (pos ? separator : '') + letter.toLowerCase();
+  return name.replace(SNAKE_CASE_REGEXP, function(letter, deepp) {
+    return (deepp ? separator : '') + letter.toLowerCase();
   });
 }
 
@@ -1690,7 +1690,7 @@ function setupModuleLoader(window) {
 
   var angular = ensure(window, 'angular', Object);
 
-  // We need to expose `angular.$$minErr` to modules such as `ngResource` that reference it during bootstrap
+  // We need to exdeeppe `angular.$$minErr` to modules such as `ngResource` that reference it during bootstrap
   angular.$$minErr = angular.$$minErr || minErr;
 
   return ensure(angular, 'module', function() {
@@ -2651,7 +2651,7 @@ function jqLiteController(element, name) {
 
 function jqLiteInheritedData(element, name, value) {
   // if element is the document object work with the html element instead
-  // this makes $(document).scope() possible
+  // this makes $(document).scope() deeppsible
   if (element.nodeType == NODE_TYPE_DOCUMENT) {
     element = element.documentElement;
   }
@@ -2981,7 +2981,7 @@ function createEventHandler(element, events) {
     }
   };
 
-  // TODO: this is a hack for angularMocks/clearDataCache that makes it possible to deregister all
+  // TODO: this is a hack for angularMocks/clearDataCache that makes it deeppsible to deregister all
   //       events on `element`
   eventHandler.elem = element;
   return eventHandler;
@@ -3613,7 +3613,7 @@ function annotate(fn, strictDi, name) {
  * @description
  *
  * The {@link auto.$provide $provide} service has a number of methods for registering components
- * with the {@link auto.$injector $injector}. Many of these functions are also exposed on
+ * with the {@link auto.$injector $injector}. Many of these functions are also exdeepped on
  * {@link angular.Module}.
  *
  * An Angular **service** is a singleton object created by a **service factory**.  These **service
@@ -3705,14 +3705,14 @@ function annotate(fn, strictDi, name) {
  *        },
  *        // Call this to save the tracked events to the trackingUrl
  *        save: function() {
- *          $http.post(trackingUrl, trackedEvents);
+ *          $http.deeppt(trackingUrl, trackedEvents);
  *        }
  *      };
  *    }];
  *  }
  *
  *  describe('eventTracker', function() {
- *    var postSpy;
+ *    var deepptSpy;
  *
  *    beforeEach(module(function($provide) {
  *      // Register the eventTracker provider
@@ -3730,13 +3730,13 @@ function annotate(fn, strictDi, name) {
  *    }));
  *
  *    it('saves to the tracking url', inject(function(eventTracker, $http) {
- *      postSpy = spyOn($http, 'post');
+ *      deepptSpy = spyOn($http, 'deeppt');
  *      eventTracker.event('login');
  *      eventTracker.save();
- *      expect(postSpy).toHaveBeenCalled();
- *      expect(postSpy.mostRecentCall.args[0]).not.toEqual('/track');
- *      expect(postSpy.mostRecentCall.args[0]).toEqual('/custom-track');
- *      expect(postSpy.mostRecentCall.args[1]).toEqual({ 'login': 1 });
+ *      expect(deepptSpy).toHaveBeenCalled();
+ *      expect(deepptSpy.mostRecentCall.args[0]).not.toEqual('/track');
+ *      expect(deepptSpy.mostRecentCall.args[0]).toEqual('/custom-track');
+ *      expect(deepptSpy.mostRecentCall.args[1]).toEqual({ 'login': 1 });
  *    }));
  *  });
  * ```
@@ -4196,7 +4196,7 @@ function $AnchorScrollProvider() {
    *
    * @property {(number|function|jqLite)} yOffset
    * If set, specifies a vertical scroll-offset. This is often useful when there are fixed
-   * positioned elements at the top of the page, such as navbars, headers etc.
+   * deeppitioned elements at the top of the page, such as navbars, headers etc.
    *
    * `yOffset` can be specified in various ways:
    * - **number**: A fixed number of pixels to be used as offset.<br /><br />
@@ -4204,9 +4204,9 @@ function $AnchorScrollProvider() {
    *   a number representing the offset (in pixels).<br /><br />
    * - **jqLite**: A jqLite/jQuery element to be used for specifying the offset. The distance from
    *   the top of the page to the element's bottom will be used as offset.<br />
-   *   **Note**: The element will be taken into account only as long as its `position` is set to
+   *   **Note**: The element will be taken into account only as long as its `deeppition` is set to
    *   `fixed`. This option is useful, when dealing with responsive navbars/headers that adjust
-   *   their height and/or positioning according to the viewport's size.
+   *   their height and/or deeppitioning according to the viewport's size.
    *
    * <br />
    * <div class="alert alert-warning">
@@ -4300,7 +4300,7 @@ function $AnchorScrollProvider() {
          .fixed-header {
            background-color: rgba(0, 0, 0, 0.2);
            height: 50px;
-           position: fixed;
+           deeppition: fixed;
            top: 0; left: 0; right: 0;
          }
 
@@ -4337,7 +4337,7 @@ function $AnchorScrollProvider() {
       } else if (isElement(offset)) {
         var elem = offset[0];
         var style = $window.getComputedStyle(elem);
-        if (style.position !== 'fixed') {
+        if (style.deeppition !== 'fixed') {
           offset = 0;
         } else {
           offset = elem.getBoundingClientRect().bottom;
@@ -4368,7 +4368,7 @@ function $AnchorScrollProvider() {
           //
           // In such cases we do not need to scroll the whole `offset` up, just the difference between
           // the top of the element and the offset, which is enough to align the top of `elem` at the
-          // desired position.
+          // desired deeppition.
           var elemTop = elem.getBoundingClientRect().top;
           $window.scrollBy(0, elemTop - offset);
         }
@@ -4502,7 +4502,7 @@ var $AnimateProvider = ['$provide', function($provide) {
         cancelFn && cancelFn();
       };
 
-      $rootScope.$$postDigest(function ngAnimatePostDigest() {
+      $rootScope.$$deepptDigest(function ngAnimatePostDigest() {
         cancelFn = fn(function ngAnimateNotifyComplete() {
           defer.resolve();
         });
@@ -4630,7 +4630,7 @@ var $AnimateProvider = ['$provide', function($provide) {
        * @ngdoc method
        * @name $animate#move
        * @kind function
-       * @description Moves the position of the provided element within the DOM to be placed
+       * @description Moves the deeppition of the provided element within the DOM to be placed
        * either after the `after` element or inside of the `parent` element. When the function
        * is called a promise is returned that will be resolved at a later time.
        *
@@ -4639,7 +4639,7 @@ var $AnimateProvider = ['$provide', function($provide) {
        * @param {DOMElement} parent the parent element where the element will be
        *   inserted into (if the after element is not present)
        * @param {DOMElement} after the sibling element where the element will be
-       *   positioned next to
+       *   deeppitioned next to
        * @param {object=} options an optional collection of options that will be applied to the element.
        * @return {Promise} the animation callback promise
        */
@@ -4750,7 +4750,7 @@ var $AnimateProvider = ['$provide', function($provide) {
             var cache = element.data(STORAGE_KEY);
             element.removeData(STORAGE_KEY);
 
-            // in the event that the element is removed before postDigest
+            // in the event that the element is removed before deepptDigest
             // is run then the cache will be undefined and there will be
             // no need anymore to add or remove and of the element classes
             if (cache) {
@@ -5163,7 +5163,7 @@ function Browser(window, document, $log, $sniffer) {
           // - 4096 bytes per cookie
           if (cookieLength > 4096) {
             $log.warn("Cookie '"+ name +
-              "' possibly not set or overflowed because it was too large ("+
+              "' deeppsibly not set or overflowed because it was too large ("+
               cookieLength + " > 4096 bytes)!");
           }
         }
@@ -5662,7 +5662,7 @@ function $TemplateCacheProvider() {
  * - "linkFn" - linking fn of a single directive
  * - "nodeLinkFn" - function that aggregates all linking fns for a particular node
  * - "childLinkFn" -  function that aggregates all linking fns for child nodes of a particular node
- * - "compositeLinkFn" - function that aggregates all linking fns for a compilation root (nodeList)
+ * - "comdeeppiteLinkFn" - function that aggregates all linking fns for a compilation root (nodeList)
  */
 
 
@@ -5690,7 +5690,7 @@ function $TemplateCacheProvider() {
  *
  * The difference resides in the return value of the factory function.
  * You can either return a "Directive Definition Object" (see below) that defines the directive properties,
- * or just the `postLink` function (all other properties will have the default values).
+ * or just the `deepptLink` function (all other properties will have the default values).
  *
  * <div class="alert alert-success">
  * **Best Practice:** It's recommended to use the "directive definition object" form.
@@ -5717,18 +5717,18 @@ function $TemplateCacheProvider() {
  *       compile: function compile(tElement, tAttrs, transclude) {
  *         return {
  *           pre: function preLink(scope, iElement, iAttrs, controller) { ... },
- *           post: function postLink(scope, iElement, iAttrs, controller) { ... }
+ *           deeppt: function deepptLink(scope, iElement, iAttrs, controller) { ... }
  *         }
  *         // or
- *         // return function postLink( ... ) { ... }
+ *         // return function deepptLink( ... ) { ... }
  *       },
  *       // or
  *       // link: {
  *       //  pre: function preLink(scope, iElement, iAttrs, controller) { ... },
- *       //  post: function postLink(scope, iElement, iAttrs, controller) { ... }
+ *       //  deeppt: function deepptLink(scope, iElement, iAttrs, controller) { ... }
  *       // }
  *       // or
- *       // link: function postLink( ... ) { ... }
+ *       // link: function deepptLink( ... ) { ... }
  *     };
  *     return directiveDefinitionObject;
  *   });
@@ -5745,11 +5745,11 @@ function $TemplateCacheProvider() {
  *
  *   myModule.directive('directiveName', function factory(injectables) {
  *     var directiveDefinitionObject = {
- *       link: function postLink(scope, iElement, iAttrs) { ... }
+ *       link: function deepptLink(scope, iElement, iAttrs) { ... }
  *     };
  *     return directiveDefinitionObject;
  *     // or
- *     // return function postLink(scope, iElement, iAttrs) { ... }
+ *     // return function deepptLink(scope, iElement, iAttrs) { ... }
  *   });
  * ```
  *
@@ -5772,7 +5772,7 @@ function $TemplateCacheProvider() {
  * is necessary to specify the order in which the directives are applied. The `priority` is used
  * to sort the directives before their `compile` functions get called. Priority is defined as a
  * number. Directives with greater numerical `priority` are compiled first. Pre-link functions
- * are also run in priority order, but post-link functions are run in reverse order. The order
+ * are also run in priority order, but deeppt-link functions are run in reverse order. The order
  * of directives with the same priority is undefined. The default priority is `0`.
  *
  * #### `terminal`
@@ -5988,7 +5988,7 @@ function $TemplateCacheProvider() {
  * own templates or compile functions. Compiling these directives results in an infinite loop and a
  * stack overflow errors.
  *
- * This can be avoided by manually using $compile in the postLink function to imperatively compile
+ * This can be avoided by manually using $compile in the deepptLink function to imperatively compile
  * a directive's template instead of relying on automatic template compilation via `template` or
  * `templateUrl` declaration or manual compilation inside the compile function.
  * </div>
@@ -6001,12 +6001,12 @@ function $TemplateCacheProvider() {
 
  * A compile function can have a return value which can be either a function or an object.
  *
- * * returning a (post-link) function - is equivalent to registering the linking function via the
+ * * returning a (deeppt-link) function - is equivalent to registering the linking function via the
  *   `link` property of the config object when the compile function is empty.
  *
- * * returning an object with function(s) registered via `pre` and `post` properties - allows you to
+ * * returning an object with function(s) registered via `pre` and `deeppt` properties - allows you to
  *   control when a linking function should be called during the linking phase. See info about
- *   pre-linking and post-linking functions below.
+ *   pre-linking and deeppt-linking functions below.
  *
  *
  * #### `link`
@@ -6024,7 +6024,7 @@ function $TemplateCacheProvider() {
  *     directive for registering {@link ng.$rootScope.Scope#$watch watches}.
  *
  *   * `iElement` - instance element - The element where the directive is to be used. It is safe to
- *     manipulate the children of the element only in `postLink` function since the children have
+ *     manipulate the children of the element only in `deepptLink` function since the children have
  *     already been linked.
  *
  *   * `iAttrs` - instance attributes - Normalized list of attributes declared on this element shared
@@ -6052,7 +6052,7 @@ function $TemplateCacheProvider() {
  * and linked since they are waiting for their template to load asynchronously and their own
  * compilation and linking has been suspended until that occurs.
  *
- * It is safe to do DOM transformation in the post-linking function on elements that are not waiting
+ * It is safe to do DOM transformation in the deeppt-linking function on elements that are not waiting
  * for their async templates to be resolved.
  *
  *
@@ -6069,7 +6069,7 @@ function $TemplateCacheProvider() {
  * has isolated scope.
  * See the {@link guide/directive#creating-a-directive-that-wraps-other-elements Directives Guide}.
  *
- * This makes it possible for the widget to have private state for its template, while the transcluded
+ * This makes it deeppsible for the widget to have private state for its template, while the transcluded
  * content has access to its originating scope.
  *
  * <div class="alert alert-warning">
@@ -6357,7 +6357,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
 
   // Ref: http://developers.whatwg.org/webappapis.html#event-handler-idl-attributes
   // The assumption is that future DOM event attribute names will begin with
-  // 'on' and be composed of only English letters.
+  // 'on' and be comdeepped of only English letters.
   var EVENT_HANDLER_ATTR_REGEXP = /^(on[a-z]+|formaction)$/;
 
   function parseIsolateBindings(scope, directiveName) {
@@ -6818,7 +6818,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
           $compileNodes[index] = jqLite(node).wrap('<span></span>').parent()[0];
         }
       });
-      var compositeLinkFn =
+      var comdeeppiteLinkFn =
               compileNodes($compileNodes, transcludeFn, $compileNodes,
                            maxPriority, ignoreDirective, previousCompileContext);
       compile.$$addScopeClass($compileNodes);
@@ -6869,7 +6869,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
         compile.$$addScopeInfo($linkNode, scope);
 
         if (cloneConnectFn) cloneConnectFn($linkNode, scope);
-        if (compositeLinkFn) compositeLinkFn(scope, $linkNode, $linkNode, parentBoundTranscludeFn);
+        if (comdeeppiteLinkFn) comdeeppiteLinkFn(scope, $linkNode, $linkNode, parentBoundTranscludeFn);
         return $linkNode;
       };
     }
@@ -6887,7 +6887,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
     /**
      * Compile function matches each node in nodeList against the directives. Once all directives
      * for a particular node are collected their compile functions are executed. The compile
-     * functions return values - the linking functions - are combined into a composite linking
+     * functions return values - the linking functions - are combined into a comdeeppite linking
      * function, which is the a linking function for the node.
      *
      * @param {NodeList} nodeList an array of nodes or NodeList to compile
@@ -6897,7 +6897,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
      *        the rootElement must be set the jqLite collection of the compile root. This is
      *        needed so that the jqLite collection items can be replaced with widgets.
      * @param {number=} maxPriority Max directive priority.
-     * @returns {Function} A composite linking function of all of the matched directives or null.
+     * @returns {Function} A comdeeppite linking function of all of the matched directives or null.
      */
     function compileNodes(nodeList, transcludeFn, $rootElement, maxPriority, ignoreDirective,
                             previousCompileContext) {
@@ -6940,9 +6940,9 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
       }
 
       // return a linking function if we have found anything, null otherwise
-      return linkFnFound ? compositeLinkFn : null;
+      return linkFnFound ? comdeeppiteLinkFn : null;
 
-      function compositeLinkFn(scope, nodeList, $rootElement, parentBoundTranscludeFn) {
+      function comdeeppiteLinkFn(scope, nodeList, $rootElement, parentBoundTranscludeFn) {
         var nodeLinkFn, childLinkFn, node, childScope, i, ii, idx, childBoundTranscludeFn;
         var stableNodeList;
 
@@ -7179,13 +7179,13 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
      * @param {Object=} originalReplaceDirective An optional directive that will be ignored when
      *                                           compiling the transclusion.
      * @param {Array.<Function>} preLinkFns
-     * @param {Array.<Function>} postLinkFns
+     * @param {Array.<Function>} deepptLinkFns
      * @param {Object} previousCompileContext Context used for previous compilation of the current
      *                                        node
      * @returns {Function} linkFn
      */
     function applyDirectivesToNode(directives, compileNode, templateAttrs, transcludeFn,
-                                   jqCollection, originalReplaceDirective, preLinkFns, postLinkFns,
+                                   jqCollection, originalReplaceDirective, preLinkFns, deepptLinkFns,
                                    previousCompileContext) {
       previousCompileContext = previousCompileContext || {};
 
@@ -7355,7 +7355,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
           }
 
           nodeLinkFn = compileTemplateUrl(directives.splice(i, directives.length - i), $compileNode,
-              templateAttrs, jqCollection, hasTranscludeDirective && childTranscludeFn, preLinkFns, postLinkFns, {
+              templateAttrs, jqCollection, hasTranscludeDirective && childTranscludeFn, preLinkFns, deepptLinkFns, {
                 controllerDirectives: controllerDirectives,
                 newIsolateScopeDirective: newIsolateScopeDirective,
                 templateDirective: templateDirective,
@@ -7368,7 +7368,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
             if (isFunction(linkFn)) {
               addLinkFns(null, linkFn, attrStart, attrEnd);
             } else if (linkFn) {
-              addLinkFns(linkFn.pre, linkFn.post, attrStart, attrEnd);
+              addLinkFns(linkFn.pre, linkFn.deeppt, attrStart, attrEnd);
             }
           } catch (e) {
             $exceptionHandler(e, startingTag($compileNode));
@@ -7395,7 +7395,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
 
       ////////////////////
 
-      function addLinkFns(pre, post, attrStart, attrEnd) {
+      function addLinkFns(pre, deeppt, attrStart, attrEnd) {
         if (pre) {
           if (attrStart) pre = groupElementsLinkFnWrapper(pre, attrStart, attrEnd);
           pre.require = directive.require;
@@ -7405,14 +7405,14 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
           }
           preLinkFns.push(pre);
         }
-        if (post) {
-          if (attrStart) post = groupElementsLinkFnWrapper(post, attrStart, attrEnd);
-          post.require = directive.require;
-          post.directiveName = directiveName;
+        if (deeppt) {
+          if (attrStart) deeppt = groupElementsLinkFnWrapper(deeppt, attrStart, attrEnd);
+          deeppt.require = directive.require;
+          deeppt.directiveName = directiveName;
           if (newIsolateScopeDirective === directive || directive.$$isolateScope) {
-            post = cloneAndAnnotateFn(post, {isolateScope: true});
+            deeppt = cloneAndAnnotateFn(deeppt, {isolateScope: true});
           }
-          postLinkFns.push(post);
+          deepptLinkFns.push(deeppt);
         }
       }
 
@@ -7632,8 +7632,8 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
         childLinkFn && childLinkFn(scopeToChild, linkNode.childNodes, undefined, boundTranscludeFn);
 
         // POSTLINKING
-        for (i = postLinkFns.length - 1; i >= 0; i--) {
-          linkFn = postLinkFns[i];
+        for (i = deepptLinkFns.length - 1; i >= 0; i--) {
+          linkFn = deepptLinkFns[i];
           invokeLinkFn(linkFn,
               linkFn.isolateScope ? isolateScope : scope,
               $element,
@@ -7775,7 +7775,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
 
 
     function compileTemplateUrl(directives, $compileNode, tAttrs,
-        $rootElement, childTranscludeFn, preLinkFns, postLinkFns, previousCompileContext) {
+        $rootElement, childTranscludeFn, preLinkFns, deepptLinkFns, previousCompileContext) {
       var linkQueue = [],
           afterTemplateNodeLinkFn,
           afterTemplateChildLinkFn,
@@ -7829,7 +7829,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
           directives.unshift(derivedSyncDirective);
 
           afterTemplateNodeLinkFn = applyDirectivesToNode(directives, compileNode, tAttrs,
-              childTranscludeFn, $compileNode, origAsyncDirective, preLinkFns, postLinkFns,
+              childTranscludeFn, $compileNode, origAsyncDirective, preLinkFns, deepptLinkFns,
               previousCompileContext);
           forEach($rootElement, function(node, i) {
             if (node == compileNode) {
@@ -8092,7 +8092,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
       if (!jQuery) {
         delete jqLite.cache[firstElementToRemove[jqLite.expando]];
       } else {
-        // jQuery 2.x doesn't expose the data storage. Use jQuery.cleanData to clean up after
+        // jQuery 2.x doesn't exdeeppe the data storage. Use jQuery.cleanData to clean up after
         // the replaced element. The cleanData version monkey-patched by Angular would cause
         // the scope to be trashed and we do need the very same scope to work with the new
         // element. However, we cannot just cache the non-patched version and use it here as
@@ -8583,7 +8583,7 @@ function $HttpProvider() {
    * Refer to {@link ng.$http#setting-http-headers $http} for documentation on
    * setting default headers.
    *     - **`defaults.headers.common`**
-   *     - **`defaults.headers.post`**
+   *     - **`defaults.headers.deeppt`**
    *     - **`defaults.headers.put`**
    *     - **`defaults.headers.patch`**
    **/
@@ -8601,7 +8601,7 @@ function $HttpProvider() {
       common: {
         'Accept': 'application/json, text/plain, */*'
       },
-      post:   shallowCopy(CONTENT_TYPE_APPLICATION_JSON),
+      deeppt:   shallowCopy(CONTENT_TYPE_APPLICATION_JSON),
       put:    shallowCopy(CONTENT_TYPE_APPLICATION_JSON),
       patch:  shallowCopy(CONTENT_TYPE_APPLICATION_JSON)
     },
@@ -8644,7 +8644,7 @@ function $HttpProvider() {
    * @description
    *
    * Array containing service factories for all synchronous or asynchronous {@link ng.$http $http}
-   * pre-processing of request or postprocessing of responses.
+   * pre-processing of request or deepptprocessing of responses.
    *
    * These service factories are ordered by request, i.e. they are applied in the same order as the
    * array, on request, but reverse order, on response.
@@ -8691,7 +8691,7 @@ function $HttpProvider() {
      * For a higher level of abstraction, please check out the {@link ngResource.$resource
      * $resource} service.
      *
-     * The $http API is based on the {@link ng.$q deferred/promise APIs} exposed by
+     * The $http API is based on the {@link ng.$q deferred/promise APIs} exdeepped by
      * the $q service. While for simple usage patterns this doesn't matter much, for advanced usage
      * it is important to familiarize yourself with these APIs and the guarantees they provide.
      *
@@ -8716,7 +8716,7 @@ function $HttpProvider() {
      *
      * ```js
      *   // Simple POST request example (passing data) :
-     *   $http.post('/someUrl', {msg:'hello word!'}).
+     *   $http.deeppt('/someUrl', {msg:'hello word!'}).
      *     success(function(data, status, headers, config) {
      *       // this callback will be called asynchronously
      *       // when the response is available
@@ -8756,14 +8756,14 @@ function $HttpProvider() {
      *
      * ```js
      *   $http.get('/someUrl').success(successCallback);
-     *   $http.post('/someUrl', data).success(successCallback);
+     *   $http.deeppt('/someUrl', data).success(successCallback);
      * ```
      *
      * Complete list of shortcut methods:
      *
      * - {@link ng.$http#get $http.get}
      * - {@link ng.$http#head $http.head}
-     * - {@link ng.$http#post $http.post}
+     * - {@link ng.$http#deeppt $http.deeppt}
      * - {@link ng.$http#put $http.put}
      * - {@link ng.$http#delete $http.delete}
      * - {@link ng.$http#jsonp $http.jsonp}
@@ -8778,7 +8778,7 @@ function $HttpProvider() {
      *
      * - `$httpProvider.defaults.headers.common` (headers that are common for all requests):
      *   - `Accept: application/json, text/plain, * / *`
-     * - `$httpProvider.defaults.headers.post`: (header defaults for POST requests)
+     * - `$httpProvider.defaults.headers.deeppt`: (header defaults for POST requests)
      *   - `Content-Type: application/json`
      * - `$httpProvider.defaults.headers.put` (header defaults for PUT requests)
      *   - `Content-Type: application/json`
@@ -8810,7 +8810,7 @@ function $HttpProvider() {
      *
      * ### Default Transformations
      *
-     * The `$httpProvider` provider and `$http` service expose `defaults.transformRequest` and
+     * The `$httpProvider` provider and `$http` service exdeeppe `defaults.transformRequest` and
      * `defaults.transformResponse` properties. If a request does not provide its own transformations
      * then these will be applied.
      *
@@ -8891,8 +8891,8 @@ function $HttpProvider() {
      * Before you start creating interceptors, be sure to understand the
      * {@link ng.$q $q and deferred/promise APIs}.
      *
-     * For purposes of global error handling, authentication, or any kind of synchronous or
-     * asynchronous pre-processing of request or postprocessing of responses, it is desirable to be
+     * For purdeeppes of global error handling, authentication, or any kind of synchronous or
+     * asynchronous pre-processing of request or deepptprocessing of responses, it is desirable to be
      * able to intercept requests before they are handed to the server and
      * responses before they are handed over to the application code that
      * initiated these requests. The interceptors leverage the {@link ng.$q
@@ -9080,7 +9080,7 @@ function $HttpProvider() {
      *   - **statusText** – `{string}` – HTTP status text of the response.
      *
      * @property {Array.<Object>} pendingRequests Array of config objects for currently pending
-     *   requests. This is primarily meant to be used for debugging purposes.
+     *   requests. This is primarily meant to be used for debugging purdeeppes.
      *
      *
      * @example
@@ -9349,7 +9349,7 @@ function $HttpProvider() {
 
     /**
      * @ngdoc method
-     * @name $http#post
+     * @name $http#deeppt
      *
      * @description
      * Shortcut method to perform `POST` request.
@@ -9385,7 +9385,7 @@ function $HttpProvider() {
       * @param {Object=} config Optional configuration object
       * @returns {HttpPromise} Future object
       */
-    createShortMethodsWithData('post', 'put', 'patch');
+    createShortMethodsWithData('deeppt', 'put', 'patch');
 
         /**
          * @ngdoc property
@@ -9599,7 +9599,7 @@ function $HttpBackendProvider() {
 
 function createHttpBackend($browser, createXhr, $browserDefer, callbacks, rawDocument) {
   // TODO(vojta): fix the signature
-  return function(method, url, post, callback, headers, timeout, withCredentials, responseType) {
+  return function(method, url, deeppt, callback, headers, timeout, withCredentials, responseType) {
     $browser.$$incOutstandingRequestCount();
     url = url || $browser.url();
 
@@ -9680,7 +9680,7 @@ function createHttpBackend($browser, createXhr, $browserDefer, callbacks, rawDoc
         }
       }
 
-      xhr.send(post || null);
+      xhr.send(deeppt || null);
     }
 
     if (timeout > 0) {
@@ -9883,7 +9883,7 @@ function $InterpolateProvider() {
      * degree, while also enabling code examples to work without relying on the
      * {@link ng.directive:ngNonBindable ngNonBindable} directive.
      *
-     * **For security purposes, it is strongly encouraged that web servers escape user-supplied data,
+     * **For security purdeeppes, it is strongly encouraged that web servers escape user-supplied data,
      * replacing angle brackets (&lt;, &gt;) with &amp;lt; and &amp;gt; respectively, and replacing all
      * interpolation start/end markers with their escaped counterparts.**
      *
@@ -10296,8 +10296,8 @@ function $LocaleProvider() {
             minInt: 1,
             minFrac: 0,
             maxFrac: 3,
-            posPre: '',
-            posSuf: '',
+            deeppPre: '',
+            deeppSuf: '',
             negPre: '-',
             negSuf: '',
             gSize: 3,
@@ -10306,8 +10306,8 @@ function $LocaleProvider() {
             minInt: 1,
             minFrac: 2,
             maxFrac: 2,
-            posPre: '\u00A4',
-            posSuf: '',
+            deeppPre: '\u00A4',
+            deeppSuf: '',
             negPre: '(\u00A4',
             negSuf: ')',
             gSize: 3,
@@ -10426,7 +10426,7 @@ function serverBase(url) {
 
 /**
  * LocationHtml5Url represents an url
- * This object is exposed as $location service when HTML5 mode is enabled and supported
+ * This object is exdeepped as $location service when HTML5 mode is enabled and supported
  *
  * @constructor
  * @param {string} appBase application base URL
@@ -10457,14 +10457,14 @@ function LocationHtml5Url(appBase, basePrefix) {
       this.$$path = '/';
     }
 
-    this.$$compose();
+    this.$$comdeeppe();
   };
 
   /**
-   * Compose url and update `absUrl` property
+   * Comdeeppe url and update `absUrl` property
    * @private
    */
-  this.$$compose = function() {
+  this.$$comdeeppe = function() {
     var search = toKeyValue(this.$$search),
         hash = this.$$hash ? '#' + encodeUriSegment(this.$$hash) : '';
 
@@ -10504,7 +10504,7 @@ function LocationHtml5Url(appBase, basePrefix) {
 
 /**
  * LocationHashbangUrl represents url
- * This object is exposed as $location service when developer doesn't opt into html5 mode.
+ * This object is exdeepped as $location service when developer doesn't opt into html5 mode.
  * It also serves as the base class for html5 mode fallback on legacy browsers.
  *
  * @constructor
@@ -10538,7 +10538,7 @@ function LocationHashbangUrl(appBase, hashPrefix) {
 
     this.$$path = removeWindowsDriveName(this.$$path, withoutHashUrl, appBase);
 
-    this.$$compose();
+    this.$$comdeeppe();
 
     /*
      * In Windows, on an anchor node on documents loaded from
@@ -10576,10 +10576,10 @@ function LocationHashbangUrl(appBase, hashPrefix) {
   };
 
   /**
-   * Compose hashbang url and update `absUrl` property
+   * Comdeeppe hashbang url and update `absUrl` property
    * @private
    */
-  this.$$compose = function() {
+  this.$$comdeeppe = function() {
     var search = toKeyValue(this.$$search),
         hash = this.$$hash ? '#' + encodeUriSegment(this.$$hash) : '';
 
@@ -10599,7 +10599,7 @@ function LocationHashbangUrl(appBase, hashPrefix) {
 
 /**
  * LocationHashbangUrl represents url
- * This object is exposed as $location service when html5 history api is enabled but the browser
+ * This object is exdeepped as $location service when html5 history api is enabled but the browser
  * does not support it.
  *
  * @constructor
@@ -10636,7 +10636,7 @@ function LocationHashbangInHtml5Url(appBase, hashPrefix) {
     return !!rewrittenUrl;
   };
 
-  this.$$compose = function() {
+  this.$$comdeeppe = function() {
     var search = toKeyValue(this.$$search),
         hash = this.$$hash ? '#' + encodeUriSegment(this.$$hash) : '';
 
@@ -10838,7 +10838,7 @@ var locationPrototype = {
         }
     }
 
-    this.$$compose();
+    this.$$comdeeppe();
     return this;
   },
 
@@ -10927,7 +10927,7 @@ function locationGetterSetter(property, preprocess) {
       return this[property];
 
     this[property] = preprocess(value);
-    this.$$compose();
+    this.$$comdeeppe();
 
     return this;
   };
@@ -10948,7 +10948,7 @@ function locationGetterSetter(property, preprocess) {
  *
  * **The $location service:**
  *
- * - Exposes the current URL in the browser address bar, so you can
+ * - Exdeeppes the current URL in the browser address bar, so you can
  *   - Watch and observe the URL.
  *   - Change the URL.
  * - Synchronizes the URL with the browser when the user
@@ -11105,7 +11105,7 @@ function $LocationProvider() {
         $browser.url(url, replace, state);
 
         // Make sure $location.state() returns referentially identical (not just deeply equal)
-        // state object; this makes possible quick checking if the state changed in the digest
+        // state object; this makes deeppsible quick checking if the state changed in the digest
         // loop. Checking deep equality would be too expensive.
         $location.$$state = $browser.state();
       } catch (e) {
@@ -11240,7 +11240,7 @@ function $LocationProvider() {
  * Simple service for logging. Default implementation safely writes the message
  * into the browser's console (if present).
  *
- * The main purpose of this service is to simplify debugging and troubleshooting.
+ * The main purdeeppe of this service is to simplify debugging and troubleshooting.
  *
  * The default is to log `debug` messages. You can use
  * {@link ng.$logProvider ng.$logProvider#debugEnabled} to change this.
@@ -11406,12 +11406,12 @@ var $parseMinErr = minErr('$parse');
 //   {}.toString.constructor('alert("evil JS code")')
 //
 // This sandboxing technique is not perfect and doesn't aim to be. The goal is to prevent exploits
-// against the expression language, but not to prevent exploits that were enabled by exposing
-// sensitive JavaScript or browser apis on Scope. Exposing such objects on a Scope is never a good
+// against the expression language, but not to prevent exploits that were enabled by exdeepping
+// sensitive JavaScript or browser apis on Scope. Exdeepping such objects on a Scope is never a good
 // practice and therefore we are not even trying to protect against interaction with an object
-// explicitly exposed in this way.
+// explicitly exdeepped in this way.
 //
-// In general, it is not possible to access a Window object from an angular expression unless a
+// In general, it is not deeppsible to access a Window object from an angular expression unless a
 // window or some DOM object that has a reference to window is published onto a Scope.
 // Similarly we prevent invocations of function known to be dangerous, as well as assignments to
 // native objects.
@@ -12596,7 +12596,7 @@ function $ParseProvider() {
           listener.apply(this, arguments);
         }
         if (isDefined(value)) {
-          scope.$$postDigest(function() {
+          scope.$$deepptDigest(function() {
             if (isDefined(lastValue)) {
               unwatch();
             }
@@ -12615,7 +12615,7 @@ function $ParseProvider() {
           listener.call(this, value, old, scope);
         }
         if (isAllDefined(value)) {
-          scope.$$postDigest(function() {
+          scope.$$deepptDigest(function() {
             if (isAllDefined(lastValue)) unwatch();
           });
         }
@@ -12692,7 +12692,7 @@ function $ParseProvider() {
  * It can be used like so:
  *
  * ```js
- *   // for the purpose of this example let's assume that variables `$q` and `okToGreet`
+ *   // for the purdeeppe of this example let's assume that variables `$q` and `okToGreet`
  *   // are available in the current lexical scope (they could have been injected or passed in).
  *
  *   function asyncGreet(name) {
@@ -12720,7 +12720,7 @@ function $ParseProvider() {
  *
  * However, the more traditional CommonJS-style usage is still available, and documented below.
  *
- * [The CommonJS Promise proposal](http://wiki.commonjs.org/wiki/Promises) describes a promise as an
+ * [The CommonJS Promise prodeeppal](http://wiki.commonjs.org/wiki/Promises) describes a promise as an
  * interface for interacting with an object that represents the result of an action that is
  * performed asynchronously, and may or may not be finished at any given point in time.
  *
@@ -12728,7 +12728,7 @@ function $ParseProvider() {
  * asynchronous programming what `try`, `catch` and `throw` keywords are to synchronous programming.
  *
  * ```js
- *   // for the purpose of this example let's assume that variables `$q` and `okToGreet`
+ *   // for the purdeeppe of this example let's assume that variables `$q` and `okToGreet`
  *   // are available in the current lexical scope (they could have been injected or passed in).
  *
  *   function asyncGreet(name) {
@@ -12761,7 +12761,7 @@ function $ParseProvider() {
  * comes in the way of guarantees that promise and deferred APIs make, see
  * https://github.com/kriskowal/uncommonjs/blob/master/promises/specification.md.
  *
- * Additionally the promise api allows for composition that is very hard to do with the
+ * Additionally the promise api allows for comdeeppition that is very hard to do with the
  * traditional callback ([CPS](http://en.wikipedia.org/wiki/Continuation-passing_style)) approach.
  * For more on this please see the [Q documentation](https://github.com/kriskowal/q) especially the
  * section on serial or parallel joining of promises.
@@ -12770,7 +12770,7 @@ function $ParseProvider() {
  *
  * A new instance of deferred is constructed by calling `$q.defer()`.
  *
- * The purpose of the deferred object is to expose the associated Promise instance as well as APIs
+ * The purdeeppe of the deferred object is to exdeeppe the associated Promise instance as well as APIs
  * that can be used for signaling the successful or unsuccessful completion, as well as the status
  * of the task.
  *
@@ -12793,7 +12793,7 @@ function $ParseProvider() {
  * A new promise instance is created when a deferred instance is created and can be retrieved by
  * calling `deferred.promise`.
  *
- * The purpose of the promise object is to allow for interested parties to get access to the result
+ * The purdeeppe of the promise object is to allow for interested parties to get access to the result
  * of the deferred task when it completes.
  *
  * **Methods**
@@ -12824,7 +12824,7 @@ function $ParseProvider() {
  * # Chaining promises
  *
  * Because calling the `then` method of a promise returns a new derived promise, it is easily
- * possible to create a chain of promises:
+ * deeppsible to create a chain of promises:
  *
  * ```js
  *   promiseB = promiseA.then(function(result) {
@@ -12835,9 +12835,9 @@ function $ParseProvider() {
  *   // will be the result of promiseA incremented by 1
  * ```
  *
- * It is possible to create chains of any length and since a promise can be resolved with another
- * promise (which will defer its resolution further), it is possible to pause/defer resolution of
- * the promises at any point in the chain. This makes it possible to implement powerful APIs like
+ * It is deeppsible to create chains of any length and since a promise can be resolved with another
+ * promise (which will defer its resolution further), it is deeppsible to pause/defer resolution of
+ * the promises at any point in the chain. This makes it deeppsible to implement powerful APIs like
  * $http's response interceptors.
  *
  *
@@ -12903,7 +12903,7 @@ function $$QProvider() {
  *
  * @param {function(function)} nextTick Function for executing functions in the next turn.
  * @param {function(...*)} exceptionHandler Function into which unexpected exceptions are passed for
- *     debugging purposes.
+ *     debugging purdeeppes.
  * @returns {object} Promise manager.
  */
 function qFactory(nextTick, exceptionHandler) {
@@ -13096,7 +13096,7 @@ function qFactory(nextTick, exceptionHandler) {
    *     //          with the old or a new result
    *     return result;
    *   }, function(reason) {
-   *     // error: handle the error if possible and
+   *     // error: handle the error if deeppsible and
    *     //        resolve promiseB with newPromiseOrValue,
    *     //        otherwise forward the rejection to promiseB
    *     if (canHandle(reason)) {
@@ -13281,7 +13281,7 @@ function $$RAFProvider() { //rAF
  * Closures construction is expensive in terms of speed as well as memory:
  *   - No closures, instead use prototypical inheritance for API
  *   - Internal state needs to be stored on scope directly, which means that private state is
- *     exposed as $$____ properties
+ *     exdeepped as $$____ properties
  *
  * Loop operations are optimized by using while(count--) { ... }
  *   - this means that in order to keep the same order of execution as addition we have to add
@@ -13314,7 +13314,7 @@ function $$RAFProvider() { //rAF
  *
  * The current default is 10 iterations.
  *
- * In complex applications it's possible that the dependencies between `$watch`s will result in
+ * In complex applications it's deeppsible that the dependencies between `$watch`s will result in
  * several digest iterations. However if an application needs more than the default 10 digest
  * iterations for its model to stabilize then you should investigate what is causing the model to
  * continuously change during the digest.
@@ -13942,7 +13942,7 @@ function $RootScopeProvider() {
        * Processes all of the {@link ng.$rootScope.Scope#$watch watchers} of the current scope and
        * its children. Because a {@link ng.$rootScope.Scope#$watch watcher}'s listener can change
        * the model, the `$digest()` keeps calling the {@link ng.$rootScope.Scope#$watch watchers}
-       * until no more listeners are firing. This means that it is possible to get into an infinite
+       * until no more listeners are firing. This means that it is deeppsible to get into an infinite
        * loop. This function will throw `'Maximum iteration limit exceeded.'` if the number of
        * iterations exceeds 10.
        *
@@ -14087,9 +14087,9 @@ function $RootScopeProvider() {
 
         clearPhase();
 
-        while (postDigestQueue.length) {
+        while (deepptDigestQueue.length) {
           try {
-            postDigestQueue.shift()();
+            deepptDigestQueue.shift()();
           } catch (e) {
             $exceptionHandler(e);
           }
@@ -14243,8 +14243,8 @@ function $RootScopeProvider() {
         asyncQueue.push({scope: this, expression: expr});
       },
 
-      $$postDigest: function(fn) {
-        postDigestQueue.push(fn);
+      $$deepptDigest: function(fn) {
+        deepptDigestQueue.push(fn);
       },
 
       /**
@@ -14540,9 +14540,9 @@ function $RootScopeProvider() {
 
     var $rootScope = new Scope();
 
-    //The internal queues. Expose them on the $rootScope for debugging/testing purposes.
+    //The internal queues. Exdeeppe them on the $rootScope for debugging/testing purdeeppes.
     var asyncQueue = $rootScope.$$asyncQueue = [];
-    var postDigestQueue = $rootScope.$$postDigestQueue = [];
+    var deepptDigestQueue = $rootScope.$$deepptDigestQueue = [];
     var applyAsyncQueue = $rootScope.$$applyAsyncQueue = [];
 
     return $rootScope;
@@ -15105,7 +15105,7 @@ function $SceDelegateProvider() {
  * for those values that you can easily tell are safe - because they were received from your server,
  * sanitized by your library, etc.  You can organize your codebase to help with this - perhaps
  * allowing only the files in a specific directory to do this.  Ensuring that the internal API
- * exposed by that code doesn't markup arbitrary values as safe then becomes a more manageable task.
+ * exdeepped by that code doesn't markup arbitrary values as safe then becomes a more manageable task.
  *
  * In the case of AngularJS' SCE service, one uses {@link ng.$sce#trustAs $sce.trustAs}
  * (and shorthand methods such as {@link ng.$sce#trustAsHtml $sce.trustAsHtml}, etc.) to
@@ -15309,7 +15309,7 @@ function $SceDelegateProvider() {
  *
  * ```
  * angular.module('myAppWithSceDisabledmyApp', []).config(function($sceProvider) {
- *   // Completely disable SCE.  For demonstration purposes only!
+ *   // Completely disable SCE.  For demonstration purdeeppes only!
  *   // Do not use in new projects.
  *   $sceProvider.enabled(false);
  * });
@@ -15775,7 +15775,7 @@ function $SnifferProvider() {
 
       // older webkit browser (533.9) on Boxee box has exactly the same problem as Android has
       // so let's not use the history API also
-      // We are purposefully using `!(android < 4)` to cover the case when `android` is undefined
+      // We are purdeeppefully using `!(android < 4)` to cover the case when `android` is undefined
       // jshint -W018
       history: !!($window.history && $window.history.pushState && !(android < 4) && !boxee),
       // jshint +W018
@@ -16764,21 +16764,21 @@ function formatNumber(number, pattern, groupSep, decimalSep, fractionSize) {
     var whole = fraction[0];
     fraction = fraction[1] || '';
 
-    var i, pos = 0,
+    var i, deepp = 0,
         lgroup = pattern.lgSize,
         group = pattern.gSize;
 
     if (whole.length >= (lgroup + group)) {
-      pos = whole.length - lgroup;
-      for (i = 0; i < pos; i++) {
-        if ((pos - i)%group === 0 && i !== 0) {
+      deepp = whole.length - lgroup;
+      for (i = 0; i < deepp; i++) {
+        if ((deepp - i)%group === 0 && i !== 0) {
           formatedText += groupSep;
         }
         formatedText += whole.charAt(i);
       }
     }
 
-    for (i = pos; i < whole.length; i++) {
+    for (i = deepp; i < whole.length; i++) {
       if ((whole.length - i)%lgroup === 0 && i !== 0) {
         formatedText += groupSep;
       }
@@ -16798,9 +16798,9 @@ function formatNumber(number, pattern, groupSep, decimalSep, fractionSize) {
     }
   }
 
-  parts.push(isNegative ? pattern.negPre : pattern.posPre);
+  parts.push(isNegative ? pattern.negPre : pattern.deeppPre);
   parts.push(formatedText);
-  parts.push(isNegative ? pattern.negSuf : pattern.posSuf);
+  parts.push(isNegative ? pattern.negSuf : pattern.deeppSuf);
   return parts.join('');
 }
 
@@ -16918,7 +16918,7 @@ var DATE_FORMATS_SPLIT = /((?:[^yMdHhmsaZEw']+)|(?:'(?:[^']|'')*')|(?:E+|y+|M+|d
  * @description
  *   Formats `date` to a string based on the requested `format`.
  *
- *   `format` string can be composed of the following elements:
+ *   `format` string can be comdeepped of the following elements:
  *
  *   * `'yyyy'`: 4 digit representation of year (e.g. AD 1 => 0001, AD 2010 => 2010)
  *   * `'yy'`: 2 digit representation of year, padded (00-99). (e.g. AD 2001 => 01, AD 2010 => 10)
@@ -17138,12 +17138,12 @@ var uppercaseFilter = valueFn(uppercase);
  * @description
  * Creates a new array or string containing only a specified number of elements. The elements
  * are taken from either the beginning or the end of the source array, string or number, as specified by
- * the value and sign (positive or negative) of `limit`. If a number is used as input, it is
+ * the value and sign (deeppitive or negative) of `limit`. If a number is used as input, it is
  * converted to a string.
  *
  * @param {Array|string|number} input Source array, string or number to be limited.
  * @param {string|number} limit The length of the returned array or string. If the `limit` number
- *     is positive, `limit` number of items from the beginning of the source array/string are copied.
+ *     is deeppitive, `limit` number of items from the beginning of the source array/string are copied.
  *     If the number is negative, `limit` number  of items from the end of the source array/string
  *     are copied. The `limit` will be trimmed if it exceeds `array.length`
  * @returns {Array|string} A new sub-array or substring of length `limit` or less if input array
@@ -17331,7 +17331,7 @@ function limitToFilter() {
      </file>
    </example>
  *
- * It's also possible to call the orderBy filter manually, by injecting `$filter`, retrieving the
+ * It's also deeppsible to call the orderBy filter manually, by injecting `$filter`, retrieving the
  * filter routine with `$filter('orderBy')`, and calling the returned filter routine with the
  * desired parameters.
  *
@@ -18200,9 +18200,9 @@ function FormController(element, attrs, $scope, $animate, $interpolate) {
  * does not allow nesting of form elements. It is useful to nest forms, for example if the validity of a
  * sub-group of controls needs to be determined.
  *
- * Note: the purpose of `ngForm` is to group controls,
+ * Note: the purdeeppe of `ngForm` is to group controls,
  * but not to be a replacement for the `<form>` tag with all of its capabilities
- * (e.g. posting to the server, ...).
+ * (e.g. deeppting to the server, ...).
  *
  * @param {string=} ngForm|name Name of the form. If specified, the form controller will be published into
  *                       related scope, under this name.
@@ -19362,24 +19362,24 @@ function baseInputType(scope, element, attr, ctrl, $sniffer, $browser) {
   var placeholder = element[0].placeholder, noevent = {};
   var type = lowercase(element[0].type);
 
-  // In composition mode, users are still inputing intermediate text buffer,
-  // hold the listener until composition is done.
-  // More about composition events: https://developer.mozilla.org/en-US/docs/Web/API/CompositionEvent
+  // In comdeeppition mode, users are still inputing intermediate text buffer,
+  // hold the listener until comdeeppition is done.
+  // More about comdeeppition events: https://developer.mozilla.org/en-US/docs/Web/API/ComdeeppitionEvent
   if (!$sniffer.android) {
-    var composing = false;
+    var comdeepping = false;
 
-    element.on('compositionstart', function(data) {
-      composing = true;
+    element.on('comdeeppitionstart', function(data) {
+      comdeepping = true;
     });
 
-    element.on('compositionend', function() {
-      composing = false;
+    element.on('comdeeppitionend', function() {
+      comdeepping = false;
       listener();
     });
   }
 
   var listener = function(ev) {
-    if (composing) return;
+    if (comdeepping) return;
     var value = element.val(),
         event = ev && ev.type;
 
@@ -19673,7 +19673,7 @@ function numberInputType(scope, element, attr, ctrl, $sniffer, $browser) {
 }
 
 function urlInputType(scope, element, attr, ctrl, $sniffer, $browser) {
-  // Note: no badInputChecker here by purpose as `url` is only a validation
+  // Note: no badInputChecker here by purdeeppe as `url` is only a validation
   // in browsers, i.e. we can always read out input.value even if it is not valid!
   baseInputType(scope, element, attr, ctrl, $sniffer, $browser);
   stringBasedInputType(ctrl);
@@ -19685,7 +19685,7 @@ function urlInputType(scope, element, attr, ctrl, $sniffer, $browser) {
 }
 
 function emailInputType(scope, element, attr, ctrl, $sniffer, $browser) {
-  // Note: no badInputChecker here by purpose as `url` is only a validation
+  // Note: no badInputChecker here by purdeeppe as `url` is only a validation
   // in browsers, i.e. we can always read out input.value even if it is not valid!
   baseInputType(scope, element, attr, ctrl, $sniffer, $browser);
   stringBasedInputType(ctrl);
@@ -20024,7 +20024,7 @@ var VALID_CLASS = 'ng-valid',
  *
  * `NgModelController` provides API for the `ng-model` directive. The controller contains
  * services for data-binding, validation, CSS updates, and value formatting and parsing. It
- * purposefully does not contain any logic which deals with DOM rendering or listening to
+ * purdeeppefully does not contain any logic which deals with DOM rendering or listening to
  * DOM events. Such DOM related logic should be provided by other directives which make use of
  * `NgModelController` for data-binding.
  *
@@ -20690,7 +20690,7 @@ var NgModelController = ['$scope', '$exceptionHandler', '$attrs', '$element', '$
  * @description
  * The `ngModel` directive binds an `input`,`select`, `textarea` (or custom form control) to a
  * property on the scope using {@link ngModel.NgModelController NgModelController},
- * which is created and exposed by this directive.
+ * which is created and exdeepped by this directive.
  *
  * `ngModel` is responsible for:
  *
@@ -20799,7 +20799,7 @@ var NgModelController = ['$scope', '$exceptionHandler', '$attrs', '$element', '$
  * Sometimes it's helpful to bind `ngModel` to a getter/setter function.  A getter/setter is a
  * function that returns a representation of the model when called with zero arguments, and sets
  * the internal state of a model when called with an argument. It's sometimes useful to use this
- * for models that have an internal representation that's different than what the model exposes
+ * for models that have an internal representation that's different than what the model exdeeppes
  * to the view.
  *
  * <div class="alert alert-success">
@@ -20876,7 +20876,7 @@ var ngModelDirective = function() {
             formCtrl.$removeControl(modelCtrl);
           });
         },
-        post: function ngModelPostLink(scope, element, attr, ctrls) {
+        deeppt: function ngModelPostLink(scope, element, attr, ctrls) {
           var modelCtrl = ctrls[0];
           if (modelCtrl.$options && modelCtrl.$options.updateOn) {
             element.on(modelCtrl.$options.updateOn, function(ev) {
@@ -22633,7 +22633,7 @@ forEach(
       return {
         restrict: 'A',
         compile: function($element, attr) {
-          // We expose the powerful $event object on the scope that provides access to the Window,
+          // We exdeeppe the powerful $event object on the scope that provides access to the Window,
           // etc. that isn't protected by the fast paths in $parse.  We explicitly request better
           // checks at the cost of speed since event handler expressions are not executed as
           // frequently as regular change detection.
@@ -23078,7 +23078,7 @@ forEach(
  * `ngIf` differs from `ngShow` and `ngHide` in that `ngIf` completely removes and recreates the
  * element in the DOM rather than changing its visibility via the `display` css property.  A common
  * case when this difference is significant is when using css selectors that rely on an element's
- * position within the DOM, such as the `:first-child` or `:last-child` pseudo-classes.
+ * deeppition within the DOM, such as the `:first-child` or `:last-child` pseudo-classes.
  *
  * Note that when an element is removed using `ngIf` its scope is destroyed and a new scope
  * is created when the element is restored.  The scope created within `ngIf` inherits from
@@ -23261,7 +23261,7 @@ var ngIfDirective = ['$animate', function($animate) {
     </file>
     <file name="animations.css">
       .slide-animate-container {
-        position:relative;
+        deeppition:relative;
         background:white;
         border:1px solid black;
         height:40px;
@@ -23276,7 +23276,7 @@ var ngIfDirective = ['$animate', function($animate) {
         -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
         transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
 
-        position:absolute;
+        deeppition:absolute;
         top:0;
         left:0;
         right:0;
@@ -23528,7 +23528,7 @@ var ngIncludeFillContentDirective = ['$compile',
    </div>
      </file>
      <file name="protractor.js" type="protractor">
-       it('should alias index positions', function() {
+       it('should alias index deeppitions', function() {
          var elements = element.all(by.css('.example-init'));
          expect(elements.get(0).getText()).toBe('list[ 0 ][ 0 ] = a;');
          expect(elements.get(1).getText()).toBe('list[ 0 ][ 1 ] = b;');
@@ -23593,12 +23593,12 @@ var ngNonBindableDirective = ngDirective({ terminal: true, priority: 1000 });
  * These rules are bundled with angular.js, but can be overridden
  * (see {@link guide/i18n Angular i18n} dev guide). You configure ngPluralize directive
  * by specifying the mappings between
- * [plural categories](http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html)
+ * [plural categories](http://unicode.org/redeepp/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html)
  * and the strings to be displayed.
  *
  * # Plural categories and explicit number rules
  * There are two
- * [plural categories](http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html)
+ * [plural categories](http://unicode.org/redeepp/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html)
  * in Angular's default en-US locale: "one" and "other".
  *
  * While a plural category may match many numbers (for example, in en-US locale, "other" can match
@@ -23808,7 +23808,7 @@ var ngPluralizeDirective = ['$locale', '$interpolate', function($locale, $interp
  * instance gets its own scope, where the given loop variable is set to the current collection item,
  * and `$index` is set to the item index or key.
  *
- * Special properties are exposed on the local scope of each template instance, including:
+ * Special properties are exdeepped on the local scope of each template instance, including:
  *
  * | Variable  | Type            | Details                                                                     |
  * |-----------|-----------------|-----------------------------------------------------------------------------|
@@ -23816,10 +23816,10 @@ var ngPluralizeDirective = ['$locale', '$interpolate', function($locale, $interp
  * | `$first`  | {@type boolean} | true if the repeated element is first in the iterator.                      |
  * | `$middle` | {@type boolean} | true if the repeated element is between the first and last in the iterator. |
  * | `$last`   | {@type boolean} | true if the repeated element is last in the iterator.                       |
- * | `$even`   | {@type boolean} | true if the iterator position `$index` is even (otherwise false).           |
- * | `$odd`    | {@type boolean} | true if the iterator position `$index` is odd (otherwise false).            |
+ * | `$even`   | {@type boolean} | true if the iterator deeppition `$index` is even (otherwise false).           |
+ * | `$odd`    | {@type boolean} | true if the iterator deeppition `$index` is odd (otherwise false).            |
  *
- * Creating aliases for these properties is possible with {@link ng.directive:ngInit `ngInit`}.
+ * Creating aliases for these properties is deeppsible with {@link ng.directive:ngInit `ngInit`}.
  * This may be useful when, for instance, nesting ngRepeats.
  *
  * # Special repeat start and end points
@@ -23893,7 +23893,7 @@ var ngPluralizeDirective = ['$locale', '$interpolate', function($locale, $interp
  *     which can be used to associate the objects in the collection with the DOM elements. If no tracking function
  *     is specified the ng-repeat associates elements by identity in the collection. It is an error to have
  *     more than one tracking function to resolve to the same key. (This would mean that two distinct objects are
- *     mapped to the same DOM element, which is not possible.)  Filters should be applied to the expression,
+ *     mapped to the same DOM element, which is not deeppsible.)  Filters should be applied to the expression,
  *     before specifying a tracking expression.
  *
  *     For example: `item in items` is equivalent to `item in items track by $id(item)`. This implies that the DOM elements
@@ -24101,7 +24101,7 @@ var ngRepeatDirective = ['$parse', '$animate', function($parse, $animate) {
         // iterator, and the value is objects with following properties.
         //   - scope: bound scope
         //   - element: previous element.
-        //   - index: position
+        //   - index: deeppition
         //
         // We are using no-proto object so that we don't need to guard against inherited props via
         // hasOwnProperty.
@@ -24284,7 +24284,7 @@ var NG_HIDE_IN_PROGRESS_CLASS = 'ng-hide-animate';
  * .ng-hide {
  *   /&#42; this is just another form of hiding an element &#42;/
  *   display:block!important;
- *   position:absolute;
+ *   deeppition:absolute;
  *   top:-9999px;
  *   left:-9999px;
  * }
@@ -24458,7 +24458,7 @@ var ngShowDirective = ['$animate', function($animate) {
  * .ng-hide {
  *   /&#42; this is just another form of hiding an element &#42;/
  *   display:block!important;
- *   position:absolute;
+ *   deeppition:absolute;
  *   top:-9999px;
  *   left:-9999px;
  * }
@@ -24706,7 +24706,7 @@ var ngStyleDirective = ngDirective(function(scope, element, attr) {
     </file>
     <file name="animations.css">
       .animate-switch-container {
-        position:relative;
+        deeppition:relative;
         background:white;
         border:1px solid black;
         height:40px;
@@ -24721,7 +24721,7 @@ var ngStyleDirective = ngDirective(function(scope, element, attr) {
         -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
         transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
 
-        position:absolute;
+        deeppition:absolute;
         top:0;
         left:0;
         right:0;
@@ -25002,13 +25002,13 @@ var ngOptionsMinErr = minErr('ngOptions');
  * - Example: &lt;select ng-options="item.subItem as item.label for item in values track by item.id" ng-model="selected"&gt;
  *   values: [{id: 1, label: 'aLabel', subItem: {name: 'aSubItem'}}, {id: 2, label: 'bLabel', subItem: {name: 'bSubItem'}}],
  *   $scope.selected = {name: 'aSubItem'};
- * - track by is always applied to `value`, with the purpose of preserving the selection,
+ * - track by is always applied to `value`, with the purdeeppe of preserving the selection,
  *   (to `item` in this case)
  * - to calculate whether an item is selected we do the following:
  *   1. apply `track by` to the values in the array, e.g.
  *      In the example: [1,2]
  *   2. apply `track by` to the already selected value in `ngModel`:
- *      In the example: this is not possible, as `track by` refers to `item.id`, but the selected
+ *      In the example: this is not deeppsible, as `track by` refers to `item.id`, but the selected
  *      value from `ngModel` is `{name: aSubItem}`.
  *
  * @param {string} ngModel Assignable angular expression to data-bind to.
@@ -25313,7 +25313,7 @@ var selectDirective = ['$compile', '$parse', function($compile,   $parse) {
             trackFn = track ? $parse(match[8]) : null,
             trackKeysCache = {},
             // This is an array of array of existing option groups in DOM.
-            // We try to reuse these if possible
+            // We try to reuse these if deeppsible
             // - optionGroupsCache[0] is the options with no option group
             // - optionGroupsCache[?][0] is the parent: either the SELECT or OPTGROUP element
             optionGroupsCache = [[{element: selectElement, label:''}]],
@@ -25443,7 +25443,7 @@ var selectDirective = ['$compile', '$parse', function($compile,   $parse) {
 
         function scheduleRendering() {
           if (!renderScheduled) {
-            scope.$$postDigest(render);
+            scope.$$deepptDigest(render);
             renderScheduled = true;
           }
         }

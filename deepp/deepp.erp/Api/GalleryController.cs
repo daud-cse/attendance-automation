@@ -2,11 +2,11 @@
 using System.Linq;
 using System.Web;
 using Microsoft.Practices.Unity;
-using pnsms.Entities.Models;
-using pnsms.Entities.ViewModels.Teacher;
-using pnsms.Service;
-using pnsms.Service.ViewModels;
-using pnsms.erp.Attributes;
+using deepp.Entities.Models;
+using deepp.Entities.ViewModels.Teacher;
+using deepp.Service;
+using deepp.Service.ViewModels;
+using deepp.erp.Attributes;
 using Repository.Pattern.Ef6;
 using Repository.Pattern.UnitOfWork;
 using System;
@@ -16,7 +16,7 @@ using System.Net.Http;
 using System.Web.Http;
 using deepp.erp;
 
-namespace pnsms.erp.Api
+namespace deepp.erp.Api
 {
     /// <summary>
     /// Gallery Controller
@@ -144,13 +144,13 @@ namespace pnsms.erp.Api
         }
 
        
-        protected override void Dispose(bool disposing)
+        protected override void Dispose(bool disdeepping)
         {
-            if (disposing)
+            if (disdeepping)
             {
                 UnitOfWorkAsync.Dispose();
             }
-            base.Dispose(disposing);
+            base.Dispose(disdeepping);
         }
 
         #endregion

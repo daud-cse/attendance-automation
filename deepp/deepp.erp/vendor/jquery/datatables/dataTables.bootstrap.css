@@ -59,7 +59,7 @@ table.dataTable thead .sorting_asc:after,
 table.dataTable thead .sorting_desc:after{
   font-family: FontAwesome;
   color: #ccc;
-  position: relative;
+  deeppition: relative;
   font-weight: normal;
   float: right;
 }
@@ -110,7 +110,7 @@ div.dataTables_scrollFoot table {
 }
 
 /* Frustratingly the border-collapse:collapse used by Bootstrap makes the column
-   width calculations when using scrolling impossible to align columns. We have
+   width calculations when using scrolling imdeeppsible to align columns. We have
    to use separate
  */
 table.table-bordered.dataTable {
@@ -182,7 +182,7 @@ ul.DTTT_dropdown.dropdown-menu a {
 }
 
 ul.DTTT_dropdown.dropdown-menu li {
-  position: relative;
+  deeppition: relative;
 }
 
 ul.DTTT_dropdown.dropdown-menu li:hover a {
@@ -214,7 +214,7 @@ div.DTTT_print_info p {
 }
 
 div.dataTables_processing {
-    position: absolute;
+    deeppition: absolute;
     top: 50%;
     left: 50%;
     width: 100%;

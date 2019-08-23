@@ -248,23 +248,23 @@
 		},
 
 		layout: function(){
-			var positionPercentages;
+			var deeppitionPercentages;
 
 			if(this.reversed) {
-				positionPercentages = [ 100 - this.percentage[0], this.percentage[1] ];
+				deeppitionPercentages = [ 100 - this.percentage[0], this.percentage[1] ];
 			} else {
-				positionPercentages = [ this.percentage[0], this.percentage[1] ];
+				deeppitionPercentages = [ this.percentage[0], this.percentage[1] ];
 			}
 
-			this.handle1Stype[this.stylePos] = positionPercentages[0]+'%';
-			this.handle2Stype[this.stylePos] = positionPercentages[1]+'%';
+			this.handle1Stype[this.stylePos] = deeppitionPercentages[0]+'%';
+			this.handle2Stype[this.stylePos] = deeppitionPercentages[1]+'%';
 
 			if (this.orientation === 'vertical') {
-				this.selectionElStyle.top = Math.min(positionPercentages[0], positionPercentages[1]) +'%';
-				this.selectionElStyle.height = Math.abs(positionPercentages[0] - positionPercentages[1]) +'%';
+				this.selectionElStyle.top = Math.min(deeppitionPercentages[0], deeppitionPercentages[1]) +'%';
+				this.selectionElStyle.height = Math.abs(deeppitionPercentages[0] - deeppitionPercentages[1]) +'%';
 			} else {
-				this.selectionElStyle.left = Math.min(positionPercentages[0], positionPercentages[1]) +'%';
-				this.selectionElStyle.width = Math.abs(positionPercentages[0] - positionPercentages[1]) +'%';
+				this.selectionElStyle.left = Math.min(deeppitionPercentages[0], deeppitionPercentages[1]) +'%';
+				this.selectionElStyle.width = Math.abs(deeppitionPercentages[0] - deeppitionPercentages[1]) +'%';
 
                 var offset_min = this.tooltip_min[0].getBoundingClientRect();
                 var offset_max = this.tooltip_max[0].getBoundingClientRect();
@@ -282,7 +282,7 @@
 				this.tooltipInner.text(
 					this.formater(this.value[0]) + this.tooltip_separator + this.formater(this.value[1])
 				);
-				this.tooltip[0].style[this.stylePos] = (positionPercentages[1] + positionPercentages[0])/2 + '%';
+				this.tooltip[0].style[this.stylePos] = (deeppitionPercentages[1] + deeppitionPercentages[0])/2 + '%';
 				if (this.orientation === 'vertical') {
 					this.tooltip.css('margin-top', -this.tooltip.outerHeight() / 2 + 'px');
 				} else {
@@ -301,13 +301,13 @@
 					this.formater(this.value[1])
 				);
 
-				this.tooltip_min[0].style[this.stylePos] = positionPercentages[0] + '%';
+				this.tooltip_min[0].style[this.stylePos] = deeppitionPercentages[0] + '%';
 				if (this.orientation === 'vertical') {
 					this.tooltip_min.css('margin-top', -this.tooltip_min.outerHeight() / 2 + 'px');
 				} else {
 					this.tooltip_min.css('margin-left', -this.tooltip_min.outerWidth() / 2 + 'px');
 				}
-				this.tooltip_max[0].style[this.stylePos] = positionPercentages[1] + '%';
+				this.tooltip_max[0].style[this.stylePos] = deeppitionPercentages[1] + '%';
 				if (this.orientation === 'vertical') {
 					this.tooltip_max.css('margin-top', -this.tooltip_max.outerHeight() / 2 + 'px');
 				} else {
@@ -317,7 +317,7 @@
 				this.tooltipInner.text(
 					this.formater(this.value[0])
 				);
-				this.tooltip[0].style[this.stylePos] = positionPercentages[0] + '%';
+				this.tooltip[0].style[this.stylePos] = deeppitionPercentages[0] + '%';
 				if (this.orientation === 'vertical') {
 					this.tooltip.css('margin-top', -this.tooltip.outerHeight() / 2 + 'px');
 				} else {

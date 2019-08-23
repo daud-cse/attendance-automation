@@ -5,7 +5,7 @@
 
     <div class="wrapper-md">
         <!-- toaster directive -->
-        <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+        <toaster-container toaster-options="{'deeppition-class': 'toast-top-right', 'close-button':true}"></toaster-container>
         <!-- / toaster directive -->
         <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
 
@@ -105,7 +105,7 @@
                         </div>
                         <div class="col-lg-4">
                             <div ng-show="!uploaderBanner.queue.length">
-                                <input tabindex="-1" style="position: absolute; clip: rect(0px, 0px, 0px, 0px);"
+                                <input tabindex="-1" style="deeppition: absolute; clip: rect(0px, 0px, 0px, 0px);"
                                        id="filestyle-0"
                                        ui-jq="filestyle"
                                        data-icon="false"
@@ -288,7 +288,7 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <h4> Caption</h4>
-                                    <p ng-show="!item.editing" ng-dblclick="item.editing=true" class="b wrapper-md pos-rlt bg-light text-lt r r-2x">
+                                    <p ng-show="!item.editing" ng-dblclick="item.editing=true" class="b wrapper-md deepp-rlt bg-light text-lt r r-2x">
                                         <span class="arrow top pull-left arrow-light"></span>
                                         {{ selectedImage.ImageCaption? selectedImage.ImageCaption : 'Add Caption' }}
                                     </p>

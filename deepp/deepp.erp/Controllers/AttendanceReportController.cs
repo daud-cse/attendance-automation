@@ -1,10 +1,10 @@
 ﻿using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using deepp.erp;
-using pnsms.Entities.Models;
-using pnsms.Entities.ViewModels;
-using pnsms.Service;
-using pnsms.Service.ViewModels;
+using deepp.Entities.Models;
+using deepp.Entities.ViewModels;
+using deepp.Service;
+using deepp.Service.ViewModels;
 using Repository.Pattern.UnitOfWork;
 using System;
 using System.Collections.Generic;
@@ -15,7 +15,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace pnsms.erp.Controllers
+namespace deepp.erp.Controllers
 {
     public class AttendanceReportController : Controller
     {
@@ -65,8 +65,8 @@ namespace pnsms.erp.Controllers
                 rd.Clone();
                 rd.Close();
                 //response.Content = new StreamContent(rd.ExportToStream(ExportFormatType.PortableDocFormat));
-                //response.Content.Headers.ContentDisposition = new System.Net.Http.Headers.ContentDispositionHeaderValue("attachment");
-                //response.Content.Headers.ContentDisposition.FileName = "Transcript.pdf";
+                //response.Content.Headers.ContentDisdeeppition = new System.Net.Http.Headers.ContentDisdeeppitionHeaderValue("attachment");
+                //response.Content.Headers.ContentDisdeeppition.FileName = "Transcript.pdf";
 
                 //return response;
 

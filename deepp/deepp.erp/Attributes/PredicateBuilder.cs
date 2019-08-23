@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Web;
 
-namespace pnsms.erp.Attributes
+namespace deepp.erp.Attributes
 {
     public static class PredicateBuilder
     {
@@ -28,7 +28,7 @@ namespace pnsms.erp.Attributes
         /// </summary>
         public static Expression<Func<T, bool>> And<T>(this Expression<Func<T, bool>> first, Expression<Func<T, bool>> second)
         {
-            return first.Compose(second, Expression.AndAlso);
+            return first.Comdeeppe(second, Expression.AndAlso);
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace pnsms.erp.Attributes
         /// </summary>
         public static Expression<Func<T, bool>> Or<T>(this Expression<Func<T, bool>> first, Expression<Func<T, bool>> second)
         {
-            return first.Compose(second, Expression.OrElse);
+            return first.Comdeeppe(second, Expression.OrElse);
         }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace pnsms.erp.Attributes
         /// <summary>
         /// Combines the first expression with the second using the specified merge function.
         /// </summary>
-        static Expression<T> Compose<T>(this Expression<T> first, Expression<T> second, Func<Expression, Expression, Expression> merge)
+        static Expression<T> Comdeeppe<T>(this Expression<T> first, Expression<T> second, Func<Expression, Expression, Expression> merge)
         {
             // zip parameters (map from parameters of second to parameters of first)
             var map = first.Parameters

@@ -1,4 +1,4 @@
-﻿using pnsms.Entities.Models;
+﻿using deepp.Entities.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace pnsms.erp
+namespace deepp.erp
 {
   public  class DataSetService
     {

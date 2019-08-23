@@ -131,9 +131,9 @@ angular.module('app')
                   ]
               },
               {
-                  name: 'com.2fdevs.videogular.plugins.poster',
+                  name: 'com.2fdevs.videogular.plugins.deeppter',
                   files: [
-                      urlPrefix + 'vendor/modules/videogular/plugins/poster.min.js'
+                      urlPrefix + 'vendor/modules/videogular/plugins/deeppter.min.js'
                   ]
               },
               {

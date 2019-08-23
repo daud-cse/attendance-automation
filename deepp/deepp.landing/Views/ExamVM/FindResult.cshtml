@@ -1,0 +1,218 @@
+﻿
+
+@model IEnumerable<deepp.Entities.Models.Exam>
+@{
+    ViewBag.Title = "Find Result";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<main id="main-content">
+    <!-- Main Section -->
+    <div class="main-section">
+        <div class="container">
+            <div class="row">
+                <aside class="page-sidebar">
+                    <div class="widget cs_ads_banner">
+                        <div class="cs_banner_section">
+                            <a target="_blank" href="" id="cs_banner_clicks276833028" onclick="cs_banner_click_count_plus('http://uoce.chimpgroup.com/wp-admin/admin-ajax.php', '276833028')"><img alt="Sidebar" src="http://uoce.chimpgroup.com/wp-content/uploads/add-img.jpg"></a>
+                        </div>
+                    </div>
+
+                    <div class="widget widget_tabs">
+                        <div class="widget element-size-100 widget_tabs">
+                            <div class="widget-section-title">
+                                <h6></h6>
+                            </div>
+                            <ul class="tab-nav">
+                                <li class="active"><a href="#tab1" data-toggle="tab"><i class="icon-user9"> Notice</i></a></li>
+                                <li class=""><a href="#tab2" data-toggle="tab"><i class="icon-tag7">News & Events</i></a></li>
+                                @*<li class=""><a href="#tab3" data-toggle="tab"><i class="icon-folder5">Acdemic Caleder</i></a></li>*@
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade in active tabs news" id="tab1">
+                                    <ul>
+
+                                        @{Html.RenderAction("GetAll", "Notice");}
+                                    </ul>
+                                    <a href="~/Notice/GetAllWithGrid" class="viewall-btn csbg-hovercolor"><i class="icon-angle-double-right"></i> More Notice</a>
+                                </div>
+                                <div class="tab-pane fade tabs news" id="tab2">
+
+
+                                    @{Html.RenderAction("GetAll", "Event");}
+
+                                    <a href="~/Event/GetAllWithGrid" class="viewall-btn csbg-hovercolor"><i class="icon-angle-double-right"></i> More News</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </aside>
+                <div class="page-content">
+                    <section class="page-section">
+                        <div class="section-fullwidth">
+                            <div class="cs-course-detail">
+                                <div class="cs-heading-sec">
+                                    <div class="inner-sec">
+                                        <h1>
+                                            @ViewBag.Title
+                                        </h1>
+                                    </div>
+                                </div>
+
+                                <div class="cs-detail-text">
+
+                                    
+                                        <div>
+                                            <div class="col-md-4"><input value="" class="form-control" placeholder="Please enter your roll" type="text"></div>
+                                            <div class="col-md-4"><input value="" class="form-control" placeholder="Please enter your session" type="text"></div>
+                                            <div class="col-md-4"><input class="btn btn-primary" value="Search" id="btnsearch" type="button"></div>
+                                            
+                                           
+
+                                        </div>
+                                   
+
+                                    <div  id="result" style="display:none" >
+
+                                        <div >
+                                            <div class="col-md-3">
+
+                                            </div>
+                                            <div class="col-md-6">
+                                                <table id="tbl" class="table table-striped">
+                                                   
+                                                    <tbody >
+                                                        <tr>
+                                                            <td>Student Name</td>
+                                                            <td><strong>Abul Hossain Abir </strong></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Class Name</td>
+                                                            <td><strong>One</strong></td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Section Name</td>
+                                                            <td><strong>AA</strong></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Exam Grade Name</td>
+                                                            <td><strong>B</strong></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Exam Grade Point</td>
+                                                            <td><strong>3.2</strong></td>
+                                                        </tr>
+
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="col-md-3"></div>
+                                        </div>
+
+                                        <div>
+
+                                            <table class="table table-striped b-t b-light">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Subject Name</th>
+                                                        <th>Total Marks</th>
+                                                        <th>Marks Obtained</th>
+                                                        <th>Grade</th>
+                                                        <th>Grade Point</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Bengali 2nd</td>
+                                                        <td>50</td>
+                                                        <td>40</td>
+                                                        <td>A+</td>
+                                                        <td>5</td>
+                                                    </tr>
+                                                    <tr>
+
+                                                        <td>Bengali 1st</td>
+                                                        <td>100</td>
+                                                        <td>75</td>
+                                                        <td>A</td>
+                                                        <td>4</td>
+                                                    </tr>
+                                                    <tr>
+
+                                                        <td>Religion </td>
+                                                        <td>100</td>
+                                                        <td>86</td>
+                                                        <td>A+</td>
+                                                        <td>5</td>
+
+                                                    </tr>
+                                                    <tr>
+
+                                                        <td>Science</td>
+                                                        <td>100</td>
+                                                        <td>89</td>
+                                                        <td>A+</td>
+                                                        <td>5</td>
+
+                                                    </tr>
+                                                    <tr>
+
+                                                        <td>Mathematics</td>
+                                                        <td>100</td>
+                                                        <td>60</td>
+                                                        <td>B</td>
+                                                        <td>3</td>
+
+                                                    </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr></tr>
+                                                </tfoot>
+                                            </table>
+
+
+
+
+                                        </div>
+                                    </div>
+                    
+                             
+                                </div>
+                                <div class="cs-team team-box">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+   
+
+</main>
+
+@section scripts{
+
+<script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#btnsearch").click(function () {
+                $("#result").show();
+
+               
+
+            })
+        })
+
+</script>
+    
+    }
+  

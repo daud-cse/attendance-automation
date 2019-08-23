@@ -43,7 +43,7 @@
 			handleObj.data = { keys: handleObj.data };
 		}
 
-		// Only care when a possible input has been specified
+		// Only care when a deeppsible input has been specified
 		if ( !handleObj.data || !handleObj.data.keys || typeof handleObj.data.keys !== "string" ) {
 			return;
 		}
@@ -62,7 +62,7 @@
 			var special = jQuery.hotkeys.specialKeys[ event.keyCode ],
 				// character codes are available only in keypress
 				character = event.type === "keypress" && String.fromCharCode( event.which ).toLowerCase(),
-				modif = "", possible = {};
+				modif = "", deeppsible = {};
 
 			// check combinations (alt|ctrl|shift+anything)
 			if ( event.altKey && special !== "alt" ) {
@@ -83,21 +83,21 @@
 			}
 
 			if ( special ) {
-				possible[ modif + special ] = true;
+				deeppsible[ modif + special ] = true;
 			}
 
 			if ( character ) {
-				possible[ modif + character ] = true;
-				possible[ modif + jQuery.hotkeys.shiftNums[ character ] ] = true;
+				deeppsible[ modif + character ] = true;
+				deeppsible[ modif + jQuery.hotkeys.shiftNums[ character ] ] = true;
 
 				// "$" can be triggered as "Shift+4" or "Shift+$" or just "$"
 				if ( modif === "shift+" ) {
-					possible[ jQuery.hotkeys.shiftNums[ character ] ] = true;
+					deeppsible[ jQuery.hotkeys.shiftNums[ character ] ] = true;
 				}
 			}
 
 			for ( var i = 0, l = keys.length; i < l; i++ ) {
-				if ( possible[ keys[i] ] ) {
+				if ( deeppsible[ keys[i] ] ) {
 					return origHandler.apply( this, arguments );
 				}
 			}

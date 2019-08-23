@@ -18,14 +18,14 @@
 }
 
 .fancybox-wrap {
-	position: absolute;
+	deeppition: absolute;
 	top: 0;
 	left: 0;
 	z-index: 8020;
 }
 
 .fancybox-skin {
-	position: relative;
+	deeppition: relative;
 	background: #f9f9f9;
 	color: #444;
 	text-shadow: none;
@@ -45,7 +45,7 @@
 }
 
 .fancybox-outer, .fancybox-inner {
-	position: relative;
+	deeppition: relative;
 }
 
 .fancybox-inner {
@@ -80,12 +80,12 @@
 }
 
 #fancybox-loading {
-	position: fixed;
+	deeppition: fixed;
 	top: 50%;
 	left: 50%;
 	margin-top: -22px;
 	margin-left: -22px;
-	background-position: 0 -108px;
+	background-deeppition: 0 -108px;
 	opacity: 0.8;
 	cursor: pointer;
 	z-index: 8060;
@@ -98,7 +98,7 @@
 }
 
 .fancybox-close {
-	position: absolute;
+	deeppition: absolute;
 	top: -18px;
 	right: -18px;
 	width: 36px;
@@ -108,7 +108,7 @@
 }
 
 .fancybox-nav {
-	position: absolute;
+	deeppition: absolute;
 	top: 0;
 	width: 40%;
 	height: 100%;
@@ -128,7 +128,7 @@
 }
 
 .fancybox-nav span {
-	position: absolute;
+	deeppition: absolute;
 	top: 50%;
 	width: 36px;
 	height: 34px;
@@ -140,12 +140,12 @@
 
 .fancybox-prev span {
 	left: 10px;
-	background-position: 0 -36px;
+	background-deeppition: 0 -36px;
 }
 
 .fancybox-next span {
 	right: 10px;
-	background-position: 0 -72px;
+	background-deeppition: 0 -72px;
 }
 
 .fancybox-nav:hover span {
@@ -153,7 +153,7 @@
 }
 
 .fancybox-tmp {
-	position: absolute;
+	deeppition: absolute;
 	top: -99999px;
 	left: -99999px;
 	visibility: hidden;
@@ -169,7 +169,7 @@
 }
 
 .fancybox-overlay {
-	position: absolute;
+	deeppition: absolute;
 	top: 0;
 	left: 0;
 	overflow: hidden;
@@ -179,7 +179,7 @@
 }
 
 .fancybox-overlay-fixed {
-	position: fixed;
+	deeppition: fixed;
 	bottom: 0;
 	right: 0;
 }
@@ -194,7 +194,7 @@
 .fancybox-title {
 	visibility: hidden;
 	font: normal 13px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
-	position: relative;
+	deeppition: relative;
 	text-shadow: none;
 	z-index: 8050;
 }
@@ -204,7 +204,7 @@
 }
 
 .fancybox-title-float-wrap {
-	position: absolute;
+	deeppition: absolute;
 	bottom: 0;
 	right: 50%;
 	margin-bottom: -35px;
@@ -229,7 +229,7 @@
 }
 
 .fancybox-title-outside-wrap {
-	position: relative;
+	deeppition: relative;
 	margin-top: 10px;
 	color: #fff;
 }
@@ -239,7 +239,7 @@
 }
 
 .fancybox-title-over-wrap {
-	position: absolute;
+	deeppition: absolute;
 	bottom: 0;
 	left: 0;
 	color: #fff;

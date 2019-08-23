@@ -53,11 +53,16 @@ namespace Repository.Pattern.Ef6
             }
         }
 
+        public object RawQuery(String sql)
+        {
+            return _dbSet.SqlQuery(sql).AsNoTracking().ToList();
+        }
+
         public virtual TEntity Find(params object[] keyValues)
         {
             return _dbSet.Find(keyValues);
         }
-
+        
         public virtual IQueryable<TEntity> SelectQuery(string query, params object[] parameters)
         {
             return _dbSet.SqlQuery(query, parameters).AsQueryable();
