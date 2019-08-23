@@ -1,0 +1,181 @@
+﻿<div ng-controller="SmsTemplateEditCtrl">
+    <div class="bg-info-lter b-b wrapper-sm text-dark-dk">
+        <h1 class="m-n font-thin h3"><i class="icon-speech "></i> &nbsp; SMS Template</h1>
+    </div>
+
+    <div class="wrapper-md">
+
+        <toaster-container toaster-options="{'deeppition-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+        <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+
+        <div class="panel wrapper" ng-hide="isLoading">
+            <div class="row">
+                <div class="col-md-12  b-light no-border-xs">
+
+                    <div class="m-b">
+                        <form role="form" class="form-validation" ng-submit="AddSmsTemplate()">
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>
+                                            Name
+                                        </label>
+                                        <input class="form-control" data-ng-model="SmsTemplate.Name" placeholder="Name" type="text" required>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+
+                                        <div class="radio inline">
+                                            <label class="i-checks">
+                                                <input type="radio" disabled="" name="a" ng-click="radioClick();SmsTemplate.IsForGeneral=true;isCollapsed=true;" ng-checked="SmsTemplate.IsForGeneral">
+                                                <i></i>
+                                                General
+                                            </label>
+                                        </div>
+                                        <div class="radio inline">
+                                            <label class="i-checks">
+                                                <input type="radio" disabled="" value="option1" name="a" ng-click="radioClick();SmsTemplate.IsForStudent=true;isCollapsed=false;" ng-checked="SmsTemplate.IsForStudent">
+                                                <i></i>
+                                                Student
+                                            </label>
+                                        </div>
+                                        <div class="radio inline">
+                                            <label class="i-checks">
+                                                <input type="radio" disabled="" value="option1" name="a" ng-click="radioClick();SmsTemplate.IsForGuardian=true;isCollapsed=false;" ng-checked="SmsTemplate.IsForGuardian">
+                                                <i></i>
+                                                Guardian
+                                            </label>
+                                        </div>
+                                        <div class="radio inline">
+                                            <label class="i-checks">
+                                                <input type="radio" disabled="" value="option1" name="a" ng-click="radioClick();SmsTemplate.IsForTeacher=true;isCollapsed=false;" ng-checked="SmsTemplate.IsForTeacher">
+                                                <i></i>
+                                                Teacher
+                                            </label>
+                                        </div>
+                                        <div class="radio inline">
+                                            <label class="i-checks">
+                                                <input type="radio" disabled="" value="option1" name="a" ng-click="radioClick();SmsTemplate.IsForEmployee=true;isCollapsed=false;" ng-checked="SmsTemplate.IsForEmployee">
+                                                <i></i>
+                                                Employee
+                                            </label>
+                                        </div>
+                                        <div class="radio inline">
+                                            <label class="i-checks">
+                                                <input type="radio" disabled="" value="option1" name="a" ng-click="radioClick();SmsTemplate.IsForGoverningBody=true;isCollapsed=false;" ng-checked="SmsTemplate.IsForGoverningBody">
+                                                <i></i>
+                                                Governingbody
+                                            </label>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" ng-show="SmsTemplate.NotificationTagGroupList.length>1">
+
+                            </div>
+                            <div class="row" collapse="isCollapsed">
+
+                                <div class="col-sm-12">
+                                    <label> Notification Tags</label>
+                                </div>
+
+
+                                <!--<div class="col-sm-12">
+                                    <label class="i-checks m-b-none">
+
+                                    </label>
+                                </div>-->
+
+                                <div class="col-sm-12 ">
+                                    <div class=" well r  alert-info dker   no-border" style="margin-bottom: 0px" ng-repeat="notificationTagGroup in  SmsTemplate.NotificationTagGroupList">
+                                        <label>{{notificationTagGroup.Value}}</label>
+                                        <button type="button" ng-if="SmsTemplate.IsForStudent" ng-repeat="notificationTag in  SmsTemplate.NotificationTags |   filter:{NotificationGroupName: notificationTagGroup.Value} |   filter:{IsForStudent: SmsTemplate.IsForStudent }   " class="btn btn-rounded btn-sm btn-info" ng-click="insertAtCaret('messageBody','{{notificationTag.Tag}}','{{notificationTag.TextToCalculate}}')">   {{notificationTag.Tag}}</button>
+                                        <button type="button" ng-if="SmsTemplate.IsForGuardian" ng-repeat="notificationTag in  SmsTemplate.NotificationTags |   filter:{NotificationGroupName: notificationTagGroup.Value}   |   filter:{IsForGuardian: SmsTemplate.IsForGuardian } " class="btn btn-rounded btn-sm btn-info" ng-click="insertAtCaret('messageBody',' {{notificationTag.Tag}}','{{notificationTag.TextToCalculate}}')">   {{notificationTag.Tag}}</button>
+                                        <button type="button" ng-if="SmsTemplate.IsForTeacher" ng-repeat="notificationTag in  SmsTemplate.NotificationTags |   filter:{NotificationGroupName: notificationTagGroup.Value}   |   filter:{IsForTeacher: SmsTemplate.IsForTeacher } " class="btn btn-rounded btn-sm btn-info" ng-click="insertAtCaret('messageBody',' {{notificationTag.Tag}}','{{notificationTag.TextToCalculate}}')">   {{notificationTag.Tag}}</button>
+                                        <button type="button" ng-if="SmsTemplate.IsForEmployee" ng-repeat="notificationTag in  SmsTemplate.NotificationTags |   filter:{NotificationGroupName: notificationTagGroup.Value}   |   filter:{IsForEmployee: SmsTemplate.IsForEmployee } " class="btn btn-rounded btn-sm btn-info" ng-click="insertAtCaret('messageBody',' {{notificationTag.Tag}}','{{notificationTag.TextToCalculate}}')">   {{notificationTag.Tag}}</button>
+                                        <button type="button" ng-if="SmsTemplate.IsForGoverningBody" ng-repeat="notificationTag in  SmsTemplate.NotificationTags |   filter:{NotificationGroupName: notificationTagGroup.Value}   |   filter:{IsForGoverningBody: SmsTemplate.IsForGoverningBody } " class="btn btn-rounded btn-sm btn-info" ng-click="insertAtCaret('messageBody',' {{notificationTag.Tag}}','{{notificationTag.TextToCalculate}}')">   {{notificationTag.Tag}}</button>
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Template  &nbsp;</label>
+                                        <textarea placeholder="Template" rows="6" ng-maxlength="500" ng-change="CalculatePreviewText()" class="form-control" id="messageBody" data-ng-model="SmsTemplate.SmsTemplate"></textarea>
+                                        <!--<p>{{PreviewText}}</p>
+                                        <p>{{SmsCountText}}</p>-->
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Preview Text  &nbsp;</label>
+                                        <!--<textarea placeholder="Template" rows="6" readonly="" class="form-control" id="messageBody" data-ng-model="PreviewText"></textarea>-->
+                                        <div class="m-l-xxl" style="margin-left: 0px;">
+                                            <div class="deepp-rlt bg-primary wrapper b b-light r r-2x" style="height: 131px">
+                                                <span class="arrow left pull-up arrow-primary"></span>
+                                                <p class="m-b-none">{{PreviewText}}</p>
+                                                <p class="m-b-none" ng-show="PreviewText.length==0">No message</p>
+                                            </div>
+
+                                            <small class="text-primary-dk"><i class="fa fa-ok text-success"></i>  Sms Count <b class="badge bg-primary ">{{SmsTemplate.SmsCount}}</b></small>
+                                            <!--<small class="text-muted"><i class="fa fa-ok text-success"></i>   Length: <b class="badge bg-primary ">{{SmsCountText.length}}</b></small>-->
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Active  &nbsp;</label>
+                                        <label class="i-checks m-b-none">
+
+                                            <input type="checkbox" data-ng-model="SmsTemplate.IsActive"> <i></i>
+                                        </label>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row">
+                                <div class="col-sm-6 ">
+                                    <a ui-sref="app.smsTemplate.list" class="btn btn-default  "><i class="icon-action-undo"></i> &nbsp;Back to List</a>
+                                </div>
+                                <div class="col-sm-6  pull-right">
+
+                                    <button type="submit" class="btn btn-addon btn-primary pull-right">
+                                        <i class="glyphicon glyphicon-floppy-saved"></i>SAVE
+                                    </button>
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

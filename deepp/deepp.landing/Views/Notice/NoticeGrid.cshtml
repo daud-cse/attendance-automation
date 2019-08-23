@@ -1,0 +1,216 @@
+﻿@using MvcPaging
+@model IPagedList<deepp.Entities.Models.Notice>
+@using System.Text.RegularExpressions
+@{
+    ViewBag.Title = "Notice Grid";
+}
+<style type="text/css">
+    .cs-blog article {
+        background-color: silver;
+        padding: 15px;
+    }
+</style>
+
+<main id="main-content">
+    <!-- Main Section -->
+    <div class="main-section">
+        <!-- PageSection Start -->
+        <section style=" padding: 0; " class="page-section">
+            <!-- Container -->
+            <div class="container">
+                <!-- Row -->
+                <div class="row">
+                    <!--Left Sidebar Starts-->
+                    <!--Left Sidebar End-->
+                    <!-- Page Detail Start -->
+                    <div class="page-content">
+                        <!-- Blog Post Start -->
+                        <div class="section-fullwidth">
+                            <div class="element-size-100">
+                                <div class="element-size-100">
+                                    <div class="cs-heading-sec col-md-12">
+                                        <div class="inner-sec" style="border-bottom:1px solid #ebebe9 !important;">
+                                            <h1 style="color: !important; font-size: 30px !important; text-align:left;">
+                                                Notice List
+                                            </h1>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="cs-blog cs-blog-medium lightbox col-md-12">
+                                    @foreach (var item in Model)
+                                    {
+                                    <article>
+                                        <div class="cs-media">
+                                            <figure>
+                                                <a href="~/Notice/Details?id=@item.Id"></a>
+
+                                            </figure>
+                                        </div>
+
+                                        <div class="blog-info-sec">
+                                            <h2><a href="~/Notice/Details?id=@item.Id">@item.NoticeTitle </a></h2>
+                                            <ul class="deeppt-options">
+                                                <li><time datetime="2011-01-12">@item.StartDate.Value.ToString("dd MMM, yyyy")</time></li>
+                                                <li>
+                                                    @*<a href="http://uoce.chimpgroup.com/course/how-to-write-effectively/">
+                                                            0Comments
+                                                        </a>*@
+                                                </li>
+                                            </ul>
+                                            <p>
+                                                @if (@item.NoticeBody != null)
+                                                    {
+                                                        if (@item.NoticeBody.Length > 2000)
+                                                        {
+                                                    @MvcHtmlString.Create(@Regex.Replace(@item.NoticeBody.Substring(0, 2000), @"<[^>]+>|<", "").Trim()) <span>..............</span>
+                                                    <a class="btn btn-info" href="~/Notice/Details?id=@item.Id">Read More</a>
+                                                        }
+                                                        else
+                                                        {
+                                                    @MvcHtmlString.Create(@Regex.Replace(@item.NoticeBody, @"<[^>]+>|<", "").Trim())
+                                                        }
+                                                    @*@Html.ActionLink("Read More", "Details", "Notice", new { id = item.Id }, null)*@
+                                                    }
+                                            </p>
+
+                                            <div class="cs-seprator">
+                                                <div class="devider"></div>
+                                            </div>
+
+                                            @*<div class="blog-bottom-sec">
+                                                    <div class="cs-thumb-deeppt">
+                                                        <figure><img alt="" src="http://0.gravatar.com/avatar/f4736b0a1b77a61c1ff9c113f0081709?s=32&amp;d=mm&amp;r=g" srcset="http://0.gravatar.com/avatar/f4736b0a1b77a61c1ff9c113f0081709?s=64&amp;d=mm&amp;r=g 2x" class="avatar avatar-32 photo"></figure>
+                                                        <ul>
+                                                            <li>
+                                                                <span>Posted by</span>
+                                                                <i class="icon-user9"></i>
+                                                                <a href="http://uoce.chimpgroup.com/author/uoce-admin/">uoce-admin</a>
+                                                            </li>
+                                                            <li>
+                                                                <span>Posted in</span>
+                                                                <i class="icon-folder5"></i>
+                                                                Arts,Libuary,Medical,SCIENCE
+
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>*@
+
+                                        </div>
+
+                                    </article>
+                                    <br>
+
+                                    }
+
+
+                                </div>
+
+                                <div class="col-md-12">
+                                    <nav class="pagination">
+                                        @*<div class="pager">*@
+                                            @Html.Raw(Html.Pager(
+                                                 new Options
+                                                 {
+                                                     PageSize = Model.PageSize,
+                                                     TotalItemCount = Model.TotalItemCount,
+                                                     CurrentPage = Model.PageNumber,
+                                                     ItemTexts = new ItemTexts() { Next = "Next", Previous = "Previous" },
+                                                     ItemIcon = new ItemIcon() { First = "icon-backward", Previous = "icon-chevron-left", Next = "icon-chevron-right", Last = "icon-forward" },
+                                                     TooltipTitles = new TooltipTitles() { Next = "Next page {0}", Previous = "Previous page {0}", Page = "Go to page {0}" },
+                                                     Size = Size.normal,
+                                                     Alignment = Alignment.centered,
+                                                     IsShowControls = true,
+                                                     IsShowFirstLast = true,
+                                                     IsShowPages = true
+                                                 }, new { searchItem = ViewData["searchItem"] }))
+
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Page Detail End -->
+                    <!-- Right Sidebar Start -->
+                    <div class="page-sidebar">
+                        <div class="widget cs_ads_banner"><div class="cs_banner_section"><a target="_blank" href="" id="cs_banner_clicks276833028" onclick="cs_banner_click_count_plus('http://uoce.chimpgroup.com/wp-admin/admin-ajax.php', '276833028')"><img alt="Sidebar" src="http://uoce.chimpgroup.com/wp-content/uploads/add-img.jpg"></a></div></div>
+
+
+                        <div class="widget widget_tabs">
+
+                            <div class="widget element-size-100 widget_tabs">
+
+                                @*<div class="widget-section-title">
+                                        <h6>
+                                            News & Events
+                                        </h6>
+                                    </div>*@
+                                <ul class="tab-nav">
+                                    <li class="active"><a href="#tab1" data-toggle="tab"><i class="icon-user9"> News & Events</i></a></li>
+                                    <li class=""><a href="#tab2" data-toggle="tab"><i class="icon-tag7"></i>Notice</a></li>
+
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active tabs news" id="tab1">
+
+
+                                        @{Html.RenderAction("GetAll", "Event");}
+
+                                        <a href="~/Event/GetAllWithGrid" class="viewall-btn csbg-hovercolor"><i class="icon-angle-double-right"></i> More News</a>
+                                    </div>
+                                    <div class="tab-pane fade  tabs news" id="tab2">
+                                        <ul>
+
+                                            @{Html.RenderAction("GetAll", "Notice");}
+                                        </ul>
+                                        <a href="~/Notice/GetAllWithGrid" class="viewall-btn csbg-hovercolor"><i class="icon-angle-double-right"></i> More Notice</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="widget widget_gallery">
+                            <div class="widget-section-title">
+                                <h4>Photo Gallery</h4>
+                            </div>
+
+                            @{Html.RenderAction("GetPartialGallery", "Gallery");}
+                        </div>
+                    </div>
+                    <!-- Right Sidebar End -->
+                </div>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+@*<div class="page-header">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <h2 class="page-title">General Notice</h2>
+            </div> <!-- /.col-md-6 -->
+            <div class="col-md-6 col-sm-6 hidden-xs back-home">
+                @Html.ActionLink("← Go back Home", "Index", "Home", new { }, null)
+            </div> <!-- /.col-md-6 -->
+        </div> <!-- /.row -->
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="box-content">
+                <h4 class="widget-title"><span>Event</span></h4>
+                @{Html.RenderAction("GetAll", "Event");}
+                @Html.ActionLink("More News", "GetAllWithGrid", "Event", new { }, new { @class = "btn btn-default-alt btn-sm pull-right" })
+            </div> <!-- /.box-content -->
+            <div class="box-content">
+                <h4 class="widget-title"><span>Gallery</span></h4>
+                @{Html.RenderAction("GetPartialGallery", "Gallery");}
+            </div> <!-- /.box-content -->
+        </div> <!-- /.col-md-4 -->
+        <div class="col-md-8">
+                @{Html.RenderPartial("GetPartialNoticWithGridDetails", Model);}
+        </div>
+    </div>*@

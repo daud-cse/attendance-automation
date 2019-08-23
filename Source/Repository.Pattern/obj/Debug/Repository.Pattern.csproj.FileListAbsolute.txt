@@ -4,9 +4,9 @@ E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern\bin\Debug\Rep
 E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern\obj\Debug\Repository.Pattern.dll
 E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern\obj\Debug\Repository.Pattern.pdb
 E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\Source\Repository.Pattern\obj\Debug\Repository.Pattern.csprojResolveAssemblyReference.cache
-E:\pos\POS NEW\Source\Repository.Pattern\bin\Debug\Repository.Pattern.dll.config
-E:\pos\POS NEW\Source\Repository.Pattern\bin\Debug\Repository.Pattern.dll
-E:\pos\POS NEW\Source\Repository.Pattern\bin\Debug\Repository.Pattern.pdb
-E:\pos\POS NEW\Source\Repository.Pattern\obj\Debug\Repository.Pattern.csprojResolveAssemblyReference.cache
-E:\pos\POS NEW\Source\Repository.Pattern\obj\Debug\Repository.Pattern.dll
-E:\pos\POS NEW\Source\Repository.Pattern\obj\Debug\Repository.Pattern.pdb
+E:\shikkhaforall-git\sfa\Source\Repository.Pattern\bin\Debug\Repository.Pattern.dll.config
+E:\shikkhaforall-git\sfa\Source\Repository.Pattern\bin\Debug\Repository.Pattern.dll
+E:\shikkhaforall-git\sfa\Source\Repository.Pattern\bin\Debug\Repository.Pattern.pdb
+E:\shikkhaforall-git\sfa\Source\Repository.Pattern\obj\Debug\Repository.Pattern.csprojResolveAssemblyReference.cache
+E:\shikkhaforall-git\sfa\Source\Repository.Pattern\obj\Debug\Repository.Pattern.dll
+E:\shikkhaforall-git\sfa\Source\Repository.Pattern\obj\Debug\Repository.Pattern.pdb

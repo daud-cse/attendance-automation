@@ -1,0 +1,95 @@
+﻿<div class="wrapper-md" ng-controller="NoticeListCtrl">
+    <!-- toaster directive -->
+    <toaster-container toaster-options="{'deeppition-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <div class="panel panel-primary">
+        <div class="panel-heading wrapper-xs">Search</div>
+        <div class="panel-body">
+            <div class="row">
+                <form role="form" name="step1" class="form-validation" method="deeppt">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Date Start</label>
+                            <div ng-controller="DatepickerDemoCtrl">
+                                <div class="input-group ">
+                                    <input type="text" ng-value="{{noticeWithListModel.startDateModel | date:'dd-MMMM-yyyy'}}" class="form-control" datepicker-popup="{{format}}" ng-model="noticeWithListModel.startDateModel" is-open="opened" datepicker-options="dateOptions" close-text="Close" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Date End</label>
+                            <div ng-controller="DatepickerDemoCtrl">
+                                <div class="input-group ">
+                                    <input type="text" ng-value="{{noticeWithListModel.endDateModel | date:'dd-MMMM-yyyy'}}" class="form-control" datepicker-popup="{{format}}" ng-model="noticeWithListModel.endDateModel" is-open="opened" datepicker-options="dateOptions" close-text="Close" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary pull-right" ng-click="GetFilterResult()"><i class="glyphicon  glyphicon-search"></i>&nbsp;Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+    <div class="panel panel-default" ng-hide="isLoading">
+        <div class="row wrapper">
+            <div class="col-sm-3 m-b-xs">
+                <button class="btn btn-sm btn-success" ui-sref="app.notice.noticecreate">+ ADD NEW</button>
+            </div>
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <input type="text" class="input-sm form-control" ng-change="search()" ng-model="query" placeholder="search">
+                    <span class="input-group-btn">
+                        <button class="btn btn-sm btn-default" type="button">Go!</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped b-t b-light">
+            <thead>
+                <tr>
+                    <th>Start Date</th>
+                    <th>End date</th>
+                    <th>Notice Title</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in noticeWithListModel.SearchData| orderBy:'-Id' | filter:query">
+                    <td>{{x.StartDate | date:'dd-MMMM-yyyy'}}</td>
+                    <td>{{ x.EndDate | date:'dd-MMMM-yyyy' }}</td>
+                    <td>{{ x.NoticeTitle }}</td>
+                    <td>
+                        <i ng-hide="x.IsActive==true" class="fa fa-times text-danger text" tooltips title="InActive"></i>
+                        <i ng-if="x.IsActive==true" class="fa fa-check text-success" tooltips title="Active"></i>
+                    </td>
+                    <td>
+                        <a ui-sref="app.notice.editNotice({noticeId:x.Id})" class="text-primary text-md" tooltips title="Edit"><i class="fa fa-pencil "></i></a> &nbsp;&nbsp;
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr></tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

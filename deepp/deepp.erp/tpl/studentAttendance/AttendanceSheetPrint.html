@@ -1,0 +1,170 @@
+﻿<style type="text/css">
+    .attendanceDate {
+        width: 2%;
+        border-bottom: 1px solid #000000;
+        padding: 0px !important;
+    }
+</style>
+
+<div class="wrapper-md" ng-controller="AttendanceSheetPrintCtrl">
+    <!-- toaster directive -->
+    <toaster-container toaster-options="{'deeppition-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+    <form role="form" name="step1" class="form-validation" method="deeppt">
+        <div class="panel panel-primary" ng-hide="isLoading">
+            <div class="panel-heading wrapper-xs">Search</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Branch</label>
+                            <select ng-model="VmSearchAttendance.BranchId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmSearchAttendance.BranchList">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Class</label>
+                            <select ng-model="VmSearchAttendance.ClassId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmSearchAttendance.ClassList">
+                                <option value="">-- choose Class --</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Section</label>
+                            <select ng-model="VmSearchAttendance.SectionId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmSearchAttendance.SectionList">
+                                <option value="">-- choose Section --</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <button type="submit" class="btn btn-primary pull-right" style="margin-top: 25px;" ng-click="AttendanceSheetPrint()"><i class="glyphicon glyphicon-floppy-saved"></i>&nbsp;Generate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="panel panel-default" ng-hide="isLoading">
+        <div class="panel-heading font-bold">
+            <h4 class="pull-left">Attendance Sheet</h4>
+            <span><input type="button" id="btnPrint" ng-click="SheetPrint()" value="Print" class="btn btn-warning pull-right" /></span>
+        </div>
+        <div class="panel-body row" style="margin-left: 10px; margin-right: 10px;" id="divToPrint">
+            <div class="col-sm-12">
+                <h3 style="text-align: center; ">
+                    <img src="data:image/JPEG;base64,{{VmSearchAttendance.instituteLogo.ImageBinaryData}}" height="30px" width="50px" />
+                {{VmSearchAttendance.instituteName}}<br /></h3>
+                <hr />
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-1 pull-left control-label"><b>Branch:</b></label>
+                        <div class="col-sm-2">
+                            <p class="form-control-static">{{selectedBranch}}</p>
+                        </div>
+                        <label class="col-sm-1 control-label"><b>Class:</b></label>
+                        <div class="col-sm-2">
+                            <p class="form-control-static">{{selectedClass}}</p>
+                        </div>
+                        <label class="col-sm-1 control-label"><b>Section:</b></label>
+                        <div class="col-sm-2">
+                            <p class="form-control-static">{{selectedSection}}</p>
+                        </div>
+                        <label class="col-sm-1 control-label"><b>Month:</b></label>
+                        <div class="col-sm-2">
+                            <p class="form-control-static">&nbsp;&nbsp;</p>
+                        </div>
+                    </div>
+                </div>
+                <table class="table" style="margin-right: 10px;" border="1">
+                    <thead>
+                        <tr style="border-bottom: 2px solid #000000; height:50px;">
+                            <th style="width: 6%;">Roll</th>
+                            <th style="width: 25%;">Name</th>
+                            <th class="attendanceDate"><span> 1</span></th>
+                            <th class="attendanceDate"><span> 2 </span></th>
+                            <th class="attendanceDate"><span> 3 </span></th>
+                            <th class="attendanceDate"><span> 4 </span></th>
+                            <th class="attendanceDate"><span> 5 </span></th>
+                            <th class="attendanceDate"><span> 6 </span></th>
+                            <th class="attendanceDate"><span> 7 </span></th>
+                            <th class="attendanceDate"><span> 8 </span></th>
+                            <th class="attendanceDate"><span> 9 </span></th>
+                            <th class="attendanceDate"><span> 10 </span></th>
+                            <th class="attendanceDate"><span> 11 </span></th>
+                            <th class="attendanceDate"><span> 12 </span></th>
+                            <th class="attendanceDate"><span> 13 </span></th>
+                            <th class="attendanceDate"><span> 14 </span></th>
+                            <th class="attendanceDate"><span> 15 </span></th>
+                            <th class="attendanceDate"><span> 16 </span></th>
+                            <th class="attendanceDate"><span> 17 </span></th>
+                            <th class="attendanceDate"><span> 18 </span></th>
+                            <th class="attendanceDate"><span> 19 </span></th>
+                            <th class="attendanceDate"><span> 20 </span></th>
+                            <th class="attendanceDate"><span> 21 </span></th>
+                            <th class="attendanceDate"><span> 22 </span></th>
+                            <th class="attendanceDate"><span> 23 </span></th>
+                            <th class="attendanceDate"><span> 24 </span></th>
+                            <th class="attendanceDate"><span> 25 </span></th>
+                            <th class="attendanceDate"><span> 26 </span></th>
+                            <th class="attendanceDate"><span> 27 </span></th>
+                            <th class="attendanceDate"><span> 28 </span></th>
+                            <th class="attendanceDate"><span> 29 </span></th>
+                            <th class="attendanceDate"><span> 30 </span></th>
+                            <th class="attendanceDate"><span> 31 </span></th>
+                        </tr>
+                    </thead>
+                    <tbody ng-show="VmSearchAttendance.studentList.length">
+                        <tr ng-repeat="x in VmSearchAttendance.studentList | orderBy:'StudentRoll'">
+                            <td><label>{{ x.StudentRoll }}</label></td>
+                            <td><label>{{ x.StudentName }}</label></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                            <td class="attendanceDate"><span>  </span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-12 pull-left"><b>Teacher's Signature:</b></label>
+                        <label class="col-sm-12 pull-left"><b>Date:</b></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+

@@ -1,0 +1,570 @@
+﻿<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">Institute</h1>
+</div>
+
+<div class="wrapper-md" ng-controller="SettingsInstituteEditCtrl">
+    <!-- toaster directive -->
+    <toaster-container toaster-options="{'deeppition-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <!-- / toaster directive -->
+    <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+
+    <form role="form" class="form-validation" ng-submit="Update()" ng-hide="isLoading">
+
+        <tabset justified="false" class="tab-container">
+            <tab heading="Employee Info">
+                <tab-heading>
+                    General Information
+                </tab-heading>
+                <div class="row">
+                    <div class="col-sm-9">
+                        <div class="form-group">
+                            <label>
+                                Name
+                            </label>
+                            <input class="form-control" data-ng-model="Institute.Name" placeholder="Name" type="text" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>
+                                Global Institute Type
+                            </label>
+                            <select ng-model="Institute.GlobalInstituteTypeId" class="form-control m-b" ng-options="c.Key as c.Value for c in Institute.GlobalInstituteTypeList" required>
+                                <option value="">-- Global Institute Type --</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="row">
+                    <input type="hidden" value="{{Institute.PackageId}}" name="Institute.PackageId" />
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>
+                                PackageId
+                            </label>
+                            <select ng-model="Institute.PackageId" class="form-control m-b" ng-options="c.Key as c.Value for c in Institute.PackageList" required>
+                                <option value="">-- Choose Package --</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Url</label>
+                            <input class="form-control" data-ng-model="Institute.Url" placeholder="Url" type="text" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label>Code</label>
+                            <input class="form-control" data-ng-model="Institute.Code" placeholder="Code" type="text" required>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label>latitude</label>
+                            <!--<input class="form-control" data-ng-model="Institute.latitude" placeholder=" latitude" type="text">-->
+                            <!--<input type="text" data-verticaldownclass="fa fa-caret-down" data-verticalupclass="fa fa-caret-up"  data-ng-model="Institute.latitude" data-decimals="2" data-step="1" placeholder=" latitude" class="form-control" ui-jq="TouchSpin" style="display: block;">-->
+                            <input ui-jq="TouchSpin" type="text" value="10" class="form-control" data-min='0' data-max="2000000" data-ng-model="Institute.latitude" data-verticalbuttons="true" placeholder=" latitude" data-verticalupclass="fa fa-caret-up" data-verticaldownclass="fa fa-caret-down">
+                            <!--<input type="text"  data-verticalbuttons="true" data-max="20" data-min="0" class="form-control" value="10" ui-jq="TouchSpin" style="display: block;">-->
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label>longitude</label>
+                            <!--<input type="text" data-verticaldownclass="fa fa-caret-down" data-verticalupclass="fa fa-caret-up"  data-ng-model="Institute.longitude" data-decimals="2" data-step="1" placeholder=" longitude" class="form-control" ui-jq="TouchSpin" style="display: block;">-->
+                            <input ui-jq="TouchSpin" type="text" value="10" class="form-control" data-min='0' data-max="2000000" data-ng-model="Institute.longitude" placeholder=" longitude" data-verticalbuttons="true" data-verticalupclass="fa fa-caret-up" data-verticaldownclass="fa fa-caret-down">
+                            <!--<input class="form-control" data-ng-model="Institute.longitude" placeholder=" longitude" type="text">-->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>
+                                Global Country
+                            </label>
+                            <select ng-model="Institute.GlobalCountryId" class="form-control m-b" ng-options="c.Key as c.Value for c in Institute.GlobalCountryList">
+                                <option value="">-- Global Country --</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>
+                                Global Division
+                            </label>
+                            <select ng-model="Institute.GlobalDivisionId" class="form-control m-b" ng-options="c.Key as c.Value for c in Institute.GlobalDivisionList">
+                                <option value="">-- GlobalDivision --</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>
+                                Global District
+                            </label>
+                            <select ng-model="Institute.GlobalDistrictId" class="form-control m-b" ng-options="c.Key as c.Value for c in Institute.GlobalDistrictList">
+                                <option value="">-- Global District --</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>
+                                Global Sub-District
+                            </label>
+                            <select ng-model="Institute.GlobalSubDistrictId" class="form-control m-b" ng-options="c.Key as c.Value for c in Institute.GlobalSubDistrictList">
+                                <option value="">-- Global sub-District --</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Seo Text</label>
+                            <textarea placeholder="Seo" rows="3" class="form-control" data-ng-model="Institute.SeoText"></textarea>
+                            <!--<input class="form-control" data-ng-model="Institute.SeoText" placeholder=" SeoText" type="text">-->
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Contact Text</label>
+                            <!--<input class="form-control" data-ng-model="Institute.ContactText" placeholder=" ContactText" type="text">-->
+                            <textarea placeholder="Contact" rows="3" class="form-control" data-ng-model="Institute.ContactText"></textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label>Google Map Address(From Google Map)</label>
+                            <!--<input class="form-control" data-ng-model="Institute.ContactText" placeholder=" ContactText" type="text">-->
+                            <textarea placeholder="Address" rows="3" class="form-control" data-ng-model="Institute.GoogleMapAddress"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label>WelCome Text</label>
+                        <div lazy-load="textAngular">
+                            <div text-angular ng-model="Institute.WelComeText" class="btn-groups" ng-required="true"></div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label>Infractructure Text</label>
+                        <div lazy-load="textAngular">
+                            <div text-angular ng-model="Institute.InfractructureText" class="btn-groups" ng-required="true"></div>
+                        </div>
+                    </div>
+                </div><br />
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label>MasterPlan Text</label>
+                        <div lazy-load="textAngular">
+                            <div text-angular ng-model="Institute.MasterPlanText" class="btn-groups" ng-required="true"></div>
+                        </div>
+                    </div>
+                </div><br />
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label>UsefulLink Text</label>
+                        <div lazy-load="textAngular">
+                            <div text-angular ng-model="Institute.UsefulLinkText" class="btn-groups" ng-required="true"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Facebook Url</label>
+                            <input class="form-control" data-ng-model="Institute.FacebookUrl" placeholder=" FacebookUrl" type="text">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Twitter Url</label>
+                            <input class="form-control" data-ng-model="Institute.TwitterUrl" placeholder=" TwitterUrl" type="text">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Google Url</label>
+                            <input class="form-control" data-ng-model="Institute.GoogleUrl" placeholder=" GoogleUrl" type="text">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Linkedin Url</label>
+                            <input class="form-control" data-ng-model="Institute.LinkedinUrl" placeholder=" LinkedinUrl" type="text">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Behance Url</label>
+                            <input class="form-control" data-ng-model="Institute.BehanceUrl" placeholder=" BehanceUrl" type="text">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Active  &nbsp;</label><br />
+                            <label class="i-checks m-b-none">
+
+                                <input type="checkbox" data-ng-model="Institute.IsActive"> <i></i>
+                            </label>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <hr />
+                <div class="row">
+                    <div class="col-sm-6 ">
+                        <a ui-sref="app.applicationsettings.Institute" class="btn btn-default  "><i class="icon-action-undo"></i> &nbsp;Back to List</a>
+                    </div>
+                    <div class="col-sm-6  pull-right">
+
+                        <button type="submit" class="btn btn-addon btn-primary pull-right">
+                            <i class="glyphicon glyphicon-floppy-saved"></i>SAVE
+                        </button>
+                    </div>
+                </div>
+            </tab>
+            <tab heading="Photo Info">
+                <tab-heading>
+                    Logo & Banner Information
+                </tab-heading>
+
+                <div class="row" ng-show="uploader.isHTML5">
+                    <div class="col-lg-2">
+
+                        <img onerror="$(this).attr('src', 'img/404_error_image.png');" style="border: solid 1px gray" ng-src="{{ apiUrlPrefix+'api/image/refcode?id='+Institute.Id+'&refcode=Institute_logo&isThumbnail=true'}} " width="100px" />
+                        <label>
+                            Logo
+                        </label>
+                    </div>
+                    <div class="col-lg-6">
+
+                        <table class="table bg-white-only b-a" style="margin-top: 5px; ">
+                            <thead>
+                                <tr>
+                                    <th width="50%">Image</th>
+                                    <th ng-show="uploader.isHTML5">Size</th>
+                                    <th ng-show="uploader.isHTML5">Progress</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in uploader.queue">
+                                    <td><div ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 50 }"><br /><strong>{{ item.file.name }}</strong></div></td>
+                                    <td ng-show="uploader.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td>
+                                    <td ng-show="uploader.isHTML5">
+                                        <div class="progress progress-sm m-b-none m-t-xs">
+                                            <div class="progress-bar bg-info" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="col-lg-4">
+                        <div ng-show="!uploader.queue.length">
+                            <input tabindex="-1"
+                                   id="filestyle-0"
+                                   ui-jq="filestyle"
+                                   data-icon="false"
+                                   type="file" nv-file-select="" uploader="uploader" />
+                        </div>
+                        <div>
+                            <!--<div>
+                                <p>Progress:</p>
+                                <div class="progress bg-light dker" style="">
+                                    <div class="progress-bar progress-bar-striped bg-info" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"></div>
+                                </div>
+                            </div>-->
+                            <button type="button" class="btn btn-addon btn-danger pull-right" ng-click="uploader.clearQueue()" ng-hide="!uploader.queue.length">
+                                <i class="fa fa-trash-o"></i> Remove
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <div class="row" ng-show="uploader.isHTML5">
+                    <div class="col-lg-2">
+                        <img onerror="$(this).attr('src', 'img/404_error_image.png');" style="border: solid 1px gray" ng-src="{{apiUrlPrefix+'api/image/refcode?id='+Institute.Id+'&refcode=Institute_banner&isThumbnail=true'}}" width="100px" />
+                        <label>
+                            Banner
+                        </label>
+                    </div>
+                    <div class="col-lg-6">
+                        <table class="table bg-white-only b-a" style="margin-top: 5px; ">
+                            <thead>
+                                <tr>
+                                    <th width="50%">Image</th>
+                                    <th ng-show="uploader.isHTML5">Size</th>
+                                    <th ng-show="uploader.isHTML5">Progress</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in uploaderBanner.queue">
+                                    <td><div ng-show="uploaderBanner.isHTML5" ng-thumb="{ file: item._file, height: 50 }"><br /><strong>{{ item.file.name }}</strong></div></td>
+                                    <td ng-show="uploaderBanner.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td>
+                                    <td ng-show="uploaderBanner.isHTML5">
+                                        <div class="progress progress-sm m-b-none m-t-xs">
+                                            <div class="progress-bar bg-info" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-lg-4">
+                        <div ng-show="!uploaderBanner.queue.length">
+                            <input tabindex="-1" style="deeppition: absolute; clip: rect(0px, 0px, 0px, 0px);"
+                                   id="filestyle-0"
+                                   ui-jq="filestyle"
+                                   data-icon="false"
+                                   data-classbutton="btn btn-default"
+                                   data-classinput="form-control inline v-middle input-s"
+                                   type="file" nv-file-select="" uploader="uploaderBanner" />
+                        </div>
+                        <div>
+
+                            <button type="button" class="btn btn-addon btn-danger pull-right" ng-click="uploaderBanner.clearQueue()" ng-hide="!uploaderBanner.queue.length">
+                                <i class="fa fa-trash-o"></i> Remove
+                            </button>
+
+                        </div>
+                    </div>
+
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-sm-6 ">
+                        <a ui-sref="app.applicationsettings.Institute" class="btn btn-default  "><i class="icon-action-undo"></i> &nbsp;Back to List</a>
+                    </div>
+                    <div class="col-sm-6  pull-right">
+                       
+                        <button type="submit" class="btn btn-addon btn-primary pull-right">
+                            <i class="glyphicon glyphicon-floppy-saved"></i>SAVE
+                        </button>
+                    </div>
+                </div>
+            </tab>
+            <tab heading=" Info">
+                <tab-heading>
+                    Slider Image
+                </tab-heading>
+                <a ng-hide="showUploadPanel" ng-click="showUploadPanel=true" class="text-muted pull-right text-lg" href="">Upload <i class="fa fa-upload"></i></a>
+                <a ng-show="showUploadPanel" ng-click="showUploadPanel=false" class="text-muted pull-right text-lg" href=""><i class="icon-arrow-left"></i> Back</a>
+                <h4 ng-hide="showUploadPanel" class="font-thin m-t-none m-b-md text-muted">Images List<!--<b class="badge bg-info">{{ uploader.queue.length }}</b>--></h4>
+                <h4 ng-show="showUploadPanel" class="font-thin m-t-none m-b-md text-muted">Upload<!--<b class="badge bg-info">{{ uploader.queue.length }}</b>--></h4>
+                <div ng-show="showUploadPanel" class="row fade-in-up">
+                    <div class="hbox hbox-auto-xs hbox-auto-sm" nv-file-drop="" uploader="uploaderSlider">
+
+                        <div class="col">
+
+                            <div class="wrapper-md">
+
+
+                                <input tabindex="-1" style="clip: rect(0px, 0px, 0px, 0px); "
+                                       id="fileInput" multiple nv-file-select=""
+                                       ui-jq="filestyle"
+                                       data-icon="false" uploader="uploaderSlider"
+                                       data-classbutton="btn btn-default"
+                                       data-classinput="form-control inline v-middle "
+                                       change-on-fly="true" type="file" />
+                                <div ng-show="uploaderSlider.isHTML5" class="m-b-md">
+                                    <!-- 3. nv-file-over uploader="link" over-class="className" -->
+                                    <div class="b-a b-2x b-dashed wrapper-lg bg-white text-center m-b" nv-file-over="" over-class="b-info" uploader="uploaderSlider">
+                                        Base drop zone
+                                    </div>
+
+
+                                </div>
+                                <table class="table bg-white-only b-a">
+                                    <thead>
+                                        <tr>
+                                            <th width="50%">Name</th>
+                                            <th ng-show="uploaderSlider.isHTML5">Size</th>
+                                            <th ng-show="uploaderSlider.isHTML5">Progress</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="item in uploaderSlider.queue">
+                                            <td>
+                                                <strong>{{ item.file.name }}</strong>
+                                                <div ng-show="uploaderSlider.isHTML5" ng-thumb="{ file: item._file, height: 50 }"></div>
+                                            </td>
+                                            <td ng-show="uploaderSlider.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td>
+                                            <td ng-show="uploaderSlider.isHTML5">
+                                                <div class="progress progress-sm m-b-none m-t-xs">
+                                                    <div class="progress-bar bg-info" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span ng-show="item.isSuccess" class="text-success"><i class="glyphicon glyphicon-ok"></i></span>
+                                                <span ng-show="item.isCancel" class="text-warning"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                                                <span ng-show="item.isError" class="text-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                                            </td>
+                                            <td nowrap>
+                                                <!--<button type="button" class="btn btn-default btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                                                Upload
+                                            </button>
+                                            <button type="button" class="btn btn-default btn-xs" ng-click="item.cancel()" ng-disabled="!item.isUploading">
+                                                Cancel
+                                            </button>-->
+                                                <button type="button" class="btn btn-default btn-xs" ng-click="item.remove()">
+                                                    Remove
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div>
+                                    <div>
+                                        <p>Queue progress:</p>
+                                        <div class="progress bg-light dker" style="">
+                                            <div class="progress-bar progress-bar-striped bg-info" role="progressbar" ng-style="{ 'width': uploaderSlider.progress + '%' }"></div>
+                                        </div>
+                                    </div>
+                                    <!--<button type="button" class="btn btn-addon btn-success" ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length">
+                                    <i class="fa fa-arrow-circle-o-up"></i> Upload all
+                                </button>-->
+                                    <!--<button type="button" class="btn btn-addon btn-warning" ng-click="uploader.cancelAll()" ng-disabled="!uploader.isUploading">
+                                    <i class="fa fa-ban"></i> Cancel all
+                                </button>-->
+                                    <button type="button" class="btn btn-addon btn-danger pull-right" ng-click="uploaderSlider.clearQueue()" ng-disabled="!uploaderSlider.queue.length">
+                                        <i class="fa fa-trash-o"></i> Remove all
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div ng-hide="showUploadPanel" class="row fadeIn">
+                    <div class="inline bg-white wrapper-sm b-a" style="text-align: center" ng-repeat="img in Institute.ImagesList">
+
+                        <a ng-click="open(img)">
+                            <div class="bg-light">
+                                <img tooltip="{{img.ImageCaption}}" onerror="$(this).attr('src', 'img/404_error_image.png');" width="160px" ng-src="{{apiUrlPrefix+'api/image/thumb?id='+ img.Id +'&refcode=Gallery'}}" />
+
+                            </div>
+                        </a>
+
+                        <p> {{ img.ImageCaption? img.ImageCaption : 'Untitled' }}</p>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-sm-6 ">
+                        <a ui-sref="app.applicationsettings.Institute" class="btn btn-default  "><i class="icon-action-undo"></i> &nbsp;Back to List</a>
+                    </div>
+                    <div class="col-sm-6  pull-right">
+                        
+                        <button type="button" ng-click="showUploadPanel = false;UpdateSliderImage()" class="btn btn-addon btn-primary pull-right">
+                            <i class="glyphicon glyphicon-floppy-saved"></i>UPDATE SLIDER IMAGES
+                        </button>
+                    </div>
+                </div>
+            </tab>
+
+        </tabset>
+
+    </form>
+
+
+
+</div>
+
+<script type="text/ng-template" id="myModalContent.html">
+    <div ng-controller="ModalDemoCtrl" class="panel-default b-a no-border">
+
+        <div class="modal-body">
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <img onerror="$(this).attr('src', 'img/404_error_image.png');" width="550px" ng-src="{{ apiUrlPrefix+'api/image?id='+ selectedImage.Id +'&refcode=Institute_Landing_Slider'  }}" />
+
+                </div>
+                <div class="col-lg-4">
+                    <form role="form" class="form-validation">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <button ng-click="cancel()" class="close" type="button">×</button>
+                            </div>
+                        </div>
+                        <div class="row">
+
+
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <h4> Caption</h4>
+                                    <p ng-show="!item.editing" ng-dblclick="item.editing=true" class="b wrapper-md deepp-rlt bg-light text-lt r r-2x">
+                                        <span class="arrow top pull-left arrow-light"></span>
+                                        {{ selectedImage.ImageCaption? selectedImage.ImageCaption : 'Add Caption' }}
+                                    </p>
+
+
+                                </div>
+                            </div>
+                            <div class="col-sm-12" ng-show="item.editing">
+                                <div class="form-group">
+                                    <textarea placeholder="Caption" rows="2" class="form-control" data-ng-model="selectedImage.ImageCaption" ui-focus="item.editing"></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="row">
+                            <div class="col-sm-12 ">
+                                <button type="button" class="btn btn-addon btn-danger" ng-click="remove()">
+                                    <i class="fa fa-trash-o"></i>REMOVE IMAGE
+                                </button>
+                                <button ng-show="item.editing" class="btn btn-primary pull-right  pull-right" ng-click="item.editing=false">Update</button>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</script>

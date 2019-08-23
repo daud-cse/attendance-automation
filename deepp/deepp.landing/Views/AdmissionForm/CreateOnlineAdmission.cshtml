@@ -1,0 +1,459 @@
+﻿@model  deepp.Entities.ViewModels.VmOnlineAdmission
+@{
+    ViewBag.Title = "Online Admission";
+}
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen|Source+Sans+Pro:400,600">
+<link rel="stylesheet" href="assets/css/iconmoon.css">
+<!-- Testimonials JS -->
+<script type='text/javascript'>
+    jQuery(window).load(function () {
+        jQuery('.cs-testimonial-slider').flexslider({
+            slideshowSpeed: 4000,
+            animationDuration: 1100,
+            animation: 'slide',
+            directionNav: true,
+            controlNav: false,
+            prevText: "<i class='icon-arrow-left10'></i>",
+            nextText: "<i class='icon-arrow-right10'></i>",
+        });
+    });
+</script>
+<main id="main-content">
+    <div class="page-section">
+        <div class="container">
+            <div class="row">
+                <div class="page-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="section-fullwidth">
+                                <div class="element-size-100">
+                                    <div class="cs-heading-sec col-md-12">
+                                        <div class="inner-sec" style="border-bottom:1px solid #ebebe9 !important;">
+                                            <h1 style="color: !important; font-size: 30px !important; text-align:left;">Student Application Form</h1>
+                                            <div style="color: !important; text-align: left;">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="element-size-100">
+                                    <div class="col-md-12">
+                                        <div class="cs-plain-form cs_form_styling col-md-12">
+                                            <div class="form-style">
+                                                <h4>Please Fill in the Following Inforamtion</h4>
+
+                                                @using (Html.BeginForm("SaveAdmissionForm", "AdmissionForm"))
+                                                {
+
+                                                    <div>
+                                                        @ViewBag.result
+                                                    </div>
+                                                    <p class="clearfix">
+                                                        <label>Academic Session:<span>Put your Academic Session here</span></label><br>
+                                                        <span class="wpcf7-form-control-wrap last-name">
+                                                            @Html.DropDownListFor(model => model.AdmissionForm.AcademicSessionId, new SelectList(Model.AdmissionForm.AcademicSessionList, "Key", "Value", Model.AdmissionForm.AcademicSessionId), "Select Session", new { @class = "mc_input", @required = "required" })
+                                                            @Html.ValidationMessageFor(model => model.AdmissionForm.AcademicSessionId)
+
+                                                        </span>
+                                                    </p>
+                                                    <p class="clearfix">
+                                                        <label>Academic Class:<span>Put your Academic Class here</span></label><br>
+                                                        <span class="wpcf7-form-control-wrap last-name">
+                                                            @Html.DropDownListFor(model => model.AdmissionForm.AcademicClassId, new SelectList(Model.AdmissionForm.AcademicClassList, "Key", "Value", Model.AdmissionForm.AcademicClassId), "--Select Academic Class--", new { @class = "mc_input", @required = "required" })
+                                                            @Html.ValidationMessageFor(model => model.AdmissionForm.AcademicClassId)
+                                                        </span>
+                                                    </p>
+                                                    <p class="clearfix">
+                                                        <label>Academic Branch:<span>Put your Academic Branch here</span></label><br>
+                                                        <span class="wpcf7-form-control-wrap last-name">
+                                                            @Html.DropDownListFor(model => model.AdmissionForm.AcademicBranchId, new SelectList(Model.AdmissionForm.AcademicBranchList, "Key", "Value", Model.AdmissionForm.AcademicBranchId), "--Select Academic Branch--", new { @class = "mc_input", @required = "required" })
+                                                            @Html.ValidationMessageFor(model => model.AdmissionForm.AcademicBranchId)
+                                                        </span>
+                                                    </p>
+                                                    <p class="clearfix">
+
+
+                                                        <label>First Name:<span>Put your First name here</span></label><br>
+                                                        <span class="wpcf7-form-control-wrap first-name">
+                                                            @Html.TextBoxFor(model => model.AdmissionForm.FirstName, new { @class = "wpcf7-form-control wpcf7-text wpcf7-validates-as-required" })
+
+                                                            @Html.ValidationMessageFor(model => model.AdmissionForm.FirstName)
+                                                        </span>
+                                                    </p>
+                                                    <p class="clearfix">
+                                                        <label>Middle Name:<span>Put your Middle Name here</span></label><br>
+                                                        <span class="wpcf7-form-control-wrap last-name">
+                                                            @Html.TextBoxFor(model => model.AdmissionForm.MiddleName, new { @placeholder = "", @class = "wpcf7-form-control wpcf7-text wpcf7-validates-as-required" })
+                                                            @Html.ValidationMessageFor(model => model.AdmissionForm.MiddleName)
+                                                        </span>
+                                                    </p>
+                                                    <p class="clearfix">
+                                                        <label>Last Name:<span>Put your Last Name here</span></label><br>
+                                                        <span class="wpcf7-form-control-wrap last-name">
+                                                            @Html.TextBoxFor(model => model.AdmissionForm.LastName, new { @placeholder = "", @class = "wpcf7-form-control wpcf7-text wpcf7-validates-as-required" })
+                                                            @Html.ValidationMessageFor(model => model.AdmissionForm.LastName)
+                                                        </span>
+                                                    </p>
+
+                                                    <p class="clearfix">
+                                                        <label>DOB(DD:MM:YY):<span>Put your DOB here</span></label><br>
+                                                        <span id="divEndDate" class="wpcf7-form-control-wrap last-name">
+                                                            @Html.TextBoxFor(model => model.AdmissionForm.DOB, new { @placeholder = "", @class = "wpcf7-form-control wpcf7-text wpcf7-validates-as-required" })
+                                                            @Html.ValidationMessageFor(model => model.AdmissionForm.DOB)
+                                                        </span>
+                                                    </p>
+                                                    <p class="clearfix">
+                                                        <label>Contact Number:<span>Put your Contact Number here</span></label><br>
+                                                        <span class="wpcf7-form-control-wrap last-name">
+                                                            @Html.TextBoxFor(model => model.AdmissionForm.ContactNumber, new { @placeholder = "", @class = "wpcf7-form-control wpcf7-text wpcf7-validates-as-required" })
+                                                            @Html.ValidationMessageFor(model => model.AdmissionForm.ContactNumber)
+                                                        </span>
+                                                    </p>
+
+                                                    <p class="clearfix">
+                                                        <label>Address Body:<span>Put your Address Body here</span></label><br>
+                                                        <span class="wpcf7-form-control-wrap last-name">
+                                                            @Html.TextAreaFor(model => model.AdmissionFormAddres.AddressBody, new { @placeholder = "", @class = "wpcf7-form-control wpcf7-text wpcf7-validates-as-required" })
+                                                            @Html.ValidationMessageFor(model => model.AdmissionFormAddres.AddressBody)
+                                                        </span>
+                                                    </p>
+                                                    <p class="clearfix">
+                                                        <label>District Or State:<span>Put your District Or State here</span></label><br>
+                                                        <span class="wpcf7-form-control-wrap last-name">
+                                                            @Html.DropDownListFor(model => model.AdmissionFormAddres.DistrictOrStateId, new SelectList(Model.AdmissionFormAddres.DistrictOrStateList, "Key", "Value", Model.AdmissionFormAddres.DistrictOrStateId), "Select District", new { @class = "mc_input" })
+                                                            @Html.ValidationMessageFor(model => model.AdmissionFormAddres.DistrictOrStateId)
+                                                        </span>
+                                                    </p>
+                                                     <p class="clearfix">
+                                                        <label>Gender:<span>Put your Gender here</span></label><br>
+                                                        <span class="wpcf7-form-control-wrap last-name">
+                                                            @Html.DropDownListFor(model => model.AdmissionForm.GenderId, new SelectList(Model.AdmissionForm.GenderList, "Key", "Value", Model.AdmissionForm.GenderId), "--Select Applicant Gender--", new { @class = "mc_input" })
+                                                            @Html.ValidationMessageFor(model => model.AdmissionForm.GenderId)
+                                                        </span>
+                                                    </p>
+
+                                                    <p class="clearfix">
+                                                        <label>Nationality:<span>Put your Nationality here</span></label><br>
+                                                        <span class="wpcf7-form-control-wrap last-name">
+                                                            @Html.DropDownListFor(model => model.AdmissionForm.NationalityId, new SelectList(Model.AdmissionForm.NationalityList, "Key", "Value", Model.AdmissionForm.NationalityId), "--Select Applicant Nationality--", new { @class = "mc_input" })
+                                                            @Html.ValidationMessageFor(model => model.AdmissionForm.NationalityId)
+
+
+                                                        </span>
+                                                    </p>
+                                                    <p class="clearfix">
+                                                        <label>Religion:<span>Put your Religion here</span></label><br>
+                                                        <span class="wpcf7-form-control-wrap last-name">
+                                                            @Html.DropDownListFor(model => model.AdmissionForm.ReligionId, new SelectList(Model.AdmissionForm.ReligionList, "Key", "Value", Model.AdmissionForm.ReligionId), "--Select Applicant Religion--", new { @class = "mc_input" })
+                                                            @Html.ValidationMessageFor(model => model.AdmissionForm.ReligionId)
+
+                                                        </span>
+                                                    </p>
+
+
+                                                    <p class="clearfix">
+                                                        <label>Blood Group:<span>Put your Blood Group here</span></label><br>
+                                                        <span class="wpcf7-form-control-wrap last-name">
+                                                            @Html.DropDownListFor(model => model.AdmissionForm.BloodGroupId, new SelectList(Model.AdmissionForm.BloodGroupList, "Key", "Value", Model.AdmissionForm.BloodGroupId), "--Select Applicant Blood Group--", new { @class = "mc_input" })
+                                                            @Html.ValidationMessageFor(model => model.AdmissionForm.BloodGroupId)
+                                                        </span>
+                                                    </p>
+                                                    <p class="clearfix">
+                                                        <label>Email Address:<span>Put your Email Address here</span></label><br>
+                                                        <span class="wpcf7-form-control-wrap last-name">
+                                                            @Html.TextBoxFor(model => model.AdmissionForm.EmailAddress, new { @type = "email", @placeholder = "", @class = "wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" })
+                                                            @Html.ValidationMessageFor(model => model.AdmissionForm.EmailAddress)
+                                                        </span>
+                                                    </p>
+                                                    <p class="clearfix">
+                                                        <label>Guardian Type:<span>Put your Guardian Type here</span></label><br>
+                                                        <span class="wpcf7-form-control-wrap last-name">
+                                                            @Html.DropDownListFor(model => model.AdmissionFormGuardians.GuardianTypeId, new SelectList(Model.AdmissionFormGuardians.GuardianTypesList, "Key", "Value", Model.AdmissionFormGuardians.GuardianTypeId), "--Select Guardian Types--", new { @class = "mc_input" })
+                                                            @Html.ValidationMessageFor(model => model.AdmissionFormGuardians.GuardianTypeId)
+                                                        </span>
+                                                    </p>
+                                                    <p class="clearfix">
+                                                        <label>Profession:<span>Put your Profession here</span></label><br>
+                                                        <span class="wpcf7-form-control-wrap last-name">
+                                                            @Html.DropDownListFor(model => model.AdmissionFormGuardians.ProfessionId, new SelectList(Model.AdmissionFormGuardians.ProfessionList, "Key", "Value", Model.AdmissionFormGuardians.ProfessionId), "--Select Guardian Profession--", new { @class = "mc_input" })
+                                                            @Html.ValidationMessageFor(model => model.AdmissionFormGuardians.ProfessionId)
+                                                        </span>
+                                                    </p>
+                                                    <p class="clearfix">
+                                                        <label>Educational Qualification:<span>Put your Educational Qualification here</span></label><br>
+                                                        <span class="wpcf7-form-control-wrap last-name">
+                                                            @Html.DropDownListFor(model => model.AdmissionFormGuardians.EducationalQualificationId, new SelectList(Model.AdmissionFormGuardians.EducationalQualificationList, "Key", "Value", Model.AdmissionFormGuardians.EducationalQualificationId), "--Select Guardian Education Qualification--", new { @class = "mc_input" })
+                                                            @Html.ValidationMessageFor(model => model.AdmissionFormGuardians.EducationalQualificationId)
+                                                        </span>
+                                                    </p>
+                                                   
+                                                    <p>
+                                                        <input type="submit" value="Save" class="wpcf7-form-control wpcf7-submit">
+
+                                                    </p>
+                                                }
+                                                @*<form action="" class="comment-form">
+                                                        <label>
+                                                            <i class="icon-book8"></i>
+                                                            <input name="contact_name" placeholder="Enter Name" required="" type="text">
+                                                        </label>
+                                                        <label>
+                                                            <i class="icon-mortar-board"></i>
+                                                            <input name="contact_email" placeholder="Email Address" required="" type="text">
+                                                        </label>
+                                                        <label>
+                                                            <i class="icon-globe4"></i>
+                                                            <input name="subject" placeholder="Subject" required="" type="text">
+                                                        </label>
+                                                        <label class="textaera-sec">
+                                                            <textarea placeholder="Enter Message" id="comment_mes" name="contact_msg" rows="4" cols="39"></textarea>
+                                                        </label>
+                                                        <label class="form-submit">
+                                                            <input name="submit" value="Submit" type="submit">
+                                                        </label>
+                                                    </form>*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-sidebar">
+
+                    <div class="widget widget_tabs">
+                        <div class="widget element-size-100 widget_tabs">
+                            <div class="widget-section-title">
+                                <h6></h6>
+                            </div>
+                            <ul class="tab-nav">
+                                <li class="active"><a href="#tab1" data-toggle="tab"><i class="icon-user9"> Notice</i></a></li>
+                                <li class=""><a href="#tab2" data-toggle="tab"><i class="icon-tag7">News & Events</i></a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade in active tabs news" id="tab1">
+                                    <ul>
+
+                                        @{Html.RenderAction("GetAll", "Notice");}
+                                    </ul>
+                                    <a href="~/Notice/GetAllWithGrid" class="viewall-btn csbg-hovercolor"><i class="icon-angle-double-right"></i> More Notice</a>
+                                </div>
+                                <div class="tab-pane fade tabs news" id="tab2">
+
+
+                                    @{Html.RenderAction("GetAll", "Event");}
+
+                                    <a href="~/Event/GetAllWithGrid" class="viewall-btn csbg-hovercolor"><i class="icon-angle-double-right"></i> More News</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget widget_gallery">
+                        <div class="widget-section-title">
+                            <h6>Photo Gallery</h6>
+                        </div>
+                        @{Html.RenderAction("GetPartialGallery", "Gallery");}
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+
+
+@*<div class="page-header">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <h2 class="page-title">Admission Form</h2>
+            </div> <!-- /.col-md-6 -->
+            <div class="col-md-6 col-sm-6 hidden-xs back-home">
+                @Html.ActionLink("← Go back Home", "Index", "Home", new { }, null)
+            </div> <!-- /.col-md-6 -->
+        </div> <!-- /.row -->
+
+    </div>*@
+
+@*<div class="row">
+        <div class="col-md-4">
+            <div class="box-content">
+                <h4 class="widget-title"><span>Admission Notice</span></h4>
+                <p><strong>Pre</strong><strong> </strong><strong>Primary</strong><strong>  </strong><strong>School</strong><strong> </strong><strong>Admission</strong><strong>  </strong><strong>Criteria</strong><br /> Pre Primary School Admission is granted on the basis of <br /> a) First come first serve basis<br /> b) Physically fit and mentally sound.<br /> c) And dialogue with the Parents of the child.</p>  <p><strong>Age eligibility</strong> (As on 31 December of the academic session for which admission is sought)                                                                               </p>  <p>(a) The child shall be of 3 & half + year for playgroup                                                                                                                                        (b) The child shall be of 4 & half + year for nursery<span>                                                                                                                                          </span>(c) The child shall be of  5 + year for KG<span>                                                                                                                                                         </span>(d) The child shall be of 6 + year for  Class one </p>  <p class="MsoNormal"><strong>Documents Required</strong><br /> A birth certificate as a proof of age from a civic body is required at the time of registration.<br /> Four copy passport sized photographs are to be submitted at the time of registration.<br /> <br /> <strong>Pre Primary School Admission Process</strong><br /> Pre Primary School ( Play to KG) Admission process in<strong> Orient School </strong>begins with counseling and completes on the receipt of admission fees and making the entry into the Record Register. <br /> <br /> In the record the groups are allocated based on age of the child and the age eligibility criteria and date of admission. <br /> <br /> <strong>For more information such as the  School Admission fee structure etc., kindly visit the visit our School. </strong></p>  <p class="MsoNormal">Our Admission Team is ready to work with you on processing your child's application to <strong>Orient School Mymensingh </strong>and get you started on their path to success. If questions should arise pertaining to any of the admission policies or procedures, please do not hesitate to call the admissions office or e-mail:</p>
+            </div>
+
+        </div>
+        <div class="col-md-8 contact-page">
+            <div id="contact" class="contactForm clearfix">
+                <h4 class="widget-title"><span>Apply Online</span></h4>
+                <div class="wpcf7" id="wpcf7-f6-p27-o1">
+                    @using (Html.BeginForm("SaveAdmissionForm", "AdmissionForm"))
+                    {
+
+                        <div>
+                            @ViewBag.result
+                        </div>
+                        <p class="clearfix">
+                            <label>Academic Session:<span>Put your Academic Session here</span></label><br>
+                            <span class="wpcf7-form-control-wrap last-name">
+                                @Html.DropDownListFor(model => model.AdmissionForm.AcademicSessionId, new SelectList(Model.AdmissionForm.AcademicSessionList, "Key", "Value", Model.AdmissionForm.AcademicSessionId), "", new { @class = "mc_input", @required = "required" })
+                                @Html.ValidationMessageFor(model => model.AdmissionForm.AcademicSessionId)
+
+                            </span>
+                        </p>
+                        <p class="clearfix">
+                            <label>Academic Class:<span>Put your Academic Class here</span></label><br>
+                            <span class="wpcf7-form-control-wrap last-name">
+                                @Html.DropDownListFor(model => model.AdmissionForm.AcademicClassId, new SelectList(Model.AdmissionForm.AcademicClassList, "Key", "Value", Model.AdmissionForm.AcademicClassId), "", new { @class = "mc_input", @required = "required" })
+                                @Html.ValidationMessageFor(model => model.AdmissionForm.AcademicClassId)
+                            </span>
+                        </p>
+                        <p class="clearfix">
+                            <label>Academic Branch:<span>Put your Academic Branch here</span></label><br>
+                            <span class="wpcf7-form-control-wrap last-name">
+                                @Html.DropDownListFor(model => model.AdmissionForm.AcademicBranchId, new SelectList(Model.AdmissionForm.AcademicBranchList, "Key", "Value", Model.AdmissionForm.AcademicBranchId), "", new { @class = "mc_input", @required = "required" })
+                                @Html.ValidationMessageFor(model => model.AdmissionForm.AcademicBranchId)
+                            </span>
+                        </p>
+                        <p class="clearfix">
+
+
+                            <label>First Name:<span>Put your First name here</span></label><br>
+                            <span class="wpcf7-form-control-wrap first-name">
+                                @Html.TextBoxFor(model => model.AdmissionForm.FirstName, new { @class = "wpcf7-form-control wpcf7-text wpcf7-validates-as-required" })
+
+                                @Html.ValidationMessageFor(model => model.AdmissionForm.FirstName)
+                            </span>
+                        </p>
+                        <p class="clearfix">
+                            <label>Middle Name:<span>Put your Middle Name here</span></label><br>
+                            <span class="wpcf7-form-control-wrap last-name">
+                                @Html.TextBoxFor(model => model.AdmissionForm.MiddleName, new { @placeholder = "", @class = "wpcf7-form-control wpcf7-text wpcf7-validates-as-required" })
+                                @Html.ValidationMessageFor(model => model.AdmissionForm.MiddleName)
+                            </span>
+                        </p>
+                        <p class="clearfix">
+                            <label>Last Name:<span>Put your Last Name here</span></label><br>
+                            <span class="wpcf7-form-control-wrap last-name">
+                                @Html.TextBoxFor(model => model.AdmissionForm.LastName, new { @placeholder = "", @class = "wpcf7-form-control wpcf7-text wpcf7-validates-as-required" })
+                                @Html.ValidationMessageFor(model => model.AdmissionForm.LastName)
+                            </span>
+                        </p>
+
+                        <p class="clearfix">
+                            <label>DOB(DD:MM:YY):<span>Put your DOB here</span></label><br>
+                            <span id="divEndDate" class="wpcf7-form-control-wrap last-name">
+                                @Html.TextBoxFor(model => model.AdmissionForm.DOB, new { @placeholder = "", @class = "wpcf7-form-control wpcf7-text wpcf7-validates-as-required" })
+                                @Html.ValidationMessageFor(model => model.AdmissionForm.DOB)
+                            </span>
+                        </p>
+                        <p class="clearfix">
+                            <label>Contact Number:<span>Put your Contact Number here</span></label><br>
+                            <span class="wpcf7-form-control-wrap last-name">
+                                @Html.TextBoxFor(model => model.AdmissionForm.ContactNumber, new { @placeholder = "", @class = "wpcf7-form-control wpcf7-text wpcf7-validates-as-required" })
+                                @Html.ValidationMessageFor(model => model.AdmissionForm.ContactNumber)
+                            </span>
+                        </p>
+
+                        <p class="clearfix">
+                            <label>Address Body:<span>Put your Address Body here</span></label><br>
+                            <span class="wpcf7-form-control-wrap last-name">
+                                @Html.TextAreaFor(model => model.AdmissionFormAddres.AddressBody, new { @placeholder = "", @class = "wpcf7-form-control wpcf7-text wpcf7-validates-as-required" })
+                                @Html.ValidationMessageFor(model => model.AdmissionFormAddres.AddressBody)
+                            </span>
+                        </p>
+                        <p class="clearfix">
+                            <label>District Or State:<span>Put your District Or State here</span></label><br>
+                            <span class="wpcf7-form-control-wrap last-name">
+                                @Html.DropDownListFor(model => model.AdmissionFormAddres.DistrictOrStateId, new SelectList(Model.AdmissionFormAddres.DistrictOrStateList, "Key", "Value", Model.AdmissionFormAddres.DistrictOrStateId), "", new { @class = "mc_input" })
+                                @Html.ValidationMessageFor(model => model.AdmissionFormAddres.DistrictOrStateId)
+                            </span>
+                        </p>
+                        <p class="clearfix">
+                            <label>Guardian Type:<span>Put your Guardian Type here</span></label><br>
+                            <span class="wpcf7-form-control-wrap last-name">
+                                @Html.DropDownListFor(model => model.AdmissionFormGuardians.GuardianTypeId, new SelectList(Model.AdmissionFormGuardians.GuardianTypesList, "Key", "Value", Model.AdmissionFormGuardians.GuardianTypeId), "", new { @class = "mc_input" })
+                                @Html.ValidationMessageFor(model => model.AdmissionFormGuardians.GuardianTypeId)
+                            </span>
+                        </p>
+                        <p class="clearfix">
+                            <label>Profession:<span>Put your Profession here</span></label><br>
+                            <span class="wpcf7-form-control-wrap last-name">
+                                @Html.DropDownListFor(model => model.AdmissionFormGuardians.ProfessionId, new SelectList(Model.AdmissionFormGuardians.ProfessionList, "Key", "Value", Model.AdmissionFormGuardians.ProfessionId), "", new { @class = "mc_input" })
+                                @Html.ValidationMessageFor(model => model.AdmissionFormGuardians.ProfessionId)
+                            </span>
+                        </p>
+                        <p class="clearfix">
+                            <label>Educational Qualification:<span>Put your Educational Qualification here</span></label><br>
+                            <span class="wpcf7-form-control-wrap last-name">
+                                @Html.DropDownListFor(model => model.AdmissionFormGuardians.EducationalQualificationId, new SelectList(Model.AdmissionFormGuardians.EducationalQualificationList, "Key", "Value", Model.AdmissionFormGuardians.EducationalQualificationId), "", new { @class = "mc_input" })
+                                @Html.ValidationMessageFor(model => model.AdmissionFormGuardians.EducationalQualificationId)
+                            </span>
+                        </p>
+                        <p class="clearfix">
+                            <label>Gender:<span>Put your Gender here</span></label><br>
+                            <span class="wpcf7-form-control-wrap last-name">
+                                @Html.DropDownListFor(model => model.AdmissionForm.GenderId, new SelectList(Model.AdmissionForm.GenderList, "Key", "Value", Model.AdmissionForm.GenderId), "", new { @class = "mc_input" })
+                                @Html.ValidationMessageFor(model => model.AdmissionForm.GenderId)
+                            </span>
+                        </p>
+
+                        <p class="clearfix">
+                            <label>Nationality:<span>Put your Nationality here</span></label><br>
+                            <span class="wpcf7-form-control-wrap last-name">
+                                @Html.DropDownListFor(model => model.AdmissionForm.NationalityId, new SelectList(Model.AdmissionForm.NationalityList, "Key", "Value", Model.AdmissionForm.NationalityId), "", new { @class = "mc_input" })
+                                @Html.ValidationMessageFor(model => model.AdmissionForm.NationalityId)
+
+
+                            </span>
+                        </p>
+                        <p class="clearfix">
+                            <label>Religion:<span>Put your Religion here</span></label><br>
+                            <span class="wpcf7-form-control-wrap last-name">
+                                @Html.DropDownListFor(model => model.AdmissionForm.ReligionId, new SelectList(Model.AdmissionForm.ReligionList, "Key", "Value", Model.AdmissionForm.ReligionId), "", new { @class = "mc_input" })
+                                @Html.ValidationMessageFor(model => model.AdmissionForm.ReligionId)
+
+                            </span>
+                        </p>
+
+
+                        <p class="clearfix">
+                            <label>Blood Group:<span>Put your Blood Group here</span></label><br>
+                            <span class="wpcf7-form-control-wrap last-name">
+                                @Html.DropDownListFor(model => model.AdmissionForm.BloodGroupId, new SelectList(Model.AdmissionForm.BloodGroupList, "Key", "Value", Model.AdmissionForm.BloodGroupId), "", new { @class = "mc_input" })
+                                @Html.ValidationMessageFor(model => model.AdmissionForm.BloodGroupId)
+                            </span>
+                        </p>
+                        <p class="clearfix">
+                            <label>Email Address:<span>Put your Email Address here</span></label><br>
+                            <span class="wpcf7-form-control-wrap last-name">
+                                @Html.TextBoxFor(model => model.AdmissionForm.EmailAddress, new { @type = "email", @placeholder = "", @class = "wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" })
+                                @Html.ValidationMessageFor(model => model.AdmissionForm.EmailAddress)
+                            </span>
+                        </p>
+
+
+                        <p>
+                            <input type="submit" value="Save" class="wpcf7-form-control wpcf7-submit">
+
+                        </p>
+                        <div class="wpcf7-response-output wpcf7-display-none"></div>
+                    }
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>*@
+@*@section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+
+    }*@

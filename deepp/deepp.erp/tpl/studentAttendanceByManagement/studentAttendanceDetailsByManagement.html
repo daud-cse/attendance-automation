@@ -1,0 +1,105 @@
+﻿<div ng-controller="StudentAttendanceDetailsByManagementCtrl">
+    <div class="bg-light lter b-b wrapper-md">
+        <h1 class="m-n font-thin h3">Student Attendance Details: {{VmStudentAttendance.StudentAttendance.AttendanceDate | date:'dd-MMMM-yyyy'}}</h1>
+    </div>
+
+    <div class="wrapper-md">
+        <!-- toaster directive -->
+        <toaster-container toaster-options="{'deeppition-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+        <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+        <div class="panel panel-info">
+            <div class="panel-heading font-bold">Attendance Info</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="form-horizontal">
+                        <div class="form-group m-b-sm col-sm-12">
+                            <label class="col-sm-2 control-label"><b>Branch:</b></label>
+                            <div class="col-sm-2">
+                                <p class="form-control-static">{{VmStudentAttendance.StudentAttendance.BranchName}}</p>
+                            </div>
+                            <label class="col-sm-2 control-label"><b>Class:</b></label>
+                            <div class="col-sm-2">
+                                <p class="form-control-static">{{VmStudentAttendance.StudentAttendance.ClassName}}</p>
+                            </div>
+                            <label class="col-sm-2 control-label"><b>Section:</b></label>
+                            <div class="col-sm-2">
+                                <p class="form-control-static">{{VmStudentAttendance.StudentAttendance.SectionName}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" line-dashed b-b"></div>
+                <div class="row">
+                    <div class="form-horizontal">
+                        <div class="form-group m-b-sm col-sm-12">
+                            <label class="col-sm-2 control-label"><b>Sessoin:</b></label>
+                            <div class="col-sm-2">
+                                <p class="form-control-static">{{VmStudentAttendance.StudentAttendance.SessionName}}</p>
+                            </div>
+                            <label class="col-sm-2 control-label"><b>Teacher:</b></label>
+                            <div class="col-sm-2">
+                                <p class="form-control-static">{{VmStudentAttendance.StudentAttendance.TeacherName}}</p>
+                            </div>
+                            <label class="col-sm-2 control-label"><b>Last Update:</b></label>
+                            <div class="col-sm-2">
+                                <p class="form-control-static">{{VmStudentAttendance.StudentAttendance.LastUpdateTime | date:'dd-MMMM-yyyy' }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" line-dashed b-b"></div>
+                <div class="panel panel-warning">
+                    <div class="row">
+                        <div class="form-horizontal">
+                            <div class="form-group m-b-sm col-sm-12">
+                                <label class="col-sm-2 control-label"><b>Toatl Students:</b></label>
+                                <div class="col-sm-1">
+                                    <p class="form-control-static">{{VmStudentAttendance.StudentAttendance.TotalCount}}</p>
+                                </div>
+                                <label class="col-sm-2 control-label"><b>Present:</b></label>
+                                <div class="col-sm-1">
+                                    <p class="form-control-static">{{VmStudentAttendance.StudentAttendance.PresentCount}} ({{VmStudentAttendance.StudentAttendance.PresentPercentage}}%)</p>
+                                </div>
+                                <label class="col-sm-2 control-label"><b>Abscent:</b></label>
+                                <div class="col-sm-1">
+                                    <p class="form-control-static">{{VmStudentAttendance.StudentAttendance.AbsentCount}}({{VmStudentAttendance.StudentAttendance.AbsentPercentage}}%)</p>
+                                </div>
+                                <label class="col-sm-2 control-label"><b>Absconding:</b></label>
+                                <div class="col-sm-1">
+                                    <p class="form-control-static">{{VmStudentAttendance.StudentAttendance.AbscondingCount}}({{VmStudentAttendance.StudentAttendance.AbscondingPercentage}}%)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading font-bold">Student List</div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-striped b-t b-light" ng-table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Roll No.</th>
+                                <th>At.Status</th>
+                                <th>Is Absconding</th>
+                            </tr>
+                        </thead>
+                        <tbody ng-show="VmStudentAttendance.AttendanceDetails.length">
+                            <tr ng-repeat="x in VmStudentAttendance.AttendanceDetails | orderBy:'StudentRoll'">
+                                <td><label>{{ x.StudentName }}</label></td>
+                                <td><label>{{ x.StudentRoll }}</label></td>
+                                <td><button class="btn btn-sm btn-icon {{x.StatusColor}}">{{ x.Status }}</button></td>
+                                <td>
+                                    <i ng-if="x.IsAbsconding==true" class="fa fa-check text-danger" tooltips title="Yes"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

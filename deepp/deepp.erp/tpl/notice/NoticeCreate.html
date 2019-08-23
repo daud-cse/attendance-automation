@@ -1,0 +1,132 @@
+﻿<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">New Notice</h1>
+</div>
+<div class="wrapper-md">
+    <div class="col-sm-10">
+        <!-- toaster directive -->
+        <toaster-container toaster-options="{'deeppition-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+        <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+        <!-- attendance directive -->
+        <form role="form" name="step1" ng-controller="NoticeCreateCtrl" ng-submit="AddNotice()" uploader="uploader" class="form-validation" method="deeppt">
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="form-group pull-left">
+                        <label><b>Display at Notice Board :</b></label>
+                        <div ng-controller="DatepickerDemoCtrl">
+                            <span>From : </span><div class="input-group ">
+                                <input type="text" value="{{noticeModel.StartDate | date:'dd-MMMM-yyyy'}}" class="form-control" datepicker-popup="{{format}}" ng-model="noticeModel.StartDate" is-open="opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group pull-left">
+                        <label>&nbsp;</label>
+                        <div ng-controller="DatepickerDemoCtrl">
+                            <span>To : </span><div class="input-group ">
+                                <input type="text" value="{{noticeModel.EndDate | date:'dd-MMMM-yyyy'}}"  class="form-control" datepicker-popup="{{format}}" ng-model="noticeModel.EndDate" is-open="opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group pull-left">
+                        <label>Title: </label>
+                        <input class="form-control" size="70" data-ng-model="noticeModel.NoticeTitle" ng-required="true" placeholder="Title" type="text">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group pull-left">
+                        <label>Notice Type: </label>
+                        <select ng-model="noticeModel.NoticeTypeId" class="form-control m-b" ng-options="c.Key as c.Value for c in noticeModel.NoticeTypeList">
+                            <option value="">General</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group pull-left">
+                    <label>Notice: </label>
+                    <div lazy-load="textAngular">
+                        <div text-angular ng-model="noticeModel.NoticeBody" class="btn-groups" ng-required="true"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group pull-left">
+                    <label><input type="radio" ng-model="noticeModel.IsActive" value="1">&nbsp;<i class="fa fa-check text-success "></i>Active&nbsp;&nbsp;</label>
+                    <label><input type="radio" ng-model="noticeModel.IsActive" value="0">&nbsp;<i class="fa fa-times text-danger text"></i>InActive </label>
+                </div>
+            </div>
+            <div class="row" ng-show="uploader.isHTML5">
+                <input tabindex="-1" style="deeppition: absolute; clip: rect(0px, 0px, 0px, 0px);"
+                       id="filestyle-0"
+                       ui-jq="filestyle"
+                       data-icon="false"
+                       data-classbutton="btn btn-default"
+                       data-classinput="form-control inline v-middle input-s"
+                       type="file" nv-file-select="" uploader="uploader" multiple />
+                <table class="table bg-white-only b-a" style="margin-top: 5px; ">
+                    <thead>
+                        <tr>
+                            <th width="50%">Image</th>
+                            <th ng-show="uploader.isHTML5">Size</th>
+                            <th ng-show="uploader.isHTML5">Progress</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in uploader.queue">
+                            <td><div ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 50 }"><br /><strong>{{ item.file.name }}</strong></div></td>
+                            <td ng-show="uploader.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td>
+                            <td ng-show="uploader.isHTML5">
+                                <div class="progress progress-sm m-b-none m-t-xs">
+                                    <div class="progress-bar bg-info" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <span ng-show="item.isSuccess" class="text-success"><i class="glyphicon glyphicon-ok"></i></span>
+                                <span ng-show="item.isCancel" class="text-warning"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                                <span ng-show="item.isError" class="text-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            </td>
+                            <td nowrap>
+                                <button type="button" class="btn btn-default btn-xs" ng-click="item.remove()">
+                                    Remove
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div>
+                    <!--<div>
+                        <p>Progress:</p>
+                        <div class="progress bg-light dker" style="">
+                            <div class="progress-bar progress-bar-striped bg-info" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"></div>
+                        </div>
+                    </div>-->
+                    <button type="button" class="btn btn-addon btn-danger pull-right" ng-click="uploader.clearQueue()" ng-disabled="!uploader.queue.length">
+                        <i class="fa fa-trash-o"></i> Remove all
+                    </button>
+
+                </div>
+            </div>
+
+            <!--</div>-->
+            <div class="row" style="margin-bottom:10px;">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-success">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

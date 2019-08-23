@@ -1,0 +1,590 @@
+﻿<div ng-controller="StudentCtrl">
+    <div class="bg-info-lter b-b wrapper-sm">
+        <h1 class="m-n font-thin h3  text-dark-dk">
+            <i class="fa fa-mortar-board"></i> New Student: {{VmStudent.UserInfo.Name}}
+            <p class="btn-group pull-right">
+
+                <input type="text" style="display: inline;width: 75%;float: left" class="input-sm form-control" ng-model="SiblingId" placeholder="Sibling">
+                <button class="btn btn-sm btn-default" type="button" ng-click="GetSibling()"><i class="glyphicon glyphicon-search"></i></button>
+            </p>
+        </h1>
+    </div>
+
+    <div class="wrapper-md">
+        <!-- toaster directive -->
+        <toaster-container toaster-options="{'deeppition-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+        <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+        <!--User info-->
+
+        <form role="form" name="StudentForm" class="form-validation" ng-submit="AddStudent()" ng-hide="isLoading">
+            <tabset justified="false" class="tab-container">
+                <tab heading="GENERAL INFORMATION">
+                    <tab-heading >
+                        General Information
+                    </tab-heading>
+                    <div class="row">
+
+                        <div class="col-sm-3">
+                         
+                            <div class="form-group" >
+                                <label>First Name</label>
+                                <input class="form-control" ng-class="{'ng-dirty': StudentForm.FirstName.$invalid}"  name="FirstName" ng-change="VmStudent.UserInfo.Name=(VmStudent.UserInfo.FirstName+' '+VmStudent.UserInfo.MiddleName+' '+VmStudent.UserInfo.LastName)" required data-ng-model="VmStudent.UserInfo.FirstName" placeholder="First Name" type="text">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Middle Name</label>
+                                <input class="form-control" ng-change="VmStudent.UserInfo.Name=(VmStudent.UserInfo.FirstName+' '+VmStudent.UserInfo.MiddleName+' '+VmStudent.UserInfo.LastName )" data-ng-model="VmStudent.UserInfo.MiddleName" placeholder="Middle Name" type="text">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input class="form-control" ng-change="VmStudent.UserInfo.Name=(VmStudent.UserInfo.FirstName+' '+VmStudent.UserInfo.MiddleName+' '+VmStudent.UserInfo.LastName)" data-ng-model="VmStudent.UserInfo.LastName" placeholder="Last Name" type="text">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Roll</label>
+                                <input type="text" data-ng-model="VmStudent.Student.CurrentRollNo" class="form-control" placeholder="Roll" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Session</label>
+
+                                <select name="CurrentAcademicSessionId" ng-class="{'ng-dirty': StudentForm.CurrentAcademicSessionId.$invalid}" ng-model="VmStudent.Student.CurrentAcademicSessionId" required class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.Student.AcademicSessionList">
+                                    <option value="">-- Choose Session --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3" ng-show="VmStudent.Student.AcademicBranchList.length>1">
+                            <div class="form-group">
+                                <label>Branch</label>
+
+                                <select ng-model="VmStudent.Student.CurrentAcademicBranchId" required class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.Student.AcademicBranchList"></select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Class</label>
+
+                                <select ng-class="{'ng-dirty': StudentForm.CurrentAcademicClassId.$invalid}" name="CurrentAcademicClassId" ng-model="VmStudent.Student.CurrentAcademicClassId" required data-ng-change="getScetionClasswise()" class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.Student.AcademicClassList">
+                                    <option value="">-- Choose Class --</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Section</label>
+
+
+                                <select name="CurrentAcademicSectionId" ng-class="{'ng-dirty': StudentForm.CurrentAcademicSectionId.$invalid}" ng-model="VmStudent.Student.CurrentAcademicSectionId" required class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.Student.AcademicSectionList">
+                                    <option value="">-- Choose Section --</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!--</div>
+                            <div class="row">-->
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Group</label>
+                                <select ng-model="VmStudent.Student.CurrentAcademicGroupId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.Student.AcademicGroupList">
+                                    <option value="">-- Choose Group --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Version</label>
+
+                                <select ng-model="VmStudent.Student.CurrentAcademicVerssionId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.Student.AcademicVerssionList">
+                                    <option value="">-- Choose Version --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Shift</label>
+
+                                <select ng-model="VmStudent.Student.CurrentAcademicShiftId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.Student.AcademicShiftList">
+                                    <option value="">-- Choose Shift --</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label>Active  &nbsp;</label>
+                                <div>
+                                    <label class="i-checks m-b-none">
+
+                                        <input type="checkbox" data-ng-model="VmStudent.UserInfo.IsActive"> <i></i>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                   
+                    <div class="row">
+
+                        <div class="col-sm-1" style="float: none; margin: 0 auto;">
+                            <a class="" ng-show="isCollapsed" ng-init="isCollapsed = false" ng-click="isCollapsed = !isCollapsed">More <i class="fa fa-arrow-down"></i></a> &nbsp;
+                            <a class="" ng-hide="isCollapsed" ng-click="isCollapsed = !isCollapsed">Less <i class="fa fa-arrow-up"></i></a> &nbsp;
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div> 
+                    <div class="row" collapse="isCollapsed" ng-init="isCollapsed = true">
+
+                        <div class="col-sm-3">
+                            <div class="form-group">
+
+                                <label>Gender</label>
+
+                                <select ng-model="VmStudent.UserInfo.GenderId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.UserInfo.GenderList">
+                                    <option value="">-- Choose Gender --</option>
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+
+                                <label>Date of Birth</label>
+                                
+                                <div>
+                                    <div style="width: 43%" class="pull-left">
+                                        <select ng-model="month" class="form-control m-b" ng-options="c.Key as c.Value for c in Months" ng-change="VmStudent.UserInfo.DOB=(bYear+'-'+month+'-'+bDay)">
+                                            <option value="">Month</option>
+                                        </select>
+                                    </div>
+                                    <div style="width: 27%" class="pull-left">
+
+                                        <input ui-jq="TouchSpin" ng-change="VmStudent.UserInfo.DOB=(bYear+'-'+month+'-'+bDay)" type="text" data-ng-model="bDay" placeholder="DD" value="10" class="form-control" data-min='1' data-max="31" data-verticalbuttons="true"   >
+                                    </div>
+
+                                    <div style="width: 30%" class="pull-left">
+
+                                        <input ui-jq="TouchSpin" ng-change="VmStudent.UserInfo.DOB=(bYear+'-'+month+'-'+bDay)" type="text" data-ng-model="bYear" placeholder="YYYY" value="10" class="form-control" data-min='1990' data-max="2030" data-verticalbuttons="true"    >
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>SSN</label>
+                                <input class="form-control" data-ng-model="VmStudent.UserInfo.SSN" placeholder="SSN" type="text">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>PassportNo</label>
+
+                                <input class="form-control" data-ng-model="VmStudent.UserInfo.PassportNo" placeholder="Passport No " type="text">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" collapse="isCollapsed" ng-init="isCollapsed = true">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Religion</label>
+                                <select data-ng-model="VmStudent.UserInfo.ReligionId" class="form-control m-b" ng-options="c.Key as c.Value for c in  VmStudent.UserInfo.ReligionList">
+                                    <option value="">-- Choose Religion --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Nationality</label>
+                                <select data-ng-model="VmStudent.UserInfo.NationalityId" class="form-control m-b" ng-options="c.Key as c.Value for c in   VmStudent.UserInfo.NationalityList">
+                                    <option value="">-- Choose Nationality --</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Blood Group</label>
+
+                                <select data-ng-model="VmStudent.UserInfo.BloodGroupId" class="form-control m-b" ng-options="c.Key as c.Value for c  in  VmStudent.UserInfo.BloodGroupList">
+                                    <option value="">-- Choose Blood Group --</option>
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input class="form-control" type="email" data-ng-model="VmStudent.UserInfo.EmailAddress" placeholder="EmailAddress" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" collapse="isCollapsed" ng-init="isCollapsed = true">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Primary Contact Number</label>
+                                <input class="form-control" data-ng-model="VmStudent.UserInfo.ContactNumber1" placeholder="Primary Contact Number " type="text">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+
+                                <label>Secondary Contact Number</label>
+
+                                <input class="form-control" data-ng-model="VmStudent.UserInfo.ContactNumber2" placeholder="Secondary Contact Number" type="text">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Google</label>
+                                <input class="form-control" data-ng-model="VmStudent.UserInfo.GoogleId" placeholder="Google" type="text">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Facebook</label>
+                                <input class="form-control" data-ng-model="VmStudent.UserInfo.FacebookId" placeholder="Facebook" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" collapse="isCollapsed" ng-init="isCollapsed = true">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Microsoft</label>
+                                <input class="form-control" data-ng-model="VmStudent.UserInfo.MicrosoftId" placeholder="Microsoft" type="text">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Twitter</label>
+                                <input class="form-control" data-ng-model="VmStudent.UserInfo.TwitterId " placeholder="Twitter" type="text">
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="row" collapse="isCollapsed">
+                        <div class="col-sm-2" ng-repeat="coCurricularActivity in  VmStudent.Student.CoCurricularActivityList">
+                            <div class="form-group">
+                                <label ng-if="$index==0"> Co Curricular Activity</label>
+                                <label ng-if="$index>0">&nbsp;</label>
+                                <div>
+                                    <label class="i-checks m-b-none">
+                                        <input name="coCurricular" value="{{coCurricularActivity.Key}}" type="checkbox"> <i></i>{{coCurricularActivity.Value}}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" collapse="isCollapsed">
+                        <div class="col-sm-2" ng-repeat="scholarship in  VmStudent.Student.ScholarshipList">
+                            <div class="form-group">
+                                <label ng-if="$index==0"> Scholarships</label>
+                                <label ng-if="$index>0">&nbsp;</label>
+                                <div>
+                                    <label class="i-checks m-b-none">
+                                        <input name="cboScholarship" value="{{scholarship.Key}}" type="checkbox"> <i></i>{{scholarship.Value}}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-sm-2 ">
+                                <a ui-sref="app.studentlist" class="btn btn-default pull-left"><i class="icon-action-undo"></i> &nbsp;Back to List</a>
+                            </div>
+                            <div class="col-sm-2   pull-right">
+                                <button type="submit" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-floppy-saved"></i>&nbsp;Save</button>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </tab>
+                <tab heading="Guardian Info">
+                    <tab-heading>
+                        Guardian Information <span class="badge bg-info badge-sm m-l-xs">{{VmStudent.Guardians.length}}</span>
+                    </tab-heading>
+                    <div ng-repeat="guardian in  VmStudent.Guardians">
+                        <div class="panel panel-info">
+                            <div class="panel-heading wrapper-xs bg-info ">
+                                Guardian {{$index+1}}: {{guardian.UserInfo.Name}}
+                                <button type="button" class="close" ng-click="removeGuardian($index)">
+                                    <span aria-hidden="true">×</span>
+                                    <span class="sr-only">Close</span>
+                                </button>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Guardian Type</label>
+
+                                            <select ng-model="guardian.GuardianTypeId" required="" class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.SingleGuardian.GuardianTypesList">
+                                                <option value="">-- Choose Guardian Type --</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>First Name</label>
+                                            <input class="form-control" ng-change="guardian.UserInfo.Name=(guardian.UserInfo.FirstName+' '+guardian.UserInfo.MiddleName+' '+guardian.UserInfo.LastName)" required data-ng-model="guardian.UserInfo.FirstName" placeholder="First Name" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Middle Name</label>
+                                            <input class="form-control" ng-change="guardian.UserInfo.Name=(guardian.UserInfo.FirstName+' '+guardian.UserInfo.MiddleName+' '+guardian.UserInfo.LastName )" data-ng-model="guardian.UserInfo.MiddleName" placeholder="Middle Name" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Last Name</label>
+                                            <input class="form-control" ng-change="guardian.UserInfo.Name=(guardian.UserInfo.FirstName+' '+guardian.UserInfo.MiddleName+' '+guardian.UserInfo.LastName)" data-ng-model="guardian.UserInfo.LastName" placeholder="Last Name" type="text">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+
+
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>
+                                                Educational Qualification
+                                            </label>
+
+                                            <select ng-model="guardian.EducationalQualificationId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.SingleGuardian.EducationalQualificationList">
+                                                <option value="">-- Educational Qualification --</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>
+                                                Profession
+                                            </label>
+                                            <select ng-model="guardian.ProfessionId " class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.SingleGuardian.ProfessionList">
+                                                <option value="">-- Choose Profession --</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+
+                                            <label>Primary Contact Number</label>
+                                            <input class="form-control" data-ng-model="guardian.UserInfo.ContactNumber1 " placeholder="Primary Contact Number" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+
+                                            <label>Secondary Contact Number</label>
+
+                                            <input class="form-control" data-ng-model="guardian.UserInfo.ContactNumber2 " placeholder="Secondary Contact Number" type="text">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label>
+                                                Monthly Income
+                                            </label>
+                                            <input ui-jq="TouchSpin" ng-change="VmStudent.UserInfo.DOB=(bYear+'-'+month+'-'+bDay)" type="text" data-ng-model="guardian.MonthlyIncome " placeholder="Monthly Income" value="0" class="form-control" data-min='0' data-max="100000000" data-verticalbuttons="true" data-verticalupclass="fa fa-caret-up" data-verticaldownclass="fa fa-caret-down">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3" style="float: none; margin: 0 auto;">
+                        <a class="  " data-ng-click="isCollapsedGuardian = false;addGuardian()"><span class="glyphicon glyphicon-plus"></span> Add New Guardian</a> &nbsp;
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-sm-2 ">
+                                <a ui-sref="app.studentlist" class="btn btn-default pull-left"><i class="icon-action-undo"></i> &nbsp;Back to List</a>
+                            </div>
+                            <div class="col-sm-2   pull-right">
+                                <button type="submit" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-floppy-saved"></i>&nbsp;Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </tab>
+                <tab heading="Address Info">
+                    <tab-heading>
+                        Address Infomation <span class="badge bg-primary badge-sm m-l-xs">{{VmStudent.Addresses.length}}</span>
+                    </tab-heading>
+                    <div ng-repeat="address in VmStudent.Addresses">
+                        <div class="panel panel-primary">
+
+                            <div class="panel-heading wrapper-xs bg-primary no-border">
+                                Address {{$index+1}}: <button type="button" class="close" ng-click="removeAddress($index)">
+                                                          <span aria-hidden="true">×</span>
+                                                          <span class="sr-only">Close</span>
+                                                      </button>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Address Type</label>
+                                            <select ng-model="address.AddressTypeId" required="" class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.SingleAddresses.AddressTypeList">
+                                                <option value="">-- Choose AddressType --</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Country</label>
+                                            <select ng-init="selectedCountry=null" ng-model="selectedCountry" class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.CountryList">
+                                                <option value="">-- Choose Country --</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>District Or State</label>
+                                            <select ng-model="address.DistrictOrStateId" class="form-control m-b" ng-options="c.Id as c.Name for c in VmStudent.DistrictOrStateList | filter:{CountryId: selectedCountry}">
+                                                <option value="">-- Choose District --</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>
+                                                Zip Code
+                                            </label>
+                                            <input class="form-control" data-ng-model="address.ZipCode" placeholder="Zip Code" type="text">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Address Body</label>
+                                            <textarea placeholder="Address" rows="3" class="form-control" data-ng-model="address.AddressBody"></textarea>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-3" style="float: none; margin: 0 auto;">
+                        <a class="" data-ng-click="isCollapsedAddress = false;addAddress()"><span class="glyphicon glyphicon-plus"></span> Add New Address</a> &nbsp;
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-sm-2 ">
+                                <a ui-sref="app.studentlist" class="btn btn-default pull-left"><i class="icon-action-undo"></i> &nbsp;Back to List</a>
+                            </div>
+                            <div class="col-sm-2   pull-right">
+                                <button type="submit" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-floppy-saved"></i>&nbsp;Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </tab>
+                <tab heading="Photo Info">
+                    <tab-heading>
+                        Photo Infomation
+                    </tab-heading>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="form-group">
+
+
+                                <input tabindex="-1" style="clip: rect(0px, 0px, 0px, 0px); "
+                                       id="fileInput"
+                                       ui-jq="filestyle"
+                                       data-icon="false" uploader="uploaderPhotoUrl"
+                                       data-classbutton="btn btn-default"
+                                       data-classinput="form-control inline v-middle "
+                                       change-on-fly="true" type="file" />
+
+
+                            </div>
+                        </div>
+                       
+
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="wrapper-sm b-a bg-white m-r-xs m-b-xs">
+                                <div class="bg-light" style="height:320px">
+                                    <img-crop image="image.myImage"
+                                              result-image="image.myCroppedImage"
+                                              result-image-size="160"
+                                              area-type="{{cropType}}"></img-crop>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="inline bg-white wrapper-sm b-a">
+
+                                <div class="bg-light">
+                                    <img ng-src="{{image.myCroppedImage}}" />
+                                </div>
+                                <progressbar class="progress-striped active" value="100" type="warning" ng-show="isUploading">Loading...  </progressbar>
+                            </div>
+                            
+                        </div>
+                        <div class="col-lg-4">
+
+                            <!--<a class="btn btn-success" ng-click=" Upload()" ng-disabled="image.myCroppedImage.length<500 || uploaderPhotoUrl.queue[0].isReady || uploaderPhotoUrl.queue[0].isUploading || uploaderPhotoUrl.queue[0].isSuccess">Upload</a>-->
+                            <a class="btn btn-danger" ng-click="image.myImage=null;" ng-disabled="image.myCroppedImage.length<500">Remove</a>
+                        </div>
+                    </div>
+
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-sm-2 ">
+                                <a ui-sref="app.studentlist" class="btn btn-default pull-left"><i class="icon-action-undo"></i> &nbsp;Back to List</a>
+                            </div>
+                            <div class="col-sm-2   pull-right">
+                                <button type="submit" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-floppy-saved"></i>&nbsp;Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </tab>
+            </tabset>
+        </form>
+
+    </div>
+
+
+
+</div>
+<style>
+    .input-group-btn-vertical {
+        display: none !important;
+    }
+</style>

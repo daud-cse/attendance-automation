@@ -1,0 +1,76 @@
+﻿<div ng-controller="EmployeeAttendanceDetailsCtrl">
+    <div class="bg-light lter b-b wrapper-md">
+        <h1 class="m-n font-thin h3">Employee Attendance Details</h1>
+    </div>
+    <div class="wrapper-md">
+        <!-- toaster directive -->
+        <toaster-container toaster-options="{'deeppition-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+        <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+        <!-- attendance directive -->
+
+        <div class="panel panel-info">
+            <div class="panel-heading font-bold">Attendance Info</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="form-horizontal">
+                        <div class="form-group m-b-sm col-sm-12">
+                            <label class="col-sm-1 control-label"><b>Branch:</b></label>
+                            <div class="col-sm-2">
+                                <p class="form-control-static">{{VmUserAttendance.UserAttendance.BranchName}}</p>
+                            </div>
+                            <label class="col-sm-1 control-label"><b>Date:</b></label>
+                            <div class="col-sm-2">
+                                <p class="form-control-static">{{VmUserAttendance.UserAttendance.AttendanceDate | date:'dd-MMMM-yyyy'}}</p>
+                            </div>
+                            <label class="col-sm-1 control-label"><b>Total:</b></label>
+                            <div class="col-sm-1">
+                                <p class="form-control-static">{{VmUserAttendance.UserAttendance.TotalCount}}</p>
+                            </div>
+                            <label class="col-sm-1 control-label"><b>Present:</b></label>
+                            <div class="col-sm-1">
+                                <p class="form-control-static">{{VmUserAttendance.UserAttendance.PresentCount}} ({{VmUserAttendance.UserAttendance.PresentPercentage}}%)</p>
+                            </div>
+                            <label class="col-sm-1 control-label"><b>Abscent:</b></label>
+                            <div class="col-sm-1">
+                                <p class="form-control-static">{{VmUserAttendance.UserAttendance.AbsentCount}}({{VmUserAttendance.UserAttendance.AbsentPercentage}}%)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading font-bold">Employee List</div>
+            <div class="panel-body">
+                <div class="row wrapper">
+                    <div class="col-sm-12">
+                        <div class="table-responsive">
+                            <table class="table table-striped b-t b-light" ng-table>
+                                <thead>
+                                    <tr>
+                                        <th>PIN</th>
+                                        <th>Designation</th>
+                                        <th>Name</th>
+                                        <th>In Time</th>
+                                        <th>Out Time</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody ng-show="VmUserAttendance.AttendanceDetails.length">
+                                    <tr ng-repeat="x in VmUserAttendance.AttendanceDetails">
+                                        <td>{{ x.UserPin }}</td>
+                                        <td>{{ x.UserDesignation }}</td>
+                                        <td>{{ x.UserName }}</td>
+                                        <td>{{ x.InTime | date:'h:mma'}}</td>
+                                        <td>{{ x.OutTime | date:'h:mma'}}</td>
+                                        <td><button class="btn btn-sm btn-icon {{x.StatusColor}}">{{ x.Status }}</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

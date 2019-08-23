@@ -1,0 +1,409 @@
+﻿<div ng-controller="StudentDetailsCtrl">
+    <div class="bg-light lter b-b wrapper-md">
+        <h1 class="m-n font-thin h3">Student: {{VmStudent.UserInfo.Name}}</h1>
+    </div>
+
+    <div class="wrapper-md">
+        <!-- toaster directive -->
+        <toaster-container toaster-options="{'deeppition-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+        <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+        <!--User info-->
+        <form role="form" class="form-validation" ng-submit="AddStudent()" ng-hide="isLoading">
+            <div class="panel panel-default">
+                <div class="panel-heading font-bold">User info</div>
+                <div class="panel-body">
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input class="form-control" data-ng-model="VmStudent.UserInfo.Name" required placeholder="Name" type="text">
+                            </div>
+                            <div class="form-group">
+
+                                <label>Gender</label>
+
+                                <select ng-model="VmStudent.UserInfo.GenderId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.UserInfo.GenderList">
+                                    <option value="">-- Choose Gender --</option>
+                                </select>
+
+                            </div>
+
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+
+                                <label>Date of Birth</label>
+
+                                <div ng-controller="DatepickerDemoCtrl">
+                                    <div class="input-group ">
+                                        <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="VmStudent.UserInfo.DOB" is-open="opened" datepicker-options="dateOptions" close-text="Close" />
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Roll</label>
+                                <input type="text" data-ng-model="VmStudent.Student.CurrentRollNo" class="form-control" required placeholder="Roll" />
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <a class="btn btn-info btn-xs" ng-init="isCollapsed = false" ng-click="isCollapsed = !isCollapsed">More >></a>
+                        </div>
+
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in">More</div>
+                    <div class="row" collapse="isCollapsed" ng-init="isCollapsed = true">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input class="form-control" data-ng-model="VmStudent.UserInfo.FirstName" placeholder="First Name" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label>Photo</label>
+                                <div class="inline bg-white wrapper-sm b-a">
+                                    <div class="bg-light">
+                                        <img ng-src="{{VmStudent.UserInfo.PhotoUrl}}" width="100px" />
+                                    </div>
+                                </div>
+                                <input tabindex="-1" style="deeppition: absolute; clip: rect(0px, 0px, 0px, 0px);"
+                                       id="filestyle-0"
+                                       ui-jq="filestyle"
+                                       data-icon="false"
+                                       data-classbutton="btn btn-default"
+                                       data-classinput="form-control inline v-middle input-s"
+                                       type="file" nv-file-select="" uploader="uploaderPhotoUrl" />
+                            </div>
+                            <div class="form-group">
+                                <label>Religion</label>
+                                <select data-ng-model="VmStudent.UserInfo.ReligionId" class="form-control m-b" ng-options="c.Key as c.Value for c in  VmStudent.UserInfo.ReligionList">
+                                    <option value="">-- Choose Religion --</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Contact Number 1</label>
+                                <input class="form-control" data-ng-model="VmStudent.UserInfo.ContactNumber1" placeholder="Contact Number 1 " type="text">
+                            </div>
+                            <div class="form-group">
+                                <label>Nationality</label>
+                                <select data-ng-model="VmStudent.UserInfo.NationalityId" class="form-control m-b" ng-options="c.Key as c.Value for c in   VmStudent.UserInfo.NationalityList">
+                                    <option value="">-- Choose Nationality --</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Google</label>
+                                <input class="form-control" data-ng-model="VmStudent.UserInfo.GoogleId" placeholder="Google" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label>Facebook</label>
+                                <input class="form-control" data-ng-model="VmStudent.UserInfo.FacebookId" placeholder="Facebook" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label>SSN</label>
+                                <input class="form-control" data-ng-model="VmStudent.UserInfo.SSN" placeholder="SSN" type="text">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input class="form-control" data-ng-model="VmStudent.UserInfo.LastName" placeholder="Last Name" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label>Small Photo</label>
+
+                                <div class="inline bg-white wrapper-sm b-a">
+                                    <div class="bg-light">
+                                        <img src="{{VmStudent.UserInfo.SmallPhotoUrl}}" width="100px" />
+                                    </div>
+                                </div>
+                                <input tabindex="-1" style="deeppition: absolute; clip: rect(0px, 0px, 0px, 0px);"
+                                       id="filestyle-0"
+                                       ui-jq="filestyle"
+                                       data-icon="false"
+                                       data-classbutton="btn btn-default"
+                                       data-classinput="form-control inline v-middle input-s"
+                                       type="file" nv-file-select="" uploader="uploaderSmallPhotoUrl" />
+
+                            </div>
+                            <div class="form-group">
+                                <label>PassportNo</label>
+
+                                <input class="form-control" data-ng-model="VmStudent.UserInfo.PassportNo" placeholder="Passport No " type="text">
+
+                            </div>
+                            <div class="form-group">
+                                <label>Blood Group</label>
+
+
+                                <select data-ng-model="VmStudent.UserInfo.BloodGroupId" class="form-control m-b" ng-options="c.Key as c.Value for c  in  VmStudent.UserInfo.BloodGroupList">
+                                    <option value="">-- Choose Blood Group --</option>
+                                </select>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label>Contact Number 2</label>
+
+                                <input class="form-control" data-ng-model="VmStudent.UserInfo.ContactNumber2" placeholder="Contact Number 2" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input class="form-control" type="email" data-ng-model="VmStudent.UserInfo.EmailAddress" placeholder="EmailAddress" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label>Microsoft</label>
+                                <input class="form-control" data-ng-model="VmStudent.UserInfo.MicrosoftId" placeholder="Microsoft" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label>Twitter</label>
+                                <input class="form-control" data-ng-model="VmStudent.UserInfo.TwitterId " placeholder="Twitter" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--Student info-->
+            <div class="panel panel-default">
+                <div class="panel-heading font-bold">Student info</div>
+                <div class="panel-body">
+                    <!--<form role="form" class="form-validation"></form>-->
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Branch</label>
+
+                                <select ng-model="VmStudent.Student.CurrentAcademicBranchId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.Student.AcademicBranchList">
+                                    <option value="">-- Choose Branch --</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Class</label>
+
+                                <select ng-model="VmStudent.Student.CurrentAcademicClassId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.Student.AcademicClassList">
+                                    <option value="">-- Choose Class --</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Group</label>
+                                <select ng-model="VmStudent.Student.CurrentAcademicGroupId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.Student.AcademicGroupList">
+                                    <option value="">-- Choose Group --</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Version</label>
+
+                                <select ng-model="VmStudent.Student.CurrentAcademicVerssionId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.Student.AcademicVerssionList">
+                                    <option value="">-- Choose Version --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Section</label>
+
+
+                                <select ng-model="VmStudent.Student.CurrentAcademicSectionId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.Student.AcademicSectionList">
+                                    <option value="">-- Choose Section --</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Session</label>
+
+                                <select ng-model="VmStudent.Student.CurrentAcademicSessionId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.Student.AcademicSessionList">
+                                    <option value="">-- Choose Section --</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Shift</label>
+
+                                <select ng-model="VmStudent.Student.CurrentAcademicShiftId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.Student.AcademicShiftList">
+                                    <option value="">-- Choose Shift --</option>
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--Guardian info-->
+            <div class="panel panel-default">
+                <div class="panel-heading font-bold">
+                    Guardian info
+                    <button class="btn btn-xs btn-info pull-right" data-ng-click="addGuardian()">+ ADD NEW</button>
+                </div>
+                <div class="panel-body">
+                    <div ng-if="guardian.UserInfo.IsActive" ng-repeat="guardian in  VmStudent.Guardians">
+
+                        <div class="well b bg-light wrapper-sm ng-binding">
+                            Guardian {{$index}}: {{guardian.UserInfo.IsActive}}
+                            <label class="i-checks m-b-none">
+                                <input type="checkbox" data-ng-model="guardian.UserInfo.IsActive"> <i></i>
+                            </label>
+                            <button type="button" class="close" ng-click="removeGuardian($index)">
+                                <span aria-hidden="true">×</span>
+                                <span class="sr-only">Close</span>
+                            </button>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Guardian Type</label>
+
+                                    <select ng-model="guardian.GuardianTypeId" required="" class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.SingleGuardian.GuardianTypesList">
+                                        <option value="">-- Choose AddressType --</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label>ContactNumber 1</label>
+                                    <input class="form-control" data-ng-model="guardian.UserInfo.ContactNumber1 " placeholder="ContactNumber 1" type="text">
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label>
+                                        MonthlyIncome
+                                    </label>
+                                    <input class="form-control" data-ng-model="guardian.MonthlyIncome " placeholder="MonthlyIncome" type="text">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input class="form-control" data-ng-model="guardian.UserInfo.Name " required placeholder="Name" type="text">
+
+                                </div>
+                                <div class="form-group">
+
+                                    <label>ContactNumber 1</label>
+
+                                    <input class="form-control" data-ng-model="guardian.UserInfo.ContactNumber2 " placeholder="ContactNumber 2" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                        Educational Qualification
+                                    </label>
+
+                                    <select ng-model="guardian.EducationalQualificationId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.SingleGuardian.EducationalQualificationList">
+                                        <option value="">-- Choose Educational Qualification --</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                        Profession
+                                    </label>
+                                    <select ng-model="guardian.ProfessionId " class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.SingleGuardian.ProfessionList">
+                                        <option value="">-- Choose Profession --</option>
+                                    </select>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!--Address info-->
+            <div class="panel panel-default">
+                <div class="panel-heading font-bold">
+                    Address info
+                    <button class="btn btn-xs btn-info pull-right" data-ng-click="addAddress()">+ ADD NEW</button>
+                </div>
+                <div class="panel-body">
+                    <div ng-if="address.IsActive" ng-repeat="address in VmStudent.Addresses">
+                        <div class="well b bg-primary wrapper-sm ng-binding">
+                            Address {{$index}}: {{address.IsActive}}
+                            <label class="i-checks m-b-none">
+                                <input type="checkbox" data-ng-model="address.IsActive"> <i></i>
+                            </label>
+                            <button type="button" class="close" ng-click="removeAddress($index)">
+                                <span aria-hidden="true">×</span>
+                                <span class="sr-only">Close</span>
+                            </button>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Address Type</label>
+                                    <select ng-model="address.AddressTypeId" required="" class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.SingleAddresses.AddressTypeList">
+                                        <option value="">-- Choose AddressType --</option>
+                                    </select>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <label>Country</label>
+                                    <select ng-model="selectedCountry" ng-init="selectedCountry=(address.DistrictOrStateId!=null?(VmStudent.DistrictOrStateList | filter:{Id: address.DistrictOrStateId})[0].CountryId : null)" class="form-control m-b" ng-options="c.Key as c.Value for c in VmStudent.CountryList">
+                                        <option value="">-- Choose Country --</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                        ZipCode
+                                    </label>
+                                    <input class="form-control" data-ng-model="address.ZipCode" placeholder="ZipCode" type="text">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>AddressBody</label>
+
+                                    <input class="form-control" data-ng-model="address.AddressBody" required placeholder="Address Body" type="text">
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label>DistrictOrStateId</label>
+                                    <select ng-model="address.DistrictOrStateId" class="form-control m-b" ng-options="c.Id as c.Name for c in VmStudent.DistrictOrStateList | filter:{CountryId: selectedCountry}">
+                                        <option value="">-- Choose District --</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+
+                                    <label>RefCode  </label>
+
+                                    <input class="form-control" data-ng-model="address.RefCode" required="" placeholder="RefCode" type="text">
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="col-sm-2 ">
+                            <button type="button" ng-click="clear()" class="btn btn-default pull-left"><i class="icon-action-undo"></i> &nbsp;Cancel</button>
+
+                        </div>
+                        <div class="col-sm-2   pull-right">
+                            <button type="submit" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-floppy-saved"></i>&nbsp;Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+</div>

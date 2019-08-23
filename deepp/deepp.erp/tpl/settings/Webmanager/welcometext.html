@@ -1,0 +1,50 @@
+﻿<div ng-controller="BasicInfoCtrl">
+    <div class="bg-light lter b-b wrapper-md">
+        <h1 class="m-n font-thin h3">{{entityName}}</h1>
+    </div>
+
+    <div class="wrapper-md">
+        <!-- toaster directive -->
+        <toaster-container toaster-options="{'deeppition-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+        <!-- / toaster directive -->
+        <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+
+
+
+        <div class="panel panel-default" ng-hide="isLoading">
+            <form role="form" class="form-validation" ng-submit="Update()" ng-hide="isLoading">
+
+
+
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <div lazy-load="textAngular">
+                            <div text-angular ng-model="infoText" class="btn-groups" ng-required="true"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <footer class="panel-footer">
+                    <div class="row">
+                        <!--<div class="col-sm-6 ">
+                            <a ui-sref="app.applicationsettings.Institute" class="btn btn-default  "><i class="icon-action-undo"></i> &nbsp;Back to List</a>
+                        </div>-->
+                        <div class="col-sm-6  pull-right">
+
+                            <button type="submit" class="btn btn-addon btn-primary pull-right">
+                                <i class="glyphicon glyphicon-floppy-saved"></i>SAVE
+                            </button>
+                        </div>
+                    </div>
+                </footer>
+            </form>
+        </div>
+
+    </div>
+
+</div>

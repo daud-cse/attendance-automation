@@ -1,0 +1,288 @@
+﻿@model IEnumerable<deepp.Entities.Models.MobilePayment>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $("#yearup").click(function (e) {
+            e.preventDefault();
+
+           //alert('hello');
+
+
+            var input = $("#inputyear");
+
+            var currentVal = parseInt(input.val());
+
+            if (!isNaN(currentVal)) {
+
+
+                    if (currentVal < input.attr('data-max')) {
+                        input.val(currentVal + 1).change();
+                    }
+                    if (parseInt(input.val()) == input.attr('data-max')) {
+                        $(this).attr('disabled', true);
+                    }
+
+
+            }
+
+            })
+
+        $("#yeardown").click(function (e) {
+            e.preventDefault();
+
+            //alert('hello');
+
+
+            var input = $("#inputyear");
+
+            var currentVal = parseInt(input.val());
+
+            if (!isNaN(currentVal)) {
+
+
+                if (currentVal >input.attr('data-min')) {
+                    input.val(currentVal - 1).change();
+                }
+                if (parseInt(input.val()) == input.attr('data-min')) {
+                    $(this).attr('disabled', true);
+                }
+
+
+            }
+
+        })
+
+        $("#dayUp").click(function (e) {
+            e.preventDefault();
+
+            //alert('hello');
+
+
+            var input = $("#inputday");
+
+            var currentVal = parseInt(input.val());
+
+            if (!isNaN(currentVal)) {
+
+
+                if (currentVal < input.attr('data-max')) {
+                    input.val(currentVal +1).change();
+                }
+                if (parseInt(input.val()) == input.attr('data-max')) {
+                    $(this).attr('disabled', true);
+                }
+
+
+            }
+
+        })
+        $("#daydown").click(function (e) {
+            e.preventDefault();
+
+            //alert('hello');
+
+
+            var input = $("#inputday");
+
+            var currentVal = parseInt(input.val());
+
+
+            if (!isNaN(currentVal)) {
+
+
+                if (currentVal > input.attr('data-min')) {
+                    input.val(currentVal - 1).change();
+                }
+                if (parseInt(input.val()) == input.attr('data-min')) {
+                    $(this).attr('disabled', true);
+                }
+
+
+            }
+
+        })
+
+
+        $('#ddlsearch').click(function (event) {
+
+            var day = $("#inputday").val();
+            var year = $("#inputyear").val();
+           
+
+            if (day == "") {
+                day = 0;
+            }
+            
+            if (year == "") {
+                year = 0;
+            }
+            var AcademicSessionId = 0;
+            $("#table").show();
+
+            var url = '@Url.Content("~/Payment/GetStudentPayment")';
+           
+
+            $.ajax({
+                cache: false,
+                url: url,
+                type: "GET",
+                data: "month=" + $('#inputmonth').val() + "&day=" +day + "&year=" +year + "&AcademicSessionId=" + 0,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+
+                success: function (data) {
+                   
+
+
+                    var table = $("#table tbody");
+                    var tfoot = $("#table tfoot");
+                    table.empty();
+                    var totalpaid = 0;
+                    var totalremain = 0;
+                    var totalFees = 0;
+
+                    $.each(data, function (idx, elem) {
+                        table.append("<tr><td>" + elem.MonthName + "</td><td>" + elem.FeesHeadName + "</td><td>" + elem.AcademicClassName + "</td>   <td>" + elem.CollectionDate + "</td> <td> " + elem.FeesAmount + "</td> <td > " + elem.PaidAmount + "</td> <td> " + elem.RemainingAmount + "</td>  </tr>");
+
+                        totalpaid = parseFloat(totalpaid) + parseFloat(elem.PaidAmount);
+                        totalremain = parseFloat(totalremain) + parseFloat(elem.RemainingAmount);
+                        totalFees = parseFloat(totalFees) + parseFloat(elem.FeesAmount);
+                       
+                    });
+                    tfoot.append("<tr><td>" + "</td><td>" + "</td><td>" + "</td>   <td>" + "</td> <td> " + totalFees + "</td> <td > " + totalpaid + "</td> <td> " + totalremain + "</td>  </tr>");
+                },
+              
+            });
+
+        })
+
+
+    });
+</script>
+
+<h2>Student Payment</h2>
+
+
+
+<div class="panel-body">
+    <div class="row">
+
+
+
+
+        
+        <div class="col-sm-12">
+            <div class="col-sm-3">
+            </div>
+
+            <div class="col-sm-3">
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="col-sm-2">
+               
+            </div>
+            <div class="col-sm-8">
+                <div style="width: 43%" class="pull-left">
+                    <select class="form-control m-b " id="inputmonth">
+                        <option value="0" class="">Month</option>
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                </div>
+                 
+                <div style="width: 27%" class="pull-left">
+
+                    <div class="input-group bootstrap-touchspin">
+                        <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;">
+                        </span>
+                        <input ui-jq="TouchSpin" id="inputday" type="text" placeholder="DD" class="form-control " value="" data-min="1" data-max="31" data-verticalbuttons="true" style="display: block;">
+                        <span class="input-group-addon bootstrap-touchspin-deepptfix" style="display: none;"></span>
+                        <span class="input-group-btn-vertical">
+                            <button class="btn btn-default bootstrap-touchspin-up" id="dayUp" type="button"><i class="glyphicon glyphicon-chevron-up"></i></button>
+                            <button class="btn btn-default bootstrap-touchspin-down" id="daydown" type="button"><i class="glyphicon glyphicon-chevron-down"></i></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div style="width: 30%" class="pull-left">
+
+                    <div class="input-group bootstrap-touchspin">
+                        <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;">
+                        </span>
+                        <input ui-jq="TouchSpin" type="text" placeholder="YYYY" class="form-control " data-min="1990" data-max="2050" value="" data-verticalbuttons="true" style="display: block;" id="inputyear">
+                        <span class="input-group-addon bootstrap-touchspin-deepptfix" style="display: none;"></span>
+                        <span class="input-group-btn-vertical">
+                            <button class="btn btn-default bootstrap-touchspin-up" id="yearup" type="button"><i class="glyphicon glyphicon-chevron-up"></i></button>
+                            <button class="btn btn-default bootstrap-touchspin-down" id="yeardown" type="button"><i class="glyphicon glyphicon-chevron-down"></i></button>
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="col-sm-2 form-group">
+                <button type="submit" id="ddlsearch" class="btn btn-primary"><i class="glyphicon glyphicon-floppy-saved"></i>Search</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<table class="table table-bordered table-hover" id="table" style="display:none">
+    <thead>
+        <tr>
+            <th>
+                Month
+            </th>
+            <th>
+                Fees Title
+            </th>
+            <th>
+                Class
+            </th>
+
+            <th>
+                Date
+            </th>
+            <th>
+                Fees Amount
+            </th>
+
+            <th>
+
+                Fees paid
+            </th>
+            <th>
+
+                Fees Remaining
+            </th>
+
+
+
+        </tr>
+    </thead>
+    <tbody></tbody>
+
+    <tfoot></tfoot>
+</table>

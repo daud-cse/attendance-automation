@@ -1,0 +1,10 @@
+E:\DeepPresent Attendance\deeppresent\deepp\sfa.attendance\bin\Debug\pos.attendance.exe.config
+E:\DeepPresent Attendance\deeppresent\deepp\sfa.attendance\obj\Debug\Interop.zkemkeeper.dll
+E:\DeepPresent Attendance\deeppresent\deepp\sfa.attendance\obj\Debug\pos.attendance.csproj.ResolveComReference.cache
+E:\DeepPresent Attendance\deeppresent\deepp\sfa.attendance\obj\Debug\pos.attendance.csprojResolveAssemblyReference.cache
+E:\DeepPresent Attendance\deeppresent\deepp\sfa.attendance\obj\Debug\sfa.attendance.DataEmpty.resources
+E:\DeepPresent Attendance\deeppresent\deepp\sfa.attendance\obj\Debug\sfa.attendance.Master.resources
+E:\DeepPresent Attendance\deeppresent\deepp\sfa.attendance\obj\Debug\pos.attendance.Properties.Resources.resources
+E:\DeepPresent Attendance\deeppresent\deepp\sfa.attendance\obj\Debug\pos.attendance.csproj.GenerateResource.Cache
+E:\DeepPresent Attendance\deeppresent\deepp\sfa.attendance\obj\Debug\pos.attendance.exe
+E:\DeepPresent Attendance\deeppresent\deepp\sfa.attendance\obj\Debug\pos.attendance.pdb

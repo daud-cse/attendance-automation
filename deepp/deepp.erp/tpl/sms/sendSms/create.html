@@ -1,0 +1,540 @@
+﻿<div ng-controller="SmsCreateCtrl">
+    <div class="bg-info-lter b-b wrapper-sm text-dark-dk">
+        <h1 class="m-n font-thin h3"><i class="icon-speech "></i> &nbsp; SMS Template</h1>
+    </div>
+
+    <div class="wrapper-md">
+
+        <toaster-container toaster-options="{'deeppition-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+        <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
+        <form role="form" class="form-validation" ng-submit="CreateSms()">
+            <tabset justified="false" class="tab-container" ng-init="steps={percent:20, step1:true, step2:false, step3:false,step4:false}" ng-hide="isLoading">
+                <tab heading="Employee Info" active="steps.step1">
+                    <tab-heading>
+                        Step One
+                    </tab-heading>
+                    
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+
+                                <div class="radio inline">
+                                    <label class="i-checks">
+                                        <input type="radio" name="a" ng-click="radioClick();SmsTemplate.IsForGeneral=true;isCollapsed=true;" ng-checked="SmsTemplate.IsForGeneral">
+                                        <i></i>
+                                        General
+                                    </label>
+                                </div>
+                                <div class="radio inline">
+                                    <label class="i-checks">
+                                        <input type="radio" value="option1" name="a" ng-click="radioClick();SmsTemplate.IsForStudent=true;isCollapsed=false;">
+                                        <i></i>
+                                        Student
+                                    </label>
+                                </div>
+                                <div class="radio inline">
+                                    <label class="i-checks">
+                                        <input type="radio" value="option1" name="a" ng-click="radioClick();SmsTemplate.IsForGuardian=true;isCollapsed=false;">
+                                        <i></i>
+                                        Guardian
+                                    </label>
+                                </div>
+                                <div class="radio inline">
+                                    <label class="i-checks">
+                                        <input type="radio" value="option1" name="a" ng-click="radioClick();SmsTemplate.IsForTeacher=true;isCollapsed=false;">
+                                        <i></i>
+                                        Teacher
+                                    </label>
+                                </div>
+                                <div class="radio inline">
+                                    <label class="i-checks">
+                                        <input type="radio" value="option1" name="a" ng-click="radioClick();SmsTemplate.IsForEmployee=true;isCollapsed=false;">
+                                        <i></i>
+                                        Employee
+                                    </label>
+                                </div>
+                                <div class="radio inline">
+                                    <label class="i-checks">
+                                        <input type="radio" value="option1" name="a" ng-click="radioClick();SmsTemplate.IsForGoverningBody=true;isCollapsed=false;">
+                                        <i></i>
+                                        Governingbody
+                                    </label>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Templates </label>
+                                <select ng-model="selectedSmsTemplate" ng-change="SmsTemplate.SmsTemplate=selectedSmsTemplate.SmsTemplate;CalculatePreviewText()" ng-show="SmsTemplate.IsForGeneral" class="form-control m-b" ng-options="c as c.Name for c in VmShortMessage.ShortMessageTemplates | filter:{IsForGeneral: true}">
+                                    <option value="">-- Choose Templates --</option>
+                                </select>
+                                <select ng-model="selectedSmsTemplate" ng-change="SmsTemplate.SmsTemplate=selectedSmsTemplate.SmsTemplate;CalculatePreviewText()" ng-show="SmsTemplate.IsForStudent" class="form-control m-b" ng-options="c as c.Name for c in VmShortMessage.ShortMessageTemplates | filter:{IsForStudent: true}">
+                                    <option value="">-- Choose Templates --</option>
+                                </select>
+                                <select ng-model="selectedSmsTemplate" ng-change="SmsTemplate.SmsTemplate=selectedSmsTemplate.SmsTemplate;CalculatePreviewText()" ng-show="SmsTemplate.IsForTeacher" class="form-control m-b" ng-options="c as c.Name for c in VmShortMessage.ShortMessageTemplates | filter:{IsForTeacher: true}">
+                                    <option value="">-- Choose Templates --</option>
+                                </select>
+                                <select ng-model="selectedSmsTemplate" ng-change="SmsTemplate.SmsTemplate=selectedSmsTemplate.SmsTemplate;CalculatePreviewText()" ng-show="SmsTemplate.IsForGuardian" class="form-control m-b" ng-options="c as c.Name for c in VmShortMessage.ShortMessageTemplates | filter:{IsForGuardian: true}">
+                                    <option value="">-- Choose Templates --</option>
+                                </select>
+                                <select ng-model="selectedSmsTemplate" ng-change="SmsTemplate.SmsTemplate=selectedSmsTemplate.SmsTemplate;CalculatePreviewText()" ng-show="SmsTemplate.IsForEmployee" class="form-control m-b" ng-options="c as c.Name for c in VmShortMessage.ShortMessageTemplates | filter:{IsForEmployee: true}">
+                                    <option value="">-- Choose Templates --</option>
+                                </select>
+                                <select ng-model="selectedSmsTemplate" ng-change="SmsTemplate.SmsTemplate=selectedSmsTemplate.SmsTemplate;CalculatePreviewText()" ng-show="SmsTemplate.IsForGoverningBody" class="form-control m-b" ng-options="c as c.Name for c in VmShortMessage.ShortMessageTemplates | filter:{IsForGoverningBody: true}">
+                                    <option value="">-- Choose Templates --</option>
+                                </select>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row" collapse="isCollapsed" ng-init="isCollapsed = true">
+
+                        <div class="col-sm-12">
+                            <label> Notification Tags</label>
+                        </div>
+
+
+                        <!--<div class="col-sm-12">
+                        <label class="i-checks m-b-none">
+
+                        </label>
+                    </div>-->
+
+                        <div class="col-sm-12 ">
+                            <div class=" well r  alert-info dker   no-border" style="margin-bottom: 0px" ng-repeat="notificationTagGroup in  SmsTemplate.NotificationTagGroupList">
+                                <label>{{notificationTagGroup.Value}}</label>
+                                <button type="button" ng-if="SmsTemplate.IsForStudent" ng-repeat="notificationTag in  SmsTemplate.NotificationTags |   filter:{NotificationGroupName: notificationTagGroup.Value} |   filter:{IsForStudent: SmsTemplate.IsForStudent }   " class="btn btn-rounded btn-sm btn-info" ng-click="insertAtCaret('messageBody','{{notificationTag.Tag}}','{{notificationTag.TextToCalculate}}')">   {{notificationTag.Tag}}</button>
+                                <button type="button" ng-if="SmsTemplate.IsForGuardian" ng-repeat="notificationTag in  SmsTemplate.NotificationTags |   filter:{NotificationGroupName: notificationTagGroup.Value}   |   filter:{IsForGuardian: SmsTemplate.IsForGuardian } " class="btn btn-rounded btn-sm btn-info" ng-click="insertAtCaret('messageBody',' {{notificationTag.Tag}}','{{notificationTag.TextToCalculate}}')">   {{notificationTag.Tag}}</button>
+                                <button type="button" ng-if="SmsTemplate.IsForTeacher" ng-repeat="notificationTag in  SmsTemplate.NotificationTags |   filter:{NotificationGroupName: notificationTagGroup.Value}   |   filter:{IsForTeacher: SmsTemplate.IsForTeacher } " class="btn btn-rounded btn-sm btn-info" ng-click="insertAtCaret('messageBody',' {{notificationTag.Tag}}','{{notificationTag.TextToCalculate}}')">   {{notificationTag.Tag}}</button>
+                                <button type="button" ng-if="SmsTemplate.IsForEmployee" ng-repeat="notificationTag in  SmsTemplate.NotificationTags |   filter:{NotificationGroupName: notificationTagGroup.Value}   |   filter:{IsForEmployee: SmsTemplate.IsForEmployee } " class="btn btn-rounded btn-sm btn-info" ng-click="insertAtCaret('messageBody',' {{notificationTag.Tag}}','{{notificationTag.TextToCalculate}}')">   {{notificationTag.Tag}}</button>
+                                <button type="button" ng-if="SmsTemplate.IsForGoverningBody" ng-repeat="notificationTag in  SmsTemplate.NotificationTags |   filter:{NotificationGroupName: notificationTagGroup.Value}   |   filter:{IsForGoverningBody: SmsTemplate.IsForGoverningBody } " class="btn btn-rounded btn-sm btn-info" ng-click="insertAtCaret('messageBody',' {{notificationTag.Tag}}','{{notificationTag.TextToCalculate}}')">   {{notificationTag.Tag}}</button>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Template  &nbsp;</label>
+                                <textarea placeholder="Template" required rows="6" ng-maxlength="500" ng-change="CalculatePreviewText()" class="form-control" id="messageBody" data-ng-model="SmsTemplate.SmsTemplate"></textarea>
+                                <!--<p>{{PreviewText}}</p>
+                            <p>{{SmsCountText}}</p>-->
+
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Preview Text  &nbsp;</label>
+                                <!--<textarea placeholder="Template" rows="6" readonly="" class="form-control" id="messageBody" data-ng-model="PreviewText"></textarea>-->
+                                <div class="m-l-xxl" style="margin-left: 0px;">
+                                    <div class="deepp-rlt bg-primary wrapper b b-light r r-2x" style="height: 131px">
+                                        <span class="arrow left pull-up arrow-primary"></span>
+                                        <p class="m-b-none">{{PreviewText}}</p>
+                                        <p class="m-b-none" ng-show="PreviewText.length==0">No message</p>
+                                    </div>
+
+                                    <small class="text-primary-dk"><i class="fa fa-ok text-success"></i>  Sms Count <b class="badge bg-primary ">{{SmsTemplate.SmsCount}}</b></small>
+                                    <!--<small class="text-muted"><i class="fa fa-ok text-success"></i>   Length: <b class="badge bg-primary ">{{SmsCountText.length}}</b></small>-->
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label>Active  &nbsp;</label>
+                                <label class="i-checks m-b-none">
+
+                                    <input type="checkbox" data-ng-model="SmsTemplate.IsActive"> <i></i>
+                                </label>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="row">
+                        <div class="col-sm-6 ">
+                            <a ui-sref="app.sendSms.list" class="btn btn-default  "><i class="icon-action-undo"></i> &nbsp;Back to List</a>
+                        </div>
+                        <div class="col-sm-6  pull-right">
+
+                            <button type="submit" ng-click="steps.step2=true" class="btn btn-addon btn-primary pull-right">
+                                <i class="glyphicon glyphicon-floppy-saved"></i>Next
+                            </button>
+                        </div>
+                    </div>
+
+                </tab>
+                <tab heading="Address Info" active="steps.step2">
+                    <tab-heading>
+                        Step Two
+                    </tab-heading>
+                    <div class="row" ng-if="SmsTemplate.IsForGeneral">
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label class="i-checks m-b-none">
+                                    <input type="checkbox" ng-model="ShortMessageTemplates.IsForGeneral" ng-init="ShortMessageTemplates.IsForGeneral=false"> <i></i>
+                                </label>
+                                IsForGeneral
+                            </div>
+                        </div>
+                     
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label class="i-checks m-b-none">
+                                    <input type="checkbox" ng-model="ShortMessageTemplates.IsForGeneral" ng-init="ShortMessageTemplates.IsForGeneral=false"> <i></i>
+                                </label>
+                                IsForStudent
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label class="i-checks m-b-none">
+                                    <input type="checkbox" ng-model="ShortMessageTemplates.IsForGeneral" ng-init="ShortMessageTemplates.IsForGeneral=false"> <i></i>
+                                </label>
+                                IsForGuardian
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label class="i-checks m-b-none">
+                                    <input type="checkbox" ng-model="ShortMessageTemplates.IsForGeneral" ng-init="ShortMessageTemplates.IsForGeneral=false"> <i></i>
+                                </label>
+                                IsForTeacher
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label class="i-checks m-b-none">
+                                    <input type="checkbox" ng-model="ShortMessageTemplates.IsForGeneral" ng-init="ShortMessageTemplates.IsForGeneral=false"> <i></i>
+                                </label>
+                                IsForEmployee
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label class="i-checks m-b-none">
+                                    <input type="checkbox" ng-model="ShortMessageTemplates.IsForGeneral" ng-init="ShortMessageTemplates.IsForGeneral=false"> <i></i>
+                                </label>
+                                IsForGoverningBody
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" ng-if="SmsTemplate.IsForTeacher">
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label> Branch</label>
+                                <select ng-model="VmShortMessage.Teacher.CurrentAcademicBranchId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmShortMessage.Teacher.AcademicBranchList">
+                                    <option value="">-- Choose Branch --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label>Designation</label>
+                                <select ng-model="VmShortMessage.Teacher.DesignationId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmShortMessage.Teacher.DesignationList">
+                                    <option value="">-- Choose Designation --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!--<div class="col-sm-3">
+                        <div class="form-group">
+                            <p>&nbsp;&nbsp;</p>
+
+                            <button type="button" ng-click="SearchTeacher()" class="btn btn-addon btn-primary pull-right">
+                                <i class="glyphicon glyphicon-floppy-saved"></i>search
+                            </button>
+                        </div>
+                    </div>-->
+                    </div>
+                    <div class="row" ng-if="SmsTemplate.IsForEmployee">
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label> Branch</label>
+                                <select ng-model="VmShortMessage.Employee.BranchId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmShortMessage.Employee.AcademicBranchList">
+                                    <option value="">-- Choose Branch --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label>Designation</label>
+                                <select ng-model="VmShortMessage.Employee.DesignationId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmShortMessage.Employee.DesignationList">
+                                    <option value="">-- Choose Designation --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label>Department</label>
+                                <select ng-model="VmShortMessage.Employee.DepartmentId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmShortMessage.Employee.DepartmentList">
+                                    <option value="">-- Department --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!--<div class="col-sm-3">
+                        <div class="form-group">
+                            <p>&nbsp;&nbsp;</p>
+
+                            <button type="button" ng-click="SearchEmployee()" class="btn btn-addon btn-primary pull-right">
+                                <i class="glyphicon glyphicon-floppy-saved"></i>search
+                            </button>
+                        </div>
+                    </div>-->
+                    </div>
+                    <div class="row" ng-if="SmsTemplate.IsForStudent || SmsTemplate.IsForGuardian">
+
+                        <div class="col-sm-3" ng-show="VmShortMessage.Student.AcademicBranchList.length>0">
+                            <div class="form-group">
+                                <label>Branch</label>
+
+                                <select ng-model="VmShortMessage.Student.CurrentAcademicBranchId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmShortMessage.Student.AcademicBranchList">
+                                    <option value="">-- All --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Class</label>
+
+                                <select ng-model="VmShortMessage.Student.CurrentAcademicClassId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmShortMessage.Student.AcademicClassList">
+                                    <option value="">-- All --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Section</label>
+                                <select ng-model="VmShortMessage.Student.CurrentAcademicSectionId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmShortMessage.Student.AcademicSectionList">
+                                    <option value="">-- All --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Session</label>
+                                <select ng-model="VmShortMessage.Student.CurrentAcademicSessionId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmShortMessage.Student.AcademicSessionList">
+                                    <option value="">-- All --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Version</label>
+
+                                <select ng-model="VmShortMessage.Student.CurrentAcademicVerssionId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmShortMessage.Student.AcademicVerssionList">
+                                    <option value="">-- Choose Verssion --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Academic Group </label>
+
+                                <select ng-model="VmShortMessage.Student.CurrentAcademicGroupId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmShortMessage.Student.AcademicGroupList">
+                                    <option value="">-- Choose Group --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Academic Shift List</label>
+
+                                <select ng-model="VmShortMessage.Student.CurrentAcademicShiftId" class="form-control m-b" ng-options="c.Key as c.Value for c in VmShortMessage.Student.AcademicShiftList">
+                                    <option value="">-- All --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!--<div class="col-sm-3 text-right text-center-xs">
+                        <div class="form-group">
+                            <p>&nbsp;&nbsp;</p>
+
+                            <button ng-if="SmsTemplate.IsForGuardian" type="button" ng-click="SearchGuardian()" class="btn btn-addon btn-primary pull-right">
+                                <i class="glyphicon glyphicon-floppy-saved"></i>search
+                            </button>
+                            <button ng-if="SmsTemplate.IsForStudent" type="button" ng-click="SearchStudent()" class="btn btn-addon btn-primary pull-right">
+                                <i class="glyphicon glyphicon-floppy-saved"></i>search
+                            </button>
+                        </div>
+                    </div>-->
+
+                    </div>
+                    <div class="row" ng-if="SmsTemplate.IsForGoverningBody">
+
+                        <!--<div class="col-sm-3">
+                        <div class="form-group">
+                            <p>&nbsp;&nbsp;</p>
+
+                            <button type="button" ng-click="SearchGoverningbody()" class="btn btn-addon btn-primary pull-right">
+                                <i class="glyphicon glyphicon-floppy-saved"></i>search
+                            </button>
+                        </div>
+                    </div>-->
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="row">
+                        <div class="col-sm-6 ">
+                            <a ng-click="steps.step1=true" class="btn btn-default  "><i class="icon-action-undo"></i> &nbsp;Back</a>
+                        </div>
+                        <div class="col-sm-6  pull-right">
+                            <button ng-if="SmsTemplate.IsForTeacher" type="button" ng-click="SearchTeacher()" class="btn btn-addon btn-primary pull-right">
+                                <i class="glyphicon glyphicon-floppy-saved"></i>Next
+                            </button>
+                            <button ng-if="SmsTemplate.IsForEmployee" type="button" ng-click="SearchEmployee()" class="btn btn-addon btn-primary pull-right">
+                                <i class="glyphicon glyphicon-floppy-saved"></i>Next
+                            </button>
+                            <button ng-if="SmsTemplate.IsForGuardian" type="button" ng-click="SearchGuardian()" class="btn btn-addon btn-primary pull-right">
+                                <i class="glyphicon glyphicon-floppy-saved"></i>Next
+                            </button>
+                            <button ng-if="SmsTemplate.IsForStudent" type="button" ng-click="SearchStudent()" class="btn btn-addon btn-primary pull-right">
+                                <i class="glyphicon glyphicon-floppy-saved"></i>Next
+                            </button>
+
+                            <button type="button" ng-if="SmsTemplate.IsForGoverningBody" ng-click="SearchGoverningbody()" class="btn btn-addon btn-primary pull-right">
+                                <i class="glyphicon glyphicon-floppy-saved"></i>Next
+                            </button>
+                        </div>
+                    </div>
+                </tab>
+                <tab heading="Address Info" active="steps.step3">
+                    <tab-heading>
+                        Step three
+                    </tab-heading>
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+
+                                <label class="i-checks m-b-none">
+                                    <input ng-model="selectAll" type="checkbox" ng-change="CheckUnCheckAll(selectAll)" checked=""> <i></i>
+                                </label>
+                                <label>All</label><span>&nbsp;</span><b class="badge bg-primary ">{{ShortMessageDetails.length}}</b>
+                            </div>
+                        </div>
+
+                    </div>
+                    <progressbar ng-show="stepThreeLoading" class="progress-striped active progress-xs m-b-sm" value="100" type="warning"> </progressbar>
+                    <div class="row">
+                        <div class="col-sm-3" ng-hide="stepThreeLoading" ng-repeat="shortMessage in ShortMessageDetails">
+                            <div class="form-group">
+
+                                <label class="i-checks m-b-none">
+                                    <input type="checkbox" ng-model="shortMessage.isSelected" ng-init="shortMessage.isSelected=true" value="shortMessage.UserInfoId"> <i></i>
+                                </label>
+                                <label>{{shortMessage.UserInfoId}}-{{shortMessage.UserInfoName}}</label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="row">
+                        <div class="col-sm-6 ">
+                            <a ng-click="steps.step2=true" class="btn btn-default  "><i class="icon-action-undo"></i> &nbsp;Back to List</a>
+                        </div>
+                        <div class="col-sm-6  pull-right">
+
+                            <button ng-disabled="ShortMessageDetails.length==0" ng-click="steps.step4=true" type="button" class="btn btn-addon btn-primary pull-right">
+                                <i class="glyphicon glyphicon-floppy-saved"></i>Next
+                            </button>
+                        </div>
+                    </div>
+                </tab>
+                <tab heading="Address Info" active="steps.step4">
+                    <tab-heading>
+                        Step four
+                    </tab-heading>
+                    <div class="row" ng-if="isDate">
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label> Form date   </label>
+                                <div ng-controller="DatepickerDemoCtrl">
+                                    <div class="input-group ">
+                                        <input type="text" value="" class="form-control" datepicker-popup="yyyy-MM-dd" ng-model="VmShortMessage.ShortMessages.DateFrom" is-open="opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label> To  Date</label>
+                                <div ng-controller="DatepickerDemoCtrl">
+                                    <div class="input-group ">
+                                        <input type="text" value="" class="form-control" datepicker-popup="yyyy-MM-dd" ng-model="VmShortMessage.ShortMessages.DateTo" is-open="opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label> Send At {{SmsTemplate.SendAt}}</label>
+                                <div ng-controller="DatepickerDemoCtrl">
+                                    <div class="input-group ">
+                                        <input type="text" value="" class="form-control" datepicker-popup="{{format}}" ng-model="SmsTemplate.SendAt" is-open="opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div ng-controller="TimepickerSimpleDemoCtrl" class="m-b-lg">
+                                    {{SmsTemplate.SendAt | date:'yyyy-MM-dd' }}  {{SmsTemplate.SendAt | date:'shortTime' }}
+                                    <!--<timepickersimple ng-model="SmsTemplate.SendAt" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"> </timepickersimple>-->
+                                    <timepicker ng-model="SmsTemplate.SendAt" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="row">
+                        <div class="col-sm-6 ">
+                            <a ng-click="steps.step3=true" class="btn btn-default  "><i class="icon-action-undo"></i> &nbsp;Back to List</a>
+                        </div>
+                        <div class="col-sm-6  pull-right">
+                            <button type="submit" class="btn btn-addon btn-primary pull-right">
+                                <i class="glyphicon glyphicon-floppy-saved"></i>Send
+                            </button>
+
+
+                        </div>
+                    </div>
+                </tab>
+
+            </tabset>
+
+        </form>
+
+    </div>
+
+</div>
