@@ -1,6 +1,5 @@
 using System;
 using Microsoft.Practices.Unity;
-using Microsoft.Practices.Unity.Configuration;
 using deepp.Service.Institutes;
 using Repository.Pattern.DataContext;
 using deepp.Entities.Models;
@@ -10,13 +9,11 @@ using Repository.Pattern.Ef6;
 using deepp.Service;
 using deepp.Service.ViewModels;
 using deepp.Service.ShortMessages;
-using deepp.Service.Library;
 using deepp.Service.SSOLogin;
 using deepp.Service.Settings;
 using deepp.Service.DashBoard;
 using deepp.Service.GlobalUsers;
-using deepp.Service.Exams;
-//using deepp.Service.Contents;
+
 
 namespace deepp.landing
 {
@@ -148,15 +145,7 @@ namespace deepp.landing
                 .RegisterType<IRepositoryAsync<NotificationTagGroup>, Repository<NotificationTagGroup>>()
                 .RegisterType<IVmOnlineAdmissionService, VmOnlineAdmissionService>()
 
-                .RegisterType<ILibraryBookService, LibraryBookService>()
-                .RegisterType<IRepositoryAsync<LibraryBook>, Repository<LibraryBook>>()
-
-                .RegisterType<ILibraryBookAuthoreService, LibraryBookAuthoreService>()
-                .RegisterType<IRepositoryAsync<LibraryBookAuthore>, Repository<LibraryBookAuthore>>()
-
-                .RegisterType<ILibraryBookAuthorOfBookService, LibraryBookAuthorOfBookService>()
-                .RegisterType<IRepositoryAsync<LibraryBookAuthorOfBook>, Repository<LibraryBookAuthorOfBook>>()
-
+              
                 .RegisterType<IVoucherDetailService, VoucherDetailService>()
                 .RegisterType<IRepositoryAsync<Voucher>, Repository<Voucher>>()
                 .RegisterType<IRepositoryAsync<VoucherDetail>, Repository<VoucherDetail>>()
@@ -283,11 +272,7 @@ namespace deepp.landing
             #endregion
 
 
-            #region Exam
-               
-                 .RegisterType<IExamGradeService, ExamGradeService>()
-                .RegisterType<IRepositoryAsync<ExamGrade>, Repository<ExamGrade>>()
-            #endregion
+           
             #region SSO
                .RegisterType<IRepositoryAsync<SSO>, Repository<SSO>>()
                .RegisterType<ISSOService, SSOService>();

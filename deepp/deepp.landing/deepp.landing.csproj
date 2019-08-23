@@ -257,14 +257,11 @@
     <Compile Include="Controllers\ContentController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\EventController.cs" />
-    <Compile Include="Controllers\ExamVMController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\GoverningbodyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
-    <Compile Include="Controllers\IncomeExpController.cs" />
     <Compile Include="Controllers\InstituteController.cs" />
-    <Compile Include="Controllers\LibraryController.cs" />
     <Compile Include="Controllers\NoticeController.cs" />
     <Compile Include="Controllers\PersonnelController.cs" />
     <Compile Include="Controllers\ResultController.cs" />
