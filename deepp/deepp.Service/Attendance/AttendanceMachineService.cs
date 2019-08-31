@@ -1,4 +1,4 @@
-﻿//using pnsms.Entities.AttendanceMachineModel;
+﻿
 using deepp.Entities.AttendanceMachineModel;
 using deepp.Entities.Models;
 using deepp.Entities.ResponseModel;
@@ -12,7 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace pnsms.Service.Attendance
+namespace deepp.Service.Attendance
 {
 
    

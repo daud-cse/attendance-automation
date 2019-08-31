@@ -61,19 +61,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Y4cTTW3WLe4pRohZSTClwfkfZX1AYmybtRNcOYu2a3U=</dsig:DigestValue>
+        <dsig:DigestValue>U1ItUY79r+UT9QNwdYsxhszldt6pDZq62TMB5ACsozs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="deepp.Entities.dll" size="487936">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="deepp.Entities.dll" size="493568">
       <assemblyIdentity name="deepp.Entities" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ZUnGPD2U76My+iuDGZEefpdHiZeXgnkjK42IdLTSzSY=</dsig:DigestValue>
+        <dsig:DigestValue>R5l+4T5MeK27z6r5FROQ9yaZMLTF/1BUpXL9Z7/KpFI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -23,10 +23,10 @@ namespace deepp.SmsEmailService
         {            
             IUnityContainer container = new UnityContainer();
             container
-                .RegisterType<IDataContextAsync, PNSMSContext>()
+                .RegisterType<IDataContextAsync, deeppContext>()
                 .RegisterType<IUnitOfWorkAsync, UnitOfWork>()
 
-                .RegisterType<IStoredProcedures, PNSMSContext>()
+                .RegisterType<IStoredProcedures, deeppContext>()
                 .RegisterType<IStoredProcedureService, StoredProcedureService>()
 
                 .RegisterType<IRepositoryAsync<ShortMessage>, Repository<ShortMessage>>()

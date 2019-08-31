@@ -29,17 +29,17 @@ namespace deepp.portal.Controllers
             return View(payment);
         }
 
-        public JsonResult GetStudentPayment(int month, int day, int year,int AcademicSessionId)
-        {
-            var instituteId = Sessions.InstituteId;
-            var userId = Sessions.UserId;
+        //public JsonResult GetStudentPayment(int month, int day, int year,int AcademicSessionId)
+        //{
+        //    var instituteId = Sessions.InstituteId;
+        //    var userId = Sessions.UserId;
 
 
-           var studentfees= _storedProcedures.spStudentFeesCollection(instituteId, userId, AcademicSessionId, year, month, day);
+        //   var studentfees= _storedProcedures.spStudentFeesCollection(instituteId, userId, AcademicSessionId, year, month, day);
 
            
 
-            return Json(studentfees, JsonRequestBehavior.AllowGet);
-        }
+        //    return Json(studentfees, JsonRequestBehavior.AllowGet);
+        //}
     }
 }

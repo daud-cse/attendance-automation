@@ -49,286 +49,286 @@ namespace deepp.Api.App_Start
             // TODO: Register your types here
             // container.RegisterType<IProductRepository, ProductRepository>();
             container
-               .RegisterType<IDataContextAsync, deeppContext>(new PerRequestLifetimeManager())
-               .RegisterType<IUnitOfWorkAsync, UnitOfWork>(new PerRequestLifetimeManager())
-               .RegisterType<IStoredProcedures, deeppContext>(new PerRequestLifetimeManager())
-               .RegisterType<IStoredProcedureService, StoredProcedureService>()
+              .RegisterType<IDataContextAsync, deeppContext>(new PerRequestLifetimeManager())
+               //.RegisterType<IUnitOfWorkAsync, UnitOfWork>(new PerRequestLifetimeManager())
+               ////.RegisterType<IStoredProcedures, deeppContext>(new PerRequestLifetimeManager())
+               //.RegisterType<IStoredProcedureService, StoredProcedureService>()
 
-            #region settings
+            //#region settings
 
-.RegisterType<IRepositoryAsync<AcademicBranch>, Repository<AcademicBranch>>()
-               .RegisterType<IAcademicBranchService, AcademicBranchService>()
+//.RegisterType<IRepositoryAsync<AcademicBranch>, Repository<AcademicBranch>>()
+//               .RegisterType<IAcademicBranchService, AcademicBranchService>()
 
-               .RegisterType<IRepositoryAsync<AcademicClass>, Repository<AcademicClass>>()
-               .RegisterType<IAcademicClassService, AcademicClassService>()
-               .RegisterType<IRepositoryAsync<AcademicGroup>, Repository<AcademicGroup>>()
-               .RegisterType<IAcademicGroupService, AcademicGroupService>()
-               .RegisterType<IRepositoryAsync<AcademicSection>, Repository<AcademicSection>>()
-               .RegisterType<IAcademicSectionService, AcademicSectionService>()
+//               .RegisterType<IRepositoryAsync<AcademicClass>, Repository<AcademicClass>>()
+//               .RegisterType<IAcademicClassService, AcademicClassService>()
+//               .RegisterType<IRepositoryAsync<AcademicGroup>, Repository<AcademicGroup>>()
+//               .RegisterType<IAcademicGroupService, AcademicGroupService>()
+//               .RegisterType<IRepositoryAsync<AcademicSection>, Repository<AcademicSection>>()
+//               .RegisterType<IAcademicSectionService, AcademicSectionService>()
 
-               .RegisterType<IRepositoryAsync<AcademicSession>, Repository<AcademicSession>>()
-               .RegisterType<IAcademicSessionService, AcademicSessionService>()
+//               .RegisterType<IRepositoryAsync<AcademicSession>, Repository<AcademicSession>>()
+//               .RegisterType<IAcademicSessionService, AcademicSessionService>()
 
-               .RegisterType<IRepositoryAsync<AcademicShift>, Repository<AcademicShift>>()
-               .RegisterType<IAcademicShiftService, AcademicShiftService>()
+//               .RegisterType<IRepositoryAsync<AcademicShift>, Repository<AcademicShift>>()
+//               .RegisterType<IAcademicShiftService, AcademicShiftService>()
 
-               .RegisterType<IRepositoryAsync<AcademicVersion>, Repository<AcademicVersion>>()
-               .RegisterType<IAcademicVersionService, AcademicVersionService>()
+//               .RegisterType<IRepositoryAsync<AcademicVersion>, Repository<AcademicVersion>>()
+//               .RegisterType<IAcademicVersionService, AcademicVersionService>()
 
-               .RegisterType<IRepositoryAsync<AddressType>, Repository<AddressType>>()
-               .RegisterType<IAddressTypeService, AddressTypeService>()
+//               .RegisterType<IRepositoryAsync<AddressType>, Repository<AddressType>>()
+//               .RegisterType<IAddressTypeService, AddressTypeService>()
 
-               .RegisterType<IRepositoryAsync<BloodGroup>, Repository<BloodGroup>>()
-               .RegisterType<IBloodGroupService, BloodGroupService>()
+//               .RegisterType<IRepositoryAsync<BloodGroup>, Repository<BloodGroup>>()
+//               .RegisterType<IBloodGroupService, BloodGroupService>()
 
-               .RegisterType<IRepositoryAsync<Country>, Repository<Country>>()
-               .RegisterType<ICountryService, CountryService>()
-                .RegisterType<IRepositoryAsync<Department>, Repository<Department>>()
-               .RegisterType<IDepartmentService, DepartmentService>()
+//               .RegisterType<IRepositoryAsync<Country>, Repository<Country>>()
+//               .RegisterType<ICountryService, CountryService>()
+//                .RegisterType<IRepositoryAsync<Department>, Repository<Department>>()
+//               .RegisterType<IDepartmentService, DepartmentService>()
 
-               .RegisterType<IRepositoryAsync<Designation>, Repository<Designation>>()
-               .RegisterType<IDesignationService, DesignationService>()
+//               .RegisterType<IRepositoryAsync<Designation>, Repository<Designation>>()
+//               .RegisterType<IDesignationService, DesignationService>()
 
-               .RegisterType<IRepositoryAsync<DistrictOrState>, Repository<DistrictOrState>>()
-               .RegisterType<IDistrictOrStateService, DistrictOrStateService>()
+//               .RegisterType<IRepositoryAsync<DistrictOrState>, Repository<DistrictOrState>>()
+//               .RegisterType<IDistrictOrStateService, DistrictOrStateService>()
 
-               .RegisterType<IRepositoryAsync<EducationalQualification>, Repository<EducationalQualification>>()
-               .RegisterType<IEducationalQualificationService, EducationalQualificationService>()
+//               .RegisterType<IRepositoryAsync<EducationalQualification>, Repository<EducationalQualification>>()
+//               .RegisterType<IEducationalQualificationService, EducationalQualificationService>()
 
                //.RegisterType<IRepositoryAsync<StudentAttendance>, Repository<StudentAttendance>>()
                //.RegisterType<IRepositoryAsync<StudentAttendanceDetail>, Repository<StudentAttendanceDetail>>()
 
-               .RegisterType<IRepositoryAsync<Gender>, Repository<Gender>>()
-               .RegisterType<IGenderService, GenderService>()
+            //   .RegisterType<IRepositoryAsync<Gender>, Repository<Gender>>()
+            //   .RegisterType<IGenderService, GenderService>()
 
-               .RegisterType<IRepositoryAsync<GuardianType>, Repository<GuardianType>>()
-               .RegisterType<IGuardianTypeService, GuardianTypeService>()
+            //   .RegisterType<IRepositoryAsync<GuardianType>, Repository<GuardianType>>()
+            //   .RegisterType<IGuardianTypeService, GuardianTypeService>()
 
-               .RegisterType<IRepositoryAsync<Institute>, Repository<Institute>>()
-               .RegisterType<IInstituteService, InstituteService>()
+            //   .RegisterType<IRepositoryAsync<Institute>, Repository<Institute>>()
+            //   .RegisterType<IInstituteService, InstituteService>()
 
-               .RegisterType<IRepositoryAsync<MaritalStatus>, Repository<MaritalStatus>>()
-               .RegisterType<IMaritalStatusService, MaritalStatusService>()
+            //   .RegisterType<IRepositoryAsync<MaritalStatus>, Repository<MaritalStatus>>()
+            //   .RegisterType<IMaritalStatusService, MaritalStatusService>()
 
-               .RegisterType<IRepositoryAsync<Nationality>, Repository<Nationality>>()
-               .RegisterType<INationalityService, NationalityService>()
+            //   .RegisterType<IRepositoryAsync<Nationality>, Repository<Nationality>>()
+            //   .RegisterType<INationalityService, NationalityService>()
 
-               .RegisterType<IRepositoryAsync<Package>, Repository<Package>>()
-               .RegisterType<IPackageService, PackageService>()
+            //   .RegisterType<IRepositoryAsync<Package>, Repository<Package>>()
+            //   .RegisterType<IPackageService, PackageService>()
 
-               .RegisterType<IRepositoryAsync<Profession>, Repository<Profession>>()
-               .RegisterType<IProfessionService, ProfessionService>()
+            //   .RegisterType<IRepositoryAsync<Profession>, Repository<Profession>>()
+            //   .RegisterType<IProfessionService, ProfessionService>()
 
-               .RegisterType<IRepositoryAsync<Religion>, Repository<Religion>>()
-               .RegisterType<IReligionService, ReligionService>()
+            //   .RegisterType<IRepositoryAsync<Religion>, Repository<Religion>>()
+            //   .RegisterType<IReligionService, ReligionService>()
 
-               .RegisterType<IRepositoryAsync<Colour>, Repository<Colour>>()
-               .RegisterType<IColourService, ColourService>()
-               .RegisterType<IRepositoryAsync<AttendanceType>, Repository<AttendanceType>>()
-               .RegisterType<IAttendanceTypeService, AttendanceTypeService>()
+            //   .RegisterType<IRepositoryAsync<Colour>, Repository<Colour>>()
+            //   .RegisterType<IColourService, ColourService>()
+            //   .RegisterType<IRepositoryAsync<AttendanceType>, Repository<AttendanceType>>()
+            //   .RegisterType<IAttendanceTypeService, AttendanceTypeService>()
 
-               .RegisterType<IRepositoryAsync<UserInfo>, Repository<UserInfo>>()
-               .RegisterType<IUserInfoService, UserInfoService>()
+            //   .RegisterType<IRepositoryAsync<UserInfo>, Repository<UserInfo>>()
+            //   .RegisterType<IUserInfoService, UserInfoService>()
 
-               .RegisterType<IRepositoryAsync<Guardian>, Repository<Guardian>>()
-               .RegisterType<IGuardianService, GuardianService>()
+            //   .RegisterType<IRepositoryAsync<Guardian>, Repository<Guardian>>()
+            //   .RegisterType<IGuardianService, GuardianService>()
 
-               .RegisterType<IRepositoryAsync<Address>, Repository<Address>>()
-               .RegisterType<IAddressService, AddressService>()
+            //   .RegisterType<IRepositoryAsync<Address>, Repository<Address>>()
+            //   .RegisterType<IAddressService, AddressService>()
 
-               .RegisterType<IRepositoryAsync<GuardiansOfStudent>, Repository<GuardiansOfStudent>>()
-               .RegisterType<IGuardiansOfStudentService, GuardiansOfStudentService>()
+            //   .RegisterType<IRepositoryAsync<GuardiansOfStudent>, Repository<GuardiansOfStudent>>()
+            //   .RegisterType<IGuardiansOfStudentService, GuardiansOfStudentService>()
 
-                 .RegisterType<IRepositoryAsync<AcademicPeriod>, Repository<AcademicPeriod>>()
-               .RegisterType<IAcademicPeriodService, AcademicPeriodService>()
+            //     .RegisterType<IRepositoryAsync<AcademicPeriod>, Repository<AcademicPeriod>>()
+            //   .RegisterType<IAcademicPeriodService, AcademicPeriodService>()
                
 
 
-                 .RegisterType<IRepositoryAsync<StudentAttendance>, Repository<StudentAttendance>>()
-               .RegisterType<IStudentAttendanceService, StudentAttendanceService>()
+            //     .RegisterType<IRepositoryAsync<StudentAttendance>, Repository<StudentAttendance>>()
+            //   .RegisterType<IStudentAttendanceService, StudentAttendanceService>()
 
 
-               .RegisterType<IRepositoryAsync<StudentAttendanceDetail>, Repository<StudentAttendanceDetail>>()
-               .RegisterType<IStudentAttendanceDetailService, StudentAttendanceDetailService>()
+            //   .RegisterType<IRepositoryAsync<StudentAttendanceDetail>, Repository<StudentAttendanceDetail>>()
+            //   .RegisterType<IStudentAttendanceDetailService, StudentAttendanceDetailService>()
 
 
-                  .RegisterType<IRepositoryAsync<AcademicClassSectionMapping>, Repository<AcademicClassSectionMapping>>()
-                .RegisterType<IAcademicClassSectionMappingService, AcademicClassSectionMappingService>()
+            //      .RegisterType<IRepositoryAsync<AcademicClassSectionMapping>, Repository<AcademicClassSectionMapping>>()
+            //    .RegisterType<IAcademicClassSectionMappingService, AcademicClassSectionMappingService>()
 
-            #endregion
+            //#endregion
 
 
-            #region Notice
+//            #region Notice
 
-.RegisterType<IRepositoryAsync<Notice>, Repository<Notice>>()
-               .RegisterType<INoticeService, NoticeService>()
-               .RegisterType<IRepositoryAsync<NoticeType>, Repository<NoticeType>>()
-               .RegisterType<INoticeTypeService, NoticeTypeService>()
+//.RegisterType<IRepositoryAsync<Notice>, Repository<Notice>>()
+//               .RegisterType<INoticeService, NoticeService>()
+//               .RegisterType<IRepositoryAsync<NoticeType>, Repository<NoticeType>>()
+//               .RegisterType<INoticeTypeService, NoticeTypeService>()
 
-            #endregion
+//            #endregion
 
-            #region institute
+//            #region institute
 
-.RegisterType<IRepositoryAsync<GlobalCountry>, Repository<GlobalCountry>>()
-               .RegisterType<IGlobalCountryService, GlobalCountryService>()
-               .RegisterType<IRepositoryAsync<GlobalDistrict>, Repository<GlobalDistrict>>()
-               .RegisterType<IGlobalDistrictService, GlobalDistrictService>()
-               .RegisterType<IRepositoryAsync<GlobalSubDistrict>, Repository<GlobalSubDistrict>>()
-               .RegisterType<IGlobalSubDistrictService, GlobalSubDistrictService>()
-               .RegisterType<IRepositoryAsync<GlobalSubDistrictType>, Repository<GlobalSubDistrictType>>()
-               .RegisterType<IGlobalSubDistrictTypeService, GlobalSubDistrictTypeService>()
-               .RegisterType<IRepositoryAsync<GlobalDivision>, Repository<GlobalDivision>>()
-               .RegisterType<IGlobalDivisionService, GlobalDivisionService>()
-               .RegisterType<IRepositoryAsync<GlobalInstituteType>, Repository<GlobalInstituteType>>()
-               .RegisterType<IGlobalInstituteTypeService, GlobalInstituteTypeService>()
-            #endregion
+//.RegisterType<IRepositoryAsync<GlobalCountry>, Repository<GlobalCountry>>()
+//               .RegisterType<IGlobalCountryService, GlobalCountryService>()
+//               .RegisterType<IRepositoryAsync<GlobalDistrict>, Repository<GlobalDistrict>>()
+//               .RegisterType<IGlobalDistrictService, GlobalDistrictService>()
+//               .RegisterType<IRepositoryAsync<GlobalSubDistrict>, Repository<GlobalSubDistrict>>()
+//               .RegisterType<IGlobalSubDistrictService, GlobalSubDistrictService>()
+//               .RegisterType<IRepositoryAsync<GlobalSubDistrictType>, Repository<GlobalSubDistrictType>>()
+//               .RegisterType<IGlobalSubDistrictTypeService, GlobalSubDistrictTypeService>()
+//               .RegisterType<IRepositoryAsync<GlobalDivision>, Repository<GlobalDivision>>()
+//               .RegisterType<IGlobalDivisionService, GlobalDivisionService>()
+//               .RegisterType<IRepositoryAsync<GlobalInstituteType>, Repository<GlobalInstituteType>>()
+//               .RegisterType<IGlobalInstituteTypeService, GlobalInstituteTypeService>()
+//            #endregion
 
-            #region Right
-.RegisterType<IRepositoryAsync<Right>, Repository<Right>>()
-                  .RegisterType<IRightsService, RightsService>()
-                  .RegisterType<IRepositoryAsync<RightsOfRole>, Repository<RightsOfRole>>()
-                  .RegisterType<IRightsOfRoleService, RightsOfRoleService>()
+//            #region Right
+//.RegisterType<IRepositoryAsync<Right>, Repository<Right>>()
+//                  .RegisterType<IRightsService, RightsService>()
+//                  .RegisterType<IRepositoryAsync<RightsOfRole>, Repository<RightsOfRole>>()
+//                  .RegisterType<IRightsOfRoleService, RightsOfRoleService>()
 
-            #endregion
+//            #endregion
 
-            #region Role
-.RegisterType<IRepositoryAsync<Role>, Repository<Role>>()
-                  .RegisterType<IRoleService, RoleService>()
-                  .RegisterType<IRepositoryAsync<RolesOfUserInfo>, Repository<RolesOfUserInfo>>()
-                  .RegisterType<IRolesOfUserInfoService, RolesOfUserInfoService>()
+//            #region Role
+//.RegisterType<IRepositoryAsync<Role>, Repository<Role>>()
+//                  .RegisterType<IRoleService, RoleService>()
+//                  .RegisterType<IRepositoryAsync<RolesOfUserInfo>, Repository<RolesOfUserInfo>>()
+//                  .RegisterType<IRolesOfUserInfoService, RolesOfUserInfoService>()
 
-            #endregion
-            #region Testimonial
-.RegisterType<IRepositoryAsync<Testimonial>, Repository<Testimonial>>()
-               .RegisterType<ITestimonialService, TestimonialService>()
-            #endregion
+//            #endregion
+//            #region Testimonial
+//.RegisterType<IRepositoryAsync<Testimonial>, Repository<Testimonial>>()
+//               .RegisterType<ITestimonialService, TestimonialService>()
+//            #endregion
 
-            #region STUDENT
-.RegisterType<IRepositoryAsync<Student>, Repository<Student>>()
-               .RegisterType<IStudentService, StudentService>()
-               .RegisterType<IVmStudentService, VmStudentService>()
-               .RegisterType<IVmStudentAttendanceService, VmStudentAttendanceService>()
-               .RegisterType<IRepositoryAsync<CoCurricularActivity>, Repository<CoCurricularActivity>>()
-               .RegisterType<ICoCurricularActivityService, CoCurricularActivityService>()
-               .RegisterType<IRepositoryAsync<CoCurricularActivitiesOfStudent>, Repository<CoCurricularActivitiesOfStudent>>()
-               .RegisterType<ICoCurricularActivitiesOfStudentService, CoCurricularActivitiesOfStudentService>()
-               .RegisterType<IRepositoryAsync<Scholarship>, Repository<Scholarship>>()
-               .RegisterType<IScholarshipService, ScholarshipService>()
-               .RegisterType<IRepositoryAsync<ScholarshipOfStudent>, Repository<ScholarshipOfStudent>>()
-               .RegisterType<IScholarshipOfStudentService, ScholarshipOfStudentService>()
-            #endregion
+//            #region STUDENT
+//.RegisterType<IRepositoryAsync<Student>, Repository<Student>>()
+//               .RegisterType<IStudentService, StudentService>()
+//               .RegisterType<IVmStudentService, VmStudentService>()
+//               .RegisterType<IVmStudentAttendanceService, VmStudentAttendanceService>()
+//               .RegisterType<IRepositoryAsync<CoCurricularActivity>, Repository<CoCurricularActivity>>()
+//               .RegisterType<ICoCurricularActivityService, CoCurricularActivityService>()
+//               .RegisterType<IRepositoryAsync<CoCurricularActivitiesOfStudent>, Repository<CoCurricularActivitiesOfStudent>>()
+//               .RegisterType<ICoCurricularActivitiesOfStudentService, CoCurricularActivitiesOfStudentService>()
+//               .RegisterType<IRepositoryAsync<Scholarship>, Repository<Scholarship>>()
+//               .RegisterType<IScholarshipService, ScholarshipService>()
+//               .RegisterType<IRepositoryAsync<ScholarshipOfStudent>, Repository<ScholarshipOfStudent>>()
+//               .RegisterType<IScholarshipOfStudentService, ScholarshipOfStudentService>()
+//            #endregion
 
-            #region Teacher
-.RegisterType<IRepositoryAsync<Teacher>, Repository<Teacher>>()
-               .RegisterType<ITeacherService, TeacherService>()
-               .RegisterType<IVmTeacherService, VmTeacherService>()
-            #endregion
+//            #region Teacher
+//.RegisterType<IRepositoryAsync<Teacher>, Repository<Teacher>>()
+//               .RegisterType<ITeacherService, TeacherService>()
+//               .RegisterType<IVmTeacherService, VmTeacherService>()
+//            #endregion
 
-            #region Employee
-.RegisterType<IRepositoryAsync<Employee>, Repository<Employee>>()
-               .RegisterType<IEmployeeService, EmployeeService>()
-               .RegisterType<IVmEmployeeService, VmEmployeeService>()
-               .RegisterType<IRepositoryAsync<AcademicBranchesOfUserInfo>, Repository<AcademicBranchesOfUserInfo>>()
-               .RegisterType<IAcademicBranchesOfUserInfoService, AcademicBranchesOfUserInfoService>()
-            #endregion
+//            #region Employee
+//.RegisterType<IRepositoryAsync<Employee>, Repository<Employee>>()
+//               .RegisterType<IEmployeeService, EmployeeService>()
+//               .RegisterType<IVmEmployeeService, VmEmployeeService>()
+//               .RegisterType<IRepositoryAsync<AcademicBranchesOfUserInfo>, Repository<AcademicBranchesOfUserInfo>>()
+//               .RegisterType<IAcademicBranchesOfUserInfoService, AcademicBranchesOfUserInfoService>()
+//            #endregion
 
-            #region Image
+//            #region Image
 
-.RegisterType<IRepositoryAsync<Image>, Repository<Image>>()
-               .RegisterType<IImageService, ImageService>()
+//.RegisterType<IRepositoryAsync<Image>, Repository<Image>>()
+//               .RegisterType<IImageService, ImageService>()
 
-            #endregion
+//            #endregion
 
-            #region Gallery
+//            #region Gallery
 
-.RegisterType<IRepositoryAsync<Gallery>, Repository<Gallery>>()
-               .RegisterType<IGalleryService, GalleryService>()
+//.RegisterType<IRepositoryAsync<Gallery>, Repository<Gallery>>()
+//               .RegisterType<IGalleryService, GalleryService>()
 
-            #endregion
+//            #endregion
 
-            #region Event
+//            #region Event
 
-.RegisterType<IRepositoryAsync<Event>, Repository<Event>>()
-               .RegisterType<IEventService, EventService>()
+//.RegisterType<IRepositoryAsync<Event>, Repository<Event>>()
+//               .RegisterType<IEventService, EventService>()
 
-            #endregion
+//            #endregion
 
-            #region Mobile Payment
+//            #region Mobile Payment
 
-.RegisterType<IRepositoryAsync<MobilePayment>, Repository<MobilePayment>>()
-               .RegisterType<IMobilePaymentService, MobilePaymentService>()
-               .RegisterType<IRepositoryAsync<PaymentType>, Repository<PaymentType>>()
-               .RegisterType<IPaymentTypeService, PaymentTypeService>()
+//.RegisterType<IRepositoryAsync<MobilePayment>, Repository<MobilePayment>>()
+//               .RegisterType<IMobilePaymentService, MobilePaymentService>()
+//               .RegisterType<IRepositoryAsync<PaymentType>, Repository<PaymentType>>()
+//               .RegisterType<IPaymentTypeService, PaymentTypeService>()
 
-            #endregion
+            //#endregion
 
-            #region User Attendance
+//            #region User Attendance
 
-.RegisterType<IRepositoryAsync<UserAttendance>, Repository<UserAttendance>>()
-               .RegisterType<IUserAttendanceService, UserAttendanceService>()
-               .RegisterType<IRepositoryAsync<UserAttendanceDetail>, Repository<UserAttendanceDetail>>()
-               .RegisterType<IUserAttendanceDetailService, UserAttendanceDetailService>()
-               .RegisterType<IVmUserAttendanceService, VmUserAttendanceService>()
+//.RegisterType<IRepositoryAsync<UserAttendance>, Repository<UserAttendance>>()
+//               .RegisterType<IUserAttendanceService, UserAttendanceService>()
+//               .RegisterType<IRepositoryAsync<UserAttendanceDetail>, Repository<UserAttendanceDetail>>()
+//               .RegisterType<IUserAttendanceDetailService, UserAttendanceDetailService>()
+//               .RegisterType<IVmUserAttendanceService, VmUserAttendanceService>()
 
-            #endregion
+//            #endregion
 
-            #region ShortMessageTemplate. NotificationTag
-.RegisterType<IRepositoryAsync<ShortMessage>, Repository<ShortMessage>>()
-               .RegisterType<IShortMessageService, ShortMessageService>()
-               .RegisterType<IRepositoryAsync<ShortMessageDetail>, Repository<ShortMessageDetail>>()
-               .RegisterType<IShortMessageDetailService, ShortMessageDetailService>()
-               .RegisterType<IRepositoryAsync<ShortMessageTemplate>, Repository<ShortMessageTemplate>>()
-               .RegisterType<IShortMessageTemplateService, ShortMessageTemplateService>()
-               .RegisterType<IRepositoryAsync<NotificationTag>, Repository<NotificationTag>>()
-               .RegisterType<INotificationTagService, NotificationTagService>()
-               .RegisterType<IRepositoryAsync<NotificationTagGroup>, Repository<NotificationTagGroup>>()
-               .RegisterType<INotificationTagGroupService, NotificationTagGroupService>()
-            #endregion
+//            #region ShortMessageTemplate. NotificationTag
+//.RegisterType<IRepositoryAsync<ShortMessage>, Repository<ShortMessage>>()
+//               .RegisterType<IShortMessageService, ShortMessageService>()
+//               .RegisterType<IRepositoryAsync<ShortMessageDetail>, Repository<ShortMessageDetail>>()
+//               .RegisterType<IShortMessageDetailService, ShortMessageDetailService>()
+//               .RegisterType<IRepositoryAsync<ShortMessageTemplate>, Repository<ShortMessageTemplate>>()
+//               .RegisterType<IShortMessageTemplateService, ShortMessageTemplateService>()
+//               .RegisterType<IRepositoryAsync<NotificationTag>, Repository<NotificationTag>>()
+//               .RegisterType<INotificationTagService, NotificationTagService>()
+//               .RegisterType<IRepositoryAsync<NotificationTagGroup>, Repository<NotificationTagGroup>>()
+//               .RegisterType<INotificationTagGroupService, NotificationTagGroupService>()
+//            #endregion
 
-            #region Certificate Print
-.RegisterType<IRepositoryAsync<CertificatePrint>, Repository<CertificatePrint>>()
-               .RegisterType<ICertificatePrintService, CertificatePrintService>()
-               .RegisterType<IRepositoryAsync<CertificatePrintType>, Repository<CertificatePrintType>>()
-               .RegisterType<ICertificatePrintTypeService, CertificatePrintTypeService>()
-            #endregion
+//            #region Certificate Print
+//.RegisterType<IRepositoryAsync<CertificatePrint>, Repository<CertificatePrint>>()
+//               .RegisterType<ICertificatePrintService, CertificatePrintService>()
+//               .RegisterType<IRepositoryAsync<CertificatePrintType>, Repository<CertificatePrintType>>()
+//               .RegisterType<ICertificatePrintTypeService, CertificatePrintTypeService>()
+//            #endregion
 
-            #region Online Admission
-.RegisterType<IRepositoryAsync<AdmissionForm>, Repository<AdmissionForm>>()
-               .RegisterType<IAdmissionFormService, AdmissionFormService>()
-               .RegisterType<IRepositoryAsync<AdmissionFormAddress>, Repository<AdmissionFormAddress>>()
-               .RegisterType<IAdmissionFormAddressService, AdmissionFormAddressService>()
-               .RegisterType<IRepositoryAsync<AdmissionFormGuardian>, Repository<AdmissionFormGuardian>>()
-               .RegisterType<IAdmissionFormGuardianService, AdmissionFormGuardianService>()
-               .RegisterType<IVmOnlineAdmissionService, VmOnlineAdmissionService>()
-            #endregion
+//            #region Online Admission
+//.RegisterType<IRepositoryAsync<AdmissionForm>, Repository<AdmissionForm>>()
+//               .RegisterType<IAdmissionFormService, AdmissionFormService>()
+//               .RegisterType<IRepositoryAsync<AdmissionFormAddress>, Repository<AdmissionFormAddress>>()
+//               .RegisterType<IAdmissionFormAddressService, AdmissionFormAddressService>()
+//               .RegisterType<IRepositoryAsync<AdmissionFormGuardian>, Repository<AdmissionFormGuardian>>()
+//               .RegisterType<IAdmissionFormGuardianService, AdmissionFormGuardianService>()
+//               .RegisterType<IVmOnlineAdmissionService, VmOnlineAdmissionService>()
+//            #endregion
 
-            #region Governingbody
+//            #region Governingbody
 
-.RegisterType<IRepositoryAsync<Governingbody>, Repository<Governingbody>>()
-               .RegisterType<IGoverningbodyService, GoverningbodyService>()
+//.RegisterType<IRepositoryAsync<Governingbody>, Repository<Governingbody>>()
+//               .RegisterType<IGoverningbodyService, GoverningbodyService>()
 
-            #endregion
+//            #endregion
 
-            #region Contact & FeedBack
+//            #region Contact & FeedBack
 
-.RegisterType<IRepositoryAsync<ContactU>, Repository<ContactU>>()
-               .RegisterType<IContactUService, ContactUService>()
+//.RegisterType<IRepositoryAsync<ContactU>, Repository<ContactU>>()
+//               .RegisterType<IContactUService, ContactUService>()
 
-            #endregion
+//            #endregion
 
-            #region UserSecurities
+//            #region UserSecurities
 
-.RegisterType<IRepositoryAsync<UserInfoSecurity>, Repository<UserInfoSecurity>>()
-               .RegisterType<IUserInfoSecurityService, UserInfoSecurityService>()
+//.RegisterType<IRepositoryAsync<UserInfoSecurity>, Repository<UserInfoSecurity>>()
+//               .RegisterType<IUserInfoSecurityService, UserInfoSecurityService>()
 
-            #endregion
+//            #endregion
                      
-            #region SSO
-.RegisterType<IRepositoryAsync<SSO>, Repository<SSO>>()
-               .RegisterType<ISSOService, SSOService>()
+//            #region SSO
+//.RegisterType<IRepositoryAsync<SSO>, Repository<SSO>>()
+//               .RegisterType<ISSOService, SSOService>()
 
-            #endregion
-               ;
-        }
+//            #endregion
+            ;
+       }
     }
 }

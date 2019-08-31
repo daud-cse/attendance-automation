@@ -49,3 +49,4 @@ E:\DeepPresent Attendance\deeppresent\deepp\deepp.utility\obj\Debug\deepp.utilit
 E:\DeepPresent Attendance\deeppresent\deepp\deepp.utility\obj\Debug\deepp.utility.csproj.GenerateResource.Cache
 E:\DeepPresent Attendance\deeppresent\deepp\deepp.utility\obj\Debug\deepp.utility.dll
 E:\DeepPresent Attendance\deeppresent\deepp\deepp.utility\obj\Debug\deepp.utility.pdb
+E:\DeepPresent Attendance\deeppresent\deepp\deepp.utility\obj\Debug\deepp.utility.csprojResolveAssemblyReference.cache

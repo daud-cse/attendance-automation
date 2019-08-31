@@ -87,9 +87,6 @@ E:\DeepPresent Attendance\deeppresent\deepp\sfa.Api\bin\System.Web.Optimization.
 E:\DeepPresent Attendance\deeppresent\deepp\sfa.Api\bin\Antlr3.Runtime.pdb
 E:\DeepPresent Attendance\deeppresent\deepp\sfa.Api\obj\Debug\deepp.Api.dll
 E:\DeepPresent Attendance\deeppresent\deepp\sfa.Api\obj\Debug\deepp.Api.pdb
-E:\DeepPresent Attendance\deeppresent\deepp\deepp.Api\obj\Debug\deepp.Api.csprojResolveAssemblyReference.cache
-E:\DeepPresent Attendance\deeppresent\deepp\deepp.Api\obj\Debug\deepp.Api.dll
-E:\DeepPresent Attendance\deeppresent\deepp\deepp.Api\obj\Debug\deepp.Api.pdb
 E:\DeepPresent Attendance\deeppresent\deepp\deepp.Api\bin\Resources\refcode.jpg
 E:\DeepPresent Attendance\deeppresent\deepp\deepp.Api\bin\deepp.Api.dll.config
 E:\DeepPresent Attendance\deeppresent\deepp\deepp.Api\bin\deepp.Api.dll
@@ -176,3 +173,6 @@ E:\DeepPresent Attendance\deeppresent\deepp\deepp.Api\bin\System.Web.WebPages.De
 E:\DeepPresent Attendance\deeppresent\deepp\deepp.Api\bin\System.Web.WebPages.Razor.xml
 E:\DeepPresent Attendance\deeppresent\deepp\deepp.Api\bin\System.Web.Optimization.xml
 E:\DeepPresent Attendance\deeppresent\deepp\deepp.Api\bin\Antlr3.Runtime.pdb
+E:\DeepPresent Attendance\deeppresent\deepp\deepp.Api\obj\Debug\deepp.Api.csprojResolveAssemblyReference.cache
+E:\DeepPresent Attendance\deeppresent\deepp\deepp.Api\obj\Debug\deepp.Api.dll
+E:\DeepPresent Attendance\deeppresent\deepp\deepp.Api\obj\Debug\deepp.Api.pdb
