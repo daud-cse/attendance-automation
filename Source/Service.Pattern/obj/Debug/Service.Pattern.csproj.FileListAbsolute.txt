@@ -16,3 +16,12 @@ E:\shikkhaforall-git\sfa\Source\Service.Pattern\bin\Debug\Repository.Pattern.pdb
 E:\shikkhaforall-git\sfa\Source\Service.Pattern\obj\Debug\Service.Pattern.csprojResolveAssemblyReference.cache
 E:\shikkhaforall-git\sfa\Source\Service.Pattern\obj\Debug\Service.Pattern.dll
 E:\shikkhaforall-git\sfa\Source\Service.Pattern\obj\Debug\Service.Pattern.pdb
+E:\DeepPresent Attendance\deeppresent\Source\Service.Pattern\bin\Debug\Service.Pattern.dll.config
+E:\DeepPresent Attendance\deeppresent\Source\Service.Pattern\bin\Debug\Service.Pattern.dll
+E:\DeepPresent Attendance\deeppresent\Source\Service.Pattern\bin\Debug\Service.Pattern.pdb
+E:\DeepPresent Attendance\deeppresent\Source\Service.Pattern\bin\Debug\Repository.Pattern.dll
+E:\DeepPresent Attendance\deeppresent\Source\Service.Pattern\bin\Debug\System.Net.Http.dll
+E:\DeepPresent Attendance\deeppresent\Source\Service.Pattern\bin\Debug\Repository.Pattern.pdb
+E:\DeepPresent Attendance\deeppresent\Source\Service.Pattern\obj\Debug\Service.Pattern.csprojResolveAssemblyReference.cache
+E:\DeepPresent Attendance\deeppresent\Source\Service.Pattern\obj\Debug\Service.Pattern.dll
+E:\DeepPresent Attendance\deeppresent\Source\Service.Pattern\obj\Debug\Service.Pattern.pdb

@@ -50,3 +50,16 @@ E:\shikkhaforall-git\sfa\Source\Repository.Pattern.Ef6\bin\Debug\Microsoft.Pract
 E:\shikkhaforall-git\sfa\Source\Repository.Pattern.Ef6\obj\Debug\Repository.Pattern.Ef6.csprojResolveAssemblyReference.cache
 E:\shikkhaforall-git\sfa\Source\Repository.Pattern.Ef6\obj\Debug\Repository.Pattern.Ef6.dll
 E:\shikkhaforall-git\sfa\Source\Repository.Pattern.Ef6\obj\Debug\Repository.Pattern.Ef6.pdb
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\bin\Debug\Repository.Pattern.Ef6.dll.config
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\bin\Debug\Repository.Pattern.Ef6.dll
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\bin\Debug\Repository.Pattern.Ef6.pdb
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\bin\Debug\Repository.Pattern.dll
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\bin\Debug\System.Net.Http.dll
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\bin\Debug\Repository.Pattern.pdb
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\bin\Debug\EntityFramework.xml
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\bin\Debug\EntityFramework.SqlServer.xml
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\obj\Debug\Repository.Pattern.Ef6.csprojResolveAssemblyReference.cache
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\obj\Debug\Repository.Pattern.Ef6.dll
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern.Ef6\obj\Debug\Repository.Pattern.Ef6.pdb

@@ -1,6 +1,5 @@
 ﻿
 using deepp.Entities.Models;
-
 using deepp.Entities.ViewModels;
 using deepp.Service;
 using deepp.Service.Attendance;
@@ -10,12 +9,10 @@ using Repository.Pattern.UnitOfWork;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace sfa.Api.Api.Attendance
+namespace deepp.Api.Attendance
 {
     public class AttendanceMixedController : ApiController
     {
@@ -23,7 +20,6 @@ namespace sfa.Api.Api.Attendance
         private readonly IVmUserAttendanceService _vmUserAdendanceService;
         private readonly IAttendanceConfigurationService _attendanceConfigurationService;
         private readonly IAttendanceConfigurationDetailService _attendanceConfigurationDetailService;
-
         private readonly IMachineInfoService _machineInfoService;
 
         private readonly ITeacherService _teacherService;
