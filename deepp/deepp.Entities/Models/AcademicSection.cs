@@ -10,10 +10,6 @@ namespace deepp.Entities.Models
         public AcademicSection()
         {
             this.AcademicClassSectionMappings = new List<AcademicClassSectionMapping>();
-            this.ExamProcesses = new List<ExamProcess>();
-            this.FeesGenerateAcademics = new List<FeesGenerateAcademic>();
-            this.Routines = new List<Routine>();
-            this.TeacherSubjectAcademicMappings = new List<TeacherSubjectAcademicMapping>();
         }
 
         public int Id { get; set; }
@@ -24,9 +20,5 @@ namespace deepp.Entities.Models
         public Nullable<System.DateTime> LastUpdateTime { get; set; }
         public virtual ICollection<AcademicClassSectionMapping> AcademicClassSectionMappings { get; set; }
         public virtual Institute Institute { get; set; }
-        public virtual ICollection<ExamProcess> ExamProcesses { get; set; }
-        public virtual ICollection<FeesGenerateAcademic> FeesGenerateAcademics { get; set; }
-        public virtual ICollection<Routine> Routines { get; set; }
-        public virtual ICollection<TeacherSubjectAcademicMapping> TeacherSubjectAcademicMappings { get; set; }
     }
 }

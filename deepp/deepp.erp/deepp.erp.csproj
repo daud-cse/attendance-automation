@@ -304,11 +304,7 @@
     <Compile Include="Api\GlobalUsers\GlobalUsersController.cs" />
     <Compile Include="Api\Setting\AcademicClassSectionMappingController.cs" />
     <Compile Include="Api\Setting\AcademicPeriodController.cs" />
-    <Compile Include="Api\Teachers\TeacherSubjectAcademicMappingController.cs" />
     <Compile Include="Api\UserInfoController.cs" />
-    <Compile Include="Api\VoucherEntryController.cs" />
-    <Compile Include="Api\ExpenseHeadController.cs" />
-    <Compile Include="Api\IncomeHeadController.cs" />
     <Compile Include="Api\ContactUsFeedbackController.cs" />
     <Compile Include="Api\DashBoard\DashBoardController.cs" />
     <Compile Include="Api\ResultPublicationController.cs" />
@@ -1072,6 +1068,7 @@
     <Content Include="vendor\jquery\footable\fonts\footable.woff" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Api\Teachers\" />
     <Folder Include="App_Data\folder\" />
     <Folder Include="Content\img\student\" />
     <Folder Include="Content\Student\" />

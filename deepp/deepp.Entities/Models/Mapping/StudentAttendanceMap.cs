@@ -58,9 +58,6 @@ namespace deepp.Entities.Models.Mapping
             this.HasOptional(t => t.AcademicShift)
                 .WithMany(t => t.StudentAttendances)
                 .HasForeignKey(d => d.AcademicShiftId);
-            this.HasOptional(t => t.SubjectAcademicClassMapping)
-                .WithMany(t => t.StudentAttendances)
-                .HasForeignKey(d => d.SubjectAcademicClassMappingsId);
             this.HasRequired(t => t.Teacher)
                 .WithMany(t => t.StudentAttendances)
                 .HasForeignKey(d => d.TeacherId);

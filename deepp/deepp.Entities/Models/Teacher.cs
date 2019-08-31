@@ -9,9 +9,7 @@ namespace deepp.Entities.Models
     {
         public Teacher()
         {
-            this.ExamSubjects = new List<ExamSubject>();
             this.StudentAttendances = new List<StudentAttendance>();
-            this.SubjectAcademicClassMappings = new List<SubjectAcademicClassMapping>();
         }
 
         public int TeacherId { get; set; }
@@ -31,10 +29,8 @@ namespace deepp.Entities.Models
         public virtual AcademicClassSectionMapping AcademicClassSectionMapping { get; set; }
         public virtual Department Department { get; set; }
         public virtual Designation Designation { get; set; }
-        public virtual ICollection<ExamSubject> ExamSubjects { get; set; }
         public virtual MaritalStatus MaritalStatus { get; set; }
         public virtual ICollection<StudentAttendance> StudentAttendances { get; set; }
-        public virtual ICollection<SubjectAcademicClassMapping> SubjectAcademicClassMappings { get; set; }
         public virtual UserInfo UserInfo { get; set; }
     }
 }

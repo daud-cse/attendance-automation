@@ -11,18 +11,9 @@ namespace deepp.Entities.Models
         {
             this.AcademicClassSectionMappings = new List<AcademicClassSectionMapping>();
             this.AdmissionForms = new List<AdmissionForm>();
-            this.Exams = new List<Exam>();
-            this.ExamProcesses = new List<ExamProcess>();
-            this.FeesAcademicClasses = new List<FeesAcademicClass>();
-            this.FeesGenerateAcademics = new List<FeesGenerateAcademic>();
-            this.InstituteSubjectClasses = new List<InstituteSubjectClass>();
-            this.Routines = new List<Routine>();
             this.StudentAttendances = new List<StudentAttendance>();
             this.Students = new List<Student>();
-            this.SubjectAcademicClassMappings = new List<SubjectAcademicClassMapping>();
-            this.SubjectAcademicClassMappingSubjectTypes = new List<SubjectAcademicClassMappingSubjectType>();
             this.Teachers = new List<Teacher>();
-            this.TeacherSubjectAcademicMappings = new List<TeacherSubjectAcademicMapping>();
         }
 
         public int Id { get; set; }
@@ -37,17 +28,8 @@ namespace deepp.Entities.Models
         public virtual Tag Tag { get; set; }
         public virtual ICollection<AcademicClassSectionMapping> AcademicClassSectionMappings { get; set; }
         public virtual ICollection<AdmissionForm> AdmissionForms { get; set; }
-        public virtual ICollection<Exam> Exams { get; set; }
-        public virtual ICollection<ExamProcess> ExamProcesses { get; set; }
-        public virtual ICollection<FeesAcademicClass> FeesAcademicClasses { get; set; }
-        public virtual ICollection<FeesGenerateAcademic> FeesGenerateAcademics { get; set; }
-        public virtual ICollection<InstituteSubjectClass> InstituteSubjectClasses { get; set; }
-        public virtual ICollection<Routine> Routines { get; set; }
         public virtual ICollection<StudentAttendance> StudentAttendances { get; set; }
         public virtual ICollection<Student> Students { get; set; }
-        public virtual ICollection<SubjectAcademicClassMapping> SubjectAcademicClassMappings { get; set; }
-        public virtual ICollection<SubjectAcademicClassMappingSubjectType> SubjectAcademicClassMappingSubjectTypes { get; set; }
         public virtual ICollection<Teacher> Teachers { get; set; }
-        public virtual ICollection<TeacherSubjectAcademicMapping> TeacherSubjectAcademicMappings { get; set; }
     }
 }

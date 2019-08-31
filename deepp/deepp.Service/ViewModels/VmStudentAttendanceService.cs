@@ -215,23 +215,11 @@ namespace deepp.Service.ViewModels
                         tempAttendace.AcademicPeriod = new AcademicPeriod();
                     }
 
-                    if (tempAttendace.SubjectAcademicClassMapping == null)
-                    {
-                        tempAttendace.SubjectAcademicClassMapping = new SubjectAcademicClassMapping();
-                        if (tempAttendace.SubjectAcademicClassMapping.InstituteSubject == null)
-                        {
-                            tempAttendace.SubjectAcademicClassMapping.InstituteSubject = new InstituteSubject();
-                            tempAttendace.SubjectAcademicClassMapping.InstituteSubject.Subject = new Subject();
-                        }
-                        tempAttendace.SubjectAcademicClassMapping.InstituteSubject = new InstituteSubject();
-                        tempAttendace.SubjectAcademicClassMapping.InstituteSubject.Subject = new Subject();
-
-                    }
                     vmStudentAttendance.StudentAttendance.AcademicPeriodId = tempAttendace.AcademicPeriodId;
 
                     vmStudentAttendance.StudentAttendance.PeriodName = tempAttendace.AcademicPeriod.Name;
 
-                    vmStudentAttendance.StudentAttendance.SubjectName = tempAttendace.SubjectAcademicClassMapping.InstituteSubject.Subject.Name;
+                  
                     vmStudentAttendance.StudentAttendance.SubjectAcademicClassMappingsId = tempAttendace.SubjectAcademicClassMappingsId;
 
 
@@ -648,12 +636,7 @@ namespace deepp.Service.ViewModels
             if (attList.Count() > 0)
                 foreach (var item in attList)
                 {
-                    if (item.SubjectAcademicClassMapping == null)
-                    {
-                        item.SubjectAcademicClassMapping = new SubjectAcademicClassMapping();
-                        item.SubjectAcademicClassMapping.InstituteSubject = new InstituteSubject();
-                        item.SubjectAcademicClassMapping.InstituteSubject.Subject = new Subject();
-                    }
+                   
 
                     if (item.AcademicPeriod == null)
                     {
@@ -664,7 +647,7 @@ namespace deepp.Service.ViewModels
                     entityAttendance.Date = item.AttendanceDate;
                     entityAttendance.TeacherName = item.Teacher.UserInfo.Name;
                     entityAttendance.ClassName = item.AcademicClass.Name;
-                    entityAttendance.SubjectName = item.SubjectAcademicClassMapping.InstituteSubject.Subject.Name;
+                   
                     entityAttendance.PeriodName = item.AcademicPeriod.Name;
                     entityAttendance.SectionName = item.AcademicClassSectionMapping.AcademicSection.Name;
                     entityAttendance.TotalStudent = item.TotalCount;

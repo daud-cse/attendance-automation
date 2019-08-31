@@ -9,9 +9,7 @@ namespace deepp.Entities.ViewModels
 {
     public class VmFeesGenerate
     {
-        public FeesGenerate FeesGenerate { get; set; }
-        public FeesGenerateAcademic FeesGenerateAcademic { get; set; }
-        public IEnumerable<FeesGenerateHead> FeesGenerateHeadList { get; set; }
+       
         public IEnumerable<VmAutoComplete> SearchStudents { get; set; }
         public IEnumerable<AdjStudentList> AdjStudentList { get; set; }
         public List<KeyValuePair<int, string>> FeesHeadList { get; set; }

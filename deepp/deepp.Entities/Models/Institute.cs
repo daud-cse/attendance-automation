@@ -26,7 +26,6 @@ namespace deepp.Entities.Models
             this.Buildings = new List<Building>();
             this.CertificatePrints = new List<CertificatePrint>();
             this.CertificatePrintTypes = new List<CertificatePrintType>();
-            this.ChartOfAccounts = new List<ChartOfAccount>();
             this.CoCurricularActivities = new List<CoCurricularActivity>();
             this.ContactUs = new List<ContactU>();
             this.Contents = new List<Content>();
@@ -36,23 +35,10 @@ namespace deepp.Entities.Models
             this.DynamicPages = new List<DynamicPage>();
             this.EducationalQualifications = new List<EducationalQualification>();
             this.Events = new List<Event>();
-            this.Exams = new List<Exam>();
-            this.ExamProcesses = new List<ExamProcess>();
-            this.ExamSubjectMarks = new List<ExamSubjectMark>();
-            this.ExamTypes = new List<ExamType>();
-            this.FeesAcademicClasses = new List<FeesAcademicClass>();
-            this.FeesAutoGenerateConfigs = new List<FeesAutoGenerateConfig>();
-            this.FeesAutoGenerateConfigTypes = new List<FeesAutoGenerateConfigType>();
-            this.FeesGenerates = new List<FeesGenerate>();
-            this.FeesHeads = new List<FeesHead>();
-            this.FeesTypes = new List<FeesType>();
             this.Galleries = new List<Gallery>();
             this.Genders = new List<Gender>();
             this.GuardianTypes = new List<GuardianType>();
-            this.InstituteSubjects = new List<InstituteSubject>();
             this.LeaveApplications = new List<LeaveApplication>();
-            this.LibraryBookAuthores = new List<LibraryBookAuthore>();
-            this.LibraryBooks = new List<LibraryBook>();
             this.MaritalStatuses = new List<MaritalStatus>();
             this.MobilePayments = new List<MobilePayment>();
             this.Nationalities = new List<Nationality>();
@@ -61,25 +47,14 @@ namespace deepp.Entities.Models
             this.Religions = new List<Religion>();
             this.ResultPublications = new List<ResultPublication>();
             this.Roles = new List<Role>();
-            this.RoutineNotes = new List<RoutineNote>();
-            this.RoutinePeriods = new List<RoutinePeriod>();
-            this.RoutinePeriodTypes = new List<RoutinePeriodType>();
-            this.Routines = new List<Routine>();
             this.Scholarships = new List<Scholarship>();
             this.ShortMessages = new List<ShortMessage>();
             this.ShortMessageTemplates = new List<ShortMessageTemplate>();
-            this.SubjectAcademicClassMappings = new List<SubjectAcademicClassMapping>();
-            this.SubjectAcademicClassMappingSubjectTypes = new List<SubjectAcademicClassMappingSubjectType>();
-            this.SubjectGroups = new List<SubjectGroup>();
-            this.SubjectStudentMappings = new List<SubjectStudentMapping>();
-            this.SubjectTypes = new List<SubjectType>();
             this.Tags = new List<Tag>();
-            this.TeacherSubjectAcademicMappings = new List<TeacherSubjectAcademicMapping>();
             this.Testimonials = new List<Testimonial>();
             this.UserInfoes = new List<UserInfo>();
             this.UserInfoSecurities = new List<UserInfoSecurity>();
             this.VisitorCounts = new List<VisitorCount>();
-            this.Vouchers = new List<Voucher>();
             this.WeekDays = new List<WeekDay>();
         }
 
@@ -142,7 +117,6 @@ namespace deepp.Entities.Models
         public virtual ICollection<Building> Buildings { get; set; }
         public virtual ICollection<CertificatePrint> CertificatePrints { get; set; }
         public virtual ICollection<CertificatePrintType> CertificatePrintTypes { get; set; }
-        public virtual ICollection<ChartOfAccount> ChartOfAccounts { get; set; }
         public virtual ICollection<CoCurricularActivity> CoCurricularActivities { get; set; }
         public virtual ICollection<ContactU> ContactUs { get; set; }
         public virtual ICollection<Content> Contents { get; set; }
@@ -152,16 +126,6 @@ namespace deepp.Entities.Models
         public virtual ICollection<DynamicPage> DynamicPages { get; set; }
         public virtual ICollection<EducationalQualification> EducationalQualifications { get; set; }
         public virtual ICollection<Event> Events { get; set; }
-        public virtual ICollection<Exam> Exams { get; set; }
-        public virtual ICollection<ExamProcess> ExamProcesses { get; set; }
-        public virtual ICollection<ExamSubjectMark> ExamSubjectMarks { get; set; }
-        public virtual ICollection<ExamType> ExamTypes { get; set; }
-        public virtual ICollection<FeesAcademicClass> FeesAcademicClasses { get; set; }
-        public virtual ICollection<FeesAutoGenerateConfig> FeesAutoGenerateConfigs { get; set; }
-        public virtual ICollection<FeesAutoGenerateConfigType> FeesAutoGenerateConfigTypes { get; set; }
-        public virtual ICollection<FeesGenerate> FeesGenerates { get; set; }
-        public virtual ICollection<FeesHead> FeesHeads { get; set; }
-        public virtual ICollection<FeesType> FeesTypes { get; set; }
         public virtual ICollection<Gallery> Galleries { get; set; }
         public virtual ICollection<Gender> Genders { get; set; }
         public virtual GlobalCountry GlobalCountry { get; set; }
@@ -171,10 +135,7 @@ namespace deepp.Entities.Models
         public virtual GlobalSubDistrict GlobalSubDistrict { get; set; }
         public virtual ICollection<GuardianType> GuardianTypes { get; set; }
         public virtual Package Package { get; set; }
-        public virtual ICollection<InstituteSubject> InstituteSubjects { get; set; }
         public virtual ICollection<LeaveApplication> LeaveApplications { get; set; }
-        public virtual ICollection<LibraryBookAuthore> LibraryBookAuthores { get; set; }
-        public virtual ICollection<LibraryBook> LibraryBooks { get; set; }
         public virtual ICollection<MaritalStatus> MaritalStatuses { get; set; }
         public virtual ICollection<MobilePayment> MobilePayments { get; set; }
         public virtual ICollection<Nationality> Nationalities { get; set; }
@@ -183,25 +144,14 @@ namespace deepp.Entities.Models
         public virtual ICollection<Religion> Religions { get; set; }
         public virtual ICollection<ResultPublication> ResultPublications { get; set; }
         public virtual ICollection<Role> Roles { get; set; }
-        public virtual ICollection<RoutineNote> RoutineNotes { get; set; }
-        public virtual ICollection<RoutinePeriod> RoutinePeriods { get; set; }
-        public virtual ICollection<RoutinePeriodType> RoutinePeriodTypes { get; set; }
-        public virtual ICollection<Routine> Routines { get; set; }
         public virtual ICollection<Scholarship> Scholarships { get; set; }
         public virtual ICollection<ShortMessage> ShortMessages { get; set; }
         public virtual ICollection<ShortMessageTemplate> ShortMessageTemplates { get; set; }
-        public virtual ICollection<SubjectAcademicClassMapping> SubjectAcademicClassMappings { get; set; }
-        public virtual ICollection<SubjectAcademicClassMappingSubjectType> SubjectAcademicClassMappingSubjectTypes { get; set; }
-        public virtual ICollection<SubjectGroup> SubjectGroups { get; set; }
-        public virtual ICollection<SubjectStudentMapping> SubjectStudentMappings { get; set; }
-        public virtual ICollection<SubjectType> SubjectTypes { get; set; }
         public virtual ICollection<Tag> Tags { get; set; }
-        public virtual ICollection<TeacherSubjectAcademicMapping> TeacherSubjectAcademicMappings { get; set; }
         public virtual ICollection<Testimonial> Testimonials { get; set; }
         public virtual ICollection<UserInfo> UserInfoes { get; set; }
         public virtual ICollection<UserInfoSecurity> UserInfoSecurities { get; set; }
         public virtual ICollection<VisitorCount> VisitorCounts { get; set; }
-        public virtual ICollection<Voucher> Vouchers { get; set; }
         public virtual ICollection<WeekDay> WeekDays { get; set; }
     }
 }

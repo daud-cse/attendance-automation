@@ -10,13 +10,8 @@ namespace deepp.Entities.Models
         public AcademicShift()
         {
             this.AcademicClassSectionMappings = new List<AcademicClassSectionMapping>();
-            this.ExamProcesses = new List<ExamProcess>();
-            this.FeesGenerateAcademics = new List<FeesGenerateAcademic>();
-            this.RoutinePeriods = new List<RoutinePeriod>();
-            this.Routines = new List<Routine>();
             this.StudentAttendances = new List<StudentAttendance>();
             this.Students = new List<Student>();
-            this.TeacherSubjectAcademicMappings = new List<TeacherSubjectAcademicMapping>();
         }
 
         public int Id { get; set; }
@@ -31,12 +26,7 @@ namespace deepp.Entities.Models
         public virtual ICollection<AcademicClassSectionMapping> AcademicClassSectionMappings { get; set; }
         public virtual Institute Institute { get; set; }
         public virtual Tag Tag { get; set; }
-        public virtual ICollection<ExamProcess> ExamProcesses { get; set; }
-        public virtual ICollection<FeesGenerateAcademic> FeesGenerateAcademics { get; set; }
-        public virtual ICollection<RoutinePeriod> RoutinePeriods { get; set; }
-        public virtual ICollection<Routine> Routines { get; set; }
         public virtual ICollection<StudentAttendance> StudentAttendances { get; set; }
         public virtual ICollection<Student> Students { get; set; }
-        public virtual ICollection<TeacherSubjectAcademicMapping> TeacherSubjectAcademicMappings { get; set; }
     }
 }

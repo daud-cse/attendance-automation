@@ -10,11 +10,8 @@ namespace deepp.Entities.Models
         public AcademicGroup()
         {
             this.AcademicClassSectionMappings = new List<AcademicClassSectionMapping>();
-            this.FeesGenerateAcademics = new List<FeesGenerateAcademic>();
-            this.Routines = new List<Routine>();
             this.StudentAttendances = new List<StudentAttendance>();
             this.Students = new List<Student>();
-            this.SubjectAcademicClassMappings = new List<SubjectAcademicClassMapping>();
         }
 
         public int Id { get; set; }
@@ -27,10 +24,7 @@ namespace deepp.Entities.Models
         public virtual ICollection<AcademicClassSectionMapping> AcademicClassSectionMappings { get; set; }
         public virtual Institute Institute { get; set; }
         public virtual Tag Tag { get; set; }
-        public virtual ICollection<FeesGenerateAcademic> FeesGenerateAcademics { get; set; }
-        public virtual ICollection<Routine> Routines { get; set; }
         public virtual ICollection<StudentAttendance> StudentAttendances { get; set; }
         public virtual ICollection<Student> Students { get; set; }
-        public virtual ICollection<SubjectAcademicClassMapping> SubjectAcademicClassMappings { get; set; }
     }
 }

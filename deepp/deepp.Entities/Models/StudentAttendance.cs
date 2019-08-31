@@ -42,7 +42,6 @@ namespace deepp.Entities.Models
         public virtual AcademicSession AcademicSession { get; set; }
         public virtual AcademicShift AcademicShift { get; set; }
         public virtual ICollection<StudentAttendanceDetail> StudentAttendanceDetails { get; set; }
-        public virtual SubjectAcademicClassMapping SubjectAcademicClassMapping { get; set; }
         public virtual Teacher Teacher { get; set; }
     }
 }

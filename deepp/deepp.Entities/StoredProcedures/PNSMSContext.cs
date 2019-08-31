@@ -9,11 +9,11 @@ using deepp.Entities.ViewModels.DashBoard;
 using System.Configuration;
 using deepp.Entities.ViewModels.Student;
 using deepp.Entities.ViewModels.Attendance;
-
-
+using deepp.Entities.ViewModels;
+using System.Linq;
 namespace deepp.Entities.Models
 {
-    public partial class PNSMSContext : IStoredProcedures
+    public partial class deeppContext : IStoredProcedures
     {
 
         public IEnumerable<SprPartners_Result> SprPartnersComplex(IEnumerable<TTProduct> products, Guid userId)
@@ -101,7 +101,7 @@ namespace deepp.Entities.Models
         }
         public DataSet GetStudentReports(int instituteId, int? StudentId, string ClassId, string SectionId)
         {
-            PNSMSContext _contex = new PNSMSContext();
+            deeppContext _contex = new deeppContext();
             SqlConnection con = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             con.ConnectionString = _contex.Database.Connection.ConnectionString;
@@ -175,6 +175,53 @@ namespace deepp.Entities.Models
             }
             //    objVmAttendanceDataSynInfo.lstAttendanceDataSynInfo= lstAttendanceDataSynInfo1;
             return objVmAttendanceDataSynInfo;
+        }
+        public AttendanceConfigurationDetail GetAttendanceDataSynInfoboth(int InstituteId, int UserTypeId, string MachineSerialNo)
+        {
+
+            AttendanceConfigurationDetail objVmAttendanceDataSynInfo = new AttendanceConfigurationDetail();
+            var lstAttendanceDataSynInfo1 = new List<AttendanceDataSynInfo>();
+
+            using (var multi = Database.Connection.QueryMultiple("[sprGetAttendanceDataSynInfoForBoth]" + InstituteId + "," + "'" + UserTypeId + "'" + "," + "'" + MachineSerialNo + "'"))
+            {
+
+                var lst = multi.Read<AttendanceConfigurationDetail>().ToList();
+                if (lst.Count == 0)
+                {
+                    objVmAttendanceDataSynInfo = new AttendanceConfigurationDetail();
+                }
+                else
+                {
+                    objVmAttendanceDataSynInfo = lst.FirstOrDefault();
+                }
+
+            }
+
+            return objVmAttendanceDataSynInfo;
+        }
+        public StatusSP AttendanceDataMigration(int InstituteId, string deviceInfo, int userId)
+        {
+            var objStatusSP = new StatusSP();
+            using (var multi = Database.Connection.QueryMultiple("[dbo].[sp_att_dataMigration] " + InstituteId + "," + "'" + deviceInfo + "'" + "," + "'" + userId + "'"))
+            {
+
+                objStatusSP = multi.Read<StatusSP>().ToList().FirstOrDefault();
+            }
+            return objStatusSP;
+        }
+
+        public vmAttendanceDataProcessInfo AttendanceDataProcessInfo(int InstituteId, int userId)
+        {
+            var objvmAttendanceDataProcessInfo = new vmAttendanceDataProcessInfo();
+            using (var multi = Database.Connection.QueryMultiple("[dbo].[sp_att_dataprocess_info] " + InstituteId + "," + userId + ""))
+            {
+
+
+                objvmAttendanceDataProcessInfo.lstAttendanceConfigurationDetails = multi.Read<AttendanceConfigurationDetail>().ToList();
+                objvmAttendanceDataProcessInfo.lstAttendanceProcessDateStudent = multi.Read<AttendanceProcessDate>().ToList();
+                objvmAttendanceDataProcessInfo.lstAttendanceProcessDateTeacher = multi.Read<AttendanceProcessDate>().ToList();
+            }
+            return objvmAttendanceDataProcessInfo;
         }
         public List<VmUserInfo> spUserInfoSearch(int InstituteId, int UserInfoTypeId, string SearchItem)
         {
@@ -264,7 +311,7 @@ namespace deepp.Entities.Models
             var conn = new SqlConnection();
 
             var sql = "test"; // Stored Procedure Name  
-            PNSMSContext _contex = new PNSMSContext();
+            deeppContext _contex = new deeppContext();
             SqlConnection con = new SqlConnection();
 
             con.ConnectionString = _contex.Database.Connection.ConnectionString;

@@ -49,9 +49,9 @@ namespace deepp.Api.App_Start
             // TODO: Register your types here
             // container.RegisterType<IProductRepository, ProductRepository>();
             container
-               .RegisterType<IDataContextAsync, PNSMSContext>(new PerRequestLifetimeManager())
+               .RegisterType<IDataContextAsync, deeppContext>(new PerRequestLifetimeManager())
                .RegisterType<IUnitOfWorkAsync, UnitOfWork>(new PerRequestLifetimeManager())
-               .RegisterType<IStoredProcedures, PNSMSContext>(new PerRequestLifetimeManager())
+               .RegisterType<IStoredProcedures, deeppContext>(new PerRequestLifetimeManager())
                .RegisterType<IStoredProcedureService, StoredProcedureService>()
 
             #region settings

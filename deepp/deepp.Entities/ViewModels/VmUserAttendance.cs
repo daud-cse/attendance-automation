@@ -14,6 +14,7 @@ namespace deepp.Entities.ViewModels
         public List<KeyValuePair<int, string>> lstNotEntryUser { get; set; }
         public List<KeyValuePair<int, string>> lsInvalidUserEntry { get; set; }
         public string Message { get; set; }
+        public bool IsSuccess { get; set; }
     }
 
 }

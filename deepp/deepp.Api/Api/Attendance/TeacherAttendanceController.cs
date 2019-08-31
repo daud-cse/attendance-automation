@@ -3,6 +3,7 @@ using deepp.Entities.Models;
 using deepp.Entities.StoredProcedures.Models;
 using deepp.Entities.ViewModels;
 using deepp.Service;
+using deepp.Service.Attendance;
 using deepp.Service.SSOLogin;
 using deepp.Service.ViewModels;
 using Repository.Pattern.UnitOfWork;
@@ -11,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace deepp.Api.Api.Attendance
@@ -21,9 +23,9 @@ namespace deepp.Api.Api.Attendance
         private readonly IVmUserAttendanceService _vmUserAdendanceService;
         private readonly ITeacherService _teacherService;
         private readonly IUnitOfWorkAsync _unitOfWorkAsync;
-
+        private readonly IMachineInfoService _machineInfoService;
         private readonly IStoredProcedures _storedProcedures;
-
+        private readonly IAttendanceConfigurationDetailService _attendanceConfigurationDetailService;
         readonly int instituteId = 5;//Sessions.InstituteId;
         readonly int userId = 12;// Sessions.UserId;
         private readonly ISSOService _SSOService;
@@ -32,13 +34,15 @@ namespace deepp.Api.Api.Attendance
             ITeacherService teacherService,
             IUnitOfWorkAsync unitOfWorkAsync
               , ISSOService SSOService
-            , IStoredProcedures storedProcedures)
+            , IStoredProcedures storedProcedures
+             , IMachineInfoService machineInfoService)
         {
             _vmUserAdendanceService = vmUserAdendanceService;
             _teacherService = teacherService;
             _unitOfWorkAsync = unitOfWorkAsync;
             _SSOService = SSOService;
             _storedProcedures = storedProcedures;
+            _machineInfoService = machineInfoService;
         }
 
 
@@ -170,7 +174,60 @@ namespace deepp.Api.Api.Attendance
 
 
         }
+        [Route("api/attendanceboth/machinedatapostbothattendancedatamigration")]
+        [HttpPost]
+        public async Task<IHttpActionResult> PostMachineDataMigration([FromBody] List<MachineInfo> lstMachineInfo)
+        {
 
+            VmUserAttendance objVmTeacherDetails = new VmUserAttendance();
+            List<VmUserAttendance> lstuserAttendanceModel = new List<VmUserAttendance>();
+            try
+            {
+                var machininfo = lstMachineInfo.FirstOrDefault().deviceinfo;
+                var objSSO = _SSOService.IsTokenValid(this.Request.Headers);
+                var objVmAttendanceDataSynInfo = _storedProcedures.GetAttendanceDataSynInfoboth(objSSO.InstituteId, 13, machininfo);
+
+                if (objVmAttendanceDataSynInfo == null)
+                {
+                    objVmTeacherDetails.Message = "Institute Attendance Date Confiure Not Found";
+                    return Ok(objVmTeacherDetails);
+                }
+                if (objSSO == null)
+                {
+                    objVmTeacherDetails = new VmUserAttendance { Message = "Token Is not found" };
+                }
+                else
+                {
+                    ReturnModel objReturnModel = new ReturnModel();
+                    objReturnModel = _machineInfoService.Inserts(objSSO.InstituteId, objSSO.AcademicSessionId, objSSO.UserId, _unitOfWorkAsync, lstMachineInfo);
+                    objReturnModel.Count = lstMachineInfo.Count.ToString();
+
+                    objVmTeacherDetails.IsSuccess = objReturnModel.IsSuccess;
+                    objVmTeacherDetails.Message = objReturnModel.Message;
+
+                    objVmTeacherDetails.Message = objVmTeacherDetails.Message;
+                    objVmTeacherDetails.IsSuccess = objReturnModel.IsSuccess;
+                    if (objVmTeacherDetails.IsSuccess)
+                    {
+                        objVmAttendanceDataSynInfo.AttendanceLastSynDate = lstMachineInfo.Max(x => Convert.ToDateTime(x.DateTimeRecord));
+                        objVmAttendanceDataSynInfo.SetDate = DateTime.Now;
+                        objVmAttendanceDataSynInfo.SetBy = objSSO.UserId.ToString();
+                        _attendanceConfigurationDetailService.Update(_unitOfWorkAsync, objVmAttendanceDataSynInfo);
+                    }
+                    return Ok(objVmTeacherDetails);
+
+                }
+                return Ok(objVmTeacherDetails);
+            }
+            catch (Exception ex)
+            {
+                objVmTeacherDetails = new VmUserAttendance { Message = ex.InnerException.Message.ToString() };
+
+                return Ok(objVmTeacherDetails);
+            }
+
+
+        }
 
         [Route("api/teacherattendance/updateteacherattendance")]
         [HttpPost]

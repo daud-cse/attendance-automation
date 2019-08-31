@@ -12,7 +12,7 @@ namespace deepp.erp
 {
   public  class DataSetService
     {
-      PNSMSContext _contex = new PNSMSContext();
+      deeppContext _contex = new deeppContext();
       public DataSet GetDataSetObject(string CommandText)
       {
         

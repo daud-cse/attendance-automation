@@ -15,7 +15,6 @@ namespace deepp.Entities.Models
             this.AcademicShifts = new List<AcademicShift>();
             this.AcademicVersions = new List<AcademicVersion>();
             this.ContentDetails = new List<ContentDetail>();
-            this.Subjects = new List<Subject>();
         }
 
         public int Id { get; set; }
@@ -30,6 +29,5 @@ namespace deepp.Entities.Models
         public virtual ICollection<AcademicVersion> AcademicVersions { get; set; }
         public virtual ICollection<ContentDetail> ContentDetails { get; set; }
         public virtual Institute Institute { get; set; }
-        public virtual ICollection<Subject> Subjects { get; set; }
     }
 }
