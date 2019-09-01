@@ -220,9 +220,9 @@
             this.lblHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(116)))), ((int)(((byte)(116)))));
             this.lblHeader.Location = new System.Drawing.Point(12, 9);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(148, 19);
+            this.lblHeader.Size = new System.Drawing.Size(65, 19);
             this.lblHeader.TabIndex = 1;
-            this.lblHeader.Text = "SHIKKHAFORALL";
+            this.lblHeader.Text = "DEEPP";
             // 
             // dgvRecords
             // 
@@ -363,13 +363,13 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(3, 54);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 13);
+            this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 896;
-            this.label4.Text = "Institute Id";
+            this.label4.Text = "Branch Id";
             // 
             // maskedTextBoxInstitute
             // 
-            this.maskedTextBoxInstitute.Location = new System.Drawing.Point(72, 57);
+            this.maskedTextBoxInstitute.Location = new System.Drawing.Point(65, 57);
             this.maskedTextBoxInstitute.Mask = "00000";
             this.maskedTextBoxInstitute.Name = "maskedTextBoxInstitute";
             this.maskedTextBoxInstitute.Size = new System.Drawing.Size(100, 22);
@@ -379,7 +379,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(178, 54);
+            this.label5.Location = new System.Drawing.Point(171, 54);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 13);
             this.label5.TabIndex = 897;
@@ -387,7 +387,7 @@
             // 
             // textBoxUserId
             // 
-            this.textBoxUserId.Location = new System.Drawing.Point(227, 57);
+            this.textBoxUserId.Location = new System.Drawing.Point(220, 57);
             this.textBoxUserId.Name = "textBoxUserId";
             this.textBoxUserId.Size = new System.Drawing.Size(100, 22);
             this.textBoxUserId.TabIndex = 900;
@@ -395,7 +395,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(333, 54);
+            this.label6.Location = new System.Drawing.Point(326, 54);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 898;
@@ -403,14 +403,14 @@
             // 
             // textBoxPass
             // 
-            this.textBoxPass.Location = new System.Drawing.Point(395, 57);
+            this.textBoxPass.Location = new System.Drawing.Point(388, 57);
             this.textBoxPass.Name = "textBoxPass";
             this.textBoxPass.Size = new System.Drawing.Size(100, 22);
             this.textBoxPass.TabIndex = 901;
             // 
             // btnDataPushBoth
             // 
-            this.btnDataPushBoth.Location = new System.Drawing.Point(501, 57);
+            this.btnDataPushBoth.Location = new System.Drawing.Point(494, 57);
             this.btnDataPushBoth.Name = "btnDataPushBoth";
             this.btnDataPushBoth.Size = new System.Drawing.Size(197, 31);
             this.btnDataPushBoth.TabIndex = 903;
@@ -421,7 +421,7 @@
             // btnDataPush
             // 
             this.btnDataPush.BackColor = System.Drawing.SystemColors.Control;
-            this.btnDataPush.Location = new System.Drawing.Point(704, 57);
+            this.btnDataPush.Location = new System.Drawing.Point(697, 57);
             this.btnDataPush.Name = "btnDataPush";
             this.btnDataPush.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnDataPush.Size = new System.Drawing.Size(156, 34);

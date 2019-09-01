@@ -10,8 +10,8 @@ namespace deepp.attendance.ApiService
   public  class URLService
     {
 
-        public static String URL_HOST = "http://api.shikkhaforall.com/";
-       //public static String URL_HOST = "http://localhost:1692/";
+       // public static String URL_HOST = "http://api.deepp.com/";
+       public static String URL_HOST = "http://localhost:1694/";
         ///public static String URL_HOST = "http://localhost:1800/";
         
         
