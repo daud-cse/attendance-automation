@@ -5,86 +5,65 @@
 }
 @*@model deepp.landing.Models.LoginViewModel*@
 
-<style type="text/css">
-   #bacgroundColor{
-       background-color:#f2f2f2;
-   }
-   #mc_signup {
-       text-align:left;
-       padding-top:50px;
-     
-   }
-   #divMiddle{
-       text-align:left;
-       margin-top:50px;
-       background-color:#a9a9a9 ;
-   }
-  
-</style>
+                    @*@using (Html.BeginForm("Login", "Account", new { returnUrl = "~/Home/Index" }))
+                    {*@
+                        <div class="limiter">
+                            <div class="container-login100">
+                                <div class="wrap-login100">
+                                    <div class="login100-pic js-tilt" data-tilt>                                       
+                                            <img src="/image/GetImageById?id=@Sessions.InstituteBannerId&refCode=11" alt="logo">                                        
+                                    </div>
 
-<div class="row" id="bacgroundColor" >
-    <div class="col-md-12">
-        <div class="box-content">
-        <div class="col-md-4"></div>
-            <div class="col-md-4" id="divMiddle">
-                <div id="mc_signup" class="form-group">
-                   
+                                    @*<form class="login100-form validate-form">*@
+                                @using (Html.BeginForm("Login", "Account", new { returnUrl = "~/Home/Index" }))
+                                     {
+                                        <span class="login100-form-title">
+                                            Login
+                                        </span>
 
+                                        <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                                            <input class="input100" type="text" name="email" placeholder="Email">
+                                            <span class="focus-input100"></span>
+                                            <span class="symbol-input100">
+                                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
 
+                                        <div class="wrap-input100 validate-input" data-validate="Password is required">
+                                            <input class="input100" type="password" name="pass" placeholder="Password">
+                                            <span class="focus-input100"></span>
+                                            <span class="symbol-input100">
+                                                <i class="fa fa-lock" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
 
-                    @using (Html.BeginForm("Login", "Account", new { returnUrl = "~/Home/Index" }))
-                    {
-                       
-                        <div class="full-row">
-                            <label for="yourname" style="color:white">User Name:</label>
-                            <input type="text" name="UserName" id="UserName" required="required" >
-                        </div> <!-- /.full-row -->
+                                        <div class="container-login100-form-btn">
+                                            <button class="login100-form-btn">
+                                                Login
+                                            </button>
+                                        </div>
 
-                        <div class="full-row">
-                            <label for="Password" style="color:white">Password:</label>
-                            <input type="password" name="Password" id="Password" required="required" >
-                        </div> <!-- /.full-row -->
+                                        @*<div class="text-center p-t-12">
+                                            <span class="txt1">
+                                                Forgot
+                                            </span>
+                                            <a class="txt2" href="#">
+                                                Username / Password?
+                                            </a>
+                                        </div>*@
 
-                        <div class="full-row">
-                            <label for="Password">&nbsp;</label>
-                            <input type="submit" value="Sign in" name="" class="mc_signup_submit btn btn-primary">
-                        </div> <!-- /.full-row -->
-                        <div class="updated">
-                            <label>&nbsp;</label>
-                            @Html.ValidationSummary()
-                        </div><!-- /mc_message -->
-                        <div class="full-row">
-                            <a href="~/Account/ForgotPass" title="click here if you forgot your password" >Forgot password?</a>
+                                        @*<div class="text-center p-t-136">
+                                            <a class="txt2" href="#">
+                                                Create your Account
+                                                <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                                            </a>
+                                        </div>*@
+                              }
+                                </div>
+                            </div>
                         </div>
-                        <div class="full-row">
-                            <p class="small-text pull-left" style="color:white">you can sign in by your gmail, facebook, twitter, hotmail or outlook account</p>
-                            <p>
-                                <a href="#" title="sign in by Gmail"><img src="~/images/gmail.png"></a>
-                                <a href="#" title="sign in by Facebook"><img src="~/images/fb.png"></a>
-                                <a href="#" title="sign in by Twitter"><img src="~/images/tw.png"></a>
-                                <a href="#" title="sign in by Outlook, Hotmail"><img src="~/images/outlook.png"></a>
-                            </p>
-                            <p></p>
-                        </div> <!-- /.full-row -->
-                        <div class="full-row">
-                            <p style="color:white" class="small-text pull-left"><a href="~/Account/RegisterMobileNo" title="click here to register">Register Here</a> if you don't have account.</p>
-                        </div>
-                    } <!-- /.request-info -->
-
-                </div>
-
-            </div>
-            <div class="col-md-4"></div>
-
-        </div> <!-- /.row -->
-    </div> <!-- /.container -->
-</div>
+                    @*}                                    
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 
-}
-
-
-
-
-
+}*@
