@@ -656,6 +656,7 @@ namespace deepp.attendance
             {
                 ShowStatusBar("Authentication Failed! Please try again.");
                 DisplayListOutput(objLoginReponseModel.Message);
+                enableDataAttendanceButton(true);
                 return;
             }
             if (objLoginReponseModel.Success == "1")

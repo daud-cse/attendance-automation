@@ -11,7 +11,9 @@ using deepp.Service.ViewModels;
 using deepp.Service.ShortMessages;
 using deepp.Service.SSOLogin;
 using deepp.Service.Settings;
-
+using deepp.Service.DashBoard;
+using deepp.Service.GlobalUsers;
+using deepp.Service.Attendance;
 
 namespace deepp.Api.App_Start
 {
@@ -53,7 +55,16 @@ namespace deepp.Api.App_Start
                .RegisterType<IUnitOfWorkAsync, UnitOfWork>(new PerRequestLifetimeManager())
                .RegisterType<IStoredProcedures, deeppContext>(new PerRequestLifetimeManager())
                .RegisterType<IStoredProcedureService, StoredProcedureService>()
+                .RegisterType<IDashboardService, DashboardService>()
 
+            #region Global user
+                .RegisterType<IRepositoryAsync<GlobalUser>, Repository<GlobalUser>>()
+                       .RegisterType<IGlobalUserService, GlobalUserService>()
+                       .RegisterType<IVmGlobalUsersService, VmGlobalUsersService>()
+
+            #endregion
+                     .RegisterType<IRepositoryAsync<MachineInfo>, Repository<MachineInfo>>()
+                        .RegisterType<IMachineInfoService, MachineInfoService>()
             #region settings
 
                .RegisterType<IRepositoryAsync<AcademicBranch>, Repository<AcademicBranch>>()
@@ -269,6 +280,14 @@ namespace deepp.Api.App_Start
                .RegisterType<IRepositoryAsync<UserAttendanceDetail>, Repository<UserAttendanceDetail>>()
                .RegisterType<IUserAttendanceDetailService, UserAttendanceDetailService>()
                .RegisterType<IVmUserAttendanceService, VmUserAttendanceService>()
+                .RegisterType<IAttendanceMachineService, AttendanceMachineService>()
+                        .RegisterType<IRepositoryAsync<AttendanceConfiguration>, Repository<AttendanceConfiguration>>()
+
+                        .RegisterType<IAttendanceConfigurationService, AttendanceConfigurationService>()
+
+                        .RegisterType<IRepositoryAsync<AttendanceConfigurationDetail>, Repository<AttendanceConfigurationDetail>>()
+
+                        .RegisterType<IAttendanceConfigurationDetailService, AttendanceConfigurationDetailService>()
 
             #endregion
 

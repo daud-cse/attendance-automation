@@ -103,6 +103,8 @@ namespace deepp.Service.Attendance
                     item.UserId = UserId;
                     item.InstituteId = instituteId;
                     item.LastUpdateTime = DateTime.Now;
+                    item.DateOnlyRecord = Convert.ToDateTime(item.DateTimeRecord).Date;
+                    item.TimeOnlyRecord = Convert.ToDateTime(item.DateTimeRecord);
                     item.CreateDate = DateTime.Now;
                     item.IsActive = true;
                     item.IsProcess = false;

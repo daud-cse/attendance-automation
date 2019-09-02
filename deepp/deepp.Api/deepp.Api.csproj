@@ -204,6 +204,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\Account\AccountController.cs" />
     <Compile Include="Api\Attendance\AttendanceMixedController.cs" />
     <Compile Include="Api\Attendance\TeacherAttendanceController.cs" />
     <Compile Include="Api\Settings\AcademicBranchController.cs" />

@@ -36,7 +36,7 @@ namespace deepp.attendance.ApiService
             }
             catch
             {
-                return false;
+                return true;
             }
 
         }

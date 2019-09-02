@@ -174,7 +174,7 @@ namespace deepp.Api.Api.Attendance
 
 
         }
-        [Route("api/attendanceboth/machinedatapostbothattendancedatamigration")]
+        [Route("api/attendanceboth/machinedatapostbothattendancedatamigrationold")]
         [HttpPost]
         public async Task<IHttpActionResult> PostMachineDataMigration([FromBody] List<MachineInfo> lstMachineInfo)
         {
