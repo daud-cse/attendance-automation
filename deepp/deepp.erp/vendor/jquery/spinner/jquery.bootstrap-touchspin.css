@@ -8,7 +8,7 @@
  */
 
 .bootstrap-touchspin .input-group-btn-vertical {
-  deeppition: relative;
+  position: relative;
   white-space: nowrap;
   width: 1%;
   vertical-align: middle;
@@ -22,7 +22,7 @@
   max-width: 100%;
   padding: 8px 10px;
   margin-left: -1px;
-  deeppition: relative;
+  position: relative;
 }
 
 .bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-up {
@@ -37,7 +37,7 @@
 }
 
 .bootstrap-touchspin .input-group-btn-vertical i {
-  deeppition: absolute;
+  position: absolute;
   top: 3px;
   left: 5px;
   font-size: 9px;

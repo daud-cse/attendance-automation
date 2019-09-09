@@ -311,10 +311,10 @@
                 'top'  : e.pageY - mouse.offsetY
             });
 
-            // mouse deeppition last events
+            // mouse position last events
             mouse.lastX = mouse.nowX;
             mouse.lastY = mouse.nowY;
-            // mouse deeppition this events
+            // mouse position this events
             mouse.nowX  = e.pageX;
             mouse.nowY  = e.pageY;
             // distance mouse moved between events

@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="~/favicon1.ico" />
+    <link rel="apple-touch-icon-precomdeepped" href="~/assets/img/favicon/apple-touch-icon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen|Source+Sans+Pro:400,600">
+    <link rel="stylesheet" href="~/assets/css/loginMain.css">
+    <link rel="stylesheet" href="~/assets/css/loginUtil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="~/assets/fonts/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/css/Animate.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/css/humburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/css/select2.min.css">
+</head>
+<body>
+    <div class="wrapper wrapper_boxed">
+        <span class="label label-danger" id="disconnected"></span>
+        @RenderBody()
+        <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+        <script src="~/Scripts/popper.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        <script src="~/Scripts/Select2.min.js"></script>
+        <script src="~/Scripts/tilt.min.js"></script>
+        <script>
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+        </script>
+    </div>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/css/line-icons.css">
+    <link rel="stylesheet" href="~/assets/css/slicknav.css">
+    <link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/assets/css/owl.theme.css">
+    <link rel="stylesheet" href="~/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/assets/css/nivo-lightbox.css">   
+    <link rel="stylesheet" href="~/assets/css/homeanimate.css">   
+    <link rel="stylesheet" href="~/assets/css/homemain.css">   
+    <link rel="stylesheet" href="~/assets/css/homeresponsive.css">
+</head>
+<body>
+    <div class="wrapper wrapper_boxed">
+        <span class="label label-danger" id="disconnected"></span>
+        @RenderBody()
+        <script src="~/Scripts/jquery-min.js"></script>
+        <script src="~/Scripts/popper.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        <script src="~/Scripts/owl.carousel.min.js"></script>
+        <script src="~/Scripts/jquery.mixtup.js"></script>
+        <script src="~/Scripts/wow.js"></script>
+        <script src="~/Scripts/jquery.nav.js"></script>
+        <script src="~/Scripts/scrolling-nav.js"></script>
+        <script src="~/Scripts/jquery.easing.min.js"></script>
+        <script src="~/Scripts/jquery.counterup.min.js"></script>
+        <script src="~/Scripts/nivo-lightbox.js"></script>
+        <script src="~/Scripts/jquery.magnific-popup.min.js"></script>
+        <script src="~/Scripts/waypoints.min.js"></script>
+        <script src="~/Scripts/jquery.slicknav.js"></script>
+        <script src="~/Scripts/homemain.js"></script>
+        <script src="~/Scripts/form-validator.min.js"></script>
+        <script src="~/Scripts/contact-form-script.min.js"></script>		
+    </div>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

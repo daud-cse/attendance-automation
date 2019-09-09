@@ -122,7 +122,7 @@ namespace deepp.Api.Api.Attendance
 
         }
 
-        [Route("api/teacherattendance/machinedatadeepptteacherattendance")]
+        [Route("api/teacherattendance/machinedatapostteacherattendance")]
         [HttpPost]
         public VmUserAttendance PostMachineData([FromBody] List<MachineInfo> lstMachineInfoTeacher)
         {
@@ -225,10 +225,7 @@ namespace deepp.Api.Api.Attendance
 
                 return Ok(objVmTeacherDetails);
             }
-
-
         }
-
         [Route("api/teacherattendance/updateteacherattendance")]
         [HttpPost]
         public HttpResponseMessage Update([FromBody]VmUserAttendance userAttendanceModel)

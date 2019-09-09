@@ -1,0 +1,426 @@
+﻿<!-- Header Area Start -->
+<header id="main-header">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-7">
+                @*<a href="#" class="logo"><img src="~/assets/img/logo1.png" alt="logo"></a>*@
+                <a href="~/home/Index" class="logo">
+                    <img src="/image/GetImageById?id=@Sessions.InstituteBannerId&refCode=11" alt="logo">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <div class="right-side">
+                    <nav class="top-nav">
+                        <ul id="menu-top-menu">
+                            <li>@Html.ActionLink("Home", "Index", "Home", new { }, null)</li>
+                            <li><a href="~/Institute/GetInstituteHistory">About us</a></li>
+                            <li><a href="~/ContactUS/Create?IsSuccess=false">Contact us</a></li>
+                            @*<li><a href="#">Faq</a></li>*@
+                            <li class="dropdown ">
+                                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
+                                <div class="dropdown-menu pull-right login-dropdown">
+                                    <div id="mc_signup" style="text-align:left;">
+                                        @using (Html.BeginForm("Login", "Account", new { returnUrl = "~/Home/Index" }))
+                                        {
+                                            <div class="full-row">
+                                                <label for="yourname">User Name:</label>
+                                                <input type="text" name="UserName" id="UserName" required="required">
+                                            </div> <!-- /.full-row -->
+
+                                            <div class="full-row">
+                                                <label for="Password">Password:</label>
+                                                <input type="password" name="Password" id="Password" required="required">
+                                            </div> <!-- /.full-row -->
+
+                                            <div class="full-row">
+                                                <label for="Password">&nbsp;</label>
+
+                                                <input type="submit" value="Sign in" name="" class="mc_signup_submit pull-left btn-primary">
+                                                <a class="forgot-password pull-right" href="~/Account/ForgotPass" title="click here if you forgot your password">Forgot password?</a>
+                                            </div> <!-- /.full-row -->
+                                            <div class="full-row">
+
+                                            </div>
+                                            <div class="full-row">
+                                                <p class="small-text pull-left">you can sign in by your gmail, facebook, twitter, hotmail or outlook account</p>
+                                                <p>
+                                                    <a href="#" title="sign in by Gmail"><img src="~/images/gmail.png"></a>
+                                                    <a href="#" title="sign in by Facebook"><img src="~/images/fb.png"></a>
+                                                    <a href="#" title="sign in by Twitter"><img src="~/images/tw.png"></a>
+                                                    <a href="#" title="sign in by Outlook, Hotmail"><img src="~/images/outlook.png"></a>
+                                                </p>
+                                                <p></p>
+                                            </div> <!-- /.full-row -->
+                                            <div class="full-row">
+                                                <p class="small-text pull-left"><a class="register-link" href="~/Account/RegisterMobileNo" title="click here to register">Register Here</a> if you don't have account.</p>
+                                            </div>
+                                        } <!-- /.request-info -->
+
+                                    </div>
+
+                                </div>
+                            </li>
+
+                        </ul>
+                    </nav>
+                    <div class="header-search">
+                        <form action="#">
+                            <span>Search</span>
+                            <input value="" placeholder="Enter your search" type="text">
+                            <label><input value="" type="submit"></label>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="main-nav">
+                    <nav class="navigation">
+                        <a class="cs-click-menu" href="#">
+                            <i class="icon-align-justify"></i>
+                        </a>
+                        <ul id="menu-main-menu">
+                            <li>
+                                @Html.ActionLink("Home", "Index", "Home", new { }, null)
+                            </li>
+                            <li>
+                                <a href="~/Institute/GetInstituteHistory">About Us</a>
+                                <ul class="sub-dropdown">
+                                    <li><a href="~/Institute/GetInstituteHistory">Basic Info</a></li>
+                                    @*<li><a href="~/Institute/GetInstituteMasterPlan">Master Plan</a></li>
+                                        <li><a href="~/Institute/GetInstituteInfrastructure">Infrastructure</a></li>*@
+                                    @*<li><a href="~/Governingbody/GetGoverningbody"> Governing Bodies</a></li>*@
+                                    <li><a href="~/Governingbody/GetGoverningbody"> Governing Bodies</a></li>
+                                    <li><a href="~/Teacher/GetActiveTeacher">Teachers</a></li>
+                                    <li><a href="~/Employees/GetActiveEmployees">Staff</a></li>
+                                    <li><a href="~/ScholarshipOfStudent/GetScholarshipOfStudent">Scholar Students</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Notice</a>
+                                <ul class="sub-dropdown">
+                                    <li>@Html.ActionLink("General", "GetAllWithGrid", "Notice", new { }, null)</li>
+                                    <li><a href="~/Notice/ActiveTeacherNotice">Teacher</a></li>
+                                    <li><a href="~/Notice/ActiveEmployeeNotice">Staff</a></li>
+                                    <li><a href="~/Notice/ActiveStudentNotice">Student</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                @Html.ActionLink("News & Events", "GetAllWithGrid", "Event", new { }, null)
+                            </li>
+                            <li>
+                                @Html.ActionLink("Gallery", "GetAllGallery", "Gallery", new { }, null)
+                            </li>
+                            <li>
+                                <a href="#">Academy</a>
+                                <ul class="sub-dropdown">
+                                    <li><a href="~/AcademicCalender/AcademicCalender">Academy Calender</a></li>
+
+                                    <li><a href="~/Result/Result">Result</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Admission</a>
+                                <ul class="sub-dropdown">
+                                    <li><a href="~/AdmissionForm/GetAdmissionInfo">Admission Info</a></li>
+
+                                    <li><a href="~/AdmissionForm/Index">Online Admission</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="~/ContactUS/Create?IsSuccess=false">Contact Us</a>
+                                @*<ul class="sub-dropdown">
+                                        <li> @Html.ActionLink("Contact US", "Create", "ContactUS", new { IsSuccess = false }, null)</li>
+                                        <li> @Html.ActionLink("Feedback", "CreateFeedback", "ContactUS", new { IsSuccess = false }, null)</li>
+
+                                    </ul>*@
+                            </li>
+                            <li>
+                                <a href="#">Exam Information</a>
+                                <ul class="sub-dropdown">
+                                    <li><a href="~/ExamVM/GetExamGradingPolicy">Exam Grading Policy</a></li>
+                                    <li><a href="~/ExamVM/MeritList">Merit List</a></li>
+                                    <li><a href="~/ExamVM/Faillist">Fail</a></li>
+                                    <li><a href="~/ExamVM/FindResult">Find Result</a></li>
+
+                                   
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header><!-- Header Area End -->
+@*<div class="responsive-menu visible-sm visible-xs">
+        <a href="#" class="toggle-menu"><i class="fa fa-bars"></i></a>
+        <div class="menu-open">
+            <nav>
+                <ul class="sf-menu">
+                    <li>
+                        @Html.ActionLink("Home", "Index", "Home", new { }, null)
+                    </li>
+                    <li>
+
+                        <a href="#">About Us</a>
+                        <ul>
+                            <li><a href="~/Institute/GetInstituteHistory">History</a></li>
+                            <li><a href="~/Institute/GetInstituteMasterPlan">Master Plan</a></li>
+                            <li><a href="~/Institute/GetInstituteInfrastructure">Infrastructure</a></li>
+                            <li><a href="~/Governingbody/GetGoverningbody"> Governing Bodies</a></li>
+                            <li><a href="~/Teacher/GetActiveTeacher">Teachers</a></li>
+                            <li><a href="~/Employees/GetActiveEmployees">Staff</a></li>
+                            <li><a href="~/ScholarshipOfStudent/GetScholarshipOfStudent">Scholar Students</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Notice</a>
+                        <ul>
+                            <li>@Html.ActionLink("General", "GetAllWithGrid", "Notice", new { }, null)</li>
+                            <li><a href="~/Notice/ActiveTeacherNotice">Teacher</a></li>
+                            <li><a href="~/Notice/ActiveEmployeeNotice">Staff</a></li>
+                            <li><a href="~/Notice/ActiveStudentNotice">Student</a></li>
+                        </ul>
+
+                    </li>
+
+                    <li>
+                        @Html.ActionLink("News & Events", "GetAllWithGrid", "Event", new { }, null)
+                    </li>
+
+                    <li>
+
+                        @Html.ActionLink("Gallery", "GetAllGallery", "Gallery", new { }, null)
+
+                    </li>
+                    <li>
+
+                    </li>
+                    <li>
+                        <a href="#">Admission</a>
+                        <ul>
+                            <li><a href="~/AdmissionForm/GetAdmissionInfo">Admission Info</a></li>
+
+                            <li><a href="~/AdmissionForm/CreateOnlineAdmission">Online Admission</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                        <ul>
+                            <li> @Html.ActionLink("Contact US", "Create", "ContactUS", new { IsSuccess = false }, null)</li>
+                            <li> @Html.ActionLink("Feedback", "CreateFeedback", "ContactUS", new { IsSuccess = false }, null)</li>
+
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+
+                </ul> <!-- /.main-menu -->
+            </nav>
+
+        </div> <!-- /.menu-open -->
+    </div> <!-- /.responsive-menu -->*@
+@*<header class="site-header">*@
+@*<div class="top-header">
+        <div class="container">
+            <div class="inner-top">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 header-info-left visible-md visible-lg">
+                        <ul>
+                            <li><a href="skype:+34234235322?action"><i class="fa fa-phone"></i>+880 xxxx xx xx xx</a></li>
+                            <li><a href="mailto:info@projuktinext.com"><i class="fa fa-envelope-o"></i>mail@domain.com.bd</a></li>
+
+                        </ul>
+                    </div> <!-- /.col-md-6 -->
+                    <div class="col-md-6 col-sm-6 col-xs-12 header-info-right">
+                        <ul style="right: 0; left: auto;">
+                            <li class="dropdown ">
+                                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
+                                <div class="dropdown-menu pull-right" style="padding: 15px; padding-bottom: 0px; min-width:260px; color:#232323;">
+                                    <div id="mc_signup" style="text-align:left;">
+                                        @using (Html.BeginForm("Login", "Account", new { returnUrl = "~/Home/Index" }))
+                                        {
+                                            <div class="full-row">
+                                                <label for="yourname">User Name:</label>
+                                                <input type="text" name="UserName" id="UserName" required="required">
+                                            </div> <!-- /.full-row -->
+
+                                            <div class="full-row">
+                                                <label for="Password">Password:</label>
+                                                <input type="password" name="Password" id="Password" required="required">
+                                            </div> <!-- /.full-row -->
+
+                                            <div class="full-row">
+                                                <label for="Password">&nbsp;</label>
+                                                <input type="submit" value="Sign in" name="" class="mc_signup_submit">
+                                            </div> <!-- /.full-row -->
+                                            <div class="full-row">
+                                                <a href="~/Account/ForgotPass" title="click here if you forgot your password">Forgot password?</a>
+                                            </div>
+                                            <div class="full-row">
+                                                <p class="small-text pull-left">you can sign in by your gmail, facebook, twitter, hotmail or outlook account</p>
+                                                <p>
+                                                    <a href="#" title="sign in by Gmail"><img src="~/images/gmail.png"></a>
+                                                    <a href="#" title="sign in by Facebook"><img src="~/images/fb.png"></a>
+                                                    <a href="#" title="sign in by Twitter"><img src="~/images/tw.png"></a>
+                                                    <a href="#" title="sign in by Outlook, Hotmail"><img src="~/images/outlook.png"></a>
+                                                </p>
+                                                <p></p>
+                                            </div> <!-- /.full-row -->
+                                            <div class="full-row">
+                                                <p class="small-text pull-left"><a href="~/Account/RegisterMobileNo" title="click here to register">Register Here</a> if you don't have account.</p>
+                                            </div>
+                                        } <!-- /.request-info -->
+
+                                    </div>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </div> <!-- /.col-md-6 -->
+                </div> <!-- /.row -->
+            </div>
+        </div> <!-- /.container -->
+    </div>*@
+<!-- /.top-header -->
+@*<div class="container">
+            <div class="main-header">
+                <div class="row">
+                    <div class="col-md-4 col-sm-5 logo">
+
+                        <img src="/image/GetImageById?id=@Sessions.InstituteBannerId&refCode=11" style="width:900px; height:100px" >
+                    </div> <!-- /this -->
+                    <div class="col-md-8 col-sm-7 main-header-right visible-md visible-lg">
+                        <div class="social-search">
+                            <div class="social-icon-top">
+                                <ul>
+                                    <li><a href="#" data-toggle="tooltip" title="Facebook" class="fa fa-facebook"></a></li>
+                                    <li><a href="#" data-toggle="tooltip" title="Twitter" class="fa fa-twitter"></a></li>
+                                    <li><a href="#" data-toggle="tooltip" title="Linkedin" class="fa fa-linkedin"></a></li>
+                                    <li><a href="#" data-toggle="tooltip" title="Flickr" class="fa fa-flickr"></a></li>
+                                    <li><a href="#" data-toggle="tooltip" title="RSS" class="fa fa-rss"></a></li>
+                                </ul>
+                            </div> <!-- /.social-icon-top -->
+                        </div> <!-- /.social-search -->
+                    </div> <!-- /.col-md-8 -->
+                </div> <!-- /.row -->
+            </div> <!-- /.main-header -->
+        </div> <!-- /.container -->
+        <div class="menu-wrapper visible-md visible-lg">
+            <div class="container">
+                <div class="inner-menu">
+                    <div class="row">
+                        <div class="col-md-12 main-menu">
+                            <nav>
+                                <ul class="sf-menu">
+                                    <li>
+                                        @Html.ActionLink("Home", "Index", "Home", new { }, null)
+                                    </li>
+                                    <li>
+
+                                        <a href="#">About Us</a>
+                                        <ul>
+                                            <li><a href="~/Institute/GetInstituteHistory">History</a></li>
+                                            <li><a href="~/Institute/GetInstituteMasterPlan">Master Plan</a></li>
+                                            <li><a href="~/Institute/GetInstituteInfrastructure">Infrastructure</a></li>
+                                            <li>
+                                                <a href="#">More</a>
+                                                <ul>
+                                                    <li><a href="~/Institute/Assets"> Land & Assets</a></li>
+                                                    <li><a href="~/IncomeExp"> Income Exp.</a></li>
+                                                    <li><a href="~/Institute/Expences"> Budget</a></li>
+                                                    <li><a href="~/Institute/Sanitation"> Sanitation</a></li>
+                                                    <li><a href="~/Institute/Multimedia"> Multimedia Support</a></li>
+                                                    <li><a href="~/Library"> Library</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#">Personnel</a>
+                                                <ul>
+                                                    <li><a href="~/Governingbody/GetGoverningbody"> Governing Bodies</a></li>
+                                                    <li><a href="~/Teacher/GetActiveTeacher">Teachers</a></li>
+                                                    <li><a href="~/Employees/GetActiveEmployees">Staff</a></li>
+                                                    <li><a href="~/Student/List">Students</a></li>
+                                                    <li><a href="~/ScholarshipOfStudent/GetScholarshipOfStudent">Scholar Students</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#">Others</a>
+                                                <ul>
+                                                    <li><a href="~/CoCurricularAct"> Co-Curriculars</a></li>
+                                                    <li><a href="~/Personnel/Vacancy"> Vacancy</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Notice</a>
+                                        <ul>
+                                            <li>@Html.ActionLink("General", "GetAllWithGrid", "Notice", new { }, null)</li>
+                                            <li><a href="~/Notice/ActiveTeacherNotice">Teacher</a></li>
+                                            <li><a href="~/Notice/ActiveEmployeeNotice">Staff</a></li>
+                                            <li><a href="~/Notice/ActiveStudentNotice">Student</a></li>
+                                        </ul>
+
+                                    </li>
+
+                                    <li>
+                                        @Html.ActionLink("News & Events", "GetAllWithGrid", "Event", new { }, null)
+                                    </li>
+
+                                    <li>
+                                        @Html.ActionLink("Gallery", "GetAllGallery", "Gallery", new { }, null)
+                                    </li>
+                                    <li>
+
+                                        <a href="#">Content</a>
+                                    </li>
+                                    <li>
+                                        @Html.ActionLink("Result", "Index", "Result", new { }, null)
+                                    </li>
+                                    <li>
+                                        @Html.ActionLink("Online Admission", "Index", "AdmissionForm", new { }, null)
+                                    </li>
+                                    <li>
+                                        <a href="#">Contact</a>
+                                        <ul>
+                                            <li> @Html.ActionLink("Contact US", "Create", "ContactUS", new { IsSuccess = false }, null)</li>
+                                            <li> @Html.ActionLink("Feedback", "CreateFeedback", "ContactUS", new { IsSuccess = false }, null)</li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="divider-vertical"></li>
+
+                                </ul> <!-- /.main-menu -->
+                            </nav>
+                        </div> <!-- /.main-menu -->
+                        @*<div class="col-md-2 button-holder">
+                                @Html.ActionLink("Sign in", "Login", "Account", new { }, new { @class = "btn main-btn" })
+                            </div> <!-- /.col-md-2 -->
+                    </div> <!-- /.row -->
+                </div> <!-- /.inner-menu -->
+            </div> <!-- /.container -->
+        </div> <!-- /.menu-wrapper -->
+    </header> <!-- /.site-header -->*@
+@*@section scripts{
+    <script type="text/javascript">
+        $("#document").ready(function () {
+
+            $(function () {
+                // Setup drop down menu
+                $('.dropdown-toggle').dropdown();
+
+                // Fix input element click problem
+                $('.dropdown input, .dropdown label').click(function (e) {
+                    e.stopPropagation();
+                });
+            });
+        });
+    </script>
+    }*@
+
+
+

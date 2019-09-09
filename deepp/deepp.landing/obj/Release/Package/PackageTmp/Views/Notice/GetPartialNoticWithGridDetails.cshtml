@@ -1,0 +1,29 @@
+﻿@model IEnumerable<deepp.Entities.Models.Notice>
+@using System.Text.RegularExpressions
+@{
+    ViewBag.Title = "GetPartialNoticWithGridDetails";
+}
+
+@foreach (var item in Model)
+{
+
+    <div class="event-list">
+        <div class="event-content">
+            <h4 class="event-title">@Html.ActionLink(@item.NoticeTitle, "Details", "Notice", new { id = item.Id }, null)</h4>
+            <p>
+                @if (@item.NoticeBody != null)
+                {
+                    if (@item.NoticeBody.Length > 120)
+                    {
+                        @MvcHtmlString.Create(@Regex.Replace(@item.NoticeBody.Substring(0, 120), @"<[^>]+>|<", "").Trim())
+                    }
+                    else
+                    {
+                        @MvcHtmlString.Create(@Regex.Replace(@item.NoticeBody, @"<[^>]+>|<", "").Trim())
+                    }}
+                @Html.ActionLink("Read More", "Details", "Notice", new { id = item.Id }, null)
+            </p>
+        </div>
+    </div>
+
+}

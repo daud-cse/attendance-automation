@@ -3,10 +3,10 @@
 </div>
 <div class="wrapper-md" ng-controller="StudentAttendanceByManagementCtrl">
     <!-- toaster directive -->
-    <toaster-container toaster-options="{'deeppition-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
     <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
     <!-- attendance directive -->
-    <form role="form" name="step1" class="form-validation" method="deeppt">
+    <form role="form" name="step1" class="form-validation" method="post">
         <!--<tabset class="tab-container" ng-init="steps={percent:20, step1:true, step2:false}">-->
         <!--<tab heading="Step 1" active="steps.step1" select="steps.percent=10">-->
         <!--<p class="m-b"></p>
@@ -77,7 +77,7 @@
             </div>
         </div>
     </form>
-    <!--<form role="form" name="iseditform" class="form-validation" method="deeppt">
+    <!--<form role="form" name="iseditform" class="form-validation" method="post">
         <div class="panel panel-primary" ng-hide="iseditLoading">
             <div class="panel-heading wrapper-xs">Update Attendance</div>
             <div class="panel-body">
@@ -151,7 +151,7 @@
     <p class="m-b"></p>
     <progressbar value="steps.percent" class="progress-xs" type="success"></progressbar>-->
     <!--<progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>-->
-    <form role="form" name="step2" class="form-validation" method="deeppt">
+    <form role="form" name="step2" class="form-validation" method="post">
         <div class="panel panel-default" ng-hide="isLoadinglist">
             <div class="row">
                 <div class="col-sm-3">

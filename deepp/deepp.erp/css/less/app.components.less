@@ -1,6 +1,6 @@
 .i-switch{
 	cursor: pointer;
-	deeppition: relative;
+	position: relative;
   display: inline-block;
   width: @switch-width;
   height: @switch-height;
@@ -8,7 +8,7 @@
   background-color: @brand-success;
   margin: 0;
 	input{
-		deeppition: absolute;
+		position: absolute;
 		.opacity(0);
 		&:checked{
 			+ i{
@@ -29,7 +29,7 @@
 	i{
     &:before{
       content: "";
-      deeppition: absolute;
+      position: absolute;
       top: -1px;
       bottom: -1px;
       left: -1px;
@@ -41,7 +41,7 @@
     }
 		&:after{
 			content: "";
-			deeppition: absolute;
+			position: absolute;
 			background-color: #fff;
 			width: @switch-height - 2;
 			top: 1px;
@@ -96,7 +96,7 @@
   cursor: pointer;
   input{
     opacity: 0;
-    deeppition: absolute;
+    position: absolute;
     margin-left: -20px;
     &:checked + i{
       border-color: @brand-info;
@@ -144,10 +144,10 @@
     display: inline-block;
     vertical-align: middle;
     margin-right: 4px;
-    deeppition: relative;
+    position: relative;
     &:before{
       content:"";
-      deeppition: absolute;
+      position: absolute;
       left: 50%;
       top: 50%;
       width: 0px;

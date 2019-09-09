@@ -18,7 +18,7 @@ The second selector is for Angular 1.2.0
 .abn-tree-animate-enter,
 li.abn-tree-row.ng-enter {
   transition: 200ms linear all;
-  deeppition: relative;
+  position: relative;
   display: block;
   opacity: 0;
   max-height:0px;
@@ -32,7 +32,7 @@ li.abn-tree-row.ng-enter-active{
 .abn-tree-animate-leave,
 li.abn-tree-row.ng-leave {
   transition: 200ms linear all;
-  deeppition: relative;
+  position: relative;
   display: block;
   height:30px;
   max-height: 30px;
@@ -84,38 +84,38 @@ ul.abn-tree i.indented {
   cursor: pointer;
 }
 ul.nav.abn-tree .level-1 .indented {
-  deeppition: relative;
+  position: relative;
   left: 0px;
 }
 ul.nav.abn-tree .level-2 .indented {
-  deeppition: relative;
+  position: relative;
   left: 20px;
 }
 ul.nav.abn-tree .level-3 .indented {
-  deeppition: relative;
+  position: relative;
   left: 40px;
 }
 ul.nav.abn-tree .level-4 .indented {
-  deeppition: relative;
+  position: relative;
   left: 60px;
 }
 ul.nav.abn-tree .level-5 .indented {
-  deeppition: relative;
+  position: relative;
   left: 80px;
 }
 ul.nav.abn-tree .level-6 .indented {
-  deeppition: relative;
+  position: relative;
   left: 100px;
 }
 ul.nav.nav-list.abn-tree .level-7 .indented {
-  deeppition: relative;
+  position: relative;
   left: 120px;
 }
 ul.nav.nav-list.abn-tree .level-8 .indented {
-  deeppition: relative;
+  position: relative;
   left: 140px;
 }
 ul.nav.nav-list.abn-tree .level-9 .indented {
-  deeppition: relative;
+  position: relative;
   left: 160px;
 }

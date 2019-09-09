@@ -25,7 +25,7 @@ angular.module('pascalprecht.translate', ['ng']).run([
 angular.module('pascalprecht.translate').provider('$translate', [
   '$STORAGE_KEY',
   function ($STORAGE_KEY) {
-    var $translationTable = {}, $preferredLanguage, $availableLanguageKeys = [], $languageKeyAliases, $fallbackLanguage, $fallbackWasString, $uses, $nextLang, $storageFactory, $storageKey = $STORAGE_KEY, $storagePrefix, $missingTranslationHandlerFactory, $interpolationFactory, $interpolatorFactories = [], $interpolationSanitizationStrategy = false, $loaderFactory, $cloakClassName = 'translate-cloak', $loaderOptions, $notFoundIndicatorLeft, $notFoundIndicatorRight, $deepptCompilingEnabled = false, NESTED_OBJECT_DELIMITER = '.';
+    var $translationTable = {}, $preferredLanguage, $availableLanguageKeys = [], $languageKeyAliases, $fallbackLanguage, $fallbackWasString, $uses, $nextLang, $storageFactory, $storageKey = $STORAGE_KEY, $storagePrefix, $missingTranslationHandlerFactory, $interpolationFactory, $interpolatorFactories = [], $interpolationSanitizationStrategy = false, $loaderFactory, $cloakClassName = 'translate-cloak', $loaderOptions, $notFoundIndicatorLeft, $notFoundIndicatorRight, $postCompilingEnabled = false, NESTED_OBJECT_DELIMITER = '.';
     var getLocale = function () {
       var nav = window.navigator;
       return (nav.language || nav.browserLanguage || nav.systemLanguage || nav.userLanguage || '').split('-').join('_');
@@ -232,7 +232,7 @@ angular.module('pascalprecht.translate').provider('$translate', [
       return this;
     };
     this.usePostCompiling = function (value) {
-      $deepptCompilingEnabled = !!value;
+      $postCompilingEnabled = !!value;
       return this;
     };
     this.determinePreferredLanguage = function (fn) {
@@ -560,7 +560,7 @@ angular.module('pascalprecht.translate').provider('$translate', [
             }
           }
         };
-        $translate.prodeeppedLanguage = function () {
+        $translate.proposedLanguage = function () {
           return $nextLang;
         };
         $translate.storage = function () {
@@ -601,7 +601,7 @@ angular.module('pascalprecht.translate').provider('$translate', [
           return storageKey();
         };
         $translate.isPostCompilingEnabled = function () {
-          return $deepptCompilingEnabled;
+          return $postCompilingEnabled;
         };
         $translate.refresh = function (langKey) {
           if (!$loaderFactory) {
@@ -669,20 +669,20 @@ angular.module('pascalprecht.translate').provider('$translate', [
           if (translationId) {
             translationId = translationId.trim();
           }
-          var result, deeppsibleLangKeys = [];
+          var result, possibleLangKeys = [];
           if ($preferredLanguage) {
-            deeppsibleLangKeys.push($preferredLanguage);
+            possibleLangKeys.push($preferredLanguage);
           }
           if ($uses) {
-            deeppsibleLangKeys.push($uses);
+            possibleLangKeys.push($uses);
           }
           if ($fallbackLanguage && $fallbackLanguage.length) {
-            deeppsibleLangKeys = deeppsibleLangKeys.concat($fallbackLanguage);
+            possibleLangKeys = possibleLangKeys.concat($fallbackLanguage);
           }
-          for (var j = 0, d = deeppsibleLangKeys.length; j < d; j++) {
-            var deeppsibleLangKey = deeppsibleLangKeys[j];
-            if ($translationTable[deeppsibleLangKey]) {
-              if (typeof $translationTable[deeppsibleLangKey][translationId] !== 'undefined') {
+          for (var j = 0, d = possibleLangKeys.length; j < d; j++) {
+            var possibleLangKey = possibleLangKeys[j];
+            if ($translationTable[possibleLangKey]) {
+              if (typeof $translationTable[possibleLangKey][translationId] !== 'undefined') {
                 result = determineTranslationInstant(translationId, interpolateParams, interpolationId);
               }
             }

@@ -15,7 +15,7 @@ app.controller('MapCtrl', ['$scope', function ($scope) {
     $scope.addMarker = function ($event, $params) {
       $scope.myMarkers.push(new google.maps.Marker({
         map: $scope.myMap,
-        deeppition: $params[0].latLng
+        position: $params[0].latLng
       }));
     };
 

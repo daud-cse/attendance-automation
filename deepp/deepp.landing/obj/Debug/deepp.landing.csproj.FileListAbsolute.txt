@@ -1,4 +1,3 @@
-E:\DeepPresent Attendance\deeppresent\deepp\deepp.landing\obj\Debug\deepp.landing.csprojResolveAssemblyReference.cache
 E:\DeepPresent Attendance\deeppresent\deepp\deepp.landing\bin\Resources\refcode.jpg
 E:\DeepPresent Attendance\deeppresent\deepp\deepp.landing\bin\deepp.landing.dll.config
 E:\DeepPresent Attendance\deeppresent\deepp\deepp.landing\bin\deepp.landing.dll
@@ -97,5 +96,6 @@ E:\DeepPresent Attendance\deeppresent\deepp\deepp.landing\bin\ru-ru\BundleTransf
 E:\DeepPresent Attendance\deeppresent\deepp\deepp.landing\bin\ru-ru\BundleTransformer.Less.resources.dll
 E:\DeepPresent Attendance\deeppresent\deepp\deepp.landing\bin\ru-ru\JavaScriptEngineSwitcher.Core.resources.dll
 E:\DeepPresent Attendance\deeppresent\deepp\deepp.landing\bin\ru-ru\MsieJavaScriptEngine.resources.dll
+E:\DeepPresent Attendance\deeppresent\deepp\deepp.landing\obj\Debug\deepp.landing.csprojResolveAssemblyReference.cache
 E:\DeepPresent Attendance\deeppresent\deepp\deepp.landing\obj\Debug\deepp.landing.dll
 E:\DeepPresent Attendance\deeppresent\deepp\deepp.landing\obj\Debug\deepp.landing.pdb

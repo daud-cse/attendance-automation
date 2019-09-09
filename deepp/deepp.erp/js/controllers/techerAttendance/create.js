@@ -3,7 +3,7 @@
 app.controller('TeacherAttendanceCreateCtrl', ['$scope', '$state', '$http', 'TeacherAttendanceService', 'modalService', '$filter', 'toaster',
     function ($scope, $state, $http, TeacherAttendanceService, modalService, $filter, toaster) {
          
-        $scope.entity = { Name: "Employee  Attendance" };
+        $scope.entity = { Name: "Employee Attendance" };
         $scope.VmUserAttendance = null;
         $scope.isLoading = true;
         TeacherAttendanceService.new($scope.VmUserAttendance ,function (result) {

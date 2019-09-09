@@ -87,7 +87,7 @@ namespace deepp.erp.Api.Attendance
         [HttpGet]
         public async Task<HttpResponseMessage> GetAttendanceReports(VmCommonSearch objVmCommonSearch)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["PNSMSContext"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["deeppContext"].ConnectionString;
             SqlConnectionStringBuilder SConn = new SqlConnectionStringBuilder(connectionString);
             HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.OK);
 
@@ -156,8 +156,8 @@ namespace deepp.erp.Api.Attendance
                 rd.Clone();
                 rd.Close();
                 //response.Content = new StreamContent(rd.ExportToStream(ExportFormatType.PortableDocFormat));
-                //response.Content.Headers.ContentDisdeeppition = new System.Net.Http.Headers.ContentDisdeeppitionHeaderValue("attachment");
-                //response.Content.Headers.ContentDisdeeppition.FileName = "Transcript.pdf";
+                //response.Content.Headers.ContentDisposition = new System.Net.Http.Headers.ContentDispositionHeaderValue("attachment");
+                //response.Content.Headers.ContentDisposition.FileName = "Transcript.pdf";
 
                 return response;
 

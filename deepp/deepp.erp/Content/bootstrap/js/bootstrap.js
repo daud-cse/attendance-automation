@@ -369,16 +369,16 @@ if (typeof jQuery === 'undefined') {
     return this.$items.eq(itemIndex)
   }
 
-  Carousel.prototype.to = function (deepp) {
+  Carousel.prototype.to = function (pos) {
     var that        = this
     var activeIndex = this.getItemIndex(this.$active = this.$element.find('.item.active'))
 
-    if (deepp > (this.$items.length - 1) || deepp < 0) return
+    if (pos > (this.$items.length - 1) || pos < 0) return
 
-    if (this.sliding)       return this.$element.one('slid.bs.carousel', function () { that.to(deepp) }) // yes, "slid"
-    if (activeIndex == deepp) return this.pause().cycle()
+    if (this.sliding)       return this.$element.one('slid.bs.carousel', function () { that.to(pos) }) // yes, "slid"
+    if (activeIndex == pos) return this.pause().cycle()
 
-    return this.slide(deepp > activeIndex ? 'next' : 'prev', this.$items.eq(deepp))
+    return this.slide(pos > activeIndex ? 'next' : 'prev', this.$items.eq(pos))
   }
 
   Carousel.prototype.pause = function (e) {
@@ -979,7 +979,7 @@ if (typeof jQuery === 'undefined') {
       var transition = $.support.transition && that.$element.hasClass('fade')
 
       if (!that.$element.parent().length) {
-        that.$element.appendTo(that.$body) // don't move modals dom deeppition
+        that.$element.appendTo(that.$body) // don't move modals dom position
       }
 
       that.$element
@@ -1428,7 +1428,7 @@ if (typeof jQuery === 'undefined') {
 
       this.options.container ? $tip.appendTo(this.options.container) : $tip.insertAfter(this.$element)
 
-      var deepp          = this.getPosition()
+      var pos          = this.getPosition()
       var actualWidth  = $tip[0].offsetWidth
       var actualHeight = $tip[0].offsetHeight
 
@@ -1437,10 +1437,10 @@ if (typeof jQuery === 'undefined') {
         var $container   = this.options.container ? $(this.options.container) : this.$element.parent()
         var containerDim = this.getPosition($container)
 
-        placement = placement == 'bottom' && deepp.bottom + actualHeight > containerDim.bottom ? 'top'    :
-                    placement == 'top'    && deepp.top    - actualHeight < containerDim.top    ? 'bottom' :
-                    placement == 'right'  && deepp.right  + actualWidth  > containerDim.width  ? 'left'   :
-                    placement == 'left'   && deepp.left   - actualWidth  < containerDim.left   ? 'right'  :
+        placement = placement == 'bottom' && pos.bottom + actualHeight > containerDim.bottom ? 'top'    :
+                    placement == 'top'    && pos.top    - actualHeight < containerDim.top    ? 'bottom' :
+                    placement == 'right'  && pos.right  + actualWidth  > containerDim.width  ? 'left'   :
+                    placement == 'left'   && pos.left   - actualWidth  < containerDim.left   ? 'right'  :
                     placement
 
         $tip
@@ -1448,7 +1448,7 @@ if (typeof jQuery === 'undefined') {
           .addClass(placement)
       }
 
-      var calculatedOffset = this.getCalculatedOffset(placement, deepp, actualWidth, actualHeight)
+      var calculatedOffset = this.getCalculatedOffset(placement, pos, actualWidth, actualHeight)
 
       this.applyPlacement(calculatedOffset, placement)
 
@@ -1591,15 +1591,15 @@ if (typeof jQuery === 'undefined') {
     return $.extend({}, elRect, scroll, outerDims, elOffset)
   }
 
-  Tooltip.prototype.getCalculatedOffset = function (placement, deepp, actualWidth, actualHeight) {
-    return placement == 'bottom' ? { top: deepp.top + deepp.height,   left: deepp.left + deepp.width / 2 - actualWidth / 2 } :
-           placement == 'top'    ? { top: deepp.top - actualHeight, left: deepp.left + deepp.width / 2 - actualWidth / 2 } :
-           placement == 'left'   ? { top: deepp.top + deepp.height / 2 - actualHeight / 2, left: deepp.left - actualWidth } :
-        /* placement == 'right' */ { top: deepp.top + deepp.height / 2 - actualHeight / 2, left: deepp.left + deepp.width }
+  Tooltip.prototype.getCalculatedOffset = function (placement, pos, actualWidth, actualHeight) {
+    return placement == 'bottom' ? { top: pos.top + pos.height,   left: pos.left + pos.width / 2 - actualWidth / 2 } :
+           placement == 'top'    ? { top: pos.top - actualHeight, left: pos.left + pos.width / 2 - actualWidth / 2 } :
+           placement == 'left'   ? { top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left - actualWidth } :
+        /* placement == 'right' */ { top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left + pos.width }
 
   }
 
-  Tooltip.prototype.getViewportAdjustedDelta = function (placement, deepp, actualWidth, actualHeight) {
+  Tooltip.prototype.getViewportAdjustedDelta = function (placement, pos, actualWidth, actualHeight) {
     var delta = { top: 0, left: 0 }
     if (!this.$viewport) return delta
 
@@ -1607,16 +1607,16 @@ if (typeof jQuery === 'undefined') {
     var viewportDimensions = this.getPosition(this.$viewport)
 
     if (/right|left/.test(placement)) {
-      var topEdgeOffset    = deepp.top - viewportPadding - viewportDimensions.scroll
-      var bottomEdgeOffset = deepp.top + viewportPadding - viewportDimensions.scroll + actualHeight
+      var topEdgeOffset    = pos.top - viewportPadding - viewportDimensions.scroll
+      var bottomEdgeOffset = pos.top + viewportPadding - viewportDimensions.scroll + actualHeight
       if (topEdgeOffset < viewportDimensions.top) { // top overflow
         delta.top = viewportDimensions.top - topEdgeOffset
       } else if (bottomEdgeOffset > viewportDimensions.top + viewportDimensions.height) { // bottom overflow
         delta.top = viewportDimensions.top + viewportDimensions.height - bottomEdgeOffset
       }
     } else {
-      var leftEdgeOffset  = deepp.left - viewportPadding
-      var rightEdgeOffset = deepp.left + viewportPadding + actualWidth
+      var leftEdgeOffset  = pos.left - viewportPadding
+      var rightEdgeOffset = pos.left + viewportPadding + actualWidth
       if (leftEdgeOffset < viewportDimensions.left) { // left overflow
         delta.left = viewportDimensions.left - leftEdgeOffset
       } else if (rightEdgeOffset > viewportDimensions.width) { // right overflow
@@ -1876,7 +1876,7 @@ if (typeof jQuery === 'undefined') {
     this.scrollHeight = this.getScrollHeight()
 
     if (!$.isWindow(this.$scrollElement[0])) {
-      offsetMethod = 'deeppition'
+      offsetMethod = 'position'
       offsetBase   = this.$scrollElement.scrollTop()
     }
 
@@ -2194,18 +2194,18 @@ if (typeof jQuery === 'undefined') {
 
   Affix.prototype.getState = function (scrollHeight, height, offsetTop, offsetBottom) {
     var scrollTop    = this.$target.scrollTop()
-    var deeppition     = this.$element.offset()
+    var position     = this.$element.offset()
     var targetHeight = this.$target.height()
 
     if (offsetTop != null && this.affixed == 'top') return scrollTop < offsetTop ? 'top' : false
 
     if (this.affixed == 'bottom') {
-      if (offsetTop != null) return (scrollTop + this.unpin <= deeppition.top) ? false : 'bottom'
+      if (offsetTop != null) return (scrollTop + this.unpin <= position.top) ? false : 'bottom'
       return (scrollTop + targetHeight <= scrollHeight - offsetBottom) ? false : 'bottom'
     }
 
     var initializing   = this.affixed == null
-    var colliderTop    = initializing ? scrollTop : deeppition.top
+    var colliderTop    = initializing ? scrollTop : position.top
     var colliderHeight = initializing ? targetHeight : height
 
     if (offsetTop != null && scrollTop <= offsetTop) return 'top'
@@ -2218,8 +2218,8 @@ if (typeof jQuery === 'undefined') {
     if (this.pinnedOffset) return this.pinnedOffset
     this.$element.removeClass(Affix.RESET).addClass('affix')
     var scrollTop = this.$target.scrollTop()
-    var deeppition  = this.$element.offset()
-    return (this.pinnedOffset = deeppition.top - scrollTop)
+    var position  = this.$element.offset()
+    return (this.pinnedOffset = position.top - scrollTop)
   }
 
   Affix.prototype.checkPositionWithEventLoop = function () {

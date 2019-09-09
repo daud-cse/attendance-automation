@@ -3,10 +3,10 @@
 </div>
 <div class="wrapper-md">
     <!-- toaster directive -->
-    <toaster-container toaster-options="{'deeppition-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
     <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
     <!-- attendance directive -->
-    <form role="form" ng-controller="EmployeeAttendanceEditCtrl" name="step1" ng-submit="EditEmployeeAttendance()" method="deeppt">
+    <form role="form" ng-controller="EmployeeAttendanceEditCtrl" name="step1" ng-submit="EditEmployeeAttendance()" method="post">
         <div class="panel panel-info">
             <div class="panel-heading font-bold">Attendance Info</div>
             <div class="panel-body">

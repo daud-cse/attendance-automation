@@ -1,0 +1,149 @@
+﻿
+
+
+
+
+@model IEnumerable<deepp.Entities.Models.Exam>
+@{
+    ViewBag.Title = "Merit List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<main id="main-content">
+    <!-- Main Section -->
+    <div class="main-section">
+        <div class="container">
+            <div class="row">
+                <aside class="page-sidebar">
+                    <div class="widget cs_ads_banner">
+                        <div class="cs_banner_section">
+                            <a target="_blank" href="" id="cs_banner_clicks276833028" onclick="cs_banner_click_count_plus('http://uoce.chimpgroup.com/wp-admin/admin-ajax.php', '276833028')"><img alt="Sidebar" src="http://uoce.chimpgroup.com/wp-content/uploads/add-img.jpg"></a>
+                        </div>
+                    </div>
+
+                    <div class="widget widget_tabs">
+                        <div class="widget element-size-100 widget_tabs">
+                            <div class="widget-section-title">
+                                <h6></h6>
+                            </div>
+                            <ul class="tab-nav">
+                                <li class="active"><a href="#tab1" data-toggle="tab"><i class="icon-user9"> Notice</i></a></li>
+                                <li class=""><a href="#tab2" data-toggle="tab"><i class="icon-tag7">News & Events</i></a></li>
+                                @*<li class=""><a href="#tab3" data-toggle="tab"><i class="icon-folder5">Acdemic Caleder</i></a></li>*@
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade in active tabs news" id="tab1">
+                                    <ul>
+
+                                        @{Html.RenderAction("GetAll", "Notice");}
+                                    </ul>
+                                    <a href="~/Notice/GetAllWithGrid" class="viewall-btn csbg-hovercolor"><i class="icon-angle-double-right"></i> More Notice</a>
+                                </div>
+                                <div class="tab-pane fade tabs news" id="tab2">
+
+
+                                    @{Html.RenderAction("GetAll", "Event");}
+
+                                    <a href="~/Event/GetAllWithGrid" class="viewall-btn csbg-hovercolor"><i class="icon-angle-double-right"></i> More News</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </aside>
+                <div class="page-content">
+                    <section class="page-section">
+                        <div class="section-fullwidth">
+                            <div class="cs-course-detail">
+                                <div class="cs-heading-sec">
+                                    <div class="inner-sec">
+                                        <h1>
+                                            @ViewBag.Title
+                                        </h1>
+                                    </div>
+                                </div>
+
+                                <div class="cs-detail-text">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Roll</th>
+                                                <th>Student Name</th>
+                                                <th>Class</th>
+                                                <th>Section</th>
+                                                <th>Group</th>
+                                                <th>Grade</th>
+                                                <th>point</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @*@foreach (var item in Model.ToList())
+                                            {
+                                                <tr>
+                                                    <td>@Html.DisplayFor(modelItem => item.GradeName)</td>
+                                                    <td>@Html.DisplayFor(modelItem => item.GradePoint)</td>
+                                                    <td>@Html.DisplayFor(modelItem => item.MarksFrom)</td>
+                                                    <td>@Html.DisplayFor(modelItem => item.MarksUpto)</td>
+                                                </tr>
+
+                                            }*@
+                                            <tr>
+                                                <td>01</td>
+                                                <td>Abdul Karim</td>
+                                                <td>six</td>
+                                                <td>A</td>
+                                                <td>Null</td>
+                                                <td>A+</td>
+                                                <td>5</td>
+                                            </tr>
+                                            <tr>
+                                                <td>05</td>
+                                                <td>Rahat Hossain</td>
+                                                <td>seven</td>
+                                                <td>A</td>
+                                                <td>Null</td>
+                                                <td>A+</td>
+                                                <td>5</td>
+                                            </tr>
+                                            <tr>
+                                                <td>03</td>
+                                                <td>Mujibur Rahman</td>
+                                                <td>Eight</td>
+                                                <td>C</td>
+                                                <td>Null</td>
+                                                <td>A</td>
+                                                <td>4.5</td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>Kamrul Islam</td>
+                                                <td>Nine</td>
+                                                <td>A</td>
+                                                <td>Science</td>
+                                                <td>A+</td>
+                                                <td>5</td>
+                                            </tr>
+                                            <tr>
+                                                <td>01</td>
+                                                <td>Najmul Islam</td>
+                                                <td>Ten</td>
+                                                <td>B</td>
+                                                <td>Arts</td>
+                                                <td>A</td>
+                                                <td>4</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="cs-team team-box">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</main>

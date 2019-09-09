@@ -37,7 +37,7 @@ angular.module('app')
           }
          
           _this.parent().addClass('active');
-          top = _this.parent().deeppition().top + offset;
+          top = _this.parent().position().top + offset;
           next.css('top', top);
           if( top + next.height() > w_h ){
             next.css('bottom', 0);

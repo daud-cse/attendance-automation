@@ -1,0 +1,556 @@
+﻿
+@model  deepp.Entities.Models.ResultPublication
+@{
+    ViewBag.Title = "Result";
+}
+<main id="main-content">
+    <!-- Main Section -->
+    <div class="main-section">
+        <div class="container">
+            <div class="row">
+                <div class="page-content">
+                    <section class="page-section">
+                        <div class="section-fullwidth">
+                            <div class="cs-course-detail">
+                                <div class="cs-heading-sec">
+                                    <div class="inner-sec">
+                                        <h1>
+                                            @ViewBag.Title
+                                        </h1>
+                                    </div>
+                                </div>
+                                @*<div class="cs-detail-area">
+                                        <figure> <img alt="Phonics and reading" src="http://uoce.chimpgroup.com/wp-content/uploads/UOCE-Courses-Posts-13.jpg"> </figure>
+                                        <div class="detail-block">
+                                            <ul class="course-tags">
+                                                <li><a href="http://uoce.chimpgroup.com/course-category/libuary/">Libuary</a></li>
+                                                <li><a href="http://uoce.chimpgroup.com/course-category/managment/">Managment</a></li>
+                                                <li><a href="http://uoce.chimpgroup.com/course-category/science/">SCIENCE</a></li>
+                                                <li style="background:#dd9933!important;" class="red">Advance</li>
+                                            </ul>
+                                            <span class="start-date"><i class="icon-calendar10"></i> Starts from:Thu, July 11, 2013</span>
+
+                                            <span class="timing">
+                                                <i class="icon-clock6"></i>
+                                                1:30PM
+                                                - 2:00PM
+                                            </span>
+                                            <div class="address-box">
+                                                <div class="price-box"> <span class="price">$22/pw</span> <a href="http://uoce.chimpgroup.com/contact-us/">Closed</a> </div>
+                                                <address>
+
+                                                    <span class="title">Campus Location</span>
+                                                    <p>274 Seven Sisters Road, London, N4 2HY,London,United Kingdom</p>                            <a class="map-btn" href="#">Map it</a>
+                                                </address>
+
+                                            </div>
+                                        </div>
+                                    </div>*@
+
+                                @*<div class="cs-map-view" style="display: none;">
+                                        <div class="row">
+                                            <script src="https://maps.googleapis.com/maps/api/js?libraries=places" type="text/javascript"></script><div style="animation-duration:" class="col-md-12  ">
+                                                <div class="clear"></div><div style=";" class="cs-map-section">
+                                                    <div class="cs-map"><ul class="cs-map-tabs"><li class="cs-active"><span onclick="javascript:cs_toggle_street_view('mapview');">  </span></li><li><span onclick="javascript:cs_toggle_street_view('streetview');"> </span></li></ul><div class="cs-map-content"><div style="height: 250px; deeppition: relative; overflow: hidden;" id="map_canvasbL3zXgInN3" class="mapcode iframe mapsection gmapwrapp"><div style="height: 100%; width: 100%; deeppition: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div style="deeppition: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;" class="gm-style"><div style="deeppition: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default;" tabindex="0"><div style="z-index: 1; deeppition: absolute; top: 0px; left: 0px; width: 100%;"><div style="deeppition: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="deeppition: absolute; left: 0px; top: 0px; z-index: 0;"><div style="deeppition: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;" aria-hidden="true"><div style="width: 256px; height: 256px; deeppition: absolute; left: -188px; top: -74px;"></div></div></div></div><div style="deeppition: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="deeppition: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="deeppition: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="deeppition: absolute; left: 0px; top: 0px; z-index: -1;"><div style="deeppition: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;" aria-hidden="true"><div style="width: 256px; height: 256px; overflow: hidden; deeppition: absolute; left: -188px; top: -74px;"></div></div></div></div><div style="deeppition: absolute; z-index: 0; left: 0px; top: 0px;"><div style="overflow: hidden; width: 790px; height: 250px;"><img style="width: 790px; height: 250px;" src="https://maps.googleapis.com/maps/api/js/StaticMapService.GetMapImage?1m2&amp;1i261564&amp;2i174154&amp;2e1&amp;3u11&amp;4m2&amp;1u790&amp;2u250&amp;5m5&amp;1e0&amp;5sen-US&amp;6sus&amp;10b1&amp;12b1&amp;token=41113"></div></div><div style="deeppition: absolute; left: 0px; top: 0px; z-index: 0;"><div style="deeppition: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;" aria-hidden="true"><div style="deeppition: absolute; left: -188px; top: -74px; transition: opacity 200ms ease-out 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" draggable="false" alt="" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i11!2i1021!3i680!4i256!2m3!1e0!2sm!3i394091067!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0&amp;token=41840"></div></div></div></div><div style="z-index: 2; deeppition: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0; transition-duration: 0.8s;" class="gm-style-pbc"><p class="gm-style-pbt">Use ctrl + scroll to zoom the map</p></div><div style="z-index: 3; deeppition: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px;"><div style="z-index: 1; deeppition: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px;"></div></div><div style="z-index: 4; deeppition: absolute; top: 0px; left: 0px; width: 100%;"><div style="deeppition: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="deeppition: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="deeppition: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"></div><div style="deeppition: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"><div style="cursor: default; deeppition: absolute; width: 53px; height: 18px; left: 368px; top: 103px; z-index: 103;"><div style="deeppition: absolute; left: 0px; top: 0px;"><div style="width: 0px; height: 0px; border-right: 10px solid transparent; border-left: 10px solid transparent; border-top: 24px solid rgba(0, 0, 0, 0.1); deeppition: absolute; left: 17px; top: 18px;"></div><div style="deeppition: absolute; left: 0px; top: 0px; background-color: rgba(0, 0, 0, 0.2); border-radius: 2px; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); width: 53px; height: 18px;"></div><div style="border-top-width: 24px; deeppition: absolute; left: 17px; top: 15px;"><div style="deeppition: absolute; overflow: hidden; left: -6px; top: -1px; width: 16px; height: 30px;"><div style="deeppition: absolute; left: 6px; background-color: rgb(255, 255, 255); transform: skewX(22.6deg); transform-origin: 0px 0px 0px; height: 24px; width: 10px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.6);"></div></div><div style="deeppition: absolute; overflow: hidden; top: -1px; left: 10px; width: 16px; height: 30px;"><div style="deeppition: absolute; left: 0px; background-color: rgb(255, 255, 255); transform: skewX(-22.6deg); transform-origin: 10px 0px 0px; height: 24px; width: 10px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.6);"></div></div></div><div style="deeppition: absolute; left: 1px; top: 1px; border-radius: 2px; background-color: rgb(255, 255, 255); width: 51px; height: 16px;"></div></div><div style="top: 9px; deeppition: absolute; left: 15px; width: 23px;" class="gm-style-iw"><div style="display: inline-block; overflow: auto; max-height: 118px; max-width: 250px;"><div style="overflow: auto;">274 Seven Sisters Road, London, N4 2HY,London,United Kingdom</div></div><div style="border-top: 1px solid rgb(204, 204, 204); margin-top: 9px; padding: 6px; display: none; visibility: hidden; font-size: 13px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-family: Roboto,Arial;"><a href="" target="_blank" style="cursor: pointer; color: rgb(66, 127, 237); text-decoration: none;">View on Google Maps</a></div></div><div style="width: 13px; height: 13px; overflow: hidden; deeppition: absolute; opacity: 0.7; right: 12px; top: 10px; z-index: 10000; cursor: pointer;"><img style="deeppition: absolute; left: -2px; top: -336px; width: 59px; height: 492px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png" draggable="false"></div></div></div></div></div><div style="margin-left: 5px; margin-right: 5px; z-index: 1000000; deeppition: absolute; left: 0px; bottom: 0px;"><a style="deeppition: static; overflow: visible; float: none; display: inline;" target="_blank" href="https://maps.google.com/maps?ll=51.586347,-0.398296&amp;z=11&amp;t=m&amp;hl=en-US&amp;gl=US&amp;mapclient=apiv3" title="Click to see this area on Google Maps"><div style="width: 66px; height: 26px; cursor: pointer;"><img style="deeppition: absolute; left: 0px; top: 0px; width: 66px; height: 26px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;" src="https://maps.gstatic.com/mapfiles/api-3/images/google4.png" draggable="false"></div></a></div><div style="background-color: white; padding: 15px 21px; border: 1px solid rgb(171, 171, 171); font-family: Roboto,Arial,sans-serif; color: rgb(34, 34, 34); box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2); z-index: 10000002; display: none; width: 0px; height: 0px; deeppition: absolute; left: 5px; top: 5px;"><div style="padding: 0px 0px 10px; font-size: 16px;">Map Data</div><div style="font-size: 13px;">Map data &copy;2017 Google</div><div style="width: 13px; height: 13px; overflow: hidden; deeppition: absolute; opacity: 0.7; right: 12px; top: 12px; z-index: 10000; cursor: pointer;"><img style="deeppition: absolute; left: -2px; top: -336px; width: 59px; height: 492px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png" draggable="false"></div></div><div class="gmnoprint" style="z-index: 1000001; deeppition: absolute; right: 0px; bottom: 0px; width: 12px;"><div draggable="false" style="-moz-user-select: none; height: 14px; line-height: 14px;" class="gm-style-cc"><div style="opacity: 0.7; width: 100%; height: 100%; deeppition: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="deeppition: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto,Arial,sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a style="color: rgb(68, 68, 68); text-decoration: none; cursor: pointer;">Map Data</a><span style="display: none;">Map data &copy;2017 Google</span></div></div></div><div class="gmnoscreen" style="deeppition: absolute; right: 0px; bottom: 0px;"><div style="font-family: Roboto,Arial,sans-serif; font-size: 11px; color: rgb(68, 68, 68); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);">Map data &copy;2017 Google</div></div><div class="gmnoprint gm-style-cc" style="z-index: 1000001; -moz-user-select: none; height: 14px; line-height: 14px; deeppition: absolute; right: 0px; bottom: 0px;" draggable="false"><div style="opacity: 0.7; width: 100%; height: 100%; deeppition: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="deeppition: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto,Arial,sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a style="text-decoration: none; cursor: pointer; color: rgb(68, 68, 68);" href="https://www.google.com/intl/en-US_US/help/terms_maps.html" target="_blank">Terms of Use</a></div></div><div style="cursor: pointer; width: 25px; height: 25px; overflow: hidden; margin: 10px 14px; deeppition: absolute; top: 0px; right: 0px;"><img style="deeppition: absolute; left: -52px; top: -86px; width: 164px; height: 175px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;" src="https://maps.gstatic.com/mapfiles/api-3/images/sv9.png" draggable="false" class="gm-fullscreen-control"></div><div draggable="false" style="-moz-user-select: none; height: 14px; line-height: 14px; deeppition: absolute; right: 0px; bottom: 0px; display: none;" class="gm-style-cc"><div style="opacity: 0.7; width: 100%; height: 100%; deeppition: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="deeppition: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto,Arial,sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a target="_new" title="Report errors in the road map or imagery to Google" style="font-family: Roboto,Arial,sans-serif; font-size: 10px; color: rgb(68, 68, 68); text-decoration: none; deeppition: relative;" href="https://www.google.com/maps/@51.5863473,-0.3982963,11z/data=!10m1!1e1!12b1?source=apiv3&amp;rapsrc=apiv3">Report a map error</a></div></div><div class="gmnoprint gm-bundled-control gm-bundled-control-on-bottom" style="margin: 10px; -moz-user-select: none; deeppition: absolute; bottom: 0px; right: 0px; display: none;" draggable="false" controlwidth="0" controlheight="0"><div class="gmnoprint" style="deeppition: absolute; left: 0px; top: 0px; display: none;" controlwidth="28" controlheight="55"><div draggable="false" style="-moz-user-select: none; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); border-radius: 2px; cursor: pointer; background-color: rgb(255, 255, 255); width: 28px; height: 55px;"><div title="Zoom in" aria-label="Zoom in" tabindex="0" style="deeppition: relative; width: 28px; height: 27px; left: 0px; top: 0px;"><div style="overflow: hidden; deeppition: absolute; width: 15px; height: 15px; left: 7px; top: 6px;"><img style="deeppition: absolute; left: 0px; top: 0px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;" src="https://maps.gstatic.com/mapfiles/api-3/images/tmapctrl.png" draggable="false"></div></div><div style="deeppition: relative; overflow: hidden; width: 67%; height: 1px; left: 16%; background-color: rgb(230, 230, 230); top: 0px;"></div><div title="Zoom out" aria-label="Zoom out" tabindex="0" style="deeppition: relative; width: 28px; height: 27px; left: 0px; top: 0px;"><div style="overflow: hidden; deeppition: absolute; width: 15px; height: 15px; left: 7px; top: 6px;"><img style="deeppition: absolute; left: 0px; top: -15px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;" src="https://maps.gstatic.com/mapfiles/api-3/images/tmapctrl.png" draggable="false"></div></div></div></div><div class="gmnoprint" controlwidth="28" controlheight="0" style="display: none; deeppition: absolute;"><div style="width: 28px; height: 28px; overflow: hidden; deeppition: absolute; border-radius: 2px; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); cursor: pointer; background-color: rgb(255, 255, 255); display: none;" title="Rotate map 90 degrees"><img style="deeppition: absolute; left: -141px; top: 6px; width: 170px; height: 54px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" src="https://maps.gstatic.com/mapfiles/api-3/images/tmapctrl4.png" draggable="false"></div><div style="width: 0px; height: 0px; overflow: hidden; deeppition: absolute; border-radius: 2px; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); top: 0px; cursor: pointer; background-color: rgb(255, 255, 255);" class="gm-tilt"><img style="deeppition: absolute; left: 0px; top: 0px; width: 170px; height: 54px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" src="https://maps.gstatic.com/mapfiles/api-3/images/tmapctrl4.png" draggable="false"></div></div></div><div class="gmnoprint" style="margin: 10px; z-index: 0; deeppition: absolute; cursor: pointer; display: none; left: 0px; top: 0px;"><div style="float: left;" class="gm-style-mtc"><div style="direction: ltr; overflow: hidden; text-align: center; deeppition: relative; color: rgb(0, 0, 0); font-family: Roboto,Arial,sans-serif; -moz-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 8px; border-bottom-left-radius: 2px; border-top-left-radius: 2px; background-clip: padding-box; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); font-weight: 500;" draggable="false" title="Show street map">Map</div><div style="background-color: white; z-index: -1; padding: 2px; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); deeppition: absolute; left: 0px; top: 0px; text-align: left; display: none;"><div style="color: rgb(0, 0, 0); font-family: Roboto,Arial,sans-serif; -moz-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 6px 8px 6px 6px; direction: ltr; text-align: left; white-space: nowrap;" draggable="false" title="Show street map with terrain"><span role="checkbox" style="box-sizing: border-box; deeppition: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; background-color: rgb(255, 255, 255); border: 1px solid rgb(198, 198, 198); border-radius: 1px; width: 13px; height: 13px; vertical-align: middle;"><div style="deeppition: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden; display: none;"><img style="deeppition: absolute; left: -52px; top: -44px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none; width: 68px; height: 67px;" src="https://maps.gstatic.com/mapfiles/mv/imgs8.png" draggable="false"></div></span><label style="vertical-align: middle; cursor: pointer;">Terrain</label></div></div></div><div style="float: left;" class="gm-style-mtc"><div style="direction: ltr; overflow: hidden; text-align: center; deeppition: relative; color: rgb(86, 86, 86); font-family: Roboto,Arial,sans-serif; -moz-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 8px; border-bottom-right-radius: 2px; border-top-right-radius: 2px; background-clip: padding-box; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); border-left: 0px none;" draggable="false" title="Show satellite imagery">Satellite</div><div style="background-color: white; z-index: -1; padding: 2px; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); deeppition: absolute; right: 0px; top: 0px; text-align: left; display: none;"><div style="color: rgb(0, 0, 0); font-family: Roboto,Arial,sans-serif; -moz-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 6px 8px 6px 6px; direction: ltr; text-align: left; white-space: nowrap;" draggable="false" title="Show imagery with street names"><span role="checkbox" style="box-sizing: border-box; deeppition: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; background-color: rgb(255, 255, 255); border: 1px solid rgb(198, 198, 198); border-radius: 1px; width: 13px; height: 13px; vertical-align: middle;"><div style="deeppition: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden;"><img style="deeppition: absolute; left: -52px; top: -44px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none; width: 68px; height: 67px;" src="https://maps.gstatic.com/mapfiles/mv/imgs8.png" draggable="false"></div></span><label style="vertical-align: middle; cursor: pointer;">Labels</label></div></div></div></div></div></div></div></div></div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>*@
+
+                                @*<div class="cs-features">
+                                        <h5>Course Feature</h5>
+                                        <ul>
+                                            <li>
+                                                <i class="Array"></i>
+                                                <div class="feat-detail">
+                                                    <span class="title">Course Code</span>
+                                                    <span class="value">A1234-X</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <i class="Array"></i>
+                                                <div class="feat-detail">
+                                                    <span class="title">Duration</span>
+                                                    <span class="value">2 years</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <i class="Array"></i>
+                                                <div class="feat-detail">
+                                                    <span class="title">Course Type</span>
+                                                    <span class="value">Short Courses</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <i class="Array"></i>
+                                                <div class="feat-detail">
+                                                    <span class="title">Classes Days</span>
+                                                    <span class="value">Saturday, Monday, Tuesday</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <i class="Array"></i>
+                                                <div class="feat-detail">
+                                                    <span class="title">Campus</span>
+                                                    <span class="value">New York Campus</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <i class="Array"></i>
+                                                <div class="feat-detail">
+                                                    <span class="title">Min Qualification</span>
+                                                    <span class="value">MA (Postgraduate)</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>*@
+                                <div class="cs-detail-text">
+                                    <h5>Result Description</h5>
+                                    <p>@*@MvcHtmlString.Create(@Model.Title)*@
+
+
+                                    Result Info Add
+                                    </p>
+
+                                    @*<div class="col-md-12 cs-tabs box">
+                                        <div id="cs-tab">
+                                            <ul class="nav nav-tabs">
+                                                <li class=""><a data-toggle="tab" href="#tababout-the-coures8769" aria-expanded="false">Master Plan</a></li>
+                                                <li class=""><a data-toggle="tab" href="#tabhow-to-enroll8666" aria-expanded="false"> Infractructure</a></li>
+                                                <li class=""><a data-toggle="tab" href="#tabcurriculam3794" aria-expanded="false">CURRICULAM</a></li>
+                                                <li class="active"><a data-toggle="tab" href="#tabtuition-cost4805" aria-expanded="true">TUITION COST</a></li>
+                                            </ul><div class="tab-content">
+                                                <div id="tababout-the-coures8769" class="tab-pane fade">
+                                                    <div class="tab-contents">
+                                                        @MvcHtmlString.Create(@Model.MasterPlanText) <div id="cs-list423937" class="col-md-12  cs-list">
+                                                            <div class="liststyle">
+                                                                <ul class="cs-iconlist"><li style=""><i class="icon-check-square"></i>&nbsp; Regarding rabbit ahead dolorously soothingly ouch unbound excluding sewed </li><li style=""><i class="icon-check-square"></i>&nbsp; Pangolin regarding rabbit be the ahead and hedgehog unsuccessfully </li><li style=""><i class="icon-check-square"></i>&nbsp; Struck labrador besides and yet by goodness much </li><li style=""><i class="icon-check-square"></i>&nbsp; Bowed meadowlark dully jeez otter altruistically wrote oh racy alas </li><li style=""><i class="icon-check-square"></i>&nbsp; Less when oh. Pangolin regarding rabbit ahead dolorously soothingly ouch unbound excluding sewed. </li> </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div><div id="tabhow-to-enroll8666" class="tab-pane fade">
+                                                    <div class="tab-contents">
+                                                        @MvcHtmlString.Create(@Model.InfractructureText) <div id="cs-list783135" class="col-md-12  cs-list">
+                                                            <div class="liststyle">
+                                                                <ul class="cs-iconlist"><li style=""><i class="icon-check-square"></i>&nbsp; Regarding rabbit ahead dolorously soothingly ouch unbound excluding sewed </li><li style=""><i class="icon-check-square"></i>&nbsp; Pangolin regarding rabbit be the ahead and hedgehog unsuccessfully </li><li style=""><i class="icon-check-square"></i>&nbsp; Struck labrador besides and yet by goodness much </li><li style=""><i class="icon-check-square"></i>&nbsp; Bowed meadowlark dully jeez otter altruistically wrote oh racy alas </li><li style=""><i class="icon-check-square"></i>&nbsp; Less when oh. Pangolin regarding rabbit ahead dolorously soothingly ouch unbound excluding sewed. </li> </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div><div id="tabcurriculam3794" class="tab-pane fade">
+                                                    <div class="tab-contents">
+                                                        Pangolin regarding rabbit ahead dolorously soothingly ouch unbound excluding.Regarding rabbit ahead dolorously soothingly ouch unbound excluding sewed Pangolin regarding rabbit be the ahead and hedgehog unsuccessfully struck labrador besides and yet by goodness much bowed meadowlark dully jeez otter altruistically wrote oh racy alas and less when oh. Pangolin regarding rabbit ahead dolorously soothingly ouch unbound excluding sewed best and hedgehog. Pangolin regarding rabbit ahead dolorously soothingly ouch unbound excluding sewed Pangolin regarding rabbit be the ahead and hedgehog unsuccessfully struck labrador besides and yet by goodness much bowed meadowlark dully jeez otter altruistically wrote oh racy alas and less when oh. Pangolin regarding rabbit ahead dolorously soothingly ouch unbound excluding sewed best and hedgehog.Pangolin regarding rabbit ahead dolorously soothingly ouch be the unbound excluding sewed. Pangolin regarding Pangolin regarding rabbit best <div id="cs-list783727" class="col-md-12  cs-list">
+                                                            <div class="liststyle">
+                                                                <ul class="cs-iconlist"><li style=""><i class="icon-check-square"></i>&nbsp; Regarding rabbit ahead dolorously soothingly ouch unbound excluding sewed </li><li style=""><i class="icon-check-square"></i>&nbsp; Pangolin regarding rabbit be the ahead and hedgehog unsuccessfully </li><li style=""><i class="icon-check-square"></i>&nbsp; Struck labrador besides and yet by goodness much </li><li style=""><i class="icon-check-square"></i>&nbsp; Bowed meadowlark dully jeez otter altruistically wrote oh racy alas </li><li style=""><i class="icon-check-square"></i>&nbsp; Less when oh. Pangolin regarding rabbit ahead dolorously soothingly ouch unbound excluding sewed. </li> </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div><div id="tabtuition-cost4805" class="tab-pane fade active in">
+                                                    <div class="tab-contents">
+                                                        Pangolin regarding rabbit ahead dolorously soothingly ouch unbound excluding. Regarding rabbit ahead dolorously soothingly ouch unbound excluding sewed Pangolin regarding rabbit be the ahead and hedgehog unsuccessfully struck labrador besides and yet by goodness much bowed meadowlark dully jeez otter altruistically wrote oh racy alas and less when oh. Pangolin regarding rabbit ahead dolorously soothingly ouch unbound excluding sewed best and hedgehog. Pangolin regarding rabbit ahead dolorously soothingly ouch unbound excluding sewed Pangolin regarding rabbit be the ahead and hedgehog unsuccessfully struck labrador besides and yet by goodness much bowed meadowlark dully jeez otter altruistically wrote oh racy alas and less when oh. Pangolin regarding rabbit ahead dolorously soothingly ouch unbound excluding sewed best and hedgehog.Pangolin regarding rabbit ahead dolorously soothingly ouch be the unbound excluding sewed. Pangolin regarding Pangolin regarding rabbit best <div id="cs-list910626" class="col-md-12  cs-list">
+                                                            <div class="liststyle">
+                                                                <ul class="cs-iconlist"><li style=""><i class="icon-check-square"></i>&nbsp; Regarding rabbit ahead dolorously soothingly ouch unbound excluding sewed </li><li style=""><i class="icon-check-square"></i>&nbsp; Pangolin regarding rabbit be the ahead and hedgehog unsuccessfully </li><li style=""><i class="icon-check-square"></i>&nbsp; Struck labrador besides and yet by goodness much </li><li style=""><i class="icon-check-square"></i>&nbsp; Bowed meadowlark dully jeez otter altruistically wrote oh racy alas </li><li style=""><i class="icon-check-square"></i>&nbsp; Less when oh. Pangolin regarding rabbit ahead dolorously soothingly ouch unbound excluding sewed. </li> </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>*@
+                                </div>
+                                <div class="cs-team team-box">
+
+
+
+
+
+                                    @*<h5>CLASS INSTRECTORS</h5>
+                                        <div class="cs-team-slider">
+
+                                            <div class="flex-viewport" style="overflow: hidden; deeppition: relative;">
+                                                <ul class="slides" style="width: 1000%; transition-duration: 0.6s; transform: translate3d(-1580px, 0px, 0px);">
+                                                    <li class="clone" aria-hidden="true" style="width: 790px; float: left; display: block;">
+                                                        <div class="graybackground">
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <div class="overlayslide-team">
+                                                                        <a href="http://uoce.chimpgroup.com/teams/nadezhda-marlon/">
+                                                                            <img alt="UOCE-Team-Members-07" src="http://uoce.chimpgroup.com/wp-content/uploads/UOCE-Team-Members-07.jpg" class="media-object" draggable="false">
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4><a style="color:#FFF !important;" href="http://uoce.chimpgroup.com/teams/nadezhda-marlon/">NADEZHDA MARLON</a></h4>
+                                                                    <h3 style="color: !important">POLITICAL SCIENCE</h3>
+                                                                    <p style="color: !important" class="whitecolor-text">
+                                                                        Pangolin regarding rabbit ahead dolorously soothingly ouch unbound excluding sewed and hedgehog unsuccessfully struck labrador besides and yet by goodness much bowed meadowlark dully jeez otter altruistically wrote oh racy alas and less when oh.Pangolin r...
+                                                                    </p>
+                                                                    <div class="contactdiv">
+                                                                        <ul>
+                                                                            <li>
+                                                                                <a class="emaildiv" href="mailto:info@example.com"><span><i class="icon-envelope4"></i></span>info@example.com</a>
+                                                                            </li>
+
+                                                                            <li><a class="emaildiv" href="#"><span><i class="icon-phone6"></i></span> (800) 123 456 789</a>    </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="col-lg-12 marginleft">
+                                                                        <div class="social-media-blog">
+                                                                            <ul>
+                                                                                <li><a class="icon-facebook2" data-original-title="Facebook" href="http://facebook.com"></a></li>
+                                                                                <li><a class="icon-twitter6" data-original-title="Twitter" href="http://twitter.com"></a></li>
+                                                                                <li><a class="icon-googleplus7" data-original-title="GooglePlus" href="http://google.com"></a></li>
+                                                                                <li><a class="icon-instagram4" data-original-title="Instagram" href="http://linkedin.com"></a></li>
+                                                                                <li><a class="icon-envelope4" data-original-title="Email" href="mailto:info@example.com"> <span>Email</span></a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="" style="width: 790px; float: left; display: block;">
+                                                        <div class="graybackground">
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <div class="overlayslide-team">
+                                                                        <a href="http://uoce.chimpgroup.com/teams/brown/">
+                                                                            <img alt="UOCE-Team-Members-10" src="http://uoce.chimpgroup.com/wp-content/uploads/UOCE-Team-Members-10.jpg" class="media-object" draggable="false">
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4><a style="color:#FFF !important;" href="http://uoce.chimpgroup.com/teams/brown/">BROWN</a></h4>
+                                                                    <h3 style="color: !important">FINE ARTS</h3>
+                                                                    <p style="color: !important" class="whitecolor-text">
+                                                                        Pangolin regarding rabbit ahead dolorously soothingly ouch unbound excluding sewed and hedgehog unsuccessfully struck labrador besides and yet by goodness much bowed meadowlark dully jeez otter altruistically wrote oh racy alas and less when oh.Pangolin r...
+                                                                    </p>
+                                                                    <div class="contactdiv">
+                                                                        <ul>
+                                                                            <li>
+                                                                                <a class="emaildiv" href="mailto:info@example.com"><span><i class="icon-envelope4"></i></span>info@example.com</a>
+                                                                            </li>
+
+                                                                            <li><a class="emaildiv" href="#"><span><i class="icon-phone6"></i></span> (800) 123 456 789</a>    </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="col-lg-12 marginleft">
+                                                                        <div class="social-media-blog">
+                                                                            <ul>
+                                                                                <li><a class="icon-facebook2" data-original-title="Facebook" href="http://facebook.com"></a></li>
+                                                                                <li><a class="icon-twitter6" data-original-title="Twitter" href="http://twitter.com"></a></li>
+                                                                                <li><a class="icon-googleplus7" data-original-title="GooglePlus" href="http://google.com"></a></li>
+                                                                                <li><a class="icon-instagram4" data-original-title="Instagram" href="http://linkedin.com"></a></li>
+                                                                                <li><a class="icon-envelope4" data-original-title="Email" href="mailto:info@example.com"> <span>Email</span></a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+
+                                                    <li style="width: 790px; float: left; display: block;" class="flex-active-slide">
+                                                        <div class="graybackground">
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <div class="overlayslide-team">
+                                                                        <a href="http://uoce.chimpgroup.com/teams/kimmi-brown/">
+                                                                            <img alt="UOCE-Team-Members-09" src="http://uoce.chimpgroup.com/wp-content/uploads/UOCE-Team-Members-09.jpg" class="media-object" draggable="false">
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4><a style="color:#FFF !important;" href="http://uoce.chimpgroup.com/teams/kimmi-brown/">KIMMI BROWN</a></h4>
+                                                                    <h3 style="color: !important">POLITICAL SCIENCE</h3>
+                                                                    <p style="color: !important" class="whitecolor-text">
+                                                                        Pangolin regarding rabbit ahead dolorously soothingly ouch unbound excluding sewed and hedgehog unsuccessfully struck labrador besides and yet by goodness much bowed meadowlark dully jeez otter altruistically wrote oh racy alas and less when oh.Pangolin r...
+                                                                    </p>
+                                                                    <div class="contactdiv">
+                                                                        <ul>
+                                                                            <li>
+                                                                                <a class="emaildiv" href="mailto:info@example.com"><span><i class="icon-envelope4"></i></span>info@example.com</a>
+                                                                            </li>
+
+                                                                            <li><a class="emaildiv" href="#"><span><i class="icon-phone6"></i></span> (800) 123 456 789</a>    </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="col-lg-12 marginleft">
+                                                                        <div class="social-media-blog">
+                                                                            <ul>
+                                                                                <li><a class="icon-facebook2" data-original-title="Facebook" href="http://facebook.com"></a></li>
+                                                                                <li><a class="icon-twitter6" data-original-title="Twitter" href="http://twitter.com"></a></li>
+                                                                                <li><a class="icon-googleplus7" data-original-title="GooglePlus" href="http://google.com"></a></li>
+                                                                                <li><a class="icon-instagram4" data-original-title="Instagram" href="http://linkedin.com"></a></li>
+                                                                                <li><a class="icon-envelope4" data-original-title="Email" href="mailto:info@example.com"> <span>Email</span></a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+
+                                                    <li style="width: 790px; float: left; display: block;" class="">
+                                                        <div class="graybackground">
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <div class="overlayslide-team">
+                                                                        <a href="http://uoce.chimpgroup.com/teams/nadezhda-marlon/">
+                                                                            <img alt="UOCE-Team-Members-07" src="http://uoce.chimpgroup.com/wp-content/uploads/UOCE-Team-Members-07.jpg" class="media-object" draggable="false">
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4><a style="color:#FFF !important;" href="http://uoce.chimpgroup.com/teams/nadezhda-marlon/">NADEZHDA MARLON</a></h4>
+                                                                    <h3 style="color: !important">POLITICAL SCIENCE</h3>
+                                                                    <p style="color: !important" class="whitecolor-text">
+                                                                        Pangolin regarding rabbit ahead dolorously soothingly ouch unbound excluding sewed and hedgehog unsuccessfully struck labrador besides and yet by goodness much bowed meadowlark dully jeez otter altruistically wrote oh racy alas and less when oh.Pangolin r...
+                                                                    </p>
+                                                                    <div class="contactdiv">
+                                                                        <ul>
+                                                                            <li>
+                                                                                <a class="emaildiv" href="mailto:info@example.com"><span><i class="icon-envelope4"></i></span>info@example.com</a>
+                                                                            </li>
+
+                                                                            <li><a class="emaildiv" href="#"><span><i class="icon-phone6"></i></span> (800) 123 456 789</a>    </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="col-lg-12 marginleft">
+                                                                        <div class="social-media-blog">
+                                                                            <ul>
+                                                                                <li><a class="icon-facebook2" data-original-title="Facebook" href="http://facebook.com"></a></li>
+                                                                                <li><a class="icon-twitter6" data-original-title="Twitter" href="http://twitter.com"></a></li>
+                                                                                <li><a class="icon-googleplus7" data-original-title="GooglePlus" href="http://google.com"></a></li>
+                                                                                <li><a class="icon-instagram4" data-original-title="Instagram" href="http://linkedin.com"></a></li>
+                                                                                <li><a class="icon-envelope4" data-original-title="Email" href="mailto:info@example.com"> <span>Email</span></a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+
+                                                    <li class="clone" aria-hidden="true" style="width: 790px; float: left; display: block;">
+                                                        <div class="graybackground">
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <div class="overlayslide-team">
+                                                                        <a href="http://uoce.chimpgroup.com/teams/brown/">
+                                                                            <img alt="UOCE-Team-Members-10" src="http://uoce.chimpgroup.com/wp-content/uploads/UOCE-Team-Members-10.jpg" class="media-object" draggable="false">
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4><a style="color:#FFF !important;" href="http://uoce.chimpgroup.com/teams/brown/">BROWN</a></h4>
+                                                                    <h3 style="color: !important">FINE ARTS</h3>
+                                                                    <p style="color: !important" class="whitecolor-text">
+                                                                        Pangolin regarding rabbit ahead dolorously soothingly ouch unbound excluding sewed and hedgehog unsuccessfully struck labrador besides and yet by goodness much bowed meadowlark dully jeez otter altruistically wrote oh racy alas and less when oh.Pangolin r...
+                                                                    </p>
+                                                                    <div class="contactdiv">
+                                                                        <ul>
+                                                                            <li>
+                                                                                <a class="emaildiv" href="mailto:info@example.com"><span><i class="icon-envelope4"></i></span>info@example.com</a>
+                                                                            </li>
+
+                                                                            <li><a class="emaildiv" href="#"><span><i class="icon-phone6"></i></span> (800) 123 456 789</a>    </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="col-lg-12 marginleft">
+                                                                        <div class="social-media-blog">
+                                                                            <ul>
+                                                                                <li><a class="icon-facebook2" data-original-title="Facebook" href="http://facebook.com"></a></li>
+                                                                                <li><a class="icon-twitter6" data-original-title="Twitter" href="http://twitter.com"></a></li>
+                                                                                <li><a class="icon-googleplus7" data-original-title="GooglePlus" href="http://google.com"></a></li>
+                                                                                <li><a class="icon-instagram4" data-original-title="Instagram" href="http://linkedin.com"></a></li>
+                                                                                <li><a class="icon-envelope4" data-original-title="Email" href="mailto:info@example.com"> <span>Email</span></a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div><ul class="flex-direction-nav"><li class="flex-nav-prev"><a href="#" class="flex-prev"><i class="icon-arrow-left10"></i></a></li><li class="flex-nav-next"><a href="#" class="flex-next"><i class="icon-arrow-right10"></i></a></li></ul>
+                                        </div>*@
+
+
+
+                                </div>
+
+                                <div class="cs-document-list">
+                                    <h5>Previous Result</h5>
+                                    <ul>
+                                        <li>
+                                            <span class="icon"> <i class="icon-file-pdf-o"></i> </span>
+                                            <a href="#" title=""> SSC-2018.pdf </a>
+                                        </li>
+                                        <li>
+                                            <span class="icon"> <i class="icon-file-pdf-o"></i> </span>
+                                            <a href="#" title=""> JSC-2018.pdf</a>
+                                        </li>
+                                        <li>
+                                            <span class="icon"> <i class="icon-file-pdf-o"></i> </span>
+                                            <a href="#" title=""> SSC-2017.pdf </a>
+                                        </li>
+                                        <li>
+                                            <span class="icon"> <i class="icon-file-pdf-o"></i> </span>
+                                            <a href="#" title=""> JSC-2017.pdf </a>
+                                        </li>
+                                        <li>
+                                            <span class="icon"> <i class="icon-file-pdf-o"></i> </span>
+                                            <a href="#" title=""> SSC-2016.pdf </a>
+                                        </li>
+                                        <li>
+                                            <span class="icon"> <i class="icon-file-pdf-o"></i> </span>
+                                            <a href="#" title=""> JSC-2016.pdf </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="page-sidebar">
+                    <div class="widget cs_ads_banner"><div class="cs_banner_section"><a target="_blank" href="" id="cs_banner_clicks276833028" onclick="cs_banner_click_count_plus('http://uoce.chimpgroup.com/wp-admin/admin-ajax.php', '276833028')"><img alt="Sidebar" src="http://uoce.chimpgroup.com/wp-content/uploads/add-img.jpg"></a></div></div>
+                    <div class="widget widget_tabs">
+
+                        <div class="widget element-size-100 widget_tabs">
+                            <div class="widget-section-title">
+                                <h6></h6>
+                            </div>
+                            <ul class="tab-nav">
+                                <li class="active"><a href="#tab1" data-toggle="tab"><i class="icon-user9"> Notice</i></a></li>
+                                <li class=""><a href="#tab2" data-toggle="tab"><i class="icon-tag7">News & Events</i></a></li>
+
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade in active tabs news" id="tab1">
+                                    <ul>
+
+                                        @{Html.RenderAction("GetAll", "Notice");}
+                                    </ul>
+                                    <a href="~/Notice/GetAllWithGrid" class="viewall-btn csbg-hovercolor"><i class="icon-angle-double-right"></i> More Notice</a>
+                                </div>
+                                <div class="tab-pane fade tabs news" id="tab2">
+
+
+                                    @{Html.RenderAction("GetAll", "Event");}
+
+                                    <a href="~/Event/GetAllWithGrid" class="viewall-btn csbg-hovercolor"><i class="icon-angle-double-right"></i> More News</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</main>
+<script type="text/javascript">
+
+    jQuery(window).load(function () {
+        setTimeout(function () {
+            jQuery('.cs-map-bL3zXgInN3').animate({
+                'height': '250'
+            }, 400)
+        }, 400)
+    })
+
+    var panorama;
+
+    function initialize() {
+        var myLatlng = new google.maps.LatLng(51.507351, -0.127758);
+        var mapOptions = {
+            zoom: 11,
+            scrollwheel: true,
+            draggable: true,
+            streetViewControl: false,
+            center: myLatlng,
+            mapTypeId: google.maps.MapTypeId.content,
+            disableDefaultUI: false,
+        }; var map = new google.maps.Map(document.getElementById('map_canvasbL3zXgInN3'), mapOptions);
+        var styles = '';
+        if (styles != '') {
+            var styledMap = new google.maps.StyledMapType(styles, { name: 'Styled Map' });
+            map.mapTypes.set('map_style', styledMap);
+            map.setMapTypeId('map_style');
+        }
+        var infowindow = new google.maps.InfoWindow({
+            content: '274 Seven Sisters Road, London, N4 2HY,London,United Kingdom',
+            maxWidth: 250,
+            maxHeight: 100,
+
+        });
+        var marker = new google.maps.Marker({
+            deeppition: myLatlng,
+            map: map,
+            title: '',
+            icon: '',
+            shadow: ''
+        });
+
+        //google.maps.event.addListener(marker, 'click', function() {
+        if (infowindow.content != '') {
+            infowindow.open(map, marker);
+            map.panBy(1, -60);
+            google.maps.event.addListener(marker, 'click', function (event) {
+                infowindow.open(map, marker);
+            });
+        }
+        //});
+        panorama = map.getStreetView();
+        panorama.setPosition(myLatlng);
+        panorama.setPov(({
+            heading: 265,
+            pitch: 0
+        }));
+
+    }
+
+    function cs_toggle_street_view(btn) {
+        var toggle = panorama.getVisible();
+        if (toggle == false) {
+            if (btn == 'streetview') {
+                panorama.setVisible(true);
+            }
+        } else {
+            if (btn == 'mapview') {
+                panorama.setVisible(false);
+            }
+        }
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+    jQuery(window).load(function () {
+        jQuery('.cs-team-slider').flexslider({
+            slideshowSpeed: 4000,
+            animationDuration: 1100,
+            animation: 'slide',
+            directionNav: true,
+            controlNav: false,
+            prevText: "&lt;i class='icon-arrow-left10'&gt;&lt;/i&gt;",
+            nextText: "&lt;i class='icon-arrow-right10'&gt;&lt;/i&gt;",
+        });
+    });
+
+    jQuery(window).load(function () {
+        setTimeout(function () {
+            jQuery('.cs-map-view').hide();
+            jQuery('.map-btn').on('click', function (e) {
+                e.preventDefault();
+                jQuery('.cs-course-detail').find('.cs-map-view').slideToggle();
+            });
+        }, 2000);
+
+    });
+</script>
+
+

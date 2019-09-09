@@ -1,0 +1,44 @@
+﻿@model IEnumerable<deepp.Entities.Models.Notice>
+@foreach (var item in Model)
+       {
+    <div class="event-list">
+        <div class="event-content">
+            <h4 class="event-title"><a href="../event/charity-povert-reduction-event-day/index.html">Charity Povert Reduction Event Day</a></h4>
+            <p>enean mollis risus diam, vitae accumsan augue pharetra in. Nam pellentesque massa sem, sed</p>
+            <div class="notice-thumb">
+                date
+            </div>
+        </div>
+    </div>
+    
+    @*<div class="list-event-item">
+                        <div class="box-content-inner clearfix">
+                            
+                            <div class="list-event-header">
+                               
+                                <div class="view-details lightBtn" >
+                                    @Html.ActionLink("View Details", "Details", "Notice", new { id = item.Id }, null) 
+                                </div>
+                            </div>
+                            <h5 class="event-title">
+                                @Html.ActionLink(@item.NoticeTitle, "Details", "Notice", new { id = item.Id }, null)
+                            </h5>
+                           
+                             @if (@item.NoticeBody.Length > 100)
+                             { <p>
+                                @item.NoticeBody.Substring(0, 100) .....
+                               </p> 
+                               
+                            }
+                            else
+                            {
+                                <p>   @item.NoticeBody;</p>
+                            }
+                            
+                    </div>
+          </div>*@ 
+    
+}
+    
+
+    

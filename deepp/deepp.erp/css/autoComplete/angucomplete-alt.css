@@ -1,5 +1,5 @@
 .angucomplete-holder {
-    deeppition: relative;
+    position: relative;
 }
 
 .angucomplete-dropdown {
@@ -11,7 +11,7 @@
     padding: 6px;
     cursor: pointer;
     z-index: 9999;
-    deeppition: absolute;
+    position: absolute;
     /*top: 32px;
     left: 0px;
     */
@@ -60,7 +60,7 @@
     /* Add your own default image here
      background-image: url('/assets/default.png');
     */
-    background-deeppition: center;
+    background-position: center;
     background-size: contain;
     height: 34px;
     width: 34px;

@@ -27,7 +27,7 @@
 	ul.nav {
 		li {
 			display: block;
-			deeppition: relative;
+			position: relative;
 			li {
 				a {
 					padding-left: @app-aside-nav-height + 15px;
@@ -38,7 +38,7 @@
 				text-transform: none;
 				display: block;
 				padding: floor((@app-aside-nav-height - @line-height-computed)/2) 20px;
-				deeppition: relative;
+				position: relative;
 				.transition(background-color .2s ease-in-out 0s);
 				.badge,
 				.label {
@@ -53,10 +53,10 @@
 					float: left;
 					margin-right: 5px;
 					text-align: center;
-					deeppition: relative;
+					position: relative;
 					overflow: hidden;
 					&:before {
-						deeppition: relative;
+						position: relative;
 						z-index: 2;
 					}
 				}
@@ -77,7 +77,7 @@
 			> ul {
 				> li {
 					> a {
-						deeppition: relative;
+						position: relative;
 						padding: 0;
 						text-align: center;
 						height: @app-aside-folded-nav-height;
@@ -102,7 +102,7 @@
 						}
 						.badge,
 						.label{
-							deeppition: absolute;
+							position: absolute;
 							right: 12px;
 							top: 8px;
 							z-index: 3;
@@ -111,7 +111,7 @@
 				}
 				ul{
 					height: 0 !important;
-					deeppition: absolute;
+					position: absolute;
 					left: 100%;
 					top: 0 !important;
 					z-index: 1050;
@@ -135,7 +135,7 @@
 				content:"";
 				width: @app-aside-folded-width;
 				height: @app-aside-folded-nav-height;
-				deeppition: absolute;
+				position: absolute;
 				left: -@app-aside-folded-width;
 				top: 0;
 			}
@@ -147,7 +147,7 @@
 			display: block;
 			width: @app-aside-width + @app-aside-folded-width;
 			left: @app-aside-folded-width + 20;
-			deeppition: fixed;
+			position: fixed;
 			-webkit-overflow-scrolling: touch;
 			a{
 				padding-left:  20px !important;

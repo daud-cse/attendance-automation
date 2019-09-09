@@ -55,8 +55,6 @@ E:\DeepPresent Attendance\deeppresent\deepp\deepp.Service\bin\Debug\Service.Patt
 E:\DeepPresent Attendance\deeppresent\deepp\deepp.Service\bin\Debug\deepp.utility.pdb
 E:\DeepPresent Attendance\deeppresent\deepp\deepp.Service\bin\Debug\EntityFramework.xml
 E:\DeepPresent Attendance\deeppresent\deepp\deepp.Service\bin\Debug\EntityFramework.SqlServer.xml
-E:\DeepPresent Attendance\deeppresent\deepp\deepp.Service\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
-E:\DeepPresent Attendance\deeppresent\deepp\deepp.Service\bin\Debug\Microsoft.Practices.ServiceLocation.xml
 E:\DeepPresent Attendance\deeppresent\deepp\deepp.Service\bin\Debug\System.Web.Mvc.xml
 E:\DeepPresent Attendance\deeppresent\deepp\deepp.Service\bin\Debug\Microsoft.Web.Infrastructure.xml
 E:\DeepPresent Attendance\deeppresent\deepp\deepp.Service\obj\Debug\deepp.Service.csprojResolveAssemblyReference.cache

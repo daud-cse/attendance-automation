@@ -101,7 +101,7 @@ function indexOf(array, value) {
  * current state and a given destination state.
  *
  * @param {Object} currentParams The value of the current state parameters ($stateParams).
- * @param {Object} newParams The set of parameters which will be comdeeppited with inherited params.
+ * @param {Object} newParams The set of parameters which will be composited with inherited params.
  * @param {Object} $current Internal definition of object representing the current state.
  * @param {Object} $to Internal definition of object representing state to transition to.
  */
@@ -273,7 +273,7 @@ angular.module('ui.router.state', ['ui.router.router', 'ui.router.util']);
  * 
  * ## The main module for ui.router 
  * There are several sub-modules included with the ui.router module, however only this module is needed
- * as a dependency within your angular app. The other modules are for organization purdeeppes. 
+ * as a dependency within your angular app. The other modules are for organization purposes. 
  *
  * The modules are:
  * * ui.router - the main "umbrella" module
@@ -1427,7 +1427,7 @@ function $UrlMatcherFactory() {
    *   // Matches up services to URL parameter names
    *   var services = {
    *     user: Users,
-   *     deeppt: Posts
+   *     post: Posts
    *   };
    *
    *   return {
@@ -2104,10 +2104,10 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
     // if (parent) parent.children.push(state);
     parent: function(state) {
       if (isDefined(state.parent) && state.parent) return findState(state.parent);
-      // regex matches any valid comdeeppite state name
+      // regex matches any valid composite state name
       // would match "contact.list" but not "contacts"
-      var comdeeppiteName = /^(.+)\.[^.]+$/.exec(state.name);
-      return comdeeppiteName ? findState(comdeeppiteName[1]) : root;
+      var compositeName = /^(.+)\.[^.]+$/.exec(state.name);
+      return compositeName ? findState(compositeName[1]) : root;
     },
 
     // inherit 'data' from parent and override by own values (if any)

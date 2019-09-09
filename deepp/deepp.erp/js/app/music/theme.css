@@ -17,7 +17,7 @@ videogular vg-video{
   height: auto !important;
 }
 
-videogular vg-deeppter-image img{
+videogular vg-poster-image img{
   width: 100% !important;
 }
 
@@ -36,11 +36,11 @@ videogular vg-timedisplay{
 }
 
 videogular vg-scrubbar > div{
-  deeppition: relative;
+  position: relative;
 }
 
 videogular vg-title{
-  deeppition: absolute;
+  position: absolute;
   width: 100%;
   line-height: 50px;
   padding: 0 10px;

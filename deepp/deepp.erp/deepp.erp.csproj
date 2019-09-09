@@ -784,17 +784,12 @@
     <Content Include="js\services\UserInfo\UserInfoService.js" />
     <Content Include="js\state\AccountState.js" />
     <Content Include="js\state\eDiaryState.js" />
-    <Content Include="js\state\examState.js" />
-    <Content Include="js\state\feesGenerateConfigState.js" />
-    <Content Include="js\state\voucherState.js" />
     <Content Include="js\state\resultPublishState.js" />
     <Content Include="js\state\contactFeedbackState.js" />
     <Content Include="js\state\ContentsState.js" />
-    <Content Include="js\state\feesCollectionState.js" />
     <Content Include="js\state\onlineAdmissionState.js" />
     <Content Include="js\state\certificatePrintState.js" />
     <Content Include="js\state\employeeAttendanceState.js" />
-    <Content Include="js\state\libraryBookState.js" />
     <Content Include="js\state\WebmanagerState.js" />
     <Content Include="js\state\smsTemplateState.js" />
     <Content Include="js\state\techerAttendanceState.js" />
@@ -1173,6 +1168,7 @@
       <DependentUpon>UserAttendanceSummaryReport.xsd</DependentUpon>
     </Content>
     <None Include="Project_Readme.html" />
+    <None Include="Properties\PublishProfiles\deeperp.pubxml" />
     <None Include="Properties\PublishProfiles\ERP.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Shared\_Layout.cshtml" />

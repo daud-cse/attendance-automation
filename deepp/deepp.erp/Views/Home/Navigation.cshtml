@@ -366,7 +366,7 @@
         </ul>
     </li>*@
 
-    @if ("161010,161110".HasRights(allowedRights))
+    @*@if ("161010,161110".HasRights(allowedRights))
     {
         <li>
             <a href="#" class="auto">
@@ -390,7 +390,7 @@
                 </li>
             </ul>
         </li>
-    }
+    }*@
 
     @*@if ("171010".HasRights(allowedRights))
     {
@@ -651,7 +651,7 @@
    
   
 
-    @if ("101010,191010,191011,201010,201011,211010,211011".HasRights(allowedRights))
+    @*@if ("101010,191010,191011,201010,201011,211010,211011".HasRights(allowedRights))
     {
         <li class="line dk"></li>
         <li>
@@ -706,7 +706,7 @@
                 }
             </ul>
         </li>
-    }
+    }*@
     @if ("101110,101210,181010".HasRights(allowedRights))
     {
 
@@ -734,11 +734,11 @@
                     </li>
                 }
 
-                <li ui-sref-active="active">
+                @*<li ui-sref-active="active">
                     <a ui-sref="app.institutesettings.InstituteCurrent">
                         <i class="fa fa-university text-warning"></i><span>Finger Print Collection</span>
                     </a>
-                </li>
+                </li>*@
 
                 @if ("101210".HasRights(allowedRights))
                 {

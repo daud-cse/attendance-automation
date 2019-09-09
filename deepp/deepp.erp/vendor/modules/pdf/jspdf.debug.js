@@ -488,7 +488,7 @@ var jsPDF = function (global) {
       out('/Count ' + page);
       out('>>');
       out('endobj');
-      events.publish('deepptPutPages');
+      events.publish('postPutPages');
     },
         putFont = function putFont(font) {
       font.objectNumber = newObject();
@@ -535,7 +535,7 @@ var jsPDF = function (global) {
       putResourceDictionary();
       out('>>');
       out('endobj');
-      events.publish('deepptPutResources');
+      events.publish('postPutResources');
     },
         putAdditionalObjects = function putAdditionalObjects() {
       events.publish('putAdditionalObjects');
@@ -547,7 +547,7 @@ var jsPDF = function (global) {
         out('endobj');
       }
       objectNumber += additionalObjects.length;
-      events.publish('deepptPutAdditionalObjects');
+      events.publish('postPutAdditionalObjects');
     },
         addToFontDictionary = function addToFontDictionary(fontKey, fontName, fontStyle) {
       // this is mapping structure for quick font key lookup.
@@ -650,10 +650,10 @@ var jsPDF = function (global) {
        * recode the string to UCS2 BE - string doubles in length and BOM is prepended.
        *
        * HOWEVER!
-       * Actual *content* (body) text (as opdeepped to strings used in document properties etc)
+       * Actual *content* (body) text (as opposed to strings used in document properties etc)
        * does NOT expect BOM. There, it is treated as a literal GID (Glyph ID)
        *
-       * Because of Adobe's focus on "you subset your fonts!" you are not supdeepped to have
+       * Because of Adobe's focus on "you subset your fonts!" you are not supposed to have
        * a font that maps directly Unicode (UCS2 / UTF16BE) code to font GID, but you could
        * fudge it with "Identity-H" encoding and custom CIDtoGID map that mimics Unicode
        * code page. There, however, all characters in the stream are treated as GIDs,
@@ -758,7 +758,7 @@ var jsPDF = function (global) {
         bch = ch >> 8; // divide by 256
         if (bch >> 8) {
           /* something left after dividing by 256 second time */
-          throw new Error("Character at deeppition " + i + " of string '" + text + "' exceeds 16bits. Cannot be encoded into UCS-2 BE");
+          throw new Error("Character at position " + i + " of string '" + text + "' exceeds 16bits. Cannot be encoded into UCS-2 BE");
         }
         newtext.push(bch);
         newtext.push(ch - (bch << 8));
@@ -1090,7 +1090,7 @@ var jsPDF = function (global) {
      *
      * If `type` argument is undefined, output is raw body of resulting PDF returned as a string.
      *
-     * @param {String} type A string identifying one of the deeppsible output types.
+     * @param {String} type A string identifying one of the possible output types.
      * @param {Object} options An object providing some additional signalling to PDF generator.
      * @function
      * @returns {jsPDF}
@@ -1187,7 +1187,7 @@ var jsPDF = function (global) {
     // Public API
 
     /**
-     * Object exdeepping internal API to plugins
+     * Object exposing internal API to plugins
      * @public
      */
     API.internal = {
@@ -1283,7 +1283,7 @@ var jsPDF = function (global) {
       'getPDFVersion': function getPDFVersion() {
         return pdfVersion;
       },
-      'hasHotfix': hasHotfix //Exdeeppe the hasHotfix check so plugins can also check them.
+      'hasHotfix': hasHotfix //Expose the hasHotfix check so plugins can also check them.
     };
 
     /**
@@ -1413,7 +1413,7 @@ var jsPDF = function (global) {
        *    /F1 16 Tf  % Font name + size
        *    16 TL % How many units down for next line in multiline text
        *    0 g % color
-       *    28.35 813.54 Td % deeppition
+       *    28.35 813.54 Td % position
        *    (line one) Tj
        *    T* (line two) Tj
        *    T* (line three) Tj
@@ -1647,7 +1647,7 @@ var jsPDF = function (global) {
      * @param {Number} x Coordinate (in units declared at inception of PDF document) against left edge of the page
      * @param {Number} y Coordinate (in units declared at inception of PDF document) against upper edge of the page
      * @param {Number} scale (Defaults to [1.0,1.0]) x,y Scaling factor for all vectors. Elements can be any floating number Sub-one makes drawing smaller. Over-one grows the drawing. Negative flips the direction.
-     * @param {String} style A string specifying the painting style or null.  Valid styles include: 'S' [default] - stroke, 'F' - fill,  and 'DF' (or 'FD') -  fill then stroke. A null value deepptpones setting the style so that a shape may be comdeepped using multiple method calls. The last drawing method call used to define the shape should not have a null style argument.
+     * @param {String} style A string specifying the painting style or null.  Valid styles include: 'S' [default] - stroke, 'F' - fill,  and 'DF' (or 'FD') -  fill then stroke. A null value postpones setting the style so that a shape may be composed using multiple method calls. The last drawing method call used to define the shape should not have a null style argument.
      * @param {Boolean} closed If true, the path is closed with a straight line from the end of the last curve to the starting point.
      * @function
      * @returns {jsPDF}
@@ -1720,7 +1720,7 @@ var jsPDF = function (global) {
      * @param {Number} y Coordinate (in units declared at inception of PDF document) against upper edge of the page
      * @param {Number} w Width (in units declared at inception of PDF document)
      * @param {Number} h Height (in units declared at inception of PDF document)
-     * @param {String} style A string specifying the painting style or null.  Valid styles include: 'S' [default] - stroke, 'F' - fill,  and 'DF' (or 'FD') -  fill then stroke. A null value deepptpones setting the style so that a shape may be comdeepped using multiple method calls. The last drawing method call used to define the shape should not have a null style argument.
+     * @param {String} style A string specifying the painting style or null.  Valid styles include: 'S' [default] - stroke, 'F' - fill,  and 'DF' (or 'FD') -  fill then stroke. A null value postpones setting the style so that a shape may be composed using multiple method calls. The last drawing method call used to define the shape should not have a null style argument.
      * @function
      * @returns {jsPDF}
      * @methodOf jsPDF#
@@ -1746,7 +1746,7 @@ var jsPDF = function (global) {
      * @param {Number} y2 Coordinate (in units declared at inception of PDF document) against upper edge of the page
      * @param {Number} x3 Coordinate (in units declared at inception of PDF document) against left edge of the page
      * @param {Number} y3 Coordinate (in units declared at inception of PDF document) against upper edge of the page
-     * @param {String} style A string specifying the painting style or null.  Valid styles include: 'S' [default] - stroke, 'F' - fill,  and 'DF' (or 'FD') -  fill then stroke. A null value deepptpones setting the style so that a shape may be comdeepped using multiple method calls. The last drawing method call used to define the shape should not have a null style argument.
+     * @param {String} style A string specifying the painting style or null.  Valid styles include: 'S' [default] - stroke, 'F' - fill,  and 'DF' (or 'FD') -  fill then stroke. A null value postpones setting the style so that a shape may be composed using multiple method calls. The last drawing method call used to define the shape should not have a null style argument.
      * @function
      * @returns {jsPDF}
      * @methodOf jsPDF#
@@ -1770,7 +1770,7 @@ var jsPDF = function (global) {
      * @param {Number} h Height (in units declared at inception of PDF document)
      * @param {Number} rx Radius along x axis (in units declared at inception of PDF document)
      * @param {Number} rx Radius along y axis (in units declared at inception of PDF document)
-     * @param {String} style A string specifying the painting style or null.  Valid styles include: 'S' [default] - stroke, 'F' - fill,  and 'DF' (or 'FD') -  fill then stroke. A null value deepptpones setting the style so that a shape may be comdeepped using multiple method calls. The last drawing method call used to define the shape should not have a null style argument.
+     * @param {String} style A string specifying the painting style or null.  Valid styles include: 'S' [default] - stroke, 'F' - fill,  and 'DF' (or 'FD') -  fill then stroke. A null value postpones setting the style so that a shape may be composed using multiple method calls. The last drawing method call used to define the shape should not have a null style argument.
      * @function
      * @returns {jsPDF}
      * @methodOf jsPDF#
@@ -1790,7 +1790,7 @@ var jsPDF = function (global) {
      * @param {Number} y Coordinate (in units declared at inception of PDF document) against upper edge of the page
      * @param {Number} rx Radius along x axis (in units declared at inception of PDF document)
      * @param {Number} rx Radius along y axis (in units declared at inception of PDF document)
-     * @param {String} style A string specifying the painting style or null.  Valid styles include: 'S' [default] - stroke, 'F' - fill,  and 'DF' (or 'FD') -  fill then stroke. A null value deepptpones setting the style so that a shape may be comdeepped using multiple method calls. The last drawing method call used to define the shape should not have a null style argument.
+     * @param {String} style A string specifying the painting style or null.  Valid styles include: 'S' [default] - stroke, 'F' - fill,  and 'DF' (or 'FD') -  fill then stroke. A null value postpones setting the style so that a shape may be composed using multiple method calls. The last drawing method call used to define the shape should not have a null style argument.
      * @function
      * @returns {jsPDF}
      * @methodOf jsPDF#
@@ -1818,7 +1818,7 @@ var jsPDF = function (global) {
      * @param {Number} x Coordinate (in units declared at inception of PDF document) against left edge of the page
      * @param {Number} y Coordinate (in units declared at inception of PDF document) against upper edge of the page
      * @param {Number} r Radius (in units declared at inception of PDF document)
-     * @param {String} style A string specifying the painting style or null.  Valid styles include: 'S' [default] - stroke, 'F' - fill,  and 'DF' (or 'FD') -  fill then stroke. A null value deepptpones setting the style so that a shape may be comdeepped using multiple method calls. The last drawing method call used to define the shape should not have a null style argument.
+     * @param {String} style A string specifying the painting style or null.  Valid styles include: 'S' [default] - stroke, 'F' - fill,  and 'DF' (or 'FD') -  fill then stroke. A null value postpones setting the style so that a shape may be composed using multiple method calls. The last drawing method call used to define the shape should not have a null style argument.
      * @function
      * @returns {jsPDF}
      * @methodOf jsPDF#
@@ -1863,7 +1863,7 @@ var jsPDF = function (global) {
 
     /**
      * Sets text font face, variant for upcoming text elements.
-     * See output of jsPDF.getFontList() for deeppsible font names, styles.
+     * See output of jsPDF.getFontList() for possible font names, styles.
      *
      * @param {String} fontName Font name or family. Example: "times"
      * @param {String} fontStyle Font style or variant. Example: "italic"
@@ -1881,7 +1881,7 @@ var jsPDF = function (global) {
     /**
      * Switches font style or variant for upcoming text elements,
      * while keeping the font face or family same.
-     * See output of jsPDF.getFontList() for deeppsible font names, styles.
+     * See output of jsPDF.getFontList() for possible font names, styles.
      *
      * @param {String} style Font style or variant. Example: "italic"
      * @function
@@ -1937,8 +1937,8 @@ var jsPDF = function (global) {
      * @methodOf jsPDF#
      * @name addFont
      */
-    API.addFont = function (deepptScriptName, fontName, fontStyle) {
-      addFont(deepptScriptName, fontName, fontStyle, 'StandardEncoding');
+    API.addFont = function (postScriptName, fontName, fontStyle) {
+      addFont(postScriptName, fontName, fontStyle, 'StandardEncoding');
     };
 
     /**
@@ -2355,7 +2355,7 @@ var jsPDF = function (global) {
         this.acroformPlugin.internal = this.internal;
 
         // add Callback for creating the AcroForm Dictionary
-        this.acroformPlugin.acroFormDictionaryRoot._eventID = this.internal.events.subscribe('deepptPutResources', AcroFormDictionaryCallback);
+        this.acroformPlugin.acroFormDictionaryRoot._eventID = this.internal.events.subscribe('postPutResources', AcroFormDictionaryCallback);
 
         this.internal.events.subscribe('buildDocument', annotReferenceCallback); //buildDocument
 
@@ -2363,7 +2363,7 @@ var jsPDF = function (global) {
         this.internal.events.subscribe('putCatalog', putCatalogCallback);
 
         // Register event, that creates all Fields
-        this.internal.events.subscribe('deepptPutPages', createFieldCallback);
+        this.internal.events.subscribe('postPutPages', createFieldCallback);
     };
 
     /**
@@ -3804,7 +3804,7 @@ AcroForm.internal.calculateX = function (formObject, text, font, maxFontSize) {
             // reset X in PDF
             text += -startX + ' 0 Td\n';
 
-            // After a Line, adjust y deeppition
+            // After a Line, adjust y position
             lastY = -(fontSize + lineSpacing);
             lastLength = 0;
             firstWordInLine = lastWordInLine + 1;
@@ -3921,19 +3921,19 @@ AcroForm.internal.calculateColor = function (r, g, b) {
     return color;
 };
 
-AcroForm.internal.getBitPosition = function (variable, deeppition) {
+AcroForm.internal.getBitPosition = function (variable, position) {
     variable = variable || 0;
     var bitMask = 1;
-    bitMask = bitMask << deeppition - 1;
+    bitMask = bitMask << position - 1;
     return variable | bitMask;
 };
 
-AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
+AcroForm.internal.setBitPosition = function (variable, position, value) {
     variable = variable || 0;
     value = value || 1;
 
     var bitMask = 1;
-    bitMask = bitMask << deeppition - 1;
+    bitMask = bitMask << position - 1;
 
     if (value == 1) {
         // Set the Bit to 1
@@ -3971,7 +3971,7 @@ AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
   * @param options {Object} Additional options, check the code below.
   * @param callback {Function} to call when the rendering has finished.
   * NOTE: Every parameter is optional except 'element' and 'callback', in such
-  *       case the image is deeppitioned at 0x0 covering the whole PDF document
+  *       case the image is positioned at 0x0 covering the whole PDF document
   *       size. Ie, to easily take screenshots of webpages saving them to PDF.
   * @deprecated This is being replace with a vector-supporting API. See
   * [this link](https://cdn.rawgit.com/MrRio/jsPDF/master/examples/html2pdf/showcase_supported_html.html)
@@ -4667,25 +4667,25 @@ AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
 
 		var len = data.length,
 		    block = (data[4] << 8) + data[5],
-		    deepp = 4,
+		    pos = 4,
 		    bytes,
 		    width,
 		    height,
 		    numcomponents;
 
-		while (deepp < len) {
-			deepp += block;
-			bytes = readBytes(data, deepp);
+		while (pos < len) {
+			pos += block;
+			bytes = readBytes(data, pos);
 			block = (bytes[2] << 8) + bytes[3];
 			if ((bytes[1] === 0xC0 || bytes[1] === 0xC2) && bytes[0] === 0xFF && block > 7) {
-				bytes = readBytes(data, deepp + 5);
+				bytes = readBytes(data, pos + 5);
 				width = (bytes[2] << 8) + bytes[3];
 				height = (bytes[0] << 8) + bytes[1];
 				numcomponents = bytes[4];
 				return { width: width, height: height, numcomponents: numcomponents };
 			}
 
-			deepp += 2;
+			pos += 2;
 		}
 
 		throw new Error('getJpegSizeFromBytes could not find the size of the image');
@@ -5029,7 +5029,7 @@ AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
 
     var refAutoPrintTag;
 
-    this.internal.events.subscribe('deepptPutResources', function () {
+    this.internal.events.subscribe('postPutResources', function () {
       refAutoPrintTag = this.internal.newObject();
       this.internal.write("<< /S/Named /Type/Action /N/Print >>", "endobj");
     });
@@ -5185,7 +5185,7 @@ AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
         var curCell = getLastCellPosition();
         var pgAdded = false;
 
-        // If this is not the first cell, we must change its deeppition
+        // If this is not the first cell, we must change its position
         if (curCell.ln !== undefined) {
             if (curCell.ln === ln) {
                 //Same line
@@ -5261,8 +5261,8 @@ AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
 
     /**
      * Create a table from a set of data.
-     * @param {Integer} [x] : left-deeppition for top-left corner of table
-     * @param {Integer} [y] top-deeppition for top-left corner of table
+     * @param {Integer} [x] : left-position for top-left corner of table
+     * @param {Integer} [y] top-position for top-left corner of table
      * @param {Object[]} [data] As array of objects containing key-value pairs corresponding to a row of data.
      * @param {String[]} [headers] Omit or null to auto-generate headers at a performance cost
       * @param {Object} [config.printHeaders] True to print column headers at the top of every page
@@ -5455,8 +5455,8 @@ AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
 
         this.printingHeaderRow = true;
         if (headerFunction !== undefined) {
-            var deeppition = headerFunction(this, pages);
-            setLastCellPosition(deeppition[0], deeppition[1], deeppition[2], deeppition[3], -1);
+            var position = headerFunction(this, pages);
+            setLastCellPosition(position[0], position[1], position[2], position[3], -1);
         }
         this.setFontStyle('bold');
         var tempHeaderConf = [];
@@ -5730,7 +5730,7 @@ AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
             // We only use X axis as scale hint 
             var scale = 1;
             try {
-                scale = this._matrix_decomdeeppe(this._getTransform()).scale[0];
+                scale = this._matrix_decompose(this._getTransform()).scale[0];
             } catch (e) {
                 console.warn(e);
             }
@@ -5783,7 +5783,7 @@ AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
             var scale = 1;
             // We only use the X axis as scale hint 
             try {
-                scale = this._matrix_decomdeeppe(this._getTransform()).scale[0];
+                scale = this._matrix_decompose(this._getTransform()).scale[0];
             } catch (e) {
                 console.warn(e);
             }
@@ -6174,7 +6174,7 @@ AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
             return Math.atan2(m[2], m[0]);
         },
 
-        _matrix_decomdeeppe: function _matrix_decomdeeppe(matrix) {
+        _matrix_decompose: function _matrix_decompose(matrix) {
 
             var a = matrix[0];
             var b = matrix[1];
@@ -6443,7 +6443,7 @@ AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
 
             if (v2Support) {
                 // Blend and Mask
-                switch (this.ctx.globalComdeeppiteOperation) {
+                switch (this.ctx.globalCompositeOperation) {
                     case 'normal':
                     case 'source-over':
                         break;
@@ -6472,7 +6472,7 @@ AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
                         window.outIntercept = obj;
                         break;
                     default:
-                        var dictionaryEntry = '/' + this.pdf.internal.blendModeMap[this.ctx.globalComdeeppiteOperation.toUpperCase()];
+                        var dictionaryEntry = '/' + this.pdf.internal.blendModeMap[this.ctx.globalCompositeOperation.toUpperCase()];
                         if (dictionaryEntry) {
                             this.pdf.internal.out(dictionaryEntry + ' gs');
                         }
@@ -6757,12 +6757,12 @@ AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
             return this.ctx.font;
         }
     });
-    Object.defineProperty(c2d, 'globalComdeeppiteOperation', {
+    Object.defineProperty(c2d, 'globalCompositeOperation', {
         set: function set(value) {
-            this.ctx.globalComdeeppiteOperation = value;
+            this.ctx.globalCompositeOperation = value;
         },
         get: function get() {
-            return this.ctx.globalComdeeppiteOperation;
+            return this.ctx.globalCompositeOperation;
         }
     });
     Object.defineProperty(c2d, 'globalAlpha', {
@@ -6976,7 +6976,7 @@ AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
         this.lineJoin = 'miter'; // round, bevel, miter
         this.lineCap = 'butt'; // butt, round, square
         this._transform = [1, 0, 0, 1, 0, 0]; // sx, shy, shx, sy, tx, ty
-        this.globalComdeeppiteOperation = 'normal';
+        this.globalCompositeOperation = 'normal';
         this.globalAlpha = 1.0;
         this._clip_path = [];
         // TODO miter limit //default 10
@@ -6999,7 +6999,7 @@ AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
             this.textAlign = ctx.textAlign;
             this._fontSize = ctx._fontSize;
             this._transform = ctx._transform.slice(0);
-            this.globalComdeeppiteOperation = ctx.globalComdeeppiteOperation;
+            this.globalCompositeOperation = ctx.globalCompositeOperation;
             this.globalAlpha = ctx.globalAlpha;
             this._clip_path = ctx._clip_path.slice(0); //TODO deep copy?
 
@@ -7313,12 +7313,12 @@ AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
 					var oldMarginTop = renderer.pdf.margins_doc.top;
 					//subscribe for new page event and render header first on every page
 					renderer.pdf.internal.events.subscribe('addPage', function (pageInfo) {
-						//set current y deeppition to old margin
+						//set current y position to old margin
 						renderer.y = oldMarginTop;
 						//render all child nodes of the header element
 						_DrillForContent(header, renderer, elementHandlers);
 						//set margin to old margin + rendered header + 10 space to prevent overlapping
-						//important for other plugins (e.g. table) to start rendering at correct deeppition after header
+						//important for other plugins (e.g. table) to start rendering at correct position after header
 						renderer.pdf.margins_doc.top = renderer.y + 10;
 						renderer.y += 10;
 					}, false);
@@ -7535,7 +7535,7 @@ AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
 			//Create function render header on every page
 			var renderFooter = function renderFooter(pageInfo) {
 				var pageNumber = pageInfo !== undefined ? pageInfo.pageNumber : 1;
-				//set current y deeppition to old margin
+				//set current y position to old margin
 				var oldPosition = renderer.y;
 				//render all child nodes of the header element
 				renderer.y = renderer.pdf.internal.pageSize.height - renderer.pdf.margins_doc.bottom;
@@ -7558,11 +7558,11 @@ AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
 				_DrillForContent(footer, renderer, elementHandlers);
 				//set bottom margin to previous height including the footer height
 				renderer.pdf.margins_doc.bottom += footerHeight;
-				//important for other plugins (e.g. table) to start rendering at correct deeppition after header
+				//important for other plugins (e.g. table) to start rendering at correct position after header
 				renderer.y = oldPosition;
 			};
 
-			//check if footer contains totalPages which should be replace at the disodeeppal of the document
+			//check if footer contains totalPages which should be replace at the disoposal of the document
 			var spans = footer.getElementsByTagName('span');
 			for (var i = 0; i < spans.length; ++i) {
 				if ((" " + spans[i].className + " ").replace(/[\n\t]/g, " ").indexOf(" totalPages ") > -1) {
@@ -7586,7 +7586,7 @@ AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
 			element = function (element) {
 				var $frame, $hiddendiv, framename, visuallyhidden;
 				framename = "jsPDFhtmlText" + Date.now().toString() + (Math.random() * 1000).toFixed(0);
-				visuallyhidden = "deeppition: absolute !important;" + "clip: rect(1px 1px 1px 1px); /* IE6, IE7 */" + "clip: rect(1px, 1px, 1px, 1px);" + "padding:0 !important;" + "border:0 !important;" + "height: 1px !important;" + "width: 1px !important; " + "top:auto;" + "left:-100px;" + "overflow: hidden;";
+				visuallyhidden = "position: absolute !important;" + "clip: rect(1px 1px 1px 1px); /* IE6, IE7 */" + "clip: rect(1px, 1px, 1px, 1px);" + "padding:0 !important;" + "border:0 !important;" + "height: 1px !important;" + "width: 1px !important; " + "top:auto;" + "left:-100px;" + "overflow: hidden;";
 				$hiddendiv = document.createElement('div');
 				$hiddendiv.style.cssText = visuallyhidden;
 				$hiddendiv.innerHTML = "<iframe style=\"height:1px;width:1px\" name=\"" + framename + "\" />";
@@ -7607,9 +7607,9 @@ AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
 		loadImgs.call(this, element, r, settings.elementHandlers, function (found_images) {
 			checkForFooter(element, r, settings.elementHandlers);
 			_DrillForContent(element, r, settings.elementHandlers);
-			//send event disdeeppe for final taks (e.g. footer totalpage replacement)
+			//send event dispose for final taks (e.g. footer totalpage replacement)
 			r.pdf.internal.events.publish('htmlRenderingFinished');
-			out = r.disdeeppe();
+			out = r.dispose();
 			if (typeof callback === 'function') callback(out);else if (found_images) console.error('jsPDF Warning: rendering issues? provide a callback to fromHTML!');
 		});
 		return out || { x: r.x, y: r.y };
@@ -7621,7 +7621,7 @@ AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
 		};
 		return this.pdf.internal.write("q");
 	};
-	Renderer.prototype.disdeeppe = function () {
+	Renderer.prototype.dispose = function () {
 		this.pdf.internal.write("Q");
 		return {
 			x: this.x,
@@ -7848,7 +7848,7 @@ AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
 		this.y += paragraphspacing_before;
 		out("q", "BT 0 g", this.pdf.internal.getCoordinateString(this.x), this.pdf.internal.getVerticalCoordinateString(this.y), "Td");
 
-		//stores the current indent of cursor deeppition
+		//stores the current indent of cursor position
 		var currentIndent = 0;
 
 		while (lines.length) {
@@ -7886,7 +7886,7 @@ AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
 			this.y += maxLineHeight * fontToUnitRatio;
 
 			//if some watcher function was executed successful, so e.g. margin and widths were changed,
-			//reset line drawing and calculate deeppition and lines again
+			//reset line drawing and calculate position and lines again
 			//e.g. to stop text floating around an image
 			if (this.executeWatchFunctions(line[0][1]) && lines.length > 0) {
 				var localFragments = [];
@@ -7903,9 +7903,9 @@ AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
 						++i;
 					}
 				});
-				//split lines again due to deeppsible coordinate changes
+				//split lines again due to possible coordinate changes
 				lines = this.splitFragmentsIntoLines(PurgeWhiteSpace(localFragments), localStyles);
-				//redeeppition the current cursor
+				//reposition the current cursor
 				out("ET", "Q");
 				out("q", "BT 0 g", this.pdf.internal.getCoordinateString(this.x), this.pdf.internal.getVerticalCoordinateString(this.y), "Td");
 			}
@@ -8022,7 +8022,7 @@ AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
     var jsNamesObj, jsJsObj, text;
     jsPDFAPI.addJS = function (txt) {
         text = txt;
-        this.internal.events.subscribe('deepptPutResources', function (txt) {
+        this.internal.events.subscribe('postPutResources', function (txt) {
             jsNamesObj = this.internal.newObject();
             this.internal.write('<< /Names [(EmbeddedJS) ' + (jsNamesObj + 1) + ' 0 R] >>', 'endobj');
             jsJsObj = this.internal.newObject();
@@ -8052,7 +8052,7 @@ AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
 (function (jsPDFAPI) {
 	'use strict';
 
-	jsPDFAPI.events.push(['deepptPutResources', function () {
+	jsPDFAPI.events.push(['postPutResources', function () {
 		var pdf = this;
 		var rx = /^(\d+) 0 obj$/;
 
@@ -8775,7 +8775,7 @@ AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
 
     var refAutoPrintTag;
 
-    this.internal.events.subscribe('deepptPutResources', function () {
+    this.internal.events.subscribe('postPutResources', function () {
       refAutoPrintTag = this.internal.newObject();
       this.internal.write("<< /S/Named /Type/Action /N/Print >>", "endobj");
     });
@@ -8802,7 +8802,7 @@ AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
 
 	/**
  Returns an array of length matching length of the 'word' string, with each
- cell occupied by the width of the char in that deeppition.
+ cell occupied by the width of the char in that position.
  
  @function
  @param word {String}
@@ -8990,16 +8990,16 @@ AcroForm.internal.setBitPosition = function (variable, deeppition, value) {
 		}
 
 		if (lineIndent) {
-			var deepptProcess = function deepptProcess(ln, idx) {
+			var postProcess = function postProcess(ln, idx) {
 				return (idx ? pad : '') + ln.join(" ");
 			};
 		} else {
-			var deepptProcess = function deepptProcess(ln) {
+			var postProcess = function postProcess(ln) {
 				return ln.join(" ");
 			};
 		}
 
-		return lines.map(deepptProcess);
+		return lines.map(postProcess);
 	};
 
 	/**
@@ -9368,7 +9368,7 @@ MIT license.
   Copyright (c) 1989, 1990, 1991, 1992, 1993, 1997 Adobe Systems Incorporated. All Rights Reserved.
   
   This file and the 14 PostScript(R) AFM files it accompanies may be used,
-  copied, and distributed for any purdeeppe and without charge, with or without
+  copied, and distributed for any purpose and without charge, with or without
   modification, provided that all copyright notices are retained; that the AFM
   files are not distributed without this file; that all modifications to this
   file or any of the AFM files are prominently noted in the modified file(s);
@@ -9501,7 +9501,7 @@ Copyright (c) 2012 Willow Systems Corporation, willow-systems.com
 			,
 			    frame = document.createElement('iframe');
 
-			InjectCSS('.jsPDF_sillysvg_iframe {display:none;deeppition:absolute;}', document);
+			InjectCSS('.jsPDF_sillysvg_iframe {display:none;position:absolute;}', document);
 
 			frame.name = frameID;
 			frame.setAttribute("width", 0);
@@ -9534,18 +9534,18 @@ Copyright (c) 2012 Willow Systems Corporation, willow-systems.com
 			var x = parseFloat(path[1]),
 			    y = parseFloat(path[2]),
 			    vectors = [],
-			    deeppition = 3,
+			    position = 3,
 			    len = path.length;
 
-			while (deeppition < len) {
-				if (path[deeppition] === 'c') {
-					vectors.push([parseFloat(path[deeppition + 1]), parseFloat(path[deeppition + 2]), parseFloat(path[deeppition + 3]), parseFloat(path[deeppition + 4]), parseFloat(path[deeppition + 5]), parseFloat(path[deeppition + 6])]);
-					deeppition += 7;
-				} else if (path[deeppition] === 'l') {
-					vectors.push([parseFloat(path[deeppition + 1]), parseFloat(path[deeppition + 2])]);
-					deeppition += 3;
+			while (position < len) {
+				if (path[position] === 'c') {
+					vectors.push([parseFloat(path[position + 1]), parseFloat(path[position + 2]), parseFloat(path[position + 3]), parseFloat(path[position + 4]), parseFloat(path[position + 5]), parseFloat(path[position + 6])]);
+					position += 7;
+				} else if (path[position] === 'l') {
+					vectors.push([parseFloat(path[position + 1]), parseFloat(path[position + 2])]);
+					position += 3;
 				} else {
-					deeppition += 1;
+					position += 1;
 				}
 			}
 			return [x, y, vectors];
@@ -9886,7 +9886,7 @@ Copyright (c) 2012 Willow Systems Corporation, willow-systems.com
     jsPDFAPI.addMetadata = function (metadata, namespaceuri) {
         xmpnamespaceuri = namespaceuri || "http://jspdf.default.namespaceuri/"; //The namespace URI for an XMP name shall not be empty
         xmpmetadata = metadata;
-        this.internal.events.subscribe('deepptPutResources', function () {
+        this.internal.events.subscribe('postPutResources', function () {
             if (!xmpmetadata) {
                 metadata_object_number = "";
             } else {
@@ -10944,7 +10944,7 @@ var Deflater = (function(obj) {
 
 			// The pkzip format requires that at least one distance code exists,
 			// and that at least one bit should be sent even if there is only one
-			// deeppsible code. So to avoid special checks later on we force at least
+			// possible code. So to avoid special checks later on we force at least
 			// two codes of non zero frequency.
 			while (s.heap_len < 2) {
 				node = s.heap[++s.heap_len] = max_code < 2 ? ++max_code : 0;
@@ -11183,7 +11183,7 @@ var Deflater = (function(obj) {
 		// hash_shift * MIN_MATCH >= hash_bits
 		var hash_shift;
 
-		// Window deeppition at the beginning of the current output block. Gets
+		// Window position at the beginning of the current output block. Gets
 		// negative when the window is moved backwards.
 
 		var block_start;
@@ -11819,7 +11819,7 @@ var Deflater = (function(obj) {
 				if (more === 0 && strstart === 0 && lookahead === 0) {
 					more = w_size;
 				} else if (more == -1) {
-					// Very unlikely, but deeppsible on 16 bit machine if strstart ==
+					// Very unlikely, but possible on 16 bit machine if strstart ==
 					// 0
 					// and lookahead == 1 (input done one byte at time)
 					more--;
@@ -11890,7 +11890,7 @@ var Deflater = (function(obj) {
 			} while (lookahead < MIN_LOOKAHEAD && strm.avail_in !== 0);
 		}
 
-		// Copy without compression as much as deeppsible from the input stream,
+		// Copy without compression as much as possible from the input stream,
 		// return
 		// the current block state.
 		// This function does not insert new strings in the dictionary since
@@ -11909,9 +11909,9 @@ var Deflater = (function(obj) {
 				max_block_size = pending_buf_size - 5;
 			}
 
-			// Copy as much as deeppsible from input to output:
+			// Copy as much as possible from input to output:
 			while (true) {
-				// Fill the window as much as deeppsible:
+				// Fill the window as much as possible:
 				if (lookahead <= 1) {
 					fill_window();
 					if (lookahead === 0 && flush == Z_NO_FLUSH)
@@ -11926,7 +11926,7 @@ var Deflater = (function(obj) {
 				// Emit a stored block if pending_buf will be full:
 				max_start = block_start + max_block_size;
 				if (strstart === 0 || strstart >= max_start) {
-					// strstart === 0 is deeppsible when wraparound on 16-bit machine
+					// strstart === 0 is possible when wraparound on 16-bit machine
 					lookahead = (strstart - max_start);
 					strstart = max_start;
 
@@ -12028,7 +12028,7 @@ var Deflater = (function(obj) {
 			return lookahead;
 		}
 
-		// Compress as much as deeppsible from the input stream, return the current
+		// Compress as much as possible from the input stream, return the current
 		// block state.
 		// This function does not perform lazy evaluation of matches and inserts
 		// new strings in the dictionary only for unmatched strings or for short
@@ -12136,7 +12136,7 @@ var Deflater = (function(obj) {
 
 		// Same as above, but achieves better compression. We use a lazy
 		// evaluation for matches: a match is finally adopted only if there is
-		// no better match at the next window deeppition.
+		// no better match at the next window position.
 		function deflate_slow(flush) {
 			// short hash_head = 0; // head of hash chain
 			var hash_head = 0; // head of hash chain
@@ -12229,7 +12229,7 @@ var Deflater = (function(obj) {
 					}
 				} else if (match_available !== 0) {
 
-					// If there was no match at the previous deeppition, output a
+					// If there was no match at the previous position, output a
 					// single literal. If there was a match but the current match
 					// is longer, truncate the previous match to a single literal.
 
@@ -12450,13 +12450,13 @@ var Deflater = (function(obj) {
 				putShortMSB(header);
 			}
 
-			// Flush as much pending output as deeppsible
+			// Flush as much pending output as possible
 			if (that.pending !== 0) {
 				strm.flush_pending();
 				if (strm.avail_out === 0) {
 					// console.log(" avail_out==0");
 					// Since avail_out is 0, deflate will be called again with
-					// more output space, but deeppsibly with both pending and
+					// more output space, but possibly with both pending and
 					// avail_in equal to zero. There won't be anything to do,
 					// but this is not an error situation so make sure we
 					// return OK instead of BUF_ERROR at next call of deflate:
@@ -12614,7 +12614,7 @@ var Deflater = (function(obj) {
 			return len;
 		},
 
-		// Flush as much pending output as deeppsible. All deflate() output goes
+		// Flush as much pending output as possible. All deflate() output goes
 		// through this function so some applications may wish to modify it
 		// to avoid allocating a large strm->next_out buffer and copying into it.
 		// (See also read_buf()).
@@ -12745,7 +12745,7 @@ var Deflater = (function(obj) {
 	 */
 	var punycode,
 
-	/** Highest deeppitive signed 32-bit float value */
+	/** Highest positive signed 32-bit float value */
 	maxInt = 2147483647, // aka. 0x7FFFFFFF or 2^31-1
 
 	/** Bootstring parameters */
@@ -12823,7 +12823,7 @@ var Deflater = (function(obj) {
 	 * Creates an array containing the numeric code points of each Unicode
 	 * character in the string. While JavaScript uses UCS-2 internally,
 	 * this function will convert a pair of surrogate halves (each of which
-	 * UCS-2 exdeeppes as separate characters) into a single code point,
+	 * UCS-2 exposes as separate characters) into a single code point,
 	 * matching UTF-16.
 	 * @see `punycode.ucs2.encode`
 	 * @see <http://mathiasbynens.be/notes/javascript-encoding>
@@ -13017,7 +13017,7 @@ var Deflater = (function(obj) {
 			out = output.length + 1;
 			bias = adapt(i - oldi, out, oldi == 0);
 
-			// `i` was supdeepped to wrap around from `out` to `0`,
+			// `i` was supposed to wrap around from `out` to `0`,
 			// incrementing `n` each time, so we'll fix that now:
 			if (floor(i / out) > maxInt - n) {
 				error('overflow');
@@ -13026,7 +13026,7 @@ var Deflater = (function(obj) {
 			n += floor(i / out);
 			i %= out;
 
-			// Insert `n` at deeppition `i` of the output
+			// Insert `n` at position `i` of the output
 			output.splice(i++, 0, n);
 
 		}
@@ -13209,7 +13209,7 @@ var Deflater = (function(obj) {
 		'toUnicode': toUnicode
 	};
 
-	/** Exdeeppe `punycode` */
+	/** Expose `punycode` */
 	// Some AMD build optimizers, like r.js, check for specific condition patterns
 	// like the following:
 	if (
@@ -13297,7 +13297,7 @@ module.exports = function(ownerDocument, containerDocument, width, height, optio
 
     container.className = "html2canvas-container";
     container.style.visibility = "hidden";
-    container.style.deeppition = "fixed";
+    container.style.position = "fixed";
     container.style.left = "-10000px";
     container.style.top = "0px";
     container.style.border = "0";
@@ -13322,7 +13322,7 @@ module.exports = function(ownerDocument, containerDocument, width, height, optio
                         if ((/(iPad|iPhone|iPod)/g).test(navigator.userAgent) && (container.contentWindow.scrollY !== y || container.contentWindow.scrollX !== x)) {
                             documentClone.documentElement.style.top = (-y) + "px";
                             documentClone.documentElement.style.left = (-x) + "px";
-                            documentClone.documentElement.style.deeppition = 'absolute';
+                            documentClone.documentElement.style.position = 'absolute';
                         }
                     }
                     resolve(container);
@@ -14106,8 +14106,8 @@ function LinearGradientContainer(imageData) {
         !GradientContainer.REGEXP_COLORSTOP.test( imageData.args[0] );
 
     if (hasDirection) {
-        imageData.args[0].split(/\s+/).reverse().forEach(function(deeppition, index) {
-            switch(deeppition) {
+        imageData.args[0].split(/\s+/).reverse().forEach(function(position, index) {
+            switch(position) {
             case "left":
                 this.x0 = 0;
                 this.x1 = 1;
@@ -14134,11 +14134,11 @@ function LinearGradientContainer(imageData) {
                 break;
             case "center":
                 break; // centered by default
-            // Firefox internally converts deeppition keywords to percentages:
-            // http://www.w3.org/TR/2010/WD-CSS2-20101207/colors.html#propdef-background-deeppition
+            // Firefox internally converts position keywords to percentages:
+            // http://www.w3.org/TR/2010/WD-CSS2-20101207/colors.html#propdef-background-position
             default: // percentage or absolute length
-                // TODO: support absolute start point deeppitions (e.g., use bounds to convert px to a ratio)
-                var ratio = parseFloat(deeppition, 10) * 1e-2;
+                // TODO: support absolute start point positions (e.g., use bounds to convert px to a ratio)
+                var ratio = parseFloat(position, 10) * 1e-2;
                 if (isNaN(ratio)) { // invalid or unhandled value
                     break;
                 }
@@ -14163,7 +14163,7 @@ function LinearGradientContainer(imageData) {
         var unit = value === 0 ? "%" : colorStopMatch[3]; // treat "0" as "0%"
         return {
             color: new Color(colorStopMatch[1]),
-            // TODO: support absolute stop deeppitions (e.g., compute gradient line length & convert px to ratio)
+            // TODO: support absolute stop positions (e.g., compute gradient line length & convert px to ratio)
             stop: unit === "%" ? value / 100 : null
         };
     });
@@ -14176,7 +14176,7 @@ function LinearGradientContainer(imageData) {
         this.colorStops[this.colorStops.length - 1].stop = 1;
     }
 
-    // calculates and fills-in explicit stop deeppitions when omitted from rule
+    // calculates and fills-in explicit stop positions when omitted from rule
     this.colorStops.forEach(function(colorStop, index) {
         if (colorStop.stop === null) {
             this.colorStops.slice(index).some(function(find, count) {
@@ -14374,24 +14374,24 @@ NodeContainer.prototype.parseBackgroundSize = function(bounds, image, index) {
 };
 
 NodeContainer.prototype.parseBackgroundPosition = function(bounds, image, index, backgroundSize) {
-    var deeppition = this.cssList('backgroundPosition', index);
+    var position = this.cssList('backgroundPosition', index);
     var left, top;
 
-    if (isPercentage(deeppition[0])){
-        left = (bounds.width - (backgroundSize || image).width) * (parseFloat(deeppition[0]) / 100);
+    if (isPercentage(position[0])){
+        left = (bounds.width - (backgroundSize || image).width) * (parseFloat(position[0]) / 100);
     } else {
-        left = parseInt(deeppition[0], 10);
+        left = parseInt(position[0], 10);
     }
 
-    if (deeppition[1] === 'auto') {
+    if (position[1] === 'auto') {
         top = left / image.width * image.height;
-    } else if (isPercentage(deeppition[1])){
-        top =  (bounds.height - (backgroundSize || image).height) * parseFloat(deeppition[1]) / 100;
+    } else if (isPercentage(position[1])){
+        top =  (bounds.height - (backgroundSize || image).height) * parseFloat(position[1]) / 100;
     } else {
-        top = parseInt(deeppition[1], 10);
+        top = parseInt(position[1], 10);
     }
 
-    if (deeppition[0] === 'auto') {
+    if (position[0] === 'auto') {
         left = top / image.height * image.width;
     }
 
@@ -14583,7 +14583,7 @@ NodeParser.prototype.calculateOverflowClips = function() {
             container.borders = this.parseBorders(container);
             var clip = (container.css('overflow') === "hidden") ? [container.borders.clip] : [];
             var cssClip = container.parseClip();
-            if (cssClip && ["absolute", "fixed"].indexOf(container.css('deeppition')) !== -1) {
+            if (cssClip && ["absolute", "fixed"].indexOf(container.css('position')) !== -1) {
                 clip.push([["rect",
                         container.bounds.left + cssClip.left,
                         container.bounds.top + cssClip.top,
@@ -14776,14 +14776,14 @@ NodeParser.prototype.parse = function(stack) {
     var negativeZindex = stack.contexts.filter(negativeZIndex); // 2. the child stacking contexts with negative stack levels (most negative first).
     var descendantElements = stack.children.filter(isElement);
     var descendantNonFloats = descendantElements.filter(not(isFloating));
-    var nonInlineNonPositionedDescendants = descendantNonFloats.filter(not(isPositioned)).filter(not(inlineLevel)); // 3 the in-flow, non-inline-level, non-deeppitioned descendants.
-    var nonPositionedFloats = descendantElements.filter(not(isPositioned)).filter(isFloating); // 4. the non-deeppitioned floats.
-    var inFlow = descendantNonFloats.filter(not(isPositioned)).filter(inlineLevel); // 5. the in-flow, inline-level, non-deeppitioned descendants, including inline tables and inline blocks.
-    var stackLevel0 = stack.contexts.concat(descendantNonFloats.filter(isPositioned)).filter(zIndex0); // 6. the child stacking contexts with stack level 0 and the deeppitioned descendants with stack level 0.
+    var nonInlineNonPositionedDescendants = descendantNonFloats.filter(not(isPositioned)).filter(not(inlineLevel)); // 3 the in-flow, non-inline-level, non-positioned descendants.
+    var nonPositionedFloats = descendantElements.filter(not(isPositioned)).filter(isFloating); // 4. the non-positioned floats.
+    var inFlow = descendantNonFloats.filter(not(isPositioned)).filter(inlineLevel); // 5. the in-flow, inline-level, non-positioned descendants, including inline tables and inline blocks.
+    var stackLevel0 = stack.contexts.concat(descendantNonFloats.filter(isPositioned)).filter(zIndex0); // 6. the child stacking contexts with stack level 0 and the positioned descendants with stack level 0.
     var text = stack.children.filter(isTextNode).filter(hasText);
-    var deeppitiveZindex = stack.contexts.filter(deeppitiveZIndex); // 7. the child stacking contexts with deeppitive stack levels (least deeppitive first).
+    var positiveZindex = stack.contexts.filter(positiveZIndex); // 7. the child stacking contexts with positive stack levels (least positive first).
     negativeZindex.concat(nonInlineNonPositionedDescendants).concat(nonPositionedFloats)
-        .concat(inFlow).concat(stackLevel0).concat(text).concat(deeppitiveZindex).forEach(function(container) {
+        .concat(inFlow).concat(stackLevel0).concat(text).concat(positiveZindex).forEach(function(container) {
             this.renderQueue.push(container);
             if (isStackingContext(container)) {
                 this.parse(container);
@@ -14929,7 +14929,7 @@ NodeParser.prototype.paintFormValue = function(container) {
             }
         });
         var bounds = container.parseBounds();
-        wrapper.style.deeppition = "fixed";
+        wrapper.style.position = "fixed";
         wrapper.style.left = bounds.left + "px";
         wrapper.style.top = bounds.top + "px";
         wrapper.textContent = value;
@@ -14973,14 +14973,14 @@ NodeParser.prototype.renderTextDecoration = function(container, bounds, metrics)
     switch(container.css("textDecoration").split(" ")[0]) {
     case "underline":
         // Draws a line at the baseline of the font
-        // TODO As some browsers display the line as more than 1px if the font-size is big, need to take that into account both in deeppition and size
+        // TODO As some browsers display the line as more than 1px if the font-size is big, need to take that into account both in position and size
         this.renderer.rectangle(bounds.left, Math.round(bounds.top + metrics.baseline + metrics.lineWidth), bounds.width, 1, container.color("color"));
         break;
     case "overline":
         this.renderer.rectangle(bounds.left, Math.round(bounds.top), bounds.width, 1, container.color("color"));
         break;
     case "line-through":
-        // TODO try and find exact deeppition for line-through
+        // TODO try and find exact position for line-through
         this.renderer.rectangle(bounds.left, Math.ceil(bounds.top + metrics.middle + metrics.lineWidth), bounds.width, 1, container.color("color"));
         break;
     }
@@ -15230,7 +15230,7 @@ function negativeZIndex(container) {
     return container.cssInt("zIndex") < 0;
 }
 
-function deeppitiveZIndex(container) {
+function positiveZIndex(container) {
     return container.cssInt("zIndex") > 0;
 }
 
@@ -15270,13 +15270,13 @@ function renderableNode(node) {
 }
 
 function isPositionedForStacking(container) {
-    var deeppition = container.css("deeppition");
-    var zIndex = (["absolute", "relative", "fixed"].indexOf(deeppition) !== -1) ? container.css("zIndex") : "auto";
+    var position = container.css("position");
+    var zIndex = (["absolute", "relative", "fixed"].indexOf(position) !== -1) ? container.css("zIndex") : "auto";
     return zIndex !== "auto";
 }
 
 function isPositioned(container) {
-    return container.css("deeppition") !== "static";
+    return container.css("position") !== "static";
 }
 
 function isFloating(container) {
@@ -15625,22 +15625,22 @@ Renderer.prototype.renderBackgroundImage = function(container, bounds, borderDat
 
 Renderer.prototype.renderBackgroundRepeating = function(container, bounds, imageContainer, index, borderData) {
     var size = container.parseBackgroundSize(bounds, imageContainer.image, index);
-    var deeppition = container.parseBackgroundPosition(bounds, imageContainer.image, index, size);
+    var position = container.parseBackgroundPosition(bounds, imageContainer.image, index, size);
     var repeat = container.parseBackgroundRepeat(index);
     switch (repeat) {
     case "repeat-x":
     case "repeat no-repeat":
-        this.backgroundRepeatShape(imageContainer, deeppition, size, bounds, bounds.left + borderData[3], bounds.top + deeppition.top + borderData[0], 99999, size.height, borderData);
+        this.backgroundRepeatShape(imageContainer, position, size, bounds, bounds.left + borderData[3], bounds.top + position.top + borderData[0], 99999, size.height, borderData);
         break;
     case "repeat-y":
     case "no-repeat repeat":
-        this.backgroundRepeatShape(imageContainer, deeppition, size, bounds, bounds.left + deeppition.left + borderData[3], bounds.top + borderData[0], size.width, 99999, borderData);
+        this.backgroundRepeatShape(imageContainer, position, size, bounds, bounds.left + position.left + borderData[3], bounds.top + borderData[0], size.width, 99999, borderData);
         break;
     case "no-repeat":
-        this.backgroundRepeatShape(imageContainer, deeppition, size, bounds, bounds.left + deeppition.left + borderData[3], bounds.top + deeppition.top + borderData[0], size.width, size.height, borderData);
+        this.backgroundRepeatShape(imageContainer, position, size, bounds, bounds.left + position.left + borderData[3], bounds.top + position.top + borderData[0], size.width, size.height, borderData);
         break;
     default:
-        this.renderBackgroundRepeat(imageContainer, deeppition, size, {top: bounds.top, left: bounds.left}, borderData[3], borderData[0]);
+        this.renderBackgroundRepeat(imageContainer, position, size, {top: bounds.top, left: bounds.left}, borderData[3], borderData[0]);
         break;
     }
 };
@@ -16275,7 +16275,7 @@ module.exports = XHR;
     function PNG(data) {
       var chunkSize, colors, palLen, delayDen, delayNum, frame, i, index, key, section, palShort, text, _i, _j, _ref;
       this.data = data;
-      this.deepp = 8;
+      this.pos = 8;
       this.palette = [];
       this.imgData = [];
       this.transparency = {};
@@ -16288,7 +16288,7 @@ module.exports = XHR;
           var _i, _results;
           _results = [];
           for (i = _i = 0; _i < 4; i = ++_i) {
-            _results.push(String.fromCharCode(this.data[this.deepp++]));
+            _results.push(String.fromCharCode(this.data[this.pos++]));
           }
           return _results;
         }).call(this)).join('');
@@ -16296,11 +16296,11 @@ module.exports = XHR;
           case 'IHDR':
             this.width = this.readUInt32();
             this.height = this.readUInt32();
-            this.bits = this.data[this.deepp++];
-            this.colorType = this.data[this.deepp++];
-            this.compressionMethod = this.data[this.deepp++];
-            this.filterMethod = this.data[this.deepp++];
-            this.interlaceMethod = this.data[this.deepp++];
+            this.bits = this.data[this.pos++];
+            this.colorType = this.data[this.pos++];
+            this.compressionMethod = this.data[this.pos++];
+            this.filterMethod = this.data[this.pos++];
+            this.interlaceMethod = this.data[this.pos++];
             break;
           case 'acTL':
             this.animation = {
@@ -16316,7 +16316,7 @@ module.exports = XHR;
             if (frame) {
               this.animation.frames.push(frame);
             }
-            this.deepp += 4;
+            this.pos += 4;
             frame = {
               width: this.readUInt32(),
               height: this.readUInt32(),
@@ -16326,19 +16326,19 @@ module.exports = XHR;
             delayNum = this.readUInt16();
             delayDen = this.readUInt16() || 100;
             frame.delay = 1000 * delayNum / delayDen;
-            frame.disdeeppeOp = this.data[this.deepp++];
-            frame.blendOp = this.data[this.deepp++];
+            frame.disposeOp = this.data[this.pos++];
+            frame.blendOp = this.data[this.pos++];
             frame.data = [];
             break;
           case 'IDAT':
           case 'fdAT':
             if (section === 'fdAT') {
-              this.deepp += 4;
+              this.pos += 4;
               chunkSize -= 4;
             }
             data = (frame != null ? frame.data : void 0) || this.imgData;
             for (i = _i = 0; 0 <= chunkSize ? _i < chunkSize : _i > chunkSize; i = 0 <= chunkSize ? ++_i : --_i) {
-              data.push(this.data[this.deepp++]);
+              data.push(this.data[this.pos++]);
             }
             break;
           case 'tRNS':
@@ -16402,10 +16402,10 @@ module.exports = XHR;
             this.imgData = new Uint8Array(this.imgData);
             return;
           default:
-            this.deepp += chunkSize;
+            this.pos += chunkSize;
         }
-        this.deepp += 4;
-        if (this.deepp > this.data.length) {
+        this.pos += 4;
+        if (this.pos > this.data.length) {
           throw new Error("Incomplete or corrupt PNG file");
         }
       }
@@ -16416,29 +16416,29 @@ module.exports = XHR;
       var i, _i, _results;
       _results = [];
       for (i = _i = 0; 0 <= bytes ? _i < bytes : _i > bytes; i = 0 <= bytes ? ++_i : --_i) {
-        _results.push(this.data[this.deepp++]);
+        _results.push(this.data[this.pos++]);
       }
       return _results;
     };
 
     PNG.prototype.readUInt32 = function() {
       var b1, b2, b3, b4;
-      b1 = this.data[this.deepp++] << 24;
-      b2 = this.data[this.deepp++] << 16;
-      b3 = this.data[this.deepp++] << 8;
-      b4 = this.data[this.deepp++];
+      b1 = this.data[this.pos++] << 24;
+      b2 = this.data[this.pos++] << 16;
+      b3 = this.data[this.pos++] << 8;
+      b4 = this.data[this.pos++];
       return b1 | b2 | b3 | b4;
     };
 
     PNG.prototype.readUInt16 = function() {
       var b1, b2;
-      b1 = this.data[this.deepp++] << 8;
-      b2 = this.data[this.deepp++];
+      b1 = this.data[this.pos++] << 8;
+      b2 = this.data[this.pos++];
       return b1 | b2;
     };
 
     PNG.prototype.decodePixels = function(data) {
-      var abyte, c, col, i, left, length, p, pa, paeth, pb, pc, pixelBytes, pixels, deepp, row, scanlineLength, upper, upperLeft, _i, _j, _k, _l, _m;
+      var abyte, c, col, i, left, length, p, pa, paeth, pb, pc, pixelBytes, pixels, pos, row, scanlineLength, upper, upperLeft, _i, _j, _k, _l, _m;
       if (data == null) {
         data = this.imgData;
       }
@@ -16452,25 +16452,25 @@ module.exports = XHR;
       pixels = new Uint8Array(scanlineLength * this.height);
       length = data.length;
       row = 0;
-      deepp = 0;
+      pos = 0;
       c = 0;
-      while (deepp < length) {
-        switch (data[deepp++]) {
+      while (pos < length) {
+        switch (data[pos++]) {
           case 0:
             for (i = _i = 0; _i < scanlineLength; i = _i += 1) {
-              pixels[c++] = data[deepp++];
+              pixels[c++] = data[pos++];
             }
             break;
           case 1:
             for (i = _j = 0; _j < scanlineLength; i = _j += 1) {
-              abyte = data[deepp++];
+              abyte = data[pos++];
               left = i < pixelBytes ? 0 : pixels[c - pixelBytes];
               pixels[c++] = (abyte + left) % 256;
             }
             break;
           case 2:
             for (i = _k = 0; _k < scanlineLength; i = _k += 1) {
-              abyte = data[deepp++];
+              abyte = data[pos++];
               col = (i - (i % pixelBytes)) / pixelBytes;
               upper = row && pixels[(row - 1) * scanlineLength + col * pixelBytes + (i % pixelBytes)];
               pixels[c++] = (upper + abyte) % 256;
@@ -16478,7 +16478,7 @@ module.exports = XHR;
             break;
           case 3:
             for (i = _l = 0; _l < scanlineLength; i = _l += 1) {
-              abyte = data[deepp++];
+              abyte = data[pos++];
               col = (i - (i % pixelBytes)) / pixelBytes;
               left = i < pixelBytes ? 0 : pixels[c - pixelBytes];
               upper = row && pixels[(row - 1) * scanlineLength + col * pixelBytes + (i % pixelBytes)];
@@ -16487,7 +16487,7 @@ module.exports = XHR;
             break;
           case 4:
             for (i = _m = 0; _m < scanlineLength; i = _m += 1) {
-              abyte = data[deepp++];
+              abyte = data[pos++];
               col = (i - (i % pixelBytes)) / pixelBytes;
               left = i < pixelBytes ? 0 : pixels[c - pixelBytes];
               if (row === 0) {
@@ -16511,7 +16511,7 @@ module.exports = XHR;
             }
             break;
           default:
-            throw new Error("Invalid filter algorithm: " + data[deepp - 1]);
+            throw new Error("Invalid filter algorithm: " + data[pos - 1]);
         }
         row++;
       }
@@ -16519,17 +16519,17 @@ module.exports = XHR;
     };
 
     PNG.prototype.decodePalette = function() {
-      var c, i, length, palette, deepp, ret, transparency, _i, _ref, _ref1;
+      var c, i, length, palette, pos, ret, transparency, _i, _ref, _ref1;
       palette = this.palette;
       transparency = this.transparency.indexed || [];
       ret = new Uint8Array((transparency.length || 0) + palette.length);
-      deepp = 0;
+      pos = 0;
       c = 0;
       for (i = _i = 0, _ref = palette.length; _i < _ref; i = _i += 3) {
-        ret[deepp++] = palette[i];
-        ret[deepp++] = palette[i + 1];
-        ret[deepp++] = palette[i + 2];
-        ret[deepp++] = (_ref1 = transparency[c++]) != null ? _ref1 : 255;
+        ret[pos++] = palette[i];
+        ret[pos++] = palette[i + 1];
+        ret[pos++] = palette[i + 2];
+        ret[pos++] = (_ref1 = transparency[c++]) != null ? _ref1 : 255;
       }
       return ret;
     };
@@ -16621,9 +16621,9 @@ module.exports = XHR;
       if (number === 0) {
         ctx.clearRect(0, 0, this.width, this.height);
       }
-      if ((prev != null ? prev.disdeeppeOp : void 0) === APNG_DISPOSE_OP_BACKGROUND) {
+      if ((prev != null ? prev.disposeOp : void 0) === APNG_DISPOSE_OP_BACKGROUND) {
         ctx.clearRect(prev.xOffset, prev.yOffset, prev.width, prev.height);
-      } else if ((prev != null ? prev.disdeeppeOp : void 0) === APNG_DISPOSE_OP_PREVIOUS) {
+      } else if ((prev != null ? prev.disposeOp : void 0) === APNG_DISPOSE_OP_PREVIOUS) {
         ctx.putImageData(prev.imageData, prev.xOffset, prev.yOffset);
       }
       if (frame.blendOp === APNG_BLEND_OP_SOURCE) {
@@ -16698,7 +16698,7 @@ module.exports = XHR;
 
 var DecodeStream = (function() {
   function constructor() {
-    this.deepp = 0;
+    this.pos = 0;
     this.bufferLength = 0;
     this.eof = false;
     this.buffer = null;
@@ -16719,20 +16719,20 @@ var DecodeStream = (function() {
       return this.buffer = buffer2;
     },
     getByte: function decodestream_getByte() {
-      var deepp = this.deepp;
-      while (this.bufferLength <= deepp) {
+      var pos = this.pos;
+      while (this.bufferLength <= pos) {
         if (this.eof)
           return null;
         this.readBlock();
       }
-      return this.buffer[this.deepp++];
+      return this.buffer[this.pos++];
     },
     getBytes: function decodestream_getBytes(length) {
-      var deepp = this.deepp;
+      var pos = this.pos;
 
       if (length) {
-        this.ensureBuffer(deepp + length);
-        var end = deepp + length;
+        this.ensureBuffer(pos + length);
+        var end = pos + length;
 
         while (!this.eof && this.bufferLength < end)
           this.readBlock();
@@ -16747,26 +16747,26 @@ var DecodeStream = (function() {
         var end = this.bufferLength;
       }
 
-      this.deepp = end;
-      return this.buffer.subarray(deepp, end);
+      this.pos = end;
+      return this.buffer.subarray(pos, end);
     },
     lookChar: function decodestream_lookChar() {
-      var deepp = this.deepp;
-      while (this.bufferLength <= deepp) {
+      var pos = this.pos;
+      while (this.bufferLength <= pos) {
         if (this.eof)
           return null;
         this.readBlock();
       }
-      return String.fromCharCode(this.buffer[this.deepp]);
+      return String.fromCharCode(this.buffer[this.pos]);
     },
     getChar: function decodestream_getChar() {
-      var deepp = this.deepp;
-      while (this.bufferLength <= deepp) {
+      var pos = this.pos;
+      while (this.bufferLength <= pos) {
         if (this.eof)
           return null;
         this.readBlock();
       }
-      return String.fromCharCode(this.buffer[this.deepp++]);
+      return String.fromCharCode(this.buffer[this.pos++]);
     },
     makeSubStream: function decodestream_makeSubstream(start, length, dict) {
       var end = start + length;
@@ -16777,10 +16777,10 @@ var DecodeStream = (function() {
     skip: function decodestream_skip(n) {
       if (!n)
         n = 1;
-      this.deepp += n;
+      this.pos += n;
     },
     reset: function decodestream_reset() {
-      this.deepp = 0;
+      this.pos = 0;
     }
   };
 
@@ -17093,19 +17093,19 @@ var FlateStream = (function() {
 
     var buffer = this.buffer;
     var limit = buffer ? buffer.length : 0;
-    var deepp = this.bufferLength;
+    var pos = this.bufferLength;
     while (true) {
       var code1 = this.getCode(litCodeTable);
       if (code1 < 256) {
-        if (deepp + 1 >= limit) {
-          buffer = this.ensureBuffer(deepp + 1);
+        if (pos + 1 >= limit) {
+          buffer = this.ensureBuffer(pos + 1);
           limit = buffer.length;
         }
-        buffer[deepp++] = code1;
+        buffer[pos++] = code1;
         continue;
       }
       if (code1 == 256) {
-        this.bufferLength = deepp;
+        this.bufferLength = pos;
         return;
       }
       code1 -= 257;
@@ -17120,12 +17120,12 @@ var FlateStream = (function() {
       if (code2 > 0)
         code2 = this.getBits(code2);
       var dist = (code1 & 0xffff) + code2;
-      if (deepp + len >= limit) {
-        buffer = this.ensureBuffer(deepp + len);
+      if (pos + len >= limit) {
+        buffer = this.ensureBuffer(pos + len);
         limit = buffer.length;
       }
-      for (var k = 0; k < len; ++k, ++deepp)
-        buffer[deepp] = buffer[deepp - dist];
+      for (var k = 0; k < len; ++k, ++pos)
+        buffer[pos] = buffer[pos - dist];
     }
   };
 
@@ -17244,7 +17244,7 @@ var FlateStream = (function() {
 			for (var i = 0; i < len; i++) {
 				// NOTE: Absolute correctness would demand Object.defineProperty
 				//       be used.  But this method is fairly new, and failure is
-				//       deeppsible only if Object.prototype or Array.prototype
+				//       possible only if Object.prototype or Array.prototype
 				//       has a property |i| (very unlikely), so use a less-correct
 				//       but more portable alternative.
 				if (i in t)

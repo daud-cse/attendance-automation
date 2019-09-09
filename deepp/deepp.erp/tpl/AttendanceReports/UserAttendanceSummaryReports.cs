@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace deepp.erp.tpl.AttendanceReports {
+namespace pnsms.erp.tpl.AttendanceReports {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace deepp.erp.tpl.AttendanceReports {
         
         public override string FullResourceName {
             get {
-                return "deepp.erp.tpl.AttendanceReports.UserAttendanceSummaryReports.rpt";
+                return "pnsms.erp.tpl.AttendanceReports.UserAttendanceSummaryReports.rpt";
             }
             set {
                 // Do nothing

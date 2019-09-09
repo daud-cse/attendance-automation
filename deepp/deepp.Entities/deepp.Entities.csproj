@@ -431,7 +431,7 @@
     <Compile Include="StoredProcedures\Models\VmInstitute.cs" />
     <Compile Include="StoredProcedures\Models\VmUserInfo.cs" />
     <Compile Include="StoredProcedures\Models\VmUserInfoDetails.cs" />
-    <Compile Include="StoredProcedures\PNSMSContext.cs" />
+    <Compile Include="StoredProcedures\deeppContext.cs" />
     <Compile Include="StoredProcedures\IStoredProcedures.cs" />
     <Compile Include="StoredProcedures\Models\SprPartners_Result.cs" />
     <Compile Include="StoredProcedures\Models\TTProduct.cs" />
