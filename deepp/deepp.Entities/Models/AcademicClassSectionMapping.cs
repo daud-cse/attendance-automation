@@ -9,10 +9,8 @@ namespace deepp.Entities.Models
     {
         public AcademicClassSectionMapping()
         {
-            this.Exams = new List<Exam>();
             this.StudentAttendances = new List<StudentAttendance>();
             this.Students = new List<Student>();
-            this.SubjectAcademicClassMappings = new List<SubjectAcademicClassMapping>();
             this.Teachers = new List<Teacher>();
         }
 
@@ -35,10 +33,8 @@ namespace deepp.Entities.Models
         public virtual Employee Employee { get; set; }
         public virtual Employee Employee1 { get; set; }
         public virtual Institute Institute { get; set; }
-        public virtual ICollection<Exam> Exams { get; set; }
         public virtual ICollection<StudentAttendance> StudentAttendances { get; set; }
         public virtual ICollection<Student> Students { get; set; }
-        public virtual ICollection<SubjectAcademicClassMapping> SubjectAcademicClassMappings { get; set; }
         public virtual ICollection<Teacher> Teachers { get; set; }
     }
 }

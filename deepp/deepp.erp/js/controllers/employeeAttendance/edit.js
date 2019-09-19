@@ -18,6 +18,8 @@ app.controller('EmployeeAttendanceEditCtrl', ['$scope', '$state', '$stateParams'
 
         //------------------------------
         $scope.EditEmployeeAttendance = function () {
+			 $scope.VmUserAttendance.InTime =new Date( $scope.VmUserAttendance.InTime.toString());
+            $scope.VmUserAttendance.OutTime = new Date($scope.VmUserAttendance.OutTime.toString());
             EmployeeAttendanceService.updateemployeeattendance($scope.VmUserAttendance, function (result) {
                 $state.go('app.employeeAttendance.list');
                 toaster.pop("success", "Success", $scope.entity.Name + " Updated.");

@@ -50,7 +50,7 @@ namespace deepp.landing
 
             // TODO: Register your types here
             // container.RegisterType<IProductRepository, ProductRepository>();
-                 container.RegisterType<IDataContextAsync, PNSMSContext>(new PerRequestLifetimeManager())
+                 container.RegisterType<IDataContextAsync, deeppContext>(new PerRequestLifetimeManager())
                 .RegisterType<IUnitOfWork, UnitOfWork>(new PerRequestLifetimeManager())
                 .RegisterType<IUnitOfWorkAsync, UnitOfWork>(new PerRequestLifetimeManager())
                 .RegisterType<IRepositoryAsync<Notice>, Repository<Notice>>()
@@ -128,7 +128,7 @@ namespace deepp.landing
 
                 .RegisterType<IGoverningbodyService, GoverningbodyService>()
                 .RegisterType<IRepositoryAsync<Governingbody>, Repository<Governingbody>>()
-                 .RegisterType<IStoredProcedures, PNSMSContext>(new PerRequestLifetimeManager())
+                 .RegisterType<IStoredProcedures, deeppContext>(new PerRequestLifetimeManager())
                 .RegisterType<IStoredProcedureService, StoredProcedureService>()
 
                 .RegisterType<IShortMessageTemplateService, ShortMessageTemplateService>()
@@ -146,11 +146,7 @@ namespace deepp.landing
                 .RegisterType<IVmOnlineAdmissionService, VmOnlineAdmissionService>()
 
               
-                .RegisterType<IVoucherDetailService, VoucherDetailService>()
-                .RegisterType<IRepositoryAsync<Voucher>, Repository<Voucher>>()
-                .RegisterType<IRepositoryAsync<VoucherDetail>, Repository<VoucherDetail>>()
-                .RegisterType<IRepositoryAsync<ChartOfAccount>, Repository<ChartOfAccount>>()
-
+              
 
 
             #region INSTITUE

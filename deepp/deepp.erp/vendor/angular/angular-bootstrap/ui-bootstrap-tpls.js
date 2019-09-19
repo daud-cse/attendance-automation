@@ -5,7 +5,7 @@
  * Version: 0.12.0 - 2014-11-16
  * License: MIT
  */
-angular.module("ui.bootstrap", ["ui.bootstrap.tpls", "ui.bootstrap.transition","ui.bootstrap.collapse","ui.bootstrap.accordion","ui.bootstrap.alert","ui.bootstrap.bindHtml","ui.bootstrap.buttons","ui.bootstrap.carousel","ui.bootstrap.dateparser","ui.bootstrap.deeppition","ui.bootstrap.datepicker","ui.bootstrap.dropdown","ui.bootstrap.modal","ui.bootstrap.pagination","ui.bootstrap.tooltip","ui.bootstrap.popover","ui.bootstrap.progressbar","ui.bootstrap.rating","ui.bootstrap.tabs","ui.bootstrap.timepicker","ui.bootstrap.timepickersimple","ui.bootstrap.typeahead"]);
+angular.module("ui.bootstrap", ["ui.bootstrap.tpls", "ui.bootstrap.transition","ui.bootstrap.collapse","ui.bootstrap.accordion","ui.bootstrap.alert","ui.bootstrap.bindHtml","ui.bootstrap.buttons","ui.bootstrap.carousel","ui.bootstrap.dateparser","ui.bootstrap.position","ui.bootstrap.datepicker","ui.bootstrap.dropdown","ui.bootstrap.modal","ui.bootstrap.pagination","ui.bootstrap.tooltip","ui.bootstrap.popover","ui.bootstrap.progressbar","ui.bootstrap.rating","ui.bootstrap.tabs","ui.bootstrap.timepicker","ui.bootstrap.timepickersimple","ui.bootstrap.typeahead"]);
 angular.module("ui.bootstrap.tpls", ["template/accordion/accordion-group.html","template/accordion/accordion.html","template/alert/alert.html","template/carousel/carousel.html","template/carousel/slide.html","template/datepicker/datepicker.html","template/datepicker/day.html","template/datepicker/month.html","template/datepicker/popup.html","template/datepicker/year.html","template/modal/backdrop.html","template/modal/window.html","template/pagination/pager.html","template/pagination/pagination.html","template/tooltip/tooltip-html-unsafe-popup.html","template/tooltip/tooltip-popup.html","template/popover/popover.html","template/progressbar/bar.html","template/progressbar/progress.html","template/progressbar/progressbar.html","template/rating/rating.html","template/tabs/tab.html","template/tabs/tabset.html","template/timepicker/timepicker.html","template/timepicker/timepickersimple.html","template/typeahead/typeahead-match.html","template/typeahead/typeahead-popup.html"]);
 angular.module('ui.bootstrap.transition', [])
 
@@ -835,15 +835,15 @@ angular.module('ui.bootstrap.dateparser', [])
   }
 }]);
 
-angular.module('ui.bootstrap.deeppition', [])
+angular.module('ui.bootstrap.position', [])
 
 /**
- * A set of utility methods that can be use to retrieve deeppition of DOM elements.
- * It is meant to be used where we need to absolute-deeppition DOM elements in
+ * A set of utility methods that can be use to retrieve position of DOM elements.
+ * It is meant to be used where we need to absolute-position DOM elements in
  * relation to other, existing elements (this is the case for tooltips, popovers,
  * typeahead suggestions etc.).
  */
-  .factory('$deeppition', ['$document', '$window', function ($document, $window) {
+  .factory('$position', ['$document', '$window', function ($document, $window) {
 
     function getStyle(el, cssprop) {
       if (el.currentStyle) { //IE
@@ -856,15 +856,15 @@ angular.module('ui.bootstrap.deeppition', [])
     }
 
     /**
-     * Checks if a given element is statically deeppitioned
+     * Checks if a given element is statically positioned
      * @param element - raw DOM element
      */
     function isStaticPositioned(element) {
-      return (getStyle(element, 'deeppition') || 'static' ) === 'static';
+      return (getStyle(element, 'position') || 'static' ) === 'static';
     }
 
     /**
-     * returns the closest, non-statically deeppitioned parentOffset of a given element
+     * returns the closest, non-statically positioned parentOffset of a given element
      * @param element
      */
     var parentOffsetEl = function (element) {
@@ -878,10 +878,10 @@ angular.module('ui.bootstrap.deeppition', [])
 
     return {
       /**
-       * Provides read-only equivalent of jQuery's deeppition function:
-       * http://api.jquery.com/deeppition/
+       * Provides read-only equivalent of jQuery's position function:
+       * http://api.jquery.com/position/
        */
-      deeppition: function (element) {
+      position: function (element) {
         var elBCR = this.offset(element);
         var offsetParentBCR = { top: 0, left: 0 };
         var offsetParentEl = parentOffsetEl(element[0]);
@@ -917,17 +917,17 @@ angular.module('ui.bootstrap.deeppition', [])
       /**
        * Provides coordinates for the targetEl in relation to hostEl
        */
-      deeppitionElements: function (hostEl, targetEl, deeppitionStr, appendToBody) {
+      positionElements: function (hostEl, targetEl, positionStr, appendToBody) {
 
-        var deeppitionStrParts = deeppitionStr.split('-');
-        var deepp0 = deeppitionStrParts[0], deepp1 = deeppitionStrParts[1] || 'center';
+        var positionStrParts = positionStr.split('-');
+        var pos0 = positionStrParts[0], pos1 = positionStrParts[1] || 'center';
 
         var hostElPos,
           targetElWidth,
           targetElHeight,
           targetElPos;
 
-        hostElPos = appendToBody ? this.offset(hostEl) : this.deeppition(hostEl);
+        hostElPos = appendToBody ? this.offset(hostEl) : this.position(hostEl);
 
         targetElWidth = targetEl.prop('offsetWidth');
         targetElHeight = targetEl.prop('offsetHeight');
@@ -956,29 +956,29 @@ angular.module('ui.bootstrap.deeppition', [])
           }
         };
 
-        switch (deepp0) {
+        switch (pos0) {
           case 'right':
             targetElPos = {
-              top: shiftHeight[deepp1](),
-              left: shiftWidth[deepp0]()
+              top: shiftHeight[pos1](),
+              left: shiftWidth[pos0]()
             };
             break;
           case 'left':
             targetElPos = {
-              top: shiftHeight[deepp1](),
+              top: shiftHeight[pos1](),
               left: hostElPos.left - targetElWidth
             };
             break;
           case 'bottom':
             targetElPos = {
-              top: shiftHeight[deepp0](),
-              left: shiftWidth[deepp1]()
+              top: shiftHeight[pos0](),
+              left: shiftWidth[pos1]()
             };
             break;
           default:
             targetElPos = {
               top: hostElPos.top - targetElHeight,
-              left: shiftWidth[deepp1]()
+              left: shiftWidth[pos1]()
             };
             break;
         }
@@ -988,7 +988,7 @@ angular.module('ui.bootstrap.deeppition', [])
     };
   }]);
 
-angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootstrap.deeppition'])
+angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootstrap.position'])
 
 .constant('datepickerConfig', {
   formatDay: 'dd',
@@ -1421,8 +1421,8 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
   showButtonBar: true
 })
 
-.directive('datepickerPopup', ['$compile', '$parse', '$document', '$deeppition', 'dateFilter', 'dateParser', 'datepickerPopupConfig',
-function ($compile, $parse, $document, $deeppition, dateFilter, dateParser, datepickerPopupConfig) {
+.directive('datepickerPopup', ['$compile', '$parse', '$document', '$position', 'dateFilter', 'dateParser', 'datepickerPopupConfig',
+function ($compile, $parse, $document, $position, dateFilter, dateParser, datepickerPopupConfig) {
   return {
     restrict: 'EA',
     require: 'ngModel',
@@ -1568,8 +1568,8 @@ function ($compile, $parse, $document, $deeppition, dateFilter, dateParser, date
       scope.$watch('isOpen', function(value) {
         if (value) {
           scope.$broadcast('datepicker.focus');
-          scope.deeppition = appendToBody ? $deeppition.offset(element) : $deeppition.deeppition(element);
-          scope.deeppition.top = scope.deeppition.top + element.prop('offsetHeight');
+          scope.position = appendToBody ? $position.offset(element) : $position.position(element);
+          scope.position.top = scope.position.top + element.prop('offsetHeight');
 
           $document.bind('click', documentClickBind);
         } else {
@@ -2427,7 +2427,7 @@ angular.module('ui.bootstrap.pagination', [])
  * function, placement as a function, inside, support for more triggers than
  * just mouse enter/leave, html tooltips, and selector delegation.
  */
-angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.deeppition', 'ui.bootstrap.bindHtml' ] )
+angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.position', 'ui.bootstrap.bindHtml' ] )
 
 /**
  * The $tooltip service creates tooltip- and popover-like directives as well as
@@ -2479,8 +2479,8 @@ angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.deeppition', 'ui.bootstr
   function snake_case(name){
     var regexp = /[A-Z]/g;
     var separator = '-';
-    return name.replace(regexp, function(letter, deepp) {
-      return (deepp ? separator : '') + letter.toLowerCase();
+    return name.replace(regexp, function(letter, pos) {
+      return (pos ? separator : '') + letter.toLowerCase();
     });
   }
 
@@ -2488,7 +2488,7 @@ angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.deeppition', 'ui.bootstr
    * Returns the actual instance of the $tooltip service.
    * TODO support multiple triggers
    */
-  this.$get = [ '$window', '$compile', '$timeout', '$document', '$deeppition', '$interpolate', function ( $window, $compile, $timeout, $document, $deeppition, $interpolate ) {
+  this.$get = [ '$window', '$compile', '$timeout', '$document', '$position', '$interpolate', function ( $window, $compile, $timeout, $document, $position, $interpolate ) {
     return function $tooltip ( type, prefix, defaultTriggerShow ) {
       var options = angular.extend( {}, defaultOptions, globalOptions );
 
@@ -2544,13 +2544,13 @@ angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.deeppition', 'ui.bootstr
             var hasEnableExp = angular.isDefined(attrs[prefix+'Enable']);
             var ttScope = scope.$new(true);
 
-            var deeppitionTooltip = function () {
+            var positionTooltip = function () {
 
-              var ttPosition = $deeppition.deeppitionElements(element, tooltip, ttScope.placement, appendToBody);
+              var ttPosition = $position.positionElements(element, tooltip, ttScope.placement, appendToBody);
               ttPosition.top += 'px';
               ttPosition.left += 'px';
 
-              // Now set the calculated deeppitioning.
+              // Now set the calculated positioning.
               tooltip.css( ttPosition );
             };
 
@@ -2579,7 +2579,7 @@ angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.deeppition', 'ui.bootstr
                 // This happens if show is triggered multiple times before any hide is triggered.
                 if (!popupTimeout) {
                   popupTimeout = $timeout( show, ttScope.popupDelay, false );
-                  popupTimeout.then(function(redeeppition){redeeppition();});
+                  popupTimeout.then(function(reposition){reposition();});
                 }
               } else {
                 show()();
@@ -2611,7 +2611,7 @@ angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.deeppition', 'ui.bootstr
 
               createTooltip();
 
-              // Set the initial deeppitioning.
+              // Set the initial positioning.
               tooltip.css({ top: 0, left: 0, display: 'block' });
 
               // Now we add it to the DOM because need some info about it. But it's not
@@ -2622,15 +2622,15 @@ angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.deeppition', 'ui.bootstr
                 element.after( tooltip );
               }
 
-              deeppitionTooltip();
+              positionTooltip();
 
               // And show the tooltip.
               ttScope.isOpen = true;
               ttScope.$digest(); // digest required as $apply is not called
 
-              // Return deeppitioning function as promise callback for correct
-              // deeppitioning after draw.
-              return deeppitionTooltip;
+              // Return positioning function as promise callback for correct
+              // positioning after draw.
+              return positionTooltip;
             }
 
             // Hide the tooltip popup element.
@@ -3167,7 +3167,7 @@ angular.module('ui.bootstrap.tabs', [])
       //Empty controller so other directives can require being 'under' a tab
     },
     compile: function(elm, attrs, transclude) {
-      return function deepptLink(scope, elm, attrs, tabsetCtrl) {
+      return function postLink(scope, elm, attrs, tabsetCtrl) {
         scope.$watch('active', function(active) {
           if (active) {
             tabsetCtrl.select(scope);
@@ -3769,7 +3769,7 @@ angular.module('ui.bootstrap.timepickersimple', [])
     };
 });
 
-angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.deeppition', 'ui.bootstrap.bindHtml'])
+angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.position', 'ui.bootstrap.bindHtml'])
 
 /**
  * A helper service that can parse typeahead's syntax (string provided by users)
@@ -3800,8 +3800,8 @@ angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.deeppition', 'ui.bootstr
   };
 }])
 
-  .directive('typeahead', ['$compile', '$parse', '$q', '$timeout', '$document', '$deeppition', 'typeaheadParser',
-    function ($compile, $parse, $q, $timeout, $document, $deeppition, typeaheadParser) {
+  .directive('typeahead', ['$compile', '$parse', '$q', '$timeout', '$document', '$position', 'typeaheadParser',
+    function ($compile, $parse, $q, $timeout, $document, $position, typeaheadParser) {
 
   var HOT_KEYS = [9, 13, 27, 38, 40];
 
@@ -3865,7 +3865,7 @@ angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.deeppition', 'ui.bootstr
         active: 'activeIdx',
         select: 'select(activeIdx)',
         query: 'query',
-        deeppition: 'deeppition'
+        position: 'position'
       });
       //custom item template
       if (angular.isDefined(attrs.typeaheadTemplateUrl)) {
@@ -3918,11 +3918,11 @@ angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.deeppition', 'ui.bootstr
               }
 
               scope.query = inputValue;
-              //deeppition pop-up with matches - we need to re-calculate its deeppition each time we are opening a window
-              //with matches as a pop-up might be absolute-deeppitioned and deeppition of an input might have changed on a page
+              //position pop-up with matches - we need to re-calculate its position each time we are opening a window
+              //with matches as a pop-up might be absolute-positioned and position of an input might have changed on a page
               //due to other elements being rendered
-              scope.deeppition = appendToBody ? $deeppition.offset(element) : $deeppition.deeppition(element);
-              scope.deeppition.top = scope.deeppition.top + element.prop('offsetHeight');
+              scope.position = appendToBody ? $position.offset(element) : $position.position(element);
+              scope.position.top = scope.position.top + element.prop('offsetHeight');
 
               element.attr('aria-expanded', true);
             } else {
@@ -4112,7 +4112,7 @@ angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.deeppition', 'ui.bootstr
         matches:'=',
         query:'=',
         active:'=',
-        deeppition:'=',
+        position:'=',
         select:'&'
       },
       replace:true,
@@ -4283,7 +4283,7 @@ angular.module("template/datepicker/month.html", []).run(["$templateCache", func
 
 angular.module("template/datepicker/popup.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("template/datepicker/popup.html",
-    "<ul class=\"dropdown-menu\" ng-style=\"{display: (isOpen && 'block') || 'none', top: deeppition.top+'px', left: deeppition.left+'px'}\" ng-keydown=\"keydown($event)\">\n" +
+    "<ul class=\"dropdown-menu\" ng-style=\"{display: (isOpen && 'block') || 'none', top: position.top+'px', left: position.left+'px'}\" ng-keydown=\"keydown($event)\">\n" +
     "	<li ng-transclude></li>\n" +
     "	<li ng-if=\"showButtonBar\" style=\"padding:10px 9px 2px\">\n" +
     "		<span class=\"btn-group pull-left\">\n" +
@@ -4489,7 +4489,7 @@ angular.module("template/typeahead/typeahead-match.html", []).run(["$templateCac
 
 angular.module("template/typeahead/typeahead-popup.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("template/typeahead/typeahead-popup.html",
-    "<ul class=\"dropdown-menu\" ng-show=\"isOpen()\" ng-style=\"{top: deeppition.top+'px', left: deeppition.left+'px'}\" style=\"display: block;\" role=\"listbox\" aria-hidden=\"{{!isOpen()}}\">\n" +
+    "<ul class=\"dropdown-menu\" ng-show=\"isOpen()\" ng-style=\"{top: position.top+'px', left: position.left+'px'}\" style=\"display: block;\" role=\"listbox\" aria-hidden=\"{{!isOpen()}}\">\n" +
     "    <li ng-repeat=\"match in matches track by $index\" ng-class=\"{active: isActive($index) }\" ng-mouseenter=\"selectActive($index)\" ng-click=\"selectMatch($index)\" role=\"option\" id=\"{{match.id}}\">\n" +
     "        <div typeahead-match index=\"$index\" match=\"match\" query=\"query\" template-url=\"templateUrl\"></div>\n" +
     "    </li>\n" +

@@ -1,9 +1,8 @@
-﻿
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using deepp.Service.ViewModels;
 using deepp.Service;
 using Repository.Pattern.UnitOfWork;
-
+using deepp.Entities.ViewModels;
 
 namespace deepp.landing.Controllers
 {
@@ -45,6 +44,7 @@ namespace deepp.landing.Controllers
         {
 
             string url = HttpContext.Request.Url.Host;
+
             url = "seipattendance.bddigitalconsultancy.com";
             var vmLanding = _vmLandingService.GetAllVmLanding(url);
             Sessions.InstituteId = vmLanding.Institute.Id;
@@ -56,10 +56,45 @@ namespace deepp.landing.Controllers
             vmLanding.Institute.VisitorTotal = ++count;
             instituteService.Update(vmLanding.Institute);
             unitOfWork.SaveChanges();
-
+            //return RedirectToAction("IndexHome", "Home");
             return View(vmLanding);
         }
+        public ActionResult IndexLoginTheme1()
+        {
 
+            string url = HttpContext.Request.Url.Host;
+            url = "seipattendance.bddigitalconsultancy.com";
+            var vmLanding = _vmLandingService.GetAllVmLanding(url);
+            Sessions.InstituteId = vmLanding.Institute.Id;
+            Sessions.InstituteLogoId = vmLanding.ImageLogo.Id;
+            Sessions.InstituteBannerId = vmLanding.ImageBanner.Id;
+            Sessions.InstituteContactText = vmLanding.Institute.ContactText;
+            Sessions.InstituteUsefulLinkText = vmLanding.Institute.UsefulLinkText;
+            var count = vmLanding.Institute.VisitorTotal ?? 0;
+            vmLanding.Institute.VisitorTotal = ++count;
+            instituteService.Update(vmLanding.Institute);
+            unitOfWork.SaveChanges();
+            // return RedirectToAction("IndexLoginTheme1", "Home");
+            return View(vmLanding);
+        }
+        public ActionResult IndexHome()
+        {
+
+            string url = HttpContext.Request.Url.Host;
+            url = "seipattendance.bddigitalconsultancy.com";
+            var vmLanding = _vmLandingService.GetAllVmLanding(url);
+            Sessions.InstituteId = vmLanding.Institute.Id;
+            Sessions.InstituteLogoId = vmLanding.ImageLogo.Id;
+            Sessions.InstituteBannerId = vmLanding.ImageBanner.Id;
+            Sessions.InstituteContactText = vmLanding.Institute.ContactText;
+            Sessions.InstituteUsefulLinkText = vmLanding.Institute.UsefulLinkText;
+            var count = vmLanding.Institute.VisitorTotal ?? 0;
+            vmLanding.Institute.VisitorTotal = ++count;
+            instituteService.Update(vmLanding.Institute);
+            unitOfWork.SaveChanges();
+            // return RedirectToAction("IndexLoginTheme1", "Home");
+            return View(vmLanding);
+        }
         public ActionResult Welcome()
         {
             return View();

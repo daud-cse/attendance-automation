@@ -7,6 +7,11 @@ namespace deepp.Entities.Models
 {
     public partial class AttendanceConfiguration: Entity
     {
+        public AttendanceConfiguration()
+        {
+            this.AttendanceConfigurationDetails = new List<AttendanceConfigurationDetail>();
+        }
+
         public int Id { get; set; }
         public string MachineNo { get; set; }
         public string MachineSerialNo { get; set; }
@@ -21,5 +26,6 @@ namespace deepp.Entities.Models
         public string MachineSerialNo3 { get; set; }
         public string MachineNo4 { get; set; }
         public string MachineSerialNo4 { get; set; }
+        public virtual ICollection<AttendanceConfigurationDetail> AttendanceConfigurationDetails { get; set; }
     }
 }

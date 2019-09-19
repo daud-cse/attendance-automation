@@ -1,15 +1,10 @@
 ﻿using deepp.erp.Models;
-using deepp.erp;
 using deepp.Service;
 using Repository.Pattern.UnitOfWork;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Web;
-using System.Web.Caching;
 using System.Web.Mvc;
-using System.Web.Security;
+
 
 namespace deepp.erp.Controllers
 {
@@ -19,8 +14,8 @@ namespace deepp.erp.Controllers
         readonly IRightsService rightsService;
         readonly IUnitOfWorkAsync uow;
 
-        public HomeController(IUserInfoService userInfoService, 
-            IRightsService rightsService, 
+        public HomeController(IUserInfoService userInfoService,
+            IRightsService rightsService,
             IUnitOfWorkAsync uow)
         {
             this.userInfoService = userInfoService;
@@ -32,14 +27,9 @@ namespace deepp.erp.Controllers
         public ActionResult Index()
         {
             string user = HttpContext.User.Identity.Name;
-            //Sessions.ViewBag.TMP = user;
-            //temp start
-
-            // user = "29";
-            //user = "2025";
             //temp end
-           user = "42";//seip
-
+            user = "42";//seip    
+                        // user = "82";//ionex
             try
             {
                 if (string.IsNullOrEmpty(user))
@@ -54,30 +44,26 @@ namespace deepp.erp.Controllers
                 {
                     return RedirectToAction("UnAuthenticated");
                 }
-
-
                 Sessions.Rights = rights;
                 Sessions.UserId = userId;
-            }   
-            catch(Exception ex){
+            }
+            catch (Exception ex)
+            {
                 return RedirectToAction("SessionsOut");
             }
-            
-
             return View();
         }
 
         [deepp.erp.Authorize]
         public ActionResult Dashboard()
         {
-            
+
             var user = userInfoService.GetUserAndInstituteInfoByUserId(Sessions.UserId);
             Sessions.InstituteId = user.InstituteId.Value;
-            
             LandingViewModel model = new LandingViewModel();
             model.InstituteName = user.Institute.Name;
             model.UserName = user.Name;
-            var objAcademicSessions= user.Institute.AcademicSessions.AsQueryable().Where(x => x.IsRunning == true).FirstOrDefault();
+            var objAcademicSessions = user.Institute.AcademicSessions.AsQueryable().Where(x => x.IsRunning == true).FirstOrDefault();
             Sessions.CurrentSessionId = objAcademicSessions.Id;
             model.CurrentSessionName = objAcademicSessions.Name;
             return PartialView(model);

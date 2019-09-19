@@ -11,7 +11,7 @@
 
     <div class="wrapper-md" ng-controller="SettingsPartnerCtrl" uploader="uploader">
         <div class="panel-body">
-            <form class="form-horizontal" ng-submit="saveSubmit()" method="deeppt">
+            <form class="form-horizontal" ng-submit="saveSubmit()" method="post">
                 <input type="text" ng-show="false" data-ng-model="user.Id" value="{{user.Id}}" />
                 <input type="text" ng-show="false" data-ng-model="user.IsActive" value="{{user.IsActive}}" />
                 <div class="form-group">
@@ -51,7 +51,7 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Logo input</label>
                     <div class="col-sm-10">
-                        <!--<input tabindex="-1" style="deeppition: absolute; clip: rect(0px, 0px, 0px, 0px);"
+                        <!--<input tabindex="-1" style="position: absolute; clip: rect(0px, 0px, 0px, 0px);"
                                id="filestyle-0"
                                ui-jq="filestyle"
                                data-icon="false"

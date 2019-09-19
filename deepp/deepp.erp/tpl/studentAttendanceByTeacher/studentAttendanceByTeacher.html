@@ -3,10 +3,10 @@
 </div>
 <div class="wrapper-md" ng-controller="StudentAttendanceByTeacherCtrl">
     <!-- toaster directive -->
-    <toaster-container toaster-options="{'deeppition-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
     <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
     <!-- attendance directive -->
-    <!--<form role="form" name="step1" class="form-validation" method="deeppt">
+    <!--<form role="form" name="step1" class="form-validation" method="post">
        
         <div class="panel panel-primary" ng-hide="isnewLoading">
             <div class="panel-heading wrapper-xs">Take Attendance</div>
@@ -166,7 +166,7 @@
             {{ x.StudentName }}
         </td>
         <td>{{ x.StudentRoll }}</td>-->
-                            <form role="form" name="" class="form-validation" method="deeppt">
+                            <form role="form" name="" class="form-validation" method="post">
                                 
                                 <td>
                                     <label class="i-checks m-b-none">
@@ -239,7 +239,7 @@
         <!--</tab>-->
         <!--</tabset>-->
     
-    <form role="form" name="step2" class="form-validation" method="deeppt">
+    <form role="form" name="step2" class="form-validation" method="post">
         <div class="panel panel-default" ng-hide="isLoadinglist">
             <div class="row">
                 <div class="col-sm-3">

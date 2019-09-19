@@ -10,9 +10,6 @@ namespace deepp.Entities.Models
         public Student()
         {
             this.CoCurricularActivitiesOfStudents = new List<CoCurricularActivitiesOfStudent>();
-            this.ExamSubjectMarks = new List<ExamSubjectMark>();
-            this.FeesCollections = new List<FeesCollection>();
-            this.FeesGenerateStudents = new List<FeesGenerateStudent>();
             this.GuardiansOfStudents = new List<GuardiansOfStudent>();
             this.MobilePayments = new List<MobilePayment>();
             this.ScholarshipOfStudents = new List<ScholarshipOfStudent>();
@@ -20,7 +17,6 @@ namespace deepp.Entities.Models
             this.Siblings = new List<Sibling>();
             this.Siblings1 = new List<Sibling>();
             this.StudentAttendanceDetails = new List<StudentAttendanceDetail>();
-            this.SubjectStudentMappings = new List<SubjectStudentMapping>();
         }
 
         public int StudentId { get; set; }
@@ -43,10 +39,6 @@ namespace deepp.Entities.Models
         public virtual AcademicShift AcademicShift { get; set; }
         public virtual AcademicVersion AcademicVersion { get; set; }
         public virtual ICollection<CoCurricularActivitiesOfStudent> CoCurricularActivitiesOfStudents { get; set; }
-        public virtual ICollection<ExamSubjectMark> ExamSubjectMarks { get; set; }
-        public virtual FeesCollectionAdvance FeesCollectionAdvance { get; set; }
-        public virtual ICollection<FeesCollection> FeesCollections { get; set; }
-        public virtual ICollection<FeesGenerateStudent> FeesGenerateStudents { get; set; }
         public virtual ICollection<GuardiansOfStudent> GuardiansOfStudents { get; set; }
         public virtual ICollection<MobilePayment> MobilePayments { get; set; }
         public virtual ICollection<ScholarshipOfStudent> ScholarshipOfStudents { get; set; }
@@ -55,6 +47,5 @@ namespace deepp.Entities.Models
         public virtual ICollection<Sibling> Siblings1 { get; set; }
         public virtual ICollection<StudentAttendanceDetail> StudentAttendanceDetails { get; set; }
         public virtual UserInfo UserInfo { get; set; }
-        public virtual ICollection<SubjectStudentMapping> SubjectStudentMappings { get; set; }
     }
 }

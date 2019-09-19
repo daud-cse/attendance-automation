@@ -1,0 +1,5 @@
+E:\DeepPresent Attendance\deeppresent\deepp\deepp.SmsEmailService\obj\Debug\deepp.SmsEmailService.csprojResolveAssemblyReference.cache
+E:\DeepPresent Attendance\deeppresent\deepp\deepp.SmsEmailService\obj\Debug\deepp.SmsEmailService.csproj.pnsms.SmsEmailService.exe.config
+E:\DeepPresent Attendance\deeppresent\deepp\deepp.SmsEmailService\obj\Debug\deepp.SmsEmailService.MainForm.resources
+E:\DeepPresent Attendance\deeppresent\deepp\deepp.SmsEmailService\obj\Debug\pnsms.SmsEmailService.Properties.Resources.resources
+E:\DeepPresent Attendance\deeppresent\deepp\deepp.SmsEmailService\obj\Debug\deepp.SmsEmailService.csproj.GenerateResource.Cache

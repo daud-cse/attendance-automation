@@ -3,10 +3,10 @@
 </div>
 <div class="wrapper-md">
     <!-- toaster directive -->
-    <toaster-container toaster-options="{'deeppition-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
     <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
     <!-- attendance directive -->
-    <form role="form" ng-controller="TeacherAttendanceEditCtrl" name="step1" ng-submit="EditTeacherAttendance()" method="deeppt" id="pdf">
+    <form role="form" ng-controller="TeacherAttendanceEditCtrl" name="step1" ng-submit="EditTeacherAttendance()" method="post" id="pdf">
         <div class="panel panel-info">
             <!--<div class="panel-heading font-bold">Attendance Info</div>-->
             <div style="height: 50px;" class="panel-heading">
@@ -57,7 +57,7 @@
                             <table class="table table-striped b-t b-light" ng-table>
                                 <thead>
                                     <tr>
-                                        <!--<th>PIN</th>-->
+                                        <!-- <th>PIN</th> -->
                                         <th>Designation</th>
                                         <th>Name</th>
                                         <th>In Time</th>
@@ -68,7 +68,7 @@
                                 </thead>
                                 <tbody ng-show="VmUserAttendance.AttendanceDetails.length">
                                     <tr ng-repeat="x in VmUserAttendance.AttendanceDetails">
-                                        <!--<td>{{ x.UserPin }}</td>-->                                        
+                                        <!-- <td>{{ x.UserPin }}</td>                                         -->
                                         <td><input type="hidden" value="{{ x.Id }}"> {{ x.UserDesignation }}</td>
                                         <td><input type="hidden" value="{{ x.UserInfoId }}">
                                         {{ x.UserName }}</td>

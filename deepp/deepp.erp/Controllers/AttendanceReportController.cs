@@ -36,7 +36,7 @@ namespace deepp.erp.Controllers
         }
         public void GetAttendanceReports(int AcademicBranchId = 0, int AcademicClassesId = 0, int AcademicSectionId = 0, int AcademicPeriodId=0)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["PNSMSContext"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["deeppContext"].ConnectionString;
             SqlConnectionStringBuilder SConn = new SqlConnectionStringBuilder(connectionString);
          
             try
@@ -65,8 +65,8 @@ namespace deepp.erp.Controllers
                 rd.Clone();
                 rd.Close();
                 //response.Content = new StreamContent(rd.ExportToStream(ExportFormatType.PortableDocFormat));
-                //response.Content.Headers.ContentDisdeeppition = new System.Net.Http.Headers.ContentDisdeeppitionHeaderValue("attachment");
-                //response.Content.Headers.ContentDisdeeppition.FileName = "Transcript.pdf";
+                //response.Content.Headers.ContentDisposition = new System.Net.Http.Headers.ContentDispositionHeaderValue("attachment");
+                //response.Content.Headers.ContentDisposition.FileName = "Transcript.pdf";
 
                 //return response;
 
@@ -79,64 +79,18 @@ namespace deepp.erp.Controllers
         }
         public void GetAttendanceReportsDataSet(int AcademicBranchId = 0, int AcademicClassesId = 0, int AcademicSectionId = 0, int AcademicPeriodId = 0, int Month = 0, int Day = 0, int Year = 0, int StudentId=0)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["PNSMSContext"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["deeppContext"].ConnectionString;
             SqlConnectionStringBuilder SConn = new SqlConnectionStringBuilder(connectionString);
-
-            //int year = 0;
+           
             try
             {
                 bool isValid = true;
                
-               // //SqlCommand cmd = new SqlCommand();
-               // SqlParameterCollection pc = objDataSetService.SetSqlParameter();
               
                ReportClass rptDoc;
                string strReportName = "AttendanceReports.rpt";
 
-               // pc.Add("@InstituteId", SqlDbType.Int);
-               // pc["@InstituteId"].Value = Sessions.InstituteId;
-
-               // pc.Add("@AcademicSessionId", SqlDbType.Int);
-               // pc["@AcademicSessionId"].Value = 0;// Sessions.CurrentSessionId;
-
-
-               // pc.Add("@AcademicBranchId", SqlDbType.Int);
-               // pc["@AcademicBranchId"].Value = 0;// AcademicBranchId;
-
-               // pc.Add("@AcademicClassesId", SqlDbType.Int);
-               // pc["@AcademicClassesId"].Value = 0;// AcademicClassesId;
-
-               // pc.Add("@AcademicSectionId", SqlDbType.Int);
-               // pc["@AcademicSectionId"].Value = 0;// AcademicSectionId;
-
-               // pc.Add("@AcademicPeriodId", SqlDbType.Int);
-               // pc["@AcademicPeriodId"].Value = 0;// AcademicPeriodId;
-
-               // pc.Add("@Year", SqlDbType.Int);
-               // pc["@Year"].Value = 0;
-
-               // pc.Add("@Month", SqlDbType.Int);
-               // pc["@Month"].Value = 0;
-
-               // pc.Add("@Day", SqlDbType.Int);
-               // pc["@Day"].Value = 0;
-
-               // pc.Add("@StudentId", SqlDbType.Int);
-               // pc["@StudentId"].Value = 0;
-
-                //PNSMSContext _contex = new PNSMSContext();
-                //SqlConnection con = new SqlConnection();
-                //SqlCommand cmd = new SqlCommand();
-                //con.ConnectionString = _contex.Database.Connection.ConnectionString;
-                //cmd.Connection = con;
-                //cmd.CommandType = CommandType.Text;
-                //cmd.CommandText = "[dbo].[AttendanceReports] " + Sessions.InstituteId + "," + "'" + Sessions.CurrentSessionId + "'" + "," + "'" + AcademicBranchId + "'" + "," + "'" + AcademicClassesId + "'" + "," + "'" + AcademicSectionId + "'" + "," + "'" + AcademicPeriodId + "'" + "," + "'" + Year + "'" + "," + "'" + Month + "'" + "," + "'" + Day + "'" + "," + "'" + StudentId + "'";
-                //DataSet ds = new DataSet();
-                //System.Data.SqlClient.SqlDataAdapter ad = new SqlDataAdapter();
-                //ad.SelectCommand = cmd;
-                //ad.Fill(ds);
-                //con.Close();
-                //con.Dispose();
+               
                 
                 string CommandText= "[dbo].[AttendanceReports] " 
                                     + Sessions.InstituteId + "," 
@@ -177,7 +131,7 @@ namespace deepp.erp.Controllers
         }
         public void GetUserAttendanceReportsDataSet(int AcademicBranchId = 0, int UserInfoId=0, int Month = 0, int Day = 0, int Year = 0,int AcademicDepartmentId=0, string startDate=null, string endDate =null)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["PNSMSContext"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["deeppContext"].ConnectionString;
             SqlConnectionStringBuilder SConn = new SqlConnectionStringBuilder(connectionString);
 
             try
@@ -229,7 +183,7 @@ namespace deepp.erp.Controllers
 
         public void GetUserAttendanceSummaryReportsDataSet(int AcademicBranchId = 0, int AcademicSessionId = 0, int UserInfoId = 0, int Month = 0, int Day = 0, int Year = 0, int AcademicDepartmentId = 0)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["PNSMSContext"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["deeppContext"].ConnectionString;
             SqlConnectionStringBuilder SConn = new SqlConnectionStringBuilder(connectionString);
 
             try

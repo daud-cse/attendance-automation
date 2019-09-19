@@ -10,3 +10,9 @@ E:\shikkhaforall-git\sfa\Source\Repository.Pattern\bin\Release\Repository.Patter
 E:\shikkhaforall-git\sfa\Source\Repository.Pattern\obj\Release\Repository.Pattern.csprojResolveAssemblyReference.cache
 E:\shikkhaforall-git\sfa\Source\Repository.Pattern\obj\Release\Repository.Pattern.dll
 E:\shikkhaforall-git\sfa\Source\Repository.Pattern\obj\Release\Repository.Pattern.pdb
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern\bin\Release\Repository.Pattern.dll.config
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern\bin\Release\Repository.Pattern.dll
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern\bin\Release\Repository.Pattern.pdb
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern\obj\Release\Repository.Pattern.csprojResolveAssemblyReference.cache
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern\obj\Release\Repository.Pattern.dll
+E:\DeepPresent Attendance\deeppresent\Source\Repository.Pattern\obj\Release\Repository.Pattern.pdb

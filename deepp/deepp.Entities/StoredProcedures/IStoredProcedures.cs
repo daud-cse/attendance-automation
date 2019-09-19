@@ -1,4 +1,5 @@
 ﻿using deepp.Entities.StoredProcedures.Models;
+using deepp.Entities.ViewModels;
 using deepp.Entities.ViewModels.Attendance;
 using deepp.Entities.ViewModels.DashBoard;
 using deepp.Entities.ViewModels.Student;
@@ -27,12 +28,15 @@ namespace deepp.Entities.Models
         string ExamProcess(int InstituteId, int SessionId, int ClassId, int ExamTypeId, int userid);
 
         VMInstituteDashBoard GetInstituteDashBoards(int InstituteId, int CurrentSessionId);
-
+        AttendanceConfigurationDetail GetAttendanceDataSynInfoboth(int InstituteId, int UserTypeId, string MachineSerialNo);
         List<StudentInfo> GetStudentList(int InstituteId, int CurrentSessionId, int AcademicBranchId, int AcademicClassesId, int AcademicShiftId, int AcademicSectionId);
 
 
         VmAttendanceDataSynInfo GetAttendanceDataSynInfo(int InstituteId,int UserTypeId,string MachineSerialNo);
-         List<vmStudentAttendance> spStudentAttendance(int InstituteId, int StudentId, int AcademicSessionId, int Year, int Month, int Day);
+        
+        StatusSP AttendanceDataMigration(int InstituteId, string deviceInfo, int userId);
+        vmAttendanceDataProcessInfo AttendanceDataProcessInfo(int InstituteId, int userId);
+        List<vmStudentAttendance> spStudentAttendance(int InstituteId, int StudentId, int AcademicSessionId, int Year, int Month, int Day);
        
         }
 }

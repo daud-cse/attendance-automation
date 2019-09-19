@@ -16,3 +16,12 @@ E:\shikkhaforall-git\sfa\Source\Service.Pattern\bin\Release\Repository.Pattern.p
 E:\shikkhaforall-git\sfa\Source\Service.Pattern\obj\Release\Service.Pattern.dll
 E:\shikkhaforall-git\sfa\Source\Service.Pattern\obj\Release\Service.Pattern.pdb
 E:\shikkhaforall-git\sfa\Source\Service.Pattern\obj\Release\Service.Pattern.csprojResolveAssemblyReference.cache
+E:\DeepPresent Attendance\deeppresent\Source\Service.Pattern\bin\Release\Service.Pattern.dll.config
+E:\DeepPresent Attendance\deeppresent\Source\Service.Pattern\bin\Release\Service.Pattern.dll
+E:\DeepPresent Attendance\deeppresent\Source\Service.Pattern\bin\Release\Service.Pattern.pdb
+E:\DeepPresent Attendance\deeppresent\Source\Service.Pattern\bin\Release\Repository.Pattern.dll
+E:\DeepPresent Attendance\deeppresent\Source\Service.Pattern\bin\Release\System.Net.Http.dll
+E:\DeepPresent Attendance\deeppresent\Source\Service.Pattern\bin\Release\Repository.Pattern.pdb
+E:\DeepPresent Attendance\deeppresent\Source\Service.Pattern\obj\Release\Service.Pattern.csprojResolveAssemblyReference.cache
+E:\DeepPresent Attendance\deeppresent\Source\Service.Pattern\obj\Release\Service.Pattern.dll
+E:\DeepPresent Attendance\deeppresent\Source\Service.Pattern\obj\Release\Service.Pattern.pdb

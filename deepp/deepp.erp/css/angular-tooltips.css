@@ -1,7 +1,7 @@
 ._720kb-tooltip {
   background: rgba(0, 0, 0, 0.8);
   color:white;
-  deeppition:absolute;
+  position:absolute;
   z-index:9;
   padding:0.4% 1%;
   opacity:0;
@@ -37,14 +37,14 @@
 }
 ._720kb-tooltip-caret:before {
   content:'';
-  deeppition: absolute;
+  position: absolute;
   width: 0;
   height: 0;
   border: 6px solid rgba(0, 0, 0, 0.8);
 }
 ._720kb-tooltip-caret:after {
   content:'';
-  deeppition: absolute;
+  position: absolute;
   width: 0;
   height: 0;
   border: 5px solid transparent;

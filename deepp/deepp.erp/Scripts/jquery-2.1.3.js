@@ -18,7 +18,7 @@
 		// For CommonJS and CommonJS-like environments where a proper `window`
 		// is present, execute the factory and get jQuery.
 		// For environments that do not have a `window` with a `document`
-		// (such as Node.js), exdeeppe a factory as module.exports.
+		// (such as Node.js), expose a factory as module.exports.
 		// This accentuates the need for the creation of a real `window`.
 		// e.g. var jQuery = require("jquery")(window);
 		// See ticket #14549 for more info.
@@ -190,7 +190,7 @@ jQuery.extend = jQuery.fn.extend = function() {
 		i++;
 	}
 
-	// Handle case when target is a string or something (deeppsible in deep copy)
+	// Handle case when target is a string or something (possible in deep copy)
 	if ( typeof target !== "object" && !jQuery.isFunction(target) ) {
 		target = {};
 	}
@@ -263,7 +263,7 @@ jQuery.extend({
 	},
 
 	isNumeric: function( obj ) {
-		// parseFloat NaNs numeric-cast false deeppitives (null|true|false|"")
+		// parseFloat NaNs numeric-cast false positives (null|true|false|"")
 		// ...but misinterprets leading-number strings, particularly hex literals ("0x...")
 		// subtraction forces infinities to NaN
 		// adding 1 corrects loss of precision from parseFloat (#15100)
@@ -315,7 +315,7 @@ jQuery.extend({
 		code = jQuery.trim( code );
 
 		if ( code ) {
-			// If the code includes a valid, prologue deeppition
+			// If the code includes a valid, prologue position
 			// strict mode pragma, execute code by injecting a
 			// script tag into the document.
 			if ( code.indexOf("use strict") === 1 ) {
@@ -595,7 +595,7 @@ var i,
 		return 0;
 	},
 
-	// General-purdeeppe constants
+	// General-purpose constants
 	MAX_NEGATIVE = 1 << 31,
 
 	// Instance methods
@@ -725,7 +725,7 @@ try {
 } catch ( e ) {
 	push = { apply: arr.length ?
 
-		// Leverage slice if deeppsible
+		// Leverage slice if possible
 		function( target, els ) {
 			push_native.apply( target, slice.call(els) );
 		} :
@@ -763,7 +763,7 @@ function Sizzle( selector, context, results, seed ) {
 
 	if ( !seed && documentIsHTML ) {
 
-		// Try to shortcut find operations when deeppsible (e.g., not under DocumentFragment)
+		// Try to shortcut find operations when possible (e.g., not under DocumentFragment)
 		if ( nodeType !== 11 && (match = rquickExpr.exec( selector )) ) {
 			// Speed-up: Sizzle("#ID")
 			if ( (m = match[1]) ) {
@@ -966,7 +966,7 @@ function createButtonPseudo( type ) {
 }
 
 /**
- * Returns a function to use in pseudos for deeppitionals
+ * Returns a function to use in pseudos for positionals
  * @param {Function} fn
  */
 function createPositionalPseudo( fn ) {
@@ -996,7 +996,7 @@ function testContext( context ) {
 	return context && typeof context.getElementsByTagName !== "undefined" && context;
 }
 
-// Exdeeppe support vars for convenience
+// Expose support vars for convenience
 support = Sizzle.support = {};
 
 /**
@@ -1128,7 +1128,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 				// By happy coincidence, a (broken) gEBTN appears on DocumentFragment nodes too
 				results = context.getElementsByTagName( tag );
 
-			// Filter out deeppsible comments
+			// Filter out possible comments
 			if ( tag === "*" ) {
 				while ( (elem = results[i++]) ) {
 					if ( elem.nodeType === 1 ) {
@@ -1167,7 +1167,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 		// Build QSA regex
 		// Regex strategy adopted from Diego Perini
 		assert(function( div ) {
-			// Select is set to empty string on purdeeppe
+			// Select is set to empty string on purpose
 			// This is to test IE's treatment of not explicitly
 			// setting a boolean content attribute,
 			// since its presence should be enough
@@ -1229,7 +1229,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 				rbuggyQSA.push( ":enabled", ":disabled" );
 			}
 
-			// Opera 10-11 does not throw on deeppt-comma invalid pseudos
+			// Opera 10-11 does not throw on post-comma invalid pseudos
 			div.querySelectorAll("*,:x");
 			rbuggyQSA.push(",.*:");
 		});
@@ -1242,7 +1242,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 		docElem.msMatchesSelector) )) ) {
 
 		assert(function( div ) {
-			// Check to see if it's deeppsible to do matchesSelector
+			// Check to see if it's possible to do matchesSelector
 			// on a disconnected node (IE 9)
 			support.disconnectedMatch = matches.call( div, "div" );
 
@@ -1261,7 +1261,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 	hasCompare = rnative.test( docElem.compareDocumentPosition );
 
 	// Element contains another
-	// Purdeeppefully does not implement inclusive descendent
+	// Purposefully does not implement inclusive descendent
 	// As in, an element does not contain itself
 	contains = hasCompare || rnative.test( docElem.contains ) ?
 		function( a, b ) {
@@ -1303,7 +1303,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 			return compare;
 		}
 
-		// Calculate deeppition if both inputs belong to the same document
+		// Calculate position if both inputs belong to the same document
 		compare = ( a.ownerDocument || a ) === ( b.ownerDocument || b ) ?
 			a.compareDocumentPosition( b ) :
 
@@ -2179,17 +2179,17 @@ function condense( unmatched, map, filter, context, xml ) {
 	return newUnmatched;
 }
 
-function setMatcher( preFilter, selector, matcher, deepptFilter, deepptFinder, deepptSelector ) {
-	if ( deepptFilter && !deepptFilter[ expando ] ) {
-		deepptFilter = setMatcher( deepptFilter );
+function setMatcher( preFilter, selector, matcher, postFilter, postFinder, postSelector ) {
+	if ( postFilter && !postFilter[ expando ] ) {
+		postFilter = setMatcher( postFilter );
 	}
-	if ( deepptFinder && !deepptFinder[ expando ] ) {
-		deepptFinder = setMatcher( deepptFinder, deepptSelector );
+	if ( postFinder && !postFinder[ expando ] ) {
+		postFinder = setMatcher( postFinder, postSelector );
 	}
 	return markFunction(function( seed, results, context, xml ) {
 		var temp, i, elem,
 			preMap = [],
-			deepptMap = [],
+			postMap = [],
 			preexisting = results.length,
 
 			// Get initial elements from seed or context
@@ -2201,8 +2201,8 @@ function setMatcher( preFilter, selector, matcher, deepptFilter, deepptFinder, d
 				elems,
 
 			matcherOut = matcher ?
-				// If we have a deepptFinder, or filtered seed, or non-seed deepptFilter or preexisting results,
-				deepptFinder || ( seed ? preFilter : preexisting || deepptFilter ) ?
+				// If we have a postFinder, or filtered seed, or non-seed postFilter or preexisting results,
+				postFinder || ( seed ? preFilter : preexisting || postFilter ) ?
 
 					// ...intermediate processing is necessary
 					[] :
@@ -2216,24 +2216,24 @@ function setMatcher( preFilter, selector, matcher, deepptFilter, deepptFinder, d
 			matcher( matcherIn, matcherOut, context, xml );
 		}
 
-		// Apply deepptFilter
-		if ( deepptFilter ) {
-			temp = condense( matcherOut, deepptMap );
-			deepptFilter( temp, [], context, xml );
+		// Apply postFilter
+		if ( postFilter ) {
+			temp = condense( matcherOut, postMap );
+			postFilter( temp, [], context, xml );
 
 			// Un-match failing elements by moving them back to matcherIn
 			i = temp.length;
 			while ( i-- ) {
 				if ( (elem = temp[i]) ) {
-					matcherOut[ deepptMap[i] ] = !(matcherIn[ deepptMap[i] ] = elem);
+					matcherOut[ postMap[i] ] = !(matcherIn[ postMap[i] ] = elem);
 				}
 			}
 		}
 
 		if ( seed ) {
-			if ( deepptFinder || preFilter ) {
-				if ( deepptFinder ) {
-					// Get the final matcherOut by condensing this intermediate into deepptFinder contexts
+			if ( postFinder || preFilter ) {
+				if ( postFinder ) {
+					// Get the final matcherOut by condensing this intermediate into postFinder contexts
 					temp = [];
 					i = matcherOut.length;
 					while ( i-- ) {
@@ -2242,29 +2242,29 @@ function setMatcher( preFilter, selector, matcher, deepptFilter, deepptFinder, d
 							temp.push( (matcherIn[i] = elem) );
 						}
 					}
-					deepptFinder( null, (matcherOut = []), temp, xml );
+					postFinder( null, (matcherOut = []), temp, xml );
 				}
 
 				// Move matched elements from seed to results to keep them synchronized
 				i = matcherOut.length;
 				while ( i-- ) {
 					if ( (elem = matcherOut[i]) &&
-						(temp = deepptFinder ? indexOf( seed, elem ) : preMap[i]) > -1 ) {
+						(temp = postFinder ? indexOf( seed, elem ) : preMap[i]) > -1 ) {
 
 						seed[temp] = !(results[temp] = elem);
 					}
 				}
 			}
 
-		// Add elements to results, through deepptFinder if defined
+		// Add elements to results, through postFinder if defined
 		} else {
 			matcherOut = condense(
 				matcherOut === results ?
 					matcherOut.splice( preexisting, matcherOut.length ) :
 					matcherOut
 			);
-			if ( deepptFinder ) {
-				deepptFinder( null, results, matcherOut, xml );
+			if ( postFinder ) {
+				postFinder( null, results, matcherOut, xml );
 			} else {
 				push.apply( results, matcherOut );
 			}
@@ -2302,7 +2302,7 @@ function matcherFromTokens( tokens ) {
 		} else {
 			matcher = Expr.filter[ tokens[i].type ].apply( null, tokens[i].matches );
 
-			// Return special upon seeing a deeppitional matcher
+			// Return special upon seeing a positional matcher
 			if ( matcher[ expando ] ) {
 				// Find the next relative operator (if any) for proper handling
 				j = ++i;
@@ -2370,7 +2370,7 @@ function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 
 				// Track unmatched elements for set filters
 				if ( bySet ) {
-					// They will have gone through all deeppsible matchers
+					// They will have gone through all possible matchers
 					if ( (elem = !matcher && elem) ) {
 						matchedCount--;
 					}
@@ -2705,7 +2705,7 @@ jQuery.fn.extend({
 		return !!winnow(
 			this,
 
-			// If this is a deeppitional/relative selector, check membership in the returned set
+			// If this is a positional/relative selector, check membership in the returned set
 			// so $("p:first").is("p:last") won't return true for a doc with two "p".
 			typeof selector === "string" && rneedsContext.test( selector ) ?
 				jQuery( selector ) :
@@ -2763,7 +2763,7 @@ var rootjQuery,
 					// HANDLE: $(html, props)
 					if ( rsingleTag.test( match[1] ) && jQuery.isPlainObject( context ) ) {
 						for ( match in context ) {
-							// Properties of context are called as methods if deeppsible
+							// Properties of context are called as methods if possible
 							if ( jQuery.isFunction( this[ match ] ) ) {
 								this[ match ]( context[ match ] );
 
@@ -2891,15 +2891,15 @@ jQuery.fn.extend({
 			i = 0,
 			l = this.length,
 			matched = [],
-			deepp = rneedsContext.test( selectors ) || typeof selectors !== "string" ?
+			pos = rneedsContext.test( selectors ) || typeof selectors !== "string" ?
 				jQuery( selectors, context || this.context ) :
 				0;
 
 		for ( ; i < l; i++ ) {
 			for ( cur = this[i]; cur && cur !== context; cur = cur.parentNode ) {
 				// Always skip document fragments
-				if ( cur.nodeType < 11 && (deepp ?
-					deepp.index(cur) > -1 :
+				if ( cur.nodeType < 11 && (pos ?
+					pos.index(cur) > -1 :
 
 					// Don't pass non-elements to Sizzle
 					cur.nodeType === 1 &&
@@ -2914,7 +2914,7 @@ jQuery.fn.extend({
 		return this.pushStack( matched.length > 1 ? jQuery.unique( matched ) : matched );
 	},
 
-	// Determine the deeppition of an element within the set
+	// Determine the position of an element within the set
 	index: function( elem ) {
 
 		// No argument, return index in parent
@@ -2927,7 +2927,7 @@ jQuery.fn.extend({
 			return indexOf.call( jQuery( elem ), this[ 0 ] );
 		}
 
-		// Locate the deeppition of the desired element
+		// Locate the position of the desired element
 		return indexOf.call( this,
 
 			// If it receives a jQuery object, the first element is used
@@ -3646,7 +3646,7 @@ Data.prototype = {
 		//
 		this.set( owner, key, value );
 
-		// Since the "set" path can have two deeppsible entry points
+		// Since the "set" path can have two possible entry points
 		// return the expected data based on which path was taken[*]
 		return value !== undefined ? value : key;
 	},
@@ -3711,8 +3711,8 @@ var data_user = new Data();
 //	2. Improve the module's maintainability by reducing the storage
 //		paths to a single mechanism.
 //	3. Use the same single mechanism to support "private" and "user" data.
-//	4. _Never_ exdeeppe "private" data to user code (TODO: Drop _data, _removeData)
-//	5. Avoid exdeepping implementation details on user objects (eg. expando properties)
+//	4. _Never_ expose "private" data to user code (TODO: Drop _data, _removeData)
+//	5. Avoid exposing implementation details on user objects (eg. expando properties)
 //	6. Provide a clear path for implementation upgrade to WeakMap in 2014
 
 var rbrace = /^(?:\{[\w\W]*\}|\[[\w\W]*\])$/,
@@ -4439,9 +4439,9 @@ jQuery.event = {
 			}
 		}
 
-		// Call the deepptDispatch hook for the mapped type
-		if ( special.deepptDispatch ) {
-			special.deepptDispatch.call( this, event );
+		// Call the postDispatch hook for the mapped type
+		if ( special.postDispatch ) {
+			special.postDispatch.call( this, event );
 		}
 
 		return event.result;
@@ -4585,7 +4585,7 @@ jQuery.event = {
 			noBubble: true
 		},
 		focus: {
-			// Fire native event if deeppsible so blur/focus sequence is correct
+			// Fire native event if possible so blur/focus sequence is correct
 			trigger: function() {
 				if ( this !== safeActiveElement() && this.focus ) {
 					this.focus();
@@ -4619,7 +4619,7 @@ jQuery.event = {
 		},
 
 		beforeunload: {
-			deepptDispatch: function( event ) {
+			postDispatch: function( event ) {
 
 				// Support: Firefox 20+
 				// Firefox doesn't alert if the returnValue field is not set.
@@ -5508,7 +5508,7 @@ function defaultDisplay( nodeName ) {
 		// If the simple way fails, read from inside an iframe
 		if ( display === "none" || !display ) {
 
-			// Use the already-created iframe if deeppsible
+			// Use the already-created iframe if possible
 			iframe = (iframe || jQuery( "<iframe frameborder='0' width='0' height='0'/>" )).appendTo( doc.documentElement );
 
 			// Always write a new HTML skeleton so Webkit and Firefox don't choke on reuse
@@ -5598,7 +5598,7 @@ function addGetHookIf( conditionFn, hookFn ) {
 	return {
 		get: function() {
 			if ( conditionFn() ) {
-				// Hook not needed (or it's not deeppsible to use it due
+				// Hook not needed (or it's not possible to use it due
 				// to missing dependency), remove it.
 				delete this.get;
 				return;
@@ -5628,7 +5628,7 @@ function addGetHookIf( conditionFn, hookFn ) {
 	support.clearCloneStyle = div.style.backgroundClip === "content-box";
 
 	container.style.cssText = "border:0;width:0;height:0;top:0;left:-9999px;margin-top:1px;" +
-		"deeppition:absolute";
+		"position:absolute";
 	container.appendChild( div );
 
 	// Executing both pixelPosition & boxSizingReliable tests require only one layout
@@ -5639,7 +5639,7 @@ function addGetHookIf( conditionFn, hookFn ) {
 			// Vendor-prefix box-sizing
 			"-webkit-box-sizing:border-box;-moz-box-sizing:border-box;" +
 			"box-sizing:border-box;display:block;margin-top:1%;top:1%;" +
-			"border:1px;padding:1px;width:4px;deeppition:absolute";
+			"border:1px;padding:1px;width:4px;position:absolute";
 		div.innerHTML = "";
 		docElem.appendChild( container );
 
@@ -5729,7 +5729,7 @@ var
 	rnumsplit = new RegExp( "^(" + pnum + ")(.*)$", "i" ),
 	rrelNum = new RegExp( "^([+-])=(" + pnum + ")", "i" ),
 
-	cssShow = { deeppition: "absolute", visibility: "hidden", display: "block" },
+	cssShow = { position: "absolute", visibility: "hidden", display: "block" },
 	cssNormalTransform = {
 		letterSpacing: "0",
 		fontWeight: "400"
@@ -5919,7 +5919,7 @@ jQuery.extend({
 		}
 	},
 
-	// Don't automatically add "px" to these deeppsibly-unitless properties
+	// Don't automatically add "px" to these possibly-unitless properties
 	cssNumber: {
 		"columnCount": true,
 		"fillOpacity": true,
@@ -6177,11 +6177,11 @@ Tween.prototype = {
 			hooks = Tween.propHooks[ this.prop ];
 
 		if ( this.options.duration ) {
-			this.deepp = eased = jQuery.easing[ this.easing ](
+			this.pos = eased = jQuery.easing[ this.easing ](
 				percent, this.options.duration * percent, 0, 1, this.options.duration
 			);
 		} else {
-			this.deepp = eased = percent;
+			this.pos = eased = percent;
 		}
 		this.now = ( this.end - this.start ) * eased + this.start;
 
@@ -8294,7 +8294,7 @@ jQuery.extend({
 	}
 });
 
-jQuery.each( [ "get", "deeppt" ], function( i, method ) {
+jQuery.each( [ "get", "post" ], function( i, method ) {
 	jQuery[ method ] = function( url, data, callback, type ) {
 		// Shift arguments if data argument was omitted
 		if ( jQuery.isFunction( data ) ) {
@@ -8916,25 +8916,25 @@ function getWindow( elem ) {
 jQuery.offset = {
 	setOffset: function( elem, options, i ) {
 		var curPosition, curLeft, curCSSTop, curTop, curOffset, curCSSLeft, calculatePosition,
-			deeppition = jQuery.css( elem, "deeppition" ),
+			position = jQuery.css( elem, "position" ),
 			curElem = jQuery( elem ),
 			props = {};
 
-		// Set deeppition first, in-case top/left are set even on static elem
-		if ( deeppition === "static" ) {
-			elem.style.deeppition = "relative";
+		// Set position first, in-case top/left are set even on static elem
+		if ( position === "static" ) {
+			elem.style.position = "relative";
 		}
 
 		curOffset = curElem.offset();
 		curCSSTop = jQuery.css( elem, "top" );
 		curCSSLeft = jQuery.css( elem, "left" );
-		calculatePosition = ( deeppition === "absolute" || deeppition === "fixed" ) &&
+		calculatePosition = ( position === "absolute" || position === "fixed" ) &&
 			( curCSSTop + curCSSLeft ).indexOf("auto") > -1;
 
-		// Need to be able to calculate deeppition if either
-		// top or left is auto and deeppition is either absolute or fixed
+		// Need to be able to calculate position if either
+		// top or left is auto and position is either absolute or fixed
 		if ( calculatePosition ) {
-			curPosition = curElem.deeppition();
+			curPosition = curElem.position();
 			curTop = curPosition.top;
 			curLeft = curPosition.left;
 
@@ -9001,7 +9001,7 @@ jQuery.fn.extend({
 		};
 	},
 
-	deeppition: function() {
+	position: function() {
 		if ( !this[ 0 ] ) {
 			return;
 		}
@@ -9011,8 +9011,8 @@ jQuery.fn.extend({
 			parentOffset = { top: 0, left: 0 };
 
 		// Fixed elements are offset from window (parentOffset = {top:0, left: 0}, because it is its only offset parent
-		if ( jQuery.css( elem, "deeppition" ) === "fixed" ) {
-			// Assume getBoundingClientRect is there when computed deeppition is fixed
+		if ( jQuery.css( elem, "position" ) === "fixed" ) {
+			// Assume getBoundingClientRect is there when computed position is fixed
 			offset = elem.getBoundingClientRect();
 
 		} else {
@@ -9041,7 +9041,7 @@ jQuery.fn.extend({
 		return this.map(function() {
 			var offsetParent = this.offsetParent || docElem;
 
-			while ( offsetParent && ( !jQuery.nodeName( offsetParent, "html" ) && jQuery.css( offsetParent, "deeppition" ) === "static" ) ) {
+			while ( offsetParent && ( !jQuery.nodeName( offsetParent, "html" ) && jQuery.css( offsetParent, "position" ) === "static" ) ) {
 				offsetParent = offsetParent.offsetParent;
 			}
 
@@ -9076,7 +9076,7 @@ jQuery.each( { scrollLeft: "pageXOffset", scrollTop: "pageYOffset" }, function( 
 });
 
 // Support: Safari<7+, Chrome<37+
-// Add the top/left cssHooks using jQuery.fn.deeppition
+// Add the top/left cssHooks using jQuery.fn.position
 // Webkit bug: https://bugs.webkit.org/show_bug.cgi?id=29084
 // Blink bug: https://code.google.com/p/chromium/issues/detail?id=229280
 // getComputedStyle returns percent when specified for top/left/bottom/right;
@@ -9088,7 +9088,7 @@ jQuery.each( [ "top", "left" ], function( i, prop ) {
 				computed = curCSS( elem, prop );
 				// If curCSS returns percentage, fallback to offset
 				return rnumnonpx.test( computed ) ?
-					jQuery( elem ).deeppition()[ prop ] + "px" :
+					jQuery( elem ).position()[ prop ] + "px" :
 					computed;
 			}
 		}
@@ -9190,7 +9190,7 @@ jQuery.noConflict = function( deep ) {
 	return jQuery;
 };
 
-// Exdeeppe jQuery and $ identifiers, even in AMD
+// Expose jQuery and $ identifiers, even in AMD
 // (#7102#comment:10, https://github.com/jquery/jquery/pull/557)
 // and CommonJS for browser emulators (#13566)
 if ( typeof noGlobal === strundefined ) {

@@ -47,9 +47,9 @@ namespace deepp.erp
             //container.LoadConfiguration();
 
             container
-                .RegisterType<IDataContextAsync, PNSMSContext>(new PerRequestLifetimeManager())
+                .RegisterType<IDataContextAsync, deeppContext>(new PerRequestLifetimeManager())
                 .RegisterType<IUnitOfWorkAsync, UnitOfWork>(new PerRequestLifetimeManager())
-                .RegisterType<IStoredProcedures, PNSMSContext>(new PerRequestLifetimeManager())
+                .RegisterType<IStoredProcedures, deeppContext>(new PerRequestLifetimeManager())
                 .RegisterType<IStoredProcedureService, StoredProcedureService>()
 
             #region settings 

@@ -43,7 +43,6 @@ E:\DeepPresent Attendance\deeppresent\deepp\deepp.Repository\bin\Debug\EntityFra
 E:\DeepPresent Attendance\deeppresent\deepp\deepp.Repository\bin\Debug\System.Web.Mvc.xml
 E:\DeepPresent Attendance\deeppresent\deepp\deepp.Repository\bin\Debug\Repository.Pattern.Ef6.pdb
 E:\DeepPresent Attendance\deeppresent\deepp\deepp.Repository\bin\Debug\Microsoft.Web.Infrastructure.xml
-E:\DeepPresent Attendance\deeppresent\deepp\deepp.Repository\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
-E:\DeepPresent Attendance\deeppresent\deepp\deepp.Repository\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+E:\DeepPresent Attendance\deeppresent\deepp\deepp.Repository\obj\Debug\deepp.Repository.csprojResolveAssemblyReference.cache
 E:\DeepPresent Attendance\deeppresent\deepp\deepp.Repository\obj\Debug\deepp.Repository.dll
 E:\DeepPresent Attendance\deeppresent\deepp\deepp.Repository\obj\Debug\deepp.Repository.pdb

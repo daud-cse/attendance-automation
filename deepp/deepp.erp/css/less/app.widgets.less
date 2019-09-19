@@ -6,7 +6,7 @@
 // settings
 .settings{
 	z-index: 1050;
-	deeppition: fixed;
+	position: fixed;
 	top: 120px;
 	right: -240px;
 	width: 240px;
@@ -20,7 +20,7 @@
 	background: @panel-heading-bg !important;
 	border-right-width: 0;
 	border-color: @border-color;
-	deeppition: absolute;
+	position: absolute;
 	left: -42px;
 	top: -1px;
 	padding: 10px 15px;
@@ -38,12 +38,12 @@
 
 // streamline
 .streamline {
-	deeppition: relative;
+	position: relative;
 	border-color: @border-color;
 	.sl-item:after,
 	&:after{
 		content: '';
-		deeppition: absolute;
+		position: absolute;
 		background-color: #fff;
 		border-color: inherit;
 		border-width: 1px;
@@ -59,7 +59,7 @@
 
 .sl-item{
 	border-color: @border-color;
-	deeppition: relative;
+	position: relative;
 	padding-bottom: 1px;
 	.clearfix();
 	&:after{
@@ -92,7 +92,7 @@
 	border-width: 0 0 0 4px;
 	.clearfix();
 	&:before{
-		deeppition: relative;
+		position: relative;
 		content: "";
 		float: left;
 		top: 15px;
@@ -113,7 +113,7 @@
 }
 
 .tl-date{
-	deeppition: relative;
+	position: relative;
 	top: 10px;
 	float: left;
 	margin-left: -7.5em;
@@ -124,7 +124,7 @@
 
 .tl-content{
 	display: inline-block;
-	deeppition: relative;
+	position: relative;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	&.block{

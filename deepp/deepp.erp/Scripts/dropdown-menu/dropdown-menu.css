@@ -57,7 +57,7 @@
 }
 .k-dropdown-menu ul {
     display: none;
-    deeppition: absolute;
+    position: absolute;
     z-index: 1000000;
 }
 .k-dropdown-menu ul ul {
@@ -77,7 +77,7 @@
     display: block;
 }
 .k-dropdown-menu ul li {
-    deeppition: relative;
+    position: relative;
     display: block;
 }
 
@@ -90,7 +90,7 @@ span.dropdown-menu-sub-indicator {
     background-color: transparent;
     background-image: url('arrows-000000.png');
     background-repeat: no-repeat;
-    background-deeppition: 0 -100px;
+    background-position: 0 -100px;
     width: 10px;
     height: 10px;
     border: 0;
@@ -112,15 +112,15 @@ span.dropdown-menu-sub-indicator:before {
 /* Arrow hovers */
 .k-dropdown-menu li:hover > a > span.dropdown-menu-sub-indicator,
 .k-dropdown-menu li.dropdown-menu-hover > a > span.dropdown-menu-sub-indicator {
-    background-deeppition: -10px -100px;
+    background-position: -10px -100px;
 }
 /* Point arrows to the right for anchors in subs */
 .k-dropdown-menu ul span.dropdown-menu-sub-indicator {
-    background-deeppition: 0 0;
+    background-position: 0 0;
 }
 .k-dropdown-menu ul li:hover > a > span.dropdown-menu-sub-indicator,
 .k-dropdown-menu ul li.dropdown-menu-hover > a > span.dropdown-menu-sub-indicator {
-    background-deeppition: -10px 0;
+    background-position: -10px 0;
 }
 
 /* Vertical-style menu with default width */
@@ -129,15 +129,15 @@ span.dropdown-menu-sub-indicator:before {
 }
 .dropdown-menu-vertical li {
     display: block;
-    deeppition: relative;
+    position: relative;
     /* IE7 fix */
     *float: left;
     *width: 100%;
 }
 .dropdown-menu-vertical span.dropdown-menu-sub-indicator {
-    background-deeppition: 0 0;
+    background-position: 0 0;
 }
 .dropdown-menu-vertical li:hover > a > span.dropdown-menu-sub-indicator,
 .dropdown-menu-vertical li.dropdown-menu-hover > a > span.dropdown-menu-sub-indicator {
-    background-deeppition: -10px 0;
+    background-position: -10px 0;
 }

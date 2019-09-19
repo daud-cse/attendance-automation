@@ -2,7 +2,7 @@
     <div class="bg-info-lter lter b-b wrapper-sm text-dark-dk">
         <h1 class="m-n font-thin h3"><i class="fa fa-mortar-board"></i>Student: {{VmStudent.UserInfo.Name}}</h1>
     </div>
-    <toaster-container toaster-options="{'deeppition-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
     <div class="wrapper-md">
         <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
         <form role="form" class="form-validation" ng-submit="AddStudent()" ng-hide="isLoading">

@@ -304,11 +304,7 @@
     <Compile Include="Api\GlobalUsers\GlobalUsersController.cs" />
     <Compile Include="Api\Setting\AcademicClassSectionMappingController.cs" />
     <Compile Include="Api\Setting\AcademicPeriodController.cs" />
-    <Compile Include="Api\Teachers\TeacherSubjectAcademicMappingController.cs" />
     <Compile Include="Api\UserInfoController.cs" />
-    <Compile Include="Api\VoucherEntryController.cs" />
-    <Compile Include="Api\ExpenseHeadController.cs" />
-    <Compile Include="Api\IncomeHeadController.cs" />
     <Compile Include="Api\ContactUsFeedbackController.cs" />
     <Compile Include="Api\DashBoard\DashBoardController.cs" />
     <Compile Include="Api\ResultPublicationController.cs" />
@@ -788,17 +784,12 @@
     <Content Include="js\services\UserInfo\UserInfoService.js" />
     <Content Include="js\state\AccountState.js" />
     <Content Include="js\state\eDiaryState.js" />
-    <Content Include="js\state\examState.js" />
-    <Content Include="js\state\feesGenerateConfigState.js" />
-    <Content Include="js\state\voucherState.js" />
     <Content Include="js\state\resultPublishState.js" />
     <Content Include="js\state\contactFeedbackState.js" />
     <Content Include="js\state\ContentsState.js" />
-    <Content Include="js\state\feesCollectionState.js" />
     <Content Include="js\state\onlineAdmissionState.js" />
     <Content Include="js\state\certificatePrintState.js" />
     <Content Include="js\state\employeeAttendanceState.js" />
-    <Content Include="js\state\libraryBookState.js" />
     <Content Include="js\state\WebmanagerState.js" />
     <Content Include="js\state\smsTemplateState.js" />
     <Content Include="js\state\techerAttendanceState.js" />
@@ -1072,6 +1063,7 @@
     <Content Include="vendor\jquery\footable\fonts\footable.woff" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Api\Teachers\" />
     <Folder Include="App_Data\folder\" />
     <Folder Include="Content\img\student\" />
     <Folder Include="Content\Student\" />
@@ -1176,6 +1168,7 @@
       <DependentUpon>UserAttendanceSummaryReport.xsd</DependentUpon>
     </Content>
     <None Include="Project_Readme.html" />
+    <None Include="Properties\PublishProfiles\deeperp.pubxml" />
     <None Include="Properties\PublishProfiles\ERP.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Shared\_Layout.cshtml" />

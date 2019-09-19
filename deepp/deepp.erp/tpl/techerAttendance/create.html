@@ -3,10 +3,10 @@
 </div>
 <div class="wrapper-md">
     <!-- toaster directive -->
-    <toaster-container toaster-options="{'deeppition-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
     <!-- attendance directive -->
     <div class="panel panel-default">
-        <form role="form" name="step1" ng-submit="AddTeacherAttendance()" ng-controller="TeacherAttendanceCreateCtrl" method="deeppt">
+        <form role="form" name="step1" ng-submit="AddTeacherAttendance()" ng-controller="TeacherAttendanceCreateCtrl" method="post">
             <div class="form-validation">
                 <div class="row wrapper">
                     <div class="col-sm-4">
@@ -37,7 +37,7 @@
                         <table class="table table-striped b-t b-light" ng-table>
                             <thead>
                                 <tr>
-                                    <!--<th>PIN</th>-->
+                                    <!-- <th>PIN</th> -->
                                     <th>Designation</th>
                                     <th>Name</th>
                                     <th>In Time</th>
@@ -47,7 +47,7 @@
                             </thead>
                             <tbody ng-show="VmUserAttendance.AttendanceDetails.length">
                                 <tr ng-repeat="x in VmUserAttendance.AttendanceDetails">
-                                    <!--<td>{{ x.UserPin }}</td>-->
+                                    <!-- <td>{{ x.UserPin }}</td> -->
                                     <td>{{ x.UserDesignation }}</td>
                                     <td><input type="hidden" value="{{ x.UserInfoId }}">{{ x.UserName }}</td>
                                     <td width="166px">

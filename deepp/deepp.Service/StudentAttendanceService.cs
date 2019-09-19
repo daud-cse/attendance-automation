@@ -62,8 +62,7 @@ namespace deepp.Service
                 .Include(s => s.Teacher)
                 .Include(s => s.Teacher.UserInfo)
                 .Include(s => s.AcademicClass)
-                .Include(s => s.AcademicPeriod)
-                .Include(s => s.SubjectAcademicClassMapping.InstituteSubject.Subject)
+                .Include(s => s.AcademicPeriod)              
                 .Include(s => s.AcademicClassSectionMapping.AcademicSection).Select();
 
         }
@@ -107,8 +106,7 @@ namespace deepp.Service
                     .Include(s => s.AcademicBranch)
                    .Include(s => s.Teacher.UserInfo)
                    .Include(s => s.AcademicClass)
-                   .Include(s => s.AcademicClassSectionMapping.AcademicSection)
-                   .Include(s => s.SubjectAcademicClassMapping.InstituteSubject.Subject)
+                   .Include(s => s.AcademicClassSectionMapping.AcademicSection)                 
                    .Include(s => s.AcademicPeriod).Select().FirstOrDefault();
 
 

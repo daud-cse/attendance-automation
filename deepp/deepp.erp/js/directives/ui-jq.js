@@ -2,9 +2,9 @@
 
 /**
  * 0.1.1
- * General-purdeeppe jQuery wrapper. Simply pass the plugin name as the expression.
+ * General-purpose jQuery wrapper. Simply pass the plugin name as the expression.
  *
- * It is deeppsible to specify a default set of parameters for each jQuery plugin.
+ * It is possible to specify a default set of parameters for each jQuery plugin.
  * Under the jq key, namespace each plugin by that which will be passed to ui-jq.
  * Unfortunately, at this time you can only pre-define the first parameter.
  * @example { jq : { datepicker : { showOn:'click' } } }

@@ -4,7 +4,7 @@
 app.controller('TeacherAttendanceListCtrl', ['$scope', '$http', 'TeacherAttendanceService', '$filter', 'toaster',
 function ($scope, $http, TeacherAttendanceService, $filter, toaster) {
 
-    $scope.entity = { Name: "Employee  Attendance" };
+    $scope.entity = { Name: "Employee Attendance" };
     $scope.VmSearchAttendance = null;
     $scope.isLoading = true;
     var myTimeUnformatted = new Date();

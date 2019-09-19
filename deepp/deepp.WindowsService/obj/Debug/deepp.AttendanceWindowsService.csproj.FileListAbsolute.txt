@@ -1,0 +1,1 @@
+E:\DeepPresent Attendance\deeppresent\deepp\deepp.WindowsService\obj\Debug\deepp.AttendanceWindowsService.csprojResolveAssemblyReference.cache

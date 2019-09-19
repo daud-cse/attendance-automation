@@ -37,6 +37,7 @@ namespace deepp.Entities.Models.Mapping
             this.Property(t => t.ColourId).HasColumnName("ColourId");
             this.Property(t => t.IsDefault).HasColumnName("IsDefault");
             this.Property(t => t.IsPresent).HasColumnName("IsPresent");
+            this.Property(t => t.IsAbsent).HasColumnName("IsAbsent");
             this.Property(t => t.ShowAtAttendanceEntry).HasColumnName("ShowAtAttendanceEntry");
             this.Property(t => t.ShowAtLeaveEntry).HasColumnName("ShowAtLeaveEntry");
 

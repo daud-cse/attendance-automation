@@ -279,15 +279,36 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\Animate.css" />
+    <Content Include="assets\css\bootstrap-grid.css" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\common.css" />
     <Content Include="assets\css\flexslider.css" />
+    <Content Include="assets\css\font-awesome.css" />
+    <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\css\homeanimate.css" />
+    <Content Include="assets\css\homemain.css" />
+    <Content Include="assets\css\homeresponsive.css" />
+    <Content Include="assets\css\humburgers.min.css" />
     <Content Include="assets\css\iconmoon.css" />
+    <Content Include="assets\css\line-icons.css" />
+    <Content Include="assets\css\login.css" />
+    <Content Include="assets\css\loginAnimated.css" />
+    <Content Include="assets\css\loginBootstrap.css" />
+    <Content Include="assets\css\loginMain.css" />
+    <Content Include="assets\css\loginUtil.css" />
+    <Content Include="assets\css\magnific-popup.css" />
+    <Content Include="assets\css\nivo-lightbox.css" />
     <Content Include="assets\css\normalize.css" />
     <Content Include="assets\css\owl.carousel.css" />
+    <Content Include="assets\css\owl.carousel.min.css" />
+    <Content Include="assets\css\owl.theme.css" />
     <Content Include="assets\css\prettyPhoto.css" />
     <Content Include="assets\css\responsive.css" />
     <Content Include="assets\css\responsive_theme.css" />
+    <Content Include="assets\css\select-2.css" />
+    <Content Include="assets\css\select2.min.css" />
+    <Content Include="assets\css\slicknav.css" />
     <Content Include="assets\css\style.css" />
     <Content Include="assets\css\theme_style.css" />
     <Content Include="assets\css\theme_styles.css" />
@@ -372,10 +393,13 @@
     <Content Include="assets\js\vendor\jquery.counterup.min.js" />
     <Content Include="assets\js\vendor\modernizr-2.8.3.min.js" />
     <Content Include="assets\js\vendor\waypoints.min.js" />
+    <Content Include="assets\login.css" />
     <Content Include="Content\css\animate.css" />
+    <Content Include="Content\css\app.css" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\main.css" />
+    <Content Include="Content\css\util.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\fullcalendar.css" />
     <Content Include="Content\images\blank.gif" />
@@ -466,6 +490,7 @@
     <Content Include="Content\images\westernunion.png" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\jquery-1.10.2.min.js" />
+    <Content Include="Content\js\login.js" />
     <Content Include="Content\js\min\custom.min.js" />
     <Content Include="Content\js\min\modernizr.min.js" />
     <Content Include="Content\js\min\plugins.min.js" />
@@ -719,7 +744,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="assets\fonts\flexslider-icon.eot" />
-    <Content Include="assets\fonts\flexslider-icon.ttf" />
+    <Content Include="assets\fonts\Poppins-Bold.ttf" />
     <Content Include="assets\fonts\flexslider-icon.woff" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
@@ -730,6 +755,7 @@
     <Content Include="assets\fonts\icomoon.woff" />
     <Content Include="assets\img\favicon\Thumbs.db" />
     <Content Include="assets\js\vendor\jquery-2.2.4.min.js" />
+    <Content Include="assets\fonts\flexslider-icon - Copy.ttf" />
     <None Include="BundleTransformer.Configuration.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -738,34 +764,56 @@
     <None Include="Content\fonts\fontawesome-webfont.ttf" />
     <None Include="Content\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\bootstrap-datetimepicker.less" />
+    <None Include="Properties\PublishProfiles\deepp.pubxml" />
     <None Include="Properties\PublishProfiles\Landing.pubxml" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\contact-form-script.min.js" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\custom.min.js" />
+    <Content Include="Scripts\form-validator.min.js" />
     <Content Include="Scripts\fullcalendar.min.js" />
+    <Content Include="Scripts\homemain.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\jquery-min.js" />
     <Content Include="Scripts\jquery-ui-1.10.4.min.js" />
+    <Content Include="Scripts\jquery.counterup.min.js" />
+    <Content Include="Scripts\jquery.easing.min.js" />
+    <Content Include="Scripts\jquery.magnific-popup.min.js" />
+    <Content Include="Scripts\jquery.mixtup.js" />
+    <Content Include="Scripts\jquery.nav.js" />
     <Content Include="Scripts\jquery.nicescroll.min.js" />
+    <Content Include="Scripts\jquery.slicknav.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\loginMain.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\moment-with-locales.js" />
     <Content Include="Scripts\moment-with-locales.min.js" />
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\nivo-lightbox.js" />
+    <Content Include="Scripts\owl.carousel.min.js" />
     <Content Include="Scripts\plugins.js" />
     <Content Include="Scripts\plugins.min.js" />
+    <Content Include="Scripts\Popper.js" />
+    <Content Include="Scripts\popper.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\scrolling-nav.js" />
+    <Content Include="Scripts\Select2.min.js" />
+    <Content Include="Scripts\tilt.min.js" />
     <Content Include="Scripts\vendor\jquery.gmap3.min.js" />
+    <Content Include="Scripts\waypoints.min.js" />
+    <Content Include="Scripts\wow.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\Account\RegisterActivationCode.cshtml" />
     <Content Include="Views\Account\RegisterMobileNo.cshtml" />
@@ -817,7 +865,9 @@
     <Content Include="Views\ExamVM\Faillist.cshtml" />
     <Content Include="Views\ExamVM\FindResult.cshtml" />
     <Content Include="Views\Governingbody\GetGoverningbody.cshtml" />
+    <Content Include="Views\Home\IndexLoginTheme1.cshtml" />
     <Content Include="Views\Home\IndexLogin.cshtml" />
+    <Content Include="Views\Home\IndexHome.cshtml" />
     <None Include="Views\Notice\Notice-single.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -867,6 +917,8 @@
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
     <Content Include="Views\Shared\_footerLogin.cshtml" />
     <Content Include="Views\Shared\_headerLogin.cshtml" />
+    <Content Include="Views\Shared\logintheme1\_LayoutLogin1.cshtml" />
+    <Content Include="Views\Shared\Home\_LayoutHome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -875,7 +927,9 @@
     <Folder Include="Views\Image\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>

@@ -9,7 +9,6 @@ namespace deepp.Entities.Models
     {
         public AcademicVersion()
         {
-            this.FeesGenerateAcademics = new List<FeesGenerateAcademic>();
             this.Students = new List<Student>();
         }
 
@@ -22,7 +21,6 @@ namespace deepp.Entities.Models
         public Nullable<int> TagId { get; set; }
         public virtual Institute Institute { get; set; }
         public virtual Tag Tag { get; set; }
-        public virtual ICollection<FeesGenerateAcademic> FeesGenerateAcademics { get; set; }
         public virtual ICollection<Student> Students { get; set; }
     }
 }

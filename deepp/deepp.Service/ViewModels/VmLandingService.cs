@@ -56,6 +56,7 @@ namespace deepp.Service.ViewModels
 
         public VmLanding GetAllVmLanding(string url)
         {
+
             VmLanding vmLanding = new VmLanding();
             var institute = _instituteService.Get(url);
 

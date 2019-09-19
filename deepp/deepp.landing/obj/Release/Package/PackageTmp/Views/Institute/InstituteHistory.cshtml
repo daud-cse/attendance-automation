@@ -1,0 +1,182 @@
+﻿@model  deepp.Entities.Models.Institute
+@{
+    ViewBag.Title = "Basic Information";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+<main id="main-content">
+    <!-- Main Section -->
+    <div class="main-section">
+        <div class="container">
+            <div class="row">
+                <div class="page-content">
+                    <section class="page-section">
+                        <div class="section-fullwidth">
+                            <div class="cs-course-detail">
+                                <div class="cs-heading-sec">
+                                    <div class="inner-sec">
+                                        <h1>
+                                            Histroy
+                                        </h1>
+                                    </div>
+                                </div>
+
+                                <div class="cs-detail-text">
+
+                                    <p>@MvcHtmlString.Create(@Model.HistoryText)</p>
+
+                               
+                                </div>
+                                <div class="cs-team team-box">
+
+
+
+
+
+                                   
+
+
+                                </div>
+
+                            
+                            </div>
+                        </div>
+                    </section>
+                </div>
+           
+            </div>
+        </div>
+
+
+    </div>
+</main>
+
+
+<script src="~/assets/js/vendor/jquery-1.12.0.min.js"></script>
+<script type="text/javascript">
+
+    jQuery(window).load(function () {
+        setTimeout(function () {
+            jQuery('.cs-map-bL3zXgInN3').animate({
+                'height': '250'
+            }, 400)
+        }, 400)
+    })
+
+    var panorama;
+
+    function initialize() {
+        var myLatlng = new google.maps.LatLng(51.507351, -0.127758);
+        var mapOptions = {
+            zoom: 11,
+            scrollwheel: true,
+            draggable: true,
+            streetViewControl: false,
+            center: myLatlng,
+            mapTypeId: google.maps.MapTypeId.content,
+            disableDefaultUI: false,
+        }; var map = new google.maps.Map(document.getElementById('map_canvasbL3zXgInN3'), mapOptions);
+        var styles = '';
+        if (styles != '') {
+            var styledMap = new google.maps.StyledMapType(styles, { name: 'Styled Map' });
+            map.mapTypes.set('map_style', styledMap);
+            map.setMapTypeId('map_style');
+        }
+        var infowindow = new google.maps.InfoWindow({
+            content: '274 Seven Sisters Road, London, N4 2HY,London,United Kingdom',
+            maxWidth: 250,
+            maxHeight: 100,
+
+        });
+        var marker = new google.maps.Marker({
+            deeppition: myLatlng,
+            map: map,
+            title: '',
+            icon: '',
+            shadow: ''
+        });
+
+        //google.maps.event.addListener(marker, 'click', function() {
+        if (infowindow.content != '') {
+            infowindow.open(map, marker);
+            map.panBy(1, -60);
+            google.maps.event.addListener(marker, 'click', function (event) {
+                infowindow.open(map, marker);
+            });
+        }
+        //});
+        panorama = map.getStreetView();
+        panorama.setPosition(myLatlng);
+        panorama.setPov(({
+            heading: 265,
+            pitch: 0
+        }));
+
+    }
+
+    function cs_toggle_street_view(btn) {
+        var toggle = panorama.getVisible();
+        if (toggle == false) {
+            if (btn == 'streetview') {
+                panorama.setVisible(true);
+            }
+        } else {
+            if (btn == 'mapview') {
+                panorama.setVisible(false);
+            }
+        }
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+    jQuery(window).load(function () {
+        jQuery('.cs-team-slider').flexslider({
+            slideshowSpeed: 4000,
+            animationDuration: 1100,
+            animation: 'slide',
+            directionNav: true,
+            controlNav: false,
+            prevText: "&lt;i class='icon-arrow-left10'&gt;&lt;/i&gt;",
+            nextText: "&lt;i class='icon-arrow-right10'&gt;&lt;/i&gt;",
+        });
+    });
+
+    jQuery(window).load(function () {
+        setTimeout(function () {
+            jQuery('.cs-map-view').hide();
+            jQuery('.map-btn').on('click', function (e) {
+                e.preventDefault();
+                jQuery('.cs-course-detail').find('.cs-map-view').slideToggle();
+            });
+        }, 2000);
+
+    });
+</script>
+
+@*<div class="page-header">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <h2 class="page-title">History</h2>
+            </div> <!-- /.col-md-6 -->
+            <div class="col-md-6 col-sm-6 hidden-xs back-home">
+                @Html.ActionLink("← Go back Home", "Index", "Home", new { }, null)
+            </div> <!-- /.col-md-6 -->
+        </div> <!-- /.row -->
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="box-content">
+            <h4 class="widget-title"><span>Notice</span></h4>
+               @{Html.RenderAction("GetAll", "Notice");}
+               @Html.ActionLink("More Notice", "GetAllWithGrid", "Notice", new { }, new { @class = "btn btn-default-alt btn-sm pull-right" })
+            </div> <!-- /.box-content -->
+            <div class="box-content">
+            <h4 class="widget-title"><span>Gallery</span></h4>
+                @{Html.RenderAction("GetPartialGallery", "Gallery");}
+            </div> <!-- /.box-content -->
+        </div>
+        <div class="col-md-8">
+            <div class="box-content">
+                @MvcHtmlString.Create(@Model.HistoryText)
+            </div> <!-- /.box-content -->
+        </div>
+    </div>*@

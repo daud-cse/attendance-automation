@@ -1,0 +1,92 @@
+E:\Shikkhaforall\Software\BioMatrix\BioMatrix\BioMetrixCore\bin\Debug\sfa.attendance.exe.config
+E:\Shikkhaforall\Software\BioMatrix\BioMatrix\BioMetrixCore\obj\Debug\Interop.zkemkeeper.dll
+E:\Shikkhaforall\Software\BioMatrix\BioMatrix\BioMetrixCore\obj\Debug\sfa.attendance.csproj.ResolveComReference.cache
+E:\Shikkhaforall\Software\BioMatrix\BioMatrix\BioMetrixCore\obj\Debug\sfa.attendance.csprojResolveAssemblyReference.cache
+E:\Shikkhaforall\Software\BioMatrix\BioMatrix\BioMetrixCore\obj\Debug\sfa.attendance.Properties.Resources.resources
+E:\Shikkhaforall\Software\BioMatrix\BioMatrix\BioMetrixCore\obj\Debug\sfa.attendance.csproj.GenerateResource.Cache
+E:\Shikkhaforall\Software\BioMatrix\BioMatrix\BioMetrixCore\bin\Debug\sfa.attendance.exe.manifest
+E:\Shikkhaforall\Software\BioMatrix\BioMatrix\BioMetrixCore\bin\Debug\sfa.attendance.application
+E:\Shikkhaforall\Software\BioMatrix\BioMatrix\BioMetrixCore\bin\Debug\sfa.attendance.exe
+E:\Shikkhaforall\Software\BioMatrix\BioMatrix\BioMetrixCore\bin\Debug\sfa.attendance.pdb
+E:\Shikkhaforall\Software\BioMatrix\BioMatrix\BioMetrixCore\bin\Debug\Newtonsoft.Json.dll
+E:\Shikkhaforall\Software\BioMatrix\BioMatrix\BioMetrixCore\bin\Debug\Newtonsoft.Json.xml
+E:\Shikkhaforall\Software\BioMatrix\BioMatrix\BioMetrixCore\obj\Debug\sfa.attendance.exe.manifest
+E:\Shikkhaforall\Software\BioMatrix\BioMatrix\BioMetrixCore\obj\Debug\sfa.attendance.application
+E:\Shikkhaforall\Software\BioMatrix\BioMatrix\BioMetrixCore\obj\Debug\sfa.attendance.exe
+E:\Shikkhaforall\Software\BioMatrix\BioMatrix\BioMetrixCore\obj\Debug\sfa.attendance.pdb
+E:\Shikkhaforall\Software\BioMatrix\BioMatrix\BioMetrixCore\obj\Debug\sfa.attendance.DataEmpty.resources
+E:\Shikkhaforall\Software\BioMatrix\BioMatrix\BioMetrixCore\obj\Debug\sfa.attendance.Master.resources
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Debug\sfa.attendance.exe.config
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\obj\Debug\Interop.zkemkeeper.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\obj\Debug\sfa.attendance.csproj.ResolveComReference.cache
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Debug\dlls\zkemkeeper.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Debug\sfa.attendance.exe.manifest
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Debug\sfa.attendance.application
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Debug\sfa.attendance.exe
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Debug\sfa.attendance.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Debug\Newtonsoft.Json.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Debug\pnsms.Entities.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Debug\System.Web.Mvc.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Debug\MvcPaging.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Debug\Repository.Pattern.Ef6.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Debug\EntityFramework.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Debug\Dapper.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Debug\Repository.Pattern.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Debug\LinqKit.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Debug\pnsms.Entities.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Debug\Newtonsoft.Json.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Debug\System.Web.Mvc.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Debug\Repository.Pattern.Ef6.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Debug\EntityFramework.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Debug\Microsoft.Web.Infrastructure.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Debug\Repository.Pattern.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\obj\Debug\sfa.attendance.csprojResolveAssemblyReference.cache
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\obj\Debug\sfa.attendance.DataEmpty.resources
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\obj\Debug\sfa.attendance.Master.resources
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\obj\Debug\sfa.attendance.Properties.Resources.resources
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\obj\Debug\sfa.attendance.csproj.GenerateResource.Cache
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\obj\Debug\sfa.attendance.exe.manifest
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\obj\Debug\sfa.attendance.application
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\obj\Debug\sfa.attendance.exe
+E:\Shikkhaforall\SCHOOL MANAGMENT SYSTEM\pnsms\sfa.attendance\obj\Debug\sfa.attendance.pdb
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\bin\Debug\sfa.attendance.exe.config
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\obj\Debug\Interop.zkemkeeper.dll
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\obj\Debug\sfa.attendance.csproj.ResolveComReference.cache
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\obj\Debug\sfa.attendance.exe
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\obj\Debug\sfa.attendance.pdb
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\bin\Debug\dlls\zkemkeeper.dll
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\bin\Debug\sfa.attendance.exe.manifest
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\bin\Debug\sfa.attendance.application
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\bin\Debug\sfa.attendance.exe
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\bin\Debug\sfa.attendance.pdb
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\bin\Debug\Newtonsoft.Json.dll
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\bin\Debug\pnsms.Entities.dll
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\bin\Debug\System.Web.Mvc.dll
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\bin\Debug\MvcPaging.dll
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\bin\Debug\Repository.Pattern.Ef6.dll
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\bin\Debug\EntityFramework.dll
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\bin\Debug\Dapper.dll
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\bin\Debug\Repository.Pattern.dll
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\bin\Debug\LinqKit.dll
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\bin\Debug\pnsms.Entities.pdb
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\bin\Debug\Newtonsoft.Json.xml
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\bin\Debug\System.Web.Mvc.xml
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\bin\Debug\Repository.Pattern.Ef6.pdb
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\bin\Debug\EntityFramework.xml
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\bin\Debug\Microsoft.Web.Infrastructure.xml
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\bin\Debug\Repository.Pattern.pdb
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\obj\Debug\sfa.attendance.csprojResolveAssemblyReference.cache
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\obj\Debug\sfa.attendance.DataEmpty.resources
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\obj\Debug\sfa.attendance.Master.resources
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\obj\Debug\sfa.attendance.Properties.Resources.resources
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\obj\Debug\sfa.attendance.csproj.GenerateResource.Cache
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\obj\Debug\sfa.attendance.exe.manifest
+E:\shikkhaforall-git\sfa\pnsms\sfa.attendance\obj\Debug\sfa.attendance.application

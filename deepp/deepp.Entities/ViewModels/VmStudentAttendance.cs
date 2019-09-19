@@ -14,7 +14,7 @@ namespace deepp.Entities.ViewModels
         public List<StudentAttendance> lstStudentAttendance { get; set; }
 
 
-        public List<SubjectAcademicClassMapping> lstSubjectAcademicClassMapping { get; set; }
+      
         public IEnumerable<StudentAttendanceDetail> AttendanceDetails { get; set; }
 
         public string msg { get; set; }

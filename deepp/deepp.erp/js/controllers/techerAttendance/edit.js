@@ -28,7 +28,7 @@ app.controller('TeacherAttendanceEditCtrl', ['$scope', '$state', '$stateParams',
             }
            );
         };
-        function convertUTCDateToLocalDate(date) {
+          function convertUTCDateToLocalDate(date) {
                 var newDate = new Date(date.getTime() + date.getTimezoneOffset() * 60 * 1000);
 
                 var offset = date.getTimezoneOffset() / 60;
@@ -49,6 +49,7 @@ app.controller('TeacherAttendanceEditCtrl', ['$scope', '$state', '$stateParams',
                 object.InTime = InTime;//.toString();
                 object.OutTime = OutTime;//.toString();
                 console.log(object);
+			
             TeacherAttendanceService.updateteacherattendancedetails(object, function (result) {
                // $state.go('app.techerAttendance.list');
                 toaster.pop("success", "Success", $scope.entity.Name + " Updated.");
@@ -56,7 +57,7 @@ app.controller('TeacherAttendanceEditCtrl', ['$scope', '$state', '$stateParams',
                 showErrors(toaster, err);
             }
          );
-        }
+        };
         $scope.printDocument = function () {            
             var pdf = new jsPDF('p', 'pt', 'a4');
             pdf.setFont("helvetica");
@@ -99,7 +100,7 @@ app.controller('TeacherAttendanceEditCtrl', ['$scope', '$state', '$stateParams',
             //        'width': margins.width
             //        , 'elementHandlers': specialElementHandlers
             //    },
-            //    function (disdeeppe) {
+            //    function (dispose) {
             //        pdf.save('test' + '.pdf');
             //    },
             //    margins

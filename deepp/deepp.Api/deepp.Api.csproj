@@ -204,6 +204,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\Account\AccountController.cs" />
+    <Compile Include="Api\Attendance\AttendanceMixedController.cs" />
     <Compile Include="Api\Attendance\TeacherAttendanceController.cs" />
     <Compile Include="Api\Settings\AcademicBranchController.cs" />
     <Compile Include="Api\Settings\AcademicClassController.cs" />
@@ -234,7 +236,6 @@
     <Compile Include="Api\EmployeeAttendanceController.cs" />
     <Compile Include="Api\EmployeeController.cs" />
     <Compile Include="Api\EventController.cs" />
-    <Compile Include="Api\ExpenseHeadController.cs" />
     <Compile Include="Api\GalleryController.cs" />
     <Compile Include="Api\GenderController.cs" />
     <Compile Include="Api\GlobalCountryController.cs" />
@@ -243,7 +244,6 @@
     <Compile Include="Api\GlobalInstituteTypeController.cs" />
     <Compile Include="Api\GuardianTypeController.cs" />
     <Compile Include="Api\ImageController.cs" />
-    <Compile Include="Api\IncomeHeadController.cs" />
     <Compile Include="Api\InstituteController.cs" />
     <Compile Include="Api\MaritalStatusesController.cs" />
     <Compile Include="Api\MobilePaymentController.cs" />
@@ -265,7 +265,6 @@
     <Compile Include="Api\Teachers\TeacherController.cs" />
     <Compile Include="Api\TestimonialController.cs" />
     <Compile Include="Api\UserInfoSecurityController.cs" />
-    <Compile Include="Api\VoucherEntryController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -397,7 +396,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>1692</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:1692/</IISUrl>
+          <IISUrl>http://localhost:1694/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

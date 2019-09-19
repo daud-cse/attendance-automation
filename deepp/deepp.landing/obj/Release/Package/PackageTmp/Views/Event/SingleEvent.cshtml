@@ -1,0 +1,558 @@
+﻿@model  deepp.Entities.Models.Event
+@{
+    ViewBag.Title = "Event Details";
+}
+<main id="main-content">
+    <!-- Main Section -->
+    <div class="main-section">
+        <div class="container">
+            <div class="row">
+
+
+                <div class="page-content event-editor">
+                    <section class="page-section">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="header-element">
+                                        <div class="pageinfo page-title-align-left">
+                                            <h1>@Model.EventTitle</h1>
+                                        </div>
+                                    </div>
+
+                                    <div class="cs-events events-listing">
+                                        <article>
+
+                                            <figure>
+
+                                                <img src="/image/GetImage?id=@Model.Id&refCode=16&isThumbnail=true" alt="Event Image">
+                                            </figure>
+                                            <section>
+                                                <div class="text">
+                                                    <span>
+                                                        <a href="http://school">School</a>
+                                                    </span>
+                                                    <span>
+                                                        <a href="http://science">Science</a>
+                                                    </span>
+                                                    <ul class="deeppt-options">
+                                                        <li>
+                                                            <i class="icon-calendar6"></i>
+                                                            <span class="cs-event-time">
+                                                                @Model.EventStartAt.Value.ToString("ddd dd MMM")- @Model.EventEndAt.Value.ToString("ddd dd MMM yyyy")
+                                                            </span>
+
+                                                        </li>
+                                                        <li><i class="icon-clock"></i>02:00 AM&nbsp;to &nbsp;05:30 AM</li>
+
+                                                        <li><i class="icon-location2"></i>@Model.EventLocation</li>
+                                                    </ul>
+                                                    <ul class="categories">
+                                                        <li>
+                                                            <i class="icon-users5"></i>Contact:
+                                                          @Model.ContactPerson
+
+                                                        </li>
+                                                    </ul>
+                                                    <div class="socialmedia">
+                                                        <!--<a href="#" class="add-calender"> Add to Calender</a>-->
+
+                                                        <a class="add-calender add_calendar_toggle699 btn-toggle_cal">Add to Calender</a>
+
+                                                        <ul class="add_calendar add_calendar699" id="inline-699">
+
+
+                                                            <li class="i_calendar">
+
+                                                                <a href="http://uoce.chimpgroup.com/wp-content/plugins/cs-framework/cache/event-699.ics">
+
+                                                                    <img src="http://uoce.chimpgroup.com/wp-content/plugins/cs-framework/assets/images/calendar-icon.png" alt="" width="24">
+
+                                                                </a>
+
+                                                            </li>
+
+
+
+                                                            <li class="i_google">
+                                                                <a href="http://www.google.com/calendar/event?action=TEMPLATE&amp;text=Women%E2%80%99s+Perspectives+Matter&amp;dates=20161229T020000/20161231T053000&amp;sprop=website:http://uoce.chimpgroup.com/events/womens-perspectives-matter/&amp;details=&amp;location=179%20York%20Way,%20Holloway,%20N7%209LN&amp;trp=true" target="_blank">
+
+                                                                    <img src="http://uoce.chimpgroup.com/wp-content/plugins/cs-framework/assets/images/google-icon.png" alt="" width="25">
+
+                                                                </a>
+
+                                                            </li>
+
+
+
+                                                            <li class="i_yahoo">
+                                                                <a href="http://calendar.yahoo.com/?v=60&amp;view=d&amp;type=20&amp;title=Women’s+Perspectives+Matter&amp;st=20161229T020000&amp;desc=%20--%20http://uoce.chimpgroup.com/events/womens-perspectives-matter/&amp;in_loc=179+York+Way,+Holloway,+N7+9LN" target="_blank">
+
+                                                                    <img src="http://uoce.chimpgroup.com/wp-content/plugins/cs-framework/assets/images/yahoo-icon.png" alt="" width="24">
+
+                                                                </a>
+
+                                                            </li>
+
+
+                                                        </ul>
+
+                                                        <a class="share-btn">
+                                                            <i data-original="plus3" class="icon-share-square-o"></i>Share Post
+                                                        </a><ul class="cs-sharedeeppt">
+                                                            <li><a class="addthis_button_facebook"><i data-original="facebook" class="icon-facebook7"></i></a></li>
+                                                            <li><a class="addthis_button_twitter"><i data-original="twitter" class="icon-twitter6"></i></a></li>
+                                                            <li><a class="addthis_button_google"><i data-original="googleplus" class="icon-googleplus7"></i></a></li>
+                                                            <li><a class="addthis_button_tumblr" data-original-title="Tumblr"><i class="icon-tumblr2"></i></a></li>
+                                                            <li><a class="addthis_button_dribbble" data-original-title="Dribbble"><i class="icon-dribbble2"></i></a></li>
+                                                            <li><a class="addthis_button_instagram"><i data-original="instagram" class="icon-instagram"></i></a></li>
+                                                            <li><a href="#"><i data-original="youtube-play" class="icon-youtube-play"></i></a></li>
+                                                            <li>
+                                                                <a class="cs-more addthis_button_compact">
+                                                                    <i data-original="plus3" class="icon-share-square-o"></i>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="right-side">
+                                                    @if (@Model.IsActive)
+                                                    {
+
+                                                        <a class="free-btn" href="#">Open</a>
+
+                                                    }
+                                                    else
+                                                    {
+
+                                                        <a class="cancle-btn" href="#">Close</a>
+
+                                                    }
+                                                </div>
+
+
+                                            </section>
+                                        </article>
+                                    </div>
+                                    <div class="rich_editor_text">
+                                        <div class="section-title">
+                                            <h2> Event Description</h2>
+                                        </div>
+                                        <p>
+                                            @MvcHtmlString.Create(@Model.EventBody)
+                                        </p>
+                                        <p>@MvcHtmlString.Create(@Model.EventBriefInfo)</p>
+                                    </div>
+
+
+                                    @*<div class="section-title"><h2>Built Process</h2></div>
+                                        <div class="event-timeline">
+
+                                            <article>
+                                                <h6>04:00Pm / Welcome to Guest</h6>
+                                                <p>Pangolin regarding rabbit ahead dolorously soothingly ouch unbound excluding sewed and hedgehog unsuccessfully struck labrador besides and yet by goodness much bowed meadowlark.</p>
+                                            </article>
+                                            <article>
+                                                <h6>06:00Pm / Welcome to Guest</h6>
+                                                <p>Pangolin regarding rabbit ahead dolorously soothingly ouch unbound excluding sewed and hedgehog unsuccessfully struck labrador besides and yet by goodness much bowed meadowlark.</p>
+                                            </article>
+                                            <article>
+                                                <h6>05:00Pm / Welcome to Guest</h6>
+                                                <p>Pangolin regarding rabbit ahead dolorously soothingly ouch unbound excluding sewed and hedgehog unsuccessfully struck labrador besides and yet by goodness much bowed meadowlark.</p>
+                                            </article>
+                                        </div>*@
+
+                                    @*<div class="section-title event-speaker">
+                                            <h2>EVENT SPEAKERS</h2>
+                                        </div>
+                                        <div class="row">
+
+                                            <div class="cs-team team-box-grid">
+
+                                                <article class="col-sm-6 col-md-4">
+                                                    <div class="overlayslide custom-fig">
+                                                        <figure>
+                                                            <a href="http://uoce.chimpgroup.com/teams/tailor-jim/"><img alt="UOCE-Team-Members-12" src="http://uoce.chimpgroup.com/wp-content/uploads/UOCE-Team-Members-12.jpg"></a>
+                                                            <figcaption>
+                                                                <a href="http://uoce.chimpgroup.com/teams/tailor-jim/" title=""><i class="icon-plus8"></i></a>
+                                                            </figcaption>
+                                                        </figure>
+                                                        <div class="overlaytext">
+                                                            <h4>
+                                                                <a href="http://uoce.chimpgroup.com/teams/tailor-jim/" style="color: !important">
+                                                                    Tailor Jim
+                                                                </a>
+                                                            </h4>
+                                                            <h3><a href="http://uoce.chimpgroup.com/teams/tailor-jim/" style="color: !important">SCIENCE</a></h3>
+                                                            <div class="viewstudent">
+                                                                <i class="icon-plus8 customcolor"></i>
+                                                                <a href="http://uoce.chimpgroup.com/teams/tailor-jim/">
+                                                                    View Profile
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </article>
+
+
+                                                <article class="col-sm-6 col-md-4">
+                                                    <div class="overlayslide custom-fig">
+                                                        <figure>
+                                                            <a href="http://uoce.chimpgroup.com/teams/brown/"><img alt="UOCE-Team-Members-10" src="http://uoce.chimpgroup.com/wp-content/uploads/UOCE-Team-Members-10.jpg"></a>
+                                                            <figcaption>
+                                                                <a href="http://uoce.chimpgroup.com/teams/brown/" title=""><i class="icon-plus8"></i></a>
+                                                            </figcaption>
+                                                        </figure>
+                                                        <div class="overlaytext">
+                                                            <h4>
+                                                                <a href="http://uoce.chimpgroup.com/teams/brown/" style="color: !important">
+                                                                    BROWN
+                                                                </a>
+                                                            </h4>
+                                                            <h3><a href="http://uoce.chimpgroup.com/teams/brown/" style="color: !important">FINE ARTS</a></h3>
+                                                            <div class="viewstudent">
+                                                                <i class="icon-plus8 customcolor"></i>
+                                                                <a href="http://uoce.chimpgroup.com/teams/brown/">
+                                                                    View Profile
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </article>
+
+
+                                                <article class="col-sm-6 col-md-4">
+                                                    <div class="overlayslide custom-fig">
+                                                        <figure>
+                                                            <a href="http://uoce.chimpgroup.com/teams/kimmi-brown/"><img alt="UOCE-Team-Members-09" src="http://uoce.chimpgroup.com/wp-content/uploads/UOCE-Team-Members-09.jpg"></a>
+                                                            <figcaption>
+                                                                <a href="http://uoce.chimpgroup.com/teams/kimmi-brown/" title=""><i class="icon-plus8"></i></a>
+                                                            </figcaption>
+                                                        </figure>
+                                                        <div class="overlaytext">
+                                                            <h4>
+                                                                <a href="http://uoce.chimpgroup.com/teams/kimmi-brown/" style="color: !important">
+                                                                    KIMMI BROWN
+                                                                </a>
+                                                            </h4>
+                                                            <h3><a href="http://uoce.chimpgroup.com/teams/kimmi-brown/" style="color: !important">POLITICAL SCIENCE</a></h3>
+                                                            <div class="viewstudent">
+                                                                <i class="icon-plus8 customcolor"></i>
+                                                                <a href="http://uoce.chimpgroup.com/teams/kimmi-brown/">
+                                                                    View Profile
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </article>
+
+                                            </div>
+                                        </div>
+                                        <div class="section-title">
+                                            <h2>Gallery</h2>
+                                        </div>
+
+
+                                        <div class="cs-gallery">
+
+                                            <ul class="gallery clearfix lightbox">
+                                                <li class="col-md-3">
+                                                    <figure>
+                                                        <a href="#">
+                                                            <img src="http://uoce.chimpgroup.com/wp-content/uploads/UOCE-Blogs-Posts-03-250x188.jpg" alt="UOCE-Events-Posts-05">
+                                                        </a>
+
+
+                                                        <figcaption>
+                                                            <a href="http://uoce.chimpgroup.com/wp-content/uploads/UOCE-Blogs-Posts-03.jpg" rel="prettyPhoto"><i class="icon-plus8"></i></a>
+                                                        </figcaption>
+
+
+                                                    </figure>
+                                                </li>
+                                                <li class="col-md-3">
+                                                    <figure>
+                                                        <a href="#">
+                                                            <img src="http://uoce.chimpgroup.com/wp-content/uploads/UOCE-Blogs-Posts-04-250x188.jpg" alt="UOCE-Events-Posts-05">
+                                                        </a>
+
+
+                                                        <figcaption>
+                                                            <a href="http://uoce.chimpgroup.com/wp-content/uploads/UOCE-Blogs-Posts-04.jpg" rel="prettyPhoto"><i class="icon-plus8"></i></a>
+                                                        </figcaption>
+
+
+                                                    </figure>
+                                                </li>
+                                                <li class="col-md-3">
+                                                    <figure>
+                                                        <a href="#">
+                                                            <img src="http://uoce.chimpgroup.com/wp-content/uploads/UOCE-Blogs-Posts-05-250x188.jpg" alt="UOCE-Events-Posts-05">
+                                                        </a>
+
+
+                                                        <figcaption>
+                                                            <a href="http://uoce.chimpgroup.com/wp-content/uploads/UOCE-Blogs-Posts-05.jpg" rel="prettyPhoto"><i class="icon-plus8"></i></a>
+                                                        </figcaption>
+
+
+                                                    </figure>
+                                                </li>
+                                                <li class="col-md-3">
+                                                    <figure>
+                                                        <a href="#">
+                                                            <img src="http://uoce.chimpgroup.com/wp-content/uploads/UOCE-Blogs-Posts-06-250x188.jpg" alt="UOCE-Events-Posts-05">
+                                                        </a>
+
+
+                                                        <figcaption>
+                                                            <a href="http://uoce.chimpgroup.com/wp-content/uploads/UOCE-Blogs-Posts-06.jpg" rel="prettyPhoto"><i class="icon-plus8"></i></a>
+                                                        </figcaption>
+
+
+                                                    </figure>
+                                                </li>
+                                                <li class="col-md-3">
+                                                    <figure>
+                                                        <a href="#">
+                                                            <img src="http://uoce.chimpgroup.com/wp-content/uploads/UOCE-Blogs-Posts-07-250x188.jpg" alt="UOCE-Events-Posts-05">
+                                                        </a>
+
+
+                                                        <figcaption>
+                                                            <a href="http://uoce.chimpgroup.com/wp-content/uploads/UOCE-Blogs-Posts-07.jpg" rel="prettyPhoto"><i class="icon-plus8"></i></a>
+                                                        </figcaption>
+
+
+                                                    </figure>
+                                                </li>
+                                                <li class="col-md-3">
+                                                    <figure>
+                                                        <a href="#">
+                                                            <img src="http://uoce.chimpgroup.com/wp-content/uploads/UOCE-Blogs-Posts-08-250x188.jpg" alt="UOCE-Events-Posts-05">
+                                                        </a>
+
+
+                                                        <figcaption>
+                                                            <a href="http://uoce.chimpgroup.com/wp-content/uploads/UOCE-Blogs-Posts-08.jpg" rel="prettyPhoto"><i class="icon-plus8"></i></a>
+                                                        </figcaption>
+
+
+                                                    </figure>
+                                                </li>
+                                                <li class="col-md-3">
+                                                    <figure>
+                                                        <a href="#">
+                                                            <img src="http://uoce.chimpgroup.com/wp-content/uploads/UOCE-Blogs-Posts-09-250x188.jpg" alt="UOCE-Events-Posts-05">
+                                                        </a>
+
+
+                                                        <figcaption>
+                                                            <a href="http://uoce.chimpgroup.com/wp-content/uploads/UOCE-Blogs-Posts-09.jpg" rel="prettyPhoto"><i class="icon-plus8"></i></a>
+                                                        </figcaption>
+
+
+                                                    </figure>
+                                                </li>
+                                                <li class="col-md-3">
+                                                    <figure>
+                                                        <a href="#">
+                                                            <img src="http://uoce.chimpgroup.com/wp-content/uploads/UOCE-Blogs-Posts-10-250x188.jpg" alt="UOCE-Events-Posts-05">
+                                                        </a>
+
+
+                                                        <figcaption>
+                                                            <a href="http://uoce.chimpgroup.com/wp-content/uploads/UOCE-Blogs-Posts-10.jpg" rel="prettyPhoto"><i class="icon-plus8"></i></a>
+                                                        </figcaption>
+
+
+                                                    </figure>
+                                                </li>
+                                            </ul>
+                                        </div>*@
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+
+
+
+                <aside class="page-sidebar">
+                    <div class="widget cs_ads_banner"><div class="cs_banner_section"><a onclick="cs_banner_click_count_plus('http://uoce.chimpgroup.com/wp-admin/admin-ajax.php', '276833028')" id="cs_banner_clicks276833028" href="" target="_blank"><img src="http://uoce.chimpgroup.com/wp-content/uploads/add-img.jpg" alt="Sidebar"></a></div></div><div class="widget widget_calendar">
+                        <div class="widget-section-title"><h6>Calendar</h6></div><div id="calendar_wrap" class="calendar_wrap">
+                            <table id="wp-calendar">
+                                <caption>December 2017</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col" title="Monday">M</th>
+                                        <th scope="col" title="Tuesday">T</th>
+                                        <th scope="col" title="Wednesday">W</th>
+                                        <th scope="col" title="Thursday">T</th>
+                                        <th scope="col" title="Friday">F</th>
+                                        <th scope="col" title="Saturday">S</th>
+                                        <th scope="col" title="Sunday">S</th>
+                                    </tr>
+                                </thead>
+
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="3" id="prev"><a href="http://uoce.chimpgroup.com/2015/06/">« Jun</a></td>
+                                        <td class="pad">&nbsp;</td>
+                                        <td colspan="3" id="next" class="pad">&nbsp;</td>
+                                    </tr>
+                                </tfoot>
+
+                                <tbody>
+                                    <tr>
+                                        <td colspan="4" class="pad">&nbsp;</td>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>6</td>
+                                        <td>7</td>
+                                        <td>8</td>
+                                        <td>9</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11</td>
+                                        <td>12</td>
+                                        <td>13</td>
+                                        <td>14</td>
+                                        <td>15</td>
+                                        <td>16</td>
+                                        <td>17</td>
+                                    </tr>
+                                    <tr>
+                                        <td>18</td>
+                                        <td>19</td>
+                                        <td>20</td>
+                                        <td>21</td>
+                                        <td id="today">22</td>
+                                        <td>23</td>
+                                        <td>24</td>
+                                    </tr>
+                                    <tr>
+                                        <td>25</td>
+                                        <td>26</td>
+                                        <td>27</td>
+                                        <td>28</td>
+                                        <td>29</td>
+                                        <td>30</td>
+                                        <td>31</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div><div class="widget widget_gallery">
+                        <div class="widget-section-title">
+                            <h6>Photo Gallery</h6>
+                        </div>
+                        @{Html.RenderAction("GetPartialGallery", "Gallery");}
+                        @*<ul class="gallery-list">
+                                <li><a target="_blank" title="Typography via mushism - Popular Inspiration on Designspiration" href="https://www.flickr.com/photos/75652279@N06/38872645941/"><img alt="Typography via mushism - Popular Inspiration on Designspiration" src="https://farm5.staticflickr.com/4555/38872645941_343afc845b_s.jpg"></a></li>
+                                <li><a target="_blank" title="Car tula Cd de Akron Family - Popular Inspiration on Designspiration" href="https://www.flickr.com/photos/75652279@N06/25000414578/"><img alt="Car tula Cd de Akron Family - Popular Inspiration on Designspiration" src="https://farm5.staticflickr.com/4549/25000414578_e05e7e4efe_s.jpg"></a></li>
+                                <li><a target="_blank" title="A_P_BandH_5 colour pattern - Popular Inspiration on Designspiration" href="https://www.flickr.com/photos/75652279@N06/38840977192/"><img alt="A_P_BandH_5 colour pattern - Popular Inspiration on Designspiration" src="https://farm5.staticflickr.com/4572/38840977192_f5ba619f76_s.jpg"></a></li>
+                                <li><a target="_blank" title="Gippsland Wine Company fox - Popular Inspiration on Designspiration" href="https://www.flickr.com/photos/75652279@N06/38155961474/"><img alt="Gippsland Wine Company fox - Popular Inspiration on Designspiration" src="https://farm5.staticflickr.com/4563/38155961474_7285ec8da7_s.jpg"></a></li>
+                                <li><a target="_blank" title="Mamalena - Popular Inspiration on Designspiration" href="https://www.flickr.com/photos/75652279@N06/38068361104/"><img alt="Mamalena - Popular Inspiration on Designspiration" src="https://farm5.staticflickr.com/4522/38068361104_2bd8829351_s.jpg"></a></li>
+                                <li><a target="_blank" title="- Designspiration - Popular" href="https://www.flickr.com/photos/75652279@N06/32126886981/"><img alt="- Designspiration - Popular" src="https://farm1.staticflickr.com/568/32126886981_7e3ddfb268_s.jpg"></a></li>
+                                <li><a target="_blank" title="- Designspiration - Popular" href="https://www.flickr.com/photos/75652279@N06/32091608841/"><img alt="- Designspiration - Popular" src="https://farm6.staticflickr.com/5564/32091608841_bd999d58ea_s.jpg"></a></li>
+                                <li><a target="_blank" title="- Designspiration - Popular" href="https://www.flickr.com/photos/75652279@N06/32153726675/"><img alt="- Designspiration - Popular" src="https://farm1.staticflickr.com/571/32153726675_1f7633a322_s.jpg"></a></li>
+                                <li><a target="_blank" title="- Designspiration - Popular" href="https://www.flickr.com/photos/75652279@N06/31685298105/"><img alt="- Designspiration - Popular" src="https://farm1.staticflickr.com/570/31685298105_4a0d774cd7_s.jpg"></a></li>
+                                <li><a target="_blank" title="- Designspiration - Popular" href="https://www.flickr.com/photos/75652279@N06/30167829586/"><img alt="- Designspiration - Popular" src="https://farm6.staticflickr.com/5123/30167829586_2cd3f3f640_s.jpg"></a></li>
+                                <li><a target="_blank" title="- Designspiration - Popular" href="https://www.flickr.com/photos/75652279@N06/29572985954/"><img alt="- Designspiration - Popular" src="https://farm6.staticflickr.com/5462/29572985954_70a690e25e_s.jpg"></a></li>
+                                <li><a target="_blank" title="- Designspiration - Popular" href="https://www.flickr.com/photos/75652279@N06/30137514286/"><img alt="- Designspiration - Popular" src="https://farm9.staticflickr.com/8651/30137514286_f743c65f3b_s.jpg"></a></li>
+                            </ul>*@
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+
+
+        <script type="text/javascript">
+            jQuery(function () {
+                var austDay = new Date();
+                austDay = new Date(2016, 12 - 1, 29);
+                //austDay = new Date(austDay.getFullYear() + 1, 1 - 1, 1);
+                jQuery('#countdown').countdown({
+                    until: austDay,
+                    //  format: 'dhms',
+                    format: 'wdhms',
+                    layout:
+                            '&lt;div class="main-digit-wrapp"&gt;&lt;span class="digit-wrapp"&gt;&lt;span class="px-digit"&gt;{w10}&lt;/span&gt;&lt;span class="px-digit"&gt;{w1}&lt;/span&gt;&lt;/span&gt;&lt;span class="countdown-period"&gt;Weeks&lt;/span&gt;&lt;/div&gt;' +
+                            '&lt;div class="main-digit-wrapp"&gt;&lt;span class="digit-wrapp"&gt;&lt;span class="px-digit"&gt;{d10}&lt;/span&gt;&lt;span class="px-digit"&gt;{d1}&lt;/span&gt;&lt;/span&gt;&lt;span class="countdown-period"&gt;days,&lt;/span&gt;&lt;/div&gt;' +
+                            '&lt;div class="main-digit-wrapp has-bg2"&gt;&lt;span class="digit-wrapp"&gt;&lt;span class="px-digit"&gt;{h10}&lt;/span&gt;&lt;span class="px-digit"&gt;{h1}&lt;/span&gt;&lt;/span&gt;&lt;span class="countdown-period"&gt;hours,&lt;/span&gt;&lt;/div&gt;' +
+                            '&lt;div class="main-digit-wrapp has-bg3"&gt;&lt;span class="digit-wrapp"&gt;&lt;span class="px-digit"&gt;{m10}&lt;/span&gt;&lt;span class="px-digit"&gt;{m1}&lt;/span&gt;&lt;/span&gt;&lt;span class="countdown-period"&gt;minutes,&lt;/span&gt;&lt;/div&gt;' +
+                            '&lt;div class="main-digit-wrapp has-bg4"&gt;&lt;span class="digit-wrapp"&gt;&lt;span class="px-digit"&gt;{s10}&lt;/span&gt;&lt;span class="px-digit"&gt;{s1}&lt;/span&gt;&lt;/span&gt;&lt;span class="countdown-period"&gt;seconds&lt;/span&gt;&lt;/div&gt;'
+                });
+            });
+        </script>
+
+
+
+
+
+    </div>
+</main>
+
+@*<div class="page-header">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <h2 class="page-title">Event Details</h2>
+            </div> <!-- /.col-md-6 -->
+            <div class="col-md-6 col-sm-6 hidden-xs back-home">
+                @Html.ActionLink("← Go back Home", "Index", "Home", new { }, null)
+            </div> <!-- /.col-md-6 -->
+        </div> <!-- /.row -->
+    </div>
+    <div class="row">
+        <!-- /.col-md-4 -->
+        <div class="col-md-8">
+
+                <div class="event-list">
+
+                    <div class="event-thumb">
+
+                        @if (@Model.Image != null)
+                        {
+
+                            <img src="/image/GetImage?id=@Model.Id&refCode=16&isThumbnail=true">
+                        }
+                    </div> <!-- /.event-thumb -->
+
+                    <div class="event-content">
+                        <h2 class="event-title">@Model.EventTitle</h2>
+                        <p>@MvcHtmlString.Create(@Model.EventBody)</p>
+                        <p>@MvcHtmlString.Create(@Model.EventBriefInfo)</p>
+                        <div class="event-location">
+                            <span><i class="fa fa-map-marker"></i>@Model.EventLocation</span>
+                        </div>
+                        <div class="event-time">
+                            <span><i class="fa fa-calendar"></i>@Model.EventStartAt.Value.ToString("ddd dd MMM")- @Model.EventEndAt.Value.ToString("ddd dd MMM yyyy")</span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div> <!-- /.event-content -->
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="box-content">
+                <h4 class="widget-title"><span>News & Events</span></h4>
+                @{Html.RenderAction("GetAll", "Event");}
+                @Html.ActionLink("More News", "GetAllWithGrid", "Event", new { }, new { @class = "btn btn-default-alt btn-sm pull-right" })
+            </div> <!-- /.box-content -->
+            <div class="box-content">
+                <h4 class="widget-title"><span>Gallery</span></h4>
+                @{Html.RenderAction("GetPartialGallery", "Gallery");}
+            </div> <!-- /.box-content -->
+
+        </div>
+    </div>*@

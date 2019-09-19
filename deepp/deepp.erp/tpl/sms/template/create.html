@@ -5,7 +5,7 @@
   
     <div class="wrapper-md" >
 
-        <toaster-container toaster-options="{'deeppition-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+        <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
         <progressbar class="progress-striped active" value="100" type="info" ng-show="isLoading">Loading...  </progressbar>
 
         <div class="panel wrapper" ng-hide="isLoading">
@@ -128,7 +128,7 @@
                                         <label>Preview Text  &nbsp;</label>
                                         <!--<textarea placeholder="Template" rows="6" readonly="" class="form-control" id="messageBody" data-ng-model="PreviewText"></textarea>-->
                                         <div class="m-l-xxl" style="margin-left: 0px;">
-                                            <div class="deepp-rlt bg-primary wrapper b b-light r r-2x" style="height: 131px">
+                                            <div class="pos-rlt bg-primary wrapper b b-light r r-2x" style="height: 131px">
                                                 <span class="arrow left pull-up arrow-primary"></span>
                                                 <p class="m-b-none">{{PreviewText}}</p>
                                                 <p class="m-b-none" ng-show="PreviewText.length==0">No message</p>

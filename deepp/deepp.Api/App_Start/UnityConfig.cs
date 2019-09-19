@@ -11,7 +11,9 @@ using deepp.Service.ViewModels;
 using deepp.Service.ShortMessages;
 using deepp.Service.SSOLogin;
 using deepp.Service.Settings;
-
+using deepp.Service.DashBoard;
+using deepp.Service.GlobalUsers;
+using deepp.Service.Attendance;
 
 namespace deepp.Api.App_Start
 {
@@ -47,16 +49,25 @@ namespace deepp.Api.App_Start
             // container.LoadConfiguration();
 
             // TODO: Register your types here
-            // container.RegisterType<IProductRepository, ProductRepository>();
-            container
-               .RegisterType<IDataContextAsync, PNSMSContext>(new PerRequestLifetimeManager())
+        
+              container
+              .RegisterType<IDataContextAsync, deeppContext>(new PerRequestLifetimeManager())
                .RegisterType<IUnitOfWorkAsync, UnitOfWork>(new PerRequestLifetimeManager())
-               .RegisterType<IStoredProcedures, PNSMSContext>(new PerRequestLifetimeManager())
+               .RegisterType<IStoredProcedures, deeppContext>(new PerRequestLifetimeManager())
                .RegisterType<IStoredProcedureService, StoredProcedureService>()
+                .RegisterType<IDashboardService, DashboardService>()
 
+            #region Global user
+                .RegisterType<IRepositoryAsync<GlobalUser>, Repository<GlobalUser>>()
+                       .RegisterType<IGlobalUserService, GlobalUserService>()
+                       .RegisterType<IVmGlobalUsersService, VmGlobalUsersService>()
+
+            #endregion
+                     .RegisterType<IRepositoryAsync<MachineInfo>, Repository<MachineInfo>>()
+                        .RegisterType<IMachineInfoService, MachineInfoService>()
             #region settings
 
-.RegisterType<IRepositoryAsync<AcademicBranch>, Repository<AcademicBranch>>()
+               .RegisterType<IRepositoryAsync<AcademicBranch>, Repository<AcademicBranch>>()
                .RegisterType<IAcademicBranchService, AcademicBranchService>()
 
                .RegisterType<IRepositoryAsync<AcademicClass>, Repository<AcademicClass>>()
@@ -95,8 +106,8 @@ namespace deepp.Api.App_Start
                .RegisterType<IRepositoryAsync<EducationalQualification>, Repository<EducationalQualification>>()
                .RegisterType<IEducationalQualificationService, EducationalQualificationService>()
 
-               //.RegisterType<IRepositoryAsync<StudentAttendance>, Repository<StudentAttendance>>()
-               //.RegisterType<IRepositoryAsync<StudentAttendanceDetail>, Repository<StudentAttendanceDetail>>()
+               .RegisterType<IRepositoryAsync<StudentAttendance>, Repository<StudentAttendance>>()
+               .RegisterType<IRepositoryAsync<StudentAttendanceDetail>, Repository<StudentAttendanceDetail>>()
 
                .RegisterType<IRepositoryAsync<Gender>, Repository<Gender>>()
                .RegisterType<IGenderService, GenderService>()
@@ -141,7 +152,7 @@ namespace deepp.Api.App_Start
 
                  .RegisterType<IRepositoryAsync<AcademicPeriod>, Repository<AcademicPeriod>>()
                .RegisterType<IAcademicPeriodService, AcademicPeriodService>()
-               
+
 
 
                  .RegisterType<IRepositoryAsync<StudentAttendance>, Repository<StudentAttendance>>()
@@ -219,13 +230,13 @@ namespace deepp.Api.App_Start
             #endregion
 
             #region Teacher
-.RegisterType<IRepositoryAsync<Teacher>, Repository<Teacher>>()
+               .RegisterType<IRepositoryAsync<Teacher>, Repository<Teacher>>()
                .RegisterType<ITeacherService, TeacherService>()
                .RegisterType<IVmTeacherService, VmTeacherService>()
             #endregion
 
             #region Employee
-.RegisterType<IRepositoryAsync<Employee>, Repository<Employee>>()
+                .RegisterType<IRepositoryAsync<Employee>, Repository<Employee>>()
                .RegisterType<IEmployeeService, EmployeeService>()
                .RegisterType<IVmEmployeeService, VmEmployeeService>()
                .RegisterType<IRepositoryAsync<AcademicBranchesOfUserInfo>, Repository<AcademicBranchesOfUserInfo>>()
@@ -234,14 +245,14 @@ namespace deepp.Api.App_Start
 
             #region Image
 
-.RegisterType<IRepositoryAsync<Image>, Repository<Image>>()
+                .RegisterType<IRepositoryAsync<Image>, Repository<Image>>()
                .RegisterType<IImageService, ImageService>()
 
             #endregion
 
             #region Gallery
 
-.RegisterType<IRepositoryAsync<Gallery>, Repository<Gallery>>()
+               .RegisterType<IRepositoryAsync<Gallery>, Repository<Gallery>>()
                .RegisterType<IGalleryService, GalleryService>()
 
             #endregion
@@ -269,6 +280,14 @@ namespace deepp.Api.App_Start
                .RegisterType<IRepositoryAsync<UserAttendanceDetail>, Repository<UserAttendanceDetail>>()
                .RegisterType<IUserAttendanceDetailService, UserAttendanceDetailService>()
                .RegisterType<IVmUserAttendanceService, VmUserAttendanceService>()
+                .RegisterType<IAttendanceMachineService, AttendanceMachineService>()
+                        .RegisterType<IRepositoryAsync<AttendanceConfiguration>, Repository<AttendanceConfiguration>>()
+
+                        .RegisterType<IAttendanceConfigurationService, AttendanceConfigurationService>()
+
+                        .RegisterType<IRepositoryAsync<AttendanceConfigurationDetail>, Repository<AttendanceConfigurationDetail>>()
+
+                        .RegisterType<IAttendanceConfigurationDetailService, AttendanceConfigurationDetailService>()
 
             #endregion
 
@@ -322,13 +341,13 @@ namespace deepp.Api.App_Start
                .RegisterType<IUserInfoSecurityService, UserInfoSecurityService>()
 
             #endregion
-                     
+
             #region SSO
 .RegisterType<IRepositoryAsync<SSO>, Repository<SSO>>()
                .RegisterType<ISSOService, SSOService>()
 
             #endregion
-               ;
+            ;
         }
     }
 }

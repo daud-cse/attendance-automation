@@ -83,7 +83,7 @@ namespace deepp.landing.Controllers
                 }
             }
 
-            return RedirectToAction("IndexLogin", "Home");
+            return RedirectToAction("IndexHome", "Home");
         }
 
 
@@ -92,7 +92,7 @@ namespace deepp.landing.Controllers
         {
             FormsAuthentication.SignOut();
 
-            return RedirectToAction("IndexLogin", "Home");
+            return RedirectToAction("IndexHome", "Home");
         }
 
         public ActionResult RegisterMobileNo()

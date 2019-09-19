@@ -8,7 +8,7 @@
 var $resourceMinErr = angular.$$minErr('$resource');
 
 // Helper functions and regex to lookup a dotted path on an object
-// stopping at undefined/null.  The path must be comdeepped of ASCII
+// stopping at undefined/null.  The path must be composed of ASCII
 // identifiers (just like $parse)
 var MEMBER_NAME_REGEX = /^(\.[a-zA-Z_$][0-9a-zA-Z_$]*)+$/;
 
@@ -79,7 +79,7 @@ function shallowClearAndCopy(src, dst) {
  * Requires the {@link ngResource `ngResource`} module to be installed.
  *
  * By default, trailing slashes will be stripped from the calculated URLs,
- * which can deeppe problems with server backends that do not expect that
+ * which can pose problems with server backends that do not expect that
  * behavior.  This can be disabled by configuring the `$resourceProvider` like
  * this:
  *
@@ -210,7 +210,7 @@ function shallowClearAndCopy(src, dst) {
  *   parameters:
  *
  *   - HTTP GET "class" actions: `Resource.action([parameters], [success], [error])`
- *   - non-GET "class" actions: `Resource.action([parameters], deepptData, [success], [error])`
+ *   - non-GET "class" actions: `Resource.action([parameters], postData, [success], [error])`
  *   - non-GET instance actions:  `instance.$action([parameters], [success], [error])`
  *
  *   Success callback is called with (value, responseHeaders) arguments. Error callback is called
@@ -519,7 +519,7 @@ angular.module('ngResource', ['ng']).
           Resource[name] = function(a1, a2, a3, a4) {
             var params = {}, data, success, error;
 
-            /* jshint -W086 */ /* (purdeeppefully fall through case statements) */
+            /* jshint -W086 */ /* (purposefully fall through case statements) */
             switch (arguments.length) {
               case 4:
                 error = a4;
@@ -554,7 +554,7 @@ angular.module('ngResource', ['ng']).
                   "Expected up to 4 arguments [params, data, success, error], got {0} arguments",
                   arguments.length);
             }
-            /* jshint +W086 */ /* (purdeeppefully fall through case statements) */
+            /* jshint +W086 */ /* (purposefully fall through case statements) */
 
             var isInstanceCall = this instanceof Resource;
             var value = isInstanceCall ? data : (action.isArray ? [] : new Resource(data));
